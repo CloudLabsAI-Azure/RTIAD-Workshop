@@ -127,11 +127,11 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 3.  View the list of available operations that can be made to the stream.
 
-    ![A screenshot of a phone Description automatically generated](./media/image21.png)
+    ![A screenshot of a phone Description automatically generated](./media/eventhouse.png)
 
-4.  Look below the operations and you will find the **Destinations** select the option that says **KQL Database**.
+4.  Look below the operations and you will find the **Eventhouse**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image22.png)
+    ![A screenshot of a computer Description automatically generated](./media/eventhouse1.png)
 
 5.  A new menu will open on the right-hand side of the screen. The first thing you need to modify for the destination is the **data ingestion mode**. The two options are **Direct Ingestion** and **Event processing before ingestion.** Because we are not going to transform anything in our Eventstream and directly load this information in a KQL database table ensure that you have selected the **Direct Ingestion** option.
 
@@ -141,7 +141,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 -   Destination name -- **eh-kql-db-Fabrikam**
 
--   Workspace -- **RTI_username**
+-   Workspace -- **RTI_<inject key="DeploymentID" enableCopy="false"/>**
 
 -   KQL Database -- **eh_Fabrikam**
 
@@ -184,7 +184,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 ## Task 3: Authoring Kusto Database Queries
 
-1.  Make your way back to your **RTI_username** workspace. You should see two new objects that have been created because of your
+1.  Make your way back to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should see two new objects that have been created because of your
     Eventstream. The Eventstream itself as well as a Real-Time Intelligence Data stream.
 
     ![A screenshot of a computer](./media/image32.png)
@@ -345,7 +345,7 @@ within this interface include working with Copilot, should that be available to 
 
     ![A screenshot of a computer](./media/image61.png)
 
-6.  Return to your **RTI_username** workspace. You should have the following objects present
+6.  Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should have the following objects present
 
     ![A screenshot of a computer Description automatically generated](./media/image62.png)
 
