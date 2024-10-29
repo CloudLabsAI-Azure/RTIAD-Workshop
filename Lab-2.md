@@ -45,9 +45,9 @@ The lab includes steps for the user to follow along with associated screenshots 
 
     ![A screenshot of a computer](./media/image6.png)
 
-3.  Select the "Get events" green button which should be in the upper right corner.
+3.  Select the "+ Add source" green button which should be in the upper right corner.
 
-    ![A screenshot of a search box Description automatically generated](./media/image7.png)
+    ![A screenshot of a search box Description automatically generated](./media/addsource.png)
 
 4.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will select the option "Azure Event Hubs".
     
@@ -77,7 +77,7 @@ The lab includes steps for the user to follow along with associated screenshots 
     
     ![A screenshot of a computer](./media/choose_1.png)
 
-  >**Note**: Choose "**$Default**" as Consumer group
+    >**Note**: Choose "**$Default**" as Consumer group
 
 10.  Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream **es_Fabrikam_InternetSales**"
     
@@ -87,11 +87,11 @@ The lab includes steps for the user to follow along with associated screenshots 
     
     ![A screenshot of a computer](./media/image13.png)
 
->**Note**: The Event Source connection stream may fail with a session timeout error, but you should still see the Event Source listed as created once you refresh .
+    >**Note**: The Event Source connection stream may fail with a session timeout error, but you should still see the Event Source listed as created once you refresh .
 
-12. In this overview screen, Verify the contents look correct and click **Create source**.
+12. In this overview screen, Verify the contents look correct and click **Connect**.
     
-    ![A screenshot of a computer Description automatically generated](./media/image14.png)
+    ![A screenshot of a computer Description automatically generated](./media/connect.png)
 
 13. Once the Eventstream and Eventstream source are created select the option "**Open Eventstream**"
     
