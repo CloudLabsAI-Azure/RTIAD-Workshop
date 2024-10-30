@@ -38,7 +38,7 @@ By the end of this lab, you will have learned:
 
 2. On the **Impressions** visual, click on the ellipses (...) and select the option to **Set alert**.
 
-   ![A screenshot of a computer Description automatically generated](./media/image247.png)
+   ![A screenshot of a computer Description automatically generated](./media/P7T1S2.png)
 
 3. A new flyout will open on the right side of the screen. You can see what you are monitoring from the dashboard including the specific visual that the alert will be affiliated with. The condition is something you have full control over. Modify the **Condition** to **Is greater than**.
 
