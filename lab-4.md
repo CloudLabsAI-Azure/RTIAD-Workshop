@@ -92,7 +92,7 @@ By the end of this lab, you will have learned:
 
 1. From the new dropdown menu find and select the option called **Data pipeline**.
 
-    ![A screenshot of a computer](./media/image134.png)
+    ![A screenshot of a computer](./media/P5T2S1.png)
 
 2. Give the new pipeline the name, **Load KQL Database**.
 
@@ -373,10 +373,9 @@ Now that you have your transformed layer of data within the Silver Layer you can
 
 1.  Return to the **RTI_username** workspace.
 
-2.  Click the **+ New** drop-down menu and then select **Lakehouse**
-    from the list of available options.
+2.  Click the **+ New** drop-down menu and then select **Lakehouse** from the list of available options.
 
-    ![A screenshot of a computer Description automatically generated](./media/image169.png)
+    ![A screenshot of a computer Description automatically generated](./media/P5T5S2.png)
 
 3.  Give the Lakehouse the name, **lh_Fabrikam** and then click on
     **Create**. Do not enable the preview feature of Lakehouse schemas.
