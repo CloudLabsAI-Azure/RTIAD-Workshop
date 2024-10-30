@@ -45,9 +45,9 @@ The lab includes steps for the user to follow along with associated screenshots 
 
     ![A screenshot of a computer](./media/image6.png)
 
-3.  Select the "Get events" green button which should be in the upper right corner.
+3.  Select the "+ Add source" green button which should be in the upper right corner.
 
-    ![A screenshot of a search box Description automatically generated](./media/image7.png)
+    ![A screenshot of a search box Description automatically generated](./media/addsource.png)
 
 4.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will select the option "Azure Event Hubs".
     
@@ -77,7 +77,7 @@ The lab includes steps for the user to follow along with associated screenshots 
     
     ![A screenshot of a computer](./media/choose_1.png)
 
-  >**Note**: Choose "**$Default**" as Consumer group
+    >**Note**: Choose "**$Default**" as Consumer group
 
 10.  Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream **es_Fabrikam_InternetSales**"
     
@@ -87,11 +87,11 @@ The lab includes steps for the user to follow along with associated screenshots 
     
     ![A screenshot of a computer](./media/image13.png)
 
->**Note**: The Event Source connection stream may fail with a session timeout error, but you should still see the Event Source listed as created once you refresh .
+    >**Note**: The Event Source connection stream may fail with a session timeout error, but you should still see the Event Source listed as created once you refresh .
 
-12. In this overview screen, Verify the contents look correct and click **Create source**.
+12. In this overview screen, Verify the contents look correct and click **Connect**.
     
-    ![A screenshot of a computer Description automatically generated](./media/image14.png)
+    ![A screenshot of a computer Description automatically generated](./media/connect.png)
 
 13. Once the Eventstream and Eventstream source are created select the option "**Open Eventstream**"
     
@@ -127,11 +127,11 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 3.  View the list of available operations that can be made to the stream.
 
-    ![A screenshot of a phone Description automatically generated](./media/image21.png)
+    ![A screenshot of a phone Description automatically generated](./media/eventhouse.png)
 
-4.  Look below the operations and you will find the **Destinations** select the option that says **KQL Database**.
+4.  Look below the operations and you will find the **Eventhouse**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image22.png)
+    ![A screenshot of a computer Description automatically generated](./media/eventhouse1.png)
 
 5.  A new menu will open on the right-hand side of the screen. The first thing you need to modify for the destination is the **data ingestion mode**. The two options are **Direct Ingestion** and **Event processing before ingestion.** Because we are not going to transform anything in our Eventstream and directly load this information in a KQL database table ensure that you have selected the **Direct Ingestion** option.
 
@@ -141,7 +141,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 -   Destination name -- **eh-kql-db-Fabrikam**
 
--   Workspace -- **RTI_username**
+-   Workspace -- **RTI_<inject key="DeploymentID" enableCopy="false"/>**
 
 -   KQL Database -- **eh_Fabrikam**
 
@@ -184,7 +184,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 ## Task 3: Authoring Kusto Database Queries
 
-1.  Make your way back to your **RTI_username** workspace. You should see two new objects that have been created because of your
+1.  Make your way back to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should see two new objects that have been created because of your
     Eventstream. The Eventstream itself as well as a Real-Time Intelligence Data stream.
 
     ![A screenshot of a computer](./media/image32.png)
@@ -345,7 +345,7 @@ within this interface include working with Copilot, should that be available to 
 
     ![A screenshot of a computer](./media/image61.png)
 
-6.  Return to your **RTI_username** workspace. You should have the following objects present
+6.  Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should have the following objects present
 
     ![A screenshot of a computer Description automatically generated](./media/image62.png)
 

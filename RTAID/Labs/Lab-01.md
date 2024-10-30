@@ -158,9 +158,9 @@ By the end of this lab, you will have learned:
 
       ![](../media/Lab-01/image014.png)
 
-4. In the top-right corner of the Real-Time hub, click on the **+ Get events** button.
+4. In the top-right corner of the Real-Time hub, click on the **+ Add source** button.
 
-   ![](../media/Lab-01/image015.png)
+   ![](../media/Lab-01/addsource.png)
 
 5. A window will appear and will detail the currently available streams of data that are available to integrate into the Real-Time hub.  This includes a mixture of Azure sources as well as external cloud streaming sources like Amazon Kinesis, Confluent Cloud Kafka, and Google Cloud Pub/Sub.
 
@@ -180,7 +180,7 @@ By the end of this lab, you will have learned:
 
 3. **Create a workspace** dialog opens on the right side of the browser. 
 
-4. In the **Name** field enter **RTI_username**.  Use the username provided to you from the environment details. 
+4. In the **Name** field enter **RTI_<inject key="DeploymentID" enableCopy="false"/>**.  Use the username provided to you from the environment details. 
 
    >**Note:** The workspace name must be unique. Make sure a green check mark with “**This name is available**” is displayed below the Name field. 
 
@@ -207,7 +207,7 @@ By the end of this lab, you will have learned:
 
 2. Select the **Eventhouse** option from the drop-down list. As we have talked about this can be looked at similarly to a Lakehouse in that we can store data but focused around real time data.
 
-   ![](../media/Lab-01/image021.png)
+   ![](../media/Lab-01/eventhouse.png)
 
 3. In the window that appears, give your Eventhouse the name, **eh_Fabrikam** and click on **Create**.
 
@@ -227,21 +227,17 @@ By the end of this lab, you will have learned:
 
    ![](../media/Lab-01/image025.png)
 
-8. This will allow us to still have one tab in our browser to see the overview of our entire Eventhouse and a new tab to focus on the KQL Database properties. One goal that we wish to accomplish in our scenario is ensuring that the data streamed to the KQL database is accessible via OneLake. By enabling this feature, we make the data in this KQL Database easily discoverable through shortcuts to be used in any Lakehouse we may want. Click on the pencil icon next to the **OneLake availability** property.
+8. This will allow us to still have one tab in our browser to see the overview of our entire Eventhouse and a new tab to focus on the KQL Database properties. One goal that we wish to accomplish in our scenario is ensuring that the data streamed to the KQL database is accessible via OneLake. By enabling this feature, we make the data in this KQL Database easily discoverable through shortcuts to be used in any Lakehouse we may want. Enable this property by toggling the switch to **Active**
 
-   ![](../media/Lab-01/image026.png)
+   ![](../media/Lab-01/availability.png)
 
-9. Enable this property by toggling the switch to **Active** and then click on **Done** at the bottom of the window.
+9. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
-   ![](../media/Lab-01/image027.png)
-
-10. Return to your **RTI_username** workspace.
-
-11. If you see the **Task Flows** option, grab the anchor point in the middle of the screen and slide the menu up to the top of your screen to hide. 
+10. If you see the **Task Flows** option, grab the anchor point in the middle of the screen and slide the menu up to the top of your screen to hide. 
 
     ![](../media/Lab-01/image028.png)
 
-12. You now have the basis for how you will begin to ingest the streaming data into your OneLake.  The next step is to create a stream of data that can receive the data in motion.
+11. You now have the basis for how you will begin to ingest the streaming data into your OneLake.  The next step is to create a stream of data that can receive the data in motion.
 
     ![](../media/Lab-01/image029.png)
 
