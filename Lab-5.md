@@ -43,19 +43,16 @@ By the end of this lab, you will have learned:
 2. Click on the **+ New** drop-down menu to create a new item.
 
    ![A screenshot of a computer Description automatically generated](./media/image179.png)
-3. The item you are looking for isn't on this list, so go to the option at the bottom of the list called **More options** and click on it.
 
-   ![A screenshot of a computer Description automatically generated](./media/image180.png)
+3. Scroll to the bottom of the page and you will see a category for **Visualize Data**. Click on the item called **Real-Time Dashboard**.
 
-4. Scroll to the bottom of the page and you will see a category for **Real-Time Intelligence**. Click on the item called **Real-Time Dashboard**.
+   ![A screenshot of a computer Description automatically generated](./media/P6T1S3.png)
 
-   ![A screenshot of a computer Description automatically generated](./media/image181.png)
-
-5. Give your Real-Time Dashboard the name **RTI Dashboard** and then click on **Create**.
+4. Give your Real-Time Dashboard the name **RTI Dashboard** and then click on **Create**.
 
    ![A screenshot of a computer Description automatically generated](./media/image182.png)
 
-6. You should be immediately taken to a blank instance of a Real-Time Dashboard.
+5. You should be immediately taken to a blank instance of a Real-Time Dashboard.
 
    ![A screenshot of a computer Description automatically generated](./media/image183.png)
 
@@ -122,7 +119,7 @@ By the end of this lab, you will have learned:
 
 9. Click the **pencil icon** to edit the **Time range** parameter.
 
-   ![A screenshot of a computer Description automatically generated](./media/image196.png)
+   ![A screenshot of a computer Description automatically generated](./media/P6T3S9.png)
 
 10. Change the **Default value** to **Last 24 hours** to always show the last day by default. Click **Done** when finished.
 
@@ -259,7 +256,7 @@ By the end of this lab, you will have learned:
 
 20. If the tiles are separated or you wish to reorganize them, you can hover over the tile until a hand icon appears and drag and drop the visual where you wish.
 
-    ![A screenshot of a computer Description automatically generated](./media/image221.png)
+    ![A screenshot of a computer Description automatically generated](./media/P6T4S20.png)
 
 ### Task 5: Add Map Visual for Impressions by Location
 
@@ -380,7 +377,7 @@ By the end of this lab, you will have learned:
 
 6. Click the **Save** button within the Conditional formatting pane.
 
-   ![A screenshot of a computer Description automatically generated](./media/image245.png)
+   ![A screenshot of a computer Description automatically generated](./media/P6T8S6.png)
 7. Apply the changes.
 
 8. Save your changes.
