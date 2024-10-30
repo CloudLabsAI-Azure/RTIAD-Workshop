@@ -158,9 +158,9 @@ By the end of this lab, you will have learned:
 
       ![](../media/Lab-01/image014.png)
 
-4. In the top-right corner of the Real-Time hub, click on the **+ Get events** button.
+4. In the top-right corner of the Real-Time hub, click on the **+ Add source** button.
 
-   ![](../media/Lab-01/image015.png)
+   ![](../media/Lab-01/addsource.png)
 
 5. A window will appear and will detail the currently available streams of data that are available to integrate into the Real-Time hub.  This includes a mixture of Azure sources as well as external cloud streaming sources like Amazon Kinesis, Confluent Cloud Kafka, and Google Cloud Pub/Sub.
 
@@ -180,7 +180,7 @@ By the end of this lab, you will have learned:
 
 3. **Create a workspace** dialog opens on the right side of the browser. 
 
-4. In the **Name** field enter **RTI_username**.  Use the username provided to you from the environment details. 
+4. In the **Name** field enter **RTI_<inject key="DeploymentID" enableCopy="false"/>**.  Use the username provided to you from the environment details. 
 
    >**Note:** The workspace name must be unique. Make sure a green check mark with “**This name is available**” is displayed below the Name field. 
 
@@ -207,7 +207,7 @@ By the end of this lab, you will have learned:
 
 2. Select the **Eventhouse** option from the drop-down list. As we have talked about this can be looked at similarly to a Lakehouse in that we can store data but focused around real time data.
 
-   ![](../media/Lab-01/image021.png)
+   ![](../media/Lab-01/eventhouse.png)
 
 3. In the window that appears, give your Eventhouse the name, **eh_Fabrikam** and click on **Create**.
 
@@ -231,7 +231,7 @@ By the end of this lab, you will have learned:
 
    ![](../media/Lab-01/availability.png)
 
-9. Return to your **RTI_username** workspace.
+9. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
 10. If you see the **Task Flows** option, grab the anchor point in the middle of the screen and slide the menu up to the top of your screen to hide. 
 
