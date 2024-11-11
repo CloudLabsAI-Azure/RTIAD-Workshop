@@ -49,10 +49,9 @@ By the end of this lab, you will have learned:
    e-commerce store. For this Eventstream, though, we will want to
    transform the data prior to loading it into the Eventhouse. Instead
    of going to the **"Real-Time Hub"** we can create a new Eventstream
-   directly from the workspace. From the **+ New** dropdown menu,
-   create a new **Eventstream**.
+   directly from the workspace. From the **+ New item (1)** and select **Eventstream (2)**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image67.png)
+    ![A screenshot of a computer Description automatically generated](./media/create-eventstream-30-10.png)
 
 3. Give the new Eventstream the name, **es_Fabrikam_ClickEvents**,
    check the **"Enhanced Capabilities"** option, and then click on
@@ -142,7 +141,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a search box Description automatically generated](./media/image77.png)
 
-3. On the new icon that appears called **Manage_fields1**, click on the
+3. On the new icon that appears, give the Operation name as **Manage_fields1**, click on the
    **pencil icon** to select what fields you wish to add to your stream
    from the source.
 
@@ -212,9 +211,9 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](./media/image88.png)
 
-3. Click on the **pencil icon** on the new transformation, **Filter1**.
+3. Click on the **pencil icon** on the new transformation, **Filter**.
 
-    ![A screen shot of a computer Description automatically generated](./media/image89.png)
+    ![A screen shot of a computer Description automatically generated](./media/L3T3S3-0811.png)
 
 4. In the flyout that appears on the right-hand side of the screen,
    customize the filter conditions to reflect a way to only return
@@ -251,7 +250,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](./media/image93.png)
 
-9. Click on the **pencil icon** for **Filter2** to edit its settings.
+9. Click on the **pencil icon** for **Filter1** to edit its settings.
 
     ![A screenshot of a computer Description automatically generated](./media/image94.png)
 
@@ -292,7 +291,7 @@ By the end of this lab, you will have learned:
     ![A white rectangular sign with black text Description automatically generated](./media/image98.png)
 
 16. Rename the operation to **Manage_Clicks**. Also, select **Add all
-    fields** then remove **eventType**.
+    fields** then remove **eventType** and click on save.
 
     ![A screenshot of a computer](./media/image99.png)
 
@@ -307,11 +306,12 @@ By the end of this lab, you will have learned:
     ![A white card with a pen and a red box Description automatically generated](./media/image101.png)
 
 19. Rename the operation to **Manage_Impressions**. Then select **Add all
-    fields** then remove **eventType** and **referrer**. Your **Manage fields**
+    fields** then remove **eventType** and **referrer** and click on save. Your **Manage fields**
     transform should look like the following:
 
     ![A screenshot of a computer Description automatically generated](./media/image102.png)
 
+    Click on **Save**.
 20. Now that you have cleaned up the data for the streams for each of
     the types of events, you need to load each stream into a new table
     on the KQL Database. Click on the **+ icon** after the
@@ -320,29 +320,30 @@ By the end of this lab, you will have learned:
     ![A screen shot of a computer Description automatically generated](./media/image103.png)
 
 21. In the dropdown list that appears, go to the **Destinations** and select
-    **KQL Database**.
+    **Eventhouse**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image104.png)
+    ![A screenshot of a computer Description automatically generated](./media/kql-database2-30-10.png)
 
-22. Click on the **pencil icon** for the **KQL_Database1** operation.
+22. Click on the **pencil icon** for the **Eventhouse** operation.
 
-    ![A screenshot of a computer Description automatically generated](./media/image105.png)
+    ![A screenshot of a computer Description automatically generated](./media/kql-database1-30-10.png)
 
 23. For this destination, configure the following properties:
 
     - **Destination name** -- dbo-Clicks
     - **Workspace** - RTI_username
+    - **Eventhouse** - eh_Fabrikam
     - **KQL Database** - eh_Fabrikam
     - **Destination Table** - Create a new table called **Clicks**
 
-    ![A screenshot of a computer Description automatically generated](./media/image106.png)
+    ![A screenshot of a computer Description automatically generated](./media/eventhouse-settings-30-10.png)
 
 24. Click on **Save** at the bottom of the flyout.
 
 25. Do the same thing for the Impressions table with the following
     information configured as below.
 
-    ![A screenshot of a computer Description automatically generated](./media/image107.png)
+    ![A screenshot of a computer Description automatically generated](./media/eventhouse-settings2-30-10.png)
 
 26. Save your changes.
 
@@ -351,12 +352,12 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](./media/image108.png)
 
-28. With the Eventstream now running, you should see the Eventstream
+28. With the Eventstream now running, make sure the **Azure Event Hub** source is **Active**. You should see the Eventstream
     user interface slightly change to signify that you are streaming the
     data from Event Hub, transforming and splitting that data stream, and
     loading it into two separate KQL Database tables.
 
-    ![A screenshot of a computer Description automatically generated](./media/image109.png)
+    ![A screenshot of a computer Description automatically generated](./media/L3T3S28-0811.png)
 
 ## Adding More Data to KQL Database
 

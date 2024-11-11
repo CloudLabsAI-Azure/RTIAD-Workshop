@@ -45,9 +45,9 @@ The lab includes steps for the user to follow along with associated screenshots 
 
     ![A screenshot of a computer](./media/image6.png)
 
-3.  Select the "Get events" green button which should be in the upper right corner.
+3.  Select the "Add source" green button which should be in the upper right corner.
 
-    ![A screenshot of a search box Description automatically generated](./media/image7.png)
+    ![A screenshot of a search box Description automatically generated](./media/add-source-button.png)
 
 4.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will select the option "Azure Event Hubs".
     
@@ -71,7 +71,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 7.  Once all properties have been filled out click on **Connect**.
     
-    ![A screenshot of a computer Description automatically generated](./media/image10.png)
+    ![A screenshot of a computer Description automatically generated](./media/connect-to-source.png)
 
 8.  In the configuration of the Azure Event Hub data source, you will need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. Within your **Environment details** find the property that lists what your consumer group name will be and place that into the field box. It will appear something like "**$Default**".
     
@@ -89,9 +89,9 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 >**Note**: The Event Source connection stream may fail with a session timeout error, but you should still see the Event Source listed as created once you refresh .
 
-12. In this overview screen, Verify the contents look correct and click **Create source**.
+12. In this overview screen, Verify the contents look correct and click **Connect**.
     
-    ![A screenshot of a computer Description automatically generated](./media/image14.png)
+    ![A screenshot of a computer Description automatically generated](./media/connect-to-source2.png)
 
 13. Once the Eventstream and Eventstream source are created select the option "**Open Eventstream**"
     
@@ -127,15 +127,15 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 3.  View the list of available operations that can be made to the stream.
 
-    ![A screenshot of a phone Description automatically generated](./media/image21.png)
+    ![A screenshot of a phone Description automatically generated](./media/operations.png)
 
-4.  Look below the operations and you will find the **Destinations** select the option that says **KQL Database**.
+4.  Look below the operations and you will find the **Destinations** select the option that says **Eventhouse**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image22.png)
+    ![A screenshot of a computer Description automatically generated](./media/select-eventhouse.png)
 
 5.  A new menu will open on the right-hand side of the screen. The first thing you need to modify for the destination is the **data ingestion mode**. The two options are **Direct Ingestion** and **Event processing before ingestion.** Because we are not going to transform anything in our Eventstream and directly load this information in a KQL database table ensure that you have selected the **Direct Ingestion** option.
 
-    ![A white background with black text Description automatically generated](./media/image23.png)
+    ![A white background with black text Description automatically generated](./media/select-direct-ingestion.png)
 
 6.  Modify the remainder of the settings with the following details below.
 
@@ -143,9 +143,11 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 -   Workspace -- **RTI_username**
 
+-   Eventhouse --**eh_Fabrikam**
+
 -   KQL Database -- **eh_Fabrikam**
 
-    ![A screenshot of a computer](./media/image24.png)
+    ![A screenshot of a computer](./media/creating-eventstream-destination.png)
 
 7.  Click on Save.
 
@@ -161,7 +163,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
     ![A screenshot of a computer](./media/image27.png)
 
-11. Give the new table the name, **InterentSales** and then click on the checkmark.
+11. Give the new table the name, **InternetSales** and then click on the checkmark.
 
     ![A screenshot of a computer](./media/image28.png)
 
@@ -180,6 +182,32 @@ The lab includes steps for the user to follow along with associated screenshots 
 
     ![A screenshot of a chat](./media/image31.png)
 
+16. Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps -
+
+    i. Go to your destination KQL database
+    
+    ![A screenshot of a chat](./media/KQL-database-workaround1.png)
+
+    ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
+
+    ![A screenshot of a chat](./media/KQL-database-workaround2.png)
+
+    iii. Select the InternetSales table and give the give the following configurations -
+
+       Workspace - **RTI_username**
+    
+       Eventstream Name - **es_Fabrikam_InternetSales**
+    
+       Data connectioin name - **give any name**
+
+      Then click on **Next**, **Finish** and **Close** in the next tabs.
+    
+    ![A screenshot of a chat](./media/KQL-database-workaround3.png)
+
+    iv. Now you should be able to see a new destination is created with the Data preview visible in it. The user interface showing the source and the destination with the data preview should look like as shown below,
+
+     ![A screenshot of a chat](./media/KQL-database-workaround4.png)
+    
 # Kusto Query Language (KQL)
 
 ## Task 3: Authoring Kusto Database Queries

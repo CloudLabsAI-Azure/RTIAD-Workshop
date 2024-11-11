@@ -318,7 +318,7 @@ Now that you have your transformed layer of data within the Silver Layer you can
 
     ![A close-up of a computer code Description automatically generated](./media/image166.png)
 
-7. This query will return the row with the latest **IngestionDate** for each unique **AddressID** in the **SilverAddress** table.
+7. This query will return the row with the latest **IngestionDate** for each unique **AddressID** in the **GoldAddress** table.
 
 8. Now paste and run the following queries to build more Gold layer materialized views for the other tables.
 
