@@ -71,7 +71,7 @@ be adding to the KQL database By the end of this lab, you will have learned:
    | Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="false"/> |
    | Event Hub | rti-iad-clicks |
    | Shared Access Key Name | rti-reader |
-   | Shared Access Key | <inject key="rti-iad-clicks Primary Key"> enableCopy="false"/> |
+   | Shared Access Key | <inject key="rti-iad-clicks Primary Key" enableCopy="false"/> |
 
    ![A screenshot of a computer Description automatically generated](../media/Lab-03/clicks.png)
 
