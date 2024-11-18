@@ -77,38 +77,41 @@ By the end of this lab, you will have learned:
     
     ![A screenshot of a computer](../media/Lab-02/image11.png)
 
-10.  Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
+ 10. Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
 
-     ![A screenshot of a computer](../media/Lab-02/image12.png)
 
-11. Now we can click on **Next**, which will take us to a final overview page.
+  >**Note**: Make sure you select the workspace that you have created in previous lab.
+
+   ![A screenshot of a computer](../media/Lab-02/image12.png)
+
+12. Now we can click on **Next**, which will take us to a final overview page.
     
     ![A screenshot of a computer](../media/Lab-02/image13.png)
 
-12. In this overview screen, verify the contents look correct and click **Create source**.
+13. In this overview screen, verify the contents look correct and click **Create source**.
     
     >**Note:** Your details will differ from what you see in the screenshot
     
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image14.png)
 
-13. Once the Eventstream and Eventstream source are created select the
+14. Once the Eventstream and Eventstream source are created select the
     option "**Open Eventstream**"
     
     ![A screenshot of a computer](../media/Lab-02/image15.png)
 
-14. This will take you to the Eventstream user interface. Here is where you will see your source stream of data flowing into our eventstream and we have the ability to add transform events as well.
+15. This will take you to the Eventstream user interface. Here is where you will see your source stream of data flowing into our eventstream and we have the ability to add transform events as well.
 
-15. It may take a few moments for your Source to be **Active** but after waiting a few moments, click on the middle icon with the name of your Eventstream on it and then click on **Refresh** if you do not see a preview of the data.
+16. It may take a few moments for your Source to be **Active** but after waiting a few moments, click on the middle icon with the name of your Eventstream on it and then click on **Refresh** if you do not see a preview of the data.
 
     >**Note:** If you receive a "Warning" status around and audit policy,that is fine. The stream will still function
     
     ![](../media/Lab-02/active-event.png)
 
-16. You should now see a sample of the data within the bottom window.
+17. You should now see a sample of the data within the bottom window.
 
     ![A screenshot of a computer](../media/Lab-02/image17.png)
 
-17. This will show you a preview of the data that is being received from the Azure Event Hub. If you slide your bottom horizontal scroll bar all the way to the right-side of your preview, you will be able to see the time that the data has been received in the Event Hub in two columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time in UTC format.
+18. This will show you a preview of the data that is being received from the Azure Event Hub. If you slide your bottom horizontal scroll bar all the way to the right-side of your preview, you will be able to see the time that the data has been received in the Event Hub in two columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time in UTC format.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image18-1.png)
 
