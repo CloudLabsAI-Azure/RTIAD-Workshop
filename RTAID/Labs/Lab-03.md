@@ -272,7 +272,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 23. Configure the following properties for this destination and select the details from the dropdown.
       -   **Destination name** -- dbo-Clicks
-      -   **Workspace** - RTI_<inject key="DeploymentID" enableCopy="copy"/>
+      -   **Workspace** - RTI_<inject key="DeploymentID" enableCopy="true"/>
       -   **Eventhouse** -- eh_Fabrikam
       -   **KQL Database** - eh_Fabrikam
       -   **Destination Table** - Create a new table called **Clicks**
@@ -284,7 +284,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 25. Configure the following properties for this destination and select the details from the dropdown.
 
       - **Destination name** -- dbo-Impressions
-      - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="copy"/>
+      - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="true"/>
       - **Eventhouse** -- eh_Fabrikam
       - **KQL Database** - eh_Fabrikam
       - **Destination Table** - Create a new table called **Impressions**
