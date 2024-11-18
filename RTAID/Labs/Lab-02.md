@@ -60,27 +60,15 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer](../media/Lab-02/image9.png)
 
-6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+6. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+
+   | Setting | Value | 
+   | --- | --- |
+   | Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="false"/> |
+   | Event Hub | rti-iad-fabrikam |
+   | Shared Access Key Name | rti-reader |
+   | Shared Access Key | <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/> |
     
-  - Event Hub namespace:
-  
-    ```
-    rtiadhub<inject key="DeploymentID" enableCopy="false"/>
-    ```
-  - Event Hub:
-    ```
-    rti-iad-fabrikam
-    ```
-  - Shared Access Key Name:
-
-    ```
-    rti-reader
-    ```
-  - Shared Access Key:
-
-    ```
-    <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
-    ```
 8. Once all properties have been filled out click on **Connect**.
     
     ![A screenshot of a computer Description automaticallygenerated](../media/Lab-02/rtiad-ad.png)
