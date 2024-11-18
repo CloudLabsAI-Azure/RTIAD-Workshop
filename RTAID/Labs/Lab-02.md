@@ -139,7 +139,7 @@ By the end of this lab, you will have learned:
    | Setting | Value | 
    | --- | --- |
    |Destination name | eh-kql-db-fabrikam |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="copy"/> |    
+   |Workspace | RTI_<inject key="DeploymentID" enableCopy="true"/> |    
    |Eventhouse | eh_Fabrikam |
    |KQL Database | eh_Fabrikam |
    
@@ -197,7 +197,7 @@ By the end of this lab, you will have learned:
     
    | Setting | Value | 
    | --- | --- |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="copy"/> |
+   |Workspace | RTI_<inject key="DeploymentID" enableCopy="true"/> |
    |Eventstream Name | es_Fabrikam_InternetSales |
    
    - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
