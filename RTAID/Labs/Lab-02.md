@@ -65,7 +65,7 @@ By the end of this lab, you will have learned:
    | Setting | Value | 
    | --- | --- |
    |Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="true"/>|
-   |Event Hub | rti-iad-fabrikam |
+   |Event Hub | rti-iad-fabrikam <inject key enableCopy="true"/>|
    |Shared Access Key Name  | rti-reader |
    |Shared Access Key | <inject key="rti-iad-fabrikam Primary Key" enableCopy="true"/>|
    
