@@ -69,6 +69,7 @@ By the end of this lab, you will have learned:
    ```
 
    - Event Hub :
+     
    ```
    rti-iad-fabrikam
    ```
@@ -80,7 +81,6 @@ By the end of this lab, you will have learned:
    ```
    
    - Shared Access Key :
-
    ```
    <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
 
