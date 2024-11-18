@@ -79,7 +79,7 @@ By the end of this lab, you will have learned:
   - Shared Access Key:
 
     ```
-    <inject key="rti-iad-fabrikam Primary Key"></inject>
+    <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
     ```
 8. Once all properties have been filled out click on **Connect**.
     
