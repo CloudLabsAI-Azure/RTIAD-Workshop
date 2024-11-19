@@ -79,7 +79,7 @@ The lab includes steps for the user to follow along with associated screenshots 
 
       Shared Access Key: 
       ```    
-     <inject key="rti-iad-fabrikam Primary Key"></inject>
+      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
       ```
       
       ```
