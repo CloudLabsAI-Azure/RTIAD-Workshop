@@ -125,7 +125,7 @@ By the end of this lab, you will have learned:
       ```
   -  Password :
        ```
-       fabrikam@123456
+       fabrikam@1234567
        ```
 
      ![A screenshot of a computer](../media/Lab-04/image18.png)
