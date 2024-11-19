@@ -75,7 +75,7 @@ By the end of this lab, you will have learned:
 
 9.  In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data.For this workshop you can leave the "\$Default" value as shownbelow\
     
-    ![A screenshot of a computer](../media/Lab-02/image11.png)
+    ![A screenshot of a computer](../media/Lab-02/image11-1.png)
 
  10. Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
 
