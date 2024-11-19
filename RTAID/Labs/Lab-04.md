@@ -113,11 +113,11 @@ By the end of this lab, you will have learned:
 
   - Server:
       ```
-      fabrikamdemo.database.windows.net
+      fabrikamserverdb.database.windows.net
       ``` 
   -  Database :
       ```
-      fabrikamdb
+      fabrikamserverdb
       ```
   -  Username :
       ```
