@@ -68,10 +68,10 @@ be adding to the KQL database By the end of this lab, you will have learned:
 
    | Setting | Value | 
    | --- | --- |
-   | Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="true"/> |
+   | Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="false"/> |
    | Event Hub | rti-iad-clicks |
    | Shared Access Key Name | rti-reader |
-   | Shared Access Key | <inject key="rti-iad-clicks Primary Key" enableCopy="true"/> |
+   | Shared Access Key | <inject key="rti-iad-clicks Primary Key" enableCopy="false"/> |
 
    ![A screenshot of a computer Description automatically generated](../media/Lab-03/clicks.png)
 
@@ -272,7 +272,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 23. Configure the following properties for this destination and select the details from the dropdown.
       -   **Destination name** -- dbo-Clicks
-      -   **Workspace** - RTI_<inject key="DeploymentID" enableCopy="true"/>
+      -   **Workspace** - RTI_<inject key="DeploymentID" enableCopy="false"/>
       -   **Eventhouse** -- eh_Fabrikam
       -   **KQL Database** - eh_Fabrikam
       -   **Destination Table** - Create a new table called **Clicks**
@@ -284,7 +284,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 25. Configure the following properties for this destination and select the details from the dropdown.
 
       - **Destination name** -- dbo-Impressions
-      - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="true"/>
+      - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="false"/>
       - **Eventhouse** -- eh_Fabrikam
       - **KQL Database** - eh_Fabrikam
       - **Destination Table** - Create a new table called **Impressions**
