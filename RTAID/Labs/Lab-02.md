@@ -64,10 +64,10 @@ By the end of this lab, you will have learned:
 
    | Setting | Value | 
    | --- | --- |
-   |Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="true"/>|
-   |Event Hub | rti-iad-fabrikam <inject key enableCopy="true"/>|
+   |Event Hub namespace | rtiadhub<inject key="DeploymentID" enableCopy="false"/>|
+   |Event Hub | rti-iad-fabrikam <inject key enableCopy="false"/>|
    |Shared Access Key Name  | rti-reader |
-   |Shared Access Key | <inject key="rti-iad-fabrikam Primary Key" enableCopy="true"/>|
+   |Shared Access Key | <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>|
    
 8. Once all properties have been filled out click on **Connect**.
     
@@ -142,7 +142,7 @@ By the end of this lab, you will have learned:
    | Setting | Value | 
    | --- | --- |
    |Destination name | eh-kql-db-fabrikam |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="true"/> |    
+   |Workspace | RTI_<inject key="DeploymentID" enableCopy="false"/> |    
    |Eventhouse | eh_Fabrikam |
    |KQL Database | eh_Fabrikam |
    
@@ -200,7 +200,7 @@ By the end of this lab, you will have learned:
     
    | Setting | Value | 
    | --- | --- |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="true"/> |
+   |Workspace | RTI_<inject key="DeploymentID" enableCopy="false"/> |
    |Eventstream Name | es_Fabrikam_InternetSales |
    
    - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
