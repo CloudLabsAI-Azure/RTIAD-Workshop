@@ -59,20 +59,27 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
     
+      Event Hub namespace:
+    
       ```
-      Event Hub namespace: *rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>**
-      ```
-      
-      ```
-      Event Hub: **rti-iad-fabrikam**
+      rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>
       ```
       
+     Event Hub:
+    
       ```
-      Shared Access Key Name: **rti-reader**
+     rti-iad-fabrikam
+      ```
+      
+     Shared Access Key Name:
+    
+      ```
+      rti-reader
       ```
 
+      Shared Access Key: 
       ```    
-      Shared Access Key: <inject key="rti-iad-fabrikam Primary Key"></inject>
+     <inject key="rti-iad-fabrikam Primary Key"></inject>
       ```
       
       ```
