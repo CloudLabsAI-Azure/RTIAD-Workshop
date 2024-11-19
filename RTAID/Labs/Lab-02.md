@@ -82,11 +82,11 @@ By the end of this lab, you will have learned:
 
   >**Note**: Make sure you select the workspace that you have created in previous lab.
 
-   ![A screenshot of a computer](../media/Lab-02/image12.png)
+   ![A screenshot of a computer](../media/Lab-02/workspace-01.png)
 
 12. Now we can click on **Next**, which will take us to a final overview page.
     
-    ![A screenshot of a computer](../media/Lab-02/image13.png)
+    ![A screenshot of a computer](../media/Lab-02/workspace-02.png)
 
 13. In this overview screen, verify the contents look correct and click **Create source**.
     
