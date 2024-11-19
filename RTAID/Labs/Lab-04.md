@@ -246,6 +246,7 @@ By the end of this lab, you will have learned:
     ```
 
 6. While you will see results of the query execution, the best evidence that your query completed is that you will see a new expandable folder in your Database objects pane. Click on the **\> icon** next to the **Functions folder**. These functions will allow the data loaded into the Bronze layer of the KQL Database to then be mirrored, transformed and loaded into the Silver layer.
+   
 
     ![A screenshot of a computer](../media/Lab-04/image34.png)
 
