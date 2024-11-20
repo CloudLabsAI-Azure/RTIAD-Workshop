@@ -149,12 +149,22 @@ By the end of this lab, you will have learned:
 
 6. Modify the remainder of the settings with the following details below.
 
-   | Setting | Value | 
-   | --- | --- |
-   |Destination name | eh-kql-db-fabrikam |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="false"/> |    
-   |Eventhouse | eh_Fabrikam |
-   |KQL Database | eh_Fabrikam |
+  - Destination name :
+    ```
+    eh-kql-db-fabrikam
+    ```
+  - Workspace :
+    ```
+    RTI_<inject key="DeploymentID" enableCopy="false"/>
+    ```    
+  - Eventhouse :
+    ```
+    eh_Fabrikam
+    ```
+  - KQL Database :
+    ```
+    eh_Fabrikam
+    ```
    
     ![A screenshot of a computer](../media/Lab-02/image24.png)
 
@@ -208,9 +218,7 @@ By the end of this lab, you will have learned:
 
     iii. Select the InternetSales table and Select the following configurations from the drop-down :
     
-   | Setting | Value | 
-   | --- | --- |
-   |Workspace | RTI_<inject key="DeploymentID" enableCopy="false"/> |
+   - Workspace  RTI_<inject key="DeploymentID" enableCopy="false"/> |
    |Eventstream Name | es_Fabrikam_InternetSales |
    
    - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
