@@ -263,7 +263,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
     ![A white card with a pen and a red box Description automatically generated](../media/Lab-03/image39.png)
 
 19. Rename the operation to **Manage_Impressions**. Then select **Add all fields** then remove **eventType** and **referrer**. Your **Manage fields**
-    transform should look like the following:
+    transform should look like the following and save it.
 
     ![A screenshot of a computer](../media/Lab-03/image40.png)
 
@@ -299,7 +299,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
          ```
     - **Destination Table** - Create a new table called **Clicks**
 
-        ![A screenshot of a computer Description automatically generated](../media/Lab-03/image44.png)
+        ![A screenshot of a computer Description automatically generated](../media/Lab-03/dbo-clicks.png)
 
 24. Click on **Save** at the bottom of the flyout.
 
