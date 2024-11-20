@@ -41,7 +41,7 @@ In this lab, you will learn how to leverage Data Activator to create a Reflex to
 
 2.  On the **Click Through Rate** visual click on the ellipses (...) and select the option to **Set alert**.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-06/L6T1S2-13-11.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-06/set-alert.png)
 
 3.  A new flyout will open on the right-side of the screen. You can see what you are monitoring from the dashboard including the specific visual that the alert will be affiliated with. The condition is something you have full control over. Modify the **Condition** to **Is less than**.
 
@@ -83,13 +83,19 @@ In this lab, you will learn how to leverage Data Activator to create a Reflex to
   
 3.  Open a New tab within your Environment Edge Browser and go to **[Teams](https://teams.microsoft.com/v2/)**.
 
-4.  Sign in with your environment credentials if you are asked. A message to start a trial may appear and you will want to accept this.
+4.  Sign in with your environment credentials
+     
+     - **Username/Email**:<inject key="AzureAdUserEmail"></inject>
 
-5.  You should have a message within teams letting you know that the CTR is less than 20.
+     - **Password**:<inject key="AzureAdUserPassword"></inject>
+     
+6.  If you are asked. A message to start a trial may appear and you will want to accept this.
+
+7.  You should have a message within teams letting you know that the CTR is less than 20.
 
     ![A screenshot of a computer error message](../media/Lab-06/image15.png)
 
-6.  Navigate back to the Reflex experience and let's create another trigger.
+8.  Navigate back to the Reflex experience and let's create another trigger.
 
 ## Task 3: Create A New Alert Rule from Data Stream
 
