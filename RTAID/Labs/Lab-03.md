@@ -323,7 +323,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
          ```
     - **KQL Destination Table** - Create a new table called **Impressions**
 
-        ![A screenshot of a computer](../media/Lab-03/image45.png)
+        ![A screenshot of a computer](../media/Lab-03/dbo-imp.png)
 
 27. Save your changes.
 
