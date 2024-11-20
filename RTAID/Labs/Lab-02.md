@@ -211,22 +211,29 @@ By the end of this lab, you will have learned:
 
     >**Note:** Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps -
 
-    i. Go to your destination KQL database
+i. Go to your destination KQL database
 
-    ![A screenshot of a chat](../media/Lab-02/blur.png)
+   ![A screenshot of a chat](../media/Lab-02/blur.png)
 
-    ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
+ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
 
-    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
+   ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
 
-    iii. Select the InternetSales table and Select the following configurations from the drop-down :
+iii. Select the InternetSales table and Select the following configurations from the drop-down :
     
-   - Workspace  RTI_<inject key="DeploymentID" enableCopy="false"/> |
-   |Eventstream Name | es_Fabrikam_InternetSales |
-   
-   - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
+  - Workspace :
+     ```
+     RTI_<inject key="DeploymentID" enableCopy="false"/>
+     ```
+     
+  - Eventstream Name :
+     ```
+     es_Fabrikam_InternetSales
+     ```
+  
+  - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
 
-![A screenshot of a chat](../media/Lab-02/KQL-database-workaround3.png)
+    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround3.png)
 
 iv. Now you should be able to see a new destination is created with the Data preview visible in it.
     
