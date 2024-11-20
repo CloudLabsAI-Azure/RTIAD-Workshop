@@ -117,7 +117,7 @@ By the end of this lab, you will have learned:
       ``` 
   -  Database :
       ```
-      fabrikamserverdb
+      fabrikamdb
       ```
   -  Username :
       ```
