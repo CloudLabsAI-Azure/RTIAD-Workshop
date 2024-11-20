@@ -297,7 +297,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
          ```
          eh_Fabrikam
          ```
-    - **Destination Table** - Create a new table called **Clicks**
+    - **KQL Destination Table** - Create a new table called **Clicks**
 
         ![A screenshot of a computer Description automatically generated](../media/Lab-03/dbo-clicks.png)
 
@@ -321,7 +321,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
          ```
          eh_Fabrikam
          ```
-    - **Destination Table** - Create a new table called **Impressions**
+    - **KQL Destination Table** - Create a new table called **Impressions**
 
         ![A screenshot of a computer](../media/Lab-03/image45.png)
 
