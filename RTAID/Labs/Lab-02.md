@@ -48,9 +48,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/Lab-02/real-time-1.png)
 
-3. The **Welcome to Real-Time hub** dialogue will open and feel from to select **Get Started**.
+3. The **Welcome to Real-Time Hub** dialog will appear. Check the box for **Don't show again** and then click **Get Started**.
 
-   ![](../media/Lab-02/get-started.png)
+   ![](../media/Lab-02/get-started-1.png)
 
 5.  Select the **+ Connect data source** green button which should be in the upper right corner.
 
