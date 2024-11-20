@@ -46,9 +46,9 @@ be adding to the KQL database By the end of this lab, you will have learned:
 
     ![A screenshot of a computer](../media/Lab-03/image6.png)
 
-3.  Give the new Eventstream the name, **es_Fabrikam_ClickEvents**, Check the **"Enhanced Capabilities"** option, and then click on **Create**.
+3.  Give the new Eventstream the name, **es_Fabrikam_ClickEvents**, and then click on **Create**.
 
-    ![A screenshot of a computer](../media/Lab-03/image7.png)
+    ![A screenshot of a computer](../media/Lab-03/create-fab.png)
 
 4.  Under the Home ribbon, click on the **Add source** dropdown and then select **External sources**.
 
