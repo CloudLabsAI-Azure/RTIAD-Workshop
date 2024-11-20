@@ -128,7 +128,7 @@ By the end of this lab, you will have learned:
        fabrikam@1234567
        ```
 
-     ![A screenshot of a computer](../media/Lab-04/image18.png)
+     ![A screenshot of a computer](../media/Lab-04/rtiad18n.png)
 
 7. Click **Next** when everything has been filled out.
 
