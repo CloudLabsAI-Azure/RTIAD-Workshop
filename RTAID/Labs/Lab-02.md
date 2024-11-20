@@ -68,7 +68,7 @@ By the end of this lab, you will have learned:
       ```
    - Event Hub :
      ```
-     rti-iad-fabrikam<inject key enableCopy="false"/>
+     rti-iad-fabrikam
      ```
    - Shared Access Key Name :
      ```
