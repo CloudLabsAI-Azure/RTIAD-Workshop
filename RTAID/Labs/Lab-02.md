@@ -185,7 +185,7 @@ By the end of this lab, you will have learned:
 
 12.  Choose the **Configure** option within the **Destination** to correctly map the stream to a table in the KQL Database.
 
-     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image26.png)
+     ![A screenshot of a computer Description automatically generated](../media/Lab-02/fabrikam.png)
 
 13. Click on the **+ New table** option underneath the **eh_Fabrikam** database.
 
@@ -233,7 +233,7 @@ iii. Select the InternetSales table and Select the following configurations from
   
   - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
 
-    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround3.png)
+     ![A screenshot of a chat](../media/Lab-02/internet-01.png)
 
 iv. Now you should be able to see a new destination is created with the Data preview visible in it.
     
