@@ -64,7 +64,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 1.  Under the Home ribbon find the option called **New data source** and click it.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image10-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/new_datasource.png)
     
 2.  In the flyout pane that appears on the right-hand side of the screen, click on **Add +** and then choose **OneLake data hub**.
 
@@ -86,7 +86,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 6.  You will now see that one data source has been added to the Real-Time Dashboard. From here you could add additional KQL
     Databases should the need arise. For now, click on **Close** at the bottom of the window.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image15.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/eh-fabrikam.png)
 
 ## Task 3: Create a Real-Time Dashboard Tile with KQL
 
@@ -168,7 +168,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 1.  From the **Home ribbon** in the Real-Time Dashboard click on the **New tile** button.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image31-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
 
 2.  Enter the following KQL query into the query pane.
 
@@ -277,7 +277,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 1.  Add a **New tile** to the Real-Time Dashboard.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image48-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
 
 2.  Copy and paste the following query into the query pane. This query extracts the latitude and longitude from the Ip address column from
     this data stream to generate a location that you can plot on a map.This query can take a little bit more time than the previous ones.
@@ -317,13 +317,13 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 9.  Save your changes.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image55-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/save.png)
 
 ## Task 6: Setup Auto Refresh on the Real-Time Dashboard
 
 1.  Click on the **Manage ribbon** and then select the option **Auto Refresh**.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image56-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/auto-refresh.png)
 
 2.  Turn on the toggle to enable **Auto Refresh**.
 
@@ -352,7 +352,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 3.  Click on the button in the Home ribbon called **New text tile**.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image62-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
 
 4.  Copy and paste the following markdown code within the query window.
    
@@ -368,7 +368,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 7. Save your changes.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image55-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/save.png)
 
 ## Optional Task 8: Apply Conditional Formatting to Visual
 
