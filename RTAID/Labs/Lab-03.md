@@ -281,25 +281,49 @@ device and browser the webpage was loaded from, and what IP address accessed the
     ![A white sign with black text Description automatically generated](../media/Lab-03/image43.png)
 
 23. Configure the following properties for this destination and select the details from the dropdown.
-      -   **Destination name** -- dbo-Clicks
-      -   **Workspace** - RTI_<inject key="DeploymentID" enableCopy="false"/>
-      -   **Eventhouse** -- eh_Fabrikam
-      -   **KQL Database** - eh_Fabrikam
-      -   **Destination Table** - Create a new table called **Clicks**
+    - **Destination name** :
+       ```
+       dbo-Clicks
+       ```
+    - **Workspace** :
+        ```
+        RTI_<inject key="DeploymentID" enableCopy="false"/>
+        ```
+    - **Eventhouse** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Database** :
+         ```
+         eh_Fabrikam
+         ```
+    - **Destination Table** - Create a new table called **Clicks**
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image44.png)
+        ![A screenshot of a computer Description automatically generated](../media/Lab-03/image44.png)
 
 24. Click on **Save** at the bottom of the flyout.
 
 25. Configure the following properties for this destination and select the details from the dropdown.
 
-      - **Destination name** -- dbo-Impressions
-      - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="false"/>
-      - **Eventhouse** -- eh_Fabrikam
-      - **KQL Database** - eh_Fabrikam
-      - **Destination Table** - Create a new table called **Impressions**
+    - **Destination name** :
+       ```
+       dbo-Impressions
+       ```
+    - **Workspace** :
+        ```
+        RTI_<inject key="DeploymentID" enableCopy="false"/>
+        ```
+    - **Eventhouse** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Database** :
+         ```
+         eh_Fabrikam
+         ```
+    - **Destination Table** - Create a new table called **Impressions**
 
-    ![A screenshot of a computer](../media/Lab-03/image45.png)
+        ![A screenshot of a computer](../media/Lab-03/image45.png)
 
 27. Save your changes.
 
