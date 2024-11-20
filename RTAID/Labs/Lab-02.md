@@ -56,9 +56,9 @@ By the end of this lab, you will have learned:
 
     ![A green and white sign Description automatically generated](../media/Lab-02/connect_datasource.png)
 
-6.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will select the option "Azure Event Hubs".
+6.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will Search for **Azure event hubs (1)** select it and click on **connect (2)**
     
-    ![](../media/Lab-02/eventhubs.png)
+    ![](../media/Lab-02/azure_event-hubs.png)
 
 7.  You are now required to create a connection to the Azure Event Hub.Click on the **New connection** text since you do not currently have a connection.
 
