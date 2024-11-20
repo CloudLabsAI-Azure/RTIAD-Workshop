@@ -106,7 +106,7 @@ By the end of this lab, you will have learned:
     
     >**Note:** Your details will differ from what you see in the screenshot
     
-    ![A screenshot of a computer Description automatically generated](../media/Lab-02/final.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-02/email-01.png)
 
 14. Once the Eventstream and Eventstream source are created select the option "**Open Eventstream**"
     
@@ -169,7 +169,7 @@ By the end of this lab, you will have learned:
     eh_Fabrikam
     ```
    
-    ![A screenshot of a computer](../media/Lab-02/image24.png)
+    ![A screenshot of a computer](../media/Lab-02/direct-ingestion.png)
 
 8.  Click on Save.
 
