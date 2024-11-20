@@ -46,7 +46,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 2.  Click on the **+ New** **Item** button to create a new item.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image6.png)  
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/new_item-1.png)  
 
 3.  You will see a category for **Visualize Data**. Click on the item called **Real-Time Dashboard**.
 
