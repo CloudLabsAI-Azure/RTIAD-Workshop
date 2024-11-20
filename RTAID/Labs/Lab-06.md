@@ -57,11 +57,11 @@ In this lab, you will learn how to leverage Data Activator to create a Reflex to
 
 6.  Finally, you need to decide the location where you will store the  **Reflex item** that you are creating with this alert. This by default should select your current workspace, but you need to specifically call out a **New item** under the Item drop-down menu.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-06/image10-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-06/blur-1.png)
 
 7.  Rename the item to **CTR Reflex** and then click on **Create**. This will take a few moments to create.
 
-    ![A screenshot of a computer](../media/Lab-06/image11.png)
+    ![A screenshot of a computer](../media/Lab-06/blur-2.png)
 
 8.  You will receive a validation that the reflex alert was created. Click on the **Open** button to open the Reflex.
 
