@@ -128,7 +128,7 @@ By the end of this lab, you will have learned:
        fabrikam@1234567
        ```
 
-     ![A screenshot of a computer](../media/rtiad18n.png)
+     ![A screenshot of a computer](../media/Lab-04/creds-db.png)
 
 7. Click **Next** when everything has been filled out.
 
@@ -157,7 +157,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image22.png)
 
-14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and **SalesLT.SalesOrderHeader**. No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
+14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer** choose **Customer**, **SaleLT.SalesOrderDetail** choose **Orderdetail**, and **SalesLT.SalesOrderHeader** Choose **Orderheader** . No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
 
 15. The final page using the Copy Data Assistant is an overview page to verify all the settings you've selected. Ensure that your source number of tables and destination number of tables are the same.
 
@@ -248,7 +248,7 @@ By the end of this lab, you will have learned:
 6. While you will see results of the query execution, the best evidence that your query completed is that you will see a new expandable folder in your Database objects pane. Click on the **\> icon** next to the **Functions folder**. These functions will allow the data loaded into the Bronze layer of the KQL Database to then be mirrored, transformed and loaded into the Silver layer.
    
 
-    ![A screenshot of a computer](../media/Lab-04/image34.png)
+    ![A screenshot of a computer](../media/Lab-04/functions.png)
 
 7. Now let's simulate this process, you will run the pipeline you created earlier in this lab again. Navigate back to the **Load KQL Database** pipeline now.
 
@@ -310,7 +310,7 @@ Now that you have your transformed layer of data within the Silver Layer you can
 
 5. You will also see another folder was created in the KQL Database object explorer. Expand the **Materialized View** folder and you will find your **GoldAddress** view within.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-04/image46.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-04/views-material.png)
 
 6. In your query window, run the following code to query the new materialized view.
 
