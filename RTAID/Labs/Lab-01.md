@@ -163,7 +163,7 @@ By the end of this lab, you will have learned:
    
 4. In the **Name** field enter **RTI_<inject key="DeploymentID" enableCopy="false"></inject>**. 
 
-   >**Note**: The DID will be unique for each user, and the workspace name must also be unique. Ensure that a green check mark with **"This name is available"** appears below the Name field.
+   >**Note**: The user ID will be unique for each user, and the workspace name must also be unique. Ensure that a green check mark with **"This name is available"** appears below the Name field.
 
 5. If you would like, you can enter a **Description** for the workspace. This is an optional field.
    
