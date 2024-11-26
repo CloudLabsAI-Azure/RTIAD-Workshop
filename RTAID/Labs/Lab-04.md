@@ -8,7 +8,7 @@
 - Introduction
 - Medallion Framework within KQL Databases
     - Task 1: Create Bronze Tables
-    - Task 2: Load Broze Tables using a Data Pipeline
+    - Task 2: Load Bronze Tables using a Data Pipeline
     - Task 3: Transform Tables in Silver Layer
     - Task 4: Create Gold Layer with Materialized Views
 - Fabric Lakehouse and OneLake Availability
