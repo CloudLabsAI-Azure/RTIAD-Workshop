@@ -52,24 +52,24 @@ By the end of this lab, you will have learned:
 
    ![](../media/Lab-02/get-started-1.png)
 
-5.  Select the **+ Connect data source** green button which should be in the upper right corner.
+4.  Select the **+ Connect data source** green button which should be in the upper right corner.
 
     ![A green and white sign Description automatically generated](../media/Lab-02/connect_datasource.png)
 
-6.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will Search for **Azure event hubs (1)** select it and click on **connect (2)**
+5.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will Search for **Azure event hubs (1)** select it and click on **connect (2)**
     
     ![](../media/Lab-02/azure_event-hubs.png)
 
-7. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**.
+6. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
    ![](../media/Lab-02/select-workspace.png)
    
-9.  You are now required to create a connection to the Azure Event Hub.Click on the **New connection** text since you do not currently have a connection.
+7.  You are now required to create a connection to the Azure Event Hub.Click on the **New connection** text since you do not currently have a connection.
 
     ![A screenshot of a computer](../media/Lab-02/image9.png)
     
 
-10. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+8. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
    
    - Event Hub namespace :
       ```
@@ -88,15 +88,15 @@ By the end of this lab, you will have learned:
      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
      ```
    
-11. Once all properties have been filled out click on **Connect**.
+9. Once all properties have been filled out click on **Connect**.
     
     ![A screenshot of a computer Description automaticallygenerated](../media/Lab-02/rtiad-ad.png)
 
-12. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data.For this workshop you can leave the "\$Default" value as shownbelow
+10. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data.For this workshop you can leave the "\$Default" value as shownbelow
     
     ![A screenshot of a computer](../media/Lab-02/image11-1.png)
 
- 13. Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
+ 11. Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
 
      ![A screenshot of a computer](../media/Lab-02/eventstream-01.png)
 
