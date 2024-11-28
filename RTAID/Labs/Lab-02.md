@@ -118,11 +118,11 @@ By the end of this lab, you will have learned:
 
     >**Note:** If you receive a "Warning" status around and audit policy,that is fine. The stream will still function
     
-    ![](../media/Lab-02/active-event.png)
+    ![](../media/Lab-02/esfab.png)
 
 17. You should now see a sample of the data within the bottom window.
 
-    ![A screenshot of a computer](../media/Lab-02/image17.png)
+    ![A screenshot of a computer](../media/Lab-02/esfab-02.png)
 
 18. This will show you a preview of the data that is being received from the Azure Event Hub. If you slide your bottom horizontal scroll bar all the way to the right-side of your preview, you will be able to see the time that the data has been received in the Event Hub in two columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time in UTC format.
 
@@ -175,11 +175,11 @@ By the end of this lab, you will have learned:
 
 9.  With the Eventstream configured, click on the **Publish** button to save this Eventstream and begin your ingestion.
 
-    ![A screenshot of a chat](../media/Lab-02/image25.png)
+    ![A screenshot of a chat](../media/Lab-02/esfab-03.png)
 
-10.  If you notice the AzureEventHub source has become inactive, switch the toggle to the **Active** state and choose the option **Now** when the dialog opens
+10.  If you notice the **eh_Fabrikam_es_InternetSales** (AzureEventHub) source has become inactive, switch the toggle to the **Active** state and choose the option **Now** when the dialog opens
 
-      ![A screenshot of a chat](../media/Lab-02/inactive-1-1.png)
+      ![A screenshot of a chat](../media/Lab-02/active-01-1.png)
 
       ![A screenshot of a chat](../media/Lab-02/active-1.png)
 
