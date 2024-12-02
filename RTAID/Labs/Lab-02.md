@@ -267,11 +267,11 @@ iv. Now you should be able to see a new destination is created with the Data pre
 
 7.  This overview will give you metadata details about the table you have created and any actively streaming data with your Eventstream.Again, the size of the table and the number of rows within the table are going to vary from student to student and will not affect your end results of this or any lab. A few additional items to call out on this menu include:
 
-- **Histogram** -- Shows number of rows ingested, time it was last generated and the interval of display
-- **Data Preview** -- Shows a preview of the table ingestion results.
-- **Schema** **Insights**-- This includes details about the column
-name and the data types of the column that can be queried with KQL.Also shows the Top 10 count for the values in the selected column
-- **Table Details** -- Shows Compressed and Original size of table,OneLake availability, number of rows in the tables and various other details
+- Data Activity Tracker – Shows number of rows ingested, time it was last generated and the interval of display
+- Data Preview – Shows a preview of the table ingestion results. 
+- Schema Insights– This includes details about the column name and the data types of the column that can be queried with KQL. Also shows the Top 10 count for the values in the selected column
+- Table Details –  Shows Compressed and Original size of table, OneLake availability, number of rows in the tables and various other details
+
 
     ![A screenshot of a computer](../media/Lab-02/image38.png)
 
