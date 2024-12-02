@@ -251,7 +251,7 @@ iv. Now you should be able to see a new destination is created with the Data pre
 
 3.  Within this experience, you can get an overview of the current structure, size, and use of the KQL Database. Because the Eventstream is sending data to this KQL Database consistently you will notice the amount of storage will increase over time.
 
-    ![A screenshot of a computer](../media/Lab-02/image34.png)
+    ![A screenshot of a computer](../media/Lab-02/image34-1.png)
 
 4.  Click on the **refresh icon** in the top-right corner of the screen.
 
