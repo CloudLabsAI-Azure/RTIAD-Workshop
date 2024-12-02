@@ -333,6 +333,8 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![A screenshot of a computer](../media/Lab-03/Picture5-28.png)
 
+30. If either the source or the two new destinations are set to inactive toggle them to be active.
+
 # Adding More Data to KQL Database
 
 ## Task 4: Validate Event Data Tables
