@@ -33,10 +33,7 @@ In this lab, you will learn how to leverage Data Activator to create a Reflex to
 
 ## Task 1: Use the Real-Time Dashboard to Set Alerts
 
-1.  Use the link [Fabric workspace homepage](https://app.fabric.microsoft.com/?experience=kusto&rtpPupr=1) to open the **Fabric workspace** home page for the course and select the Real-Time Dashboard you created in the last lab.
-
-    ![A screenshot of a computer Description automatically generated](../media/Lab-06/L6T1S1-12-11.png)
-    
+1. Open the **Fabric workspace** for the course and select the Real-Time Dashboard you created in the last lab.
     ![A screenshot of a computer Description automatically generated](../media/Lab-06/L6T1S1.1-1211.png)
 
 2.  On the **Click Through Rate** visual click on the ellipses (...) and select the option to **Set alert**.
