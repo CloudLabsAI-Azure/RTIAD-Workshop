@@ -351,11 +351,11 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
    
     ![A screenshot of a computer](../media/Lab-05/image61.png)
 
-3.  Click on the button in the Home ribbon called **New text tile**.
+2.  Click on the button in the Home ribbon called **New text tile**.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/Picture7-1.png)
 
-4.  Copy and paste the following markdown code within the query window.
+3.  Copy and paste the following markdown code within the query window.
    
     ```
     ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw=true "Fabrikam")
@@ -363,11 +363,11 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
     ![A screenshot of a computer](../media/Lab-05/image64.png)
 
-5. Apply the changes.
+4. Apply the changes.
 
-6. Resize and move the tile to fit somewhere within your Real-TimeDashboard. ![A screenshot of a computer](../media/Lab-05/image65.png)
+5. Resize and move the tile to fit somewhere within your Real-TimeDashboard. ![A screenshot of a computer](../media/Lab-05/image65.png)
 
-7. Save your changes.
+6. Save your changes.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-05/save.png)
 
