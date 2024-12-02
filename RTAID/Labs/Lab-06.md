@@ -130,7 +130,7 @@ In this lab, you will learn how to leverage Data Activator to create a Reflex to
 
 1.  This is the last lab and last part of Real-Time Analytics in a Day. If you have completed the lab and have no further questions or needs from the instructor on the content, please help us by deallocating the workspace. Navigate to the **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-06/image28-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-06/Picture8.png)
 
 2.  Click on the **Workspace Settings** in the top-right corner.
 
