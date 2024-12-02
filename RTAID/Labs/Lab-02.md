@@ -255,7 +255,7 @@ iv. Now you should be able to see a new destination is created with the Data pre
 
 4.  Click on the **refresh icon** in the top-right corner of the screen.
 
-    ![A screenshot of a phone](../media/Lab-02/image35.png)
+    ![A screenshot of a phone](../media/Lab-02/explore.png)
 
 5.  The size of the database should have grown. The value you see may not be exact in comparison to the screenshots in the remainder of the lab. Depending on how long you take to complete the content you will have received less or more records than other members of the class. This is completely fine and will not affect your ability to follow along whatsoever.
 
@@ -267,17 +267,17 @@ iv. Now you should be able to see a new destination is created with the Data pre
 
 7.  This overview will give you metadata details about the table you have created and any actively streaming data with your Eventstream.Again, the size of the table and the number of rows within the table are going to vary from student to student and will not affect your end results of this or any lab. A few additional items to call out on this menu include:
 
-- Data Activity Tracker – Shows number of rows ingested, time it was last generated and the interval of display
-- Data Preview – Shows a preview of the table ingestion results. 
-- Schema Insights– This includes details about the column name and the data types of the column that can be queried with KQL. Also shows the Top 10 count for the values in the selected column
-- Table Details –  Shows Compressed and Original size of table, OneLake availability, number of rows in the tables and various other details
+- **Data Activity Tracker** – Shows number of rows ingested, time it was last generated and the interval of display
+- **Data Preview** – Shows a preview of the table ingestion results. 
+- **Schema Insights**– This includes details about the column name and the data types of the column that can be queried with KQL. Also shows the Top 10 count for the values in the selected column
+- **Table Details** –  Shows Compressed and Original size of table, OneLake availability, number of rows in the tables and various other details
 
 
-    ![A screenshot of a computer](../media/Lab-02/image38.png)
+    ![A screenshot of a computer](../media/Lab-02/step-7.png)
 
-8.  Click on **Explore your data** in the top-right corner.
+8.  Click on **Query with code** in the top-right corner.
 
-    ![A white background with black text Description automatically generated](../media/Lab-02/explore_data.png)
+    ![A white background with black text Description automatically generated](../media/Lab-02/query.png)
 
 9.  This will open the default KQL Queryset that was created alongside the Eventhouse. There are a few pre-scripted queries that are already authored but need some slight customization. There are also two links to Microsoft documentation that can be helpful when learning KQL or also looking at SQL to KQL conversions which will be discussed later throughout this class.
 
