@@ -201,11 +201,9 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![](../media/Lab-03/image29-1.png)
 
-7.  These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams
-    to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events**
-    dropdown and then select **Filter**.
+7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
 
-    ![](../media/Lab-03/image30-1.png)
+    ![](../media/Lab-03/task3step-7.png)
 
 8.  A new object called **Filter1 (Name may differ)** will appear on your canvas. You will need to connect the **Managefields stream**
     to the new filter transformation. Drag a line from the green dot on one transform to another to make that connection.
@@ -333,7 +331,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 29. With the Eventstream now running, you should see the Eventstream user interface slightly change to signify that you are streaming the data from Event Hub transforming and splitting that data stream and loading it into two separate KQL Database tables.
 
-    ![A screenshot of a computer](../media/Lab-03/image47-1.png)
+    ![A screenshot of a computer](../media/Lab-03/Picture5-28.png)
 
 # Adding More Data to KQL Database
 
