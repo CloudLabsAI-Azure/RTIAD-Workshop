@@ -87,7 +87,14 @@ be adding to the KQL database By the end of this lab, you will have learned:
 
 9. Once all the properties have been filled out click on **Connect**.
 
+> **Note:** If the connection fails with the error "*Cannot convert undefined or null to object*" delete the connection using the steps below, and then repeat the process starting from Step 4.
+> 
+> i. Navigate to **Settings** and select **Manage Connections and Gateways**.
+> 
+> ii. Under **Connections**, click the three dots for more action options, and choose **Remove**.
+
 10. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. For this workshop you can leave the "\$Default" value as shown below
+
 
     ![A screenshot of a computer](../media/Lab-03/image12.png)
 

@@ -130,7 +130,7 @@ By the end of this lab, you will have learned:
 
 ## Task 2: Setup Eventstream Destination
 
-1.  Click on the tile within the canvas area labeled "Switch to edit mode to Transform event of add destination"
+1.  Click on the tile within the canvas area labeled "Switch to edit mode to Transform event of add destination".
     
     ![A screenshot of a computer](../media/Lab-02/image19.png)
 
@@ -209,33 +209,33 @@ By the end of this lab, you will have learned:
 
     ![A screen shot of a computer](../media/Lab-02/image31.png)
 
-    >**Note:** Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps -
+    >**Note:** Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps-
 
-i. Go to your destination KQL database
+    i. Go to your destination KQL database
 
-   ![A screenshot of a chat](../media/Lab-02/blur.png)
+    ![A screenshot of a chat](../media/Lab-02/blur.png)
 
-ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
+    ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
 
-   ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
+    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
 
-iii. Select the InternetSales table and Select the following configurations from the drop-down :
+    iii. Select the InternetSales table and Select the following configurations from the drop-down:
     
-  - Workspace :
-     ```
-     RTI_<inject key="DeploymentID" enableCopy="false"/>
-     ```
+     - Workspace :
+        ```
+         RTI_<inject key="DeploymentID" enableCopy="false"/>
+         ```
      
-  - Eventstream Name :
-     ```
-     es_Fabrikam_InternetSales
-     ```
+     - Eventstream Name :
+        ```
+        es_Fabrikam_InternetSales
+        ```
   
-  - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
+     - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
 
      ![A screenshot of a chat](../media/Lab-02/internet-01.png)
 
-iv. Now you should be able to see a new destination is created with the Data preview visible in it.
+    iv. Now you should be able to see a new destination is created with the Data preview visible in it.
     
 # Kusto Query Language (KQL)
 
@@ -261,7 +261,7 @@ iv. Now you should be able to see a new destination is created with the Data pre
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image36.png)
 
-6.  Within the database navigation area on the left-hand side of the screen, click on the table within your KQL Database called **InternetSales** and you will see an overview of the table
+6.  Within the database navigation area on the left-hand side of the screen, click on the table within your KQL Database called **InternetSales** and you will see an overview of the table.
 
     ![A screenshot of a computer](../media/Lab-02/image37.png)
 
@@ -319,12 +319,13 @@ You may be working with the Kusto Query Language for the first time. While this 
 Let's explore!
 
 1. You need to create a query that returns the number of each product that has been sold. This is something you can quickly do with T-SQL.Within the query window, you can translate your SQL queries into KQL to better understand how to author KQL queries in the future. Start with writing the following command.
+
     ```
     --
     explain
     ```
 
-3. The comment line "\--" followed by the keyword "explain" will allow you to now create a SQL query and return a result with the KQL query that could be used to achieve a similar query and result. Below input the following query to explain what the KQL query would look like:
+2. The comment line "\--" followed by the keyword "explain" will allow you to now create a SQL query and return a result with the KQL query that could be used to achieve a similar query and result. Below input the following query to explain what the KQL query would look like:
     ```
      --
      explain
@@ -334,33 +335,33 @@ Let's explore!
      GROUP BY ProductKey
     ```
 
-4. This is a simple SQL query that will retrieve results from the InternetSales table to return two columns, the product key and a count of the number of orders. Because there is an aggregated column and a non-aggregated column, you must use a GROUP BY to return results for each individual product. Run the entire query beginning with the "\--" to the end of the T-SQL query.
+3. This is a simple SQL query that will retrieve results from the InternetSales table to return two columns, the product key and a count of the number of orders. Because there is an aggregated column and a non-aggregated column, you must use a GROUP BY to return results for each individual product. Run the entire query beginning with the "\--" to the end of the T-SQL query.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image52.png)
 
-5.  The output of the explain query should be a single record with the translated KQL query as the result. Click on the **caret icon (\>)** to expand the results and allow for easier translation.
+4.  The output of the explain query should be a single record with the translated KQL query as the result. Click on the **caret icon (\>)** to expand the results and allow for easier translation.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image53.png)
 
-    >**Note**: If you can't see the output code, maximize the screen by dragging the white section down.
+5.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using.
 
-6.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using
+    >**Note**: If you can't see the output code, maximize the screen by dragging the white section down.
 
     ![A screenshot of a computer](../media/Lab-02/image54.png)
 
-7.  With the results in your query pane, highlight and run the query to retrieve the results. The **summarize** operator will produce a table that aggregates the content of the input table while determining how to group each record with the **by Product Key** and the **project** operator will select the columns to include, rename,or drop while inserting new compute columns.
+6.  With the results in your query pane, highlight and run the query to retrieve the results. The **summarize** operator will produce a table that aggregates the content of the input table while determining how to group each record with the **by Product Key** and the **project** operator will select the columns to include, rename,or drop while inserting new compute columns.
 
     ![A screenshot of a computer](../media/Lab-02/image55.png)
 
-8.  Feel free to explore a complete list of SQL to KQL cheat sheet operations at the top of your queryset for additional capabilities and conversions.
+7.  Feel free to explore a complete list of SQL to KQL cheat sheet operations at the top of your queryset for additional capabilities and conversions.
 
     ![A close-up of a message Description automatically generated](../media/Lab-02/image56.png)
 
-9.  Instead of using KQL, another alternative to querying the results of the KQL Database within Fabric is to write and run a T-SQL query.Highlight the original SQL statement that was used to translate the KQL query and run only that.
+8.  Instead of using KQL, another alternative to querying the results of the KQL Database within Fabric is to write and run a T-SQL query.Highlight the original SQL statement that was used to translate the KQL query and run only that.
 
     ![A screenshot of a computer code](../media/Lab-02/image57.png)
 
-10.  This will also yield perfectly valid results without having to onvert to KQL beforehand.
+9.  This will also yield perfectly valid results without having to onvert to KQL beforehand.
 
      ![A screenshot of a computer Description automatically generated](../media/Lab-02/image58.png)
 
