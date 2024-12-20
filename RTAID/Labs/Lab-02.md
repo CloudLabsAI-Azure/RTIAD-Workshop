@@ -120,7 +120,7 @@ By the end of this lab, you will have learned:
 
 ## Task 2: Setup Eventstream Destination
 
-1.  Click on the tile within the canvas area labeled "Switch to edit mode to Transform event of add destination"
+1.  Click on the tile within the canvas area labeled "Switch to edit mode to Transform event of add destination".
     
     ![A screenshot of a computer](../media/Lab-02/image19.png)
 
@@ -185,9 +185,9 @@ By the end of this lab, you will have learned:
 
     ![A screen shot of a computer](../media/Lab-02/image31.png)
 
-16. Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps -
+16. Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps-
 
-    i. Go to your destination KQL database
+    i. Go to your destination KQL database.
 
     ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround1.png)
 
@@ -195,13 +195,13 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
 
-    iii. Select the InternetSales table and give the give the following configurations -
+    iii. Select the InternetSales table and give the give the following configurations-
 
        Workspace - **RTI_username**
 
        Eventstream Name - **es_Fabrikam_InternetSales**
 
-       Data connectioin name - **give any name**
+       Data connection name - **give any name**
 
       Then click on **Next**, **Finish** and **Close** in the next tabs.
 
@@ -233,7 +233,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image36.png)
 
-6.  Within the database navigation area on the left-hand side of the screen, click on the table within your KQL Database called **InternetSales** and you will see an overview of the table
+6.  Within the database navigation area on the left-hand side of the screen, click on the table within your KQL Database called **InternetSales** and you will see an overview of the table.
 
     ![A screenshot of a computer](../media/Lab-02/image37.png)
 
@@ -292,7 +292,7 @@ Let's explore!
 
 1.  You need to create a query that returns the number of each product that has been sold. This is something you can quickly do with T-SQL.Within the query window, you can translate your SQL queries into KQL to better understand how to author KQL queries in the future. Start with writing the following command.
 
-    **Note:** Double click the object below in order to be able to copy the text
+    **Note:** Double click the object below in order to be able to copy the text.
 
     ```
     --
@@ -318,7 +318,7 @@ Let's explore!
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image53.png)
 
-6.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using
+6.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using.
 
     ![A screenshot of a computer](../media/Lab-02/image54.png)
 
@@ -356,7 +356,7 @@ Let's explore!
     
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image61.png)
 
-5.  Return to your **RTI_username** workspace. You should have the following objects present
+5.  Return to your **RTI_username** workspace. You should have the following objects present.
 
     ![A screenshot of a computer](../media/Lab-02/image62.png)
 
