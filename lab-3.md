@@ -77,10 +77,24 @@ By the end of this lab, you will have learned:
 7. From your environment details page, copy and paste all the necessary
    connection settings into the appropriate fields.
 
-    - Event Hub namespace: **rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>**
-    - Event Hub: **rti-iad-clicks**
-    - Shared Access Key Name: **rti-reader**
-    - Shared Access Key: <inject key="rti-iad-clicks Primary Key"></inject>
+    - Event Hub namespace:
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>
+      ```
+    - Event Hub:
+      ```
+      rti-iad-clicks
+      ```
+    - Shared Access Key Name:
+  
+      ```
+      rti-reader
+      ```
+    - Shared Access Key:
+      
+       ```
+      <inject key="rti-iad-clicks Primary Key"></inject>
+       ```
   
   >**Note**: You can also copy the shared access primary key from environment tab
 

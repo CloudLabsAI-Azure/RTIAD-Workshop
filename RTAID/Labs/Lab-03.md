@@ -38,43 +38,54 @@ be adding to the KQL database By the end of this lab, you will have learned:
 
 ## Task 1: Create an Eventstream 
 
-1.  Open the **Fabric workspace** you have been using for the course today.
+1. Open the **Fabric workspace** you have been using for the course today.
 
     ![A screenshot of a computer](../media/Lab-03/image5.png)
 
-2.  There is additional streaming data for us to Ingest related to our e-commerce store. For this Eventstream though we will want to transform the data prior to loading it into the Eventhouse. Instead of going to the **"Real-Time Hub"** we can create a new Eventstream directly from the workspace. From the **+ New** menu, create a new **Eventstream**.
+2. There is additional streaming data for us to Ingest related to our e-commerce store. For this Eventstream though we will want to transform the data prior to loading it into the Eventhouse. Instead of going to the **"Real-Time"** we can create a new Eventstream directly from the workspace. Click on **+ New Item** from the workspace page menu, search for 'Eventstream,' and create a new **Eventstream**.
 
     ![A screenshot of a computer](../media/Lab-03/image6.png)
 
-3.  Give the new Eventstream the name, **es_Fabrikam_ClickEvents**, Check the **"Enhanced Capabilities"** option, and then click on **Create**.
+3.  Give the new Eventstream the name, **es_Fabrikam_ClickEvents**, and then click on **Create**.
 
-    ![A screenshot of a computer](../media/Lab-03/image7.png)
+    ![A screenshot of a computer](../media/Lab-03/create-fab.png)
 
 4.  Under the Home ribbon, click on the **Add source** dropdown and then select **External sources**.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-03/image8-1.png)
 
-5. Similarly to the previous lab we will be connecting to an Azure event Hub which has data being streamed to from a python notebook. Click on the **"Azure Event Hubs"** tile.
+5. Similarly to the previous lab we will be connecting to an Azure event Hub which has data being streamed to from a python notebook. Select the **"Azure Event Hubs"** tile and click on **connect**.
 
-   ![A screenshot of a web page Description automatically generated](../media/Lab-03/image9-1.png)
+   ![A screenshot of a web page Description automatically generated](../media/Lab-03/eventhubs.png)
+
+ >**Note**:If you do not see “Azure Event Hubs” in the recommended section, then select “View all source” to discover it.
 
 6.  Create a **New connection**.
 
     ![A screenshot of a computer](../media/Lab-03/image10.png)
 
-7.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields.
+7. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields.
 
-   - Event Hub namespace: **rtiadhub<inject key="DeploymentID" enableCopy="false"/>**
+ - Event Hub namespace :
+     ```
+     rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+     ```
+ - Event Hub :
+     ```
+     rti-iad-clicks
+     ```
+ - Shared Access Key Name :
+     ```
+     rti-reader
+     ```
+ - Shared Access Key :
+     ```
+    <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
+     ```
 
-   - Event Hub: **rti-iad-clicks**
+   ![A screenshot of a computer Description automatically generated](../media/Lab-03/clicks.png)
 
-   - Shared Access Key Name: **rti-reader**
-
-   - Shared Access Key: <inject key="rti-iad-clicks Primary Key"></inject>
-     
-     ![A screenshot of a computer Description automatically generated](../media/Lab-03/image11-1.png)
-
-8.  Once all the properties have been filled out click on **Connect**.
+9. Once all the properties have been filled out click on **Connect**.
 
 > **Note:** If the connection fails with the error "*Cannot convert undefined or null to object*" delete the connection using the steps below, and then repeat the process starting from Step 4.
 > 
@@ -82,22 +93,22 @@ be adding to the KQL database By the end of this lab, you will have learned:
 > 
 > ii. Under **Connections**, click the three dots for more action options, and choose **Remove**.
 
+10. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. For this workshop you can leave the "\$Default" value as shown below
 
-9.  In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. For this workshop you can leave the "\$Default" value as shown below
 
     ![A screenshot of a computer](../media/Lab-03/image12.png)
 
-10. Click on **Next**.
+11. Click on **Next**.
 
-11. On the review and create window, verify that everything is configured correctly and click **Add**.
+12. On the review and create window, verify that everything is configured correctly and click **Add**.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-03/image13.png)
 
-12. Once the stream is configured, you will be able to see a preview of the data coming from the Event Hub.
+13. Once the stream is configured, you will be able to see a preview of the data coming from the Event Hub.
 
     ![A table of numbers and numbers Description automatically generated](../media/Lab-03/image14-1.png)
 
-13. Examine the data being received. There are two types of events that are logged from the e-commerce website, click and impressions.
+14. Examine the data being received. There are two types of events that are logged from the e-commerce website, click and impressions.
 
 -   **IMPRESSION** - An impression event is recorded each time an advertisement or a product listing is displayed to a user.Impressions are a measure of how many times an item (ad or product) is viewed, regardless of whether it is interacted with.
 
@@ -119,19 +130,19 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![A screenshot of a search box Description automatically generated](../media/Lab-03/image16-1.png)
 
-3.  On the new icon that appears called **Manage_fields1** click on the **pencil icon** to select what fields you wish to add to your stream
+3.  On the new icon that appears called **Managefields** click on the **pencil icon** to select what fields you wish to add to your stream
     from the source.
 
-    ![A screen shot of a computer Description automatically generated](../media/Lab-03/image17-1.png)
+    ![A screen shot of a computer Description automatically generated](../media/Lab-03/manage-1.png)
 
 4.  In the flyout pane that appears, click on the button the option to **Add all fields**.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image18-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-03/manage-2.png)
 
 5.  From the list of fields, select the one called **PartitionId** and click on the ellipses (...) that appears when you hover over the
     field
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image19-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-03/manage-3.png)
 
 6.  Choose the option to **Remove** that field. For this stream of data coming from the Event Hub, partitioning is not being used so this
     column is not helpful to us, thus we are removing it.
@@ -140,17 +151,17 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 7.  Remove all the following fields that will not be needed for this stream.
 
--   userAgent
+      -   userAgent
 
--   page_loading_seconds
+      -   page_loading_seconds
 
--   EventProcessedUtcTime
+      -   EventProcessedUtcTime
 
--   EventEnqueredUtcTime
+      -   EventEnqueredUtcTime
 
-  You should be left with the following fields in the image below.
+    You should be left with the following fields in the image below.
 
-  ![A screenshot of a computer](../media/Lab-03/image21.png)
+    ![A screenshot of a computer](../media/Lab-03/manage-4.png)
 
 8. Hover over the eventDate field and when an ellipses (...) appears on the right-hand side of the window, click it.
 
@@ -169,13 +180,13 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 1.  While you could load this stream of data to a KQL Database for analysis, you may want to have another way to consume this data to
     differentiate CLICK events and IMPRESSION events. Add another transformation activity to the user interface by hovering over the
-    end of the **Manage_Fields1** transform
+    end of the **ManageFields** transform
 
-    ![A screen shot of a computer screen Description automatically generated](../media/Lab-03/image25-1.png)
+    ![A screen shot of a computer screen Description automatically generated](../media/Lab-03/manage-add.png)
 
 2.  Choose the **Filter** transform from the available list of operations.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image26-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-03/manage-add-1.png)
 
 3.  Click on the **pencil icon** on the new transformation, **Filter1**.
 
@@ -183,13 +194,13 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
 4.  In the flyout that appears on the right-hand side of the screen, customize the filter conditions to reflect a way to only return CLICK values by using the settings below. It is important to note that the Filter transform is case sensitive
 
-    -   **Operation name** - Clicks
+      -   **Operation name** - Clicks
     
-    -   **Select a field to filter on** - eventType
+      -   **Select a field to filter on** - eventType
     
-    -   **Keep events when the value** - equals -- CLICK **(Important! This is a case sensitive field, ensure to input in all capitals for this example)**
+      -   **Keep events when the value** - equals -- CLICK **(Important! This is a case sensitive field, ensure to input in all capitals for this example)**
 
-        ![](../media/Lab-03/image28-1.png)
+          ![](../media/Lab-03/image28-1.png)
 
 5.  Choose the **Save** option to keep your changes.
 
@@ -197,16 +208,14 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![](../media/Lab-03/image29-1.png)
 
-7.  These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams
-    to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events**
-    dropdown and then select **Filter**.
+7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
 
-    ![](../media/Lab-03/image30-1.png)
+    ![](../media/Lab-03/task3step-7.png)
 
-8.  A new object called **Filter1 (Name may differ)** will appear on your canvas. You will need to connect the **Manage_fields1 stream**
+8.  A new object called **Filter1 (Name may differ)** will appear on your canvas. You will need to connect the **Managefields stream**
     to the new filter transformation. Drag a line from the green dot on one transform to another to make that connection.
 
-    ![A screenshot of a computer](../media/Lab-03/image31.png)
+    ![A screenshot of a computer](../media/Lab-03/manage-final.png)
    
 9.  Click on the **pencil icon** for **Filter2** to edit its settings.
 
@@ -215,11 +224,11 @@ device and browser the webpage was loaded from, and what IP address accessed the
 10. In the flyout that appears on the right-hand side of the screen, customize the filter conditions to reflect a way to only return
     IMPRESSION values by using the values below. Remember that the Filter transform is case sensitive
 
-    -   **Operation name** - Impressions
+      -   **Operation name** - Impressions
     
-    -   **Select a field to filter on** - eventType
+      -   **Select a field to filter on** - eventType
     
-    -   **Keep events when the value** - equals -- IMPRESSION **(Important!
+      -   **Keep events when the value** - equals -- IMPRESSION **(Important!
         This is a case sensitive field, ensure to input in all capitals for
         this example)**
 
@@ -228,7 +237,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 11. Choose the **Save** option to keep your changes.
 
 12. Before we load the data into new tables within our KQL Database we can remove additional columns which are not needed. In this case for
-    the stream of data which is filtered for our "CLICK" records we no longer need the "eventType" column since every row holds the same
+    the stream of data which is filtered for our **CLICK** records we no longer need the "eventType" column since every row holds the same
     value. For our "IMPRESSION" stream of data we can remove the "eventType" column for the same reasons mentioned above and we can
     also remove the "referrer" column as it is empty for every row in this table.
 
@@ -236,7 +245,7 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![A white board with writing on it Description automatically generated](../media/Lab-03/image34-1.png)
 
-14. In the dropdown menu select "Manage fields"
+14. In the dropdown menu select **Manage fields**.
 
     ![](../media/Lab-03/image35.png)
 
@@ -244,22 +253,22 @@ device and browser the webpage was loaded from, and what IP address accessed the
     
     ![A white rectangular sign with black text Description automatically generated](../media/Lab-03/image36.png)
 
-16. Rename the operation to "Manage_Clicks". As well select "Add all
-    fields" then remove "eventType". Once done click **Save**.
+16. Rename the operation to **Manage_Clicks**. As well select **Add all
+    fields** then remove **eventType**. Once done click **Save**.
 
     ![A screenshot of a computer](../media/Lab-03/image37.png)
 
-17. Next, let's add another "Manage fields" transform connected to the
-    "Impressions" filter as seen below 
+17. Next, let's add another **Manage fields** transform connected to the
+    **Impressions** filter. 
 
     ![A rectangle with a rectangle with](../media/Lab-03/image38.png)
 
-18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream
+18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
     
     ![A white card with a pen and a red box Description automatically generated](../media/Lab-03/image39.png)
 
-19. Rename the operation to "Manage_Impressions". Then select "Add all fields" then remove "eventType" and "referrer". Your "Manage fields"
-    transform should look like the following:
+19. Rename the operation to **Manage_Impressions**. Then select **Add all fields** then remove **eventType** and **referrer**. Your **Manage fields**
+    transform should look like the following and save it.
 
     ![A screenshot of a computer](../media/Lab-03/image40.png)
 
@@ -276,41 +285,68 @@ device and browser the webpage was loaded from, and what IP address accessed the
 
     ![A white sign with black text Description automatically generated](../media/Lab-03/image43.png)
 
-23. For this destination, configure the following properties.
+23. Configure the following properties for this destination and select the details from the dropdown.
+    - **Destination name** :
+       ```
+       dbo-Clicks
+       ```
+    - **Workspace** :
+        ```
+        RTI_<inject key="DeploymentID" enableCopy="false"/>
+        ```
+    - **Eventhouse** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Database** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Destination Table** - Create a new table called **Clicks**
 
-    -   **Destination name** -- dbo-Clicks
-    
-    -   **Workspace** - RTI_username
-    
-    -   **Eventhouse** -- eh_Fabrikam
-    
-    -   **KQL Database** - eh_Fabrikam
-    
-    -   **Destination Table** - Create a new table called **Clicks**
-
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image44.png)
+        ![A screenshot of a computer Description automatically generated](../media/Lab-03/dbo-clicks.png)
 
 24. Click on **Save** at the bottom of the flyout.
 
-25. Do the same thing for the Impressions table with the following information configured as below.
+25. Configure the following properties for this destination and select the details from the dropdown.
 
-    ![A screenshot of a computer](../media/Lab-03/image45.png)
+    - **Destination name** :
+       ```
+       dbo-Impressions
+       ```
+    - **Workspace** :
+        ```
+        RTI_<inject key="DeploymentID" enableCopy="false"/>
+        ```
+    - **Eventhouse** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Database** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Destination Table** - Create a new table called **Impressions**
 
-26. Save your changes.
+        ![A screenshot of a computer](../media/Lab-03/dbo-imp.png)
 
-27. This Eventstream is now ready to begin streaming. Click on **Publish** to begin that stream.
+27. Save your changes.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image46.png)
+28. This Eventstream is now ready to begin streaming. Click on **Publish** to begin that stream.
 
-28. With the Eventstream now running, you should see the Eventstream user interface slightly change to signify that you are streaming the data from Event Hub transforming and splitting that data stream and loading it into two separate KQL Database tables.
+    ![A screenshot of a computer Description automatically generated](../media/Lab-03/publish-1.png)
 
-    ![A screenshot of a computer](../media/Lab-03/image47.png)
+29. With the Eventstream now running, you should see the Eventstream user interface slightly change to signify that you are streaming the data from Event Hub transforming and splitting that data stream and loading it into two separate KQL Database tables.
+
+    ![A screenshot of a computer](../media/Lab-03/Picture5-28.png)
+
+30. If either the source or the two new destinations are set to inactive toggle them to be active.
 
 # Adding More Data to KQL Database
 
 ## Task 4: Validate Event Data Tables
 
-1.  Return to your **RTI_username** workspace.
+1.  Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
 2.  Open the **eh_Fabrikam** KQL Database.
 
@@ -340,7 +376,7 @@ support this is currently in an external Azure SQL Database, let's see how easy 
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-03/image52-1.png)
 
-3.  The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.\
+3.  The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
 
     ![A screenshot of a chat](../media/Lab-03/image53.png)
 
@@ -361,7 +397,7 @@ support this is currently in an external Azure SQL Database, let's see how easy 
     kind=sql
     table=[SalesLT.Product]
     ( 
-    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
     with 
     (
@@ -372,7 +408,8 @@ support this is currently in an external Azure SQL Database, let's see how easy 
     kind=sql
     table=[SalesLT.ProductCategory]
     ( 
-     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+     h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
     with 
     (
     createifnotexists = true
@@ -380,7 +417,7 @@ support this is currently in an external Azure SQL Database, let's see how easy 
 
       ```
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-03/image56-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-03/P4T5S5.png)
 
 6.  Click the **Run** button to execute the script.
 
@@ -392,7 +429,7 @@ support this is currently in an external Azure SQL Database, let's see how easy 
 
     ![A screenshot of a search box](../media/Lab-03/image58.png)
 
-10. Now that you have dimensional qualities to your database, you can answer questions and give more context to consumers of the reports
+8. Now that you have dimensional qualities to your database, you can answer questions and give more context to consumers of the reports
     and queries these tables off insights on across your business. Run the following KQL query to see one of them.
 
       ```
@@ -420,7 +457,7 @@ support this is currently in an external Azure SQL Database, let's see how easy 
 
 12. Navigate back to the **eh_Fabrikam** KQL Database.
 
-    ![A screenshot of a computer](../media/Lab-03/image63.png)
+    ![A screenshot of a computer](../media/Lab-03/blur.png)
 
 13. Click on the **Shortcuts** option within the **eh_Fabrikam** navigation pane. This will show you all the shortcuts you havecreated to this KQL Database. It should be noted that these Shortcuts are considered classical Azure Data Explorer externaltables using Azure SQL external table syntax and are constructed differently than OneLake, ADLS, or S3 shortcuts which are also supported in KQL Database within Fabric.
 

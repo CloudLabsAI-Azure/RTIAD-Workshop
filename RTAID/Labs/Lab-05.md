@@ -46,7 +46,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 2.  Click on the **+ New** **Item** button to create a new item.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image6.png)  
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/new_item-1.png)  
 
 3.  You will see a category for **Visualize Data**. Click on the item called **Real-Time Dashboard**.
 
@@ -64,7 +64,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 1.  Under the Home ribbon find the option called **New data source** and click it.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image10-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/new_datasource.png)
     
 2.  In the flyout pane that appears on the right-hand side of the screen, click on **Add +** and then choose **OneLake data hub**.
 
@@ -81,12 +81,12 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 5.  You will now be able to create the data source. Click on the **Add** button at the bottom of the flyout pane.
 
-    ![A screenshot of a computer](../media/Lab-05/image14.png)
+    ![A screenshot of a computer](../media/Lab-05/P6L5T1S5.png)
 
 6.  You will now see that one data source has been added to the Real-Time Dashboard. From here you could add additional KQL
     Databases should the need arise. For now, click on **Close** at the bottom of the window.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image15.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/eh-fabrikam.png)
 
 ## Task 3: Create a Real-Time Dashboard Tile with KQL
 
@@ -168,7 +168,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 1.  From the **Home ribbon** in the Real-Time Dashboard click on the **New tile** button.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image31-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
 
 2.  Enter the following KQL query into the query pane.
 
@@ -220,6 +220,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
       imp  
       | join clck on $left.dateOnly == $right.dateOnly 
       | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+      | sort by selected_date asc
 
       ```
 
@@ -232,13 +233,13 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 11. When the visual settings appear modify the following settings to
     create a count of Impressions.
 
--   **Tile name** - Impressions
+    -   **Tile name** - Impressions
 
--   **Visual type** - Stat
+    -   **Visual type** - Stat
 
--   **Value column** - impressions (long)
+    -   **Value column** - impressions (long)
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image40-1.png)
+      ![A screenshot of a computer Description automatically generated](../media/Lab-05/image40-1.png)
 
 12. Choose **Apply changes** when all settings are configured appropriately.
 
@@ -271,13 +272,13 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 20. If the tiles are separated or you wish to reorganize them, you can hover over the tile until a hand icon appears and drag and drop the
     visual where you wish.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image47-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/P6L5T4S20.png)
 
 ## Task 5: Add Map Visual for Impressions by Location
 
 1.  Add a **New tile** to the Real-Time Dashboard.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image48-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/new-tile.png)
 
 2.  Copy and paste the following query into the query pane. This query extracts the latitude and longitude from the Ip address column from
     this data stream to generate a location that you can plot on a map.This query can take a little bit more time than the previous ones.
@@ -317,13 +318,13 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 9.  Save your changes.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image55-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/save.png)
 
 ## Task 6: Setup Auto Refresh on the Real-Time Dashboard
 
 1.  Click on the **Manage ribbon** and then select the option **Auto Refresh**.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image56-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/auto-refresh.png)
 
 2.  Turn on the toggle to enable **Auto Refresh**.
 
@@ -350,11 +351,11 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
    
     ![A screenshot of a computer](../media/Lab-05/image61.png)
 
-3.  Click on the button in the Home ribbon called **New text tile**.
+2.  Click on the button in the Home ribbon called **New text tile**.
 
-    ![A screenshot of a phone Description automatically generated](../media/Lab-05/image62-1.png)
+    ![A screenshot of a phone Description automatically generated](../media/Lab-05/Picture7-1.png)
 
-4.  Copy and paste the following markdown code within the query window.
+3.  Copy and paste the following markdown code within the query window.
    
     ```
     ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw=true "Fabrikam")
@@ -362,19 +363,19 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
     ![A screenshot of a computer](../media/Lab-05/image64.png)
 
-5. Apply the changes.
+4. Apply the changes.
 
-6. Resize and move the tile to fit somewhere within your Real-TimeDashboard. ![A screenshot of a computer](../media/Lab-05/image65.png)
+5. Resize and move the tile to fit somewhere within your Real-TimeDashboard. ![A screenshot of a computer](../media/Lab-05/image65.png)
 
-7. Save your changes.
+6. Save your changes.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image55-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/save.png)
 
 ## Optional Task 8: Apply Conditional Formatting to Visual
 
 1.  Click on the **pencil icon** on the **Click Through Rate** visual.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image66-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/P6L5T8S1.png)
 
 2.  At the bottom of the visual formatting pane, click on the **+ Add rule** button underneath **Conditional formatting**.
 
@@ -394,7 +395,7 @@ to create a Real-Time Dashboard for visualizing and sharing your insights from t
 
 6.  Click the **Save** button within the Conditional formatting pane.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-05/image71-1.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-05/P6L5T8S6.png)
 
 7.  Apply the changes.
 

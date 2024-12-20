@@ -8,7 +8,7 @@
 - Introduction
 - Medallion Framework within KQL Databases
     - Task 1: Create Bronze Tables
-    - Task 2: Load Broze Tables using a Data Pipeline
+    - Task 2: Load Bronze Tables using a Data Pipeline
     - Task 3: Transform Tables in Silver Layer
     - Task 4: Create Gold Layer with Materialized Views
 - Fabric Lakehouse and OneLake Availability
@@ -40,7 +40,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image5.png)
 
-2. Within this KQL Queryset lets rename the original tab that we have here from "eh_Fabrikam" to "Create External Tables" making it easier to organize and understand what we have in this Queryset.
+2. Within this KQL Queryset lets rename the original tab that we have here from "**eh_Fabrikam**" to "**Create External Tables**" making it easier to organize and understand what we have in this Queryset.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image6.png)
 
@@ -50,17 +50,16 @@ By the end of this lab, you will have learned:
 
 4. Within this new tab, paste and highlight the following code and select "Run" to create four new tables that will serve as your Bronze Layer of the Medallion Framework.
 
-```
-//BRONZE LAYER
-.execute database script <|
-
-.create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
-.create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
-.create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
-.create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
-
-```
-![A blue screen with black text Description automatically generated](../media/Lab-04/image9.png)
+    ```
+    //BRONZE LAYER
+    .execute database script <|
+    .create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
+    .create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
+    .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
+    .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
+    
+    ```
+    ![A blue screen with black text Description automatically generated](../media/Lab-04/P5L4T1S2.png)
 
 5. Once that executes you should immediately see four new tables created within your Database Object Explorer.
 
@@ -88,11 +87,11 @@ By the end of this lab, you will have learned:
     
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image13.png)
 
-8. The four new tables are blank tables with their schema defined. Now you need a way to properly load these tables. Navigate back to your workspace **RTI_username**.
+8. The four new tables are blank tables with their schema defined. Now you need a way to properly load these tables. Navigate back to your workspace **RTI_<inject key="DeploymentID" enableCopy="false"/>**.
 
 ## Task 2: Load Broze Tables using a Data Pipeline
 
-1. From the workspace select the "+ New Item" option to bring up the selection pane. Then find and select the option called **Data pipeline**.
+1. From the workspace select the "**+ New Item**" option to bring up the selection pane. Then find and select the option called **Data pipeline**.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image14.png)
 
@@ -112,12 +111,24 @@ By the end of this lab, you will have learned:
 
 6. You will need to input the connection details of the database. Follow using the information in your environment or as below.
 
-    - Server: `fabrikamdemo.database.windows.net`
-    -  Database : `fabrikamdb`
-    -  Username : `demouser`
-    -  Passowrd : `fabrikam@123456`
+  - Server:
+      ```
+      fabrikamserverdb.database.windows.net
+      ``` 
+  -  Database :
+      ```
+      fabrikamdb
+      ```
+  -  Username :
+      ```
+      demouser
+      ```
+  -  Password :
+       ```
+       fabrikam@1234567
+       ```
 
-        ![A screenshot of a computer](../media/Lab-04/image18.png)
+     ![A screenshot of a computer](../media/Lab-04/creds-db.png)
 
 7. Click **Next** when everything has been filled out.
 
@@ -146,7 +157,7 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image22.png)
 
-14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and **SalesLT.SalesOrderHeader**. No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
+14. 14.	Follow the same steps as Step 12-13 for the tables **SalesLT.Custome**r, **SaleLT.SalesOrderDetail**, and **SalesLT.SalesOrderHeade**r.  No column mappings will need to be performed so simply match up the table names.  Once all tables have been appropriately mapped, click on **Next**.
 
 15. The final page using the Copy Data Assistant is an overview page to verify all the settings you've selected. Ensure that your source number of tables and destination number of tables are the same.
 
@@ -165,11 +176,10 @@ By the end of this lab, you will have learned:
 19. Let's go and check one of our tables and verify the data. Navigate back to the KQL Queryset we have been using called **Create Tables** and ensure you are in the **Bronze Layer** tab and run the following script.
 
      ```
-    //Query the Bronze layer Customer table
-    Customer
-    | take 100
-    ```
-
+     //Query the Bronze layer Customer table
+     Customer
+     | take 100
+     ````
 
 20. You should see some data like the image below, but it may not be exact.
 
@@ -177,27 +187,22 @@ By the end of this lab, you will have learned:
 
 ## Task 3: Transform Tables in Silver Layer
 
-1. Now that the Bronze tables are loaded we will create a new tab within our KQL Queryset called "Silver Layer".
+1. Now that the Bronze tables are loaded we will create a new tab within our KQL Queryset called "**Silver Layer**".
 
    ![A screenshot of a computer](../media/Lab-04/image29.png)
 
-3. Run the following KQL script within the "Silver Layer" tab to create four new tables that will serve as the Silver Layer of the Medallion Framework.
+2. Run the following KQL script within the "**Silver Layer**" tab to create four new tables that will serve as the Silver Layer of the Medallion Framework.
 
-```
-//SILVER LAYER
-
-.execute database script <|
-
-.create table [SilverAddress](AddressID:int, AddressLine1:string, AddressLine2:string, City:string, StateProvince:string, CountryRegion:string, PostalCode:string, rowguid:guid, ModifiedDate:datetime, IngestionDate:datetime)
-
-.create table [SilverCustomer](CustomerID:int, NameStyle:string, Title:string, FirstName:string, MiddleName:string, LastName:string, Suffix:string, CompanyName:string, SalesPerson:string, EmailAddress:string, Phone:string, ModifiedDate:datetime, IngestionDate:datetime)
-
-.create table [SilverSalesOrderHeader](SalesOrderID:int, OrderDate:datetime, DueDate:datetime, ShipDate:datetime, ShipToAddressID:int, BillToAddressID:int, SubTotal:decimal, TaxAmt:decimal, Freight:decimal, TotalDue:decimal, ModifiedDate:datetime, DaysShipped:long, IngestionDate:datetime)
-
-.create table [SilverSalesOrderDetail](SalesOrderID:int, SalesOrderDetailID:int, OrderQty:int, ProductID:int, UnitPrice:decimal, UnitPriceDiscount:decimal, LineTotal:decimal, ModifiedDate:datetime, IngestionDate:datetime)
-
-
-```
+    ```
+    //SILVER LAYER
+        
+    .execute database script <|
+    .create table [SilverAddress](AddressID:int, AddressLine1:string, AddressLine2:string, City:string, StateProvince:string, CountryRegion:string, PostalCode:string, rowguid:guid, ModifiedDate:datetime, IngestionDate:datetime)
+    .create table [SilverCustomer](CustomerID:int, NameStyle:string, Title:string, FirstName:string, MiddleName:string, LastName:string, Suffix:string, CompanyName:string, SalesPerson:string, EmailAddress:string, Phone:string, ModifiedDate:datetime, IngestionDate:datetime)
+    .create table [SilverSalesOrderHeader](SalesOrderID:int, OrderDate:datetime, DueDate:datetime, ShipDate:datetime, ShipToAddressID:int, BillToAddressID:int, SubTotal:decimal, TaxAmt:decimal, Freight:decimal, TotalDue:decimal, ModifiedDate:datetime, DaysShipped:long, IngestionDate:datetime)
+    .create table [SilverSalesOrderDetail](SalesOrderID:int, SalesOrderDetailID:int, OrderQty:int, ProductID:int, UnitPrice:decimal, UnitPriceDiscount:decimal, LineTotal:decimal, ModifiedDate:datetime, IngestionDate:datetime)
+        
+    ```
 
 3. Run that script by highlighting the new script and clicking **Run**.
 
@@ -213,41 +218,37 @@ By the end of this lab, you will have learned:
     // use update policies to transform data during Ingestion
     
     .execute database script <|
-    
     .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){
     Address
     | extend IngestionDate = ingestion_time() 
     }
-    
     .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
     
     .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){
     Customer
     | extend IngestionDate = ingestion_time() 
     }
-    
     .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
     
     .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){
     SalesOrderHeader
     | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
     | extend IngestionDate = ingestion_time() 
-    }
-    
+    }    
     .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
     
     .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () {
     SalesOrderDetail
     | extend IngestionDate = ingestion_time() 
     }
-    
     .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
 
     ```
 
 6. While you will see results of the query execution, the best evidence that your query completed is that you will see a new expandable folder in your Database objects pane. Click on the **\> icon** next to the **Functions folder**. These functions will allow the data loaded into the Bronze layer of the KQL Database to then be mirrored, transformed and loaded into the Silver layer.
+   
 
-    ![A screenshot of a computer](../media/Lab-04/image34.png)
+    ![A screenshot of a computer](../media/Lab-04/functions.png)
 
 7. Now let's simulate this process, you will run the pipeline you created earlier in this lab again. Navigate back to the **Load KQL Database** pipeline now.
 
@@ -270,6 +271,7 @@ By the end of this lab, you will have learned:
 12. On a new line, query the SilverAddress table by writing out the following query and executing the code.
 
     ```
+    //Query the Bronze layer Customer table
     SilverAddress
     | take 100
     ```
@@ -282,7 +284,7 @@ By the end of this lab, you will have learned:
 
 Now that you have your transformed layer of data within the Silver Layer you can start to perform analytics with trusted, validated, and enriched data within a Power BI report, RTI Dataset, or just by simply authoring some KQL queries. However, there may be times when you think it necessary to aggregate your data to make it more consumable by end users. Let's see how this is accomplished within a KQL database.
 
-1. If it is not already, open your **Create Tables** KQL Queryset and create a new tab calle "Gold Layer".
+1. If it is not already, open your **Create Tables** KQL Queryset and create a new tab calle "**Gold Layer**".
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image42.png)
 
@@ -308,7 +310,7 @@ Now that you have your transformed layer of data within the Silver Layer you can
 
 5. You will also see another folder was created in the KQL Database object explorer. Expand the **Materialized View** folder and you will find your **GoldAddress** view within.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-04/image46.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-04/views-material.png)
 
 6. In your query window, run the following code to query the new materialized view.
 
@@ -350,7 +352,7 @@ Now that you have your transformed layer of data within the Silver Layer you can
     Clicks
     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10) 
     | summarize count() by dateOnly
-    
+    }
     .create async materialized-view with (backfill=true) GoldDailyImpressions on table 
     Impressions
     {
@@ -371,7 +373,7 @@ Now that you have your transformed layer of data within the Silver Layer you can
 
 ## Task 5: Create Lakehouse
 
-1. Return to the **RTI_username** workspace.
+1. Return to the **RTI_<inject key="DeploymentID" enableCopy="false"/>**. workspace.
 
 2. Click the **+ New Item** option and then select **Lakehouse** from the list of available options.
 
@@ -391,7 +393,7 @@ Within the Lakehouse user interface, you have a couple options for how you could
 
 2. Select the option **Microsoft OneLake** under the **Internal sources**.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-04/image54.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-04/P5L4T6S2.png)
 
 3. Within the menu, select the **eh_Fabrikam** KQL Database to bring tables from that storage into the Lakehouse without duplicating or copying the data.
 
@@ -403,8 +405,9 @@ Within the Lakehouse user interface, you have a couple options for how you could
 
     -  Clicks
     -  Impressions
+    -  InternetSales 
 
-        ![A screenshot of a computer Description automatically generated](../media/Lab-04/image56.png)
+        ![A screenshot of a computer Description automatically generated](../media/Lab-04/impression.png)
 
 6. These tables could be very useful to any users who may be leveraging notebooks within Fabric. This data could be used in data science to train a model that predicts what link users might likely be interested in.
 
@@ -412,15 +415,15 @@ Within the Lakehouse user interface, you have a couple options for how you could
 
 8. One last validation screen will appear. Once you are satisfied with your selection, click on the **Create** button at the bottom of thescreen.
 
-    ![A screenshot of a computer](../media/Lab-04/image57.png)
+    ![A screenshot of a computer](../media/Lab-04/shortcut.png)
 
 9. You will now see all the tables you selected from the KQL Database have appeared within the Lakehouse.
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-04/image58.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-04/explorer.png)
 
 10. Click on the table called **Clicks**.
 
-    ![A screenshot of a computer](../media/Lab-04/image59.png)
+    ![A screenshot of a computer](../media/Lab-04/clicks-final.png)
 
 11. You can see a sample of the records from that table have appeared within your user interface.
 
@@ -437,7 +440,7 @@ After building the medallion framework, users employed Microsoft Fabric shortcut
 Fabric Real-Time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric.
 In the menu of the service, the Help (?) section has links to some great resources.
 
- ![A screenshot of a computer](../media/Lab-04/image69.png)
+![A screenshot of a computer](../media/Lab-04/image69.png)
  
 Here are a few more resources that will help you with your next steps with Microsoft Fabric.
 -   See blog post to read the full [Microsoft Fabric GA announcement](https://aka.ms/Fabric-Hero-Blog-Ignite23)

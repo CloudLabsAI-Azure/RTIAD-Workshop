@@ -59,21 +59,40 @@ The lab includes steps for the user to follow along with associated screenshots 
 
 6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
     
-    - Event Hub namespace: **rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>**
+      Event Hub namespace:
     
-    - Event Hub: **rti-iad-fabrikam**
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"></inject>
+      ```
+      
+     Event Hub:
     
-    - Shared Access Key Name: **rti-reader**
+      ```
+     rti-iad-fabrikam
+      ```
+      
+     Shared Access Key Name:
     
-    - Shared Access Key: <inject key="rti-iad-fabrikam Primary Key"></inject>
+      ```
+      rti-reader
+      ```
+
+      Shared Access Key: 
+      ```    
+      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
+      ```
+      
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+      ```
 
     >**Note**: You can also copy the shared access primary key from environment tab 
 
-7.  Once all properties have been filled out click on **Connect**.
+8.  Once all properties have been filled out click on **Connect**.
     
     ![A screenshot of a computer Description automatically generated](./media/image10.png)
 
-8.  In the configuration of the Azure Event Hub data source, you will need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. Within your **Environment details** find the property that lists what your consumer group name will be and place that into the field box. It will appear something like "**$Default**".
+9.  In the configuration of the Azure Event Hub data source, you will need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. Within your **Environment details** find the property that lists what your consumer group name will be and place that into the field box. It will appear something like "**$Default**".
     
     ![A screenshot of a computer](./media/choose_1.png)
 

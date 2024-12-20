@@ -42,79 +42,89 @@ By the end of this lab, you will have learned:
 
 1.  Open the **Fabric workspace** you created in the last lab. From here we can see the Eventhouse we created.
 
-    ![](../media/Lab-02/image5.png)
+    ![](../media/Lab-02/lab-final.png)
 
-2.  Navigate to the "Real-Time hub" where currently we do not see any streams of data. That will change shortly.
+2. Navigate to the Real-Time Hub by selecting the **Real-Time** button on the left-hand side. Even though we do not see any streams of data that will change shortly.
 
-    ![](../media/Lab-02/Picture1.png)
+    ![](../media/Lab-02/real-time-1.png)
 
-3.  Select the **+ Add Source** green button which should be in the upper right corner.
+3. The **Welcome to Real-Time Hub** dialog will appear. Check the box for **Don't show again** and then click **Get Started**.
 
-    ![A green and white sign Description automatically generated](../media/Lab-02/image7.png)
+   ![](../media/Lab-02/get-started-1.png)
 
-4.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will select the option "Azure Event Hubs".
+4.  Select the **+ Connect data source** green button which should be in the upper right corner.
+
+    ![A green and white sign Description automatically generated](../media/Lab-02/connect_datasource.png)
+
+5.  A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will Search for **Azure event hubs (1)** select it and click on **connect (2)**
     
-    ![](../media/Lab-02/image8.png)
+    ![](../media/Lab-02/azure_event-hubs.png)
 
-5.  You are now required to create a connection to the Azure Event Hub.Click on the **New connection** text since you do not currently have a connection.
+6. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**.
+
+   ![](../media/Lab-02/select-workspace.png)
+   
+7.  You are now required to create a connection to the Azure Event Hub.Click on the **New connection** text since you do not currently have a connection.
 
     ![A screenshot of a computer](../media/Lab-02/image9.png)
-
-6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
-    
-    Event Hub namespace: **rtiadhub<inject key="DeploymentID" enableCopy="false"/>**
-    
-    Event Hub: **rti-iad-fabrikam**
-    
-    Shared Access Key Name: **rti-reader**
-    
-    Shared Access Key: <inject key="rti-iad-fabrikam Primary Key"></inject>
-
-7. Once all properties have been filled out click on **Connect**.
     
 
-    ![A screenshot of a computer Description automaticallygenerated](../media/Lab-02/image10.png)
-
-8.  In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data.For this workshop you can leave the "\$Default" value as shownbelow\
+8. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+   
+   - Event Hub namespace :
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+      ```
+   - Event Hub :
+     ```
+     rti-iad-fabrikam
+     ```
+   - Shared Access Key Name :
+     ```
+     rti-reader
+     ``` 
+   - Shared Access Key :
+     ```
+     <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
+     ```
+   
+9. Once all properties have been filled out click on **Connect**.
     
-    ![A screenshot of a computer](../media/Lab-02/image11.png)
+    ![A screenshot of a computer Description automaticallygenerated](../media/Lab-02/rtiad-ad.png)
 
-9.  Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
-
-    ![A screenshot of a computer](../media/Lab-02/image12.png)
-
-10. Now we can click on **Next**, which will take us to a final overview page.
+10. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data.For this workshop you can leave the "\$Default" value as shownbelow
     
-    ![A screenshot of a computer](../media/Lab-02/image13.png)
+    ![A screenshot of a computer](../media/Lab-02/image11-1.png)
 
-11. In this overview screen, verify the contents look correct and click
-    **Create source**.
+ 11. Before we finalize this data source and Eventstream, let's go ahead and rename our Eventstream to something more useful. In the "Stream details\" section on the right select the pencil icon next to the "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales**".
+
+     ![A screenshot of a computer](../media/Lab-02/eventstream-01.png)
+
+12. Now we can click on **Next**, which will take us to a final overview page.
+
+13. In this overview screen, verify the contents look correct and click **Connect**.
     
-    **Note:** Your details will differ from what you see in the
-    screenshot
+    >**Note:** Your details will differ from what you see in the screenshot
     
-    ![A screenshot of a computer Description automatically
-    generated](../media/Lab-02/image14.png)
+    ![A screenshot of a computer Description automatically generated](../media/Lab-02/email-01.png)
 
-12. Once the Eventstream and Eventstream source are created select the
-    option "**Open Eventstream**"
+14. Once the Eventstream and Eventstream source are created select the option "**Open Eventstream**"
     
-    ![A screenshot of a
-    computer](../media/Lab-02/image15.png)
+    ![A screenshot of a computer](../media/Lab-02/image15.png)
 
-13. This will take you to the Eventstream user interface. Here is where you will see your source stream of data flowing into our eventstream and we have the ability to add transform events as well.
+15. This will take you to the Eventstream user interface. Here is where you will see your source stream of data flowing into our eventstream and we have the ability to add transform events as well.
 
-14. It may take a few moments for your Source to be **Active** but after waiting a few moments, click on the middle icon with the name of your Eventstream on it and then click on **Refresh** if you do not see a preview of the data.
+16. It may take a few moments for your Source to be **Active** but after waiting a few moments, click on the middle icon with the name of your Eventstream on it and then click on **Refresh** if you do not see a preview of the data.
 
-    **Note:** If you receive a "Warning" status around and audit policy,that is fine. The stream will still function
+    >**Note:** If you receive a "Warning" status around and audit policy,that is fine. The stream will still function
     
-    ![](../media/Lab-02/image16.png)
+    ![](../media/Lab-02/esfab.png)
 
-15. You should now see a sample of the data within the bottom window.
+17. You should now see a sample of the data within the bottom window.
 
-    ![A screenshot of a computer](../media/Lab-02/image17.png)
+    ![A screenshot of a computer](../media/Lab-02/esfab-02.png)
 
-17. This will show you a preview of the data that is being received from the Azure Event Hub. If you slide your bottom horizontal scroll bar all the way to the right-side of your preview, you will be able to see the time that the data has been received in the Event Hub in two columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time in UTC format.
+18. This will show you a preview of the data that is being received from the Azure Event Hub. If you slide your bottom horizontal scroll bar all the way to the right-side of your preview, you will be able to see the time that the data has been received in the Event Hub in two columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time in UTC format.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image18-1.png)
 
@@ -140,72 +150,90 @@ By the end of this lab, you will have learned:
 
     ![A screenshot of a computer](../media/Lab-02/image23.png)
 
-6.  Modify the remainder of the settings with the following details below.
+6. Modify the remainder of the settings with the following details below.
 
--   Destination name -- **eh-kql-db-fabrikam**
+  - Destination name :
+    ```
+    eh-kql-db-fabrikam
+    ```
+  - Workspace :
+    ```
+    RTI_<inject key="DeploymentID" enableCopy="false"/>
+    ```    
+  - Eventhouse :
+    ```
+    eh_Fabrikam
+    ```
+  - KQL Database :
+    ```
+    eh_Fabrikam
+    ```
+   
+    ![A screenshot of a computer](../media/Lab-02/direct-ingestion.png)
 
--   Workspace -- **RTI_username**
+8.  Click on Save.
 
--   Eventhouse -- **eh_Fabrikam**
+9.  With the Eventstream configured, click on the **Publish** button to save this Eventstream and begin your ingestion.
 
--   KQL Database -- **eh_Fabrikam**
+    ![A screenshot of a chat](../media/Lab-02/esfab-03.png)
 
-    ![A screenshot of a computer](../media/Lab-02/image24.png)
+10.  If you notice the **eh_Fabrikam_es_InternetSales** (AzureEventHub) source has become inactive, switch the toggle to the **Active** state and choose the option **Now** when the dialog opens
 
-7.  Click on Save.
+      ![A screenshot of a chat](../media/Lab-02/active-01-1.png)
 
-8.  With the Eventstream configured, click on the **Publish** button to save this Eventstream and begin your ingestion.
+      ![A screenshot of a chat](../media/Lab-02/active-1.png)
 
-    ![A screenshot of a chat](../media/Lab-02/image25.png)
+12.  Choose the **Configure** option within the **Destination** to correctly map the stream to a table in the KQL Database.
 
-9.  Choose the **Configure** option within the **Destination** to correctly map the stream to a table in the KQL Database.
+     ![A screenshot of a computer Description automatically generated](../media/Lab-02/fabrikam.png)
 
-    ![A screenshot of a computer Description automatically generated](../media/Lab-02/image26.png)
-
-10. Click on the **+ New table** option underneath the the
-    **eh_Fabrikam** database.
+13. Click on the **+ New table** option underneath the **eh_Fabrikam** database.
 
     ![A screenshot of a computer](../media/Lab-02/image27.png)
 
-11. Give the new table the name, **InternetSales** and then click on the checkmark.
+14. Give the new table the name, **InternetSales** and then click on the checkmark.
 
     ![A screenshot of a computer](../media/Lab-02/image28.png)
     
-12. You may need to update your **"Data connection name"** to meet requirements. Let us rename it to **"eh_Fabrikam_es_InternetSales".** Then we can click on **Next**.
+15. You may need to update your **"Data connection name"** to meet requirements. Let us rename it to **"eh_Fabrikam_es_InternetSales".** Then we can click on **Next**.
 
     ![A screenshot of a computer](../media/Lab-02/image29.png)
 
-13. After a few moments of searching for events, the user interface should allow you to see that sample data was found. Click on **Finish** at the bottom of the screen.
+16. After a few moments of searching for events, the user interface should allow you to see that sample data was found. Click on **Finish** at the bottom of the screen.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image30.png)
 
-14. After this you will be shown a summary. Once you have all green checkmarks, click **close** to move forward.
+17. After this you will be shown a summary. Once you have all green checkmarks, click **close** to move forward.
 
-15. Once you see the user interface showing the mappings from the source to the Eventstream to the destination, you have correctly configured and started a stream of data into your KQL Database.
+18. Once you see the user interface showing the mappings from the source to the Eventstream to the destination, you have correctly configured and started a stream of data into your KQL Database.
 
     ![A screen shot of a computer](../media/Lab-02/image31.png)
 
-16. Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps-
+    >**Note:** Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps-
 
-    i. Go to your destination KQL database.
+    i. Go to your destination KQL database
 
-    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround1.png)
+    ![A screenshot of a chat](../media/Lab-02/blur.png)
 
     ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
 
     ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround2.png)
 
-    iii. Select the InternetSales table and give the give the following configurations-
+    iii. Select the InternetSales table and Select the following configurations from the drop-down:
+    
+     - Workspace :
+        ```
+         RTI_<inject key="DeploymentID" enableCopy="false"/>
+         ```
+     
+     - Eventstream Name :
+        ```
+        es_Fabrikam_InternetSales
+        ```
+  
+     - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
 
-       Workspace - **RTI_username**
-
-       Eventstream Name - **es_Fabrikam_InternetSales**
-
-       Data connection name - **give any name**
-
-      Then click on **Next**, **Finish** and **Close** in the next tabs.
-
-    ![A screenshot of a chat](../media/Lab-02/KQL-database-workaround3.png)
+     ![A screenshot of a chat](../media/Lab-02/internet-01.png)
 
     iv. Now you should be able to see a new destination is created with the Data preview visible in it.
     
@@ -213,7 +241,7 @@ By the end of this lab, you will have learned:
 
 ## Task 3: Authoring Kusto Database Queries
 
-1.  Make your way back to your **RTI_username** workspace. You should see the new Eventstream you just created along side all the Evenhouse items.
+1.  Make your way back to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should see the new Eventstream you just created along side all the Evenhouse items.
 
     ![A screenshot of a computer](../media/Lab-02/image32.png)
 
@@ -223,11 +251,11 @@ By the end of this lab, you will have learned:
 
 3.  Within this experience, you can get an overview of the current structure, size, and use of the KQL Database. Because the Eventstream is sending data to this KQL Database consistently you will notice the amount of storage will increase over time.
 
-    ![A screenshot of a computer](../media/Lab-02/image34.png)
+    ![A screenshot of a computer](../media/Lab-02/image34-1.png)
 
 4.  Click on the **refresh icon** in the top-right corner of the screen.
 
-    ![A screenshot of a phone](../media/Lab-02/image35.png)
+    ![A screenshot of a phone](../media/Lab-02/explore.png)
 
 5.  The size of the database should have grown. The value you see may not be exact in comparison to the screenshots in the remainder of the lab. Depending on how long you take to complete the content you will have received less or more records than other members of the class. This is completely fine and will not affect your ability to follow along whatsoever.
 
@@ -239,17 +267,17 @@ By the end of this lab, you will have learned:
 
 7.  This overview will give you metadata details about the table you have created and any actively streaming data with your Eventstream.Again, the size of the table and the number of rows within the table are going to vary from student to student and will not affect your end results of this or any lab. A few additional items to call out on this menu include:
 
-- **Histogram** -- Shows number of rows ingested, time it was last generated and the interval of display
-- **Data Preview** -- Shows a preview of the table ingestion results.
-- **Schema** **Insights**-- This includes details about the column
-name and the data types of the column that can be queried with KQL.Also shows the Top 10 count for the values in the selected column
-- **Table Details** -- Shows Compressed and Original size of table,OneLake availability, number of rows in the tables and various other details
+- **Data Activity Tracker** – Shows number of rows ingested, time it was last generated and the interval of display
+- **Data Preview** – Shows a preview of the table ingestion results. 
+- **Schema Insights**– This includes details about the column name and the data types of the column that can be queried with KQL. Also shows the Top 10 count for the values in the selected column
+- **Table Details** –  Shows Compressed and Original size of table, OneLake availability, number of rows in the tables and various other details
 
-    ![A screenshot of a computer](../media/Lab-02/image38.png)
 
-8.  Click on **Explore your data** in the top-right corner.
+    ![A screenshot of a computer](../media/Lab-02/step-7.png)
 
-    ![A white background with black text Description automatically generated](../media/Lab-02/image39.png)
+8.  Click on **Query with code** in the top-right corner.
+
+    ![A white background with black text Description automatically generated](../media/Lab-02/query.png)
 
 9.  This will open the default KQL Queryset that was created alongside the Eventhouse. There are a few pre-scripted queries that are already authored but need some slight customization. There are also two links to Microsoft documentation that can be helpful when learning KQL or also looking at SQL to KQL conversions which will be discussed later throughout this class.
 
@@ -290,17 +318,14 @@ name and the data types of the column that can be queried with KQL.Also shows th
 You may be working with the Kusto Query Language for the first time. While this language is intuitive and easy to learn for simple queries,you may want to return the results of a more complex queries than you are currently capable of. Several helpful tools have been included within the KQL Queryset capabilities including converting SQL queries to KQL queries and simply authoring T-SQL queries within the KQL Queryset.
 Let's explore!
 
-1.  You need to create a query that returns the number of each product that has been sold. This is something you can quickly do with T-SQL.Within the query window, you can translate your SQL queries into KQL to better understand how to author KQL queries in the future. Start with writing the following command.
-
-    **Note:** Double click the object below in order to be able to copy the text.
+1. You need to create a query that returns the number of each product that has been sold. This is something you can quickly do with T-SQL.Within the query window, you can translate your SQL queries into KQL to better understand how to author KQL queries in the future. Start with writing the following command.
 
     ```
     --
     explain
     ```
 
-3.  The comment line "\--" followed by the keyword "explain" will allow you to now create a SQL query and return a result with the KQL query that could be used to achieve a similar query and result. Below input the following query to explain what the KQL query would look like:
-
+2. The comment line "\--" followed by the keyword "explain" will allow you to now create a SQL query and return a result with the KQL query that could be used to achieve a similar query and result. Below input the following query to explain what the KQL query would look like:
     ```
      --
      explain
@@ -310,31 +335,33 @@ Let's explore!
      GROUP BY ProductKey
     ```
 
-4. This is a simple SQL query that will retrieve results from the InternetSales table to return two columns, the product key and a count of the number of orders. Because there is an aggregated column and a non-aggregated column, you must use a GROUP BY to return results for each individual product. Run the entire query beginning with the "\--" to the end of the T-SQL query.
+3. This is a simple SQL query that will retrieve results from the InternetSales table to return two columns, the product key and a count of the number of orders. Because there is an aggregated column and a non-aggregated column, you must use a GROUP BY to return results for each individual product. Run the entire query beginning with the "\--" to the end of the T-SQL query.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image52.png)
 
-5.  The output of the explain query should be a single record with the translated KQL query as the result. Click on the **caret icon (\>)** to expand the results and allow for easier translation.
+4.  The output of the explain query should be a single record with the translated KQL query as the result. Click on the **caret icon (\>)** to expand the results and allow for easier translation.
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image53.png)
 
-6.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using.
+5.  Click on the query pane highlighted below in orange. This will allow you to select translated KQL query and copy it. Paste this query in the KQL Queryset we have been using.
+
+    >**Note**: If you can't see the output code, maximize the screen by dragging the white section down.
 
     ![A screenshot of a computer](../media/Lab-02/image54.png)
 
-7.  With the results in your query pane, highlight and run the query to retrieve the results. The **summarize** operator will produce a table that aggregates the content of the input table while determining how to group each record with the **by Product Key** and the **project** operator will select the columns to include, rename,or drop while inserting new compute columns.
+6.  With the results in your query pane, highlight and run the query to retrieve the results. The **summarize** operator will produce a table that aggregates the content of the input table while determining how to group each record with the **by Product Key** and the **project** operator will select the columns to include, rename,or drop while inserting new compute columns.
 
     ![A screenshot of a computer](../media/Lab-02/image55.png)
 
-8.  Feel free to explore a complete list of SQL to KQL cheat sheet operations at the top of your queryset for additional capabilities and conversions.
+7.  Feel free to explore a complete list of SQL to KQL cheat sheet operations at the top of your queryset for additional capabilities and conversions.
 
     ![A close-up of a message Description automatically generated](../media/Lab-02/image56.png)
 
-9.  Instead of using KQL, another alternative to querying the results of the KQL Database within Fabric is to write and run a T-SQL query.Highlight the original SQL statement that was used to translate the KQL query and run only that.
+8.  Instead of using KQL, another alternative to querying the results of the KQL Database within Fabric is to write and run a T-SQL query.Highlight the original SQL statement that was used to translate the KQL query and run only that.
 
     ![A screenshot of a computer code](../media/Lab-02/image57.png)
 
-10.  This will also yield perfectly valid results without having to onvert to KQL beforehand.
+9.  This will also yield perfectly valid results without having to onvert to KQL beforehand.
 
      ![A screenshot of a computer Description automatically generated](../media/Lab-02/image58.png)
 
@@ -356,9 +383,9 @@ Let's explore!
     
     ![A screenshot of a computer Description automatically generated](../media/Lab-02/image61.png)
 
-5.  Return to your **RTI_username** workspace. You should have the following objects present.
+5.  Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should have the following objects present
 
-    ![A screenshot of a computer](../media/Lab-02/image62.png)
+    ![A screenshot of a computer](../media/Lab-02/es-is.png)
 
 # Summary
 
