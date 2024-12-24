@@ -318,6 +318,8 @@ By the end of this lab, you will have learned:
 
    ![A screenshot of a computer Description automatically generated](./media/image232.png)
 
+   >**Note**: In Microsoft Fabric's **Real-Time Dashboard**, the **Minimum Time Interval** defines the smallest granularity (e.g., 1 second) at which new data can be processed and displayed. The **Default Refresh Rate** specifies how often the dashboard fetches new data by default (e.g., every 5 seconds). The Minimum Time Interval ensures the system handles high-frequency data, while the Default Refresh Rate balances performance and updates. These settings work together to maintain real-time insights without overloading the dashboard. They help optimize both responsiveness and efficiency for real-time data monitoring.
+
 4. Click **Apply** at the bottom of the window.
 
 5. In the top-right corner of your menu, click on the **Editing button** and modify it to **Viewing** to see what your end users will experience with this Real-Time Dashboard.
