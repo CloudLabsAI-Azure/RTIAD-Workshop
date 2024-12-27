@@ -124,7 +124,7 @@ Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub ber
 
 4.	Geben Sie im Feld **Name** die Bezeichnung **RTI_username** ein. Verwenden Sie den Benutzernamen, den Sie aus den Umgebungsdetails erhalten haben.
 
-**Hinweis:** Der Name des Arbeitsbereichs muss eindeutig sein. Achten Sie darauf, dass unter dem Feld für den Namen ein grünes Häkchen mit dem Text **Dieser Name ist verfügbar** zu sehen ist.
+    **Hinweis:** Der Name des Arbeitsbereichs muss eindeutig sein. Achten Sie darauf, dass unter dem Feld für den Namen ein grünes Häkchen mit dem Text **Dieser Name ist verfügbar** zu sehen ist.
 
 5. Wenn Sie möchten, können Sie eine **Beschreibung** des Arbeitsbereichs eingeben. Dieses Feld ist optional.
 6. Erweitern Sie den Abschnitt mit **Erweitert**.
@@ -133,7 +133,7 @@ Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub ber
 
 8. Erstellen Sie den neuen Arbeitsbereich durch Klicken auf **Übernehmen**.
 
-**Hinweis:** Wenn sich das Dialogfeld **Introducing task flows** öffnet, klicken Sie auf **Got it**.
+    **Hinweis:** Wenn sich das Dialogfeld **Introducing task flows** öffnet, klicken Sie auf **Got it**.
 
 # Aufgabe 5: Ein Eventhouse erstellen
 
