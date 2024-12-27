@@ -133,17 +133,14 @@ alternancia a estado “Activo” y elija la opción “Ahora” cuando se abra 
 
 6. En el área de navegación de la base de datos, a la izquierda de la pantalla, haga clic en la tabla dentro de la base de datos KQL llamada **InternetSales** y verá una descripción general de la tabla.
 
-7.	Esta información general le ofrece detalles de metadatos relativos a la tabla que ha creado
+7. Esta información general le ofrece detalles de metadatos relativos a la tabla que ha creado
 y cualquier dato en streaming activo con el Eventstream. Una vez más, el tamaño de la tabla y el número de filas dentro de la tabla variarán de un alumno a otro y no afectarán a los resultados
- 
-finales de este laboratorio ni de ningún otro. En este menú destacan algunos elementos adicionales:
 
-- **Data Activity Tracker**: muestra el número de filas ingeridas, la hora en que se generó por última vez y el intervalo de visualización.
+ finales de este laboratorio ni de ningún otro. En este menú destacan algunos elementos adicionales:
 
-- **Data preview**: muestra una versión preliminar de los resultados de la ingesta de la tabla.
-
-- **Schema insights**: incluye detalles sobre el nombre de la columna y los tipos de datos de la columna que se pueden consultar con KQL. También muestra el recuento de los 10 valores primeros de la columna seleccionada.
-
+ - **Data Activity Tracker**: muestra el número de filas ingeridas, la hora en que se generó por última vez y el intervalo de visualización.
+ - **Data preview**: muestra una versión preliminar de los resultados de la ingesta de la tabla.
+ - **Schema insights**: incluye detalles sobre el nombre de la columna y los tipos de datos de la columna que se pueden consultar con KQL. También muestra el recuento de los 10 valores primeros de la columna seleccionada.
 - **Detalles de la tabla**: muestra el tamaño comprimido y original de la tabla, la disponibilidad de OneLake, el número de filas en las tablas y otros detalles.
 
 8. Vuelva a la vista de la base de datos y haga clic en **Explorar sus datos** en la esquina superior derecha.
