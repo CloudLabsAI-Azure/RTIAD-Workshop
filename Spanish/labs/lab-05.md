@@ -162,9 +162,9 @@ para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 10.	Haga clic en el botón **+ Agregar objeto visual**.
 
 11.	Cuando aparezca la configuración del objeto visual, modifique la siguiente configuración para crear un recuento de impresiones.
-   - **Tile name**: Impressions
-   - **Visual type**: Stat
-   - **Value column**: impressions (long)
+     - **Tile name**: Impressions
+     - **Visual type**: Stat
+     - **Value column**: impressions (long)
 
 12.	Seleccione **Aplicar cambios** cuando todos los ajustes estén configurados correctamente.
  
@@ -268,9 +268,7 @@ y** haga la regla **> 10** para el operador y el valor.
 En este laboratorio, los usuarios crearon un panel de información en tiempo real y lo conectaron a nuestra base de datos KQL. Pudimos ver que usamos el lenguaje KQL para mantener consultas y luego podemos visualizar los resultados de muchas maneras, ya que cada objeto visual tiene su propia configuración. Además, vimos cómo podíamos modificar el parámetro predeterminado disponible en el panel de información y hacer que este se actualizara automáticamente.
 
 ## Referencias
-Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.
-
-En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
+Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
