@@ -62,7 +62,7 @@ indica a continuación.
 
 11.	En esta pantalla de información general, compruebe que el contenido se vea correctamente y haga clic en **Crear origen**.
 
->**Nota**: Los detalles serán diferentes a lo que aparece en la captura de pantalla.
+    >**Nota**: Los detalles serán diferentes a lo que aparece en la captura de pantalla.
  
 12.	Una vez que se ha creado el Eventstream y el origen de Eventstream, seleccione la opción “**Abrir Eventstream**”
 
@@ -70,7 +70,7 @@ indica a continuación.
 
 14.	Es posible que su origen tarde unos minutos en estar **Activo**, pero tras esperar unos instantes, haga clic en el icono central con el nombre del Eventstream y, después, en Actualizar si no aparece una vista preliminar de los datos.
 
->**Nota**: No pasa nada si recibe un estado de “Advertencia” y una directiva de auditoría. El flujo seguirá funcionando
+    >**Nota**: No pasa nada si recibe un estado de “Advertencia” y una directiva de auditoría. El flujo seguirá funcionando
 
 15.	Ahora debería ver una muestra de los datos en la ventana inferior.
  
@@ -92,10 +92,10 @@ Eventhouse.
 Eventstream ni cargar directamente esta información en una tabla de base de datos KQL, compruebe que ha seleccionado la opción Ingesta directa.
 
 6. Modifique el resto de la configuración con los datos que figuran a continuación.
-  - Nombre del destino: **eh-kql-db-fabrikam**
-  - Área de trabajo: **RTI_username**
-  - Eventhouse: **eh_Fabrikam**
-  - Base de datos KQL: **eh_Fabrikam**
+    - Nombre del destino: **eh-kql-db-fabrikam**
+    - Área de trabajo: **RTI_username**
+    - Eventhouse: **eh_Fabrikam**
+    - Base de datos KQL: **eh_Fabrikam**
  
 7. Haga clic en Guardar.
 
@@ -136,12 +136,12 @@ alternancia a estado “Activo” y elija la opción “Ahora” cuando se abra 
 7. Esta información general le ofrece detalles de metadatos relativos a la tabla que ha creado
 y cualquier dato en streaming activo con el Eventstream. Una vez más, el tamaño de la tabla y el número de filas dentro de la tabla variarán de un alumno a otro y no afectarán a los resultados
 
- finales de este laboratorio ni de ningún otro. En este menú destacan algunos elementos adicionales:
+    finales de este laboratorio ni de ningún otro. En este menú destacan algunos elementos adicionales:
 
- - **Data Activity Tracker**: muestra el número de filas ingeridas, la hora en que se generó por última vez y el intervalo de visualización.
- - **Data preview**: muestra una versión preliminar de los resultados de la ingesta de la tabla.
- - **Schema insights**: incluye detalles sobre el nombre de la columna y los tipos de datos de la columna que se pueden consultar con KQL. También muestra el recuento de los 10 valores primeros de la columna seleccionada.
-- **Detalles de la tabla**: muestra el tamaño comprimido y original de la tabla, la disponibilidad de OneLake, el número de filas en las tablas y otros detalles.
+    - **Data Activity Tracker**: muestra el número de filas ingeridas, la hora en que se generó por última vez y el intervalo de visualización.
+    - **Data preview**: muestra una versión preliminar de los resultados de la ingesta de la tabla.
+    - **Schema insights**: incluye detalles sobre el nombre de la columna y los tipos de datos de la columna que se pueden consultar con KQL. También muestra el recuento de los 10 valores primeros de la columna seleccionada.
+    - **Detalles de la tabla**: muestra el tamaño comprimido y original de la tabla, la disponibilidad de OneLake, el número de filas en las tablas y otros detalles.
 
 8. Vuelva a la vista de la base de datos y haga clic en **Explorar sus datos** en la esquina superior derecha.
 
@@ -175,7 +175,7 @@ consultas KQL. ¡Exploremos!
 
 1. Debe crear una consulta que devuelva cada producto con el número de la cantidad de veces que se haya vendido. Esto se puede hacer rápidamente con T-SQL. Dentro de la ventana de consulta, puede traducir sus consultas SQL a KQL para entender mejor cómo crear consultas KQL en adelante. Empiece escribiendo el siguiente comando.
 
->**Nota: Haga doble clic en el objeto que figura a continuación para poder copiar el texto**
+    >**Nota: Haga doble clic en el objeto que figura a continuación para poder copiar el texto**
 
 
 2. La línea de comentario “--” seguida de la palabra clave “explicar” le permitirá crear ahora una consulta SQL y devolver un resultado con la consulta KQL que podría utilizarse para lograr una consulta y un resultado similares. A continuación, introduzca la siguiente consulta para explicar el aspecto de la consulta KQL:
