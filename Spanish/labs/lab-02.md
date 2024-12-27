@@ -81,15 +81,15 @@ podrá ver la hora en que se recibieron los datos en el Centro de eventos en dos
 
 1. Haga clic en el icono dentro del área del lienzo con la etiqueta “Cambiar al modo de edición Evento de transformación o agregar destino
 
-2. Dentro de la interfaz de usuario de Eventstream, haga clic en la opción Transformar eventos o agregar destino para abrir el menú desplegable.
+2. Dentro de la interfaz de usuario de Eventstream, haga clic en la opción T**ransformar eventos o agregar destino** para abrir el menú desplegable.
  
 3. Observe la lista de operaciones disponibles que se pueden realizar en el flujo.
  
-4. Debajo de la sección Operaciones, está Destinos, donde podrá seleccionar la opción que indica
+4. Debajo de la sección **Operaciones**, está **Destinos**, donde podrá seleccionar la opción que indica
 Eventhouse.
 
-5. Se abrirá un nuevo menú en el lado derecho de la pantalla. Lo primero que debe modificar para el destino es el modo de ingesta de datos. Las dos opciones son Ingesta directa y Procesamiento de eventos antes de la ingesta. Puesto que no vamos a transformar nada en nuestro
-Eventstream ni cargar directamente esta información en una tabla de base de datos KQL, compruebe que ha seleccionado la opción Ingesta directa.
+5. Se abrirá un nuevo menú en el lado derecho de la pantalla. Lo primero que debe modificar para el destino es el **modo de ingesta de datos**. Las dos opciones son **Ingesta directa** y **Procesamiento de eventos antes de la ingesta**. Puesto que no vamos a transformar nada en nuestro
+Eventstream ni cargar directamente esta información en una tabla de base de datos KQL, compruebe que ha seleccionado la opción **Ingesta directa**.
 
 6. Modifique el resto de la configuración con los datos que figuran a continuación.
     - Nombre del destino: **eh-kql-db-fabrikam**
@@ -110,7 +110,7 @@ alternancia a estado “Activo” y elija la opción “Ahora” cuando se abra 
  
 12.	Asigne el nombre **InternetSales** a la nueva tabla y luego haga clic en la marca de verificación.
 
-13.	Es posible que tenga que actualizar su “**Nombre de conexión de datos**” para cumplir los requisitos. Cambiémosle el nombre a “**eh_Fabrikam_es_InternetSales**”. A continuación, podemos hacer clic en **Siguient**e.
+13.	Es posible que tenga que actualizar su “**Nombre de conexión de datos**” para cumplir los requisitos. Cambiémosle el nombre a “**eh_Fabrikam_es_InternetSales**”. A continuación, podemos hacer clic en **Siguiente**.
 
 14.	Después de unos minutos de buscar eventos, la interfaz de usuario debería permitirle ver que se encontraron datos de ejemplo. Haga clic en **Fin** en la parte inferior de la pantalla. 
  
