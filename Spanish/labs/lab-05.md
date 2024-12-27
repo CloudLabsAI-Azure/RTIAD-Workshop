@@ -4,14 +4,14 @@
 - Estructura del documento	
 - Introducción	
 - Paneles de información en tiempo real	
- - Tarea 1: Crear un panel de información en tiempo real	
- - Tarea 2: Conectar un origen de datos al panel de información en tiempo real	
- - Tarea 3: Crear un icono del panel de información en tiempo real con KQL	
- - Tarea 4: Agregar más iconos de panel información al panel de información en tiempo real	
- - Tarea 5: Agregar un objeto visual de mapa para Impressions by Location	
- - Tarea 6: Configurar la actualización automática en el panel de información en tiempo real	
- - Tarea opcional 7: Agregar el logotipo de la empresa	
- - Tarea opcional 8: Aplicar formato condicional a un objeto visual	
+  - Tarea 1: Crear un panel de información en tiempo real	
+  - Tarea 2: Conectar un origen de datos al panel de información en tiempo real	
+  - Tarea 3: Crear un icono del panel de información en tiempo real con KQL	
+  - Tarea 4: Agregar más iconos de panel información al panel de información en tiempo real	
+  - Tarea 5: Agregar un objeto visual de mapa para Impressions by Location	
+  - Tarea 6: Configurar la actualización automática en el panel de información en tiempo real	
+  - Tarea opcional 7: Agregar el logotipo de la empresa	
+  - Tarea opcional 8: Aplicar formato condicional a un objeto visual	
 - Resumen	
 - Referencias	
 
@@ -64,15 +64,15 @@ Al final de este laboratorio, habrá aprendido:
 
 2. De forma predeterminada, se conectará a la base de datos KQL que creó anteriormente como origen. Desde aquí, puede escribir su propia consulta KQL para rellenar este objeto visual con datos. Elimine todo el KQL de Markdown anterior que esté ahí de forma predeterminada. Copie y pegue la siguiente consulta en la ventana de la consulta.
   
-  ```
-  //Clicks by hour Clicks
-  | where eventDate between (_startTime.._endTime)
-  | summarize date_count = count() by bin(eventDate, 1h)
-  | render timechart
-  | top 30 by date_count
-  | sort by eventDate
-  
-  ```
+    ```
+    //Clicks by hour Clicks
+    | where eventDate between (_startTime.._endTime)
+    | summarize date_count = count() by bin(eventDate, 1h)
+    | render timechart
+    | top 30 by date_count
+    | sort by eventDate
+    
+    ```
 
 3. Ejecute la consulta una vez que la haya configurado correctamente para ver los resultados.
 
@@ -97,7 +97,7 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
 
 12.	De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
-13.	Con este objeto visual con nuevo formato, puede comprender mejor los picos y valles de clics de su sitio de comercio electrónico mediante el flujo de datos que creó anteriormente en esta clase.
+13. Con este objeto visual con nuevo formato, puede comprender mejor los picos y valles de clics de su sitio de comercio electrónico mediante el flujo de datos que creó anteriormente en esta clase.
 
 14.	Para guardar este objeto visual en el panel de información, haga clic en el botón **Aplicar cambios**
 en la esquina superior derecha de la pantalla.
@@ -113,15 +113,15 @@ para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 
 2. Introduzca la siguiente consulta KQL en el panel de información:
 
-  ```
-  //Impressions by hour Impressions
-  | where eventDate between (_startTime.._endTime)
-  | summarize date_count = count() by bin(eventDate, 1h)
-  | render timechart
-  | top 30 by date_count
-  | sort by eventDate
-  
-  ```
+    ```
+    //Impressions by hour Impressions
+    | where eventDate between (_startTime.._endTime)
+    | summarize date_count = count() by bin(eventDate, 1h)
+    | render timechart
+    | top 30 by date_count
+    | sort by eventDate
+    
+    ```
 
 3. **Ejecute** la consulta.
 
@@ -135,27 +135,27 @@ para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 
 8. Copie y pegue la siguiente consulta en el panel de la consulta. Tenga en cuenta que se trata de una consulta de varias instrucciones que utiliza varias instrucciones let y una consulta combinada con punto y coma.
 
-```
-//Clicks, Impressions, CTR
+    ```
+    //Clicks, Impressions, CTR
 
 
-let imp = Impressions
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize imp_count = count() by dateOnly;
+    let imp = Impressions
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize imp_count = count() by dateOnly;
 
 
-let clck = Clicks
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize clck_count = count() by dateOnly;
+    let clck = Clicks
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize clck_count = count() by dateOnly;
 
 
-imp
-| join clck on $left.dateOnly == $right.dateOnly
-| project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+    imp
+    | join clck on $left.dateOnly == $right.dateOnly
+    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
 
-```
+    ```
 
 9. **Ejecute** la consulta para ver los resultados.
  
@@ -190,15 +190,15 @@ imp
 
 2. Copie y pegue la siguiente consulta en el panel de la consulta. Esta consulta extrae la latitud y la longitud de la columna de dirección IP de este flujo de datos para generar una ubicación que puede trazar en un mapa. Esta consulta puede tardar un poco más que las anteriores.
  
-  ```
-  //Impressions by location
-  
-  Impressions
-  | where eventDate between (_startTime.._endTime)
-  | join external_table('products') on $left.productId == $right.ProductID
-  | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
-  | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-  ```
+    ```
+    //Impressions by location
+    
+    Impressions
+    | where eventDate between (_startTime.._endTime)
+    | join external_table('products') on $left.productId == $right.ProductID
+    | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
+    | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
+    ```
 
 3. Ejecute la consulta para validar que esté configurada correctamente. Haga clic en el botón **+ Agregar objeto visual**.
 
