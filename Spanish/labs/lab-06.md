@@ -71,9 +71,9 @@ para obtener un mensaje de muestra en Teams desde Reflex.
  
 ## Tarea 3: Crear un objeto Reflex desde un flujo de datos
 
-1. Seleccione el objeto etiquetado KQL Source Event y, después, seleccione Nueva regla.
+1. Seleccione el objeto etiquetado **KQL Source Event** y, después, seleccione **Nueva regla**.
 
-2. Haga clic en el icono del lápiz y asigne a esta regla el nombre, Clicks Greater Than 30,000 (puede elegir un valor aquí que se corresponda mejor con la cantidad de datos que haya transmitido).
+2. Haga clic en el icono del **lápiz** y asigne a esta regla el nombre, **Clicks Greater Than 30,000** (puede elegir un valor aquí que se corresponda mejor con la cantidad de datos que haya transmitido).
 
 3. Para comenzar, debe supervisar una de las columnas del flujo de datos. Para conseguirlo, debe configurar las secciones Condición y Acción. Haga clic en la pestaña Definición de la regla para establecer las condiciones y la acción.
 
@@ -112,9 +112,7 @@ para esos datos. Estos desencadenadores se pueden configurar con condiciones de 
 de nuestros desencadenadores. Data Activator aún se encuentra en versión preliminar, así que es posible que haya nuevas acciones disponibles en el futuro.
 
 ## Referencias
-Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.
-
-En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
+Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
