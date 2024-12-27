@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratorio 4
 
+![](../media/lab-04/main4.png)
+
 # Contenido
 
 - Estructura del documento	
