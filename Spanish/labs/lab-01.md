@@ -27,19 +27,19 @@ Como ingeniero de análisis en el equipo de ventas, entre sus responsabilidades 
 
 ## Desafíos actuales
 
-• Debe controlar un flujo continuo de datos en tiempo real del sitio web de comercio electrónico, lo que requiere una arquitectura sólida y escalable.
+- Debe controlar un flujo continuo de datos en tiempo real del sitio web de comercio electrónico, lo que requiere una arquitectura sólida y escalable.
 
-• Garantizar el procesamiento y análisis de datos en tiempo real para mantenerse al día con la naturaleza acelerada de las ventas en línea.
+- Garantizar el procesamiento y análisis de datos en tiempo real para mantenerse al día con la naturaleza acelerada de las ventas en línea.
 
-• Manejar el volumen y la velocidad de los datos generados por las interacciones de los usuarios, las transacciones y la actividad del sitio web.
+- Manejar el volumen y la velocidad de los datos generados por las interacciones de los usuarios, las transacciones y la actividad del sitio web.
 
-• Integrar datos de transmisión en tiempo real con datos históricos para un análisis exhaustivo.
+- Integrar datos de transmisión en tiempo real con datos históricos para un análisis exhaustivo.
 
-• Usar la arquitectura Medallion en un entorno de Eventhouse para estructurar el flujo de datos de manera eficiente.
+- Usar la arquitectura Medallion en un entorno de Eventhouse para estructurar el flujo de datos de manera eficiente.
 
-• Aprovechar los datos de Eventhouse dentro de un almacén de lago
+- Aprovechar los datos de Eventhouse dentro de un almacén de lago
 
-• Le interesa aprovechar Microsoft Fabric para abordar los desafíos anteriores, utilizando Eventhouse, KQL Database y Eventstream para crear una canalización de procesamiento de datos resistente y eficiente.
+- Le interesa aprovechar Microsoft Fabric para abordar los desafíos anteriores, utilizando Eventhouse, KQL Database y Eventstream para crear una canalización de procesamiento de datos resistente y eficiente.
  
 # Introducción
 
@@ -47,11 +47,11 @@ Hoy tendrá ocasión de aprender diversas características clave de Microsoft Fa
 
 Al final de este laboratorio, habrá aprendido a:
 
-• Explorar roles de Fabric
+- Explorar roles de Fabric
 
-• Crear un área de trabajo de Fabric
+- Crear un área de trabajo de Fabric
 
-• Crear una Eventhouse
+- Crear una Eventhouse
 
 # Licencia de Fabric
 
@@ -115,14 +115,14 @@ Elementos recomendados para crear y Obtener más información sobre las categor�
 
 4. Dentro del Centro en tiempo real, tiene acceso a tres tipos diferentes de integración de datos.
 
-    • **Todos los flujos de datos:** para sus Eventstreams y bases de datos KQL en ejecución, todas las salidas de flujo de Eventstreams y tablas de bases de datos KQL aparecen automáticamente en el Centro en tiempo real.
+    - **Todos los flujos de datos:** para sus Eventstreams y bases de datos KQL en ejecución, todas las salidas de flujo de Eventstreams y tablas de bases de datos KQL aparecen automáticamente en el Centro en tiempo real.
 
-    • **Orígenes de streaming:** muestra todos los recursos de streaming de los servicios de Microsoft. Ya sean Centros de eventos de Azure, centro de IoT de Azure u otros servicios, puede ingerir datos sin problemas en el Centro en tiempo real.
+    - **Orígenes de streaming:** muestra todos los recursos de streaming de los servicios de Microsoft. Ya sean Centros de eventos de Azure, centro de IoT de Azure u otros servicios, puede ingerir datos sin problemas en el Centro en tiempo real.
 
-    • **Eventos de Fabric:** los eventos que se generan a través de artefactos de Fabric y orígenes externos están disponibles en Fabric para admitir escenarios basados en eventos, como alertas en tiempo real y el desencadenamiento de acciones descendentes. Puede
+    - **Eventos de Fabric:** los eventos que se generan a través de artefactos de Fabric y orígenes externos están disponibles en Fabric para admitir escenarios basados en eventos, como alertas en tiempo real y el desencadenamiento de acciones descendentes. Puede
     supervisar y reaccionar a eventos, incluidos eventos de elementos del área de trabajo de Fabric y eventos de Azure Blob Storage.
 
-    • **Eventos de Azure:** en esta lista, se incluyen eventos del sistema generados en Azure a los que se puede acceder. Se puede supervisar un evento y establecer reglas para enviar notificaciones o realizar acciones cuando se activen.
+    - **Eventos de Azure:** en esta lista, se incluyen eventos del sistema generados en Azure a los que se puede acceder. Se puede supervisar un evento y establecer reglas para enviar notificaciones o realizar acciones cuando se activen.
 
 5. En la esquina superior derecha del Centro en tiempo real, haga clic en el botón **+ Conectar origen de datos**.
 
@@ -189,43 +189,43 @@ En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recurs
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
-•	Vea la publicación del blog para leer el [anuncio de disponibilidad general de Microsoft Fabric completo](https://aka.ms/Fabric-Hero-Blog-Ignite23)
+- Vea la publicación del blog para leer el [anuncio de disponibilidad general de Microsoft Fabric completo](https://aka.ms/Fabric-Hero-Blog-Ignite23)
 
-•	Explore Fabric a través de la [Visita guiada](https://aka.ms/Fabric-GuidedTour)
+- Explore Fabric a través de la [Visita guiada](https://aka.ms/Fabric-GuidedTour)
 
-•	Regístrese en la [prueba gratuita de Microsoft Fabric](https://aka.ms/try-fabric)
+- Regístrese en la [prueba gratuita de Microsoft Fabric](https://aka.ms/try-fabric)
 
-•	Visite el [sitio web de Microsoft Fabric](https://aka.ms/microsoft-fabric)
+- Visite el [sitio web de Microsoft Fabric](https://aka.ms/microsoft-fabric)
 
-•	Adquiera nuevas capacidades mediante la exploración de los [módulos de aprendizaje de Fabric](https://aka.ms/learn-fabric)
+- Adquiera nuevas capacidades mediante la exploración de los [módulos de aprendizaje de Fabric](https://aka.ms/learn-fabric)
 
-•	Explore la [documentación técnica de Fabric](https://aka.ms/fabric-docs)
+- Explore la [documentación técnica de Fabric](https://aka.ms/fabric-docs)
 
-•	Lee el [libro electrónico gratuito sobre cómo empezar a usar Fabric](https://aka.ms/fabric-get-started-ebook)
+- Lee el [libro electrónico gratuito sobre cómo empezar a usar Fabric](https://aka.ms/fabric-get-started-ebook)
 
-•	Únase a la [comunidad de Fabric](https://aka.ms/fabric-community) para publicar sus preguntas, compartir sus comentarios y aprender de otros.
+- Únase a la [comunidad de Fabric](https://aka.ms/fabric-community) para publicar sus preguntas, compartir sus comentarios y aprender de otros.
 
 Obtenga más información en los blogs de anuncios de la experiencia Fabric:
 
-• [Experiencia de Data Factory en el blog de Fabric](https://aka.ms/Fabric-Data-Factory-Blog)
+- [Experiencia de Data Factory en el blog de Fabric](https://aka.ms/Fabric-Data-Factory-Blog)
 
-• [Experiencia de Synapse Data Engineering en el blog de Fabric](https://aka.ms/Fabric-DE-Blog)
+- [Experiencia de Synapse Data Engineering en el blog de Fabric](https://aka.ms/Fabric-DE-Blog)
 
-• [Experiencia de Synapse Data Science en el blog de Fabric](https://aka.ms/Fabric-DS-Blog)
+- [Experiencia de Synapse Data Science en el blog de Fabric](https://aka.ms/Fabric-DS-Blog)
 
-• [Experiencia de Synapse Data Warehousing en el blog de Fabric](https://aka.ms/Fabric-DW-Blog)
+- [Experiencia de Synapse Data Warehousing en el blog de Fabric](https://aka.ms/Fabric-DW-Blog)
 
-• [Experiencia de Real-Time Intelligence en el blog de Fabric](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
+- [Experiencia de Real-Time Intelligence en el blog de Fabric](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
 
-• [Blog de anuncios de Power BI](https://aka.ms/Fabric-PBI-Blog)
+- [Blog de anuncios de Power BI](https://aka.ms/Fabric-PBI-Blog)
 
-• [Experiencia de Data Activator en el blog de Fabric](https://aka.ms/Fabric-DA-Blog)
+- [Experiencia de Data Activator en el blog de Fabric](https://aka.ms/Fabric-DA-Blog)
 
-• [Administración y gobernanza en el blog de Fabric](https://aka.ms/Fabric-Admin-Gov-Blog)
+- [Administración y gobernanza en el blog de Fabric](https://aka.ms/Fabric-Admin-Gov-Blog)
 
-• [OneLake en el blog de Fabric](https://aka.ms/Fabric-OneLake-Blog)
+- [OneLake en el blog de Fabric](https://aka.ms/Fabric-OneLake-Blog)
 
-• [Blog de integración de Dataverse y Microsoft Fabric](https://aka.ms/Dataverse-Fabric-Blog)
+- [Blog de integración de Dataverse y Microsoft Fabric](https://aka.ms/Dataverse-Fabric-Blog)
 
 
 © 2024 Microsoft Corporation. Todos los derechos reservados.
