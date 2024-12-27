@@ -87,8 +87,7 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image014.jpg)
  
-7. Se muestra el esquema (nombres de columna y tipos de datos) de la tabla. Una cosa que sería útil agregar a esta tabla en la base de datos KQL sería una columna oculta para el tiempo de ingesta que se utilizará más adelante en la arquitectura Medallion. Vamos a agregarla ahora. Copie y pegue el
-siguiente script para modificar las tablas que acaba de crear agregando una columna de tiempo de ingesta.
+7. Se muestra el esquema (nombres de columna y tipos de datos) de la tabla. Una cosa que sería útil agregar a esta tabla en la base de datos KQL sería una columna oculta para el tiempo de ingesta que se utilizará más adelante en la arquitectura Medallion. Vamos a agregarla ahora. Copie y pegue el siguiente script para modificar las tablas que acaba de crear agregando una columna de tiempo de ingesta.
 
     ```
     //adds a hidden field showing ingestion time
