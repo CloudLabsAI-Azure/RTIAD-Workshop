@@ -78,13 +78,15 @@ para obtener un mensaje de muestra en Teams desde Reflex.
 3. Para comenzar, debe supervisar una de las columnas del flujo de datos. Para conseguirlo, debe configurar las secciones Condición y Acción. Haga clic en la pestaña Definición de la regla para establecer las condiciones y la acción.
 
 4. En la página Definición que se abre, en **Condición**, seleccione las propiedades siguientes:
--	**Operación** = Es mayor que
--	**Columna**= clics
-- **Valor** = 30000
+
+    -	**Operación** = Es mayor que
+    -	**Columna**= clics
+    - **Valor** = 30000
 
 5. En **Acción**, seleccione las propiedades siguientes:
--	**Tipo** = Teams message
--	**Destinatario** = {su id. de usuario}
+
+    -	**Tipo** = Teams message
+    -	**Destinatario** = {su id. de usuario}
 
 6. Por último, haga clic en Guardar e iniciar a ejecutar esta regla.
 
