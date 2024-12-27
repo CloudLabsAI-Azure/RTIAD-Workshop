@@ -62,7 +62,7 @@ indica a continuación.
 
 11.	En esta pantalla de información general, compruebe que el contenido se vea correctamente y haga clic en **Crear origen**.
 
-    >**Nota**: Los detalles serán diferentes a lo que aparece en la captura de pantalla.
+    >**Nota**: **Los detalles serán diferentes a lo que aparece en la captura de pantalla**.
  
 12.	Una vez que se ha creado el Eventstream y el origen de Eventstream, seleccione la opción “**Abrir Eventstream**”
 
@@ -70,7 +70,7 @@ indica a continuación.
 
 14.	Es posible que su origen tarde unos minutos en estar **Activo**, pero tras esperar unos instantes, haga clic en el icono central con el nombre del Eventstream y, después, en Actualizar si no aparece una vista preliminar de los datos.
 
-    >**Nota**: No pasa nada si recibe un estado de “Advertencia” y una directiva de auditoría. El flujo seguirá funcionando
+    >**Nota**:**No pasa nada si recibe un estado de “Advertencia” y una directiva de auditoría. El flujo seguirá funcionando**
 
 15.	Ahora debería ver una muestra de los datos en la ventana inferior.
  
