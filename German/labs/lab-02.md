@@ -47,13 +47,13 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 6. Kopieren Sie von Ihrer Umgebungsdetailseite alle erforderlichen Verbindungseinstellungen, und fügen Sie sie in die entsprechenden Felder ein. Für diese Übungen stellen wir eine Verbindung zu einem Event Hub her, an den Streamingdaten von einem Python-Notebook gesendet werden. Dieses Notebook erstellt gefälschte Verkaufstransaktionen mit einer Rate von etwa 3.100 Transaktionen pro Stunde.
 
-Event Hub-Namespace: **rtiadhub{userid} – bereitgestellt von Cloudlabs**
+    Event Hub-Namespace: **rtiadhub{userid} – bereitgestellt von Cloudlabs**
 
-Event Hub: **rti-iad-fabrikam**
+    Event Hub: **rti-iad-fabrikam**
 
-Name des gemeinsamen Zugriffsschlüssels: **rti-reader**
+    Name des gemeinsamen Zugriffsschlüssels: **rti-reader**
 
-Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdetails"**
+    Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdetails"**
 
 7. Sobald alle Eigenschaften ausgefüllt sind, klicken Sie auf **Verbinden**.
 
@@ -66,7 +66,7 @@ Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdeta
 11. Überprüfen Sie in diesem Übersichtsbildschirm, ob der Inhalt korrekt ist, und klicken Sie auf
 **Verbinden**.
 
-**Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
+    **Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
 
 12. Sobald der Eventstream und die Eventstream-Quelle erstellt sind, wählen Sie die Option
 „**Eventstream öffnen**“ aus.
@@ -75,7 +75,7 @@ Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdeta
 
 14.	Es kann einen Moment dauern, bis Ihre Quelle **aktiv** ist. Warten Sie jedoch einen Moment, und klicken Sie dann auf das mittlere Symbol mit dem Namen Ihres Eventstreams. Sie sollten jetzt eine Vorschau der Daten sehen.
 
-**Hinweis: Wenn Sie bezüglich einer Audit-Richtlinie den Status "Warnung" erhalten, ist das in Ordnung. Der Stream funktioniert weiterhin.**
+    **Hinweis: Wenn Sie bezüglich einer Audit-Richtlinie den Status "Warnung" erhalten, ist das in Ordnung. Der Stream funktioniert weiterhin.**
 
 15.	Sie sollten jetzt im unteren Fenster ein Beispiel der Daten sehen.
 
@@ -174,9 +174,9 @@ Möglicherweise arbeiten Sie zum ersten Mal mit der Kusto-Abfragesprache. Obwohl
 
 1. Sie müssen eine Abfrage erstellen, die jedes Produkt mit der Anzahl seiner Verkäufe zurückgibt. Dies ist eine Aufgabe, die Sie schnell mit T-SQL ausführen können. Im Abfragefenster können Sie Ihre SQL-Abfragen in KQL übersetzen, um besser zu verstehen, wie Sie in Zukunft KQL-Abfragen erstellen. Beginnen Sie mit dem Schreiben des folgenden Befehls.
 
-**(Hinweis: Doppelklicken Sie auf das Objekt unten, um den Text kopieren zu können.)**
+    **(Hinweis: Doppelklicken Sie auf das Objekt unten, um den Text kopieren zu können.)**
 
-2. Mit der Kommentarzeile „--“, gefolgt vom Schlüsselwort „explain“, können Sie nun eine SQL- Abfrage erstellen und mit der KQL-Abfrage ein Ergebnis zurückgeben, mit dem eine ähnliche
+2. Mit der Kommentarzeile „--“, gefolgt vom Schlüsselwort "explain", können Sie nun eine SQL- Abfrage erstellen und mit der KQL-Abfrage ein Ergebnis zurückgeben, mit dem eine ähnliche
 Abfrage und ein ähnliches Ergebnis erzielt werden können. Geben Sie unten die folgende Abfrage ein, um zu erklären, wie die KQL-Abfrage aussehen würde:
 
 3. Dies ist eine einfache SQL-Abfrage, die Ergebnisse aus der Tabelle „InternetSales“ abruft und zwei Spalten zurückgibt: den Produktschlüssel und eine Anzahl der Bestellungen. Da es eine aggregierte und eine nicht aggregierte Spalte gibt, müssen Sie GROUP BY verwenden, um Ergebnisse für jedes einzelne Produkt zurückzugeben. Führen Sie die gesamte Abfrage aus, beginnend mit „--“ bis zum Ende der T-SQL-Abfrage.
