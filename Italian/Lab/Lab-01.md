@@ -212,33 +212,33 @@ Nel menu di servizio, la sezione Guida (?) include collegamenti ad alcune risors
 
 Di seguito sono riportate ulteriori risorse utili che consentiranno di progredire nell'uso di Microsoft Fabric.
 
-•	Fare riferimento al post del blog per leggere l'(annuncio completo sulla disponibilità generale di Microsoft Fabric)[https://www.microsoft.com/en-us/microsoft-fabric/blog/2023/11/15/prepare-your-data-for-ai-innovation-with-microsoft-fabric-now-generally-available/]
+•	Fare riferimento al post del blog per leggere l'[annuncio completo sulla disponibilità generale di Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/blog/2023/11/15/prepare-your-data-for-ai-innovation-with-microsoft-fabric-now-generally-available/)
 
-•	Esplorare Fabric tramite la (Presentazione guidata)[https://guidedtour.microsoft.com/en-us/guidedtour/microsoft-fabric/microsoft-fabric/1/1]
+•	Esplorare Fabric tramite la [Presentazione guidata](https://guidedtour.microsoft.com/en-us/guidedtour/microsoft-fabric/microsoft-fabric/1/1)
 
-•	Iscriversi alla (versione di valutazione gratuita di Microsoft Fabric)[https://www.microsoft.com/en-us/microsoft-fabric/getting-started]
+•	Iscriversi alla [versione di valutazione gratuita di Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/getting-started)
 
-•	Visitare il (sito Web di Microsoft Fabric)[https://www.microsoft.com/en-in/microsoft-fabric]
+•	Visitare il [sito Web di Microsoft Fabric](https://www.microsoft.com/en-in/microsoft-fabric)
 
-•	Acquisire nuove competenze esplorando i (moduli di apprendimento di Fabric)[https://learn.microsoft.com/en-us/training/browse/?products=fabric&resource_type=module]
+•	Acquisire nuove competenze esplorando i [moduli di apprendimento di Fabric](https://learn.microsoft.com/en-us/training/browse/?products=fabric&resource_type=module)
 
-•	Consultare la (documentazione tecnica di Fabric)[https://learn.microsoft.com/en-us/fabric/]
+•	Consultare la [documentazione tecnica di Fabric](https://learn.microsoft.com/en-us/fabric/)
 
-•	Leggere l'(e-book gratuito introduttivo a Fabric)[https://info.microsoft.com/ww-landing-unlocking-transformative-data-value-with-microsoft-fabric.html]
+•	Leggere l'[e-book gratuito introduttivo a Fabric](https://info.microsoft.com/ww-landing-unlocking-transformative-data-value-with-microsoft-fabric.html)
 
-•	Unirsi alla (community di Fabric)[https://community.fabric.microsoft.com/] per pubblicare domande, condividere feedback e imparare dagli altri
+•	Unirsi alla [community di Fabric](https://community.fabric.microsoft.com/) per pubblicare domande, condividere feedback e imparare dagli altri
 
 Leggere i blog di annunci più approfonditi sull'esperienza Fabric:
 
-•	(Blog sull'esperienza Data Factory in Fabric)[https://blog.fabric.microsoft.com/en-us/blog/introducing-data-factory-in-microsoft-fabric/]
+•	[Blog sull'esperienza Data Factory in Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-data-factory-in-microsoft-fabric/)
 
-•	(Blog sull'esperienza Synapse Data Engineering in Fabric)[https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-engineering-in-microsoft-fabric/]
+•	[Blog sull'esperienza Synapse Data Engineering in Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-engineering-in-microsoft-fabric/)
 
-•	(Blog sull'esperienza Synapse Data Science in Fabric)[https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-science-in-microsoft-fabric/]
+•	[Blog sull'esperienza Synapse Data Science in Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-science-in-microsoft-fabric/)
 
-•	(Blog sull'esperienza Synapse Data Warehousing in Fabric)[https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-warehouse-in-microsoft-fabric/]
+•	[Blog sull'esperienza Synapse Data Warehousing in Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-warehouse-in-microsoft-fabric/)
 
-•	(Blog sull'esperienza Real-Time Intelligence in Fabric)[https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence]
+•	[Blog sull'esperienza Real-Time Intelligence in Fabric](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
  
 •	[Blog di annunci di Power BI](https://powerbi.microsoft.com/en-us/blog/empower-power-bi-users-with-microsoft-fabric-and-copilot/)
 
