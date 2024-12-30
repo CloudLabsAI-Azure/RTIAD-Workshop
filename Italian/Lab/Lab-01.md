@@ -121,7 +121,7 @@ Per lavorare con gli elementi di Fabric, sono necessarie una licenza di valutazi
 
 1.	Fare clic su **In tempo reale** nel riquadro di spostamento di Fabric sul lato sinistro della schermata.
 
-2.	Si aprirà la finestra di dialogo **Hub in tempo reale**, in cui è possibile selezionare Presentazione o direttamente **Attività iniziali**.
+2.	Si aprirà la finestra di dialogo **Hub in tempo reale**, in cui è possibile selezionare **Presentazione** o direttamente **Attività iniziali**.
 
  
 3.	L'hub in tempo reale è la singola posizione da cui trasmettere in streaming i dati in movimento nell'intera organizzazione. Di questo hub viene automaticamente eseguito il provisioning per ogni tenant Microsoft Fabric. Permette di individuare, inserire, gestire e consumare facilmente dati in movimento provenienti da un'ampia gamma di origini.
