@@ -1,7 +1,7 @@
 
 # Microsoft Fabric Real-Time Intelligence in a Day Lab 1
 
-Versione: ottobre 2024
+![](../media/Lab-01/lab-01.png)
  
 # Sommario
 
