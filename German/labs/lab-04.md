@@ -16,7 +16,6 @@
 - Zusammenfassung
 - Referenzen
 
- 
 # Dokumentstruktur
 
 Die Übung enthält die Schritte, die der Benutzer durchführen muss, sowie zugehörige Screenshots zur visuellen Unterstützung. Wichtige Abschnitte sind in den Screenshots mit einem orangefarbenen Kasten gekennzeichnet.
