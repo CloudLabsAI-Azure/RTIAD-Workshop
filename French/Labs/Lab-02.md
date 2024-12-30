@@ -65,7 +65,7 @@ crée de fausses transactions de vente à un rythme d’environ 3 100 transactio
 
 14.	L’**Activation** de votre source peut prendre quelques instants. Ensuite, cliquez sur l’icône centrale avec le nom de votre Eventstream, puis sur Actualiser si vous ne voyez pas d’aperçu des données.
 
-**Remarque : si vous recevez un statut « Avertissement » autour d’une stratégie d’audit, ce n’est pas grave. Le flux fonctionne toujours.**
+**>Remarque : si vous recevez un statut « Avertissement » autour d’une stratégie d’audit, ce n’est pas grave. Le flux fonctionne toujours.**
  
 15.	Vous devriez maintenant voir un échantillon des données dans la fenêtre inférieure.
  
@@ -171,79 +171,87 @@ résultats d’une requête plus complexe que celles que vous êtes actuellement
 3.	Il s’agit d’une requête SQL simple qui récupère les résultats de la table InternetSales pour renvoyer deux colonnes : la clé de produit et un décompte du nombre de commandes. Comme il existe une colonne agrégée et une colonne non agrégée, vous devez renvoyer des résultats pour chaque produit individuel à l’aide d’une requête GROUP BY. Exécutez toute la requête en
 commençant par la ligne de commentaire « -- » jusqu’à la fin de la requête T-SQL.
 
-4.	La sortie de la requête explain devrait être un enregistrement unique avec la requête KQL traduite comme résultat. Cliquez sur le signe supérieur (>) pour développer les résultats et faciliter la traduction.
+4.	La sortie de la requête explain devrait être un enregistrement unique avec la requête KQL traduite comme résultat. Cliquez sur **le signe supérieur (>)** pour développer les résultats et faciliter la traduction.
  
 5.	Cliquez sur le volet de requête mis en surbrillance en orange ci-dessous. Ainsi, vous pouvez
 sélectionner la requête KQL traduite et la copier. Collez cette requête dans le jeu de requêtes KQL que nous avons utilisé
  
-6.	Une fois les résultats dans votre volet de requête, mettez en surbrillance la requête et exécutez- la pour récupérer les résultats. L’opérateur summarize produit une table qui agrège le contenu de la table d’entrée tout en déterminant comment regrouper chaque enregistrement avec la mention by Product Key et l’opérateur project sélectionne les colonnes à inclure, renommer ou supprimer tout en insérant de nouvelles colonnes de calcul.
+6.	Une fois les résultats dans votre volet de requête, mettez en surbrillance la requête et exécutez- la pour récupérer les résultats. L’opérateur **summarize** produit une table qui agrège le contenu de la table d’entrée tout en déterminant comment regrouper chaque enregistrement avec la mention **by Product Key** et l’opérateur **project** sélectionne les colonnes à inclure, renommer ou supprimer tout en insérant de nouvelles colonnes de calcul.
+
 7.	N’hésitez pas à explorer une liste des opérations de l’aide-mémoire SQL vers KQL en haut de votre jeu de requêtes pour des fonctionnalités et conversions supplémentaires.
  
 8.	Au lieu d’utiliser KQL, une alternative à l’interrogation des résultats de la base de données KQL dans Fabric consiste à écrire et exécuter une requête T-SQL. Mettez en surbrillance l’instruction SQL d’origine ayant permis de traduire la requête KQL et exécutez uniquement celle-ci.
  
- 
 9.	Cela donnera également des résultats parfaitement valides sans avoir à convertir en KQL au préalable.
 
-Jeu de requêtes KQL
-Tâche 5 : Utiliser un jeu de requêtes KQL
+# Jeu de requêtes KQL
+## Tâche 5 : Utiliser un jeu de requêtes KQL
+
 1.	Bien que la plupart des requêtes de cette fenêtre aient été créées automatiquement à partir de l’interface utilisateur, il se peut qu’à l’avenir vous souhaitiez créer vos propres requêtes KQL en partant de zéro. Pour ce faire, vous devez utiliser la fonctionnalité d’onglets située en haut de
 l’écran. Il convient également de noter que ce jeu de requêtes effectue automatiquement des sauvegardes périodiques.
 
 2.	Vous remarquerez qu’en haut du jeu de requêtes, le nom par défaut de notre première page est le même que celui de notre base de données.
  
 3.	Nous allons renommer cet onglet en cliquant sur l’icône en forme de crayon, appelons-le
-« Ma première requête KQL ».
- 
+**« Ma première requête KQL »**.
  
 4.	À l’avenir, si nous souhaitons isoler notre code, nous pouvons simplement créer des onglets supplémentaires en cliquant sur l’icône « + ».
 
+5.	Revenez à votre espace de travail **RTI_username**. Les objets suivants devraient être présents
 
+# Résumé
 
-5.	Revenez à votre espace de travail RTI_username. Les objets suivants devraient être présents
-
-
-Résumé
 Dans ce labo, vous avez commencé par configurer une connexion à un Event Hub comportant un flux de données en cours d’exécution, puis vous avez extrait ces données et les avez ingérées dans une base de données KQL à l’aide d’un Eventstream. Une fois les données ingérées, vous avez pu créer plusieurs requêtes KQL et examiner le fonctionnement de T-SQL pour découvrir la syntaxe KQL ou
 simplement renvoyer des résultats avec des instructions SQL.
  
-Références
+# Références
+
 Fabric Real-Time Intelligence in a Day (RTIIAD) vous présente certaines des fonctions clés de Microsoft Fabric.
 Dans le menu du service, la section Aide (?) comporte des liens vers d’excellentes ressources.
 
 Voici quelques autres ressources qui vous aideront lors de vos prochaines étapes avec Microsoft Fabric :
-•	Consultez le billet de blog pour lire l’intégralité de l’ annonce de la GA de Microsof t Fabric
-•	Explorez Fabric grâce à la visite guidée
-•	Inscrivez-vous pour bénéficier d’un essai gratuit de Microsof t Fabric
-•	Rendez-vous sur le site web Microsoft Fabric
-•	Acquérez de nouvelles compétences en explorant les modules d’apprentissage Fabric
-•	Explorez la documentation technique Fabric
-•	Lisez le livre électronique gratuit sur la prise en main de Fabric
-•	Rejoignez la communauté Fabric pour publier vos questions, partager vos commentaires et apprendre des autres
+
+- Consultez le billet de blog pour lire l’intégralité de l’ [annonce de la GA de Microsoft Fabric](https://aka.ms/Fabric-Hero-Blog-Ignite23)
+- Explorez Fabric grâce à la [visite guidée](https://aka.ms/Fabric-GuidedTour)
+- Inscrivez-vous pour bénéficier d’un [essai gratuit de Microsoft Fabric](https://aka.ms/try-fabric)
+- Rendez-vous sur le [site web Microsoft Fabric](https://aka.ms/microsoft-fabric)
+- Acquérez de nouvelles compétences en explorant les [modules d’apprentissage Fabric](https://learn.microsoft.com/en-us/training/browse/?products=fabric&resource_type=module)
+- Explorez la [documentation technique Fabric](https://aka.ms/fabric-docs)
+- Lisez le [livre électronique gratuit sur la prise en main de Fabric](https://aka.ms/fabric-get-started-ebook)
+- Rejoignez la [communauté Fabric](https://aka.ms/fabric-community) pour publier vos questions, partager vos commentaires et apprendre des autres
+
 Lisez les blogs d’annonces plus détaillés sur l’expérience Fabric :
-•	Blog Expérience Data Factory dans Fabric
-•	Blog Expérience Synapse Data Engineering dans Fabric
-•	Blog Expérience Synapse Data Science dans Fabric
-•	Blog Expérience Synapse Data Warehousing dans Fabric
-•	Blog Expérience Real-Time Intelligence dans Fabric
-•	Blog Annonce Power BI
-•	Blog Expérience Data Activator dans Fabric
-•	Blog Administration et gouvernance dans Fabric
-•	Blog OneLake dans Fabric
-•	Blog Intégration de Dataverse et Microsof t Fabric
+
+- [Blog Expérience Data Factory dans Fabric](https://aka.ms/Fabric-Data-Factory-Blog)
+- [Blog Expérience Synapse Data Engineering dans Fabric](https://aka.ms/Fabric-DE-Blog)
+- [Blog Expérience Synapse Data Science dans Fabric](https://aka.ms/Fabric-DS-Blog)
+- [Blog Expérience Synapse Data Warehousing dans Fabric](https://aka.ms/Fabric-DW-Blog)
+- [Blog Expérience Real-Time Intelligence dans Fabric](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
+- [Blog Annonce Power BI](https://aka.ms/Fabric-PBI-Blog)
+- [Blog Expérience Data Activator dans Fabric](https://aka.ms/Fabric-DA-Blog)
+- [Blog Administration et gouvernance dans Fabric](https://aka.ms/Fabric-Admin-Gov-Blog)
+- [Blog OneLake dans Fabric](https://aka.ms/Fabric-OneLake-Blog)
+- [Blog Intégration de Dataverse et Microsof t Fabric](https://aka.ms/Dataverse-Fabric-Blog)
  
 © 2024 Microsoft Corporation. Tous droits réservés.
+
 En effectuant cette démonstration/ce labo, vous acceptez les conditions suivantes :
+
 La technologie/fonctionnalité décrite dans cette démonstration/ce labo est fournie par Microsoft Corporation en vue d’obtenir vos commentaires et de vous fournir une expérience d’apprentissage.
 Vous pouvez utiliser cette démonstration/ce labo uniquement pour évaluer ces technologies et fonctionnalités, et pour fournir des commentaires à Microsoft. Vous ne pouvez pas l’utiliser à d’autres fins. Vous ne pouvez pas modifier, copier, distribuer, transmettre, afficher, effectuer, reproduire, publier, accorder une licence, créer des œuvres dérivées, transférer ou vendre tout ou une partie de cette démonstration/ce labo.
-LA COPIE OU LA REPRODUCTION DE CETTE DÉMONSTRATION/CE LABO (OU DE TOUTE PARTIE DE CEUX-CI) SUR TOUT AUTRE SERVEUR OU AUTRE EMPLACEMENT EN VUE D’UNE AUTRE
-REPRODUCTION OU REDISTRIBUTION EST EXPRESSÉMENT INTERDITE.
+
+LA COPIE OU LA REPRODUCTION DE CETTE DÉMONSTRATION/CE LABO (OU DE TOUTE PARTIE DE CEUX-CI) SUR TOUT AUTRE SERVEUR OU AUTRE EMPLACEMENT EN VUE D’UNE AUTRE REPRODUCTION OU REDISTRIBUTION EST EXPRESSÉMENT INTERDITE.
+
 CETTE DÉMONSTRATION/CE LABO FOURNIT CERTAINES FONCTIONNALITÉS DE PRODUIT/ TECHNOLOGIES LOGICIELLES, NOTAMMENT D’ÉVENTUELS NOUVEAUX CONCEPTS ET FONCTIONNALITÉS, DANS UN ENVIRONNEMENT SIMULÉ SANS CONFIGURATION NI INSTALLATION COMPLEXES AUX FINS DÉCRITES CI-DESSUS. LES TECHNOLOGIES/CONCEPTS REPRÉSENTÉS DANS CETTE DÉMONSTRATION/CE LABO PEUVENT NE PAS REPRÉSENTER LES FONCTIONNALITÉS COMPLÈTES ET PEUVENT NE PAS FONCTIONNER DE LA MÊME MANIÈRE QUE DANS UNE VERSION FINALE. IL EST ÉGALEMENT POSSIBLE QUE NOUS NE PUBLIIONS PAS DE VERSION FINALE DE CES FONCTIONNALITÉS OU CONCEPTS. VOTRE EXPÉRIENCE D’UTILISATION DE CES FONCTIONNALITÉS DANS UN ENVIRONNEMENT PHYSIQUE PEUT ÉGALEMENT ÊTRE DIFFÉRENTE.
-COMMENTAIRES. Si vous envoyez des commentaires sur les fonctionnalités, technologies et/ou concepts décrit(e)s dans ces labos/cette démonstration à Microsoft, vous accordez à Microsoft, sans frais, le droit d’utiliser, de partager et de commercialiser vos commentaires de quelque manière et
+
+**COMMENTAIRES.** Si vous envoyez des commentaires sur les fonctionnalités, technologies et/ou concepts décrit(e)s dans ces labos/cette démonstration à Microsoft, vous accordez à Microsoft, sans frais, le droit d’utiliser, de partager et de commercialiser vos commentaires de quelque manière et
 à quelque fin que ce soit. Vous accordez également à des tiers, sans frais, les droits de brevet nécessaires pour leurs produits, technologies et services en vue de l’utilisation ou de l’interface avec des parties spécifiques d’un logiciel ou service Microsoft incluant les commentaires. Vous n’enverrez pas de commentaires soumis à une licence exigeant que Microsoft accorde une licence pour son logiciel ou sa documentation à des tiers du fait que nous y incluons vos commentaires. Ces droits survivent à ce contrat.
+
 MICROSOFT CORPORATION DÉCLINE TOUTES LES GARANTIES ET CONDITIONS EN CE
 QUI CONCERNE CETTE DÉMONSTRATION/CE LABO, Y COMPRIS TOUTES LES GARANTIES ET CONDITIONS DE QUALITÉ MARCHANDE, QU’ELLES SOIENT EXPLICITES, IMPLICITES
 OU LÉGALES, D’ADÉQUATION À UN USAGE PARTICULIER, DE TITRE ET D’ABSENCE DE
 CONTREFAÇON. MICROSOFT N’OFFRE AUCUNE GARANTIE OU REPRÉSENTATION EN CE QUI CONCERNE LA PRÉCISION DES RÉSULTATS, LA CONSÉQUENCE QUI DÉCOULE DE L’UTILISATION DE CETTE DÉMONSTRATION/CE LABO, OU L’ADÉQUATION DES INFORMATIONS CONTENUES DANS CETTE DÉMONSTRATION/CE LABO À QUELQUE FIN QUE CE SOIT.
-CLAUSE D’EXCLUSION DE RESPONSABILITÉ
+
+**CLAUSE D’EXCLUSION DE RESPONSABILITÉ**
 Cette démonstration/Ce labo comporte seulement une partie des nouvelles fonctionnalités et améliorations disponibles dans Microsoft Power BI. Certaines fonctionnalités sont susceptibles de changer dans les versions ultérieures du produit. Dans ce labo/cette démonstration, vous
 allez découvrir comment utiliser certaines nouvelles fonctionnalités, mais pas toutes.
