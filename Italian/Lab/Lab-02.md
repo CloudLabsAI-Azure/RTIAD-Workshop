@@ -72,13 +72,13 @@ In questo lab si apprenderà quanto segue:
 
 6.	Dalla pagina dei dettagli dell'ambiente copiare e incollare tutte le impostazioni di connessione necessarie nei campi appropriati. Per questi lab si eseguirà la connessione a un hub eventi che riceve dati in streaming da un notebook Python. Questo notebook crea false transazioni di vendita al ritmo di circa 3.100 transazioni all'ora.
 
-Spazio dei nomi hub eventi: **rtiadhu/{userid} - fornito da cloudlabs**
+    Spazio dei nomi hub eventi: **rtiadhu/{userid} - fornito da cloudlabs**
 
-Hub eventi: **rti-iad-fabrikam**
+    Hub eventi: **rti-iad-fabrikam**
 
-Nome chiave di accesso condivisa: **rti-reader**
+    Nome chiave di accesso condivisa: **rti-reader**
 
-Chiave di accesso condivisa: **disponibile nella scheda Dettagli ambiente**
+    Chiave di accesso condivisa: **disponibile nella scheda Dettagli ambiente**
 
 7.	Una volta compilate tutte le proprietà, fare clic su **Connetti.**
 
@@ -165,7 +165,8 @@ Chiave di accesso condivisa: **disponibile nella scheda Dettagli ambiente**
 
 9.	Se si nota che l'origine **AzureEventHub** è diventata inattiva, impostare l'interruttore sullo stato "Attiva" e scegliere l'opzione "Ora" quando si apre la finestra di dialogo
 
-    ![](../media/Lab-02/image048.png)![](../media/Lab-02/image049.png)
+    ![](../media/Lab-02/image048.png)
+    ![](../media/Lab-02/image049.png)
 
 10.	Scegliere l'opzione **Configura** all'interno della **Destinazione** per eseguire correttamente il mapping del flusso in una tabella nel database KQL.
  
