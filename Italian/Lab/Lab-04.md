@@ -191,8 +191,9 @@ connessione allo stesso database SQL di Azure esterno del lab precedente, ma a t
 lo script seguente
 
     ```
-    //Query the Bronze layer Customer table Customer
-
+    //Query the Bronze layer Customer table
+    
+    Customer
     | take 100
     ```
     
@@ -480,7 +481,7 @@ i notebook in Fabric. Questi dati potrebbero essere usati nella data science o p
  
 11.	Un esempio dei record di quella tabella è ora visualizzato nell’interfaccia utente.
 
-Nota: potrebbero trascorrere alcune ore prima che i dati vengano visualizzati in OneLake **(https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)**
+**Nota: potrebbero trascorrere alcune ore prima che i dati vengano visualizzati in OneLake (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability)**
 
 # Riepilogo
 
