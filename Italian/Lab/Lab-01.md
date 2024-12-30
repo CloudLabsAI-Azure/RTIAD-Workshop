@@ -127,12 +127,16 @@ Per lavorare con gli elementi di Fabric, sono necessarie una licenza di valutazi
 3.	L'hub in tempo reale è la singola posizione da cui trasmettere in streaming i dati in movimento nell'intera organizzazione. Di questo hub viene automaticamente eseguito il provisioning per ogni tenant Microsoft Fabric. Permette di individuare, inserire, gestire e consumare facilmente dati in movimento provenienti da un'ampia gamma di origini.
 
 4.	All'interno dell'hub in tempo reale si ha accesso a tre diverse tipologie di integrazione dei dati.
-•	**Tutti i flussi di dati:** per gli Eventstream e i database KQL in esecuzione, tutti gli output degli Eventstream e le tabelle dei database KQL vengono automaticamente visualizzati nell'hub in tempo reale.
-•	**Origini di streaming:** elenca tutte le risorse di streaming dei servizi Microsoft. Che si
+
+-	**Tutti i flussi di dati:** per gli Eventstream e i database KQL in esecuzione, tutti gli output degli Eventstream e le tabelle dei database KQL vengono automaticamente visualizzati nell'hub in tempo reale.
+
+-	**Origini di streaming:** elenca tutte le risorse di streaming dei servizi Microsoft. Che si
 tratti di hub eventi di Azure, hub IoT di Azure o altri servizi, è possibile inserire dati senza problemi nell'hub in tempo reale.
-•	**Eventi Fabric:** gli eventi generati tramite artefatti Fabric ed origini esterne vengono resi disponibili in Fabric per supportare scenari guidati dagli eventi, come avvisi in tempo
+
+-	**Eventi Fabric:** gli eventi generati tramite artefatti Fabric ed origini esterne vengono resi disponibili in Fabric per supportare scenari guidati dagli eventi, come avvisi in tempo
 reale e attivazione di azioni a valle. È possibile monitorare e reagire agli eventi, tra cui gli eventi degli elementi dell'area di lavoro Fabric e gli eventi di Archiviazione BLOB di Azure.
-•	**Eventi di Azure:** questo elenco include gli eventi di sistema generati in Azure a cui è possibile accedere. È possibile monitorare un evento e impostare regole che invieranno notifiche o eseguiranno azioni quando vengono attivate.
+
+-	**Eventi di Azure:** questo elenco include gli eventi di sistema generati in Azure a cui è possibile accedere. È possibile monitorare un evento e impostare regole che invieranno notifiche o eseguiranno azioni quando vengono attivate.
  
 
 5.	Nell'angolo in alto a destra dell'hub in tempo reale fare clic sul pulsante **+ Connettere un'origine dati**.
