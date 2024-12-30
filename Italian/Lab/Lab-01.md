@@ -5,28 +5,29 @@ Versione: ottobre 2024
  
 # Sommario
 
-Struttura del documento	
+- Struttura del documento	
 
-Scenario/Esposizione del problema
+- Scenario/Esposizione del problema
 
-Introduzione	
+- Introduzione	
 
-Licenza di Fabric	
-Attività 1. Abilitazione di una licenza di valutazione per Microsoft Fabric	
+- Licenza di Fabric
+  
+  - Attività 1. Abilitazione di una licenza di valutazione per Microsoft Fabric	
 
-Real-Time Intelligence e hub in tempo reale	
+- Real-Time Intelligence e hub in tempo reale	
 
-Attività 2. Elementi dell'esperienza Real-Time Intelligence	
+  - Attività 2. Elementi dell'esperienza Real-Time Intelligence	
+  
+  - Attività 3. Hub in tempo reale	
 
-Attività 3. Hub in tempo reale	
+- Creazione di un'area di lavoro e di un Eventhouse	
 
-Creazione di un'area di lavoro e di un Eventhouse	
+  - Attività 4. Creazione di un'area di lavoro Fabric	
+  
+  - Attività 5. Creazione di un Eventhouse
 
-Attività 4. Creazione di un'area di lavoro Fabric	
-
-Attività 5. Creazione di un Eventhouse
-
-Riferimenti	
+- Riferimenti	
 
  
 # Struttura del documento
@@ -36,34 +37,34 @@ Il lab include i passaggi che l'utente deve seguire con gli screenshot associati
 # Scenario/Esposizione del problema
 
 Fabrikam è una società di e-commerce specializzata in un'ampia gamma di attrezzature e accessori per l'attività sportiva e l'escursionismo. La società vende i propri prodotti a clienti al dettaglio in tutto il mondo tramite la propria piattaforma online e prevede di ampliare la propria presenza in nuovi
-mercati internazionali. È in atto una nuova iniziativa che prevede la fornitura di informazioni
-dettagliate in tempo reale da un sito di e-commerce per dare modo ai dirigenti di prendere decisioni tempestive sulla base di informazioni aggiornate.
+mercati internazionali. È in atto una nuova iniziativa che prevede la fornitura di informazioni dettagliate in tempo reale da un sito di e-commerce per dare modo ai dirigenti di prendere decisioni tempestive sulla base di informazioni aggiornate.
+
 In qualità di ingegnere analitico del team di vendita, si è investiti di una serie di responsabilità tra cui la raccolta, la pulizia e l'interpretazione di set di dati per risolvere problemi aziendali. Alcune delle attività previste sono la creazione e la gestione di pipeline di dati batch, lo sviluppo di visualizzazioni quali grafici e diagrammi, la creazione e l'ottimizzazione di modelli semantici e report completi e la presentazione dei risultati ai decision maker dell'organizzazione.
 
 ## Sfide attuali
 
-• Necessità di gestire un flusso continuo di dati in tempo reale dal sito Web di e-commerce e, per farlo, occorre un'architettura solida e scalabile.
+- Necessità di gestire un flusso continuo di dati in tempo reale dal sito Web di e-commerce e, per farlo, occorre un'architettura solida e scalabile.
 
-• Garantire analisi ed elaborazione dei dati in tempo reale per restare al passo con la natura frenetica delle vendite online.
+- Garantire analisi ed elaborazione dei dati in tempo reale per restare al passo con la natura frenetica delle vendite online.
 
-• Gestire il volume e la velocità dei dati generati dalle interazioni degli utenti, dalle transazioni e dall'attività del sito Web.
+- Gestire il volume e la velocità dei dati generati dalle interazioni degli utenti, dalle transazioni e dall'attività del sito Web.
 
-• Integrare i dati in streaming in tempo reale con i dati storici per un'analisi completa.
+- Integrare i dati in streaming in tempo reale con i dati storici per un'analisi completa.
 
-• Usare l'architettura Medallion in un ambiente Eventhouse per strutturare in modo efficiente il flusso di dati.
+- Usare l'architettura Medallion in un ambiente Eventhouse per strutturare in modo efficiente il flusso di dati.
 
-• Sfruttare i dati Eventhouse all'interno di un lakehouse
+- Sfruttare i dati Eventhouse all'interno di un lakehouse
 
-• Si è interessati a sfruttare Microsoft Fabric per affrontare le sfide di cui sopra, usando Eventhouse, un database KQL ed Eventstream per creare una pipeline di elaborazione dati resiliente ed efficiente.
+- Si è interessati a sfruttare Microsoft Fabric per affrontare le sfide di cui sopra, usando Eventhouse, un database KQL ed Eventstream per creare una pipeline di elaborazione dati resiliente ed efficiente.
  
 # Introduzione
 
 Oggi si apprenderanno alcune funzionalità chiave di Microsoft Fabric. Questo è un workshop introduttivo che ha lo scopo di presentare le diverse esperienze di uso dei prodotti e i vari elementi disponibili in Fabric. Al termine di questo workshop si sarà appreso a usare Eventhouse, pipeline di dati, Eventstream, set di query KQL e un dashboard in tempo reale.
 
 In questo lab si apprenderà quanto segue:
-•	Come esaminare gli utenti tipo di Fabric
-•	Come creare un'area di lavoro Fabric
-•	Come creare un Eventhouse
+-	Come esaminare gli utenti tipo di Fabric
+-	Come creare un'area di lavoro Fabric
+-	Come creare un Eventhouse
 
 # Licenza di Fabric
 
@@ -103,15 +104,17 @@ Per lavorare con gli elementi di Fabric, sono necessarie una licenza di valutazi
 
 2.	Si verrà indirizzati alla **home page di Real-Time Intelligence**. Appariranno le categorie **Modelli di flussi di compiti, Elementi consigliati da creare e Altre informazioni su Real-Time Intelligence**. Nella categoria degli **Elementi consigliati** prendere nota di quanto segue:
 
-a.	**Casa eventi:** permette di creare un'area di lavoro di uno o più database KQL, che è possibile condividere tra progetti. Crea inoltre un database KQL all'interno di Eventhouse.
-
-b.	**Set di query KQL:** permette di eseguire query sui dati per produrre tabelle e oggetti visivi condivisibili.
-
-c.	**Dashboard in tempo reale:** una raccolta di riquadri, facoltativamente organizzati in pagine, in cui ogni riquadro ha una query sottostante e una rappresentazione visiva.
-
-d.	**Eventstream:** consente di acquisire, trasformare e instradare il flusso di eventi in tempo reale.
-
-e.	**Reflex:** permette di intraprendere automaticamente azioni quando vengono rilevati schemi o condizioni nei dati che cambiano.
+     a.	**Casa eventi:** permette di creare un'area di lavoro di uno o più database KQL, che è possibile condividere tra progetti. Crea inoltre un database KQL all'interno 
+        di Eventhouse.
+     
+     b.	**Set di query KQL:** permette di eseguire query sui dati per produrre tabelle e oggetti visivi condivisibili.
+     
+     c.	**Dashboard in tempo reale:** una raccolta di riquadri, facoltativamente organizzati in pagine, in cui ogni riquadro ha una query sottostante e una 
+         rappresentazione visiva.
+     
+     d.	**Eventstream:** consente di acquisire, trasformare e instradare il flusso di eventi in tempo reale.
+     
+     e.	**Reflex:** permette di intraprendere automaticamente azioni quando vengono rilevati schemi o condizioni nei dati che cambiano.
 
  
 ## Attività 3. Hub in tempo reale
