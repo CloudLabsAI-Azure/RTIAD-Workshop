@@ -184,16 +184,16 @@ vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis 
 
 2. Copiez-collez la requête suivante dans le volet de requête. Cette requête extrait la latitude et la longitude de la colonne Adresse IP de ce flux de données pour générer un emplacement que vous pouvez placer sur une carte. Cette requête peut prendre un peu plus de temps que les précédentes.
 
-  ```
-  //Impressions by location
-  
-  Impressions
-  | where eventDate between (_startTime.._endTime)
-  | join external_table('products') on $left.productId == $right.ProductID
-  | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
-  | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-  
-  ```
+    ```
+    //Impressions by location
+    
+    Impressions
+    | where eventDate between (_startTime.._endTime)
+    | join external_table('products') on $left.productId == $right.ProductID
+    | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
+    | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
+    
+    ```
 
 3. Exécutez la requête pour vérifier qu’elle est correctement configurée. Cliquez sur le bouton + Ajouter un visuel.
 
