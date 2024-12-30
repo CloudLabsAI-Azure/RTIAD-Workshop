@@ -4,13 +4,13 @@
 - Structure du document	
 - Introduction	
 - Hub en temps réel Fabric	
-- Tâche 1 : créer une source de flux d’événements	
-- Tâche 2 : configurer la destination EventStream	
+    - Tâche 1 : créer une source de flux d’événements	
+    - Tâche 2 : configurer la destination EventStream	
 - Langage de requête Kusto (KQL)	
-- Tâche 3 : créer des requêtes de base de données Kusto	
-- Tâche 4 : utiliser des requêtes T-SQL sur une base de données KQL	
+  - Tâche 3 : créer des requêtes de base de données Kusto	
+  - Tâche 4 : utiliser des requêtes T-SQL sur une base de données KQL	
 - Jeu de requêtes KQL	
-- Tâche 5 : Utiliser un jeu de requêtes KQL	
+  - Tâche 5 : Utiliser un jeu de requêtes KQL	
 - Résumé	
 - Références	
  
@@ -21,30 +21,31 @@ Le labo comprend des étapes à suivre par l’utilisateur, ainsi que des captur
 # Introduction
 Dans ce labo, vous allez découvrir un moyen de gérer un flux continu de données en temps réel. Vous allez ingérer ces données dans l’Eventhouse que vous avez créée dans le dernier labo et écrire des requêtes KQL de base à l’aide d’un objet Fabric Real-Time Intelligence appelé Eventstream.
 À la fin de ce labo, vous saurez :
-- comment créer un Eventstream ;
-- comment charger des données en temps réel dans une base de données KQL ;
-- comment rédiger des requêtes de base KQL (Langage de requête Kusto).
+
+  - comment créer un Eventstream ;
+  - comment charger des données en temps réel dans une base de données KQL ;
+  - comment rédiger des requêtes de base KQL (Langage de requête Kusto).
 
 # Hub en temps réel Fabric
 ## Tâche 1 : créer une source de flux d’événements
 
-1.	Ouvrez l’**espace de travail Fabric** que vous avez créé dans le dernier labo. Ensuite, nous pouvons voir l’Eventhouse que nous avons créée.
+1. Ouvrez l’**espace de travail Fabric** que vous avez créé dans le dernier labo. Ensuite, nous pouvons voir l’Eventhouse que nous avons créée.
 
-2.	Accédez au Hub en temps réel en cliquant sur le bouton **En temps réel** à gauche. Même si nous ne voyons pas de flux de données, cela changera prochainement.
+2. Accédez au Hub en temps réel en cliquant sur le bouton **En temps réel** à gauche. Même si nous ne voyons pas de flux de données, cela changera prochainement.
  
-3.	Cliquez sur le bouton vert **+ Connecter la source de données** qui devrait se trouver dans le coin supérieur droit.
+3. Cliquez sur le bouton vert **+ Connecter la source de données** qui devrait se trouver dans le coin supérieur droit.
  
-4.	Une fenêtre s’ouvre alors pour vous permettre de sélectionner une source pour nos données de flux. Comme nous l’avons vu précédemment, de nombreuses options fantastiques existent, mais pour ce cours, nous allons sélectionner l’option « Azure Event Hubs ». Si « Azure Event Hubs » n’est pas visible aisément, cliquez sur les **sources Microsoft** dans la partie supérieure pour filtrer les options que vous voyez.
+4. Une fenêtre s’ouvre alors pour vous permettre de sélectionner une source pour nos données de flux. Comme nous l’avons vu précédemment, de nombreuses options fantastiques existent, mais pour ce cours, nous allons sélectionner l’option « Azure Event Hubs ». Si « Azure Event Hubs » n’est pas visible aisément, cliquez sur les **sources Microsoft** dans la partie supérieure pour filtrer les options que vous voyez.
 
-5.	Vous devez à présent créer une connexion au Azure Event Hub. Cliquez sur **Nouvelle connexion**, car vous n’avez actuellement aucune connexion.
+5. Vous devez à présent créer une connexion au Azure Event Hub. Cliquez sur **Nouvelle connexion**, car vous n’avez actuellement aucune connexion.
 
-6.	Sur la page des détails de votre environnement, copiez-collez tous les paramètres de connexion nécessaires dans les champs appropriés. Pour ces labos, nous nous connectons à un Event Hub dans lequel des données diffusées en continu sont envoyées depuis un notebook Python. Ce bloc-notes
+6. Sur la page des détails de votre environnement, copiez-collez tous les paramètres de connexion nécessaires dans les champs appropriés. Pour ces labos, nous nous connectons à un Event Hub dans lequel des données diffusées en continu sont envoyées depuis un notebook Python. Ce bloc-notes
 crée de fausses transactions de vente à un rythme d’environ 3 100 transactions par heure. Espace de noms du 
 
-- Event Hub : **rtiadhub{userid} – fourni par cloudlabs**
-- Event Hub : **rti-iad-fabrikam**
-- Nom de la clé d’accès partagé : **rti-reader**
-- Clé d’accès partagé : **Disponible dans l’onglet Détails de l’environnement**
+    - Event Hub : **rtiadhub{userid} – fourni par cloudlabs**
+    - Event Hub : **rti-iad-fabrikam**
+    - Nom de la clé d’accès partagé : **rti-reader**
+    - Clé d’accès partagé : **Disponible dans l’onglet Détails de l’environnement**
 
 7.	Une fois toutes les propriétés renseignées, cliquez sur **Connecter**.
 
@@ -57,7 +58,7 @@ crée de fausses transactions de vente à un rythme d’environ 3 100 transactio
 
 11.	Sur cet écran de vue d’ensemble, vérifiez que le contenu semble correct et cliquez sur **Créer la source**.
 
-**>Remarque : vos coordonnées seront différentes de celles que vous voyez dans la capture d’écran**
+    >**Remarque : vos coordonnées seront différentes de celles que vous voyez dans la capture d’écran**
  
 12.	Une fois l’Eventstream et sa source créés, cliquez sur le bouton « **Ouvrir EventStream** »
 
@@ -65,7 +66,7 @@ crée de fausses transactions de vente à un rythme d’environ 3 100 transactio
 
 14.	L’**Activation** de votre source peut prendre quelques instants. Ensuite, cliquez sur l’icône centrale avec le nom de votre Eventstream, puis sur Actualiser si vous ne voyez pas d’aperçu des données.
 
-**>Remarque : si vous recevez un statut « Avertissement » autour d’une stratégie d’audit, ce n’est pas grave. Le flux fonctionne toujours.**
+    >**Remarque : si vous recevez un statut « Avertissement » autour d’une stratégie d’audit, ce n’est pas grave. Le flux fonctionne toujours.**
  
 15.	Vous devriez maintenant voir un échantillon des données dans la fenêtre inférieure.
  
@@ -73,23 +74,23 @@ crée de fausses transactions de vente à un rythme d’environ 3 100 transactio
 
 ## Tâche 2 : configurer la destination EventStream
 
-1.	Cliquez sur la vignette dans la zone du canevas intitulée « Passer en mode Édition pour transformer l’événement ou ajouter une destination ».
+1. Cliquez sur la vignette dans la zone du canevas intitulée « Passer en mode Édition pour transformer l’événement ou ajouter une destination ».
 
-2.	Dans l’interface utilisateur EventStream, cliquez sur le bouton **Transformer des événements ou ajouter une destination** pour ouvrir le menu déroulant.
+2. Dans l’interface utilisateur EventStream, cliquez sur le bouton **Transformer des événements ou ajouter une destination** pour ouvrir le menu déroulant.
  
-3.	Affichez la liste des opérations disponibles qui peuvent être intégrées au flux.
+3. Affichez la liste des opérations disponibles qui peuvent être intégrées au flux.
 
-4.	Examinez la section **Opérations** ci-dessous et vous trouverez les **Destinations** ; sélectionnez l’option **Eventhouse**.
+4. Examinez la section **Opérations** ci-dessous et vous trouverez les **Destinations** ; sélectionnez l’option **Eventhouse**.
 
-5.	Un nouveau menu s’ouvre alors sur le côté droit de l’écran. Vous devez d’abord modifier
+5. Un nouveau menu s’ouvre alors sur le côté droit de l’écran. Vous devez d’abord modifier
 le**mode d’ingestion des données** pour la destination. Les deux options sont **Ingestion directe** et **Traitement de l'événement avant ingestion**" **as per screenshot**. Comme nous n’allons rien transformer dans notre Eventstream et charger directement ces informations dans une table de base de données KQL, veillez à sélectionner l’option **Ingestion directe**.
  
 6. Modifiez le reste des paramètres avec les détails suivants :
 
-  - Nom de la destination : eh-kql-db-fabrikam
-  - Espace de travail : RTI_username
-  - Eventhouse – eh_Fabrikam
-  - Base de données KQL : eh_Fabrikam
+    - Nom de la destination : eh-kql-db-fabrikam
+    - Espace de travail : RTI_username
+    - Eventhouse – eh_Fabrikam
+    - Base de données KQL : eh_Fabrikam
  
 7.	Cliquez sur Enregistrer.
 
@@ -118,26 +119,26 @@ exigences. Redéfinissons son nom sur **« eh_Fabrikam_es_InternetSales »**. En
 
 1. Retournez dans votre espace de travail **RTI_username**. Vous devriez voir le nouvel Eventstream que vous venez de créer, ainsi que tous les éléments d’Evenhouse.
 
-2.	Ouvrez l’élément de base de données KQL **eh_Fabrikam**.
+2. Ouvrez l’élément de base de données KQL **eh_Fabrikam**.
 
-3.	Dans le cadre de cette expérience, vous pouvez bénéficier d’une vue d’ensemble de la structure, de la taille et de l’utilisation actuelles de la base de données KQL. Comme l’Eventstream envoie constamment des données à cette base de données KQL, notez que la quantité de stockage augmente au fil du temps.
+3. Dans le cadre de cette expérience, vous pouvez bénéficier d’une vue d’ensemble de la structure, de la taille et de l’utilisation actuelles de la base de données KQL. Comme l’Eventstream envoie constamment des données à cette base de données KQL, notez que la quantité de stockage augmente au fil du temps.
  
-4.	Cliquez sur l’**icône Actualiser** en haut de l’écran à droite.
+4. Cliquez sur l’**icône Actualiser** en haut de l’écran à droite.
 
-5.	La taille de la base de données devrait avoir augmenté. La valeur que vous voyez peut ne pas être exacte par rapport aux captures d’écran dans le reste du labo. Selon le temps que vous aurez mis à compléter le contenu, vous aurez reçu moins ou plus d’enregistrements que les autres membres de la classe. Cela ne pose aucun problème et n’affectera pas du tout votre capacité à suivre ce labo.
+5. La taille de la base de données devrait avoir augmenté. La valeur que vous voyez peut ne pas être exacte par rapport aux captures d’écran dans le reste du labo. Selon le temps que vous aurez mis à compléter le contenu, vous aurez reçu moins ou plus d’enregistrements que les autres membres de la classe. Cela ne pose aucun problème et n’affectera pas du tout votre capacité à suivre ce labo.
 
-6.	Dans la zone de navigation de la base de données sur le côté gauche de l’écran, cliquez sur la table de votre base de données KQL appelée **InternetSales** et vous verrez une vue d’ensemble de la table
+6. Dans la zone de navigation de la base de données sur le côté gauche de l’écran, cliquez sur la table de votre base de données KQL appelée **InternetSales** et vous verrez une vue d’ensemble de la table
  
-7.	Cette vue d’ensemble vous donne des détails sur les métadonnées relatives à la table que vous avez créée et toutes les données diffusées activement en continu avec votre Eventstream. Encore une fois, la taille et le nombre de lignes de la table varient d’un étudiant à l’autre et n’affectent pas vos résultats finaux de ce labo ou de tout autre. Voici quelques options supplémentaires de ce menu :
+7. Cette vue d’ensemble vous donne des détails sur les métadonnées relatives à la table que vous avez créée et toutes les données diffusées activement en continu avec votre Eventstream. Encore une fois, la taille et le nombre de lignes de la table varient d’un étudiant à l’autre et n’affectent pas vos résultats finaux de ce labo ou de tout autre. Voici quelques options supplémentaires de ce menu :
 
-  - **Suivi des données d’activité** : indique le nombre de lignes ingérées, l’heure à laquelle elles ont été générées pour la dernière fois et l’intervalle d’affichage
-  - **Aperçu des données** : affiche un aperçu des résultats de l’ingestion de la table.
-  - **Schema Insights** : cette option comprend des détails sur le nom de la colonne et les types de données de la colonne qui peuvent être interrogés avec KQL. Affiche également les 10 premières valeurs de la colonne sélectionnée
-  - **Détails de la table** : affiche la taille comprimée et originale de la table, la disponibilité de OneLake, le nombre de lignes dans les tables et d’autres détails
+    - **Suivi des données d’activité** : indique le nombre de lignes ingérées, l’heure à laquelle elles ont été générées pour la dernière fois et l’intervalle d’affichage
+    - **Aperçu des données** : affiche un aperçu des résultats de l’ingestion de la table.
+    - **Schema Insights** : cette option comprend des détails sur le nom de la colonne et les types de données de la colonne qui peuvent être interrogés avec KQL. Affiche également les 10 premières valeurs de la colonne sélectionnée
+    - **Détails de la table** : affiche la taille comprimée et originale de la table, la disponibilité de OneLake, le nombre de lignes dans les tables et d’autres détails
  
-8.	Revenez à la vue de la base de données et cliquez sur **Explorer vos données** dans le coin supérieur droit.
+8. Revenez à la vue de la base de données et cliquez sur **Explorer vos données** dans le coin supérieur droit.
 
-9.	Ceci ouvrira le jeu de requêtes KQL par défaut qui a été créé avec l’Eventhouse. Quelques requêtes pré-scriptées sont déjà créées, mais nécessitent une légère personnalisation. En outre, deux liens vers la documentation Microsoft peuvent être utiles lorsque vous découvrez KQL ou examinez des conversions SQL vers KQL, lesquelles seront abordées plus loin dans ce cours.
+9. Ceci ouvrira le jeu de requêtes KQL par défaut qui a été créé avec l’Eventhouse. Quelques requêtes pré-scriptées sont déjà créées, mais nécessitent une légère personnalisation. En outre, deux liens vers la documentation Microsoft peuvent être utiles lorsque vous découvrez KQL ou examinez des conversions SQL vers KQL, lesquelles seront abordées plus loin dans ce cours.
  
 10.	Cliquez sur la **Ligne 8** et, là où la requête indique **YOUR_TABLE_HERE**, remplacez ce texte par le nom de la table, à savoir **InternetSales**.
 
@@ -163,41 +164,40 @@ d’enregistrements ont été ingérés dans chaque intervalle.
 Vous utilisez peut-être le Langage de requête Kusto pour la première fois. Bien que ce langage soit intuitif et facile à apprendre pour les requêtes simples, vous souhaiterez peut-être renvoyer les
 résultats d’une requête plus complexe que celles que vous êtes actuellement capable de créer. Plusieurs outils utiles ont été inclus dans les fonctionnalités de jeu de requêtes KQL, notamment la conversion de requêtes SQL en requêtes KQL et la création simple de requêtes T-SQL dans le jeu de requêtes KQL. Explorons.
 
-1.	Vous devez créer une requête qui renvoie chaque produit avec le nombre de fois qu’il a été vendu. Vous pouvez y parvenir rapidement avec T-SQL. Dans la fenêtre de requête, vous pouvez convertir vos requêtes SQL en requêtes KQL pour mieux comprendre comment créer des requêtes KQL à l’avenir. Commencez par écrire la commande suivante :
+1. Vous devez créer une requête qui renvoie chaque produit avec le nombre de fois qu’il a été vendu. Vous pouvez y parvenir rapidement avec T-SQL. Dans la fenêtre de requête, vous pouvez convertir vos requêtes SQL en requêtes KQL pour mieux comprendre comment créer des requêtes KQL à l’avenir. Commencez par écrire la commande suivante :
 **(Remarque : double-cliquez sur l’objet ci-dessous afin de pouvoir copier le texte.)**
 
-2.	La ligne de commentaire « -- » suivie du mot clé « explain » vous permet maintenant de créer une requête SQL et de renvoyer un résultat avec la requête KQL permettant d’obtenir une requête et un résultat similaires. En dessous, saisissez la requête suivante pour expliquer à quoi ressemblerait la requête KQL :
+2. La ligne de commentaire « -- » suivie du mot clé « explain » vous permet maintenant de créer une requête SQL et de renvoyer un résultat avec la requête KQL permettant d’obtenir une requête et un résultat similaires. En dessous, saisissez la requête suivante pour expliquer à quoi ressemblerait la requête KQL :
  
-3.	Il s’agit d’une requête SQL simple qui récupère les résultats de la table InternetSales pour renvoyer deux colonnes : la clé de produit et un décompte du nombre de commandes. Comme il existe une colonne agrégée et une colonne non agrégée, vous devez renvoyer des résultats pour chaque produit individuel à l’aide d’une requête GROUP BY. Exécutez toute la requête en
+3. Il s’agit d’une requête SQL simple qui récupère les résultats de la table InternetSales pour renvoyer deux colonnes : la clé de produit et un décompte du nombre de commandes. Comme il existe une colonne agrégée et une colonne non agrégée, vous devez renvoyer des résultats pour chaque produit individuel à l’aide d’une requête GROUP BY. Exécutez toute la requête en
 commençant par la ligne de commentaire « -- » jusqu’à la fin de la requête T-SQL.
 
-4.	La sortie de la requête explain devrait être un enregistrement unique avec la requête KQL traduite comme résultat. Cliquez sur **le signe supérieur (>)** pour développer les résultats et faciliter la traduction.
+4. La sortie de la requête explain devrait être un enregistrement unique avec la requête KQL traduite comme résultat. Cliquez sur **le signe supérieur (>)** pour développer les résultats et faciliter la traduction.
  
-5.	Cliquez sur le volet de requête mis en surbrillance en orange ci-dessous. Ainsi, vous pouvez
-sélectionner la requête KQL traduite et la copier. Collez cette requête dans le jeu de requêtes KQL que nous avons utilisé
+5. Cliquez sur le volet de requête mis en surbrillance en orange ci-dessous. Ainsi, vous pouvez sélectionner la requête KQL traduite et la copier. Collez cette requête dans le jeu de requêtes KQL que nous avons utilisé
  
-6.	Une fois les résultats dans votre volet de requête, mettez en surbrillance la requête et exécutez- la pour récupérer les résultats. L’opérateur **summarize** produit une table qui agrège le contenu de la table d’entrée tout en déterminant comment regrouper chaque enregistrement avec la mention **by Product Key** et l’opérateur **project** sélectionne les colonnes à inclure, renommer ou supprimer tout en insérant de nouvelles colonnes de calcul.
+6. Une fois les résultats dans votre volet de requête, mettez en surbrillance la requête et exécutez- la pour récupérer les résultats. L’opérateur **summarize** produit une table qui agrège le contenu de la table d’entrée tout en déterminant comment regrouper chaque enregistrement avec la mention **by Product Key** et l’opérateur **project** sélectionne les colonnes à inclure, renommer ou supprimer tout en insérant de nouvelles colonnes de calcul.
 
-7.	N’hésitez pas à explorer une liste des opérations de l’aide-mémoire SQL vers KQL en haut de votre jeu de requêtes pour des fonctionnalités et conversions supplémentaires.
+7. N’hésitez pas à explorer une liste des opérations de l’aide-mémoire SQL vers KQL en haut de votre jeu de requêtes pour des fonctionnalités et conversions supplémentaires.
  
-8.	Au lieu d’utiliser KQL, une alternative à l’interrogation des résultats de la base de données KQL dans Fabric consiste à écrire et exécuter une requête T-SQL. Mettez en surbrillance l’instruction SQL d’origine ayant permis de traduire la requête KQL et exécutez uniquement celle-ci.
+8. Au lieu d’utiliser KQL, une alternative à l’interrogation des résultats de la base de données KQL dans Fabric consiste à écrire et exécuter une requête T-SQL. Mettez en surbrillance l’instruction SQL d’origine ayant permis de traduire la requête KQL et exécutez uniquement celle-ci.
  
-9.	Cela donnera également des résultats parfaitement valides sans avoir à convertir en KQL au préalable.
+9. Cela donnera également des résultats parfaitement valides sans avoir à convertir en KQL au préalable.
 
 # Jeu de requêtes KQL
 ## Tâche 5 : Utiliser un jeu de requêtes KQL
 
-1.	Bien que la plupart des requêtes de cette fenêtre aient été créées automatiquement à partir de l’interface utilisateur, il se peut qu’à l’avenir vous souhaitiez créer vos propres requêtes KQL en partant de zéro. Pour ce faire, vous devez utiliser la fonctionnalité d’onglets située en haut de
+1. Bien que la plupart des requêtes de cette fenêtre aient été créées automatiquement à partir de l’interface utilisateur, il se peut qu’à l’avenir vous souhaitiez créer vos propres requêtes KQL en partant de zéro. Pour ce faire, vous devez utiliser la fonctionnalité d’onglets située en haut de
 l’écran. Il convient également de noter que ce jeu de requêtes effectue automatiquement des sauvegardes périodiques.
 
-2.	Vous remarquerez qu’en haut du jeu de requêtes, le nom par défaut de notre première page est le même que celui de notre base de données.
+2. Vous remarquerez qu’en haut du jeu de requêtes, le nom par défaut de notre première page est le même que celui de notre base de données.
  
-3.	Nous allons renommer cet onglet en cliquant sur l’icône en forme de crayon, appelons-le
+3. Nous allons renommer cet onglet en cliquant sur l’icône en forme de crayon, appelons-le
 **« Ma première requête KQL »**.
  
-4.	À l’avenir, si nous souhaitons isoler notre code, nous pouvons simplement créer des onglets supplémentaires en cliquant sur l’icône « + ».
+4. À l’avenir, si nous souhaitons isoler notre code, nous pouvons simplement créer des onglets supplémentaires en cliquant sur l’icône « + ».
 
-5.	Revenez à votre espace de travail **RTI_username**. Les objets suivants devraient être présents
+5. Revenez à votre espace de travail **RTI_username**. Les objets suivants devraient être présents
 
 # Résumé
 
