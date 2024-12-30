@@ -13,7 +13,7 @@
     - Attività 5. Aggiunta di un oggetto visivo mappa per le impressioni in base all'ubicazione
     - Attività 6. Impostazione dell'aggiornamento automatico sul dashboard in tempo reale
     - Attività facoltativa 7. Aggiunta del logo aziendale
-    - uoAttività facoltativa 8. Applicazione della formattazione condizionale all'oggetto visivo
+    - Attività facoltativa 8. Applicazione della formattazione condizionale all'oggetto visivo
 - Riepilogo
 - Riferimenti
 
