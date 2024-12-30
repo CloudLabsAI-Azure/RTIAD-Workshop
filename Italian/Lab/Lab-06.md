@@ -1,5 +1,4 @@
-# Microsoft Fabric
-## Real-Time Intelligence in a Day Lab 6
+# Microsoft Fabric Real-Time Intelligence in un giorno di laboratorio 6
  
 # Sommario
 - Struttura del documento
@@ -15,8 +14,7 @@
  
 # Struttura del documento
 
-Il lab include i passaggi che l'utente deve seguire con gli screenshot associati che forniscono un aiuto visivo. In ogni screenshot vi sono sezioni evidenziate con riquadri arancioni che indicano le aree su
-cui l'utente deve concentrarsi.
+Il lab include i passaggi che l'utente deve seguire con gli screenshot associati che forniscono un aiuto visivo. In ogni screenshot vi sono sezioni evidenziate con riquadri arancioni che indicano le aree su cui l'utente deve concentrarsi.
 
 # Introduzione
 
@@ -73,17 +71,19 @@ In questo lab si apprenderà quanto segue:
 3. Per iniziare, è necessario monitorare una delle colonne del flusso di dati; per fare ciò, occorre configurare le sezioni Condizione e Azione. Fare clic sulla scheda Definizione della regola per impostare le condizioni e l'azione.
  
 4. Nella pagina Definizione che si apre, in **Condizione** selezionare le seguenti proprietà:
+   
     - **Operazione** = È maggiore di
     - **Colonna** = clicks
     - **Valore** = 30000
 
-5. In **Azione** selezionare le seguenti proprietà:
+6. In **Azione** selezionare le seguenti proprietà:
+
     - **Tipo** = Teams message
     - **Destinatari** = {ID utente}
 
-6. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
+7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
 
-7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
+8. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
 
 # Pulizia delle risorse
 
