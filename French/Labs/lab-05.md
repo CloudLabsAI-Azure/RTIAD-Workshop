@@ -6,14 +6,14 @@
 - Structure du document	
 - Introduction	
 - Tableaux de bord en temps réel	
-- Tâche 1 : créer un tableau de bord en temps réel
-- Tâche 2 : connecter une source de données à un tableau de bord en temps réel	
-- Tâche 3 : créer une vignette de tableau de bord en temps réel avec KQL	
-- Tâche 4 : ajouter d’autres vignettes de tableau de bord au tableau de bord en temps réel
-- Tâche 5 : ajouter un visuel de carte pour les impressions par emplacement	
-- Tâche 6 : configurer l’actualisation automatique sur le tableau de bord en temps réel	
-- Tâche facultative 7 : ajouter le logo d’une société	
-- Tâche facultative 8 : appliquer une mise en forme conditionnelle au visuel	
+  - Tâche 1 : créer un tableau de bord en temps réel
+  - Tâche 2 : connecter une source de données à un tableau de bord en temps réel	
+  - Tâche 3 : créer une vignette de tableau de bord en temps réel avec KQL	
+  - Tâche 4 : ajouter d’autres vignettes de tableau de bord au tableau de bord en temps réel
+  - Tâche 5 : ajouter un visuel de carte pour les impressions par emplacement	
+  - Tâche 6 : configurer l’actualisation automatique sur le tableau de bord en temps réel	
+  - Tâche facultative 7 : ajouter le logo d’une société	
+  - Tâche facultative 8 : appliquer une mise en forme conditionnelle au visuel	
 - Résumé	
 - Références	
 
