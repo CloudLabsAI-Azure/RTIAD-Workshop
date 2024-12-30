@@ -6,14 +6,14 @@
 - Struttura del documento
 - Introduzione
 - Dashboard in tempo reale
-    - #Attività 1. Creazione di un dashboard in tempo reale
-    - #Attività 2. Connessione di un'origine dati al dashboard in tempo reale
-    - #Attività 3. Creazione di un riquadro del dashboard in tempo reale con KQL
-    - #Attività 4. Aggiunta di più riquadri al dashboard in tempo reale
-    - #Attività 5. Aggiunta di un oggetto visivo mappa per le impressioni in base all'ubicazione
-    - #Attività 6. Impostazione dell'aggiornamento automatico sul dashboard in tempo reale
-    - #Attività facoltativa 7. Aggiunta del logo aziendale
-    - #Attività facoltativa 8. Applicazione della formattazione condizionale all'oggetto visivo
+    - Attività 1. Creazione di un dashboard in tempo reale
+    - Attività 2. Connessione di un'origine dati al dashboard in tempo reale
+    - Attività 3. Creazione di un riquadro del dashboard in tempo reale con KQL
+    - Attività 4. Aggiunta di più riquadri al dashboard in tempo reale
+    - Attività 5. Aggiunta di un oggetto visivo mappa per le impressioni in base all'ubicazione
+    - Attività 6. Impostazione dell'aggiornamento automatico sul dashboard in tempo reale
+    - Attività facoltativa 7. Aggiunta del logo aziendale
+    - uoAttività facoltativa 8. Applicazione della formattazione condizionale all'oggetto visivo
 - Riepilogo
 - Riferimenti
 
