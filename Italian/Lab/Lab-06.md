@@ -1,4 +1,6 @@
-# Microsoft Fabric Real-Time Intelligence in un giorno di laboratorio 6
+# Microsoft Fabric Real-Time Intelligence in a Day Lab 6
+
+![](../media/Lab-06/lab-06.png)
  
 # Sommario
 - Struttura del documento
@@ -27,31 +29,56 @@ In questo lab si apprenderà quanto segue:
 # Creazione di un avviso con Reflex
 
 ## Attività 1. Uso del dashboard in tempo reale per impostare gli avvisi
+
 1. Aprire l'**area di lavoro Fabric** del corso e selezionare il dashboard in tempo reale creato nell'ultimo lab.
+
+   ![](../media/Lab-06/image003.png)
 
 2. Nella oggetto visivo **Click Through Rate** fare clic sui puntini di sospensione (…) e selezionare l'opzione **Set alert**.
 
+   ![](../media/Lab-06/image005.jpg)
+
 3. Si apre un nuovo riquadro a comparsa sul lato destro della schermata. È possibile vedere cosa si sta monitorando dal dashboard, incluso l'oggetto visivo specifico a cui sarà affiliato l'avviso.Ricordare che si ha il pieno controllo sulla condizione. Modificare la **Condizione** in **È minore di**.
+
+    ![](../media/Lab-06/image007.png)
  
 4. Verrà visualizzato un nuovo campo in cui inserire un **Valore**; modificarlo in **20**.
 
+    ![](../media/Lab-06/image009.png)
+
 5. Al momento sono disponibili tre possibili azioni per il tipo di avviso che si desidera ricevere una volta che l'elemento Reflex di Data Activator riconosce che la condizione è stata soddisfatta.Selezionare l'opzione **Inviami un messaggio in Teams**.
+
+    ![](../media/Lab-06/image011.png)
 
 6. Infine, occorre decidere l'ubicazione nella quale archiviare l'**elemento Reflex** che si sta creando con questo avviso. Per impostazione predefinita dovrebbe essere selezionata l'area di lavoro corrente, ma è necessario richiamare specificamente un **Nuovo elemento** nel menu a discesa Elemento.
 
+     ![](../media/Lab-06/image014.png)
+
 7. Rinominare l'elemento in **CTR Reflex**, quindi fare clic su **Crea**. L'operazione di creazione richiederà alcuni istanti.
 
+    ![](../media/Lab-06/image016.png)
+
 8. Si riceverà una convalida di creazione dell'avviso dell'elemento Reflex. Fare clic sul pulsante **Apri** per aprire il Reflex.
+
+   ![](../media/Lab-06/image018.png)
  
 9. Si accederà così all'**esperienza Reflex** formale. Da qui è possibile monitorare il flusso di dati in tempo reale, visualizzare i dati usati per supportare il Reflex e creare trigger aggiuntivi dallo stesso flusso.
+
+    ![](../media/Lab-06/image020.jpg)
 
 ## Attività 2. Test dell'avviso e-mail dall'esperienza Reflex
 
 1. Nell'esperienza Reflex, fare clic sull'icona della matita accanto al nome dell'evento e rinominarlo **CTR is less than 20**
 
+   ![](../media/Lab-06/image022.png)
+
 2. Aggiornare anche l'**Intestazione** e il **Messaggio** che si trovano nella sezione **Azione** sul lato destro. Aggiornare le due aree in modo che corrispondano all'immagine seguente, quindi fare clic su **Salva e aggiorna**.
 
+    ![](../media/Lab-06/image024.jpg)
+
 3. Nella stessa sezione **Azione** sul lato destro, fare clic sul pulsante **Inviami un'azione di test** per ottenere un messaggio di esempio in Teams da Reflex.
+
+    ![](../media/Lab-06/image026.png)
 
 4. Aprire una nuova scheda all'interno del browser Edge dell'ambiente e andare a
 **Teams.Microsoft.com**.
@@ -60,13 +87,19 @@ In questo lab si apprenderà quanto segue:
  
 6. In Teams dovrebbe essere presente un messaggio indicante che il CTR è inferiore a 20.
 
+    ![](../media/Lab-06/image028.png)
+
 7. Tornare all'esperienza Reflex per creare un altro trigger.
 
 ## Attività 3. Creazione di un nuovo oggetto Reflex dal flusso di dati
 
 1. Selezionare l'oggetto etichettato **KQL Source Event**, quindi **Nuova regola**.
 
-2. Fare clic sull'icona della **matita** e assegnare alla regola il nome C**licks Greater Than 30,000 **(è possibile scegliere un valore che sia più in linea con la quantità di dati trasmessi in streaming).
+    ![](../media/Lab-06/image030.jpg)
+
+2. Fare clic sull'icona della **matita** e assegnare alla regola il nome **Clicks Greater Than 30,000**(è possibile scegliere un valore che sia più in linea con la quantità di dati trasmessi in streaming).
+
+    ![](../media/Lab-06/image032.jpg)
 
 3. Per iniziare, è necessario monitorare una delle colonne del flusso di dati; per fare ciò, occorre configurare le sezioni Condizione e Azione. Fare clic sulla scheda Definizione della regola per impostare le condizioni e l'azione.
  
@@ -76,14 +109,34 @@ In questo lab si apprenderà quanto segue:
     - **Colonna** = clicks
     - **Valore** = 30000
 
+<<<<<<< HEAD
+      ![](../media/Lab-06/image034.jpg)
+
+5. In **Azione** selezionare le seguenti proprietà:
+=======
 6. In **Azione** selezionare le seguenti proprietà:
 
+>>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
     - **Tipo** = Teams message
     - **Destinatari** = {ID utente}
 
-7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
+<<<<<<< HEAD
+    ![](../media/Lab-06/image036.png)
 
+6. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
+=======
+7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
+>>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
+
+<<<<<<< HEAD
+    ![](../media/Lab-06/image038.png)
+
+7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
+=======
 8. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
+>>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
+
+    ![](../media/Lab-06/image040.png)
 
 # Pulizia delle risorse
 
@@ -91,9 +144,15 @@ In questo lab si apprenderà quanto segue:
 
 1. Questo è l'ultimo lab e l'ultima parte di Real-Time Analytics in a Day. Se si è già completato il lab e non si hanno ulteriori domande o esigenze da sottoporre al docente in merito ai contenuti, provvedere a deallocare l'area di lavoro. Passare all'area di lavoro **RTI_username**.
 
+   ![](../media/Lab-06/image043.jpg)
+
 2. Fare clic su **Impostazioni area di lavoro** nell'angolo in alto a destra.
 
+   ![](../media/Lab-06/image046.png)
+
 3. Dalle impostazioni dell'area di lavoro **Generale** scorrere verso il basso e fare clic sul pulsante **Rimuovere questa area di lavoro**.
+
+   ![](../media/Lab-06/image049.jpg)
 
 4. Lab e lezione completati!
  
@@ -104,6 +163,8 @@ In questo lab abbiamo preso in esame l'uso di Data Activator. Questa funzionalit
 # Riferimenti
 
 Fabric Real-time Intelligence in a Day (RTIIAD) presenta alcune delle funzioni chiave disponibili in Microsoft Fabric. Nel menu di servizio, la sezione Guida (?) include collegamenti ad alcune risorse utili.
+
+ ![](../media/Lab-06/image052.jpg)
 
 Di seguito sono riportate ulteriori risorse utili che consentiranno di progredire nell’uso di Microsoft Fabric.
 
