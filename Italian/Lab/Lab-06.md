@@ -109,32 +109,26 @@ In questo lab si apprenderà quanto segue:
     - **Colonna** = clicks
     - **Valore** = 30000
 
-<<<<<<< HEAD
       ![](../media/Lab-06/image034.jpg)
 
 5. In **Azione** selezionare le seguenti proprietà:
-=======
+
 6. In **Azione** selezionare le seguenti proprietà:
 
->>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
     - **Tipo** = Teams message
     - **Destinatari** = {ID utente}
 
-<<<<<<< HEAD
     ![](../media/Lab-06/image036.png)
 
 6. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
-=======
-7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
->>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
 
-<<<<<<< HEAD
+7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
+
     ![](../media/Lab-06/image038.png)
 
 7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
-=======
+
 8. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
->>>>>>> 17d843358a7c2b22a5f8b3d33efbab5b8c55d820
 
     ![](../media/Lab-06/image040.png)
 
