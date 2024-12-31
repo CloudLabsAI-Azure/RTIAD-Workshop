@@ -101,7 +101,7 @@ Hubs] というオプションを選択します。“Azure Event Hubs” が簡
 
     ![](../media/Lab-02/image021.jpg)
 
-12.	Eventstream とEventstream ソースを作成したら、**Eventstream を開**くオプションを選択します。
+12.	Eventstream とEventstream ソースを作成したら、**Eventstream を開く**オプションを選択します。
 
      ![](../media/Lab-02/image023.png)
 
@@ -118,7 +118,7 @@ Hubs] というオプションを選択します。“Azure Event Hubs” が簡
 
     ![](../media/Lab-02/image027.png)
 
-16.	これで、Azure イベントハブから受信しているデータのプレビューを確認できます。下部にある水平スクロールバーをプレビューの右側に移動させると、EventProcessedUtcTimeと EventEnqueuedUtcTime という 2 つの列で、イベント ハブでデータを受信した時刻を確認できます。これらは、現在の日付/時刻を UTC 形式で反映しているはずです。
+16.	これで、Azure イベントハブから受信しているデータのプレビューを確認できます。下部にある水平スクロールバーをプレビューの右側に移動させると、**EventProcessedUtcTime**と **EventEnqueuedUtcTime** という 2 つの列で、イベント ハブでデータを受信した時刻を確認できます。これらは、現在の日付/時刻を UTC 形式で反映しているはずです。
  
     ![](../media/Lab-02/image030.png)
  
@@ -154,7 +154,7 @@ Hubs] というオプションを選択します。“Azure Event Hubs” が簡
 
     - KQL データベース– **eh_Fabrikam**
  
-    ![](../media/Lab-02/image044.png)
+      ![](../media/Lab-02/image044.png)
 
 7.	[保存] をクリックします。
 
@@ -283,20 +283,20 @@ Kusto 照会言語をお使いになるのは初めてかもしれません。�
  
     **(注: テキストをコピーするには、下のオブジェクトをダブルクリックしてください)**
 
-    ![](../media/Lab-02/image099.png)
+    ![](../media/Lab-02/imageupdate1.png)
 
     ![](../media/Lab-02/image102.png)
  
 2.	コメント行“—” の後にキーワード“explain” を続けると、ここでSQL クエリを作成し、それと同様のクエリと結果を実現するために使えるKQL クエリの結果を返すことができます。その下に次のクエリを入力して、どのような KQL クエリを生成するかを説明します。
 
-   ![](../media/Lab-02/image105.png)
+     ![](../media/Lab-02/imageupdate2.png)
 
-   ![](../media/Lab-02)
+    ![](../media/Lab-02/image105.png)
 
 
 3.	これは、InternetSales テーブルから結果を取得して、製品キーと注文数の 2 列を返すシンプルな SQL クエリです。集計列と非集計列があるので、GROUP BY を使って各製品の結果を個別に返す必要があります。“—” からT-SQL クエリの末尾までのクエリ全体を実行します。
 
-   ![](../media/Lab-02)
+    ![](../media/Lab-02/image099.png)
  
 4.	explain クエリの出力は、翻訳された KQL クエリを結果として含む 1 つのレコードになるはずです。**キャレットアイコン(>)** をクリックして結果を展開すると、翻訳がわかりやすくなります。
 
