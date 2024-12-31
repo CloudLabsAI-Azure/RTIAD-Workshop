@@ -36,31 +36,55 @@ Al final de este laboratorio, habrá aprendido:
 
 1. Abra el **área de trabajo de Fabric** para el curso.
 
+   ![](../media/lab-05/image003.jpg)
+
 2. Haga clic en el botón **+ Nuevo elemento** para crear un elemento nuevo.
+
+   ![](../media/lab-05/image005.png)
  
 3. Verá una categoría para **Visualizar datos**. Haga clic en el elemento denominado **Panel en tiempo real**
 
-4. Asigne a su panel de control en tiempo real el nombre **RTI Dashboard** y luego haga clic en **Crear**.
+   ![](../media/lab-05/image007.jpg)
 
-5. Debería pasar inmediatamente a una instancia en blanco de un panel de información en tiempo real.
+4. Asigne a su panel de control en tiempo real el nombre **RTI Dashboard** y luego haga clic en **Crear**.
+   
+   ![](../media/lab-05/image010.png)
+
+6. Debería pasar inmediatamente a una instancia en blanco de un panel de información en tiempo real.
+
+   ![](../media/lab-05/image013.png)
  
 ## Tarea 2: Conectar un origen de datos al panel de información en tiempo real
 
 1. En la cinta de opciones de Inicio, busque la opción denominada **New data source** y haga clic en ella.
 
+   ![](../media/lab-05/image016.png)
+
 2. En el panel flotante que aparece en el lado derecho de la pantalla, haga clic en **Agregar + y** luego elija **Centro de datos de OneLake**.
+
+   ![](../media/lab-05/image019.jpg)
 
 3. Aparecerá una lista de orígenes disponibles en OneLake, solo se mostrarán los orígenes de las bases de datos KQL, por lo que habrá una opción disponible, la base de datos KQL **eh_Fabrikam**. Seleccione esa opción.
 
+   ![](../media/lab-05/image021.jpg)
+
 4. Haga clic en **Conectar** en la parte inferior de la pantalla.
+
+   ![](../media/lab-05/image024.png)
  
 5. Ahora ya podrá crear el origen de datos. Haga clic en el botón **Agregar** situado en la parte inferior del panel flotante.
 
+   ![](../media/lab-05/image028.jpg)
+
 6. Ahora verá que se ha agregado un origen de datos al panel de información en tiempo real. Desde aquí, puede agregar bases de datos KQL adicionales en caso de que surja la necesidad. Por ahora, haga clic en **Cerrar** en la parte inferior de la ventana.
+
+   ![](../media/lab-05/image031.jpg)
  
 ## Tarea 3: Crear un icono del panel de información en tiempo real con KQL
 
 1. Haga clic en el icono en blanco dentro del panel de información para rellenar el icono con un objeto visual.
+
+   ![](../media/lab-05/image033.png)
 
 2. De forma predeterminada, se conectará a la base de datos KQL que creó anteriormente como origen. Desde aquí, puede escribir su propia consulta KQL para rellenar este objeto visual con datos. Elimine todo el KQL de Markdown anterior que esté ahí de forma predeterminada. Copie y pegue la siguiente consulta en la ventana de la consulta.
   
@@ -73,43 +97,73 @@ Al final de este laboratorio, habrá aprendido:
     | sort by eventDate
     
     ```
+    
+   ![](../media/lab-05/image036.png)
 
 3. Ejecute la consulta una vez que la haya configurado correctamente para ver los resultados.
 
-4. Tenga en cuenta que es posible que solo tenga un resultado en la salida. Esto se debe al
-**Intervalo de tiempo** que se establece de forma predeterminada para este icono. Dispone
+   ![](../media/lab-05/image039.png)
+
+4. Tenga en cuenta que es posible que solo tenga un resultado en la salida. Esto se debe al **Intervalo de tiempo** que se establece de forma predeterminada para este icono. Dispone
 de un parámetro con el que puede modificar el intervalo de tiempo desde el que devuelve los datos. La eventDate entre (_startTime.._endTime) es lo que le permite aprovechar este parámetro. Modifique el parámetro **Intervalo de tiempo** a **Últimos 3 horas** y observe cómo cambia la salida.
+
+   ![](../media/lab-05/image041.png)
 
 5. En la salida de la consulta ahora debería ver los resultados de los clics de las últimas 3 horas.
 
+   ![](../media/lab-05/image043.png)
+
 6. Aunque este parámetro se puede modificar, es posible que desee que tenga como valor predeterminado un intervalo de tiempo específico en lugar de obligar a los usuarios a
 modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opción **@ Parámetros**.
+
+   ![](../media/lab-05/image048.png)
  
 7. Haga clic en el **icono de lápiz** para editar el parámetro **Intervalo de tiempo**.
 
+   ![](../media/lab-05/image051.png)
+
 8. Cambie el **Valor predeterminado** a **Últimos 24 horas** para mostrar siempre el último día de forma predeterminada. Haga clic en **Listo** cuando haya terminado.
 
+   ![](../media/lab-05/image054.png)
+
 9. Cierre el panel de parámetros.
+
+   ![](../media/lab-05/image057.png)
  
 10.	Ahora haga clic en el **botón + Agregar objeto visual** encima de los resultados de la consulta.
 
+    ![](../media/lab-05/image060.png)
+
 11.	Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
+
+    ![](../media/lab-05/image062.png)
 
 12.	De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
+    ![](../media/lab-05/image065.png)
+
 13. Con este objeto visual con nuevo formato, puede comprender mejor los picos y valles de clics de su sitio de comercio electrónico mediante el flujo de datos que creó anteriormente en esta clase.
+
+    ![](../media/lab-05/image068.png)
 
 14.	Para guardar este objeto visual en el panel de información, haga clic en el botón **Aplicar cambios**
 en la esquina superior derecha de la pantalla.
+
+    ![](../media/lab-05/image070.png)
  
-15.	Una vez que este objeto visual se haya colocado dentro del panel de información, es posible que el objeto visual solo muestre la última hora de resultados. Modifique el panel de información
-para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
+15.	Una vez que este objeto visual se haya colocado dentro del panel de información, es posible que el objeto visual solo muestre la última hora de resultados. Modifique el panel de información para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
+
+   ![](../media/lab-05/image073.png)
 
 16.	Actualice el objeto visual y observe que los resultados cambiarán ligeramente para reflejar los datos que se han recibido desde la última ejecución de la consulta.
+
+    ![](../media/lab-05/image076.png)
 
 ## Tarea 4: Agregar más iconos de panel información al panel de información en tiempo real
 
 1. Haga clic en el botón **New tile** desde la **cinta de opciones de Inicio** en el panel de información en tiempo real.
+
+   ![](../media/lab-05/image079.png)
 
 2. Introduzca la siguiente consulta KQL en el panel de información:
 
@@ -125,13 +179,23 @@ para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 
 3. **Ejecute** la consulta.
 
+    ![](../media/lab-05/image082.png)
+
 4. Haga clic en el botón **+ Agregar** objeto visual.
+
+   ![](../media/lab-05/image084.png)
  
 5. Edite el objeto visual para cambiar el **Tile name** a **Impressions by Hour** y el **Visual type** a **Area chart**.
 
+   ![](../media/lab-05/image087.png)
+
 6. Aplique cambios al objeto visual.
 
+   ![](../media/lab-05/image090.png)
+
 7. Agregue otro **+ New tile**.
+
+   ![](../media/lab-05/image093.png)
 
 8. Copie y pegue la siguiente consulta en el panel de la consulta. Tenga en cuenta que se trata de una consulta de varias instrucciones que utiliza varias instrucciones let y una consulta combinada con punto y coma.
 
@@ -158,8 +222,12 @@ para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
     ```
 
 9. **Ejecute** la consulta para ver los resultados.
+
+    ![](../media/lab-05/image096.png)
  
 10.	Haga clic en el botón **+ Agregar objeto visual**.
+
+    ![](../media/lab-05/image099.png)
 
 11.	Cuando aparezca la configuración del objeto visual, modifique la siguiente configuración para crear un recuento de impresiones.
      - **Tile name**: Impressions
