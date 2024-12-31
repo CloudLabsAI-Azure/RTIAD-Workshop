@@ -113,8 +113,6 @@ In questo lab si apprenderà quanto segue:
 
 5. In **Azione** selezionare le seguenti proprietà:
 
-6. In **Azione** selezionare le seguenti proprietà:
-
     - **Tipo** = Teams message
     - **Destinatari** = {ID utente}
 
@@ -122,13 +120,10 @@ In questo lab si apprenderà quanto segue:
 
 6. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
 
-7. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
-
     ![](../media/Lab-06/image038.png)
 
-7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
 
-8. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
+7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
 
     ![](../media/Lab-06/image040.png)
 
