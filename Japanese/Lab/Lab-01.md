@@ -100,11 +100,11 @@ Fabrikam は、さまざまなアウトドア設備やアクセサリに特化�
 
     ![](../media/Lab-01/image014.jpg)
 
-9.	Microsoft Fabric へのアップグレード成功のダイアログが開きます。Fabric Home Page を選択します。
+9.	Microsoft Fabric へのアップグレード成功のダイアログが開きます。**Fabric Home Page** を選択します。
 
     ![](../media/Lab-01/image017.jpg)
  
-10.	Microsoft Fabric のホームページに戻ります。
+10.	**Microsoft Fabric のホームページ**に戻ります。
 
     ![](../media/Lab-01/image019.jpg)
 
