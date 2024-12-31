@@ -1,7 +1,7 @@
 
 # Microsoft Fabric Real-Time Intelligence in a Day ラボ 5
 
-    ![](../media/Lab-05)
+![](../media/Lab-05/lab-05.png)
 
 # 目次 
 
@@ -54,57 +54,57 @@
 
 1. コース用の **Fabric ワークスペース**を開きます。
 
-   ![](../media/Lab-05)
+   ![](../media/Lab-05/image003.png)
 
 2. **+ 新しい項目**ボタンをクリックして、新しい項目を作成します。
  
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image005.png)
 
 3.	**データの可視化**のカテゴリが表示されます。**リアルタイムダッシュボード**という項目を
 クリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image007.jpg)
 
 4.	リアルタイムダッシュボードに **RTI Dashboard** という名前を付け、**作成**をクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image010.png)
 
 5.	リアルタイムダッシュボードの空のインスタンスがすぐに表示されます。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image013.png)
  
 ## タスク 2: データソースをリアルタイムダッシュボードに接続する
 
 1.	[ホーム] リボンで、**New data source** というオプションを見つけてクリックします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image016.png)
 
 2.	画面の右側に表示されるポップアップ ペインで、**追加** + をクリックし、**OneLake data hub** を選択します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image019.png)
 
 3.	OneLake 内の使用可能なソースの一覧が表示されます。KQL データベースのソースだけが表示されるので、**eh_Fabrikam KQL** データベースという 1 つのオプションのみを使用できます。そのオプションを選択します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image021.jpg)
 
 4.	画面の下部にある **Connect** をクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image026.png)
 
 5.	これで、データソースを作成できます。ポップアップペインの下部にある **Add** ボタンをクリックします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image023.png)
 
 6.	これで、リアルタイムダッシュボードにデータソースが 1 つ追加されたことがわかります。ここから、必要に応じてKQL データベースを追加することもできます。ここでは、ウィンドウの下部にある**閉じる**をクリックします。
 
-  ![](../media/Lab-05)
+    ![](../media/Lab-05/image028.png)
  
 ## タスク 3: KQL を含むリアルタイムダッシュボードタイルを作成する
 
 
 1.	ダッシュボード内の空白のタイルをクリックして、タイルにビジュアルを設定します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image031.png)
 
 2.	既定では、以前にソースとして作成した KQL データベースに接続します。ここから独自のKQL クエリを作成し、このビジュアルにデータを設定できます。既定で表示される以前のすべてのマークダウンKQL を削除します。以下のクエリをコピーしてクエリ ウィンドウに貼り付けます。
 
@@ -118,63 +118,63 @@
     ```
 3.	クエリを正しく構成したら実行して、結果を確認します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image033.png)
 
 4.	出力に結果が 1 つしかない場合があることに注意してください。これは、このタイルに対して既定で設定されている**時間の範囲**が原因です。データを返す時間の範囲を変更できるパラメーターがあります。eventDate between (_startTime.._endTime) では、このパラメーターの利用を許可します。**時間の範囲**パラメーターを**過去 3 時間**に変更し て、出力がどのように変わるかを確認します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image036.png)
 
 5.	過去 3 時間の期間中のクリック数の結果がクエリ出力に表示されます。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image039.png)
  
 6.	このパラメーターは変更できますが、ユーザーに変更させる代わりに特定の時間範囲を既定値にすることもできます。時間範囲オプションの上にある @ **パラメーター** オプションをクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image041.png)
 
 7.	**鉛筆アイコン**をクリックして、**時間の範囲**パラメーターを編集します。
  
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image043.png)
 
 8.	**既定値を過去 24 時間**に変更すると、既定で過去 1 日が常に表示されます。終わったら、**完了**をクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image045.png)
 
 9.	パラメーターペインを閉じます。
 
 10.	次に、クエリ結果の上にある **+ ビジュアルの追加**ボタンをクリックします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image048.png)
 
 11.	画面の右側に新しいポップアップが表示されます。**Tile name** オプションの下のテキストボックスをクリックして、このビジュアルに **Clicks by Hour** という名前を付けます。
  
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image051.png)
 
 12.	既定では、このKQL クエリの結果の表示に使用しているビジュアルはテーブルです。データの結果をすぐに利用して起きていることを理解するには、この方法が最善ではない可能性があります。視覚化タイプを Table から **Area chart** に変更します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image054.png)
  
 13.	この新しく書式設定されたビジュアルを使用すると、このクラスで前に作成したデー タストリームを使用して、e コマースサイトのクリック数の山と谷をよりよく理解できます。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image057.jpg)
  
 14.	このビジュアルをダッシュボードに保存するには、画面の右上隅にある**変更の適用**ボタンをクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image060.png)
   
 15.	このビジュアルがダッシュボード内に配置された後、ビジュアルが過去 1 時間の結果だけを示している可能性があります。**過去 24 時間の時間の範囲**を表示するようにダッシュボードを変更します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image062.png)
 
 16.	ビジュアルを最新の情報に更新すると、クエリの前回の実行以降に取得されたデータを反映するように結果が若干変更されていることがわかります。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image065.png)
  
 ## タスク 4: リアルタイムダッシュボードにさらにダッシュボードタイルを追加する
 
 1.	リアルタイム ダッシュボードの**ホーム** リボンから、**New tile** ボタンをクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image068.jpg)
 
 2.	クエリペインに次のKQL クエリを入力します。
 
@@ -189,23 +189,23 @@
 
 3.	クエリを**実行**します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image070.png)
 
 4.  **+ ビジュアルの追加**ボタンをクリックします。
 
-     ![](../media/Lab-05)
+     ![](../media/Lab-05/image073.png)
 
 5.	視覚化を編集して、**Tile name** を **Impressions by Hour** に、**Visual type** を **Area chart** に変更します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image076.png)
  
 6.	ビジュアルに変更を適用します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image079.png)
 
 7.	別の **+ New tile** を追加します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image082.png)
 
 8.	次のクエリをコピーしてクエリ ペインに貼り付けます。これは、複数のlet ステートメントと、セミコロンで結合されたクエリを使用する複数ステートメント クエリです。
  
@@ -232,7 +232,7 @@
 
 9.	クエリを**実行**して結果を表示します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image084.jpg)
 
 10. **+ ビジュアルの追加**ボタンをクリックします。
  
@@ -241,164 +241,167 @@
 - **Visual type** - Stat
 - **Value column** - impressions (long)
 
-   ![](../media/Lab-05)
+   ![](../media/Lab-05/image087.png)
 
 12.	すべての設定が適切に構成されている場合は、**変更の適用**を選択します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image090.png)
  
 13.	新しいタイルで、省略記号 (...) をクリックし、**タイルの複製**のオプションを選択します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image093.png)
 
 14.	複製したタイルの**鉛筆アイコン**をクリックして、構成を編集します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image096.png)
 
 15.	この **Tile name** を **Clicks** に変更し、**Value column** を **clicks (long)** に変更します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image099.png)
 
 16.	このビジュアルに変更を適用します。
 
 17.	新しいタイルの 1 つをもう一度複製して、最終的な統計のビジュアルを作成します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image102.png)
 
 18.	新しいタイルを編集して、**Tile name** を **Click Through Rate** に、**Value column** を **CTR (long)** に変更します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image105.png)
 
 19.	変更を適用します。
 
 20.	タイルが分離されている場合、またはそれらを再編成する場合は、手のアイコンが表示されるまでタイル上にマウスカーソルを置き、目的のビジュアルをドラッグ アンドドロップできます。
  
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image108.png)
  
 ## タスク 5: 場所別インプレッションのマップビジュアルを追加する
 
 1.	**新しいタイル**をリアルタイムダッシュボードに追加します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image111.jpg)
 
 2.	次のクエリをコピーしてクエリペインに貼り付けます。このクエリは、このデータ
 ストリームのIP アドレス列から緯度と経度を取り出し、マップ上にプロットできる場所を生成します。このクエリは、これまでのクエリよりも少し時間がかかる可能性があります。
 
-```
-//Impressions by location
+    ```
+    //Impressions by location
 
-Impressions
-| where eventDate between (_startTime.._endTime)
-| join external_table('products') on $left.productId == $right.ProductID
-| project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
-| render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-```
+    Impressions
+    | where eventDate between (_startTime.._endTime)
+    | join external_table('products') on $left.productId == $right.ProductID
+    | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
+    | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
+    ```
 
 
 3.	クエリを実行して、そのクエリが正しく構成されていることを検証します。**+ ビジュアルの追加**ボタンをクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image114.png)
  
 4.	**Tile name** を **Impressions by Location** に、**Visual type** を **Map** に変更します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image117.png)
 
 5.	**Visual type** 領域で、**場所の定義方法**オプションを**緯度と経度**に変更して緯度と経度が適切に選択されていることを確認し、残りのフィールドが下の画像と一致することを 確認します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image120.png)
  
 6.	変更を適用します。
 
 7.	ダッシュボード内のマップ ビジュアルの左下にあるアンカーポイントをつかんで、ビジュアルのサイズを大きくします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image123.jpg)
  
 8.	すべてのビジュアルは、サイズ変更および移動できます。希望に合わせて自由に再配置してください。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image126.jpg)
  
 9.	変更を保存します。
 
-![](../media/Lab-05)
+    ![](../media/Lab-05/image129.png)
 
  
 ## タスク 6: リアルタイムダッシュボードで自動更新を設定する
 1.	**管理**リボンをクリックし、**自動更新**オプションを選択します。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image132.png)
 
 2.	トグルをオンにして**自動更新**を有効にします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image135.png)
 
 3.	**最小時間間隔**を 30 秒に、**既定のリフレッシュ レート**を 1 分に変更します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image138.png)
 
 4.	ウィンドウの下部にある**適用**をクリックします。
 
 5.	メニューの右上隅で、**編集中**ボタンをクリックしてそれを**表示中**に変更して、このリアルタイムダッシュボードでのエンドユーザーのエクスペリエンスを確認します。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image141.png)
 
 6.	会社のロゴを取得したり、以下のように条件付き形式をビジュアルに適用したりすることに関心があり、それを行う時間がある場合は、以下のオプションのタスクを自由に実行してください。そうでなければ、ラボは完了です。
  
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image143.jpg)
 
 ## オプションタスク 7: 会社のロゴを追加する
 
 1.	前に行ったのと同じように、ダッシュボードの**表示中**モードから**編集中**モードに切り替えます
 
+    ![](../media/Lab-05/image145.jpg)
 
 2.	[ホーム] リボンの **New text tile** というボタンをクリックします。
+    
+    ![](../media/Lab-05/image148.jpg)
 
 3.	次のマークダウン コードをコピーし、クエリ ウィンドウ内に貼り付けます。
 ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw
 =true "Fabrikam")
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image150.png)
 
 4.	変更を適用します。
 
 5.	リアルタイムダッシュボード内の場所に合わせて、タイルをサイズ変更して移動します。
 
-  ![](../media/Lab-05)
+    ![](../media/Lab-05/image152.jpg)
 
 6.	変更を保存します。
 
-  ![](../media/Lab-05)
+    ![](../media/Lab-05/image155.png)
 
 ## オプションタスク 8: 条件付き書式をビジュアルに適用する
 
 1.	**Click Through Rate** ビジュアルの**鉛筆アイコン**をクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image158.png)
  
 2.	ビジュアル書式ペインの下部で、**条件付き書式**の下の **+ Add rule** ボタンをクリックします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image161.png)
 
 3.	**鉛筆アイコン**をクリックして、条件付き書式ルールを編集します。
-
-   ![](../media/Lab-05)
+ 
+    ![](../media/Lab-05/image164.png)
 
 4.	ルールの条件を変更して、**CTR (long)** という **Column** をポイントし、Operator とValue のルールを **> 10** にします。
 
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image167.png)
  
 5.	必要に応じて書式設定を自由に変更できます。CTR の値が 10 を超える場合は、そのビジュアルに表示されます。
  
-   ![](../media/Lab-05)
+    ![](../media/Lab-05/image170.png)
 
-6.	条件付き書式ペイン内にある保存ボタンをクリックします。
+6.	条件付き書式ペイン内にある**保存**ボタンをクリックします。
 
-    ![](../media/Lab-05)
+    ![](../media/Lab-05/image172.png)
 
 7.	変更を適用します。
 
 8.	変更を保存します。
 
-
+    ![](../media/Lab-05/image155.png)
 
 # まとめ
 
@@ -410,7 +413,7 @@ Fabric Real-time Intelligence in a Day (RTIIAD) では、Microsoft Fabric で使
 
 サービスのメニューにあるヘルプ (?) セクションには、いくつかの優れたリソースへのリンクがあります。
  
-  ![](../media/Lab-05)
+  ![](../media/Lab-05/image177.jpg)
 
 Microsoft Fabric の次のステップに役立つリソースをいくつか以下に紹介します。
 
