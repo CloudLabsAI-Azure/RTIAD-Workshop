@@ -13,8 +13,7 @@
   - Tarea opcional 7: Agregar el logotipo de la empresa	
   - Tarea opcional 8: Aplicar formato condicional a un objeto visual	
 - Resumen	
-- Referencias	
-
+- Referencias
  
 # Estructura del documento
 
@@ -103,8 +102,7 @@ Al final de este laboratorio, habrá aprendido:
 
    ![](../media/lab-05/image039.png)
 
-4. Tenga en cuenta que es posible que solo tenga un resultado en la salida. Esto se debe al **Intervalo de tiempo** que se establece de forma predeterminada para este icono. Dispone
-de un parámetro con el que puede modificar el intervalo de tiempo desde el que devuelve los datos. La eventDate entre (_startTime.._endTime) es lo que le permite aprovechar este parámetro. Modifique el parámetro **Intervalo de tiempo** a **Últimos 3 horas** y observe cómo cambia la salida.
+4. Tenga en cuenta que es posible que solo tenga un resultado en la salida. Esto se debe al **Intervalo de tiempo** que se establece de forma predeterminada para este icono. Dispone de un parámetro con el que puede modificar el intervalo de tiempo desde el que devuelve los datos. La eventDate entre (_startTime.._endTime) es lo que le permite aprovechar este parámetro. Modifique el parámetro **Intervalo de tiempo** a **Últimos 3 horas** y observe cómo cambia la salida.
 
    ![](../media/lab-05/image041.png)
 
@@ -112,8 +110,7 @@ de un parámetro con el que puede modificar el intervalo de tiempo desde el que 
 
    ![](../media/lab-05/image043.jpg)
 
-6. Aunque este parámetro se puede modificar, es posible que desee que tenga como valor predeterminado un intervalo de tiempo específico en lugar de obligar a los usuarios a
-modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opción **@ Parámetros**.
+6. Aunque este parámetro se puede modificar, es posible que desee que tenga como valor predeterminado un intervalo de tiempo específico en lugar de obligar a los usuarios a modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opción **@ Parámetros**.
 
    ![](../media/lab-05/image048.png)
  
@@ -129,15 +126,15 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
 
    ![](../media/lab-05/image057.jpg)
  
-10.	Ahora haga clic en el **botón + Agregar objeto visual** encima de los resultados de la consulta.
+10. Ahora haga clic en el **botón + Agregar objeto visual** encima de los resultados de la consulta.
 
     ![](../media/lab-05/image060.png)
 
-11.	Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
+11. Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
 
     ![](../media/lab-05/image062.png)
 
-12.	De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
+12. De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
     ![](../media/lab-05/image065.png)
 
@@ -215,39 +212,41 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
     imp
     | join clck on $left.dateOnly == $right.dateOnly
     | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-
     ```
 
 9. **Ejecute** la consulta para ver los resultados.
 
     ![](../media/lab-05/image096.png)
  
-10.	Haga clic en el botón **+ Agregar objeto visual**.
+10. Haga clic en el botón **+ Agregar objeto visual**.
 
     ![](../media/lab-05/image099.png)
 
-11.	Cuando aparezca la configuración del objeto visual, modifique la siguiente configuración para crear un recuento de impresiones.
+11. Cuando aparezca la configuración del objeto visual, modifique la siguiente configuración para crear un recuento de impresiones.
+     
      - **Tile name**: Impressions
+     
      - **Visual type**: Stat
+     
      - **Value column**: impressions (long)
 
-12.	Seleccione **Aplicar cambios** cuando todos los ajustes estén configurados correctamente.
+12. Seleccione **Aplicar cambios** cuando todos los ajustes estén configurados correctamente.
  
-13.	En el nuevo icono, haga clic en los puntos suspensivos (...) y seleccione la opción **Icono duplicado**.
+13. En el nuevo icono, haga clic en los puntos suspensivos (...) y seleccione la opción **Icono duplicado**.
 
-14.	Haga clic en el **icono de lápiz** para el icono duplicado para editar las configuraciones.
+14. Haga clic en el **icono de lápiz** para el icono duplicado para editar las configuraciones.
 
-15.	Cambie este **Tile name a Clicks** y cambie la **Value column a clicks (long)**.
+15. Cambie este **Tile name a Clicks** y cambie la **Value column a clicks (long)**.
 
-16.	Aplique los cambios a este objeto visual.
+16. Aplique los cambios a este objeto visual.
 
-17.	Duplique cualquiera de los nuevos iconos una vez más para crear un objeto visual estadístico final.
+17. Duplique cualquiera de los nuevos iconos una vez más para crear un objeto visual estadístico final.
  
-18.	Edite el nuevo icono para cambiar el **Tile name** a **Click Through Rate** y la **Value column a CTR (long)**.
+18. Edite el nuevo icono para cambiar el **Tile name** a **Click Through Rate** y la **Value column a CTR (long)**.
 
-19.	Aplique los cambios.
+19. Aplique los cambios.
 
-20.	Si los iconos están separados o desea reorganizarlos, puede mantener el puntero sobre el icono hasta que aparezca un icono de mano y arrastrar y soltar el objeto visual donde desee.
+20. Si los iconos están separados o desea reorganizarlos, puede mantener el puntero sobre el icono hasta que aparezca un icono de mano y arrastrar y soltar el objeto visual donde desee.
 
 ## Tarea 5: Agregar un objeto visual de mapa para Impressions by Location
 
@@ -316,8 +315,7 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
 
 3. Haga clic en el **icono de lápiz** para editar la regla de formato condicional.
 
-4. Modifique las condiciones de la regla para que apunten a la **Columna** denominada **CTR (long)
-y** haga la regla **> 10** para el operador y el valor.
+4. Modifique las condiciones de la regla para que apunten a la **Columna** denominada **CTR (long) y** haga la regla **> 10** para el operador y el valor.
 
 5. No dude en modificar el formato como desee. Siempre que el valor del CTR sea mayor que 10, aparecerá en ese objeto visual.
 
@@ -327,7 +325,6 @@ y** haga la regla **> 10** para el operador y el valor.
 
 8.	Guarde los cambios.
 
- 
 # Resumen
 
 En este laboratorio, los usuarios crearon un panel de información en tiempo real y lo conectaron a nuestra base de datos KQL. Pudimos ver que usamos el lenguaje KQL para mantener consultas y luego podemos visualizar los resultados de muchas maneras, ya que cada objeto visual tiene su propia configuración. Además, vimos cómo podíamos modificar el parámetro predeterminado disponible en el panel de información y hacer que este se actualizara automáticamente.
