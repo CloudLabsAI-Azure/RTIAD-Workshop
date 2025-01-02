@@ -68,9 +68,9 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 5. Sie werden zur Startseite von **Fabric** geleitet.
 
-    Wenn Sie mit Fabric-Elementen arbeiten möchten, benötigen Sie eine Testlizenz und einen Arbeitsbereich mit einer Fabric-Lizenz. Lassen Sie uns das einrichten.
-
     ![](../media/lab-01/image009.jpg)
+
+   Wenn Sie mit Fabric-Elementen arbeiten möchten, benötigen Sie eine Testlizenz und einen Arbeitsbereich mit einer Fabric-Lizenz. Lassen Sie uns das einrichten.
 
 6. Klicken Sie oben rechts auf dem Bildschirm auf das **Benutzersymbol**.
 
