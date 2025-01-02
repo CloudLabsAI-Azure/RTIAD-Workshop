@@ -103,7 +103,7 @@ In questo lab si apprenderà quanto segue:
 
     ![](../media/Lab-01/image017.png)
 
-10.	Si aprirà nuovamente la **home page** di **Microsoft Fabric**.
+10. Si aprirà nuovamente la **home page** di **Microsoft Fabric**.
 
     ![](../media/Lab-01/image019.jpg)
  
