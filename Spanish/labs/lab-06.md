@@ -114,14 +114,14 @@ para obtener un mensaje de muestra en Teams desde Reflex.
     -	**Columna**= clics
     - **Valor** = 30000
 
-    ![](../media/lab-06/image034.png)
+      ![](../media/lab-06/image034.png)
 
 5. En **Acción**, seleccione las propiedades siguientes:
 
     -	**Tipo** = Teams message
     -	**Destinatario** = {su id. de usuario}
 
-   ![](../media/lab-06/image036.png)
+        ![](../media/lab-06/image036.png)
 
 6. Por último, haga clic en Guardar e iniciar a ejecutar esta regla.
 
