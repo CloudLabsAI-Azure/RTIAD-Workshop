@@ -50,9 +50,15 @@
 
 1. コースの **Fabric ワークスペース**を開き、前のラボで作成した KQL クエリセット **Create Tables** を開きます。
 
+    ![](../media/Lab-04/image003.png)
+
 2. このKQL クエリセット内で、ここで使用する元のタブの名前を "eh_Fabrikam" から "Create External Tables" に変更して、このクエリセットの内容をより簡単に整理し、理解できるようにします。
 
+    ![](../media/Lab-04/image005.png)
+
 3. 次に、[+] アイコンを選択して新しいタブを作成し、新しいタブに "Bronze Layer" という名前を付けます。
+
+   ![](../media/Lab-04/image007.png)
 
 4. この新しいタブ内で、次のコードを強調表示し、[Run] を選択してメダリオン フレームワークのブロンズレイヤーとして機能する 4 つの新しいテーブルを作成します。
 
@@ -70,6 +76,8 @@
     .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
     ```
 
+    ![](../media/Lab-04/image010.png)
+
 5. 実行すると、データベースオブジェクトエクスプローラー内に作成された 4 つの新しいテーブルがすぐに表示されます。
 
    - Address
@@ -80,7 +88,11 @@
 
     - SalesOrderHeader
 
+        ![](../media/Lab-04/image012.png)
+
 6. 名前の横の **>** アイコンをクリックして、**Address テーブル**を展開します。
+
+   ![](../media/Lab-04/image014.png)
 
 7. これにより、テーブルのスキーマ(列名およびデータ型) が表示されます。KQL データベースでこのテーブルに追加すると役に立つ 1 つの項目は、後でメダリオンアーキテクチャで使用されるインジェスト時間用の非表示列です。ここで追加してみましょう。下のスクリプトをコピーして貼り付け、インジェスト時間列を追加することで、作成したテーブルを変更します。
 
@@ -93,19 +105,29 @@
     .alter table SalesOrderDetail policy ingestiontime true
     ```
 
+   ![](../media/Lab-04/image017.jpg)
+
 8. 4 つの新しいテーブルは、スキーマが定義された空白のテーブルです。次に、これらのテーブルを適切に読み込む方法が必要です。ワークスペース **RTI_username** に戻ります。
 
 ## タスク 2: データパイプラインを使用してブロンズ テーブルを読み込む
 
 1. ワークスペースから **+ 新しい項目**オプションを選択して選択ペインを表示します。次に、**Data pipeline** というオプションを探して選択します。
 
+   ![](../media/Lab-04/image019.jpg)
+
 2. 新しいパイプラインに **Load KQL Database Bronze Layer** という名前を付けます。
+
+   ![](../media/Lab-04/image021.png)
 
 3. **作成**をクリックします。
 
 4. パイプラインメニューが表示されたら、**データコピーのアシスタント** オプションをクリックします。
 
+   ![](../media/Lab-04/image024.jpg)
+
 5. 最初に、データを抽出するソース データベースへの接続を作成する必要があります。[新しいソース] の下の **Azure SQL Database** オプションをクリックします。すぐに表示されない場合は、上部の検索バーを使用してソースをフィルター処理できます。前のラボで使用したのと同じ外部 Azure SQL データベースに接続しますが、別のテーブルに接続します。
+
+   ![](../media/Lab-04/image026.png)
 
 6. データベースの接続の詳細を入力する必要があります。環境の情報を使用するか、以下のように入力します。
 
@@ -129,25 +151,39 @@
 
     - SalesLT.SalesOrderHeader
 
+        ![](../media/Lab-04/image029.png)
+
 9. **次へ**をクリックします。
 
 10. 宛先を設定して、パイプラインのデータの送信先を決定する必要があります。**OneLake データハブ**を探し、KQL データベース **eh_Fabrikam** を選択します。
+
+    ![](../media/Lab-04/image031.png)
 
 11. サインインを求められたら、[環境の詳細] ページで提供された資格情報を使用します。
 
 12. まだ選択していない場合は **SalesLT.Address** テーブルをクリックし、**テーブル** オプションの横のドロップダウンをクリックします。**Address** テーブルオプションをクリ ックします。
 
+    ![](../media/Lab-04/image033.png)
+
 13. **列マッピング**の概要が表示されます。これにより、KQL データベースに送信する、ソースデータベースから取得されたすべてのフィールドを視覚化できます。ソースから特定のフィールドをマップしない場合は、そのフィールドを削除できます。
+
+    ![](../media/Lab-04/image036.png)
 
 14. **SalesLT.Customer、SaleLT.SalesOrderDetail、SalesLT.SalesOrderHeader** について、ステッ プ 11 - 12 と同じ手順を実行します。列マッピングを実行する必要はないため、単純にテーブル名を一致させます。すべてのテーブルが適切にマップされたら、**次へ**をクリックします。
 
 15. データコピーアシスタントを使用する最後のページは、選択したすべての設定を確認する概要ページです。テーブルのソース番号とテーブルの宛先番号が同じであることを確認します。
 
+    ![](../media/Lab-04/image038.jpg)
+
 16. **保存と実行**をクリックします。
 
 17. しばらくすると、**パラメーター**が表示されたポップアップウィンドウが開きます。完了したコピーアシスタントウィザードにより、反復処理してkql テーブルに読み込むテー ブルの一覧が作成されています。パイプラインは現在データ コピーアシスタントから構成されているため、**OK** ボタンをクリックするだけで実行されます。
 
+    ![](../media/Lab-04/image041.png)
+
 18. パイプラインを実行しましょう。約 1 分後にデータ移動が完了します。パイプライン内のすべてのアクティビティが**成功**と表示されたら、データの転送は完了です。
+   
+    ![](../media/Lab-04/image044.png)
 
 19. 次に、テーブルの 1 つをチェックし、データを確認しましょう。使用してきた
 
@@ -160,11 +196,17 @@ Customer
  | take 100
 ```
 
+![](../media/Lab-04/image046.png)
+
 20. 下の画像のようなデータが表示されますが、これは正確ではない可能性があります。
+
+    ![](../media/Lab-04/image048.png)
 
 ## タスク 3: シルバーレイヤーでテーブルを変換する
 
 1. これでブロンズテーブルが読み込まれたので、"Silver Layer" というKQL クエリセット内に新しいタブを作成します。
+
+   ![](../media/Lab-04/image050.png)
 
 2. [Silver Layer] タブ内の次のKQL スクリプトを実行して、メダリオンフレームワークのシルバーレイヤーとして機能する 4 つの新しいテーブルを作成します。
 
@@ -184,49 +226,53 @@ Customer
 
 3. 新しいスクリプトを強調表示して **Run** ボタンをクリックすることで、スクリプトを実行します。
 
+   ![](../media/Lab-04/image053.jpg)
+
 4. そのスクリプトが実行されると、KQL データベーステーブルのメニューに新しいテーブルが 4 つ表示されます。
+
+    ![](../media/Lab-04/image056.png)
 
 5. これでテーブルが作成されました。次に、テーブルにデータを読み込む必要があります。データがブロンズレイヤーに取り込まれるときにデータを変換して移動する更新ポリシーを作成します。次のスクリプトをコピーして貼り付けてから、コードを**実行**します。
 
-```
-// use update policies to transform data during Ingestion
+    ```
+    // use update policies to transform data during Ingestion
 
-.execute database script <|
+    .execute database script <|
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
 
-| extend IngestionDate = ingestion_time()
+    | extend IngestionDate = ingestion_time()
 
-}
+    }
 
-.alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
 
-| extend IngestionDate = ingestion_time()
+    | extend IngestionDate = ingestion_time()
 
-}
+    }
 
-.alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
 
-| extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
+    | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
 
-| extend IngestionDate = ingestion_time()
+    | extend IngestionDate = ingestion_time()
 
-}
+    }
 
-.alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
 
-| extend IngestionDate = ingestion_time()
+    | extend IngestionDate = ingestion_time()
 
-}
+    }
 
-.alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-```
+    .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
+    ```
 
 6. クエリの実行結果が表示されますが、クエリが完了したことを示す最善の証拠は、新しい展開可能なフォルダーがデータベースオブジェクトペインに表示されることです。
 
@@ -234,15 +280,25 @@ Customer
 
 ータベースのブロンズレイヤーに読み込まれたデータをミラーリングし、変換して、シルバーレイヤーに読み込むことができます。
 
+ ![](../media/Lab-04/image058.png)
+
 7. 次に、このプロセスをシミュレートします。このラボで前に作成したパイプラインを再度実行します。**Load KQL Database** パイプラインに戻ります。
+
+   ![](../media/Lab-04/image061.png)
 
 8. **[ホーム] リボン**内の**実行**ボタンをクリックしてパイプラインを再度実行し、ブロンズ レイヤーにデータを読み込みます。そこで、作成してシルバー テーブルに読み込んだ関数
 
 によって変換されます。
 
+![](../media/Lab-04/image064.png)
+
 9. このポップアップで **OK** をクリックすると、前と同じパラメーターでパイプラインが実行されます。
 
+   ![](../media/Lab-04/image067.png)
+
 10. ここでも、パイプラインの読み込みが完了するまで約 1 分待ちます。[出力] メニューのすべての項目が**成功**と表示されたら、次のステップに進みます。
+   
+    ![](../media/Lab-04/image070.png)
 
 11. データパイプラインが完了したら、KQL データベースに移動し、結果を検証します。
 
@@ -256,7 +312,11 @@ Customer
     | take 100
     ```
 
+    ![](../media/Lab-04/image073.png)
+
 13. 結果に注目してください。**SilverAddress** テーブルには追加の列 **IngestionDate** がありますが、これは **Address** テーブルに物理的には存在しません。
+
+    ![](../media/Lab-04/image076.png)
 
 ## タスク 4: 具体化されたビューを含むゴールドレイヤーを作成する
 
@@ -264,6 +324,8 @@ Customer
 データベース内でどのように行うのかを見てみましょう。
 
 1. まだ存在しない場合は、**Create Tables** KQL クエリセットを開き、[Gold Layer] という新しいタブを作成します。
+
+    ![](../media/Lab-04/image078.png)
 
 2. 具体化されたビューを作成するための次のコードをクエリセットに貼り付けます。
 
@@ -285,9 +347,15 @@ Customer
 
 3. コードを貼り付けた後に、コードを強調表示し、**Run** ボタンをクリックして実行します。
 
+   ![](../media/Lab-04/image081.jpg)
+
 4. この具体化されたビューがどのように作成されたかに関する詳細情報を示す出力がクエリ結果に表示されます。
 
+    ![](../media/Lab-04/image084.jpg)
+
 5. また、KQL データベースオブジェクトエクスプローラーに、作成された別のフォルダーが表示されます。**Materialized view** フォルダーを展開すると、その中に **GoldAddress** ビューがあります。
+
+   ![](../media/Lab-04/image086.png)
 
 6. クエリウィンドウで、次のコードを実行して、新しい具体化されたビューのクエリを実行します。
 
@@ -295,6 +363,7 @@ Customer
     GoldAddress
     | take 1000
     ```
+   ![](../media/Lab-04/image089.png)
 
 7. このクエリは、**SilverAddress** テーブル内の固有の **AddressID** ごとに最新の **IngestionDate** を含む行を返します。
 
@@ -362,6 +431,8 @@ Customer
 
 9. これで、KQL データベース内に 6 つの具体化されたビューが存在するようになりました。
 
+   ![](../media/Lab-04/image091.png)
+
 10. KQL データベース内にメダリオンフレームワークが正常に作成されました。このデータは簡単に使用できますが、Kusto を使用したことがなく、別の方法でこれらのテーブルのデータにアクセスすることを好むユーザーがいます。次のタスクでは、レイクハウスを
 
 作成します。その後、ラボ 01 で有効にした OneLake の可用性機能を使用し、ショートカットを使用して、KQL データベースのテーブルの一部をレイクハウス経由でアクセス可能にします
@@ -374,7 +445,11 @@ Customer
 
 2. **+ 新しい項目**オプションをクリックし、使用可能なオプションの一覧から**レイクハウス** を選択します。
 
+    ![](../media/Lab-04/image093.jpg)
+
 3. レイクハウスに **lh_Fabrikam** という名前を付けて、**作成**をクリックします。レイクハウススキーマのプレビュー機能を有効にしないでください
+
+    ![](../media/Lab-04/image095.png)
 
 ## タスク 6: KQL データベーステーブルへのショートカット
 
@@ -382,9 +457,15 @@ Customer
 
 1. メニューから、**新しいショートカット**というオプションを選択します。
 
+    ![](../media/Lab-04/image097.jpg)
+
 2. **内部ソース**の下のオプション **Microsoft OneLake** を選択します。
 
+    ![](../media/Lab-04/image100.png)
+
 3. メニュー内で、**eh_Fabrikam** KQL データベースを選択して、データの複製やコピーを行わずに、そのストレージからレイクハウスにテーブルを取り込みます。
+
+    ![](../media/Lab-04/image102.png)
 
 4. メニューの下部にある**次へ**をクリックします。
 
@@ -396,15 +477,23 @@ Customer
 
     - InternetSales
 
+        ![](../media/Lab-04/image104.png)
+
 6. これらのテーブルは、Fabric 内でノートブックを利用するユーザーにとって非常に役立つ可能性があります。このデータをデータサイエンスの実験で使用して、ユーザーが関心を持つ可能性が高いリンクを予測するモデルをトレーニングできます。
 
 7. **次へ**をクリックします。
 
 8. 最後の検証画面が表示されます。選択に問題がなければ、画面下部の**作成**ボタンをクリックします。
 
+   ![](../media/Lab-04/image106.jpg)
+
 9. これで、KQL データベースから選択したすべてのテーブルがレイクハウス内に表示されます。
 
+    ![](../media/Lab-04/image108.png)
+
 10. **Clicks** というテーブルをクリックします。
+
+    ![](../media/Lab-04/image110.png)
 
 11. そのテーブルのレコードのサンプルがユーザーインターフェイス内に表示されていることがわかります。
 
@@ -425,7 +514,7 @@ Fabric Real-time Intelligence in a Day (RTIIAD) では、Microsoft Fabric で使
 
 サービスのメニューにあるヘルプ (?) セクションには、いくつかの優れたリソースへのリンクがあります。
  
-  ![](../media/Lab-01/image067.jpg)
+  ![](../media/Lab-04/image113.jpg)
 
 Microsoft Fabric の次のステップに役立つリソースをいくつか以下に紹介します。
 
