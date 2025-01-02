@@ -131,7 +131,7 @@ Al final de este laboratorio, habrá aprendido:
 11. Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
 
 
-    ![](../media/lab-05/image052.png)
+    ![](../media/lab-05/image051.png)
 
 12. De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
