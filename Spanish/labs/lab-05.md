@@ -128,7 +128,11 @@ Al final de este laboratorio, habrá aprendido:
 
 11. Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
 
+<<<<<<< HEAD
+    ![](../media/lab-05/image052.g)
+=======
     ![](../media/lab-05/image051.png)
+>>>>>>> adeffe325f9fb08c0a6b4751c7ed73eb3dbb80f5
 
 12. De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
@@ -232,41 +236,37 @@ Al final de este laboratorio, habrá aprendido:
  
 13. En el nuevo icono, haga clic en los puntos suspensivos (...) y seleccione la opción **Icono duplicado**.
 
-    ![](../media/lab-05/image093.png)
+    ![](../media/lab-05/image093.jpg)
 
 14. Haga clic en el **icono de lápiz** para el icono duplicado para editar las configuraciones.
 
-    ![](../media/lab-05/image96.png)
+    ![](../media/lab-05/image096.png)
 
 15. Cambie este **Tile name a Clicks** y cambie la **Value column a clicks (long)**.
 
-    ![](../media/lab-05/image99.jpg)
+    ![](../media/lab-05/image099.png)
 
 16. Aplique los cambios a este objeto visual.
  
-   ![](../media/lab-05/image102.jpg)
-
 17. Duplique cualquiera de los nuevos iconos una vez más para crear un objeto visual estadístico final.
 
-    ![](../media/lab-05/image105.png)
+    ![](../media/lab-05/image102.png)
  
 18. Edite el nuevo icono para cambiar el **Tile name** a **Click Through Rate** y la **Value column a CTR (long)**.
 
-    ![](../media/lab-05/image108.png)
+    ![](../media/lab-05/image105.png)
 
 19. Aplique los cambios.
 
-    ![](../media/lab-05/image111.png)
-
 20. Si los iconos están separados o desea reorganizarlos, puede mantener el puntero sobre el icono hasta que aparezca un icono de mano y arrastrar y soltar el objeto visual donde desee.
 
-    ![](../media/lab-05/image114.jpg)
+    ![](../media/lab-05/image108.jpg)
 
 ## Tarea 5: Agregar un objeto visual de mapa para Impressions by Location
 
 1. Agregue un **New tile** al panel de información en tiempo real.
 
-   ![](../media/lab-05/image126.jpg)
+   ![](../media/lab-05/image111.jpg)
 
 2. Copie y pegue la siguiente consulta en el panel de la consulta. Esta consulta extrae la latitud y la longitud de la columna de dirección IP de este flujo de datos para generar una ubicación que puede trazar en un mapa. Esta consulta puede tardar un poco más que las anteriores.
  
@@ -282,92 +282,110 @@ Al final de este laboratorio, habrá aprendido:
 
 3. Ejecute la consulta para validar que esté configurada correctamente. Haga clic en el botón **+ Agregar objeto visual**.
 
-   ![](../media/lab-05/image129.png)
+   ![](../media/lab-05/image114.png)
 
 4. Cambie el **Tile name** a **Impressions by Location** y el **Visual type** a **Map**.
 
-   ![](../media/lab-05/image132.jpg)
+   ![](../media/lab-05/image117.png)
  
 5. En el área **Visual type**, asegúrese de que la latitud y la longitud estén seleccionadas correctamente modificando la opción **Definir ubicación por a Latitud y Longitud** y compruebe que los campos restantes coincidan con la siguiente imagen.
 
-   ![](../media/lab-05/image135.png)
+   ![](../media/lab-05/image120.png)
 
 6. Aplique los cambios.
 
-   ![](../media/lab-05/image138.jpg)
-
 7. Agarre el punto de anclaje de la parte inferior izquierda del objeto visual de mapa dentro del panel de información para aumentar el tamaño del objeto visual.
 
-   ![](../media/lab-05/image141.png)
+   ![](../media/lab-05/image123.jpg)
  
 8. Todos los objetos visuales son redimensionables y móviles. No dude en reorganizar el suyo como desee.
 
-   ![](../media/lab-05/image143.jpg)
+   ![](../media/lab-05/image126.jpg)
 
 9. Guarde los cambios.
 
-   ![](../media/lab-05/image145.jpg)
+   ![](../media/lab-05/image129.png)
 
 ## Tarea 6: Configurar la actualización automática en el panel de información en tiempo real
 
 1. Haga clic en la **cinta de opciones Administrar** y luego seleccione la opción **Actualizar automáticamente**.
 
-   ![](../media/lab-05/image148.jpg)
+   ![](../media/lab-05/image132.jpg)
 
 2. Active el botón de alternancia para habilitar **Actualizar automáticamente**.
 
-   ![](../media/lab-05/image150.jpg)
+   ![](../media/lab-05/image135.png)
  
 3. Modifique el **intervalo de tiempo mínimo** a 30 segundos y la **Frecuencia de actualización predeterminada** a 1 minuto.
 
-   ![](../media/lab-05/image152.jpg)
+   ![](../media/lab-05/image138.jpg)
 
 4. Haga clic en **Aplicar** en la parte inferior de la ventana.
 
-   ![](../media/lab-05/image156.jpg)
-
 5. En la esquina superior derecha de su menú, haga clic en el **botón Edición** y modifíquelo a **Visualización** para ver lo que sus usuarios finales experimentarán con este panel de información en tiempo real.
 
-   ![](../media/lab-05/image159.png)
+   ![](../media/lab-05/image141.png)
 
 6. Si dispone de tiempo y le interesa recuperar el logotipo de una empresa o aplicar formato condicional a sus objetos visuales, tal y como se muestra a continuación, no dude en realizar las siguientes tareas opcionales. Por lo demás, el laboratorio está completo.
 
-  [](../media/lab-05/image162.png)
+   ![](../media/lab-05/image143.jpg)
  
 ## Tarea opcional 7: Agregar el logotipo de la empresa
 
 1. Al igual que hicimos antes, cambie del modo **Visualización** del panel de información al modo **Edición**
 
-   ![](../media/lab-05/image16.jpg)
+   ![](../media/lab-05/image145.jpg)
 
 2. Haga clic en el botón de la cinta de opciones de Inicio denominado **New text tile**.
+
+   ![](../media/lab-05/image148.jpg)
 
 3. Copie y pegue el siguiente código Markdown en la ventana de la consulta.
 ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
 
+   ![](../media/lab-05/image150.jpg)
+
 4. Aplique los cambios.
 
 5. Cambie el tamaño y mueva el icono para que quepa en algún lugar dentro de su panel de información en tiempo real.
+
+   ![](../media/lab-05/image152.jpg)
  
 6. Guarde los cambios.
+
+   ![](../media/lab-05/Picture1.png)
 
 ## Tarea opcional 8: Aplicar formato condicional a un objeto visual
 
 1. Haga clic en el **icono de lápiz** en el objeto visual **Click Through Rate**.
 
+   ![](../media/lab-05/image156.jpg)
+
 2. En la parte inferior del panel de formato de objeto visual, haga clic en el botón **+ Add rule** debajo de **Formato condicional**.
+
+   ![](../media/lab-05/image159.png)
 
 3. Haga clic en el **icono de lápiz** para editar la regla de formato condicional.
 
+    ![](../media/lab-05/image162.png)
+
 4. Modifique las condiciones de la regla para que apunten a la **Columna** denominada **CTR (long) y** haga la regla **> 10** para el operador y el valor.
+
+   ![](../media/lab-05/image165.png)
 
 5. No dude en modificar el formato como desee. Siempre que el valor del CTR sea mayor que 10, aparecerá en ese objeto visual.
 
+   ![](../media/lab-05/image168.png)
+
 6. Haga clic en el botón **Guardar** dentro del panel de formato condicional.
+
+   ![](../media/lab-05/image170.jpg)
 
 7.	Aplique los cambios.
 
 8.	Guarde los cambios.
+
+      ![](../media/lab-05/Picture1.png)
 
 # Resumen
 
@@ -375,6 +393,9 @@ En este laboratorio, los usuarios crearon un panel de información en tiempo rea
 
 ## Referencias
 Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
+
+
+  ![](../media/lab-05/image175.jpg)
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
