@@ -230,15 +230,15 @@ Al final de este laboratorio, habrá aprendido:
  
 10. Haga clic en la **línea 8** y, donde la consulta indica, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
 
-   ![](../media/lab-02/image082.jpg)
+    ![](../media/lab-02/image082.jpg)
  
 11. Resalte las **líneas 8 y 9** y haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
 
-   ![](../media/lab-02/image084.png)
+    ![](../media/lab-02/image084.png)
 
 12. La consulta utiliza el operador **take** para devolver un número específico de filas. Cuando se ejecute la consulta, se extraerán los datos de la tabla InternetSales y se recuperará el número de filas que haya conectado a la consulta. Para este ejemplo, solo se devolverán 100 filas, como una cláusula WHERE en SQL. Las filas específicas devueltas no se pueden determinar con este operador y los resultados de la consulta variarán respecto al resultado de otras.
 
-   ![](../media/lab-02/image087.jpg)
+    ![](../media/lab-02/image087.jpg)
 
 13. Haga clic en la **línea 12** y, donde la consulta dice, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
 
@@ -246,15 +246,15 @@ Al final de este laboratorio, habrá aprendido:
 
 14. Resalte las **líneas 12 y 13 y** haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
 
-   ![](../media/lab-02/image091.png)
+    ![](../media/lab-02/image091.png)
 
 15. Esta consulta utiliza el operador operador count. Esta consulta devolverá un número agregado de registros que existen en el momento de la ejecución de la consulta en la tabla de la base de datos KQL. No dude en ejecutar esta consulta unas cuantas veces más y debería observar que el número de registros aumenta cada pocos segundos.
 
-   ![](../media/lab-02/image094.png)
+    ![](../media/lab-02/image094.png)
  
 16. Repita los pasos anteriores para la consulta final que se crea automáticamente en la **línea 16/17** y vuelva a ejecutar la consulta.
 
-   ![](../media/lab-02/image096.png)
+    ![](../media/lab-02/image096.png)
 
 17. Esta consulta arrojará el número de registros que se han ingerido en la tabla en una horquilla de una hora. La distribución general de estos registros para los datos que está ingiriendo actualmente será de aproximadamente 4100 por hora. Sin embargo, habrá ligeras variaciones dentro de la cantidad de transacciones por hora y esta consulta detallará si se ingirieron menos o más registros en cada ventana.
 

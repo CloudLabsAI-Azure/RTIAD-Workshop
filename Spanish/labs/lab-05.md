@@ -194,18 +194,15 @@ Al final de este laboratorio, habrá aprendido:
    ```
    //Clicks, Impressions, CTR
 
-
    let imp = Impressions
    | where eventDate between (_startTime.._endTime)
    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
    | summarize imp_count = count() by dateOnly;
 
-
    let clck = Clicks
    | where eventDate between (_startTime.._endTime)
    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
    | summarize clck_count = count() by dateOnly;
-
 
    imp
    | join clck on $left.dateOnly == $right.dateOnly
