@@ -1,0 +1,36 @@
+[
+    {
+        "Name": "RTIAD - Real-Time Intelligence in a Day Workshop",
+        "Language": "Italian",
+        "Files": [
+             {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/main/getting-started-V2.md",
+                "Order": 1
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/main/RTAID/Labs/Lab-01.md",
+                "Order": 2
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-2.md",
+                "Order": 3
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-3.md",
+                "Order": 4
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-4.md",
+                "Order": 5
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-5.md",
+                "Order": 6
+            },
+            {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-6.md",
+                "Order": 7
+            }            
+        ]
+    }
+]
