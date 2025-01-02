@@ -20,8 +20,7 @@
  
 # Struttura del documento
 
-Il lab include i passaggi che l'utente deve seguire con gli screenshot associati che forniscono un aiuto visivo. In ogni screenshot vi sono sezioni evidenziate con riquadri arancioni che indicano le aree su
-cui l'utente deve concentrarsi.
+Il lab include i passaggi che l'utente deve seguire con gli screenshot associati che forniscono un aiuto visivo. In ogni screenshot vi sono sezioni evidenziate con riquadri arancioni che indicano le aree su cui l'utente deve concentrarsi.
 
 # Introduzione
 
@@ -89,7 +88,8 @@ In questo lab si apprenderà quanto segue:
     ![](../media/Lab-05/image031.jpg)
 
 2. Per impostazione predefinita, si verrà connessi al database KQL creato in precedenza come origine. Da qui sarà possibile scrivere la propria query KQL per popolare questo oggetto visivo con i dati. Eliminare tutto il precedente markdown KQL presente per impostazione predefinita. Copiare e incollare la seguente query nella finestra di query.
-     ```
+
+    ```
     //Clicks by hour 
 
     Clicks
@@ -107,7 +107,7 @@ In questo lab si apprenderà quanto segue:
 
 3. Dopo aver configurato correttamente la query, eseguirla per visualizzare i risultati.
   
-     ![](../media/Lab-05/image033.png)
+    ![](../media/Lab-05/image033.png)
 
 4. Notare che l'output potrebbe essere di un solo risultato. Questo perché l'**intervallo di tempo** è impostato in modo predefinito per questo riquadro. È disponibile un parametro con cui è possibile modificare l'intervallo di tempo per il quale vengono restituiti i dati. Il codice eventDate between (_startTime.._endTime) è quello che permette di sfruttare questo parametro. Modificare il parametro **Intervallo di tempo** impostandolo su **Ultime 3 ore** e osservare come cambia l'output.
 
@@ -131,31 +131,31 @@ In questo lab si apprenderà quanto segue:
 
 9. Chiudere il riquadro dei parametri.
  
-10.	Ora fare clic sul **pulsante + Aggiungi oggetto visivo** sopra i risultati della query.
+10. Ora fare clic sul **pulsante + Aggiungi oggetto visivo** sopra i risultati della query.
 
     ![](../media/Lab-05/image048.png)
 
-11.	Verrà visualizzato un nuovo riquadro a comparsa sul lato destro della schermata. Fare clic nella casella di testo sotto l'opzione **Tile name** per assegnare a questo oggetto visivo il nome **Clicks by Hour**.
+11. Verrà visualizzato un nuovo riquadro a comparsa sul lato destro della schermata. Fare clic nella casella di testo sotto l'opzione **Tile name** per assegnare a questo oggetto visivo il nome **Clicks by Hour**.
 
     ![](../media/Lab-05/image051.png)
  
-12.	Per impostazione predefinita, l'oggetto visivo usato per visualizzare i risultati di questa query KQL è una tabella. Questo potrebbe non essere il modo migliore per consentire agli altri utenti di comprendere immediatamente cosa sta accadendo con i risultati dei dati. Modificare il tipo di oggetto visivo da tabella a **grafico ad area**.
+12. Per impostazione predefinita, l'oggetto visivo usato per visualizzare i risultati di questa query KQL è una tabella. Questo potrebbe non essere il modo migliore per consentire agli altri utenti di comprendere immediatamente cosa sta accadendo con i risultati dei dati. Modificare il tipo di oggetto visivo da tabella a **grafico ad area**.
 
     ![](../media/Lab-05/image054.png)
 
-13.	La nuova formattazione di questo oggetto visivo permette di comprendere meglio i picchi e levalli dei clic del sito di e-commerce usando il flusso di dati creato in precedenza in questa lezione.
+13. La nuova formattazione di questo oggetto visivo permette di comprendere meglio i picchi e levalli dei clic del sito di e-commerce usando il flusso di dati creato in precedenza in questa lezione.
 
     ![](../media/Lab-05/image057.jpg)
  
-14.	Per salvare questo oggetto visivo nel dashboard, fare clic sul pulsante **Applica modifiche** nell'angolo in alto a destra della schermata.
+14. Per salvare questo oggetto visivo nel dashboard, fare clic sul pulsante **Applica modifiche** nell'angolo in alto a destra della schermata.
 
     ![](../media/Lab-05/image060.png)
 
-15.	Una volta posizionato questo oggetto visivo nel dashboard, c'è la possibilità che l'oggetto visivo continui a mostrare soltanto i risultati dell'ultima ora. Modificare il dashboard in modo che mostri un **Intervallo di tempo** uguale a **Ultime 24 ore**.
+15. Una volta posizionato questo oggetto visivo nel dashboard, c'è la possibilità che l'oggetto visivo continui a mostrare soltanto i risultati dell'ultima ora. Modificare il dashboard in modo che mostri un **Intervallo di tempo** uguale a **Ultime 24 ore**.
 
     ![](../media/Lab-05/image062.png)
  
-16.	Aggiornare l'oggetto visivo e notare che i risultati cambiano leggermente per riflettere i dati ricevuti dall'ultima esecuzione della query.
+16. Aggiornare l'oggetto visivo e notare che i risultati cambiano leggermente per riflettere i dati ricevuti dall'ultima esecuzione della query.
 
     ![](../media/Lab-05/image065.png)
  
@@ -180,6 +180,7 @@ In questo lab si apprenderà quanto segue:
 
     | sort by eventDate
      ```
+
 3. Fare clic su **Esegui** per eseguire la query.
   
     ![](../media/Lab-05/image070.png)
@@ -234,43 +235,45 @@ In questo lab si apprenderà quanto segue:
 
 10. Fare clic sul pulsante **+ Aggiungi oggetto visivo**.
 
-11.	Quando vengono visualizzate le impostazioni dell'oggetto visivo, modificare le seguenti impostazioni per creare un conteggio delle impressioni.
+11. Quando vengono visualizzate le impostazioni dell'oggetto visivo, modificare le seguenti impostazioni per creare un conteggio delle impressioni.
 
     - **Tile name**: Impressions
+    
     - **Visual type**: Stat
+    
     - **Value column**: impressions (long)
  
-    ![](../media/Lab-05/image087.png)
+      ![](../media/Lab-05/image087.png)
  
-12.	Scegliere **Applica modifiche** una volta completata la configurazione di tutte le impostazioni.
+12. Scegliere **Applica modifiche** una volta completata la configurazione di tutte le impostazioni.
 
     ![](../media/Lab-05/image090.png)
 
-13.	Nel nuovo riquadro, fare clic sui puntini di sospensione (…) e selezionare **Duplica riquadro** per duplicare il riquadro.
+13. Nel nuovo riquadro, fare clic sui puntini di sospensione (…) e selezionare **Duplica riquadro** per duplicare il riquadro.
 
     ![](../media/Lab-05/image093.jpg)
  
-14.	Fare clic sull'**icona della matita** per il riquadro duplicato per modificare le configurazioni.
+14. Fare clic sull'**icona della matita** per il riquadro duplicato per modificare le configurazioni.
 
      ![](../media/Lab-05/image096.png)
 
-15.	Rinominare questo **nome riquadro** in **Clicks** e modificare la **colonna Valore** in **clicks (long)**.
+15. Rinominare questo **nome riquadro** in **Clicks** e modificare la **colonna Valore** in **clicks (long)**.
 
     ![](../media/Lab-05/image099.png)
  
-16.	Applicare le modifiche a questo oggetto visivo.
+16. Applicare le modifiche a questo oggetto visivo.
 
-17.	Duplicare ancora una volta uno dei nuovi riquadri per creare un oggetto visivo di tipo statistica finale.
+17. Duplicare ancora una volta uno dei nuovi riquadri per creare un oggetto visivo di tipo statistica finale.
 
-     ![](../media/Lab-05/image102.png)
+    ![](../media/Lab-05/image102.png)
  
-18.	Modificare il nuovo riquadro per cambiare il **nome riquadro** in **Click Through Rate** e la **colonna Valore** in **CTR (long)**.
+18. Modificare il nuovo riquadro per cambiare il **nome riquadro** in **Click Through Rate** e la **colonna Valore** in **CTR (long)**.
 
     ![](../media/Lab-05/image105.png)
 
-19.	Applicare le modifiche.
+19. Applicare le modifiche.
 
-20.	Se i riquadri sono separati o si desidera riorganizzarli, è possibile passare il mouse sul riquadro finché non compare l'icona di una mano, quindi trascinare e rilasciare l'oggetto visivo nella posizione desiderata.
+20. Se i riquadri sono separati o si desidera riorganizzarli, è possibile passare il mouse sul riquadro finché non compare l'icona di una mano, quindi trascinare e rilasciare l'oggetto visivo nella posizione desiderata.
 
     ![](../media/Lab-05/image108.jpg)
 
@@ -302,7 +305,7 @@ In questo lab si apprenderà quanto segue:
 
 4. Modificare il **nome riquadro** in **Impressions by Location** e il **tipo di oggetto visivo** in **Map**.
 
-     ![](../media/Lab-05/image117.png)
+    ![](../media/Lab-05/image117.png)
  
 5. Nell'area **Visual type** verificare che la latitudine e la longitudine siano correttamente selezionate modificando l'opzione **Definisci posizione per** in **Latitudine e longitudine**, quindi controllare che i restanti campi siano impostati come nell'immagine di seguito.
 
@@ -316,11 +319,11 @@ In questo lab si apprenderà quanto segue:
  
 8. Tutti gli oggetti visivi sono ridimensionabili e spostabili. È quindi possibile disporli in base alle proprie preferenze.
    
-     ![](../media/Lab-05/image126.jpg)
+    ![](../media/Lab-05/image126.jpg)
 
 9. Salvare le modifiche.
 
-     ![](../media/Lab-05/image129.jpg)
+    ![](../media/Lab-05/image129.jpg)
  
 ## Attività 6. Impostazione dell'aggiornamento automatico sul dashboard in tempo reale
 
@@ -348,15 +351,15 @@ In questo lab si apprenderà quanto segue:
 
 ## Attività facoltativa 7. Aggiunta del logo aziendale
 
-1.	Proprio come in precedenza, passiamo dalla modalità **Visualizzazione** del dashboard alla modalità **Modifica**
+1. Proprio come in precedenza, passiamo dalla modalità **Visualizzazione** del dashboard alla modalità **Modifica**
  
     ![](../media/Lab-05/image145.jpg)
 
-2.	Fare clic sul pulsante nella barra multifunzione della Home page denominato **New text tile**.
+2. Fare clic sul pulsante nella barra multifunzione della Home page denominato **New text tile**.
 
     ![](../media/Lab-05/image148.jpg)
 
-3.	Copiare e incollare il seguente codice markdown nella finestra di query.![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+3. Copiare e incollare il seguente codice markdown nella finestra di query.![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
 
     ![](../media/Lab-05/image150.jpg)
 
@@ -372,11 +375,11 @@ In questo lab si apprenderà quanto segue:
 
 ## Attività facoltativa 8. Applicazione della formattazione condizionale all'oggetto visivo
 
-1.	Fare clic sull'**icona della matita** sull'oggetto visivo **Click Through Rate**.
+1. Fare clic sull'**icona della matita** sull'oggetto visivo **Click Through Rate**.
 
     ![](../media/Lab-05/image157.png)
 
-2.	Nella parte inferiore del riquadro di formattazione dell'oggetto visivo, fare clic sul pulsante **+ Add rule** sotto **Formattazione condizionale**.
+2. Nella parte inferiore del riquadro di formattazione dell'oggetto visivo, fare clic sul pulsante **+ Add rule** sotto **Formattazione condizionale**.
 
     ![](../media/Lab-05/image160.png)
 
@@ -411,7 +414,7 @@ che il dashboard si aggiorni automaticamente.
 
 Fabric Real-time Intelligence in a Day (RTIIAD) presenta alcune delle funzioni chiave disponibili in Microsoft Fabric. Nel menu di servizio, la sezione Guida (?) include collegamenti ad alcune risorse utili.
 
-![](../media/Lab-05/image175.jpg)
+![](../media/Lab-01/image067.jpg)
 
 Di seguito sono riportate ulteriori risorse utili che consentiranno di progredire nell’uso di Microsoft Fabric.
 - Fare riferimento al post del blog per leggere l’[annuncio completo sulla disponibilità generale di Microsoft Fabric](https://aka.ms/Fabric-Hero-Blog-Ignite23)
