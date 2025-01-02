@@ -151,7 +151,7 @@ In questo lab abbiamo preso in esame l'uso di Data Activator. Questa funzionalit
 
 Fabric Real-time Intelligence in a Day (RTIIAD) presenta alcune delle funzioni chiave disponibili in Microsoft Fabric. Nel menu di servizio, la sezione Guida (?) include collegamenti ad alcune risorse utili.
 
- ![](../media/Lab-06/image052.jpg)
+![](../media/Lab-01/image067.jpg)
 
 Di seguito sono riportate ulteriori risorse utili che consentiranno di progredire nell’uso di Microsoft Fabric.
 
