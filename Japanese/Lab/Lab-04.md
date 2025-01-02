@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day ラボ 4
 
+![](../media/Lab-04/japanese-4.png)
+
 # 目次
 
 - ドキュメントの構造
