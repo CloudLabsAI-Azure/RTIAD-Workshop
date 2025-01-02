@@ -49,8 +49,7 @@ Al final de este laboratorio, habrá aprendido:
 
    ![](../media/lab-06/image009.png)
  
-5. Actualmente dispone de tres acciones posibles para el tipo de alerta que desea recibir una vez que el elemento Data Activator Reflex reconozca que se ha cumplido su condición. Elija la opción
-**Enviarme un mensaje en Teams**.
+5. Actualmente dispone de tres acciones posibles para el tipo de alerta que desea recibir una vez que el elemento Data Activator Reflex reconozca que se ha cumplido su condición. Elija la opción **Enviarme un mensaje en Teams**.
 
    ![](../media/lab-06/image011.png)
  
