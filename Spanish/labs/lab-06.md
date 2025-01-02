@@ -34,32 +34,56 @@ Al final de este laboratorio, habrá aprendido:
 
 1. Abra el **área de trabajo de Fabric** para el curso y seleccione el panel de información en tiempo real que creó en el último laboratorio.
 
-2. En el objeto visual **Click Through Rate**, haga clic en los puntos suspensivos (...) y seleccione la opción **Establecer alerta**. 
+   ![](../media/lab-06/image003.jpg)
+
+2. En el objeto visual **Click Through Rate**, haga clic en los puntos suspensivos (...) y seleccione la opción **Establecer alerta**.
+
+   ![](../media/lab-06/image005.png)
 
 3. Se abrirá un nuevo control flotante en el lado derecho de la pantalla. Puede ver lo que está supervisando desde el panel de información, incluido el objeto visual específico al que se afiliará la alerta. La condición es algo sobre lo que tiene pleno control. Modifique la **condición** a **Es menor que**.
 
+   ![](../media/lab-06/image007.png)
+
 4. Aparecerá un nuevo campo para que introduzca un **valor**; modifíquelo para que sea **20**.
+
+   ![](../media/lab-06/image009.png)
  
 5. Actualmente dispone de tres acciones posibles para el tipo de alerta que desea recibir una vez
 que el elemento Data Activator Reflex reconozca que se ha cumplido su condición. Elija la opción
 **Enviarme un mensaje en Teams**.
+
+   ![](../media/lab-06/image011.png)
  
 6. Finalmente, debe decidir la ubicación en la que almacenará el **elemento Reflex** que está creando con esta alerta. De manera predeterminada, esto debe seleccionar su área de trabajo actual, pero es necesario llamar específicamente a un **Nuevo elemento**en el menú desplegable Elemento.
 
+    ![](../media/lab-06/image014.png)
+
 7. Cambie el nombre del elemento a **CTR Reflex** y haga clic en **Crear**. Esta operación tarda unos segundos en crearse.
+
+    ![](../media/lab-06/image016.png)
  
 8. Recibirá una validación de que se creó la alerta de reflejo. Haga clic en el botón **Abrir** para abrir el Reflex.
+
+    ![](../media/lab-06/image018.png)
  
 9. Esto le llevará a la **Experiencia de Reflex** formal. Desde aquí, puede supervisar el flujo de datos en tiempo real, ver los datos que se usan para admitir el Reflex y crear desencadenadores adicionales desde el mismo flujo.
+
+     ![](../media/lab-06/image020.jpg)
 
 ## Tarea 2: Probar alerta por correo electrónico desde la experiencia de Reflex
 
 1. En la experiencia Reflex, haga clic en el icono de lápiz situado junto al nombre del evento y cámbiele el nombre a **CTR is less than 20**.
 
+    ![](../media/lab-06/image022.png)
+
 2. Actualicemos también **Título** y **Mensaje** que se pueden encontrar en la sección **Acción** a la derecha. Actualice las dos áreas para que coincidan con la imagen a continuación y presione **Guardar y actualizar**.
+
+     ![](../media/lab-06/image024.png)
 
 3. En la misma sección **Acción** a la derecha, haga clic en el botón **Enviarme una acción de prueba**
 para obtener un mensaje de muestra en Teams desde Reflex.
+
+     ![](../media/lab-06/image026.png)
 
 4. Abra una nueva pestaña en el navegador Edge de su entorno y vaya a **Teams.Microsoft.com**.
 
@@ -67,13 +91,19 @@ para obtener un mensaje de muestra en Teams desde Reflex.
 
 6. Debería recibir un mensaje en Teams que le indicará que CTR is less than 20.
 
+   ![](../media/lab-06/image028.png)
+
 7. Vuelva a la experiencia Reflex y vamos a crear otro desencadenador.
  
 ## Tarea 3: Crear un objeto Reflex desde un flujo de datos
 
 1. Seleccione el objeto etiquetado **KQL Source Event** y, después, seleccione **Nueva regla**.
 
+   ![](../media/lab-06/image030.png)
+
 2. Haga clic en el icono del **lápiz** y asigne a esta regla el nombre, **Clicks Greater Than 30,000** (puede elegir un valor aquí que se corresponda mejor con la cantidad de datos que haya transmitido).
+
+    ![](../media/lab-06/image032.jpg)
 
 3. Para comenzar, debe supervisar una de las columnas del flujo de datos. Para conseguirlo, debe configurar las secciones Condición y Acción. Haga clic en la pestaña Definición de la regla para establecer las condiciones y la acción.
 
@@ -83,26 +113,38 @@ para obtener un mensaje de muestra en Teams desde Reflex.
     -	**Columna**= clics
     - **Valor** = 30000
 
+    ![](../media/lab-06/image034.png)
+
 5. En **Acción**, seleccione las propiedades siguientes:
 
     -	**Tipo** = Teams message
     -	**Destinatario** = {su id. de usuario}
 
+   ![](../media/lab-06/image036.png)
+
 6. Por último, haga clic en Guardar e iniciar a ejecutar esta regla.
 
+   ![](../media/lab-06/image038.png)
+
 7. Ahora tiene dos desencadenadores que supervisan el mismo flujo de datos.
+
+   ![](../media/lab-06/image040.png)
 
 # Limpieza de recursos
 
 ## Tarea 4: Limpiar espacio de trabajo
 
-1. Este es el último laboratorio y la última parte de Real-Time Analytics in a Day. Si ha completado el laboratorio y no tiene más preguntas o necesidades del instructor sobre el contenido,
-ayúdenos a desasignar el espacio de trabajo. Vaya al espacio de trabajo **RTI_username**.
+1. Este es el último laboratorio y la última parte de Real-Time Analytics in a Day. Si ha completado el laboratorio y no tiene más preguntas o necesidades del instructor sobre el contenido,ayúdenos a desasignar el espacio de trabajo. Vaya al espacio de trabajo **RTI_username**.
+
+   ![](../media/lab-06/image043.jpg)
 
 2. Haga clic en la **Configuración del área de trabajo** en la esquina superior derecha.
+
+   ![](../media/lab-06/image046.png)
   
-3. En la configuración **General** del espacio de trabajo, desplácese hacia abajo y haga clic en el botón
-**Eliminar esta área de trabajo**.
+3. En la configuración **General** del espacio de trabajo, desplácese hacia abajo y haga clic en el botón **Eliminar esta área de trabajo**.
+
+   ![](../media/lab-06/image049.png)
 
 4. Laboratorio y clase completos.
  
@@ -113,6 +155,8 @@ de nuestros desencadenadores. Data Activator aún se encuentra en versión preli
 
 ## Referencias
 Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
+
+![](../media/lab-06/image052.jpg)
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
