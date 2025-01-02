@@ -8,27 +8,27 @@
                 "Order": 1
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/main/RTAID/Labs/Lab-01.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/refs/heads/December-2024/Italian/Lab/Lab-01.md",
                 "Order": 2
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-2.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/refs/heads/December-2024/Italian/Lab/Lab-02.md",
                 "Order": 3
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-3.md",
+                "RawFilePath": "",
                 "Order": 4
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-4.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/refs/heads/December-2024/Italian/Lab/Lab-04.md",
                 "Order": 5
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-5.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/refs/heads/December-2024/Italian/Lab/Lab-05.md",
                 "Order": 6
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/oct-2024/lab-6.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/refs/heads/December-2024/Italian/Lab/Lab-06.md",
                 "Order": 7
             }            
         ]
