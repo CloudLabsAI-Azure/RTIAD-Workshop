@@ -50,27 +50,27 @@ In questo lab si apprenderà quanto segue:
 
 ## Attività 1. Creazione di un'origine di flusso di eventi
 
-1.	Aprire l'**area di lavoro Fabric** creata nell'ultimo lab. Qui è visibile l'Eventhouse creato.
+1. Aprire l'**area di lavoro Fabric** creata nell'ultimo lab. Qui è visibile l'Eventhouse creato.
  
     ![](../media/Lab-02/image003.jpg)
    
-2.	Passare all'hub in tempo reale selezionando il pulsante **In tempo reale** sul lato sinistro. Anche se al momento non si vedono flussi di dati, la situazione cambierà a breve.
+2. Passare all'hub in tempo reale selezionando il pulsante **In tempo reale** sul lato sinistro. Anche se al momento non si vedono flussi di dati, la situazione cambierà a breve.
    
     ![](../media/Lab-02/image005.jpg)
  
-3.	Selezionare il pulsante verde **+ Connettere un'origine dati** che dovrebbe trovarsi nell'angolo in alto a destra.
+3. Selezionare il pulsante verde **+ Connettere un'origine dati** che dovrebbe trovarsi nell'angolo in alto a destra.
 
     ![](../media/Lab-02/image007.png)
 
-4.	Si aprirà una finestra in cui selezionare un'origine per i dati in streaming. Come indicato in precedenza, è possibile scegliere tra molte straordinarie opzioni, ma per questa lezione selezioneremo l'opzione "Hub eventi di Azure". Se "Hub eventi di Azure" non è facilmente visibile, selezionare **Origini Microsoft** in alto per filtrare le opzioni visualizzate.
+4. Si aprirà una finestra in cui selezionare un'origine per i dati in streaming. Come indicato in precedenza, è possibile scegliere tra molte straordinarie opzioni, ma per questa lezione selezioneremo l'opzione "Hub eventi di Azure". Se "Hub eventi di Azure" non è facilmente visibile, selezionare **Origini Microsoft** in alto per filtrare le opzioni visualizzate.
 
     ![](../media/Lab-02/image009.jpg)
 
-5.	Ora è necessario creare una connessione all'Hub eventi di Azure. Fare clic sul testo **Nuova connessione** poiché al momento non si dispone di alcuna connessione.
+5. Ora è necessario creare una connessione all'Hub eventi di Azure. Fare clic sul testo **Nuova connessione** poiché al momento non si dispone di alcuna connessione.
 
     ![](../media/Lab-02/image011.jpg)
 
-6.	Dalla pagina dei dettagli dell'ambiente copiare e incollare tutte le impostazioni di connessione necessarie nei campi appropriati. Per questi lab si eseguirà la connessione a un hub eventi che riceve dati in streaming da un notebook Python. Questo notebook crea false transazioni di vendita al ritmo di circa 3.100 transazioni all'ora.
+6. Dalla pagina dei dettagli dell'ambiente copiare e incollare tutte le impostazioni di connessione necessarie nei campi appropriati. Per questi lab si eseguirà la connessione a un hub eventi che riceve dati in streaming da un notebook Python. Questo notebook crea false transazioni di vendita al ritmo di circa 3.100 transazioni all'ora.
 
     Spazio dei nomi hub eventi: **rtiadhu/{userid} - fornito da cloudlabs**
 
@@ -256,7 +256,7 @@ imparare a usare KQL o per analizzare le conversioni da SQL a KQL, un argomento 
 
     ![](../media/Lab-02/image086.jpg)
 
-13.	Fare clic sulla **Riga 12** e sostituire l'indicazione **YOUR_TABLE_HERE** con il nome della tabella,**InternetSales**.
+13. Fare clic sulla **Riga 12** e sostituire l'indicazione **YOUR_TABLE_HERE** con il nome della tabella,**InternetSales**.
 
     ![](../media/Lab-02/image088.png)
 
