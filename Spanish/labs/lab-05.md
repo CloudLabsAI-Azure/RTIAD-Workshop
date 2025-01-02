@@ -95,7 +95,6 @@ Al final de este laboratorio, habrá aprendido:
     | render timechart
     | top 30 by date_count
     | sort by eventDate
-    
     ```
     
    ![](../media/lab-05/image036.png)
@@ -111,7 +110,7 @@ de un parámetro con el que puede modificar el intervalo de tiempo desde el que 
 
 5. En la salida de la consulta ahora debería ver los resultados de los clics de las últimas 3 horas.
 
-   ![](../media/lab-05/image043.png)
+   ![](../media/lab-05/image043.jpg)
 
 6. Aunque este parámetro se puede modificar, es posible que desee que tenga como valor predeterminado un intervalo de tiempo específico en lugar de obligar a los usuarios a
 modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opción **@ Parámetros**.
@@ -128,7 +127,7 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
 
 9. Cierre el panel de parámetros.
 
-   ![](../media/lab-05/image057.png)
+   ![](../media/lab-05/image057.jpg)
  
 10.	Ahora haga clic en el **botón + Agregar objeto visual** encima de los resultados de la consulta.
 
@@ -144,18 +143,17 @@ modificarlo. Encima de la opción de intervalo de tiempo, haga clic en la opció
 
 13. Con este objeto visual con nuevo formato, puede comprender mejor los picos y valles de clics de su sitio de comercio electrónico mediante el flujo de datos que creó anteriormente en esta clase.
 
-    ![](../media/lab-05/image068.png)
+    ![](../media/lab-05/image068.jpg)
 
-14.	Para guardar este objeto visual en el panel de información, haga clic en el botón **Aplicar cambios**
-en la esquina superior derecha de la pantalla.
+14. Para guardar este objeto visual en el panel de información, haga clic en el botón **Aplicar cambios** en la esquina superior derecha de la pantalla.
 
     ![](../media/lab-05/image070.png)
  
-15.	Una vez que este objeto visual se haya colocado dentro del panel de información, es posible que el objeto visual solo muestre la última hora de resultados. Modifique el panel de información para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
+15. Una vez que este objeto visual se haya colocado dentro del panel de información, es posible que el objeto visual solo muestre la última hora de resultados. Modifique el panel de información para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 
-   ![](../media/lab-05/image073.png)
+    ![](../media/lab-05/image073.png)
 
-16.	Actualice el objeto visual y observe que los resultados cambiarán ligeramente para reflejar los datos que se han recibido desde la última ejecución de la consulta.
+16. Actualice el objeto visual y observe que los resultados cambiarán ligeramente para reflejar los datos que se han recibido desde la última ejecución de la consulta.
 
     ![](../media/lab-05/image076.png)
 
@@ -174,16 +172,15 @@ en la esquina superior derecha de la pantalla.
     | render timechart
     | top 30 by date_count
     | sort by eventDate
-    
     ```
 
 3. **Ejecute** la consulta.
 
-    ![](../media/lab-05/image082.png)
+    ![](../media/lab-05/image082.jpg)
 
 4. Haga clic en el botón **+ Agregar** objeto visual.
 
-   ![](../media/lab-05/image084.png)
+   ![](../media/lab-05/image084.jpg)
  
 5. Edite el objeto visual para cambiar el **Tile name** a **Impressions by Hour** y el **Visual type** a **Area chart**.
 
@@ -195,7 +192,7 @@ en la esquina superior derecha de la pantalla.
 
 7. Agregue otro **+ New tile**.
 
-   ![](../media/lab-05/image093.png)
+   ![](../media/lab-05/image093.jpg)
 
 8. Copie y pegue la siguiente consulta en el panel de la consulta. Tenga en cuenta que se trata de una consulta de varias instrucciones que utiliza varias instrucciones let y una consulta combinada con punto y coma.
 
