@@ -80,8 +80,7 @@ In questo lab si apprenderà quanto segue:
 
     ![](../media/Lab-06/image026.png)
 
-4. Aprire una nuova scheda all'interno del browser Edge dell'ambiente e andare a
-**Teams.Microsoft.com**.
+4. Aprire una nuova scheda all'interno del browser Edge dell'ambiente e andare a **Teams.Microsoft.com**.
 
 5. Accedere con le credenziali del proprio ambiente, se richieste. Potrebbe apparire un messaggio che chiede di avviare una versione di valutazione, che andrà accettato.
  
@@ -116,12 +115,11 @@ In questo lab si apprenderà quanto segue:
     - **Tipo** = Teams message
     - **Destinatari** = {ID utente}
 
-    ![](../media/Lab-06/image036.png)
+      ![](../media/Lab-06/image036.png)
 
 6. Infine, fare clic su **Salva e aggiorna** per avviare questa regola
 
     ![](../media/Lab-06/image038.png)
-
 
 7. Ora si dispone di due trigger che monitorano lo stesso flusso di dati.
 
