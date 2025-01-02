@@ -36,6 +36,8 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 1. Öffnen Sie den **Fabric-Arbeitsbereich**, den Sie in der letzten Übung erstellt haben. Hier wird uns das erstellte Eventhouse angezeigt.
 
+  ![](../media/Lab-02/image003.png)
+
 2. Navigieren Sie zum Echtzeit-Hub. Wählen Sie dazu auf der linken Seite die Schaltfläche
 **Echtzeit** aus. Auch wenn wir noch keine Datenströme sehen, wird sich das bald ändern.
  
