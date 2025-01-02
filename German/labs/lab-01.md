@@ -1,3 +1,5 @@
+ ![](../media/lab-01/lab-01ger.png)
+ 
  # Inhalt
 
 - Dokumentstruktur	
@@ -50,32 +52,52 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 1. Öffnen Sie den **Microsoft Edge-Browser** auf dem Desktop, und navigieren Sie zu https://app.fabric.microsoft.com/. Die Anmeldeseite wird angezeigt. **Hinweis:** Wenn Sie nicht die Übungsumgebung nutzen und bereits ein Power BI-Konto haben, können Sie den Browser im privaten Modus/Inkognito-Modus verwenden.
 
+    ![](../media/lab-01/image003.png)
+
 2. Geben Sie den **Benutzernamen**, den Sie auf der Registerkarte **Umgebungsvariablen**
 (neben der Übungsanleitung) finden, sowie die **E-Mail** ein, und klicken Sie auf **Senden**.
 
+   ![](../media/lab-01/image005.jpg)
+
 3. Die Seite **Kennwort** wird angezeigt. Geben Sie das **Kennwort** ein, das Sie auf der Registerkarte **Umgebungsvariablen** (neben der Übungsanleitung) finden und Ihnen von Ihrem Kursleiter mitgeteilt wurde.
 
+
 4. Klicken Sie auf **Anmelden**, und folgen Sie den Anweisungen, um sich bei Fabric anzumelden.
+
+   ![](../media/lab-01/image007.jpg)
 
 5. Sie werden zur Startseite von **Fabric** geleitet.
 
     Wenn Sie mit Fabric-Elementen arbeiten möchten, benötigen Sie eine Testlizenz und einen Arbeitsbereich mit einer Fabric-Lizenz. Lassen Sie uns das einrichten.
 
+    ![](../media/lab-01/image009.jpg)
+
 6. Klicken Sie oben rechts auf dem Bildschirm auf das **Benutzersymbol**.
+
 
 7. Wählen Sie **Kostenlose Testversion** aus.
 
+   ![](../media/lab-01/image011.jpg)
+
 8. Das Dialogfeld „Upgrade auf eine kostenlose Testversion auf Microsoft Fabric“ wird geöffnet. Wählen Sie **Aktivieren** aus. 
+
+    ![](../media/lab-01/image013.jpg)
 
 9. Das Dialogfeld „Erfolgreiches Upgrade auf Microsoft Fabric“ wird geöffnet. Wählen Sie **Fabric Home Page** aus.
 
+    ![](../media/lab-01/image016.jpg)
+
 10. Sie werden zurück zur **Startseite von Microsoft Fabric** geleitet.
+
+    ![](../media/lab-01/image018.jpg)
 
 # Real-Time Intelligence und Echtzeit-Hub
 
 ## Aufgabe 2: Erfahrungselemente in Real-Time Intelligence
 
 1. Klicken Sie auf die Real-Time Intelligence-Erfahrung.
+
+   ![](../media/lab-01/image020.jpg)
 
 2. Sie werden zur Startseite von **Real-Time Intelligence** weitergeleitet. Sie sehen die Kategorien **Aufgabenflowvorlagen**, **Zu erstellende empfohlene Elemente** und **Weitere Informationen zu Real-Time Intelligence**. Beachten Sie in der Kategorie **Empfohlene Elemente** die folgenden Elemente:
 
@@ -89,12 +111,17 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     e. **Reflex**: Zum automatischen Ergreifen von Maßnahmen, wenn in sich ändernden Daten Muster oder Bedingungen erkannt werden.
 
+    ![](../media/lab-01/image022.jpg)
 
 ## Aufgabe 3: Echtzeit-Hub
 
 1. Klicken Sie auf **Echtzeit-Hub** im Fabric-Navigationsbereich auf der linken Seite des Bildschirms.
+
+   ![](../media/lab-01/image024.png)
  
 2. Der Dialog **Willkommen bei Echtzeit-Hub** wird geöffnet, und Sie können gern **Überblick** oder **Erste Schritte** auswählen.
+
+   ![](../media/lab-01/image026.jpg)
 
 3. Der Echtzeit-Hub ist der zentrale Ort zum Streamen übertragener Daten in Ihrer gesamten
 Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub bereitgestellt. Damit können Sie übertragene Daten aus einer Vielzahl von Quellen problemlos erkennen, erfassen, verwalten und nutzen.
@@ -106,59 +133,95 @@ Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub ber
     - **Streamingquellen**: Listet alle Streaming-Ressourcen von Microsoft-Diensten auf. Unabhängig davon, ob es sich um Azure Event Hubs, Azure IoT Hub oder andere Dienste handelt, können Sie Daten nahtlos in den Echtzeit-Hub übertragen.
 
     - **Fabric-Ereignisse**: Ereignisse, die über Fabric-Artefakte und externe Quellen generiert werden, werden in Fabric verfügbar gemacht, um ereignisgesteuerte Szenarien wie Echtzeitwarnungen und das Auslösen nachgelagerter Aktionen zu unterstützen. Sie können Ereignisse, darunter Fabric-Arbeitsbereichselementereignisse und Azure Blob Storage-Ereignisse, überwachen und darauf reagieren.
+
     - **Azure-Veranstaltungen**: Diese Liste enthält in Azure generierte Systemereignisse, auf die Sie zugreifen können. Ein Ereignis kann überwacht werden, und es können Regeln festgelegt werden, die Benachrichtigungen senden oder Aktionen ausführen, wenn sie aktiviert werden.
+
+        ![](../media/lab-01/image028.png)
 
 5. Klicken Sie in der oberen rechten Ecke des Echtzeit-Hubs auf die Schaltfläche **+ Datenquelle verbinden**.
 
+   ![](../media/lab-01/image030.png)
+
 6. Es wird ein Fenster mit Einzelheiten zu den aktuell verfügbaren Datenströmen angezeigt, die in den Echtzeit-Hub integriert werden können. Dies umfasst eine Mischung aus Azure-Quellen sowie externen Cloud-Streaming-Quellen wie Amazon Kinesis, Confluent Cloud Kafka und Google Cloud Pub/Sub. Es stehen sogar einige Beispieldaten zur Verfügung.
+
+   ![](../media/lab-01/image032.jpg)
 
 7. **Schließen** Sie das Fenster „Ereignisse abrufen“, indem Sie auf das „X“ in der oberen rechten Ecke klicken.
 
 # Arbeitsbereich und Eventhouse erstellen
 ## Aufgabe 4: Fabric-Arbeitsbereich erstellen
-1.	Erstellen wir jetzt einen Arbeitsbereich mit Fabric-Lizenz. Wählen Sie in der Navigationsleiste auf der linken Seite die Option **Arbeitsbereiche** aus.
+1. Erstellen wir jetzt einen Arbeitsbereich mit Fabric-Lizenz. Wählen Sie in der Navigationsleiste auf der linken Seite die Option **Arbeitsbereiche** aus.
 
-2.	Wählen Sie + **Neuer Arbeitsbereich** aus.
+2. Wählen Sie + **Neuer Arbeitsbereich** aus.
+
+   ![](../media/lab-01/image034.png)
  
-3.	Rechts im Browser wird das Dialogfeld **Arbeitsbereich erstellen** geöffnet.
+3. Rechts im Browser wird das Dialogfeld **Arbeitsbereich erstellen** geöffnet.
 
-4.	Geben Sie im Feld **Name** die Bezeichnung **RTI_username** ein. Verwenden Sie den Benutzernamen, den Sie aus den Umgebungsdetails erhalten haben.
+4. Geben Sie im Feld **Name** die Bezeichnung **RTI_username** ein. Verwenden Sie den Benutzernamen, den Sie aus den Umgebungsdetails erhalten haben.
 
     **Hinweis:** Der Name des Arbeitsbereichs muss eindeutig sein. Achten Sie darauf, dass unter dem Feld für den Namen ein grünes Häkchen mit dem Text **Dieser Name ist verfügbar** zu sehen ist.
 
 5. Wenn Sie möchten, können Sie eine **Beschreibung** des Arbeitsbereichs eingeben. Dieses Feld ist optional.
+
 6. Erweitern Sie den Abschnitt mit **Erweitert**.
+
+   ![](../media/lab-01/image037.jpg)
 
 7. Überprüfen Sie unter **Lizenzmodus**, dass die Option **Testversion** ausgewählt ist. (Standardmäßig ist dies der Fall.)
 
 8. Erstellen Sie den neuen Arbeitsbereich durch Klicken auf **Übernehmen**.
 
+   ![](../media/lab-01/image040.png)
+
     **Hinweis:** Wenn sich das Dialogfeld **Introducing task flows** öffnet, klicken Sie auf **Got it**.
+
+    ![](../media/lab-01/image042.png)
 
 # Aufgabe 5: Ein Eventhouse erstellen
 
 1. Klicken Sie auf das Feld **+ Neu**, um einen neuen Bereich zu öffnen, in dem alle Elemente angezeigt werden, die Sie in diesem Fabric-Arbeitsbereich erstellen können.
 
+   ![](../media/lab-01/image044.jpg)
+
 2. Wählen Sie in dem Bereich aus dem Abschnitt **Daten speichern** das **Eventhouse** aus. Wie wir besprochen haben, kann dies ähnlich wie ein Lakehouse betrachtet werden, da wir Daten speichern können, der Fokus liegt beim Eventhouse jedoch auf Echtzeitdaten.
+
+   ![](../media/lab-01/image046.png)
 
 3. Geben Sie Ihrem Eventhouse im angezeigten Fenster den Namen **eh_Fabrikam**, und klicken Sie auf
 **Erstellen**.
 
+   ![](../media/lab-01/image048.png)
+
 4. Hier werden Sie im weiteren Verlauf des heutigen Trainings Daten aus verschiedenen Quellen streamen. Wenn das Element erstellt ist, wird ein Fenster mit einigen Details zum Eventhouse angezeigt. Klicken Sie auf die Schaltfläche **Get started**.
 
+   ![](../media/lab-01/image051.jpg)
+
 5. Machen Sie eine kurze Tour durch das Eventhouse, indem Sie den grünen Tooltips auf Ihrem Bildschirm folgen. Der erste zeigt, dass mit Eventhouse eine leere Datenbank der Kusto-Abfragesprache (KQL) erstellt wurde.
+
+   ![](../media/lab-01/image053.jpg)
 
 6. Folgen Sie den restlichen Tooltips auf dem Bildschirm, um zu sehen, wo Sie zusätzliche Datenbanken erstellen, den Speicher im OneLake des Eventhouse überprüfen, die Nutzung der Fabric-Ressourcen in Rechenminuten prüfen und schließlich sehen, welche Aktionen im Eventhouse aufgetreten sind.
  
 7. Suchen Sie im Navigationsbereich links im Eventhouse nach Ihrer KQL-Datenbank, die zusammen mit dem Eventhouse erstellt wurde, und klicken Sie darauf, um die Datenbankdetails anzuzeigen.
 
-8.	Dadurch haben wir im linken Bereichs des Browsers neben der Registerkarte, auf der wir die Übersicht über unser gesamtes Eventhouse anzeigen können, eine neue Registerkarte, auf der wir uns auf die Eigenschaften der KQL-Datenbank konzentrieren können. Ein Ziel, das wir in unserem Szenario erreichen möchten, ist sicherzustellen, dass die in die KQL-Datenbank gestreamten Daten über OneLake zugänglich sind. Durch Aktivieren dieser Funktion machen wir die Daten in dieser KQL-Datenbank über Verknüpfungen leicht auffindbar und sie können so in jedem gewünschten Lakehouse verwendet werden. Gehen Sie zum Abschnitt **Datenbankdetails** auf der rechten Seite und schalten Sie die Option „Availability“ auf **Ein**.
+   ![](../media/lab-01/image055.png)
+
+8. Dadurch haben wir im linken Bereichs des Browsers neben der Registerkarte, auf der wir die Übersicht über unser gesamtes Eventhouse anzeigen können, eine neue Registerkarte, auf der wir uns auf die Eigenschaften der KQL-Datenbank konzentrieren können. Ein Ziel, das wir in unserem Szenario erreichen möchten, ist sicherzustellen, dass die in die KQL-Datenbank gestreamten Daten über OneLake zugänglich sind. Durch Aktivieren dieser Funktion machen wir die Daten in dieser KQL-Datenbank über Verknüpfungen leicht auffindbar und sie können so in jedem gewünschten Lakehouse verwendet werden. Gehen Sie zum Abschnitt **Datenbankdetails** auf der rechten Seite und schalten Sie die Option „Availability“ auf **Ein**.
+
+    ![](../media/lab-01/image057.png)
  
-9.	Kehren Sie zu Ihrem Arbeitsbereich **RTI_username** zurück, indem Sie ihn auf der linken Seite des Browsers auswählen.
+9. Kehren Sie zu Ihrem Arbeitsbereich **RTI_username** zurück, indem Sie ihn auf der linken Seite des Browsers auswählen.
+
+   ![](../media/lab-01/image059.png)
  
 10.	Wenn die Option **Aufgabenabläufe** den meisten Platz einnimmt, wählen Sie den Doppel- Aufwärtspfeil auf der rechten Seite, um sie zu verkleinern.
 
+    ![](../media/lab-01/image061.jpg)
+
 11.	Sie verfügen nun über die Grundlage für die Erfassung der Streaming-Daten in Ihren OneLake. Der nächste Schritt besteht darin, einen Datenstrom zu erstellen, der die Daten während der Bewegung empfangen kann.
+
+    ![](../media/lab-01/image063.png)
 
 In dieser Übung haben wir die Real-Time Intelligence-Schnittstelle erkundet, den Echtzeit-Hub untersucht, einen Fabric-Arbeitsbereich und ein Eventhouse erstellt, das mit einer KQL-Datenbank bereitgestellt wurde. In der nächsten Übung beginnen Sie, Techniken zu erkunden, die Daten aus verschiedenen Quellen Ihres gesamten Datenbestands in OneLake erfassen, und führen einige grundlegende Analysen mit der Kusto-Abfragesprache (KQL) durch.
  
@@ -168,6 +231,7 @@ Bei Fabric Real-time Intelligence in a Day (RTIIAD) lernen Sie einige der wichti
 
 Im Menü des Dienstes finden Sie in der Hilfe (?) Links zu praktischen Informationen.
 
+![](../media/lab-01/image066.jpg)
 
 Nachfolgend finden Sie weitere Angebote zur weiteren Arbeit mit Microsoft Fabric.
 
