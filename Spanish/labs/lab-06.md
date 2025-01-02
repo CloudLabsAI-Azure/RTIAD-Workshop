@@ -1,6 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratorio 6
 
- 
+ ![](../media/lab-06/lab-06.png)
+
 # Contenido
 - Estructura del documento	
 - Introducción	
