@@ -1,6 +1,7 @@
 
 # Microsoft Fabric Real-Time Intelligence in a Day ラボ 6
 
+  ![](../media/Lab-06/lab-6-japanese.png)
  
 # 目次
 
