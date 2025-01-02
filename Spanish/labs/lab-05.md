@@ -121,42 +121,40 @@ Al final de este laboratorio, habrá aprendido:
    ![](../media/lab-05/image045.png)
 
 9. Cierre el panel de parámetros.
-
-   ![](../media/lab-05/image048.png)
  
 10. Ahora haga clic en el **botón + Agregar objeto visual** encima de los resultados de la consulta.
 
-    ![](../media/lab-05/image051.png)
+    ![](../media/lab-05/image048.png)
 
 11. Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
 
-    ![](../media/lab-05/image054.png)
+    ![](../media/lab-05/image051.png)
 
 12. De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
 
-    ![](../media/lab-05/image057.jpg)
+    ![](../media/lab-05/image054.png)
 
 13. Con este objeto visual con nuevo formato, puede comprender mejor los picos y valles de clics de su sitio de comercio electrónico mediante el flujo de datos que creó anteriormente en esta clase.
 
-    ![](../media/lab-05/image060.png)
+    ![](../media/lab-05/image057.jpg)
 
 14. Para guardar este objeto visual en el panel de información, haga clic en el botón **Aplicar cambios** en la esquina superior derecha de la pantalla.
 
-    ![](../media/lab-05/image062.png)
+    ![](../media/lab-05/image060.png)
  
 15. Una vez que este objeto visual se haya colocado dentro del panel de información, es posible que el objeto visual solo muestre la última hora de resultados. Modifique el panel de información para mostrar el **Intervalo de tiempo** de las **Últimos 24 horas**.
 
-    ![](../media/lab-05/image065.png)
+    ![](../media/lab-05/image062.png)
 
 16. Actualice el objeto visual y observe que los resultados cambiarán ligeramente para reflejar los datos que se han recibido desde la última ejecución de la consulta.
 
-    ![](../media/lab-05/image068.jpg)
+    ![](../media/lab-05/image065.png)
 
 ## Tarea 4: Agregar más iconos de panel información al panel de información en tiempo real
 
 1. Haga clic en el botón **New tile** desde la **cinta de opciones de Inicio** en el panel de información en tiempo real.
 
-   ![](../media/lab-05/image070.png)
+   ![](../media/lab-05/image068.jpg)
 
 2. Introduzca la siguiente consulta KQL en el panel de información:
 
@@ -171,23 +169,23 @@ Al final de este laboratorio, habrá aprendido:
 
 3. **Ejecute** la consulta.
 
-    ![](../media/lab-05/image073.png)
+    ![](../media/lab-05/image070.png)
 
 4. Haga clic en el botón **+ Agregar** objeto visual.
 
-   ![](../media/lab-05/image076.png)
+   ![](../media/lab-05/image073.png)
  
 5. Edite el objeto visual para cambiar el **Tile name** a **Impressions by Hour** y el **Visual type** a **Area chart**.
 
-   ![](../media/lab-05/image079.png)
+   ![](../media/lab-05/image076.png)
 
 6. Aplique cambios al objeto visual.
 
-   ![](../media/lab-05/image082.jpg)
+   ![](../media/lab-05/image079.png)
 
 7. Agregue otro **+ New tile**.
 
-   ![](../media/lab-05/image084.jpg)
+   ![](../media/lab-05/image082.jpg)
 
 8. Copie y pegue la siguiente consulta en el panel de la consulta. Tenga en cuenta que se trata de una consulta de varias instrucciones que utiliza varias instrucciones let y una consulta combinada con punto y coma.
 
@@ -214,11 +212,9 @@ Al final de este laboratorio, habrá aprendido:
 
 9. **Ejecute** la consulta para ver los resultados.
 
-    ![](../media/lab-05/image087.png)
+    ![](../media/lab-05/image084.jpg)
  
 10. Haga clic en el botón **+ Agregar objeto visual**.
-
-    ![](../media/lab-05/image090.png)
 
 11. Cuando aparezca la configuración del objeto visual, modifique la siguiente configuración para crear un recuento de impresiones.
      
@@ -228,43 +224,43 @@ Al final de este laboratorio, habrá aprendido:
      
      - **Value column**: impressions (long)
 
-    ![](../media/lab-05/image093.jpg)
+    ![](../media/lab-05/image087.png)
 
 12. Seleccione **Aplicar cambios** cuando todos los ajustes estén configurados correctamente.
 
-    ![](../media/lab-05/image096.png)
+    ![](../media/lab-05/image090.png)
  
 13. En el nuevo icono, haga clic en los puntos suspensivos (...) y seleccione la opción **Icono duplicado**.
 
-    ![](../media/lab-05/image099.png)
+    ![](../media/lab-05/image093.png)
 
 14. Haga clic en el **icono de lápiz** para el icono duplicado para editar las configuraciones.
 
-    ![](../media/lab-05/image102.png)
+    ![](../media/lab-05/image96.png)
 
 15. Cambie este **Tile name a Clicks** y cambie la **Value column a clicks (long)**.
 
-    ![](../media/lab-05/image108.jpg)
+    ![](../media/lab-05/image99.jpg)
 
 16. Aplique los cambios a este objeto visual.
  
-   ![](../media/lab-05/image111.jpg)
+   ![](../media/lab-05/image102.jpg)
 
 17. Duplique cualquiera de los nuevos iconos una vez más para crear un objeto visual estadístico final.
 
-    ![](../media/lab-05/image114.png)
+    ![](../media/lab-05/image105.png)
  
 18. Edite el nuevo icono para cambiar el **Tile name** a **Click Through Rate** y la **Value column a CTR (long)**.
 
-    ![](../media/lab-05/image117.png)
+    ![](../media/lab-05/image108.png)
 
 19. Aplique los cambios.
 
-    ![](../media/lab-05/image120.png)
+    ![](../media/lab-05/image111.png)
 
 20. Si los iconos están separados o desea reorganizarlos, puede mantener el puntero sobre el icono hasta que aparezca un icono de mano y arrastrar y soltar el objeto visual donde desee.
 
-    ![](../media/lab-05/image123.jpg)
+    ![](../media/lab-05/image114.jpg)
 
 ## Tarea 5: Agregar un objeto visual de mapa para Impressions by Location
 
