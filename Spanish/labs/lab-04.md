@@ -17,7 +17,6 @@
 - Resumen	
 - Referencias	
 
- 
 # Estructura del documento
 
 El laboratorio incluye pasos que el usuario debe seguir junto con capturas de pantalla asociadas que sirven de ayuda visual. En cada captura de pantalla, las secciones se resaltan con cuadros de color naranja para indicar en qué áreas debe centrarse el usuario.
@@ -37,7 +36,6 @@ Al final de este laboratorio, habrá aprendido:
 - Crear vistas materializadas en bases de datos KQL.
 
 - Crear un almacén de lago y usar accesos directos a la base de datos KQL.
-
 
 # Marco Medallion dentro de las bases de datos KQL
 
@@ -83,7 +81,6 @@ Al final de este laboratorio, habrá aprendido:
     - SalesOrderHeader
 
       ![](../media/lab-04/image012.jpg)
-
 
 6. Para expandir la **tabla Address**, haga clic en el icono “>” junto al nombre.
 
@@ -180,8 +177,7 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image043.jpg)
  
-19.	Vamos a revisar una de nuestras tablas y verificar los datos. Vuelva al conjunto de consultas KQL que hemos estado usando, denominado **Create Tables**, asegúrese de que está en la pestaña
-**Bronze Layer** y ejecute el siguiente script.
+19.	Vamos a revisar una de nuestras tablas y verificar los datos. Vuelva al conjunto de consultas KQL que hemos estado usando, denominado **Create Tables**, asegúrese de que está en la pestaña **Bronze Layer** y ejecute el siguiente script.
 
     ```
     //Query the Bronze layer Customer table 
@@ -444,14 +440,11 @@ Dentro de la interfaz de usuario del almacén de lago, tiene un par de opciones 
 
     > **Nota:** Pueden transcurrir varias horas hasta que aparezcan los datos en OneLake. (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)
 
-
 # Resumen
 
-En este laboratorio, los usuarios crearon un marco de trabajo Medallion dentro de una base de datos de lenguaje de consulta Kusto (KQL). Los usuarios ingirieron datos sin procesar en la Bronze Layer
-de la arquitectura Medallion mediante una canalización de datos. Transformaron estos datos y los cargaron en la Silver Layer para su posterior procesamiento y refinamiento. Finalmente, los usuarios agregaron y optimizaron los datos para el análisis en la Gold Layer mediante Vistas materializadas.
+En este laboratorio, los usuarios crearon un marco de trabajo Medallion dentro de una base de datos de lenguaje de consulta Kusto (KQL). Los usuarios ingirieron datos sin procesar en la Bronze Layer de la arquitectura Medallion mediante una canalización de datos. Transformaron estos datos y los cargaron en la Silver Layer para su posterior procesamiento y refinamiento. Finalmente, los usuarios agregaron y optimizaron los datos para el análisis en la Gold Layer mediante Vistas materializadas.
  
-Después de crear el marco Medallion, los usuarios emplearon accesos directos de Microsoft Fabric para vincular los datos de la base de datos KQL a un almacén de lago. Esta integración permitió un acceso y análisis de los datos sin problemas en ambos entornos. El laboratorio concluyó con la
-verificación por parte de los usuarios de la vinculación de datos y la realización de consultas básicas para garantizar la funcionalidad del marco.
+Después de crear el marco Medallion, los usuarios emplearon accesos directos de Microsoft Fabric para vincular los datos de la base de datos KQL a un almacén de lago. Esta integración permitió un acceso y análisis de los datos sin problemas en ambos entornos. El laboratorio concluyó con la verificación por parte de los usuarios de la vinculación de datos y la realización de consultas básicas para garantizar la funcionalidad del marco.
 
 # Referencias
 
@@ -459,7 +452,7 @@ Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones cl
 
 En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
 
-![](../media/lab-04/image112.jpg)
+![](../media/lab-02/image129.jpg)
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 
