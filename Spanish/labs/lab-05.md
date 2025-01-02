@@ -130,7 +130,6 @@ Al final de este laboratorio, habrá aprendido:
 
 11. Aparecerá un nuevo control flotante en el lado derecho de la pantalla. Haga clic en el cuadro de texto debajo de la opción **Tile name** para asignar a este objeto visual el nombre **Clicks by Hour**.
 
-
     ![](../media/lab-05/image051.png)
 
 12. De forma predeterminada, el objeto visual que está usando para mostrar los resultados de esta consulta KQL es una tabla. Es posible que esta no sea la mejor manera para que alguien consuma y comprenda rápidamente lo que está sucediendo con los resultados de sus datos. Cambie el tipo de objeto visual de tabla a **Area chart**.
@@ -192,26 +191,26 @@ Al final de este laboratorio, habrá aprendido:
 
 8. Copie y pegue la siguiente consulta en el panel de la consulta. Tenga en cuenta que se trata de una consulta de varias instrucciones que utiliza varias instrucciones let y una consulta combinada con punto y coma.
 
-    ```
-    //Clicks, Impressions, CTR
+   ```
+   //Clicks, Impressions, CTR
 
 
-    let imp = Impressions
-    | where eventDate between (_startTime.._endTime)
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-    | summarize imp_count = count() by dateOnly;
+   let imp = Impressions
+   | where eventDate between (_startTime.._endTime)
+   | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+   | summarize imp_count = count() by dateOnly;
 
 
-    let clck = Clicks
-    | where eventDate between (_startTime.._endTime)
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-    | summarize clck_count = count() by dateOnly;
+   let clck = Clicks
+   | where eventDate between (_startTime.._endTime)
+   | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+   | summarize clck_count = count() by dateOnly;
 
 
-    imp
-    | join clck on $left.dateOnly == $right.dateOnly
-    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-    ```
+   imp
+   | join clck on $left.dateOnly == $right.dateOnly
+   | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+   ```
 
 9. **Ejecute** la consulta para ver los resultados.
 
@@ -227,7 +226,7 @@ Al final de este laboratorio, habrá aprendido:
      
      - **Value column**: impressions (long)
 
-    ![](../media/lab-05/image087.png)
+       ![](../media/lab-05/image087.png)
 
 12. Seleccione **Aplicar cambios** cuando todos los ajustes estén configurados correctamente.
 
@@ -393,8 +392,7 @@ En este laboratorio, los usuarios crearon un panel de información en tiempo rea
 ## Referencias
 Fabric Real-Time Intelligence in a Day (RTIIAD) le presenta algunas funciones clave disponibles en Microsoft Fabric.En el menú del servicio, la sección Ayuda (?) tiene vínculos a algunos recursos excelentes.
 
-
-  ![](../media/lab-05/image175.jpg)
+![](../media/lab-02/image129.jpg)
 
 Estos son algunos recursos más que podrán ayudarle a seguir avanzando con Microsoft Fabric.
 

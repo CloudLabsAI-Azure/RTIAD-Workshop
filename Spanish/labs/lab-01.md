@@ -94,7 +94,7 @@ Al final de este laboratorio, habrá aprendido a:
 
     ![](../media/lab-01/image017.jpg)
 
-10.	Se le volverá a dirigir a la **página Inicio de Microsoft Fabric**.
+10. Se le volverá a dirigir a la **página Inicio de Microsoft Fabric**.
 
     ![](../media/lab-01/image010.jpg)
  
@@ -223,11 +223,11 @@ Al final de este laboratorio, habrá aprendido a:
 
     ![](../media/lab-01/image059.png)
 
-10.	Si ve que la opción **Flujos de tareas** ocupa la mayor parte del espacio, seleccione la flecha arriba doble en el lado derecho para minimizarla.
+10. Si ve que la opción **Flujos de tareas** ocupa la mayor parte del espacio, seleccione la flecha arriba doble en el lado derecho para minimizarla.
 
     ![](../media/lab-01/image061.jpg)
 
-11.	Ahora sabe los aspectos básicos sobre cómo comenzar a ingerir los datos de streaming en OneLake. El siguiente paso es crear un flujo de datos que pueda recibir los datos en movimiento.
+11. Ahora sabe los aspectos básicos sobre cómo comenzar a ingerir los datos de streaming en OneLake. El siguiente paso es crear un flujo de datos que pueda recibir los datos en movimiento.
 
     ![](../media/lab-01/image063.png)
 

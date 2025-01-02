@@ -49,8 +49,7 @@ Al final de este laboratorio, habrá aprendido:
 
    ![](../media/lab-06/image009.png)
  
-5. Actualmente dispone de tres acciones posibles para el tipo de alerta que desea recibir una vez
-que el elemento Data Activator Reflex reconozca que se ha cumplido su condición. Elija la opción
+5. Actualmente dispone de tres acciones posibles para el tipo de alerta que desea recibir una vez que el elemento Data Activator Reflex reconozca que se ha cumplido su condición. Elija la opción
 **Enviarme un mensaje en Teams**.
 
    ![](../media/lab-06/image011.png)
@@ -118,10 +117,10 @@ para obtener un mensaje de muestra en Teams desde Reflex.
 
 5. En **Acción**, seleccione las propiedades siguientes:
 
-    -	**Tipo** = Teams message
-    -	**Destinatario** = {su id. de usuario}
+   - **Tipo** = Teams message
+   - **Destinatario** = {su id. de usuario}
 
-        ![](../media/lab-06/image036.png)
+      ![](../media/lab-06/image036.png)
 
 6. Por último, haga clic en Guardar e iniciar a ejecutar esta regla.
 

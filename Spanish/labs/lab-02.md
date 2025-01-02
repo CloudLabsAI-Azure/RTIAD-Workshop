@@ -153,29 +153,29 @@ Al final de este laboratorio, habrá aprendido:
    
    ![](../media/lab-02/image049.png)
 
-10.	Elija la opción **Configurar** en el **Destino** para asignar correctamente el flujo a una tabla en la base de datos KQL.
+10. Elija la opción **Configurar** en el **Destino** para asignar correctamente el flujo a una tabla en la base de datos KQL.
 
     ![](../media/lab-02/image052.jpg)
  
-11.	Haga clic en la opción **+ Nueva tabla** debajo de la base de datos **eh_Fabrikam**.
+11. Haga clic en la opción **+ Nueva tabla** debajo de la base de datos **eh_Fabrikam**.
 
     ![](../media/lab-02/image054.png)
  
-12.	Asigne el nombre **InternetSales** a la nueva tabla y luego haga clic en la marca de verificación.
+12. Asigne el nombre **InternetSales** a la nueva tabla y luego haga clic en la marca de verificación.
 
     ![](../media/lab-02/image056.png)
 
-13.	Es posible que tenga que actualizar su “**Nombre de conexión de datos**” para cumplir los requisitos. Cambiémosle el nombre a “**eh_Fabrikam_es_InternetSales**”. A continuación, podemos hacer clic en **Siguiente**.
+13. Es posible que tenga que actualizar su “**Nombre de conexión de datos**” para cumplir los requisitos. Cambiémosle el nombre a “**eh_Fabrikam_es_InternetSales**”. A continuación, podemos hacer clic en **Siguiente**.
 
     ![](../media/lab-02/image058.jpg)
 
-14.	Después de unos minutos de buscar eventos, la interfaz de usuario debería permitirle ver que se encontraron datos de ejemplo. Haga clic en **Fin** en la parte inferior de la pantalla. 
+14. Después de unos minutos de buscar eventos, la interfaz de usuario debería permitirle ver que se encontraron datos de ejemplo. Haga clic en **Fin** en la parte inferior de la pantalla. 
 
     ![](../media/lab-02/image060.png)
  
-15.	Después de esto, se le mostrará un resumen. Una vez que tenga todas las marcas de verificación verdes, haga clic en **Cerrar** para avanzar.
+15. Después de esto, se le mostrará un resumen. Una vez que tenga todas las marcas de verificación verdes, haga clic en **Cerrar** para avanzar.
 
-16.	Una vez que vea la interfaz de usuario que muestra las asignaciones desde el origen hasta el Eventstream y el destino, habrá configurado e iniciado correctamente un flujo de datos en su base de datos KQL.
+16. Una vez que vea la interfaz de usuario que muestra las asignaciones desde el origen hasta el Eventstream y el destino, habrá configurado e iniciado correctamente un flujo de datos en su base de datos KQL.
 
     ![](../media/lab-02/image062.png)
 
@@ -228,40 +228,39 @@ Al final de este laboratorio, habrá aprendido:
 
    ![](../media/lab-02/image080.jpg)
  
-10.	Haga clic en la **línea 8** y, donde la consulta indica, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
+10. Haga clic en la **línea 8** y, donde la consulta indica, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
 
-    ![](../media/lab-02/image082.jpg)
+   ![](../media/lab-02/image082.jpg)
  
-11.	Resalte las **líneas 8 y 9** y haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
+11. Resalte las **líneas 8 y 9** y haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
 
-    ![](../media/lab-02/image084.png)
+   ![](../media/lab-02/image084.png)
 
-12.	La consulta utiliza el operador **take** para devolver un número específico de filas. Cuando se ejecute la consulta, se extraerán los datos de la tabla InternetSales y se recuperará el número de filas que haya conectado a la consulta. Para este ejemplo, solo se devolverán 100 filas, como una cláusula WHERE en SQL. Las filas específicas devueltas no se pueden determinar con este operador y los resultados de la consulta variarán respecto al resultado de otras.
+12. La consulta utiliza el operador **take** para devolver un número específico de filas. Cuando se ejecute la consulta, se extraerán los datos de la tabla InternetSales y se recuperará el número de filas que haya conectado a la consulta. Para este ejemplo, solo se devolverán 100 filas, como una cláusula WHERE en SQL. Las filas específicas devueltas no se pueden determinar con este operador y los resultados de la consulta variarán respecto al resultado de otras.
 
-    ![](../media/lab-02/image087.jpg)
+   ![](../media/lab-02/image087.jpg)
 
-13.	Haga clic en la **línea 12** y, donde la consulta dice, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
+13. Haga clic en la **línea 12** y, donde la consulta dice, **YOUR_TABLE_HERE**, reemplácela por el nombre de la tabla, **InternetSales**.
 
     ![](../media/lab-02/image089.png)
 
-14.	Resalte las **líneas 12 y 13 y** haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
+14. Resalte las **líneas 12 y 13 y** haga clic en el botón **Run** en la esquina superior izquierda de la ventana.
 
-    ![](../media/lab-02/image091.png)
+   ![](../media/lab-02/image091.png)
 
-15.	Esta consulta utiliza el operador operador count. Esta consulta devolverá un número agregado de registros que existen en el momento de la ejecución de la consulta en la tabla de la base de datos KQL. No dude en ejecutar esta consulta unas cuantas veces más y debería observar que el número de registros aumenta cada pocos segundos.
+15. Esta consulta utiliza el operador operador count. Esta consulta devolverá un número agregado de registros que existen en el momento de la ejecución de la consulta en la tabla de la base de datos KQL. No dude en ejecutar esta consulta unas cuantas veces más y debería observar que el número de registros aumenta cada pocos segundos.
 
-    ![](../media/lab-02/image094.png)
+   ![](../media/lab-02/image094.png)
  
-16.	Repita los pasos anteriores para la consulta final que se crea automáticamente en la **línea 16/17** y vuelva a ejecutar la consulta.
+16. Repita los pasos anteriores para la consulta final que se crea automáticamente en la **línea 16/17** y vuelva a ejecutar la consulta.
 
-    ![](../media/lab-02/image096.png)
+   ![](../media/lab-02/image096.png)
 
-17.	Esta consulta arrojará el número de registros que se han ingerido en la tabla en una horquilla de una hora. La distribución general de estos registros para los datos que está ingiriendo actualmente será de aproximadamente 4100 por hora. Sin embargo, habrá ligeras variaciones dentro de la cantidad de transacciones por hora y esta consulta detallará si se ingirieron menos o más registros en cada ventana.
+17. Esta consulta arrojará el número de registros que se han ingerido en la tabla en una horquilla de una hora. La distribución general de estos registros para los datos que está ingiriendo actualmente será de aproximadamente 4100 por hora. Sin embargo, habrá ligeras variaciones dentro de la cantidad de transacciones por hora y esta consulta detallará si se ingirieron menos o más registros en cada ventana.
 
 ## Tarea 4: Uso de consultas SQL en una base de datos de KQL
 
-Es posible que esté trabajando con el lenguaje de consulta Kusto por primera vez. Aunque este lenguaje es intuitivo y fácil de aprender para consultas sencillas, es posible que desee devolver los resultados de consultas más complejas de las que puede hacer actualmente. Se han incluido varias herramientas útiles dentro de las funciones del conjunto de consultas KQL, incluida la conversión de consultas SQL en consultas KQL y la creación simple de consultas T-SQL dentro del conjunto de
-consultas KQL. ¡Exploremos!
+Es posible que esté trabajando con el lenguaje de consulta Kusto por primera vez. Aunque este lenguaje es intuitivo y fácil de aprender para consultas sencillas, es posible que desee devolver los resultados de consultas más complejas de las que puede hacer actualmente. Se han incluido varias herramientas útiles dentro de las funciones del conjunto de consultas KQL, incluida la conversión de consultas SQL en consultas KQL y la creación simple de consultas T-SQL dentro del conjunto de consultas KQL. ¡Exploremos!
 
 1. Debe crear una consulta que devuelva cada producto con el número de la cantidad de veces que se haya vendido. Esto se puede hacer rápidamente con T-SQL. Dentro de la ventana de consulta, puede traducir sus consultas SQL a KQL para entender mejor cómo crear consultas KQL en adelante. Empiece escribiendo el siguiente comando.
 
@@ -297,7 +296,7 @@ consultas KQL. ¡Exploremos!
 
    ![](../media/lab-02/image116.jpg)
 
-9.	Esto también arrojará resultados perfectamente válidos sin tener que convertir a KQL de antemano.
+9. Esto también arrojará resultados perfectamente válidos sin tener que convertir a KQL de antemano.
 
     ![](../media/lab-02/image118.png)
 

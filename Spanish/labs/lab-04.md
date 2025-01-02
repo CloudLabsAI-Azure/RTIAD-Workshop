@@ -147,13 +147,13 @@ Al final de este laboratorio, habrá aprendido:
 
 9. Haga clic en **Siguiente**.
 
-10.	Ahora deberá configurar su destino para determinar a dónde desea que la canalización envíe los datos. Busque el **Centro de datos de OneLake** y seleccione su base de datos KQL **eh_Fabrikam**.
+10. Ahora deberá configurar su destino para determinar a dónde desea que la canalización envíe los datos. Busque el **Centro de datos de OneLake** y seleccione su base de datos KQL **eh_Fabrikam**.
 
     ![](../media/lab-04/image030.jpg)
 
-11.	Si se le solicita que inicie sesión, basta con utilizar las credenciales que encontrará en la página de detalles del entorno.
+11. Si se le solicita que inicie sesión, basta con utilizar las credenciales que encontrará en la página de detalles del entorno.
 
-12.	Haga clic en la tabla **SalesLT.Address** si aún no está seleccionada y luego haga clic en el menú desplegable junto a la opción **Tabla**. Haga clic en la opción de la tabla **Address**.
+12. Haga clic en la tabla **SalesLT.Address** si aún no está seleccionada y luego haga clic en el menú desplegable junto a la opción **Tabla**. Haga clic en la opción de la tabla **Address**.
 
     ![](../media/lab-04/image032.jpg)
 
@@ -167,17 +167,17 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image037.jpg)
 
-16.	Haga clic en **Guardar y ejecutar**.
+16. Haga clic en **Guardar y ejecutar**.
 
-17.	Después de unos minutos, aparecerá una ventana flotante que incluye un **Parámetro**. El asistente de copia que acabamos de completar creó una lista de las tablas para recorrer en iteración y cargar en las tablas KQL. Simplemente haga clic en el botón **Aceptar** para ejecutar la canalización tal como está configurada actualmente desde el Asistente de copia de datos.
+17. Después de unos minutos, aparecerá una ventana flotante que incluye un **Parámetro**. El asistente de copia que acabamos de completar creó una lista de las tablas para recorrer en iteración y cargar en las tablas KQL. Simplemente haga clic en el botón **Aceptar** para ejecutar la canalización tal como está configurada actualmente desde el Asistente de copia de datos.
 
     ![](../media/lab-04/image040.png)
 
-18.	Deje que se ejecute la canalización y, después de aproximadamente un minuto, el movimiento de datos debería estar completo. Habrá transferido los datos una vez que vea que todas las actividades dentro de la canalización se hayan **completado correctamente**.
+18. Deje que se ejecute la canalización y, después de aproximadamente un minuto, el movimiento de datos debería estar completo. Habrá transferido los datos una vez que vea que todas las actividades dentro de la canalización se hayan **completado correctamente**.
 
     ![](../media/lab-04/image043.jpg)
  
-19.	Vamos a revisar una de nuestras tablas y verificar los datos. Vuelva al conjunto de consultas KQL que hemos estado usando, denominado **Create Tables**, asegúrese de que está en la pestaña **Bronze Layer** y ejecute el siguiente script.
+19. Vamos a revisar una de nuestras tablas y verificar los datos. Vuelva al conjunto de consultas KQL que hemos estado usando, denominado **Create Tables**, asegúrese de que está en la pestaña **Bronze Layer** y ejecute el siguiente script.
 
     ```
     //Query the Bronze layer Customer table 
@@ -188,7 +188,7 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image045.png)
 
-20.	Debería ver algunos datos como la imagen siguiente, pero es posible que no sean exactos
+20. Debería ver algunos datos como la imagen siguiente, pero es posible que no sean exactos
 
     ![](../media/lab-04/image047.jpg)
 
@@ -271,13 +271,13 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image066.jpg)
  
-10.	De nuevo, espere aproximadamente un minuto a que la canalización complete su carga y cuando todos los elementos de su menú Salida indiquen **Correcto**, continúe con el siguiente paso.
+10. De nuevo, espere aproximadamente un minuto a que la canalización complete su carga y cuando todos los elementos de su menú Salida indiquen **Correcto**, continúe con el siguiente paso.
 
     ![](../media/lab-04/image069.jpg)
 
-11.	Una vez que se haya completado la canalización de datos, vaya y valide los resultados en la base de datos KQL. Vuelva al conjunto de consultas KQL **Crear tablas** y vaya a la pestaña **Silver Layer**.
+11. Una vez que se haya completado la canalización de datos, vaya y valide los resultados en la base de datos KQL. Vuelva al conjunto de consultas KQL **Crear tablas** y vaya a la pestaña **Silver Layer**.
 
-12.	En una nueva línea, consulte la tabla SilverAddress escribiendo la siguiente consulta y ejecutando el código.
+12. En una nueva línea, consulte la tabla SilverAddress escribiendo la siguiente consulta y ejecutando el código.
 
     ```
     SilverAddress
@@ -286,7 +286,7 @@ Al final de este laboratorio, habrá aprendido:
 
     ![](../media/lab-04/image072.png)
 
-13.	Observe en los resultados que la tabla **SilverAddress** tiene una columna adicional, **IngestionDate**, que no se encuentra físicamente presente en la tabla **Address**.
+13. Observe en los resultados que la tabla **SilverAddress** tiene una columna adicional, **IngestionDate**, que no se encuentra físicamente presente en la tabla **Address**.
 
     ![](../media/lab-04/image075.jpg)
 
@@ -333,7 +333,7 @@ Ahora que tiene su capa de datos transformada dentro de la Silver Layer, puede c
 
 7. Esta consulta devolverá la fila con la última **IngestionDate** para cada **AddressID** única de la tabla **SilverAddress**.
 
-8.	Ahora, pegue y ejecute las siguientes consultas para crear más vistas materializadas de la Gold Layer para las otras tablas.
+8. Ahora, pegue y ejecute las siguientes consultas para crear más vistas materializadas de la Gold Layer para las otras tablas.
 
     ```
     //Create additional Gold Materialized Views
@@ -376,7 +376,7 @@ Ahora que tiene su capa de datos transformada dentro de la Silver Layer, puede c
 
     ![](../media/lab-04/image090.png)
 
-10.	Ahora ha creado correctamente un marco de trabajo Medallion dentro de una base de datos KQL. Aunque estos datos se consumen con facilidad, tendrá usuarios que nunca han trabajado con Kusto y preferirán acceder a los datos de estas tablas por otros medios. En la siguiente tarea creará un lago de datos. A continuación, mediante la característica Disponibilidad de OneLake, que activamos en el laboratorio 1, haga que algunas de las tablas de nuestra base de datos de KQL sean accesibles a través del almacén de lago mediante accesos directos
+10. Ahora ha creado correctamente un marco de trabajo Medallion dentro de una base de datos KQL. Aunque estos datos se consumen con facilidad, tendrá usuarios que nunca han trabajado con Kusto y preferirán acceder a los datos de estas tablas por otros medios. En la siguiente tarea creará un lago de datos. A continuación, mediante la característica Disponibilidad de OneLake, que activamos en el laboratorio 1, haga que algunas de las tablas de nuestra base de datos de KQL sean accesibles a través del almacén de lago mediante accesos directos
 
 # Disponibilidad de OneLake y almacén de lago de Fabric
 
@@ -388,7 +388,7 @@ Ahora que tiene su capa de datos transformada dentro de la Silver Layer, puede c
 
     ![](../media/lab-04/image092.jpg)
 
-3.	Asigne el nombre **al lh_Fabrikam** al almacén de lago y luego haga clic en **Crear**. No habilitar la característica en vista previa de los esquemas de almacén de lago.
+3. Asigne el nombre **al lh_Fabrikam** al almacén de lago y luego haga clic en **Crear**. No habilitar la característica en vista previa de los esquemas de almacén de lago.
 
     ![](../media/lab-04/image094.jpg)
 
@@ -432,11 +432,11 @@ Dentro de la interfaz de usuario del almacén de lago, tiene un par de opciones 
 
     ![](../media/lab-04/image107.png)
 
-10.	Haga clic en la tabla denominada **Clicks**.
+10. Haga clic en la tabla denominada **Clicks**.
 
     ![](../media/lab-04/image109.png)
 
-11.	Puede ver un ejemplo de los registros de esa tabla que han aparecido en su interfaz de usuario.
+11. Puede ver un ejemplo de los registros de esa tabla que han aparecido en su interfaz de usuario.
 
     > **Nota:** Pueden transcurrir varias horas hasta que aparezcan los datos en OneLake. (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)
 
