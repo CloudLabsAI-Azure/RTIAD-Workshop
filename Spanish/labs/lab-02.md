@@ -206,8 +206,7 @@ Al final de este laboratorio, habrá aprendido:
 
    ![](../media/lab-02/image074.png)
 
-7. Esta información general le ofrece detalles de metadatos relativos a la tabla que ha creado
-y cualquier dato en streaming activo con el Eventstream. Una vez más, el tamaño de la tabla y el número de filas dentro de la tabla variarán de un alumno a otro y no afectarán a los resultados
+7. Esta información general le ofrece detalles de metadatos relativos a la tabla que ha creado y cualquier dato en streaming activo con el Eventstream. Una vez más, el tamaño de la tabla y el número de filas dentro de la tabla variarán de un alumno a otro y no afectarán a los resultados
 
     finales de este laboratorio ni de ningún otro. En este menú destacan algunos elementos adicionales:
 
@@ -225,8 +224,7 @@ y cualquier dato en streaming activo con el Eventstream. Una vez más, el tamañ
 
    ![](../media/lab-02/image078.png)
 
-9. Esto abrirá el conjunto de consultas KQL predeterminado que se creó junto con Eventhouse. Ya se han creado algunas consultas generadas previamente por script, pero que necesitan una ligera personalización. También hay dos vínculos a la documentación de Microsoft que pueden resultar de utilidad al aprender sobre KQL o también al observar las conversiones de SQL a KQL, que se
-tratarán más adelante a lo largo de esta clase.
+9. Esto abrirá el conjunto de consultas KQL predeterminado que se creó junto con Eventhouse. Ya se han creado algunas consultas generadas previamente por script, pero que necesitan una ligera personalización. También hay dos vínculos a la documentación de Microsoft que pueden resultar de utilidad al aprender sobre KQL o también al observar las conversiones de SQL a KQL, que se tratarán más adelante a lo largo de esta clase.
 
    ![](../media/lab-02/image080.jpg)
  
@@ -258,8 +256,7 @@ tratarán más adelante a lo largo de esta clase.
 
     ![](../media/lab-02/image096.png)
 
-17.	Esta consulta arrojará el número de registros que se han ingerido en la tabla en una horquilla de una hora. La distribución general de estos registros para los datos que está ingiriendo
-actualmente será de aproximadamente 4100 por hora. Sin embargo, habrá ligeras variaciones dentro de la cantidad de transacciones por hora y esta consulta detallará si se ingirieron menos o más registros en cada ventana.
+17.	Esta consulta arrojará el número de registros que se han ingerido en la tabla en una horquilla de una hora. La distribución general de estos registros para los datos que está ingiriendo actualmente será de aproximadamente 4100 por hora. Sin embargo, habrá ligeras variaciones dentro de la cantidad de transacciones por hora y esta consulta detallará si se ingirieron menos o más registros en cada ventana.
 
 ## Tarea 4: Uso de consultas SQL en una base de datos de KQL
 
@@ -307,8 +304,7 @@ consultas KQL. ¡Exploremos!
 # Conjunto de consultas KQL
 ## Tarea 5: Trabajar con un conjunto de consultas KQL
 
-1. Si bien la mayoría de las consultas dentro de esta ventana se crearon automáticamente desde la interfaz de usuario, podrían darse situaciones en el futuro en las que desee crear sus propias consultas KQL desde cero. Esto se puede administrar a través de la característica de pestañas en la parte superior. También hay que tener en cuenta que este conjunto de consultas se guarda
-automáticamente de forma periódica.
+1. Si bien la mayoría de las consultas dentro de esta ventana se crearon automáticamente desde la interfaz de usuario, podrían darse situaciones en el futuro en las que desee crear sus propias consultas KQL desde cero. Esto se puede administrar a través de la característica de pestañas en la parte superior. También hay que tener en cuenta que este conjunto de consultas se guarda automáticamente de forma periódica.
 
 2. Observe que, en la parte superior del conjunto de consultas, el nombre predeterminado de nuestra primera página es el mismo que el de la base de datos.
 
