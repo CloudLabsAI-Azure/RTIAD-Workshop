@@ -88,7 +88,7 @@ Medallion.
     - SalesOrderDetail
     - SalesOrderHeader
 
-    ![](../media/Lab-04/image012.jpg)
+      ![](../media/Lab-04/image012.jpg)
 
 6. Espandere la **tabella Address** facendo clic sull’icona ">" accanto al nome.
 
@@ -131,16 +131,18 @@ Medallion.
 
    ![](../media/Lab-04/image024.jpg)
 
-5. Per iniziare, sarà necessario creare una connessione al database di origine da cui si desidera estrarre i dati. Fare clic sull’opzione **Database SQL di Azure** in "Nuove origini". Se non è subito visibile, è possibile usare la barra di ricerca in alto per filtrare le origini. Stabiliremo una
-connessione allo stesso database SQL di Azure esterno del lab precedente, ma a tabelle diverse.
+5. Per iniziare, sarà necessario creare una connessione al database di origine da cui si desidera estrarre i dati. Fare clic sull’opzione **Database SQL di Azure** in "Nuove origini". Se non è subito visibile, è possibile usare la barra di ricerca in alto per filtrare le origini. Stabiliremo una connessione allo stesso database SQL di Azure esterno del lab precedente, ma a tabelle diverse.
 
    ![](../media/Lab-04/image026.jpg)
 
 6. Sarà necessario immettere i dettagli di connessione del database. Usare le informazioni presenti nel proprio ambiente o quelle riportate di seguito.
 
     - fabrikamdemo.database.windows.net
+    
     - fabrikamdb
+    
     - demouser
+    
     - fabrikam@123456
  
 7. Fare clic su **Avanti** una volta compilati tutti i campi.
@@ -148,46 +150,48 @@ connessione allo stesso database SQL di Azure esterno del lab precedente, ma a t
 8. Dall’elenco delle tabelle disponibili selezionare le seguenti:
 
     - SalesLT.Address
+    
     - SalesLT.Customer
+    
     - SalesLT.SalesOrderDetail
+    
     - SalesLT.SalesOrderHeader
 
       ![](../media/Lab-04/image029.jpg)
 
 9. Fare clic su **Avanti**.
 
-10.	Ora verrà richiesto di impostare la destinazione per determinare dove la pipeline dovrà inviare i dati. Trovare l’**hub dei dati OneLake**, quindi selezionare il database KQL, **eh_Fabrikam**.
+10. Ora verrà richiesto di impostare la destinazione per determinare dove la pipeline dovrà inviare i dati. Trovare l’**hub dei dati OneLake**, quindi selezionare il database KQL, **eh_Fabrikam**.
 
-     ![](../media/Lab-04/image031.png)
+    ![](../media/Lab-04/image031.png)
 
-11.	Se viene richiesto di effettuare l’accesso, utilizzare le credenziali fornite nella pagina dei dettagli dell’ambiente
+11. Se viene richiesto di effettuare l’accesso, utilizzare le credenziali fornite nella pagina dei dettagli dell’ambiente
  
-12.	Fare clic sulla tabella **SalesLT.Address** se non è già selezionata, quindi fare clic sul menu a discesa accanto all’opzione **Tabella**. Fare clic sull’opzione della tabella **Address**.
+12. Fare clic sulla tabella **SalesLT.Address** se non è già selezionata, quindi fare clic sul menu a discesa accanto all’opzione **Tabella**. Fare clic sull’opzione della tabella **Address**.
 
      ![](../media/Lab-04/image033.png)
 
-13.	Verrà visualizzata una panoramica dei **mapping delle colonne**. Ciò permetterà di visualizzare tutti i campi provenienti dal database di origine che si stanno inviando al database KQL. È possibile rimuovere campi specifici se non si vuole che ne venga eseguito il mapping dall’origine.
+13. Verrà visualizzata una panoramica dei **mapping delle colonne**. Ciò permetterà di visualizzare tutti i campi provenienti dal database di origine che si stanno inviando al database KQL. È possibile rimuovere campi specifici se non si vuole che ne venga eseguito il mapping dall’origine.
 
      ![](../media/Lab-04/image036.jpg)
 
-14.	Seguire gli stessi passaggi 11-12 per le tabelle **SalesLT.Customer, SaleLT.SalesOrderDetail** e **SalesLT.SalesOrderHeader**. Non sarà necessario eseguire alcun mapping delle colonne, sarà sufficiente abbinare i nomi delle tabelle. Una volta eseguito correttamente il mapping di tutte le tabelle, fare clic su **Avanti**.
+14. Seguire gli stessi passaggi 11-12 per le tabelle **SalesLT.Customer, SaleLT.SalesOrderDetail** e **SalesLT.SalesOrderHeader**. Non sarà necessario eseguire alcun mapping delle colonne, sarà sufficiente abbinare i nomi delle tabelle. Una volta eseguito correttamente il mapping di tutte le tabelle, fare clic su **Avanti**.
  
-15.	L’ultima pagina che usa Assistente alla copia dati è una pagina di panoramica per verificare tutte le impostazioni selezionate. Assicurarsi che il numero di tabelle di origine e di destinazione corrisponda.
+15. L’ultima pagina che usa Assistente alla copia dati è una pagina di panoramica per verificare tutte le impostazioni selezionate. Assicurarsi che il numero di tabelle di origine e di destinazione corrisponda.
 
-       ![](../media/Lab-04/image038.jpg)
+    ![](../media/Lab-04/image038.jpg)
 
-16.	Fare clic su **Salva + Esegui**.
+16. Fare clic su **Salva + Esegui**.
 
-17.	Dopo qualche istante apparirà una finestra a comparsa che include un **parametro**. La procedura guidata di copia appena completata ha creato un elenco delle tabelle su cui eseguire l’iterazione e quindi caricare nelle tabelle kql. È sufficiente fare clic sul pulsante **OK** per eseguire la pipeline così come è attualmente configurata da Assistente alla copia dati.
+17. Dopo qualche istante apparirà una finestra a comparsa che include un **parametro**. La procedura guidata di copia appena completata ha creato un elenco delle tabelle su cui eseguire l’iterazione e quindi caricare nelle tabelle kql. È sufficiente fare clic sul pulsante **OK** per eseguire la pipeline così come è attualmente configurata da Assistente alla copia dati.
 
-      ![](../media/Lab-04/image041.png)
+    ![](../media/Lab-04/image041.png)
 
-18.	Lasciare che la pipeline svolga il proprio lavoro e dopo circa un minuto lo spostamento dei dati dovrebbe essere completato. Una volta che tutte le attività all’interno della pipeline avranno lo stato **Riuscito**, il trasferimento dei dati sarà stato completato.
+18. Lasciare che la pipeline svolga il proprio lavoro e dopo circa un minuto lo spostamento dei dati dovrebbe essere completato. Una volta che tutte le attività all’interno della pipeline avranno lo stato **Riuscito**, il trasferimento dei dati sarà stato completato.
 
-      ![](../media/Lab-04/image044.jpg)
+    ![](../media/Lab-04/image044.jpg)
 
-19.	Controlliamo una delle nostre tabelle e verifichiamo i dati. Tornare al set di query KQL utilizzato denominato **Create Tables** e assicurarsi di essere nella scheda **Bronze Layer**, quindi eseguire
-lo script seguente
+19. Controlliamo una delle nostre tabelle e verifichiamo i dati. Tornare al set di query KQL utilizzato denominato **Create Tables** e assicurarsi di essere nella scheda **Bronze Layer**, quindi eseguire lo script seguente
 
     ```
     //Query the Bronze layer Customer table
@@ -198,17 +202,17 @@ lo script seguente
     
     ![](../media/Lab-04/image046.png)
 
-20.	Dovrebbero essere visualizzati alcuni dati simili all’immagine qui sotto
+20. Dovrebbero essere visualizzati alcuni dati simili all’immagine qui sotto
 
       ![](../media/Lab-04/image048.png)
 
 ## Attività 3. Trasformazione delle tabelle in livello Silver
 
-1.	Caricate le tabelle Bronze, si procederà alla creazione di una nuova scheda all’interno del set di query KQL denominata "Silver Layer".
+1. Caricate le tabelle Bronze, si procederà alla creazione di una nuova scheda all’interno del set di query KQL denominata "Silver Layer".
 
-      ![](../media/Lab-04/image050.png)
+    ![](../media/Lab-04/image050.png)
  
-2.	Eseguire il seguente script KQL nella scheda "Silver Layer" per creare quattro nuove tabelle che fungeranno da livello Silver del framework Medallion.
+2. Eseguire il seguente script KQL nella scheda "Silver Layer" per creare quattro nuove tabelle che fungeranno da livello Silver del framework Medallion.
 
      ```
     //SILVER LAYER
@@ -223,6 +227,7 @@ lo script seguente
 
     .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
     ```
+
 3. Eseguire il nuovo script evidenziandolo e facendo clic su **Esegui**.
    
    ![](../media/Lab-04/image053.jpg)
@@ -275,37 +280,39 @@ lo script seguente
     
 6. Benché sia possibile vedere i risultati dell’esecuzione della query, la prova migliore che la query è stata completata è la visualizzazione di una nuova cartella espandibile nel riquadro Oggetti database. Fare clic sull’**icona >** accanto alla **cartella Functions**. Queste funzioni permetteranno il mirroring, la trasformazione e il caricamento nel livello Silver dei dati caricati nel livello Bronze del database KQL.
 
-     ![](../media/Lab-04/image058.png)
+    ![](../media/Lab-04/image058.png)
 
 7. Ora simuliamo questo processo: si eseguirà nuovamente la pipeline creata in precedenza in questo lab. Tornare alla pipeline **Load KQL Database**.
 
-     ![](../media/Lab-04/image061.jpg)
+    ![](../media/Lab-04/image061.jpg)
 
 8. È sufficiente fare clic sul pulsante **Esegui** nella **barra multifunzione Home** per eseguire nuovamente la pipeline e caricare i dati nel livello Bronze, dove verranno trasformati dalle funzioni create e caricati nelle tabelle Silver.
 
-     ![](../media/Lab-04/image064.jpg)
+    ![](../media/Lab-04/image064.jpg)
 
 9. Fare clic su **OK** su questo riquadro a comparsa per eseguire la pipeline con gli stessi parametri di prima.
 
     ![](../media/Lab-04/image067.jpg)
  
-10.	Di nuovo, attendere circa un minuto affinché la pipeline completi il caricamento e quando tutte le voci nel menu Output indicano **Riuscito** continuare con il successivo passaggio.
+10. Di nuovo, attendere circa un minuto affinché la pipeline completi il caricamento e quando tutte le voci nel menu Output indicano **Riuscito** continuare con il successivo passaggio.
 
     ![](../media/Lab-04/image070.jpg)
 
-11.	Una volta completata la pipeline dei dati, convalidare i risultati nel database KQL. Tornare al set di query KQL **Create Tables** e passare alla scheda **Silver Layer**.
+11. Una volta completata la pipeline dei dati, convalidare i risultati nel database KQL. Tornare al set di query KQL **Create Tables** e passare alla scheda **Silver Layer**.
  
-12.	Su una nuova riga, eseguire una query sulla tabella SilverAddress scrivendo la query seguente ed eseguendo il codice.
+12. Su una nuova riga, eseguire una query sulla tabella SilverAddress scrivendo la query seguente ed eseguendo il codice.
+    
     ```
     SilverAddress
 
     | take 100
     ```
+    
     ![](../media/Lab-04/image073.png)
 
-13.	Notare che nei risultati la tabella **SilverAddress** ha una colonna aggiuntiva, **IngestionDate**, che non è fisicamente presente nella tabella **Address**.
+13. Notare che nei risultati la tabella **SilverAddress** ha una colonna aggiuntiva, **IngestionDate**, che non è fisicamente presente nella tabella **Address**.
 
-      ![](../media/Lab-04/image076.png)
+    ![](../media/Lab-04/image076.png)
 
 ## Attività 4. Creazione di un livello Gold con viste materializzate
 
@@ -332,6 +339,7 @@ Ora che il livello trasformato di dati si trova nel livello Silver, è possibile
 
     }
     ```
+
 3. Una volta incollato il codice, evidenziarlo ed eseguirlo facendo clic sul pulsante **Run**.
 
    ![](../media/Lab-04/image081.jpg)
@@ -345,11 +353,13 @@ Ora che il livello trasformato di dati si trova nel livello Silver, è possibile
     ![](../media/Lab-04/image086.png)
  
 6. Nella finestra di query eseguire il codice seguente per effettuare una query sulla nuova vista materializzata.
+    
     ```
     GoldAddress
 
     | take 1000
     ```
+    
     ![](../media/Lab-04/image089.png)
 
 7. Questa query restituirà la riga con la **IngestionDate** più recente per ogni **AddressID** univoco nella tabella **SilverAddress**.
@@ -415,11 +425,12 @@ Ora che il livello trasformato di dati si trova nel livello Silver, è possibile
 
     }
     ```
+
 9. A questo punto dovrebbero essere presenti sei viste materializzate nel database KQL.
 
-     ![](../media/Lab-04/image091.png)
+    ![](../media/Lab-04/image091.png)
  
-10.	Si è così creato un framework Medallion all’interno di un database KQL. Sebbene questi dati siano facilmente usabili, alcuni utenti non hanno mai lavorato con Kusto e preferirebbero accedere ai dati di queste tabelle con strumenti diversi. Nella prossima attività si creerà un lakehouse. Quindi, usando la funzionalità di disponibilità di Onelake, abilitata nel Lab 01, rendere accessibili alcune delle tabelle del database KQL tramite lakehouse, usando i collegamenti
+10. Si è così creato un framework Medallion all’interno di un database KQL. Sebbene questi dati siano facilmente usabili, alcuni utenti non hanno mai lavorato con Kusto e preferirebbero accedere ai dati di queste tabelle con strumenti diversi. Nella prossima attività si creerà un lakehouse. Quindi, usando la funzionalità di disponibilità di Onelake, abilitata nel Lab 01, rendere accessibili alcune delle tabelle del database KQL tramite lakehouse, usando i collegamenti
  
 # Lakehouse Fabric e disponibilità di OneLake
 
@@ -449,36 +460,37 @@ All’interno dell’interfaccia utente del lakehouse sono disponibili alcune op
 
 3. All’interno del menu selezionare il database KQL **eh_Fabrikam** per importare le tabelle da tale spazio di archiviazione nel lakehouse senza duplicare o copiare i dati.
 
-     ![](../media/Lab-04/image102.jpg)
+    ![](../media/Lab-04/image102.jpg)
  
 4. Fare clic su **Avanti** nella parte inferiore del menu.
 
 5. Aprire le tabelle all’interno di **eh_Fabrikam** facendo clic sull’**icona >** e selezionare le seguenti tabelle da importare.
 
     - Clicks
+    
     - Impressions
+    
     - InternetSales
       
       ![](../media/Lab-04/image104.png)
 
-6.	Queste tabelle potrebbero rivelarsi molto utili per tutti gli utenti che intendono usare
-i notebook in Fabric. Questi dati potrebbero essere usati nella data science o per eseguire il training di un modello in grado di prevedere a quale collegamento potrebbero essere interessati gli utenti.
+6. Queste tabelle potrebbero rivelarsi molto utili per tutti gli utenti che intendono usare i notebook in Fabric. Questi dati potrebbero essere usati nella data science o per eseguire il training di un modello in grado di prevedere a quale collegamento potrebbero essere interessati gli utenti.
  
-7.	Fare clic su **Avanti**.
+7. Fare clic su **Avanti**.
 
-8.	Verrà visualizzata un’ultima schermata di convalida. Una volta soddisfatti della propria selezione, fare clic sul pulsante **Crea** nella parte inferiore della schermata.
+8. Verrà visualizzata un’ultima schermata di convalida. Una volta soddisfatti della propria selezione, fare clic sul pulsante **Crea** nella parte inferiore della schermata.
 
     ![](../media/Lab-04/image106.jpg)
 
-9.	Tutte le tabelle selezionate dal database KQL sono ora visibili all’interno del lakehouse.
+9. Tutte le tabelle selezionate dal database KQL sono ora visibili all’interno del lakehouse.
 
     ![](../media/Lab-04/image108.png)
 
-10.	Fare clic sulla tabella denominata **Clicks**.
+10. Fare clic sulla tabella denominata **Clicks**.
 
     ![](../media/Lab-04/image110.jpg)
  
-11.	Un esempio dei record di quella tabella è ora visualizzato nell’interfaccia utente.
+11. Un esempio dei record di quella tabella è ora visualizzato nell’interfaccia utente.
 
 **Nota: potrebbero trascorrere alcune ore prima che i dati vengano visualizzati in OneLake (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability)**
 
@@ -491,7 +503,7 @@ Dopo aver creato il framework Medallion, gli utenti hanno usato i collegamenti d
 # Riferimenti
 Fabric Real-time Intelligence in a Day (RTIIAD) presenta alcune delle funzioni chiave disponibili in Microsoft Fabric. Nel menu di servizio, la sezione Guida (?) include collegamenti ad alcune risorse utili.
 
-  ![](../media/Lab-04/image113.jpg)
+![](../media/Lab-01/image067.jpg)
  
 Di seguito sono riportate ulteriori risorse utili che consentiranno di progredire nell’uso di Microsoft Fabric.
 - Fare riferimento al post del blog per leggere l’[annuncio completo sulla disponibilità generale di Microsoft Fabric](https://aka.ms/Fabric-Hero-Blog-Ignite23)
