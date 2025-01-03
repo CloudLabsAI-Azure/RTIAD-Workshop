@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratório 2
 
+![](../media/lab-02/main.jpg)
+
 ## Sumário
 
 - Estrutura do documento
@@ -49,37 +51,59 @@ Ao final deste laboratório, você terá aprendido a:
 
 1. Abra o **workspace do Fabric** criado no último laboratório. Daqui, podemos ver o Eventhouse que criamos.
 
+    ![](../media/lab-02/image004.png)
+
 2. Navegue até o Hub em Tempo Real selecionando o botão **Em tempo real** no lado esquerdo, mesmo que não vejamos nenhum fluxo de dados que mudará em breve.
+
+     ![](../media/lab-02/image006.png)
 
 3. Selecione o botão verde **+ Conectar a fonte de dados**, que deve estar no canto superior direito.
 
+     ![](../media/lab-02/image008.png)
+
 4. Será aberta uma janela que permitirá a você selecionar uma fonte para nossos dados de fluxo. Como discutimos antes, há muitas opções fantásticas para escolher, mas para esta classe selecionaremos a opção "Hubs de Eventos do Azure". Se você não vir "Hubs de Eventos do Azure" facilmente, selecione as **Fontes da Microsoft** na parte superior para filtrar as opções exibidas.
+
+     ![](../media/lab-02/image010.png)
 
 5. Agora é necessário criar uma conexão com o Hub de Eventos do Azure. Clique no texto **Nova conexão**, pois você não tem uma conexão no momento.
 
+     ![](../media/lab-02/image012.png)
+
 6. Na página de detalhes do ambiente, copie e cole todas as configurações de conexão necessárias nos campos apropriados. Para estes laboratórios, estamos nos conectando a um Hub de Eventos com dados de fluxo sendo enviados de um notebook Python. Esse notebook está criando transações de vendas falsas a uma taxa de cerca de 3.100 transações por hora.
 
-Namespace do Hub de Eventos: **rtiadhub{userid} -- fornecido por cloudlabs**
+- Namespace do Hub de Eventos: **rtiadhub{userid} -- fornecido por cloudlabs**
 
-Hub de Eventos: **rti-iad-fabrikam**
+- Hub de Eventos: **rti-iad-fabrikam**
 
-Nome da Chave de Acesso Compartilhada: **rti-reader**
+- Nome da Chave de Acesso Compartilhada: **rti-reader**
 
-Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
+- Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
 7. Depois que todas as propriedades forem preenchidas, clique em **Conectar**.
 
+     ![](../media/lab-02/image014.png)
+
 8. Na configuração da fonte de dados do Hub de Eventos do Azure, você talvez precise modificar o **Grupo de consumidores** do Hub de Eventos para garantir acesso a um ponto de acesso exclusivo ao fluxo de dados. Para este workshop, você pode deixar o valor "$Default" como mostrado abaixo.
+
+    ![](../media/lab-02/image016.png)
 
 9. Antes de finalizarmos essa fonte de dados e o Eventstream, vamos seguir em frente e renomear nosso Eventstream para algo mais útil. Na seção "Detalhes do fluxo" à direita, selecione o ícone de lápis ao lado do "Nome do Eventstream" e vamos chamar nosso Eventstream de "**es_Fabrikam_InternetSales".**
 
+    ![](../media/lab-02/image018.png)
+
 10. Agora, podemos clicar em **Próximo**, o que nos levará a uma página de visão geral final.
+
+    ![](../media/lab-02/image020.png)
 
 11. Nessa tela de visão geral, verifique se o conteúdo parece correto e clique em **Criar fonte**.
 
-**Observação:** Seus detalhes serão diferentes do que você vê na captura de tela.
+  > **Observação:** Seus detalhes serão diferentes do que você vê na captura de tela.
+
+  ![](../media/lab-02/image022.png)
 
 12. Depois que o Eventstream e a fonte do Eventstream forem criados, selecione a opção "**Abrir Eventstream**"
+
+    ![](../media/lab-02/image024.png)
 
 13. Isso levará você à interface do usuário do Eventstream. É aqui que você verá seu fluxo de dados de origem fluindo para nosso eventstream e podemos adicionar eventos de transformação também.
 
@@ -87,21 +111,37 @@ Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
 **Observação:** se você receber um status de "Aviso" e uma política de auditoria, não há problemas. O fluxo ainda funcionará.
 
+  ![](../media/lab-02/image026.png)
+
 15. Agora você deve ver uma amostra dos dados na janela inferior.
 
+    ![](../media/lab-02/image028.png)
+
 16. Isso mostrará uma visualização dos dados que estão sendo recebidos do Hub de Eventos do Azure. Se deslizar a barra de rolagem horizontal inferior até o lado direito da visualização, você poderá ver a hora em que os dados foram recebidos no Hub de Eventos em duas colunas chamadas **EventProcessedUtcTime** e **EventEnqueuedUtcTime**. Isso deve refletir a data/hora atual no formato UTC.
+
+    ![](../media/lab-02/image030.png)
 
 ## Tarefa 2: Destino do Eventstream de configuração
 
 1. Clique no bloco dentro da área da tela chamada "Alternar para o modo de edição para Transformar o evento ou adicionar o destino"
 
+    ![](../media/lab-02/image032.png)
+
 2. Na interface do usuário do Eventstream, clique na opção **Transformar eventos ou adicionar destino** para abrir o menu suspenso.
+
+    ![](../media/lab-02/image034.png)
 
 3. Exiba a lista de operações disponíveis que podem ser feitas no fluxo.
 
+    ![](../media/lab-02/image036.png)
+
 4. Veja abaixo a seção **Operações** e você encontrará **Destinos**. Selecione a opção que diz **Eventhouse**.
 
+    ![](../media/lab-02/image038.png)
+
 5. Um novo menu será aberto no lado direito da tela. O primeiro item que você precisa modificar para o destino é o **modo de ingestão de dados**. As duas opções são **Ingestão direta** e **Processamento de eventos antes da ingestão.** Como não vamos transformar nada em nosso Eventstream e carregar diretamente essas informações em uma tabela de Banco de Dados KQL, certifique-se de ter selecionado a opção **Ingestão direta**.
+
+    ![](../media/lab-02/image040.png)
 
 6. Modifique o restante das configurações com os seguintes detalhes abaixo.
 
@@ -113,25 +153,43 @@ Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
  - Banco de Dados KQL -- **eh_Fabrikam**
 
+    ![](../media/lab-02/image042.png)
+
 7. Clique em Salvar.
 
 8. Com o Eventstream configurado, clique no botão **Publicar** para salvar este Eventstream e iniciar sua ingestão.
 
+    ![](../media/lab-02/image044.png)
+
 9. Se você notar que a fonte **AzureEventHub** ficou inativa, defina o botão de alternância para o estado "Ativo" e escolha a opção "Agora" quando a caixa de diálogo for aberta
+
+    ![](../media/lab-02/image046.png) ![](../media/lab-02/image048.png)
 
 10. Escolha a opção **Configurar** em **Destino** para mapear corretamente o fluxo para uma tabela no Banco de Dados KQL.
 
+    ![](../media/lab-02/image050.png)
+
 11. Clique na opção **+ Nova tabela** abaixo do banco de dados **eh_Fabrikam**.
+
+    ![](../media/lab-02/image052.png)
 
 12. Dê à nova tabela o nome **InternetSales** e, em seguida, clique na marca de seleção.
 
+    ![](../media/lab-02/image054.png)
+
 13. Talvez seja necessário atualizar o **"Nome da conexão de dados"** para atender aos requisitos. Vamos renomeá-lo para **"eh_Fabrikam_es_InternetSales"**. Em seguida, poderemos clicar em **Próximo.**
 
+    ![](../media/lab-02/image056.png)
+
 14. Após alguns momentos de pesquisa de eventos, a interface do usuário deverá permitir que você veja que os dados de exemplo foram encontrados. Clique em **Concluir** na parte inferior da tela.
+
+      ![](../media/lab-02/image058.png)
 
 15. Depois disso, você verá um resumo. Depois que todas as marcas de verificação ficarem verde, clique em **Fechar** para avançar.
 
 16. Depois de ver a interface do usuário mostrando os mapeamentos da origem para o Eventstream para o destino, você configurou e iniciou corretamente um fluxo de dados no Banco de Dados KQL.
+
+      ![](../media/lab-02/image060.png)
 
 # KQL (Linguagem de Consulta Kusto)
 
@@ -139,15 +197,27 @@ Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
 1. Volte para o workspace **RTI_username**. Você deve ver o novo Eventstream que acabou de criar ao lado de todos os itens Evenhouse.
 
+    ![](../media/lab-02/image062.png)
+
 2. Abra o item do Banco de Dados KQL **eh_Fabrikam**.
+
+    ![](../media/lab-02/image064.png)
 
 3. Dentro dessa experiência, você pode obter uma visão geral da estrutura atual, tamanho e uso do Banco de Dados KQL. Como o Eventstream está enviando dados para esse Banco de Dados KQL de forma consistente, você notará que a quantidade de armazenamento aumentará com o tempo.
 
+    ![](../media/lab-02/image066.png)
+
 4. Clique no **ícone de atualização** no canto superior direito da tela.
+
+    ![](../media/lab-02/image068.png)
 
 5. O tamanho do banco de dados deve ter aumentado. O valor que você vê pode não ser exato em comparação com as capturas de tela no restante do laboratório. Dependendo de quanto tempo você levar para concluir o conteúdo, terá recebido menos ou mais registros do que outros membros da classe. Isso não representa problema nenhum e não afetará sua capacidade de acompanhar de forma alguma.
 
+    ![](../media/lab-02/image070.png)
+
 6. Na área de navegação do banco de dados, no lado esquerdo da tela, clique na tabela dentro do seu Banco de Dados KQL, denominada **InternetSales**, e você verá uma visão geral da tabela.
+
+    ![](../media/lab-02/image072.png)
 
 7. Essa visão geral fornecerá detalhes de metadados sobre a tabela que você criou e quaisquer dados de streaming ativo com seu Eventstream. Novamente, o tamanho da tabela e o número de linhas dentro da tabela variam de aluno para aluno e não afetarão seus resultados finais deste ou de qualquer laboratório. Alguns itens adicionais para chamar a atenção nesse menu incluem:
 
@@ -159,25 +229,44 @@ Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
 - **Detalhes da Tabela** -- mostra o tamanho de tabela Compactado e Original, a disponibilidade do OneLake, o número de linhas nas tabelas e vários outros detalhes.
 
+    ![](../media/lab-02/image074.png)
+
 8. Retorne à exibição do banco de dados e clique em **Explorar seus dados** no canto superior direito.
 
-9. Isso abrirá o Conjunto de Consultas KQL padrão que foi criado junto com o Eventhouse. Há algumas consultas pré-escritas que já foram criadas, mas precisam de algumas pequenas personalizações. Há também há dois links para a documentação da Microsoft que podem ser úteis ao aprender KQL ou também examinar as conversões de SQL em KQL
-que serão discutidas posteriormente ao longo desta aula.
+    ![](../media/lab-02/image076.png)
+
+9. Isso abrirá o Conjunto de Consultas KQL padrão que foi criado junto com o Eventhouse. Há algumas consultas pré-escritas que já foram criadas, mas precisam de algumas pequenas personalizações. Há também há dois links para a documentação da Microsoft que podem ser úteis ao aprender KQL ou também examinar as conversões de SQL em KQL que serão discutidas posteriormente ao longo desta aula.
+
+    ![](../media/lab-02/image078.png)
 
 10. Clique na **Linha 8** e onde a consulta disser **YOUR_TABLE_HERE**, substitua o texto pelo nome da tabela, **InternetSales**.
 
+    ![](../media/lab-02/image080.png)
+
 11. Realce as **Linhas 8 e 9** e clique no botão **Run** no canto superior esquerdo da janela.
+
+    ![](../media/lab-02/image082.png)
 
 12. A consulta usa o operador **take** para trazer de volta um número especificado de linhas. Quando a consulta for executada, ela extrairá dados da tabela InternetSales e trará de volta qualquer número de linhas que você conectou à consulta. Para este exemplo, 100 linhas retornarão somente, como uma cláusula WHERE em SQL. As linhas específicas retornadas não podem ser determinadas com esse operador e os resultados de sua consulta
 variarão do resultado de outros.
 
+    ![](../media/lab-02/image084.png)
+
 13. Clique na **Linha 12** e onde a consulta disser **YOUR_TABLE_HERE**, substitua o texto pelo nome da tabela, **InternetSales**.
+
+    ![](../media/lab-02/image086.png)
 
 14. Realce as **Linhas 12 e 13** e clique no botão **Run** no canto superior esquerdo da janela.
 
+    ![](../media/lab-02/image088.png)
+
 15. Essa consulta usa o operador count. Essa consulta retornará um número agregado de registros existentes no momento da execução da consulta na tabela Banco de Dados KQL. Sinta-se à vontade para executar essa consulta mais algumas vezes e você deverá notar que o número de registros aumenta a cada poucos segundos.
 
+    ![](../media/lab-02/image090.png)
+
 16. Repita as etapas anteriores para a consulta final criada automaticamente para você na **Linha 16/17** e execute a consulta novamente.
+
+    ![](../media/lab-02/image092.png)
 
 17. Essa consulta fornecerá o número de registros que foram ingeridos na tabela dentro de uma janela de uma hora. A distribuição geral desses registros para os dados que você está ingerindo no momento será de aproximadamente 4.100 por hora. Haverá pequenas variações dentro dos números de transações por hora, e esta consulta detalhará se menos ou mais registros foram ingeridos em cada janela.
 
@@ -194,6 +283,8 @@ Talvez você esteja trabalhando com a Linguagem de Consulta Kusto pela primeira 
  explain
  ```
 
+  ![](../media/lab-02/image096.png)
+
 2. A linha de comentário "---" seguida da palavra-chave "explain" permitirá que você crie agora uma consulta SQL e retorne um resultado com a consulta KQL que poderia ser usado para obter uma consulta e resultado semelhantes. Abaixo, insira a seguinte consulta para explicar como seria a consulta KQL:
 
     ```
@@ -203,20 +294,36 @@ Talvez você esteja trabalhando com a Linguagem de Consulta Kusto pela primeira 
     , ProductKey FROM InternetSales GROUP BY ProductKey
     ````
 
+  ![](../media/lab-02/image100.png)
+
 3. Essa é uma consulta SQL simples que recuperará resultados da tabela InternetSales para retornar duas colunas, a chave do produto (Product Key) e uma contagem do número de ordens. Como há uma coluna agregada e uma coluna não agregada, você deverá usar um GROUP BY para retornar resultados para cada produto individual. Execute toda a consulta começando com o "---" até o final da consulta T-SQL.
+
+    ![](../media/lab-02/image102.png)
 
 4. A saída da consulta explain deve ser um registro único com a consulta KQL traduzida como resultado. Clique no **ícone de circunflexo (>)** para expandir os
 resultados e facilitar a tradução.
 
+    ![](../media/lab-02/image104.png)
+
 5. Clique no painel de consulta realçado abaixo em laranja. Isso permitirá que você selecione a consulta KQL traduzida e a copie. Cole essa consulta no Conjunto de Consultas KQL que temos usado
+
+    ![](../media/lab-02/image106.png)
 
 6. Com os resultados no seu painel de consulta, realce e execute a consulta para recuperar os resultados. O operador **summarize** produzirá uma tabela que agrega o conteúdo da tabela de entrada enquanto determina como agrupar cada registro **por Chave do Produto (Product Key)** e o operador **project** selecionará as colunas a serem incluídas, renomeadas ou descartadas na inserção de novas colunas computadas.
 
+    ![](../media/lab-02/image108.png)
+
 7. Sinta-se à vontade para explorar a lista de operações na folha de referências do SQL para KQL na parte superior do conjunto de consultas para obter capacidades e conversões adicionais.
+
+    ![](../media/lab-02/image110.png)
 
 8. Em vez de usar o KQL, outra alternativa para consultar os resultados do Banco de Dados KQL no Fabric é escrever e executar uma consulta T-SQL. Realce a instrução SQL original que foi usada para traduzir a consulta KQL e execute somente isso.
 
+    ![](../media/lab-02/image112.png)
+
 9. Isso também produzirá resultados perfeitamente válidos sem ter que converter para KQL de antemão.
+
+    ![](../media/lab-02/image114.png)
 
 # Conjunto de Consultas KQL
 
@@ -226,11 +333,19 @@ resultados e facilitar a tradução.
 
 2. Observe na parte superior do Conjunto de Consultas que o nome padrão da nossa primeira página é o mesmo nome do nosso banco de dados.
 
+    ![](../media/lab-02/image116.png)
+
 3. Vamos seguir em frente e renomear esta guia clicando no ícone de lápis. Vamos chamá-la de "**My First KQL Query"**.
+
+    ![](../media/lab-02/image118.png)
 
 4. No futuro, se quisermos isolar nosso código, poderemos simplesmente criar guias adicionais clicando no ícone "+".
 
-5. Retorne para o seu workspace **RTI_username**. Você deve ter os objetos a seguir presentes
+    ![](../media/lab-02/image120.png)
+
+5. Retorne para o seu workspace **RTI_username**. Você deve ter os objetos a seguir presentes.
+
+    ![](../media/lab-02/image122.png)
 
 # Resumo
 
@@ -241,6 +356,8 @@ Neste laboratório, você começou configurando uma conexão com um Hub de Event
 O Fabric Real-time Intelligence in a Day (RTIIAD) apresenta algumas das principais funções disponíveis no Microsoft Fabric.
 
 No menu do serviço, a seção Ajuda (?) tem links para ótimos recursos.
+
+![](../media/lab-02/image125.jpg)
 
 Veja aqui mais alguns recursos que ajudarão você com as próximas etapas do Microsoft Fabric.
 
