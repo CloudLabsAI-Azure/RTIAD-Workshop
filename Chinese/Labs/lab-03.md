@@ -76,10 +76,10 @@
 6.	选择**移除**该字段的选项。对于来自事件中心的此数据流，未使用分区，因此本列对我们没有帮助，我们要将其删除。
  
 7.	删除本流不需要的以下所有字段。
-   - userAgent
-   - page_loading_seconds
-   - EventProcessedUtcTime
-   - EventEnqueredUtcTime
+       - userAgent
+       - page_loading_seconds
+       - EventProcessedUtcTime
+       - EventEnqueredUtcTime
 
 您应如下图所示保留以下字段。
   
@@ -113,9 +113,9 @@
 9.	单击 **Filter** 的**铅笔图标**以编辑其设置。
 
 10.	在屏幕右侧显示的弹出窗口中，自定义筛选条件以反映使用以下值仅返回 IMPRESSION 值的方法。请记住，筛选器转换区分大小写
-   - **操作名称** - Impressions
-   - **选择要筛选的字段** - eventType
-   - **保留事件(当值** - 等于 - IMPRESSION（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
+       - **操作名称** - Impressions
+       - **选择要筛选的字段** - eventType
+       - **保留事件(当值** - 等于 - IMPRESSION（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
  
 11.	选择**保存**选项以保留您的更改。
 
@@ -142,11 +142,11 @@
 22.	针对 Eventhouse 目标单击**铅笔图标**。
  
 23.	针对此目标，配置以下属性。
-   - **目标名称** - dbo-Clicks
-   - **工作区** - RTI_username
-   - **Eventhouse** - eh_Fabrikam
-   - **KQL 数据库** - eh_Fabrikam
-   - **目标表** - 创建名为 **Clicks** 的新表
+       - **目标名称** - dbo-Clicks
+       - **工作区** - RTI_username
+       - **Eventhouse** - eh_Fabrikam
+       - **KQL 数据库** - eh_Fabrikam
+       - **目标表** - 创建名为 **Clicks** 的新表
  
 24.	单击弹出窗口底部的**保存**。
 
