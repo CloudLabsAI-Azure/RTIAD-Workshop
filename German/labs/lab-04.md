@@ -1,6 +1,4 @@
-
-# Microsoft Fabric
-## Real-Time Intelligence in a Day Übung 4
+# Microsoft Fabric Real-Time Intelligence in a Day Übung 4
  
  ![](../media/lab-04/german-4.png)
 

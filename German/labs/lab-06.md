@@ -1,5 +1,4 @@
-# Microsoft Fabric
-## Real-Time Intelligence in a Day Übung 6
+# Microsoft Fabric Real-Time Intelligence in a Day Übung 6
 
  ![](../media/lab-06/german-6.png)
 

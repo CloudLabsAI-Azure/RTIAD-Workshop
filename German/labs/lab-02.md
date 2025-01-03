@@ -1,3 +1,4 @@
+# Microsoft Fabric Real-Time Intelligence in a Day Übung 2
 
 ![](../media/lab-02/german-2.png)
 

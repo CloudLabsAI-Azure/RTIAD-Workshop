@@ -1,4 +1,6 @@
- ![](../media/lab-01/lab-01ger.png)
+# Microsoft Fabric Real-Time Intelligence in a Day Übung 1
+
+![](../media/lab-01/lab-01ger.png)
  
  # Inhalt
 
@@ -14,7 +16,6 @@
     - Aufgabe 4: Fabric-Arbeitsbereich erstellen	
     - Aufgabe 5: Ein Eventhouse erstellen	
 - Referenzen	
-
  
 # Dokumentstruktur
 
@@ -52,15 +53,13 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 1. Öffnen Sie den **Microsoft Edge-Browser** auf dem Desktop, und navigieren Sie zu https://app.fabric.microsoft.com/. Die Anmeldeseite wird angezeigt. **Hinweis:** Wenn Sie nicht die Übungsumgebung nutzen und bereits ein Power BI-Konto haben, können Sie den Browser im privaten Modus/Inkognito-Modus verwenden.
 
-    ![](../media/lab-01/image003.png)
+   ![](../media/lab-01/image003.png)
 
-2. Geben Sie den **Benutzernamen**, den Sie auf der Registerkarte **Umgebungsvariablen**
-(neben der Übungsanleitung) finden, sowie die **E-Mail** ein, und klicken Sie auf **Senden**.
+2. Geben Sie den **Benutzernamen**, den Sie auf der Registerkarte **Umgebungsvariablen** (neben der Übungsanleitung) finden, sowie die **E-Mail** ein, und klicken Sie auf **Senden**.
 
    ![](../media/lab-01/image005.jpg)
 
 3. Die Seite **Kennwort** wird angezeigt. Geben Sie das **Kennwort** ein, das Sie auf der Registerkarte **Umgebungsvariablen** (neben der Übungsanleitung) finden und Ihnen von Ihrem Kursleiter mitgeteilt wurde.
-
 
 4. Klicken Sie auf **Anmelden**, und folgen Sie den Anweisungen, um sich bei Fabric anzumelden.
 
@@ -73,7 +72,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
    Wenn Sie mit Fabric-Elementen arbeiten möchten, benötigen Sie eine Testlizenz und einen Arbeitsbereich mit einer Fabric-Lizenz. Lassen Sie uns das einrichten.
 
 6. Klicken Sie oben rechts auf dem Bildschirm auf das **Benutzersymbol**.
-
 
 7. Wählen Sie **Kostenlose Testversion** aus.
 
@@ -123,8 +121,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-01/image026.jpg)
 
-3. Der Echtzeit-Hub ist der zentrale Ort zum Streamen übertragener Daten in Ihrer gesamten
-Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub bereitgestellt. Damit können Sie übertragene Daten aus einer Vielzahl von Quellen problemlos erkennen, erfassen, verwalten und nutzen.
+3. Der Echtzeit-Hub ist der zentrale Ort zum Streamen übertragener Daten in Ihrer gesamten Organisation. Jeder Microsoft Fabric-Mandant wird automatisch mit diesem Hub bereitgestellt. Damit können Sie übertragene Daten aus einer Vielzahl von Quellen problemlos erkennen, erfassen, verwalten und nutzen.
  
 4. Innerhalb des Echtzeit-Hubs haben Sie Zugriff auf drei verschiedene Arten der Datenintegration.
 
