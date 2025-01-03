@@ -1,45 +1,29 @@
-Contenido 
-Estructura del documento	3
-Introducción	3
-Eventstreams de Fabric	3
-Tarea 1: Crear un Eventstream	3
-Tarea 2: Transformar el Eventstream	7
-Tarea 3: Dividir Eventstream y cargar dos destinos	11
-Agregar más datos a la base de datos KQL	18
-Tarea 4: Validar tablas de datos de eventos	18
-Tarea 5: Crear accesos directos a la base de datos KQL para tablas de dimensiones	19
-Resumen	25
-Referencias	26
+# Contenido 
+- Estructura del documento
+- Introducción
+- Eventstreams de Fabric
+    - Tarea 1: Crear un Eventstream
+    - Tarea 2: Transformar el Eventstream
+    - Tarea 3: Dividir Eventstream y cargar dos destinos
+- Agregar más datos a la base de datos KQL
+    - Tarea 4: Validar tablas de datos de eventos
+    - Tarea 5: Crear accesos directos a la base de datos KQL para tablas de dimensiones
+- Resumen
+- Referencias
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-Estructura del documento 
+# Estructura del documento 
 El laboratorio incluye pasos que el usuario debe seguir junto con capturas de pantalla asociadas que sirven de ayuda visual. En cada captura de pantalla, las secciones se resaltan con cuadros de color naranja para indicar en qué áreas debe centrarse el usuario. 
-Introducción 
+
+# Introducción 
 En este laboratorio, creará otro Eventstream para ingerir datos adicionales en nuestro Eventhouse existente. Veremos cómo incluir transformaciones dentro del Eventstream para controlar qué datos deseamos agregar a la base de datos KQL
 Al final de este laboratorio, habrá aprendido sobre: 
 •	Procesamiento y transformación de Eventstream
 •	Escritura sobre consultas KQL para combinar datos de una base de datos externa
 •	Uso de KQL para consultar datos y visualizar dentro de Power BI
-Eventstreams de Fabric
-Tarea 1: Crear un Eventstream 
+
+# Eventstreams de Fabric
+## Tarea 1: Crear un Eventstream 
+
 1.	 Abra el área de trabajo de Fabric que ha estado usando para el curso de hoy.
 
  
