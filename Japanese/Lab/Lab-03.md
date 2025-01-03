@@ -161,7 +161,7 @@
 28. Eventstream が実行されると、Eventstream ユーザー インターフェイスがわずかに変化します。イベント ハブからデータをストリーミングし、そのデータ ストリームを変換および分割して、2 つの別々の KQL データベース テーブルに読み込んでいることが示されます。
 
 # KQL データベースへのデータの追加
-##タスク 4: イベント データ テーブルを検証する
+## タスク 4: イベント データ テーブルを検証する
 
 1.	**RTI_username** ワークスペースに戻ります。
 
@@ -174,92 +174,133 @@
 ## タスク 5: 分析コード テーブルの KQL データベース ショートカットを作成する
 ここまではストリーミング データを扱ってきましたが、取り込んだデータからインテリジェンスを引き出すためにはまだ重要な要素がいくつか欠けています。このタスクでは、外部の Azure SQL Database から、KQL データベース内で分析コード テーブルとして機能するデータを取り込みます。これにより、現在ストリーミングしているデータをより適切に表すことができるようになります。たとえば、すべてのテーブルには数値フィールドである製品 ID の形式が含まれていますが、何らかの製品名を表示できると便利です。これをサポートするために必要なデータは現在、外部の Azure SQL Database にあります。これらの分析コード テーブルのいくつかに接続するのがどれだけ簡単かを確認してみましょう。
 
-1.	eh_Fabrikam データベースで、New related item というップダウン メニューをクリックします。次に、KQL Queryset というオプションを選択します。
+1.	**eh_Fabrikam** データベースで、**New related item** というップダウン メニューをクリックします。次に、KQL Queryset というオプションを選択します。
 
-2.	KQL クエリセットに Create Tables という名前を付け、作成ボタンをクリックします。
+2.	KQL クエリセットに **Create Tables** という名前を付け、**作成**ボタンをクリックします。
 
-3.	OneLake データ ハブが開き、“eh_Fabrikam” KQL データベースが選択する唯一のオプションになります。このデータベースを選択し、接続をクリックします。
+3.	OneLake データ ハブが開き、**“eh_Fabrikam”** KQL データベースが選択する唯一のオプションになります。このデータベースを選択し、**接続**をクリックします。
 
-4.	新しいインターフェイスのクエリ ウィンドウ内で 1 回クリックし、キーボード ショートカット Ctrl + A を使ってすべてのテキストを強調表示します。すべてが強調表示されたら、すべてを削除します。
+4.	新しいインターフェイスのクエリ ウィンドウ内で 1 回クリックし、キーボード ショートカット **Ctrl + A** を使ってすべてのテキストを強調表示します。すべてが強調表示されたら、すべてを削除します。
  
-5.	空白のクエリ ウィンドウに次の KQL スクリプトを入力します。このスクリプトは、外部の Azure SQL Database への接続を作成し、それを KQL データベース内でショートカットとして使用できるようにします。ショートカットは読み取り専用モードで関連付けられ、KQL データベースに取り込まれたストリーミング データとともにクエリを表示および実行することが可能になります。
+5.	空白のクエリ ウィンドウに次の KQL スクリプトを入力します。このスクリプトは、外部の Azure SQL Database への接続を作成し、それを KQL データベース内で**ショートカット**として使用できるようにします。**ショートカット**は読み取り専用モードで関連付けられ、KQL データベースに取り込まれたストリーミング データとともにクエリを表示および実行することが可能になります。
+
+    ```
+    .execute database script <|
+    //External tables - shortcuts
+    // connect to operational Database with external table Product
+    .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
+    kind=sql
+    table=[SalesLT.Product]
+    ( 
+    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    )
+    with 
+    (
+    createifnotexists = true
+    )  
+    // connect to operational Database with external table ProductCategory
+    .create external table productCategories (ProductCategoryID: int, Name: string) 
+    kind=sql
+    table=[SalesLT.ProductCategory]
+    ( 
+     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+    with 
+    (
+    createifnotexists = true
+    )
+    ```
 
 
-
-6.	Run ボタンをクリックしてスクリプトを実行します。
+6.	**Run** ボタンをクリックしてスクリプトを実行します。
  
-7.	データベース エクスプローラー ウィンドウに、Shortcuts という新しいフォルダーが表示され、そのフォルダー内に、この KQL データベースにリンクされた 2 つの追加テーブルが表示されます。これらのテーブルは Azure SQL Database 内に存在しますが、実行したスクリプトによって、これらのテーブルはこの KQL データベースにリンクされ、InternetSales およびイベント テーブルに結合されています。
+7.	データベース エクスプローラー ウィンドウに、**Shortcuts** という新しいフォルダーが表示され、そのフォルダー内に、この KQL データベースにリンクされた 2 つの追加テーブルが表示されます。これらのテーブルは Azure SQL Database 内に存在しますが、実行したスクリプトによって、これらのテーブルはこの KQL データベースにリンクされ、InternetSales およびイベント テーブルに結合されています。
  
 8.	データベースに分析コードの特性が備わったことで、質問に答えたり、レポートやクエリの利用者に対して、ビジネス全体に関する分析情報をテーブルから得たりして、より多くのコンテキストを提供できるようになります。次の KQL クエリを実行して、その 1 つを確認してみましょう。
 
- 
+    ```
+    InternetSales
+      | join kind=inner 
+      (external_table("products")) on ($left.ProductKey == $right.ProductID)
+      | summarize SalesPerProduct=sum(SalesAmount) by Name
+      | project Name, SalesPerProduct
+    ```
 
 9.	これで、会社が販売した個々の製品それぞれのクエリ結果の値が表示されます。
 
+10.	クエリを強調表示した状態で、ツール バーの **Power BI**をクリックします。
+
+11.	これにより、KQL データベース内のデータを使用して Power BI レポートを作成できるようになります。しばらくの間、自由に探索してかまいません。ただし、このデータからレポートを作成する必要はまだありません。先に進む準備ができたら、右上隅にある **X ボタン**をクリックします。
+
+12.	**eh_Fabrikam** KQL データベースに戻ります。
+
+13.	**eh_Fabrikam** のナビゲーション ウィンドウで、**Shortcuts** オプションをクリックします。この KQL データベースに作成したすべてのショートカットが表示されます。これらのショートカットは、Azure SQL 外部テーブル構文を使用する従来の Azure Data Explorer 外部テーブルと見なされ、同じく Fabric 内の KQL データベースでサポートされている OneLake、ADLS、または S3 のショートカットとは異なる方法で構築されていることに注意してください。
  
-
-10.	クエリを強調表示した状態で、ツール バーの Power BIをクリックします。
-
- 
-
-11.	これにより、KQL データベース内のデータを使用して Power BI レポートを作成できるようになります。しばらくの間、自由に探索してかまいません。ただし、このデータからレポートを作成する必要はまだありません。先に進む準備ができたら、右上隅にある X ボタンをクリックします。
-
- 
-
-12.	eh_Fabrikam KQL データベースに戻ります。
- 
-
-13.	eh_Fabrikam のナビゲーション ウィンドウで、Shortcuts オプションをクリックします。この KQL データベースに作成したすべてのショートカットが表示されます。これらのショートカットは、Azure SQL 外部テーブル構文を使用する従来の Azure Data Explorer 外部テーブルと見なされ、同じく Fabric 内の KQL データベースでサポートされている OneLake、ADLS、または S3 のショートカットとは異なる方法で構築されていることに注意してください。
- 
-まとめ
+# まとめ
 このラボでは、別のデータ ストリームを作成しましたが、Fabric の Eventstream のユーザー インターフェイスを使用してストリームを変換することができました。データを 2 つの異なるテーブルに読み込むことで、マーケティング、広告、分析のために eコマース システム内のすべてのクリックとインプレッションを追跡することができました。また、KQL クエリセットの外部テーブル機能を使用して、外部の Azure SQL Database へのショートカットを作成しました。これで、KQL データベース内の売上とクリックのコンテキストをより深く理解するためのいくつかの分析コードができました。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-参考資料
+# 参考資料
 Fabric Real-Time Intelligence in a Day (RTIIAD) では、Microsoft Fabric で使用できる主要な機能の一部をご紹介します。
+
 サービスのメニューにあるヘルプ (?) セクションには、いくつかの優れたリソースへのリンクがあります。
+
  
 Microsoft Fabric の次のステップに役立つリソースをいくつか以下に紹介します。
-•	ブログ記事で Microsoft Fabric の GA に関するお知らせの全文を確認する 
-•	ガイド付きツアーを通じて Fabric を探索する 
-•	Microsoft Fabric の無料試用版にサインアップする 
-•	Microsoft Fabric の Web サイトにアクセスする 
-•	Fabric の学習モジュールで新しいスキルを学ぶ 
-•	Fabric の技術ドキュメントを参照する 
-•	Fabric 入門編の無料の e-book を読む 
-•	https://aka.ms/fabric-communityFabric コミュニティhttps://aka.ms/fabric-communityに参加し、質問の投稿やフィードバックの共有を行い、他のユーザーから学びを得る
-より詳しい Fabric エクスペリエンスのお知らせに関するブログを参照してください。
-•	Fabric の Data Factory エクスペリエンスに関するブログ 
-•	Fabric の Synapse Data Engineering エクスペリエンスに関するブログ 
-•	Fabric の Synapse Data Science エクスペリエンスに関するブログ 
-•	Fabric の Synapse Data Warehousing エクスペリエンスに関するブログ 
-•	Fabric の Real-Time Intelligence エクスペリエンスに関するブログ 
-•	Power BI のお知らせに関するブログ 
-•	Fabric の Data Activator エクスペリエンスに関するブログ 
-•	Fabric の管理とガバナンスに関するブログ 
-•	Fabric の OneLake に関するブログ 
-•	Dataverse と Microsoft Fabric の統合に関するブログ 
+- ブログ記事で [Microsof t Fabric の GA に関するお知らせ](https://www.microsoft.com/en-us/microsoft-fabric/blog/2023/11/15/prepare-your-data-for-ai-innovation-with-microsoft-fabric-now-generally-available/)の全文を確認する
+
+- [ガイド付きツアー](https://guidedtour.microsoft.com/en-us/guidedtour/microsoft-fabric/microsoft-fabric/1/1)を通じて Fabric を探索する
+
+- [Microsoft Fabric の無料試用版](https://www.microsoft.com/en-us/microsoft-fabric/getting-started)にサインアップする
+
+- [Microsoft Fabric のWeb サイト](https://www.microsoft.com/en-in/microsoft-fabric)にアクセスする
+
+- [Fabric の学習モジュール](https://learn.microsoft.com/en-us/training/browse/?products=fabric&resource_type=module)で新しいスキルを学ぶ
+
+- [Fabric の技術ドキュメント](https://learn.microsoft.com/en-us/fabric/)を参照する
+
+- [Fabric 入門編の無料のe-book](https://info.microsoft.com/ww-landing-unlocking-transformative-data-value-with-microsoft-fabric.html) を読む
+
+- [Fabric コミュニティ](https://community.fabric.microsoft.com/)に参加し、質問の投稿やフィードバックの共有を行い、他のユーザーから学びを得る
  
+より詳しい Fabric エクスペリエンスのお知らせに関するブログを参照してください。
+
+- [Fabric のData Factory エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/introducing-data-factory-in-microsoft-fabric/)
+
+- [Fabric のSynapse Data Engineering エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-engineering-in-microsoft-fabric/)
+
+
+- [Fabric のSynapse Data Science エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-science-in-microsoft-fabric/)
+
+- [Fabric のSynapse Data Warehousing エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-warehouse-in-microsoft-fabric/)
+
+- [Fabric のReal-Time Intelligence エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
+
+- [Power BI のお知らせに関するブログ](https://powerbi.microsoft.com/en-us/blog/empower-power-bi-users-with-microsoft-fabric-and-copilot/)
+
+- [Fabric のData Activator エクスペリエンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/driving-actions-from-your-data-with-data-activator/)
+
+- [Fabric の管理とガバナンスに関するブログ](https://blog.fabric.microsoft.com/en-us/blog/administration-security-and-governance-in-microsoft-fabric/)
+
+- [Fabric の OneLake に関するブログ](https://blog.fabric.microsoft.com/en-us/blog/microsoft-onelake-in-fabric-the-onedrive-for-data/)
+
+- [Dataverse とMicrosof t Fabric の統合に関するブログ](https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2023/05/24/new-dataverse-enhancements-and-ai-powered-productivity-with-microsoft-365-copilot/)
+
 © 2024 Microsoft Corporation.All rights reserved.
+
 このデモ/ラボを使用すると、次の条件に同意したことになります。
-このデモ/ラボで説明するテクノロジまたは機能は、ユーザーのフィードバックを取得し、学習エクスペリエンスを提供するために、Microsoft Corporation によって提供されます。ユーザーは、このようなテクノロジおよび機能を評価し、Microsoft にフィードバックを提供するためにのみデモ/ラボを使用できます。それ以外の目的には使用できません。このデモ/ラボまたはその一部を、変更、コピー、配布、送信、表示、実行、再現、発行、ライセンス、著作物の作成、転送、または販売することはできません。
+
+このデモ/ラボで説明するテクノロジまたは機能は、ユーザーのフィードバックを取得 し、学習エクスペリエンスを提供するために、Microsoft Corporation によって提供されます。ユーザーは、このようなテクノロジおよび機能を評価し、Microsoft にフィードバックを提供するためにのみデモ/ラボを使用できます。それ以外の目的には使用できません。このデモ/ラボまたはその一部を、変更、コピー、配布、送信、表示、実行、再現、発行、ライセンス、著作物の作成、転送、または販売することはできません。
+
 複製または再頒布のために他のサーバーまたは場所にデモ/ラボ (またはその一部) をコピーまたは複製することは明示的に禁止されています。
-このデモ/ラボは、前に説明した目的のために複雑なセットアップまたはインストールを必要としないシミュレーション環境で潜在的な新機能や概念などの特定のソフトウェア テクノロジ/製品の機能を提供します。このデモ/ラボで表されるテクノロジ/概念は、フル機能を表していない可能性があり、最終バージョンと動作が異なることがあります。また、そのような機能や概念の最終版がリリースされない場合があります。物理環境でこのような機能を使用するエクスペリエンスが異なる場合もあります。
-フィードバック。このデモ/ラボで説明されているテクノロジ、機能、概念に関するフィードバックを Microsoft に提供する場合、ユーザーは任意の方法および目的でユーザーのフィードバックを使用、共有、および商品化する権利を無償で Microsoft に提供するものとします。また、ユーザーは、フィードバックを含む Microsoft のソフトウェアまたはサービスの特定部分を使用したり特定部分とインターフェイスを持ったりする製品、テクノロジ、サービスに必要な特許権を無償でサード パーティに付与します。ユーザーは、フィードバックを含めるために Microsoft がサード パーティにソフトウェアまたはドキュメントをライセンスする必要があるライセンスの対象となるフィードバックを提供しません。これらの権限は、本契約の後も存続します。
-MICROSOFT CORPORATION は、明示、黙示、または法律上にかかわらず、商品性のすべての保証および条件、特定の目的、タイトル、非侵害に対する適合性など、デモ/ラボに関するすべての保証および条件を拒否します。MICROSOFT は、デモ/ラボから派生する結果、出力の正確さ、任意の目的に対するデモ/ラボに含まれる情報の適合性に関して、いかなる保証または表明もしません。
-免責事項
+
+このデモ/ラボは、前に説明した目的のために複雑なセットアップまたはインストールを必要としないシミュレーション環境で潜在的な新機能や概念などの特定のソフトウェアテクノロジ/製品の機能を提供します。このデモ/ラボで表されるテクノロジ/概念 は、フル機能を表していない可能性があり、最終バージョンと動作が異なることがあります。また、そのような機能や概念の最終版がリリースされない場合があります。物理環境でこのような機能を使用するエクスペリエンスが異なる場合もあります。
+
+**フィードバック**。このデモ/ラボで説明されているテクノロジ、機能、概念に関するフィードバックをMicrosoft に提供する場合、ユーザーは任意の方法および目的でユーザ
+ーのフィードバックを使用、共有、および商品化する権利を無償でMicrosoft に提供するものとします。また、ユーザーは、フィードバックを含むMicrosoft のソフトウェアまたはサービスの特定部分を使用したり特定部分とインターフェイスを持ったりする製
+品、テクノロジ、サービスに必要な特許権を無償でサード パーティに付与します。ユーザーは、フィードバックを含めるためにMicrosoft がサードパーティにソフトウェアまたはドキュメントをライセンスする必要があるライセンスの対象となるフィードバックを提供しません。これらの権限は、本契約の後も存続します。
+
+Microsoft Corporation は、明示、黙示、または法律上にかかわらず、商品性のすべての保証および条件、特定の目的、タイトル、非侵害に対する適合性など、デモ/ラボに関するすべての保証および条件を拒否します。Microsoft は、デモ/ラボから派生する結果、出力の正確さ、任意の目的に対するデモ/ラボに含まれる情報の適合性に関して、いかなる保証または表明もしません。
+
+**免責事項**
+
 このデモ/ラボには、Microsoft Power BI の新機能と機能強化の一部のみが含まれています。一部の機能は、製品の将来のリリースで変更される可能性があります。このデモ/ラボでは、新機能のすべてではなく一部について学習します。
 
