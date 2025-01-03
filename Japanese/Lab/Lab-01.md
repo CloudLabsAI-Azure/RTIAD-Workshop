@@ -194,7 +194,6 @@ Fabrikam は、さまざまなアウトドア設備やアクセサリに特化�
 
     ![](../media/Lab-01/image041.jpg)
 
-
     **注:** **Introducing task flows** ダイアログが開いた場合は、**Got it** をクリックします。
 
     ![](../media/Lab-01/image043.png) 
