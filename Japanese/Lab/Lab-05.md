@@ -208,26 +208,23 @@
 
 8. 次のクエリをコピーしてクエリ ペインに貼り付けます。これは、複数のlet ステートメントと、セミコロンで結合されたクエリを使用する複数ステートメント クエリです。
  
-     ```
-     //Clicks, Impressions, CTR
+    ```
+    //Clicks, Impressions, CTR
 
+    let imp = Impressions
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize imp_count = count() by dateOnly;
 
-     let imp = Impressions
-     | where eventDate between (_startTime.._endTime)
-     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-     | summarize imp_count = count() by dateOnly;
+    let clck = Clicks
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize clck_count = count() by dateOnly;
 
-
-     let clck = Clicks
-     | where eventDate between (_startTime.._endTime)
-     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-     | summarize clck_count = count() by dateOnly;
-
-
-     imp
-     | join clck on $left.dateOnly == $right.dateOnly
-     | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-     ```
+    imp
+    | join clck on $left.dateOnly == $right.dateOnly
+    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+    ```
 
 9. クエリを**実行**して結果を表示します。
 
