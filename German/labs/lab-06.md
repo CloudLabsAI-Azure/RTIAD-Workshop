@@ -31,8 +31,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-06/image003.png)
 
-2. Klicken Sie im Visual **Click Through Rate** auf die Auslassungspunkte (…), und wählen Sie die Option
-**Set alert** aus.
+2. Klicken Sie im Visual **Click Through Rate** auf die Auslassungspunkte (…), und wählen Sie die Option **Set alert** aus.
 
    ![](../media/lab-06/image005.png)
 
@@ -80,8 +79,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     ![](../media/lab-06/image026.png)
 
-4. Öffnen Sie eine neue Registerkarte im Edge-Browser Ihrer Umgebung, und gehen Sie zu
-**Teams.Microsoft.com**.
+4. Öffnen Sie eine neue Registerkarte im Edge-Browser Ihrer Umgebung, und gehen Sie zu **Teams.Microsoft.com**.
 
 5.	Melden Sie sich mit Ihren Umgebungs-Anmeldeinformationen an, wenn Sie dazu aufgefordert werden. Möglicherweise wird eine Meldung zum Starten einer Testversion angezeigt, die Sie akzeptieren müssen.
 
@@ -111,8 +109,8 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
         ![](../media/lab-06/image034.png)
  
 5. Unter **Aktion** wählen Sie die folgenden Eigenschaften aus:
-    - *Typ* = Teams message
-    - *Empfänger* = {Ihre Benutzer-ID}
+    - **Typ** = Teams message
+    - **Empfänger** = {Ihre Benutzer-ID}
 
         ![](../media/lab-06/image036.png)
 
