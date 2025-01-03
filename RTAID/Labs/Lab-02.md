@@ -282,8 +282,7 @@ By the end of this lab, you will have learned:
 - **Schema Insights**– This includes details about the column name and the data types of the column that can be queried with KQL. Also shows the Top 10 count for the values in the selected column
 - **Table Details** –  Shows Compressed and Original size of table, OneLake availability, number of rows in the tables and various other details
 
-
-    ![A screenshot of a computer](../media/Lab-02/step-7.png)
+  ![A screenshot of a computer](../media/Lab-02/step-7.png)
 
 8.  Click on **Query with code** in the top-right corner.
 
