@@ -185,8 +185,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-01/image046.png)
 
-3. Geben Sie Ihrem Eventhouse im angezeigten Fenster den Namen **eh_Fabrikam**, und klicken Sie auf
-**Erstellen**.
+3. Geben Sie Ihrem Eventhouse im angezeigten Fenster den Namen **eh_Fabrikam**, und klicken Sie auf **Erstellen**.
 
    ![](../media/lab-01/image048.png)
 
@@ -212,11 +211,11 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-01/image059.png)
  
-10.	Wenn die Option **Aufgabenabläufe** den meisten Platz einnimmt, wählen Sie den Doppel- Aufwärtspfeil auf der rechten Seite, um sie zu verkleinern.
+10. Wenn die Option **Aufgabenabläufe** den meisten Platz einnimmt, wählen Sie den Doppel- Aufwärtspfeil auf der rechten Seite, um sie zu verkleinern.
 
     ![](../media/lab-01/image061.jpg)
 
-11.	Sie verfügen nun über die Grundlage für die Erfassung der Streaming-Daten in Ihren OneLake. Der nächste Schritt besteht darin, einen Datenstrom zu erstellen, der die Daten während der Bewegung empfangen kann.
+11. Sie verfügen nun über die Grundlage für die Erfassung der Streaming-Daten in Ihren OneLake. Der nächste Schritt besteht darin, einen Datenstrom zu erstellen, der die Daten während der Bewegung empfangen kann.
 
     ![](../media/lab-01/image063.png)
 

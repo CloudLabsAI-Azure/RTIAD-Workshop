@@ -2,7 +2,6 @@
 
 ![](../media/lab-02/german-2.png)
 
-
 # Inhalt
 - Dokumentstruktur	
 - Einführung	
@@ -16,7 +15,6 @@
     - Aufgabe 5: Mit einem KQL-Abfragesatz arbeiten	
 - Zusammenfassung	
 - Referenzen	
-
  
 # Dokumentstruktur
 
@@ -42,8 +40,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     ![](../media/lab-02/image003.jpg)
 
-2. Navigieren Sie zum Echtzeit-Hub. Wählen Sie dazu auf der linken Seite die Schaltfläche
-**Echtzeit** aus. Auch wenn wir noch keine Datenströme sehen, wird sich das bald ändern.
+2. Navigieren Sie zum Echtzeit-Hub. Wählen Sie dazu auf der linken Seite die Schaltfläche **Echtzeit** aus. Auch wenn wir noch keine Datenströme sehen, wird sich das bald ändern.
 
    ![](../media/lab-02/image005.jpg)
  
@@ -61,13 +58,13 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 6. Kopieren Sie von Ihrer Umgebungsdetailseite alle erforderlichen Verbindungseinstellungen, und fügen Sie sie in die entsprechenden Felder ein. Für diese Übungen stellen wir eine Verbindung zu einem Event Hub her, an den Streamingdaten von einem Python-Notebook gesendet werden. Dieses Notebook erstellt gefälschte Verkaufstransaktionen mit einer Rate von etwa 3.100 Transaktionen pro Stunde.
 
-    Event Hub-Namespace: **rtiadhub{userid} – bereitgestellt von Cloudlabs**
+   - Event Hub-Namespace: **rtiadhub{userid} – bereitgestellt von Cloudlabs**
 
-    Event Hub: **rti-iad-fabrikam**
+   - Event Hub: **rti-iad-fabrikam**
 
-    Name des gemeinsamen Zugriffsschlüssels: **rti-reader**
+   - Name des gemeinsamen Zugriffsschlüssels: **rti-reader**
 
-    Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdetails"**
+   - Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdetails"**
 
 
 7. Sobald alle Eigenschaften ausgefüllt sind, klicken Sie auf **Verbinden**.
@@ -78,39 +75,37 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-02/image015.jpg)
 
-9.	Bevor wir diese Datenquelle und den Eventstream fertigstellen, benennen wir unseren Eventstream in einen nützlicheren Namen um. Klicken Sie im Abschnitt „Streamdetails“ rechts auf das Bleistiftsymbol neben „Eventstreamname“ und nennen Sie unseren Eventstream „**es_Fabrikam_InternetSales“**.
+9.bBevor wir diese Datenquelle und den Eventstream fertigstellen, benennen wir unseren Eventstream in einen nützlicheren Namen um. Klicken Sie im Abschnitt „Streamdetails“ rechts auf das Bleistiftsymbol neben „Eventstreamname“ und nennen Sie unseren Eventstream „**es_Fabrikam_InternetSales“**.
 
     ![](../media/lab-02/image017.png)
 
-10.	Nun können wir auf **Weiter** klicken, wodurch wir zu einer letzten Übersichtsseite gelangen.
+10. Nun können wir auf **Weiter** klicken, wodurch wir zu einer letzten Übersichtsseite gelangen.
 
     ![](../media/lab-02/image019.jpg)
 
-11. Überprüfen Sie in diesem Übersichtsbildschirm, ob der Inhalt korrekt ist, und klicken Sie auf
-**Verbinden**.
+11. Überprüfen Sie in diesem Übersichtsbildschirm, ob der Inhalt korrekt ist, und klicken Sie auf **Verbinden**.
 
-    **Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
+   **Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
 
     ![](../media/lab-02/image021.jpg)
 
-12. Sobald der Eventstream und die Eventstream-Quelle erstellt sind, wählen Sie die Option
-„**Eventstream öffnen**“ aus.
+12. Sobald der Eventstream und die Eventstream-Quelle erstellt sind, wählen Sie die Option „**Eventstream öffnen**“ aus.
 
     ![](../media/lab-02/image023.jpg)
 
 13. Dadurch gelangen Sie zur Eventstream-Benutzeroberfläche. Hier sehen Sie, wie Ihr Datenquellenstream in unseren Eventstream einfließt, und wir können auch „Ereignisse transformieren“ hinzufügen.
 
-14.	Es kann einen Moment dauern, bis Ihre Quelle **aktiv** ist. Warten Sie jedoch einen Moment, und klicken Sie dann auf das mittlere Symbol mit dem Namen Ihres Eventstreams. Sie sollten jetzt eine Vorschau der Daten sehen.
+14. Es kann einen Moment dauern, bis Ihre Quelle **aktiv** ist. Warten Sie jedoch einen Moment, und klicken Sie dann auf das mittlere Symbol mit dem Namen Ihres Eventstreams. Sie sollten jetzt eine Vorschau der Daten sehen.
 
     **Hinweis: Wenn Sie bezüglich einer Audit-Richtlinie den Status "Warnung" erhalten, ist das in Ordnung. Der Stream funktioniert weiterhin.**
 
     ![](../media/lab-02/image025.jpg)
 
-15.	Sie sollten jetzt im unteren Fenster ein Beispiel der Daten sehen.
+15. Sie sollten jetzt im unteren Fenster ein Beispiel der Daten sehen.
 
     ![](../media/lab-02/image027.png)
 
-16.	Hier erhalten Sie eine Vorschauversion der Daten, die vom Azure-Event Hub empfangen werden. Wenn Sie die untere horizontale Bildlaufleiste ganz nach rechts neben Ihrer Vorschauversion schieben, können Sie in zwei Spalten mit den Namen **EventProcessedUtcTime** und **EventEnqueuedUtcTime** die Zeit sehen, zu der die Daten im Event Hub empfangen wurden. Dies sollte das aktuelle Datum/die aktuelle Uhrzeit im UTC-Format widerspiegeln.
+16. Hier erhalten Sie eine Vorschauversion der Daten, die vom Azure-Event Hub empfangen werden. Wenn Sie die untere horizontale Bildlaufleiste ganz nach rechts neben Ihrer Vorschauversion schieben, können Sie in zwei Spalten mit den Namen **EventProcessedUtcTime** und **EventEnqueuedUtcTime** die Zeit sehen, zu der die Daten im Event Hub empfangen wurden. Dies sollte das aktuelle Datum/die aktuelle Uhrzeit im UTC-Format widerspiegeln.
 
     ![](../media/lab-02/image030.png)
 
@@ -157,19 +152,19 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-02/image050.png)
 
-10.	Wählen Sie die Option **Konfigurieren** im **Ziel** aus, um den Stream korrekt einer Tabelle in der KQL-Datenbank zuzuordnen.
+10. Wählen Sie die Option **Konfigurieren** im **Ziel** aus, um den Stream korrekt einer Tabelle in der KQL-Datenbank zuzuordnen.
 
     ![](../media/lab-02/image052.jpg)
 
-11.	Klicken Sie auf die Option **+ Neue Tabelle** unter der Datenbank **eh_Fabrikam**.
+11. Klicken Sie auf die Option **+ Neue Tabelle** unter der Datenbank **eh_Fabrikam**.
 
     ![](../media/lab-02/image054.png)
 
-12.	Geben Sie der neuen Tabelle den Namen **InternetSales**, und klicken Sie anschließend auf das Häkchen.
+12. Geben Sie der neuen Tabelle den Namen **InternetSales**, und klicken Sie anschließend auf das Häkchen.
 
     ![](../media/lab-02/image056.png)
  
-13.	Möglicherweise müssen Sie Ihren **"Namen der Datenverbindung"** aktualisieren, um die Anforderungen zu erfüllen. Benennen wir ihn in **"eh_Fabrikam_es_InternetSales"** um. Dann können wir auf **Weiter** klicken.
+13. Möglicherweise müssen Sie Ihren **"Namen der Datenverbindung"** aktualisieren, um die Anforderungen zu erfüllen. Benennen wir ihn in **"eh_Fabrikam_es_InternetSales"** um. Dann können wir auf **Weiter** klicken.
 
     ![](../media/lab-02/image058.jpg)
 
@@ -177,9 +172,9 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     ![](../media/lab-02/image060.jpg)
 
-15.	Anschließend wird Ihnen eine Zusammenfassung angezeigt. Wenn alle Häkchen grün sind, klicken Sie auf **Schließen**, um fortzufahren.
+15. Anschließend wird Ihnen eine Zusammenfassung angezeigt. Wenn alle Häkchen grün sind, klicken Sie auf **Schließen**, um fortzufahren.
 
-16.	Sobald die Benutzeroberfläche die Zuordnungen von der Quelle zum Eventstream und zum Ziel anzeigt, haben Sie einen Datenstream in Ihrer KQL-Datenbank korrekt konfiguriert und gestartet.
+16. Sobald die Benutzeroberfläche die Zuordnungen von der Quelle zum Eventstream und zum Ziel anzeigt, haben Sie einen Datenstream in Ihrer KQL-Datenbank korrekt konfiguriert und gestartet.
 
     ![](../media/lab-02/image062.jpg)
 
@@ -233,33 +228,31 @@ erstellt wurde. Es gibt einige vorgefertigte Abfragen, die bereits erstellt wurd
 
     ![](../media/lab-02/image082.jpg)
 
-11.	Markieren Sie **Zeile 8 und 9**, und klicken Sie auf die Schaltfläche **Run** oben links im Fenster.
+11. Markieren Sie **Zeile 8 und 9**, und klicken Sie auf die Schaltfläche **Run** oben links im Fenster.
 
     ![](../media/lab-02/image084.png)
 
-12.	Die Abfrage verwendet den **take**-Operator, um eine bestimmte Anzahl an Zeilen wiederherzustellen. Wenn die Abfrage ausgeführt wird, werden Daten aus der Tabelle
-„InternetSales“ abgerufen und die Anzahl der Zeilen zurückgegeben, die Sie in die Abfrage eingefügt haben. In diesem Beispiel werden nur 100 Zeilen zurückgegeben, wie bei einer WHERE- Klausel in SQL. Die konkreten zurückgegebenen Zeilen können mit diesem Operator nicht ermittelt werden und die Ergebnisse Ihrer Abfrage werden von den Ergebnissen anderer abweichen.
+12. Die Abfrage verwendet den **take**-Operator, um eine bestimmte Anzahl an Zeilen wiederherzustellen. Wenn die Abfrage ausgeführt wird, werden Daten aus der Tabelle „InternetSales“ abgerufen und die Anzahl der Zeilen zurückgegeben, die Sie in die Abfrage eingefügt haben. In diesem Beispiel werden nur 100 Zeilen zurückgegeben, wie bei einer WHERE- Klausel in SQL. Die konkreten zurückgegebenen Zeilen können mit diesem Operator nicht ermittelt werden und die Ergebnisse Ihrer Abfrage werden von den Ergebnissen anderer abweichen.
 
     ![](../media/lab-02/image087.jpg)
 
-
-13.	Klicken Sie auf **Zeile 12** und an die Stelle, wo die Abfrage **YOUR_TABLE_HERE** lautet. Ersetzen Sie dies durch den Tabellennamen **InternetSales**.
+13. Klicken Sie auf **Zeile 12** und an die Stelle, wo die Abfrage **YOUR_TABLE_HERE** lautet. Ersetzen Sie dies durch den Tabellennamen **InternetSales**.
 
     ![](../media/lab-02/image089.png)
 
-14.	Markieren Sie **Zeile 12 und 13**, und klicken Sie auf die Schaltfläche **Run** oben links im Fenster.
+14. Markieren Sie **Zeile 12 und 13**, und klicken Sie auf die Schaltfläche **Run** oben links im Fenster.
 
     ![](../media/lab-02/image091.png)
 
-15.	Diese Abfrage verwendet den count-Operator. Diese Abfrage gibt eine aggregierte Anzahl von Datensätzen zurück, die zum Zeitpunkt der Abfrageausführung in der KQL-Datenbanktabelle vorhanden sind. Sie können diese Abfrage gerne noch ein paar Mal ausführen. Sie werden dann feststellen, dass die Anzahl der Datensätze alle paar Sekunden zunimmt.
+15. Diese Abfrage verwendet den count-Operator. Diese Abfrage gibt eine aggregierte Anzahl von Datensätzen zurück, die zum Zeitpunkt der Abfrageausführung in der KQL-Datenbanktabelle vorhanden sind. Sie können diese Abfrage gerne noch ein paar Mal ausführen. Sie werden dann feststellen, dass die Anzahl der Datensätze alle paar Sekunden zunimmt.
 
     ![](../media/lab-02/image094.png)
 
-16.	Wiederholen Sie die vorherigen Schritte für die letzte Abfrage, die in **Zeile 16/17** automatisch für Sie erstellt wird, und führen Sie die Abfrage erneut aus.
+16. Wiederholen Sie die vorherigen Schritte für die letzte Abfrage, die in **Zeile 16/17** automatisch für Sie erstellt wird, und führen Sie die Abfrage erneut aus.
 
     ![](../media/lab-02/image096.jpg)
 
-17.	Diese Abfrage gibt Ihnen die Anzahl der Datensätze an, die innerhalb eines Stundenfensters in Ihre Tabelle aufgenommen wurden. Die Gesamtverteilung dieser Datensätze für die Daten, die Sie aktuell erfassen, beträgt ungefähr 4.100 pro Stunde. Es wird jedoch leichte Abweichungen bei der Anzahl der Transaktionen pro Stunde geben und diese Abfrage gibt detailliert an, ob in jedem Fenster mehr oder weniger Datensätze erfasst wurden.
+17. Diese Abfrage gibt Ihnen die Anzahl der Datensätze an, die innerhalb eines Stundenfensters in Ihre Tabelle aufgenommen wurden. Die Gesamtverteilung dieser Datensätze für die Daten, die Sie aktuell erfassen, beträgt ungefähr 4.100 pro Stunde. Es wird jedoch leichte Abweichungen bei der Anzahl der Transaktionen pro Stunde geben und diese Abfrage gibt detailliert an, ob in jedem Fenster mehr oder weniger Datensätze erfasst wurden.
 
 ## Aufgabe 4: T-SQL-Abfragen für eine KQL-Datenbank ausführen
 
@@ -288,7 +281,6 @@ Abfrage und ein ähnliches Ergebnis erzielt werden können. Geben Sie unten die 
 
    ![](../media/lab-02/image102.png)
 
-
 3. Dies ist eine einfache SQL-Abfrage, die Ergebnisse aus der Tabelle „InternetSales“ abruft und zwei Spalten zurückgibt: den Produktschlüssel und eine Anzahl der Bestellungen. Da es eine aggregierte und eine nicht aggregierte Spalte gibt, müssen Sie GROUP BY verwenden, um Ergebnisse für jedes einzelne Produkt zurückzugeben. Führen Sie die gesamte Abfrage aus, beginnend mit „--“ bis zum Ende der T-SQL-Abfrage.
 
    ![](../media/lab-02/image104.png)
@@ -297,14 +289,13 @@ Abfrage und ein ähnliches Ergebnis erzielt werden können. Geben Sie unten die 
 
    ![](../media/lab-02/image106.jpg)
 
-5. Klicken Sie auf den unten in Orange hervorgehobenen Abfragebereich. Dadurch können Sie die übersetzte KQL-Abfrage auswählen und kopieren. Fügen Sie diese Abfrage in den von uns
-verwendeten KQL-Abfragesatz ein.
+5. Klicken Sie auf den unten in Orange hervorgehobenen Abfragebereich. Dadurch können Sie die übersetzte KQL-Abfrage auswählen und kopieren. Fügen Sie diese Abfrage in den von uns verwendeten KQL-Abfragesatz ein.
 
    ![](../media/lab-02/image108.jpg)
 
 6. Markieren Sie die Abfrage in Ihrem Abfragebereich und führen Sie sie aus, um die Ergebnisse abzurufen. Der **summarize**-Operator erstellt eine Tabelle, die den Inhalt der Eingabetabelle aggregiert und gleichzeitig bestimmt, wie die einzelnen Datensätze mit dem **Produktschlüssel** gruppiert werden. Der **project**-Operator wählt die Spalten aus, die beim Einfügen neuer berechneter Spalten einbezogen, umbenannt oder gelöscht werden sollen.
 
-    ![](../media/lab-02/image110.jpg)
+   ![](../media/lab-02/image110.jpg)
 
 7. Sehen Sie sich oben in Ihrem Abfragesatz die Liste der SQL-zu-KQL-Spickzetteloperationen für zusätzliche Funktionen und Konvertierungen an.
 
@@ -322,26 +313,23 @@ verwendeten KQL-Abfragesatz ein.
 
 ## Aufgabe 5: Mit einem KQL-Abfragesatz arbeiten
 
-1. Während die meisten Abfragen in diesem Fenster automatisch über die Benutzeroberfläche
-erstellt wurden, kann es in Zukunft vorkommen, dass Sie Ihre eigenen KQL-Abfragen von Grund auf neu erstellen möchten. Dies kann über die Registerkarten im oberen Bereich verwaltet
-werden. Es ist außerdem zu beachten, dass dieser Abfragesatz regelmäßig automatisch gespeichert wird.
-
+1. Während die meisten Abfragen in diesem Fenster automatisch über die Benutzeroberfläche erstellt wurden, kann es in Zukunft vorkommen, dass Sie Ihre eigenen KQL-Abfragen von Grund auf neu erstellen möchten. Dies kann über die Registerkarten im oberen Bereich verwaltet werden. Es ist außerdem zu beachten, dass dieser Abfragesatz regelmäßig automatisch gespeichert wird.
 
 2. Im oberen Bereich des Abfragesatzes sehen Sie den Standardnamen unserer ersten Seite, der dem Namen unserer Datenbank entspricht.
 
-     ![](../media/lab-02/image118.png)
+    ![](../media/lab-02/image118.png)
 
 3. Lassen Sie uns diese Registerkarte umbenennen. Klicken Sie dazu auf das Bleistiftsymbol und nennen Sie sie in **"My First KQL Query"** um.
 
-     ![](../media/lab-02/image120.png)
+    ![](../media/lab-02/image120.png)
 
 4. Wenn wir unseren Code in Zukunft isolieren möchten, können wir einfach zusätzliche Registerkarten erstellen, indem wir auf das „+“-Symbol klicken.
 
-     ![](../media/lab-02/image122.png)
+    ![](../media/lab-02/image122.png)
 
 5. Kehren Sie zu Ihrem Arbeitsbereich **RTI_username** zurück. Folgende Objekte sollten vorhanden sein
 
-     ![](../media/lab-02/image124.jpg)
+    ![](../media/lab-02/image124.jpg)
 
 # Zusammenfassung
 
