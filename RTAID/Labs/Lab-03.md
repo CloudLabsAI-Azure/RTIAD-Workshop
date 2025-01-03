@@ -95,7 +95,6 @@ be adding to the KQL database By the end of this lab, you will have learned:
 
 10. In the configuration of the Azure Event Hub data source, you may need to modify the **Consumer group** of the Event Hub to ensure that you gain access to a unique access point to the stream of data. For this workshop you can leave the "\$Default" value as shown below
 
-
     ![A screenshot of a computer](../media/Lab-03/image12.png)
 
 11. Click on **Next**.
