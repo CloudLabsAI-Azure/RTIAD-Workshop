@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Übung 3
 
+![](../media/lab-03/german-3.png)
+
 # Inhalt 
 - Dokumentstruktur
 - Einführung
