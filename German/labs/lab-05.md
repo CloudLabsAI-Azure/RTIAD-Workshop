@@ -102,7 +102,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     | top 30 by date_count
 
     | sort by eventDate
-
     ```
 
 3. Führen Sie die Abfrage aus, sobald Sie sie richtig konfiguriert haben, um die Ergebnisse anzuzeigen.
@@ -132,31 +131,31 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 9. Schließen Sie dann den Bereich „Parameter“.
  
-10.	Klicken Sie nun über den Abfrageergebnissen auf die Schaltfläche **+ Visuelles Element hinzufügen**.
+10. Klicken Sie nun über den Abfrageergebnissen auf die Schaltfläche **+ Visuelles Element hinzufügen**.
 
     ![](../media/lab-05/image048.png)
 
-11.	Auf der rechten Seite des Bildschirms wird ein neues Flyout angezeigt. Klicken Sie in das Textfeld unter der Option **Tile name**, um diesem Visual den Namen **Clicks by Hour** zu geben.
+11. Auf der rechten Seite des Bildschirms wird ein neues Flyout angezeigt. Klicken Sie in das Textfeld unter der Option **Tile name**, um diesem Visual den Namen **Clicks by Hour** zu geben.
 
     ![](../media/lab-05/image051.png)
  
-12.	Standardmäßig ist das Visual, das Sie zum Anzeigen der Ergebnisse dieser KQL-Abfrage verwenden, eine Tabelle. Dies ist möglicherweise nicht die beste Möglichkeit für jemanden, schnell zu erfassen und zu verstehen, was mit den Ergebnissen Ihrer Daten geschieht.Ändern Sie den Visual-Typ von einer Tabelle in ein **Flächendiagramm**.
+12. Standardmäßig ist das Visual, das Sie zum Anzeigen der Ergebnisse dieser KQL-Abfrage verwenden, eine Tabelle. Dies ist möglicherweise nicht die beste Möglichkeit für jemanden, schnell zu erfassen und zu verstehen, was mit den Ergebnissen Ihrer Daten geschieht.Ändern Sie den Visual-Typ von einer Tabelle in ein **Flächendiagramm**.
 
     ![](../media/lab-05/image054.png)
  
-13.	Mit dieser neu formatierten Darstellung können Sie die Höhen und Tiefen der Klicks auf Ihrer E-Commerce-Site besser verstehen, indem Sie den Datenstrom verwenden, den Sie zuvor in diesem Kurs erstellt haben.
+13. Mit dieser neu formatierten Darstellung können Sie die Höhen und Tiefen der Klicks auf Ihrer E-Commerce-Site besser verstehen, indem Sie den Datenstrom verwenden, den Sie zuvor in diesem Kurs erstellt haben.
 
     ![](../media/lab-05/image057.png)
 
-14.	Um dieses Visual im Dashboard zu speichern, klicken Sie oben rechts auf dem Bildschirm auf die Schaltfläche **Änderungen anwenden**.
+14. Um dieses Visual im Dashboard zu speichern, klicken Sie oben rechts auf dem Bildschirm auf die Schaltfläche **Änderungen anwenden**.
 
     ![](../media/lab-05/image060.png)
  
-15.	Nachdem Sie dieses Visual im Dashboard platziert haben, werden möglicherweise nur die Ergebnisse der letzten Stunde anzeigt. Ändern Sie das Dashboard, um den **Zeitbereich** der **letzten 24 Stunden** anzuzeigen.
+15. Nachdem Sie dieses Visual im Dashboard platziert haben, werden möglicherweise nur die Ergebnisse der letzten Stunde anzeigt. Ändern Sie das Dashboard, um den **Zeitbereich** der **letzten 24 Stunden** anzuzeigen.
 
-     ![](../media/lab-05/image062.png)
+    ![](../media/lab-05/image062.png)
  
-16.	Aktualisieren Sie das Visual und beachten Sie, dass sich die Ergebnisse leicht ändern, um die Daten widerzuspiegeln, die seit der letzten Ausführung der Abfrage eingegangen sind.
+16. Aktualisieren Sie das Visual und beachten Sie, dass sich die Ergebnisse leicht ändern, um die Daten widerzuspiegeln, die seit der letzten Ausführung der Abfrage eingegangen sind.
 
      ![](../media/lab-05/image065.png)
 
@@ -167,7 +166,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     ![](../media/lab-05/image068.jpg)
 
 2. Geben Sie im Abfragebereich die neue KQL-Abfrage ein.
-
 
     ```
     //Impressions by hour Impressions
@@ -181,9 +179,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     | top 30 by date_count
 
     | sort by eventDate
-
     ```
-
 
 3. **Führen** Sie die Abfrage **aus**.
 
@@ -207,52 +203,53 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 8. Kopieren Sie die folgende Abfrage, und fügen Sie diese in den Abfragebereich ein. Beachten Sie, dass dies eine Abfrage mit mehreren Anweisungen ist, die mehrere let-Anweisungen und eine durch Semikolons kombinierte Abfrage verwendet.
 
-    ```
-    //Clicks, Impressions, CTR
+     ```
+     //Clicks, Impressions, CTR
 
-    let imp = Impressions
+     let imp = Impressions
 
-    | where eventDate between (_startTime.._endTime)
+     | where eventDate between (_startTime.._endTime)
 
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
 
-    | summarize imp_count = count() by dateOnly;
-
-
-    let clck = Clicks
-
-    | where eventDate between (_startTime.._endTime)
-
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-
-    | summarize clck_count = count() by dateOnly;
+     | summarize imp_count = count() by dateOnly;
 
 
-    imp
+     let clck = Clicks
 
-    | join clck on $left.dateOnly == $right.dateOnly
+     | where eventDate between (_startTime.._endTime)
 
-    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
 
-    ```
+     | summarize clck_count = count() by dateOnly;
+
+
+     imp
+
+     | join clck on $left.dateOnly == $right.dateOnly
+
+     | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+     ```
 
 9. **Führen** Sie die Abfrage **aus**, um die Ergebnisse anzuzeigen.
 
     ![](../media/lab-05/image084.jpg)
  
-10.	Klicken Sie auf die Schaltfläche **Visuelles Element hinzufügen**.
+10. Klicken Sie auf die Schaltfläche **Visuelles Element hinzufügen**.
 
+11. Wenn die Visual-Einstellungen angezeigt werden, ändern Sie die folgenden Einstellungen, um eine Anzahl von Impressionen zu erstellen.
 
-11.	Wenn die Visual-Einstellungen angezeigt werden, ändern Sie die folgenden Einstellungen, um eine Anzahl von Impressionen zu erstellen.
     - **Tile name** – Impressions
+    
     - **Visual type** – Stat
+    
     - **Value column** – impressions (long)
 
-        ![](../media/lab-05/image087.png)
+      ![](../media/lab-05/image087.png)
 
-12.	Wählen Sie **Änderungen anwenden** aus, wenn alle Einstellungen entsprechend konfiguriert sind.
+12. Wählen Sie **Änderungen anwenden** aus, wenn alle Einstellungen entsprechend konfiguriert sind.
 
-     ![](../media/lab-05/image090.png)
+    ![](../media/lab-05/image090.png)
 
 13. Klicken Sie auf der neuen Kachel auf die Auslassungspunkte (…), und wählen Sie die Option **Kachel duplizieren** aus.
 
@@ -272,7 +269,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     ![](../media/lab-05/image102.png)
  
-18.	Bearbeiten Sie die neue Kachel, um den **„Tile name“** in **Click Through Rate** und die **„Value column“** in **CTR (long)** zu ändern.
+18. Bearbeiten Sie die neue Kachel, um den **„Tile name“** in **Click Through Rate** und die **„Value column“** in **CTR (long)** zu ändern.
 
     ![](../media/lab-05/image105.png)
 
