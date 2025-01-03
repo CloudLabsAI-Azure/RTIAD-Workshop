@@ -1,4 +1,7 @@
 
+![](../media/lab-02/german-2.png)
+
+
 # Inhalt
 - Dokumentstruktur	
 - Einführung	
@@ -236,7 +239,7 @@ erstellt wurde. Es gibt einige vorgefertigte Abfragen, die bereits erstellt wurd
 12.	Die Abfrage verwendet den **take**-Operator, um eine bestimmte Anzahl an Zeilen wiederherzustellen. Wenn die Abfrage ausgeführt wird, werden Daten aus der Tabelle
 „InternetSales“ abgerufen und die Anzahl der Zeilen zurückgegeben, die Sie in die Abfrage eingefügt haben. In diesem Beispiel werden nur 100 Zeilen zurückgegeben, wie bei einer WHERE- Klausel in SQL. Die konkreten zurückgegebenen Zeilen können mit diesem Operator nicht ermittelt werden und die Ergebnisse Ihrer Abfrage werden von den Ergebnissen anderer abweichen.
 
-   ![](../media/lab-02/image087.jpg)
+    ![](../media/lab-02/image087.jpg)
 
 
 13.	Klicken Sie auf **Zeile 12** und an die Stelle, wo die Abfrage **YOUR_TABLE_HERE** lautet. Ersetzen Sie dies durch den Tabellennamen **InternetSales**.
@@ -265,10 +268,22 @@ Möglicherweise arbeiten Sie zum ersten Mal mit der Kusto-Abfragesprache. Obwohl
 
     **(Hinweis: Doppelklicken Sie auf das Objekt unten, um den Text kopieren zu können.)**
 
+    ```
+    --
+    explain
+    ```
+
    ![](../media/lab-02/image099.png)
 
 2. Mit der Kommentarzeile „--“, gefolgt vom Schlüsselwort "explain", können Sie nun eine SQL- Abfrage erstellen und mit der KQL-Abfrage ein Ergebnis zurückgeben, mit dem eine ähnliche
 Abfrage und ein ähnliches Ergebnis erzielt werden können. Geben Sie unten die folgende Abfrage ein, um zu erklären, wie die KQL-Abfrage aussehen würde:
+
+    ```
+    --
+    explain
+    SELECT COUNT(OrderQuantity) AS CountOfProducts
+    , ProductKey FROM InternetSales GROUP BY ProductKey
+    ```
 
    ![](../media/lab-02/image102.png)
 
