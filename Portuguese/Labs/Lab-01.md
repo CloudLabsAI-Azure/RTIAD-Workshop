@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratório 1
 
+![](../media/lab-01/image001.png)
+
 ## Sumário
 
 - Estrutura do documento 3
@@ -70,13 +72,21 @@ Ao final deste laboratório, você terá aprendido a:
 
 1. Abra o **navegador Microsoft Edge** na área de trabalho e acesse Você será direcionado para a página de logon. **Observação:** Se você não estiver usando o ambiente de laboratório e já tiver uma conta do Power BI, talvez queira usar o navegador no modo particular/anônimo.
 
+    ![](../media/lab-01/image003.png)
+
 2. Insira o **Nome de usuário** disponível na guia **Variáveis de Ambiente** (ao lado do Guia de Laboratório) como o **Email** e clique em **Enviar.**
+
+    ![](../media/lab-01/image004.png)
 
 3. Você será direcionado à tela **Senha**. Insira a **Senha** disponível na guia **Variáveis de Ambiente** (ao lado do Guia de Laboratório), que o instrutor compartilhou com você.
 
 4. Clique em **Entrar** e siga as instruções para entrar no Fabric.
 
+    ![](../media/lab-01/image006.png)
+
 5. Você será direcionado à **Página Inicial do Fabric.**
+
+    ![](../media/lab-01/image007.png)
 
 Para trabalhar com itens do Fabric, você precisará de uma licença de avaliação e de um workspace que tenha a licença do Fabric. Vamos configurar tudo.
 
@@ -84,17 +94,27 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
 7. Selecione **Avaliação Gratuita**.
 
+    ![](../media/lab-01/image008.png)
+
 8. A caixa de diálogo Atualizar para uma avaliação gratuita do Microsoft Fabric é aberta. Selecione **Ativar**.
+
+    ![](../media/lab-01/image009.png)
 
 9. A caixa de diálogo Atualizado com êxito para Microsoft Fabric é aberta. Selecione **Fabric Home Page**.
 
+    ![](../media/lab-01/image011.png)
+
 10. Você será direcionado de volta à **Página Inicial do Microsoft Fabric**.
+
+    ![](../media/lab-01/image007.png)
 
 # Real-Time Intelligence e Hub em Tempo Real
 
 ## Tarefa 2: Itens da Experiência do Real-Time Intelligence
 
 1. Clique na Experiência do Real-Time Intelligence.
+
+    ![](../media/lab-01/image007.png)
 
 2. Você será direcionado para a Página Inicial do **Real-Time Intelligence**. Você verá **Modelos de fluxo de tarefas**, **Itens recomendados para criar** e **Saiba mais sobre categorias do Real-Time** Intelligence. Com a categoria **Recomendados**, observe os itens:
 
@@ -108,11 +128,17 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
    e. **Reflex:** para executar ações automaticamente quando padrões ou condições são detectados em dados alterados.
 
+    ![](../media/lab-01/image012.png)
+
 ## Tarefa 3: Hub em Tempo Real
 
 1. Clique no **Hub em Tempo Real** no painel de navegação do Fabric no lado esquerdo da tela.
 
+    ![](../media/lab-01/image013.png)
+
 2. A caixa de diálogo **Bem-vindo ao Hub em Tempo Real** será aberta e você poderá ficar à vontade para selecionar **Fazer um tour** ou selecionar **Introdução.**
+
+    ![](../media/lab-01/image014.png)
 
 3. O Hub em Tempo Real é o único local para transmitir dados em movimento em toda a sua organização. Cada locatário do Microsoft Fabric é automaticamente provisionado com esse hub. Ele permite que você descubra, ingira, gerencie e consuma facilmente dados em movimento de uma ampla variedade de fontes.
 
@@ -126,9 +152,15 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
    - **Eventos do Azure:** esta lista inclui eventos do sistema gerados no Azure que você pode acessar. Um evento pode ser monitorado e regras definidas, as quais enviarão notificações ou executarão ações quando ativadas.
 
+      ![](../media/lab-01/image015.png)
+
 5. No canto superior direito do Hub em Tempo Real, clique no botão **+ Conectar a fonte de dados**.
 
+    ![](../media/lab-01/image016.png)
+
 6. Uma janela será exibida e detalhará os fluxos de dados acessíveis no momento que estão disponíveis para integração ao Hub em Tempo Real. Isso inclui uma mistura de fontes do Azure, bem como fontes externas de fluxo na nuvem, como o Amazon Kinesis, o Confluent Cloud Kafka e o Google Cloud Pub/Sub. Ainda há alguns dados de exemplo disponíveis para explorar.
+
+    ![](../media/lab-01/image017.png)
 
 7. **Feche** a janela Obter eventos clicando no "X" no canto superior direito.
 
@@ -140,45 +172,73 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
 2. Selecione + **Novo workspace**.
 
+    ![](../media/lab-01/image018.png)
+
 3. A caixa de diálogo **Criar um workspace** é aberta no lado direito do navegador.
 
 4. No campo **Nome**, insira **RTI_username**. Use o nome de usuário fornecido a você nos detalhes do ambiente.
 
-**Observação:** o nome do workspace deve ser exclusivo. Verifique se há uma marca de seleção verde em "**Este nome está disponível**", abaixo do campo Nome.
+  > **Observação:** o nome do workspace deve ser exclusivo. Verifique se há uma marca de seleção verde em "**Este nome está disponível**", abaixo do campo Nome.
 
 5. Se preferir, você pode inserir uma **Descrição** para o workspace. Esse campo é opcional.
 
 6. Clique em **Avançado** para expandir a seção.
 
+    ![](../media/lab-01/image019.png)
+
 7. Em **Modo de licença**, verifique se **Avaliação** está selecionada. (Essa opção deve estar selecionada por padrão.)
 
 8. Selecione **Aplicar** para criar um novo workspace.
 
-**Observação:** se a caixa de diálogo **Introdução aos fluxos de tarefa** for aberta, clique em **Entendi**.
+    ![](../media/lab-01/image021.png)
+
+  > **Observação:** se a caixa de diálogo **Introdução aos fluxos de tarefa** for aberta, clique em **Entendi**.
+
+    ![](../media/lab-01/image022.png)
 
 ## Tarefa 5: Criar um Eventhouse
 
 1. Clique na caixa **+Novo item** para abrir um novo painel que tem todos os itens que você pode criar neste workspace do Fabric.
 
+    ![](../media/lab-01/image023.png)
+
 2. Selecione o **Eventhouse** na seção **Armazenar dados** no painel. Como falamos, isso pode ser visto de forma semelhante a um Lakehouse em que podemos armazenar dados, mas esse Eventhouse é focado em dados em tempo real.
+
+    ![](../media/lab-01/image024.png)
 
 3. Na janela que aparece, dê ao seu Eventhouse o nome **eh_Fabrikam** e clique em **Criar**.
 
+    ![](../media/lab-01/image025.png)
+
 4. É aqui que, em última análise, você transmitirá dados de várias fontes pelo resto do treinamento hoje. Quando o item for criado, será exibida uma janela informando alguns detalhes sobre o Eventhouse. Clique no botão **Get started**.
 
+    ![](../media/lab-01/image026.png)
+
 5. Faça um rápido tour pelo Eventhouse seguindo as dicas de ferramentas verdes na tela. Essa primeira mostra que um banco de dados Linguagem de Consulta Kusto (KQL) vazio foi criado com o Eventhouse.
+
+    ![](../media/lab-01/image027.png)
 
 6. Siga o restante das dicas de ferramentas ao redor da tela para mostrar onde criar bancos de dados adicionais, verificar o armazenamento no OneLake do Eventhouse, verificar o uso de recursos do Fabric em minutos de computação e, por fim, ver quais ações ocorreram no Eventhouse.
 
 7. No painel de navegação à esquerda do Eventhouse, encontre seu Banco de Dados KQL que foi criado junto com o Eventhouse e basta clicar nele para exibir os detalhes do banco de dados.
 
+    ![](../media/lab-01/image028.png)
+
 8. Isso nos permitirá ainda ter uma guia no painel do navegador à esquerda para ter a visão geral de todo o nosso Eventhouse e uma nova guia para focar nas propriedades do Banco de Dados KQL. Uma meta que desejamos alcançar em nosso cenário é garantir que os dados transmitidos para o Banco de Dados KQL sejam acessíveis via OneLake. Ao habilitar esse recurso, tornamos os dados neste Banco de Dados KQL facilmente detectáveis por meio de atalhos a serem usados em qualquer Lakehouse que desejarmos. Localize a seção **Detalhes do banco de dados** à direita e defina a opção "Disponibilidade" como **Ligado**.
+
+   ![](../media/lab-01/image029.png)
 
 9. Retorne ao workspace **RTI_username** selecionando-o no lado esquerdo do navegador.
 
+    ![](../media/lab-01/image030.png)
+
 10. Se você vir a opção **Fluxos de Tarefa** ocupando a maior parte do espaço, selecione a seta dupla para cima no lado direito para minimizá-la.
 
+    ![](../media/lab-01/image031.png)
+
 11. Agora você tem a base de como começará a ingerir os dados de fluxo em seu OneLake. A próxima etapa é criar um fluxo de dados que possa receber os dados em movimento.
+
+    ![](../media/lab-01/image032.png)
 
 Neste laboratório, exploramos a interface do Real-Time Intelligence, examinamos o Hub em Tempo Real, criamos um workspace do Fabric e um Eventhouse que veio com um Banco de Dados KQL.
 
@@ -189,6 +249,8 @@ No próximo laboratório, você começará a explorar técnicas que ingerem dado
 O Fabric Real-time Intelligence in a Day (RTIIAD) apresenta algumas das principais funções disponíveis no Microsoft Fabric.
 
 No menu do serviço, a seção Ajuda (?) tem links para ótimos recursos.
+
+  ![](../media/lab-01/image034.png)
 
 Veja aqui mais alguns recursos que ajudarão você com as próximas etapas do Microsoft Fabric.
 
