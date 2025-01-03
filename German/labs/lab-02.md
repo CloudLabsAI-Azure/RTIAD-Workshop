@@ -75,7 +75,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    ![](../media/lab-02/image015.jpg)
 
-9.bBevor wir diese Datenquelle und den Eventstream fertigstellen, benennen wir unseren Eventstream in einen nützlicheren Namen um. Klicken Sie im Abschnitt „Streamdetails“ rechts auf das Bleistiftsymbol neben „Eventstreamname“ und nennen Sie unseren Eventstream „**es_Fabrikam_InternetSales“**.
+9. bBevor wir diese Datenquelle und den Eventstream fertigstellen, benennen wir unseren Eventstream in einen nützlicheren Namen um. Klicken Sie im Abschnitt „Streamdetails“ rechts auf das Bleistiftsymbol neben „Eventstreamname“ und nennen Sie unseren Eventstream „**es_Fabrikam_InternetSales“**.
 
     ![](../media/lab-02/image017.png)
 
@@ -85,7 +85,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 11. Überprüfen Sie in diesem Übersichtsbildschirm, ob der Inhalt korrekt ist, und klicken Sie auf **Verbinden**.
 
-   **Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
+    **Hinweis: Ihre Details werden von denen im Screenshot abweichen.**
 
     ![](../media/lab-02/image021.jpg)
 
@@ -209,18 +209,20 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 7. Diese Übersicht enthält Metadatendetails zu der von Ihnen erstellten Tabelle und zu allen aktiv mit Ihrem Eventstream gestreamten Daten. Auch hier gilt, dass die Größe der Tabelle und die Anzahl der Zeilen in der Tabelle von Kursteilnehmer zu Kursteilnehmer unterschiedlich sind und Ihre Endergebnisse in dieser oder einer anderen Übung nicht beeinflussen. In diesem Menü sind einige zusätzliche Punkte hervorzuheben:
 
     - **Data Activity Tracker** – Zeigt die Anzahl der erfassten Zeilen, den Zeitpunkt der letzten Generierung und das Anzeigeintervall an.
+    
     - **Data preview** – Zeigt eine Vorschau der Tabellenerfassungsergebnisse an.
+    
     - **Schema insights** – Hierzu gehören Angaben zum Spaltennamen und den Datentypen der Spalte, die mit KQL abgefragt werden können. Zeigt auch die Top 10 für die Werte in der ausgewählten Spalte an.
+    
     - **Tabellendetails** – Zeigt die komprimierte und ursprüngliche Größe der Tabelle, die OneLake- Verfügbarkeit, die Anzahl der Zeilen in den Tabellen und verschiedene andere Details an.
 
-        ![](../media/lab-02/image076.jpg)
+    ![](../media/lab-02/image076.jpg)
 
 8. Kehren Sie zur Datenbankansicht zurück und klicken Sie in der oberem rechten Ecke auf **Query with code**.
 
    ![](../media/lab-02/image078.jpg)
 
-9. Dadurch wird der Standard-KQL-Abfragesatz geöffnet, der zusammen mit dem Eventhouse
-erstellt wurde. Es gibt einige vorgefertigte Abfragen, die bereits erstellt wurden, aber geringfügig angepasst werden müssen. Es gibt außerdem zwei Links zur Microsoft-Dokumentation, die beim Erlernen von KQL oder auch bei der Betrachtung von SQL-zu-KQL-Konvertierungen hilfreich sein können, die später in diesem Kurs besprochen werden.
+9. Dadurch wird der Standard-KQL-Abfragesatz geöffnet, der zusammen mit dem Eventhouse erstellt wurde. Es gibt einige vorgefertigte Abfragen, die bereits erstellt wurden, aber geringfügig angepasst werden müssen. Es gibt außerdem zwei Links zur Microsoft-Dokumentation, die beim Erlernen von KQL oder auch bei der Betrachtung von SQL-zu-KQL-Konvertierungen hilfreich sein können, die später in diesem Kurs besprochen werden.
 
     ![](../media/lab-02/image080.jpg)
 
@@ -275,8 +277,7 @@ Abfrage und ein ähnliches Ergebnis erzielt werden können. Geben Sie unten die 
     ```
     --
     explain
-    SELECT COUNT(OrderQuantity) AS CountOfProducts
-    , ProductKey FROM InternetSales GROUP BY ProductKey
+    SELECT COUNT(OrderQuantity) AS CountOfProducts, ProductKey FROM InternetSales GROUP BY ProductKey
     ```
 
    ![](../media/lab-02/image102.png)
