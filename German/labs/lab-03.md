@@ -36,7 +36,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 2. Für uns stehen im Zusammenhang mit unserem E-Commerce-Shop zusätzliche Streaming-Daten zum Erfassen zur Verfügung. Für diesen Eventstream möchten wir die Daten jedoch transformieren, bevor wir sie in das Eventhouse laden. Anstatt zum **„Echtzeit-Hub“** zu navigieren, können wir direkt aus dem Arbeitsbereich einen neuen Eventstream erstellen. Erstellen Sie über das Menü **+ Neues Element** einen neuen **Eventstream**.
 
-  ![](../media/lab-03/image005.jpg)
+    ![](../media/lab-03/image005.jpg)
  
 3. Geben Sie dem neuen Eventstream den Namen **es_Fabrikam_ClickEvents**, aktivieren Sie die Option **„Erweiterten Funktionen“**, und klicken Sie dann auf **Erstellen**.
 
@@ -157,7 +157,7 @@ Zusätzlich zu den Klick- und Impressions-Ereignissen, die protokolliert werden,
       - **Wählen Sie ein Feld aus, nach dem gefiltert werden soll** – eventType
       - **Ereignisse beibehalten, wenn der Wert** – ist gleich – CLICK **(Wichtig! In diesem Feld wird zwischen Groß- und Kleinschreibung unterschieden. Achten Sie in diesem Beispiel darauf, die Eingabe ausschließlich in Großbuchstaben vorzunehmen.)**
 
-      ![](../media/lab-03/image058.png)
+        ![](../media/lab-03/image058.png)
  
 5.	Wählen Sie die Option **Speichern** aus, um Ihre Änderungen beizubehalten.
 
@@ -236,7 +236,7 @@ CLICK-Ereignistypen gefiltert wurden.
       - **KQL-Datenbank** – eh_Fabrikam
       - **KQL Destination table** – Erstellen Sie eine neue Tabelle mit dem Namen **Clicks**.
 
-      ![](../media/lab-03/image094.png)
+        ![](../media/lab-03/image094.png)
  
 24.	Klicken Sie unten im Flyout auf **Speichern**.
 
