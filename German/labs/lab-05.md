@@ -203,33 +203,23 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 8. Kopieren Sie die folgende Abfrage, und fügen Sie diese in den Abfragebereich ein. Beachten Sie, dass dies eine Abfrage mit mehreren Anweisungen ist, die mehrere let-Anweisungen und eine durch Semikolons kombinierte Abfrage verwendet.
 
-     ```
-     //Clicks, Impressions, CTR
+    ```
+    //Clicks, Impressions, CTR
 
-     let imp = Impressions
+    let imp = Impressions
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize imp_count = count() by dateOnly;
 
-     | where eventDate between (_startTime.._endTime)
+    let clck = Clicks
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize clck_count = count() by dateOnly;
 
-     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-
-     | summarize imp_count = count() by dateOnly;
-
-
-     let clck = Clicks
-
-     | where eventDate between (_startTime.._endTime)
-
-     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-
-     | summarize clck_count = count() by dateOnly;
-
-
-     imp
-
-     | join clck on $left.dateOnly == $right.dateOnly
-
-     | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-     ```
+    imp
+    | join clck on $left.dateOnly == $right.dateOnly
+    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+    ```
 
 9. **Führen** Sie die Abfrage **aus**, um die Ergebnisse anzuzeigen.
 
@@ -299,7 +289,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
     
     | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-
     ```
 
 3. Führen Sie die Abfrage aus, um zu überprüfen, ob sie richtig konfiguriert ist. Klicken Sie auf die Schaltfläche **+ Visuelles Element**.
