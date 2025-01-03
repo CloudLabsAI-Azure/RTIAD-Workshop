@@ -23,257 +23,277 @@ Fabric Eventstreams
 
 # Fabric Eventstreams
 ## 任务 1：创建 Eventstream
-1. 打开今天在本课程中一直使用的 Fabric 工作区。
+1. 打开今天在本课程中一直使用的 **Fabric 工作区**。
 
-2.	还有与我们的电子商务商店相关的其他流式数据可供我们引入。但是，对于本 Eventstream，我们希望在将数据加载到 Eventhouse 之前对其进行转换。无需转到实时中心，我们可以直接从工作区中创建新的 Eventstream。从 + 新建项目菜单中，创建新的 Eventstream。
+2.	还有与我们的电子商务商店相关的其他流式数据可供我们引入。但是，对于本 Eventstream，我们希望在将数据加载到 Eventhouse 之前对其进行转换。无需转到实时中心，我们可以直接从工作区中创建新的 Eventstream。从 + **新建项目**菜单中，创建新的 **Eventstream**。
  
-3.	将新的 Eventstream 命名为 es_Fabrikam_ClickEvents，选中增强功能选项，然后单击创建。
+3.	将新的 Eventstream 命名为 **es_Fabrikam_ClickEvents**，选中**增强功能**选项，然后单击**创建**。
  
-4.	在“主页”功能区下，单击添加源下拉菜单，然后选择外部源。
+4.	在“主页”功能区下，单击**添加源**下拉菜单，然后选择**外部源**。
  
-5.	与上一个实验室类似，我们将连接到 Azure 事件中心，该中心包含从 Python 笔记本流式传输的数据。单击 Azure 事件中心磁贴的连接。如果在建议部分中没有看到 Azure 事件中心，请选择查看所有源以发现它。
+5.	与上一个实验室类似，我们将连接到 Azure 事件中心，该中心包含从 Python 笔记本流式传输的数据。单击 **Azure 事件中心**磁贴的连接。如果在建议部分中没有看到 **Azure 事件中心**，请选择**查看所有源**以发现它。
  
-6.	创建新建连接。
+6.	创建**新建连接**。
  
 7.	从环境详细信息页面中，复制所有必要的连接设置并将其粘贴到相应的字段中。
 
-事件中心命名空间：rtiadhub{username}
+事件中心命名空间：**rtiadhub{username}**
 
-事件中心：rta-iad-clicks
+事件中心：**rta-iad-clicks**
 
-共享访问密钥名称：rti-reader
+共享访问密钥名称：**rti-reader**
 
-共享访问密钥：由环境详细信息提供
+共享访问密钥：**由环境详细信息提供**
  
-8.	填写完所有属性后，单击连接。
-9.	在 Azure 事件中心数据源的配置中，您可能需要修改事件中心的使用者组，以确保获得对指向数据流的唯一访问点的访问权限。对于本研讨会，您可以保留“$Default”值，如下所示
- 
+8.	填写完所有属性后，单击**连接**。
 
-10.	单击下一步。
-11.	在“查看和创建”窗口中，验证所有内容是否均已正确配置，然后单击添加。
- 
+9.	在 Azure 事件中心数据源的配置中，您可能需要修改事件中心的**使用者组**，以确保获得对指向数据流的唯一访问点的访问权限。对于本研讨会，您可以保留“$Default”值，如下所示
+
+10.	单击**下一步**。
+
+11.	在“查看和创建”窗口中，验证所有内容是否均已正确配置，然后单击添**加**。 
 
 12.	配置流后，您将能够查看来自事件中心的数据的预览。
  
 13.	检查收到的数据。从电子商务网站记录两种类型的事件，即点击数和展现量。
-•	展现量 - 每次向用户显示广告或产品列表时，都会记录展现量事件。展现量是商品（广告或产品）查看次数的度量值，无论它是否进行交互。
-•	点击数 - 当用户通过点击商品与之交互时，将记录点击数事件。与展现量相比，这通常表示参与度更高。
+- **展现量** - 每次向用户显示广告或产品列表时，都会记录展现量事件。展现量是商品（广告或产品）查看次数的度量值，无论它是否进行交互。
+- **点击数** - 当用户通过点击商品与之交互时，将记录点击数事件。与展现量相比，这通常表示参与度更高。
+
 除了记录的点击数和展现量事件外，还有关于点击或展示了什么产品、从什么设备和浏览器加载网页、访问页面的 IP 地址是什么以及页面加载时间的详细信息。
-任务 2：转换 Eventstream
 
-1.	现在，您将获取此数据流并在将其引入您的 KQL 数据库之前进行转换，以便希望从这些数据中获得见解的分析师能够轻松理解。在 Eventstream 画布中，单击转换事件对象的下拉菜单。
- 
-2.	从可用操作的列表中，选择管理字段选项。
- 
-3.	在显示的名为 ManageFields 的新图标上，单击铅笔图标以选择要从源添加到流的字段。
- 
-4.	在显示的弹出窗格中，单击添加所有字段选项按钮。
- 
+## 任务 2：转换 Eventstream
 
-
-5.	从字段列表中，选择名为 PartitionId 的字段，然后单击将鼠标悬停在该字段上时显示的省略号 (…)
+1.	现在，您将获取此数据流并在将其引入您的 KQL 数据库之前进行转换，以便希望从这些数据中获得见解的分析师能够轻松理解。在 Eventstream 画布中，单击**转换事件**对象的下拉菜单。
  
+2.	从可用操作的列表中，选择**管理字段**选项。
+ 
+3.	在显示的名为 **ManageFields** 的新图标上，单击**铅笔图标**以选择要从源添加到流的字段。
+ 
+4.	在显示的弹出窗格中，单击**添加所有字段**选项按钮。
 
-6.	选择移除该字段的选项。对于来自事件中心的此数据流，未使用分区，因此本列对我们没有帮助，我们要将其删除。
+5.	从字段列表中，选择名为 **PartitionId** 的字段，然后单击将鼠标悬停在该字段上时显示的省略号 (…)
+
+6.	选择**移除**该字段的选项。对于来自事件中心的此数据流，未使用分区，因此本列对我们没有帮助，我们要将其删除。
  
 7.	删除本流不需要的以下所有字段。
-•	userAgent
-•	page_loading_seconds
-•	EventProcessedUtcTime
-•	EventEnqueredUtcTime
+   - userAgent
+   - page_loading_seconds
+   - EventProcessedUtcTime
+   - EventEnqueredUtcTime
 
 您应如下图所示保留以下字段。
   
 8.	将鼠标悬停在 eventDate 字段上，当窗口右侧显示省略号 (…) 时，单击它。
  
-9.	选择编辑选项。
+9.	选择**编辑**选项。
  
-10.	单击更改类型切换开关以修改此字段的数据类型。原始类型是 “String”，您需要将转换的类型修改为DateTime。完成后，单击保存。
+10.	单击**更改类型**切换开关以修改此字段的数据类型。原始类型是 “String”，您需要将**转换的类型**修改为**DateTime**。完成后，单击**保存**。
+
+## 任务 3：拆分 Eventstream 并加载两个目标
+
+1.	虽然您可以将此数据流加载到 KQL 数据库以供分析，但您可能希望有另一种方法来使用此数据区分 CLICK 事件和 IMPRESSION 事件。通过将鼠标悬停在 **ManageFields** 转换的末尾，向用户界面添加另一个转换活动
  
+2.	从可用操作列表中选择**筛选器**转换。 
 
-
-任务 3：拆分 Eventstream 并加载两个目标
-1.	虽然您可以将此数据流加载到 KQL 数据库以供分析，但您可能希望有另一种方法来使用此数据区分 CLICK 事件和 IMPRESSION 事件。通过将鼠标悬停在 ManageFields 转换的末尾，向用户界面添加另一个转换活动
- 
-2.	从可用操作列表中选择筛选器转换。
-
- 
-
-3.	在新转换 Filter 上单击铅笔图标。
-
- 
+3.	在新转换 **Filter** 上单击**铅笔图标**。
 
 4.	在屏幕右侧显示的弹出窗口中，自定义筛选条件以反映使用以下设置仅返回 CLICK 值的方法。请务必注意，筛选器转换区分大小写
-•	操作名称 - Clicks
-•	选择要筛选的字段 - eventType
-•	保留事件(当值 - 等于 - CLICK（重要提示！此字段区分大小写，在本示例中，全部输入大写字母）
+   - **操作名称** - Clicks
+   - **选择要筛选的字段** - eventType
+   - **保留事件(当值** - 等于 - CLICK（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
  
-5.	选择保存选项以保留您的更改。
-6.	再次单击刷新按钮以验证是否已从数据中筛选出 CLICK eventTypes。
- 
-7.	这些可能是您唯一想发送到表的行，但另一种选择是改为创建两个单独的流，以将不同的信息传递到两个或多个表。从 Eventstream 的主页功能区中，单击转换事件下拉菜单，然后选择筛选器。
- 
-8.	您的画布上将显示名为 Filter（名称可能不同）的新对象。您需要将 ManageFields 流连接到新的筛选器转换。将一行从一个转换上的绿点拖动到另一个转换以建立该连接。
- 
+5.	选择**保存**选项以保留您的更改。
 
-9.	单击 Filter 的铅笔图标以编辑其设置。
-
+6.	再次单击**刷新**按钮以验证是否已从数据中筛选出 CLICK eventTypes。
  
+7.	这些可能是您唯一想发送到表的行，但另一种选择是改为创建两个单独的流，以将不同的信息传递到两个或多个表。从 Eventstream 的**主页**功能区中，单击**转换事件**下拉菜单，然后选择**筛选器**。
+ 
+8.	您的画布上将显示名为 **Filter（名称可能不同**）的新对象。您需要将 **ManageFields** 流连接到新的筛选器转换。将一行从一个转换上的绿点拖动到另一个转换以建立该连接。
+ 
+9.	单击 **Filter** 的**铅笔图标**以编辑其设置。
 
 10.	在屏幕右侧显示的弹出窗口中，自定义筛选条件以反映使用以下值仅返回 IMPRESSION 值的方法。请记住，筛选器转换区分大小写
-•	操作名称 - Impressions
-•	选择要筛选的字段 - eventType
-•	保留事件(当值 - 等于 - IMPRESSION（重要提示！此字段区分大小写，在本示例中，全部输入大写字母）
+   - **操作名称** - Impressions
+   - **选择要筛选的字段** - eventType
+   - **保留事件(当值** - 等于 - IMPRESSION（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
  
-11.	选择保存选项以保留您的更改。
+11.	选择**保存**选项以保留您的更改。
 
 12.	在将数据加载到 KQL 数据库中的新表之前，我们可以删除不需要的其他列。在本示例中，对于针对“CLICK”记录筛选的数据流，我们不再需要“eventType”列，因为每行都包含相同的值。对于“IMPRESSION”数据流，我们可以出于上述相同原因删除“eventType”列，还可以删除“referrer”列，因为此表中每一行的此列都为空。
 
-13.	单击Clicks筛选器操作后面的 + 图标。
- 
+13.	单击Clicks筛选器操作后面的 **+ 图标**。
 
 14.	在下拉菜单中，选择“管理字段”
 
- 
+15.	单击**铅笔图标**以选择要在流中添加/删除的字段
 
-15.	单击铅笔图标以选择要在流中添加/删除的字段
-
- 
-
-16.	将操作重命名为“Manage_Clicks”。还选择“添加所有字段”，然后删除“eventType”。完成后，单击保存。
-
- 
+16.	将操作重命名为“Manage_Clicks”。还选择“添加所有字段”，然后删除“eventType”。完成后，单击**保存**。
 
 17.	接下来，让我们添加另一个连接到“Impressions”筛选器的“管理字段”转换，如下所示
 
- 
-
-18.	单击铅笔图标以选择要在流中添加/删除的字段
-
- 
+18.	单击**铅笔图标**以选择要在流中添加/删除的字段
 
 19.	将操作重命名为“Manage_Impressions”。然后，选择“添加所有字段”，然后删除“eventType”和“referrer”。您的“管理字段”转换应如下所示：
 
+20.	现在，您已清理每种类型事件的流的数据，需要将每个流加载到 KQL 数据库的新表中。单击 **Manage_Clicks** 管理字段操作后面的 **+ 图标**。
  
-
-20.	现在，您已清理每种类型事件的流的数据，需要将每个流加载到 KQL 数据库的新表中。单击 Manage_Clicks 管理字段操作后面的 + 图标。
+21.	在显示的下拉列表中，转到**目标**，然后选择 **Eventhouse**。
  
-21.	在显示的下拉列表中，转到目标，然后选择 Eventhouse。
- 
-22.	针对 Eventhouse 目标单击铅笔图标。
+22.	针对 Eventhouse 目标单击**铅笔图标**。
  
 23.	针对此目标，配置以下属性。
-•	目标名称 - dbo-Clicks
-•	工作区 - RTI_username
-•	Eventhouse - eh_Fabrikam
-•	KQL 数据库 - eh_Fabrikam
-•	目标表 - 创建名为 Clicks 的新表
+   - **目标名称** - dbo-Clicks
+   - **工作区** - RTI_username
+   - **Eventhouse** - eh_Fabrikam
+   - **KQL 数据库** - eh_Fabrikam
+   - **目标表** - 创建名为 **Clicks** 的新表
  
-24.	单击弹出窗口底部的保存。
+24.	单击弹出窗口底部的**保存**。
+
 25.	对“Impressions”表执行相同操作，按如下所示配置以下信息。
  
 26.	保存更改。
-27.	此 Eventstream 现在已准备好开始流式传输。单击发布以开始该流。
+
+27.	此 Eventstream 现在已准备好开始流式传输。单击**发布**以开始该流。
  
 28.	随着 Eventstream 正在运行，您应看到 Eventstream 用户界面略有变化，这表示您正在从事件中心流式传输数据，从而转换和拆分该数据流，并将其加载到两个单独的 KQL 数据库表中。
-
  
-向 KQL 数据库添加更多数据
-任务 4：验证事件数据表
-1.	返回到 RTI_username 工作区。
-2.	打开 eh_Fabrikam KQL 数据库。
+# 向 KQL 数据库添加更多数据
+## 任务 4：验证事件数据表
 
- 
+1.	返回到 **RTI_username** 工作区。
+2.	打开 **eh_Fabrikam** KQL 数据库。
 
-3.	随着 Eventstream 的运行，您现在应该在“KQL 数据库概述”页面上看到两个新表。在让 Eventstream 运行一段时间后，您将看到 KQL 数据库中的前几个表显示在“概述”页面上，并显示表中存储了多少数据。
- 
+3.	随着 Eventstream 的运行，您现在应该在“KQL 数据库概述”页面上看到两个新表。在让 Eventstream 运行一段时间后，您将看到 KQL 数据库中的**前几个表**显示在“概述”页面上，并显示表中存储了多少数据。
 
-4.	单击 Impressions 表。此表每 24 小时接收约 150 万条记录。展现量比点击数多得多，因此就本课程而言，这将是您最大的表。
- 
+4.	单击 **Impressions** 表。此表每 24 小时接收约 150 万条记录。展现量比点击数多得多，因此就本课程而言，这将是您最大的表。 
 
-任务 5：为维度表创建 KQL 数据库快捷方式
+## 任务 5：为维度表创建 KQL 数据库快捷方式
+
 到目前为止，您一直在处理流式数据，但仍然缺少一些关键元素，以便能够从您引入的数据中获取智能。在此任务中，我们将从外部 Azure SQL 数据库引入数据，它们将用作 KQL 数据库中的维度表。这将使我们能够更好地描述我们当前正在流式传输的数据。例如，我们的所有表都包含产品 ID 的形式，这是一个数字字段，但如果能够显示某种产品名称，那就更好了。为此提供支持所需的数据当前位于外部 Azure SQL 数据库中，让我们看看连接到其中一些维度表有多容易。
 
-1.	在 eh_Fabrikam 数据库中，单击名为新建相关项的下拉菜单。然后，选择指示 KQL 查询集的选项。
+1.	在 **eh_Fabrikam** 数据库中，单击名为**新建相关项**的下拉菜单。然后，选择指示 KQL 查询集的选项。
 
- 
+2.	将 KQL 查询集命名为 **Create Tables**，然后单击**创建**按钮。
 
-2.	将 KQL 查询集命名为 Create Tables，然后单击创建按钮。
+3.	OneLake 数据中心将打开，唯一可供选择的选项是 **eh_Fabrikam** KQL 数据库。选择此数据库，然后单击**连接**。
 
+4.	在新界面中，在查询窗口中单击一次，然后使用键盘快捷方式 **Ctrl + A** 突出显示所有文本。突出显示所有内容后，删除所有内容。
  
+5.	在空白查询窗口中，输入以下 KQL 脚本。此脚本将创建与外部 Azure SQL 数据库的连接，并使其作为**快捷方式**在我们的 KQL 数据库中可用。快捷方式****在只读模式下附加，可以查看和运行查询以及引入到 KQL 数据库中的流式数据。
 
-3.	OneLake 数据中心将打开，唯一可供选择的选项是 eh_Fabrikam KQL 数据库。选择此数据库，然后单击连接。
- 
+    ```
+    .execute database script <|
+    //External tables - shortcuts
+    // connect to operational Database with external table Product
+    .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
+    kind=sql
+    table=[SalesLT.Product]
+    ( 
+    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    )
+    with 
+    (
+    createifnotexists = true
+    )  
+    // connect to operational Database with external table ProductCategory
+    .create external table productCategories (ProductCategoryID: int, Name: string) 
+    kind=sql
+    table=[SalesLT.ProductCategory]
+    ( 
+     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+    with 
+    (
+    createifnotexists = true
+    )
+    ```
 
-4.	在新界面中，在查询窗口中单击一次，然后使用键盘快捷方式 Ctrl + A 突出显示所有文本。突出显示所有内容后，删除所有内容。
+6.	单击 **Run** 按钮以执行脚本。
  
-5.	在空白查询窗口中，输入以下 KQL 脚本。此脚本将创建与外部 Azure SQL 数据库的连接，并使其作为快捷方式在我们的 KQL 数据库中可用。快捷方式在只读模式下附加，可以查看和运行查询以及引入到 KQL 数据库中的流式数据。
-
- 
- 
-6.	单击 Run 按钮以执行脚本。
- 
-7.	在“数据库资源管理器”窗口中，您现在将看到一个名为 Shortcuts 的新文件夹，在该文件夹中，您应看到另外两个链接到此 KQL 数据库的表。这些表存在于 Azure SQL 数据库中，但通过您执行的脚本，您现在已将它们链接到此 KQL 数据库，以便与您的 InternetSales 和事件表联接。
+7.	在“数据库资源管理器”窗口中，您现在将看到一个名为 **Shortcuts** 的新文件夹，在该文件夹中，您应看到另外两个链接到此 KQL 数据库的表。这些表存在于 Azure SQL 数据库中，但通过您执行的脚本，您现在已将它们链接到此 KQL 数据库，以便与您的 InternetSales 和事件表联接。
  
 8.	现在，您的数据库已具有维度质量，您可以回答问题，并为报表的使用者提供更多上下文，并在整个组织中根据这些表的见解为报表和查询的使用者提供更多上下文。运行以下 KQL 查询以查看其中一个值。
 
- 
+    ```
+     InternetSales
+     | join kind=inner 
+     (external_table("products")) on ($left.ProductKey == $right.ProductID)
+     | summarize SalesPerProduct=sum(SalesAmount) by Name
+     | project Name, SalesPerProduct
+    ```
 
 9.	您现在将在查询结果中看到公司售出的每个单独产品的值。
 
- 
+10.	突出显示您的查询后，单击工具栏中的按钮 **Create Power BI report**。
 
-10.	突出显示您的查询后，单击工具栏中的按钮 Create Power BI report。
+11.	这使您有机会使用 KQL 数据库中的数据创建 Power BI 报表。等待片刻后，您可以随意探索此内容，但您现在还不需要根据此数据创建报表。当您准备好继续时，单击右上角的 **X 按钮**。
 
- 
+12.	导航回 **eh_Fabrikam** KQL 数据库。
 
-11.	这使您有机会使用 KQL 数据库中的数据创建 Power BI 报表。等待片刻后，您可以随意探索此内容，但您现在还不需要根据此数据创建报表。当您准备好继续时，单击右上角的 X 按钮。
+13.	单击 **eh_Fabrikam** 导航窗格中的**快捷方式**选项。这将向您显示为此 KQL 数据库创建的所有快捷方式。需要注意的是，这些快捷方式被视为使用 Azure SQL 外部表语法的经典 Azure 数据资源管理器外部表，并且与 OneLake、ADLS 或 S3 快捷方式的构建方式不同，后者在 Fabric 中的 KQL 数据库中也受支持。
 
- 
-
-12.	导航回 eh_Fabrikam KQL 数据库。
- 
-
-13.	单击 eh_Fabrikam 导航窗格中的快捷方式选项。这将向您显示为此 KQL 数据库创建的所有快捷方式。需要注意的是，这些快捷方式被视为使用 Azure SQL 外部表语法的经典 Azure 数据资源管理器外部表，并且与 OneLake、ADLS 或 S3 快捷方式的构建方式不同，后者在 Fabric 中的 KQL 数据库中也受支持。
- 
-
-总结
+# 总结
 在本实验室中，您创建了另一个数据流，但能够使用 Fabric 中 Eventstream 的用户界面转换该流。通过将数据加载到两个单独的表中，您可以跟踪电子商务系统中的所有点击数和展现量，以用于市场营销、广告和分析目的。您还使用 KQL 查询集外部表功能创建了外部 Azure SQL 数据库的快捷方式。现在，您有几个维度，可以更好地了解 KQL 数据库中的销售和点击数的背景信息。
 
-
-
-
-参考
+# 参考
 Fabric Real-Time Intelligence in a Day (RTIIAD) 向您介绍了 Microsoft Fabric 中提供的一些主要功能。
 在服务菜单中，“帮助 (?)”部分包含指向一些优质资源的链接。
  
 以下更多参考资源可帮助您进行与 Microsoft Fabric 相关的后续步骤。
-•	请参阅博客文章以阅读完整的 Microsoft Fabric GA 公告 
-•	通过引导式教程https://aka.ms/Fabric-GuidedTour探索 Fabric
-•	注册 Microsoft Fabric 免费试用版 
-•	访问 Microsoft Fabric 网站 
-•	通过探索 Fabric 学习模块https://aka.ms/learn-fabric学习新技能
-•	探索 Fabric 技术文档 
-•	阅读有关 Fabric 入门指南的免费电子书 
-•	加入 Fabric 社区以发布问题、共享反馈并向他人学习
+
+- 请参阅博客文章以阅读完整的 [Microsoft Fabric GA 公告](https://aka.ms/Fabric-Hero-Blog-Ignite23)
+
+- 通过[引导式教程](https://aka.ms/Fabric-GuidedTour)探索Fabric
+
+- 注册[Microsoft Fabric 免费试用版](https://aka.ms/try-fabric)
+
+- 访问[Microsoft Fabric 网站](https://aka.ms/microsoft-fabric)
+
+- 通过探索[Fabric 学习模块](https://aka.ms/learn-fabric)学习新技能
+
+- 探索[Fabric 技术文档](https://aka.ms/fabric-docs)
+
+- 阅读[有关Fabric 入门指南的免费电子书](https://aka.ms/fabric-get-started-ebook)
+
+- 加入[Fabric 社区](https://aka.ms/fabric-community)以发布问题、共享反馈并向他人学习
+
 阅读更多深度 Fabric 体验公告博客：
-•	Fabric 中的 Data Factory 体验博客 
-•	Fabric 中的 Synapse Data Engineering 体验博客 
-•	Fabric 中的 Synapse Data Science 体验博客 
-•	Fabric 中的 Synapse Data Warehousing 体验博客 
-•	Fabric 中的 Synapse Real-Time Intelligence 体验博客 
-•	Power BI 公告博客 
-•	Fabric 中的 Data Activator 体验博客 
-•	Fabric 中的管理和治理博客 
-•	Fabric 中的 OneLake 博客 
-•	Dataverse 和 Microsoft Fabric 集成博客 
+
+- [Fabric 中的Data Factory 体验博客](https://aka.ms/Fabric-Data-Factory-Blog)
+
+- [Fabric 中的Synapse Data Engineering 体验博客](https://aka.ms/Fabric-DE-Blog)
+
+- [Fabric 中的Synapse Data Science 体验博客](https://aka.ms/Fabric-DS-Blog)
+
+- [Fabric 中的Synapse Data Warehousing 体验博客](https://aka.ms/Fabric-DW-Blog)
+
+- [Fabric 中的Synapse Real-Time Intelligence 体验博客](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)
+ 
+- [Power BI 公告博客](https://aka.ms/Fabric-PBI-Blog)
+
+- [Fabric 中的Data Activator 体验博客](https://aka.ms/Fabric-DA-Blog)
+
+- [Fabric 中的管理和治理博客](https://aka.ms/Fabric-Admin-Gov-Blog)
+
+- [Fabric 中的OneLake 博客](https://aka.ms/Fabric-OneLake-Blog)
+
+- [Dataverse 和Microsof t Fabric 集成博客](https://aka.ms/Dataverse-Fabric-Blog)
  
 © 2024 Microsoft Corporation.保留所有权利。
+
 使用本演示/实验室即表示您已同意以下条款：
-本演示/实验中的技术/功能由 Microsoft Corporation 出于获取反馈和提供学习体验的目的提供。只能将本演示/实验用于评估这些技术特性和功能以及向 Microsoft 提供反馈。不得用于任何其他用途。不得对此演示/实验或其任何部分进行修改、复制、分发、传送、显示、执行、复制、公布、许可、转让、销售或基于以上内容创建衍生作品。
+
+本演示/实验中的技术/功能由Microsoft Corporation 出于获取反馈和提供学习体验的目的提供。只能将本演示/实验用于评估这些技术特性和功能以及向Microsoft 提供反馈。不得用于任何其他用途。不得对此演示/实验或其任何部分进行修改、复制、分发、传送、显示、执行、复制、公布、许可、转让、销售或基于以上内容创建衍生作品。
+
 严禁将本演示/实验（或其任何部分）复制到任何其他服务器或位置以便进一步复制或再分发。
+
 本演示/实验室出于上述目的，在不涉及复杂设置或安装操作的模拟环境中提供特定软件技术/产品特性和功能，包括潜在的新功能和概念。本演示/实验室中展示的技术/概念可能不是完整的功能，可能会以不同于最终版本的工作方式工作。我们也可能不会发布此类功能或概念的最终版本。在物理环境中使用此类特性和功能的体验可能也有所不同。
-反馈。如果您针对本演示/实验室中所述的技术特性、功能和/或概念向 Microsoft 提供反馈，则意味着您向 Microsoft 无偿提供以任何方式、出于任何目的使用和分享您的反馈并将其商业化的权利。您同样无偿为第三方提供其产品、技术和服务使用或配合使用包含此反馈的 Microsoft 软件或服务的任何特定部分所需的任何专利权。如果根据某项许可的规定，Microsoft 由于在其软件或文档中包含了您的反馈需要向第三方授予该软件或文档的许可，请不要提供这样的反馈。这些权利在本协议终止后继续有效。
+
+**反馈**。如果您针对本演示/实验室中所述的技术特性、功能和/或概念向Microsoft 提供反 馈，则意味着您向Microsoft 无偿提供以任何方式、出于任何目的使用和分享您的反馈并将其商业化的权利。您同样无偿为第三方提供其产品、技术和服务使用或配合使用包含此反馈的Microsoft 软件或服务的任何特定部分所需的任何专利权。如果根据某项许可的规定，Microsoft 由于在其软件或文档中包含了您的反馈需要向第三方授予该软件或文档的许可，请不要提供这样的反馈。这些权利在本协议终止后继续有效。
+
 对于本演示/实验室，MICROSOFT CORPORATION 不提供任何明示、暗示或法定的保证和条件，包括有关适销性、针对特定目的的适用性、所有权和不侵权的所有保证和条件。对于使用本演示/实验产生的结果或输出内容的准确性，或者出于任何目的包含本演示/实验中的信息的适用性，Microsoft 不做任何保证或陈述。
-免责声明
+
+# 免责声明
+
+本演示/实验仅包含Microsoft Power BI 的部分新功能和增强功能。在产品的后续版本中，部分功能可能有所更改。在本演示/实验中，可了解部分新功能，但并非全部新功能。
 本演示/实验仅包含 Microsoft Power BI 的部分新功能和增强功能。在产品的后续版本中，部分功能可能有所更改。在本演示/实验中，可了解部分新功能，但并非全部新功能。
