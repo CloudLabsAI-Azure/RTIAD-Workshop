@@ -51,7 +51,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 4. Fügen Sie in dieser neuen Registerkarte den folgenden Code ein, heben Sie ihn hervor und wählen Sie „Ausführen“ aus, um vier neue Tabellen zu erstellen, die als Ihre Bronze-Ebene des Medallion- Frameworks dienen.
 
      ```
-
     //BRONZE LAYER
 
     .execute database script <|
@@ -94,7 +93,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     .alter table SalesOrderHeader policy ingestiontime true
     
     .alter table SalesOrderDetail policy ingestiontime true
-
     ```
 
     ![](../media/lab-04/image017.jpg)
@@ -140,49 +138,49 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
 9. Klicken Sie auf **Weiter**.
 
-10.	Sie müssen jetzt Ihr Ziel einrichten, um festzulegen, wohin die Pipeline die Daten senden soll. Suchen Sie den **OneLake-Datenhub**, und wählen Sie dann Ihre KQL-Datenbank **eh_Fabrikam** aus.
+10. Sie müssen jetzt Ihr Ziel einrichten, um festzulegen, wohin die Pipeline die Daten senden soll. Suchen Sie den **OneLake-Datenhub**, und wählen Sie dann Ihre KQL-Datenbank **eh_Fabrikam** aus.
 
     ![](../media/lab-04/image031.png)
 
-11.	Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie einfach die Anmeldeinformationen, die auf der Seite mit den Umgebungsdetails angegeben sind.
+11. Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie einfach die Anmeldeinformationen, die auf der Seite mit den Umgebungsdetails angegeben sind.
 
-12.	Klicken Sie auf die Tabelle **SalesLT.Address**, falls sie nicht bereits ausgewählt ist, und klicken Sie dann auf das Dropdownmenü neben der Option **Tabelle**. Klicken Sie auf die Tabellenoption **Address**.
+12. Klicken Sie auf die Tabelle **SalesLT.Address**, falls sie nicht bereits ausgewählt ist, und klicken Sie dann auf das Dropdownmenü neben der Option **Tabelle**. Klicken Sie auf die Tabellenoption **Address**.
 
     ![](../media/lab-04/image033.png)
 
-13.	Sie sehen nun eine Übersicht über die **Spaltenzuordnungen**. Auf diese Weise können Sie alle Felder aus der Quelldatenbank visualisieren, die Sie an Ihre KQL-Datenbank senden. Sie haben die Möglichkeit, bestimmte Felder zu entfernen, wenn Sie nicht möchten, dass sie aus der Quelle übernommen werden.
+13. Sie sehen nun eine Übersicht über die **Spaltenzuordnungen**. Auf diese Weise können Sie alle Felder aus der Quelldatenbank visualisieren, die Sie an Ihre KQL-Datenbank senden. Sie haben die Möglichkeit, bestimmte Felder zu entfernen, wenn Sie nicht möchten, dass sie aus der Quelle übernommen werden.
 
     ![](../media/lab-04/image036.png)
 
-14.	Befolgen Sie dieselben Schritte wie in Schritt 11–12 für die Tabellen **SalesLT.Customer**, **SaleLT.SalesOrderDetail** und **SalesLT.SalesOrderHeader**. Es müssen keine Spaltenzuordnungen durchgeführt werden, ordnen Sie einfach die Tabellennamen zu. Wenn alle Tabellen entsprechend zugeordnet wurden, klicken Sie auf **Weiter**.
+14. Befolgen Sie dieselben Schritte wie in Schritt 11–12 für die Tabellen **SalesLT.Customer**, **SaleLT.SalesOrderDetail** und **SalesLT.SalesOrderHeader**. Es müssen keine Spaltenzuordnungen durchgeführt werden, ordnen Sie einfach die Tabellennamen zu. Wenn alle Tabellen entsprechend zugeordnet wurden, klicken Sie auf **Weiter**.
 
-15.	Die letzte Seite mit dem Assistenten „Daten kopieren“ ist eine Übersichtsseite zum Überprüfen aller von Ihnen ausgewählten Einstellungen. Stellen Sie sicher, dass die Quell- und
-Zieltabellenanzahl identisch ist.
+15. Die letzte Seite mit dem Assistenten „Daten kopieren“ ist eine Übersichtsseite zum Überprüfen aller von Ihnen ausgewählten Einstellungen. Stellen Sie sicher, dass die Quell- und Zieltabellenanzahl identisch ist.
 
     ![](../media/lab-04/image038.jpg)
  
-16.	Klicken Sie auf **Speichern und ausführen**.
+16. Klicken Sie auf **Speichern und ausführen**.
 
-17.	Nach einigen Momenten wird ein Flyout-Fenster angezeigt, das einen **Parameter** enthält. Der soeben abgeschlossene Assistent „Daten kopieren“ hat eine Liste der Tabellen erstellt, die durchlaufen und in die KQL-Tabellen geladen werden sollen. Klicken Sie einfach auf die Schaltfläche **OK**, um die Pipeline in ihrer aktuellen Konfiguration aus dem Assistenten
-„Daten kopieren“ auszuführen.
+17. Nach einigen Momenten wird ein Flyout-Fenster angezeigt, das einen **Parameter** enthält. Der soeben abgeschlossene Assistent „Daten kopieren“ hat eine Liste der Tabellen erstellt, die durchlaufen und in die KQL-Tabellen geladen werden sollen. Klicken Sie einfach auf die Schaltfläche **OK**, um die Pipeline in ihrer aktuellen Konfiguration aus dem Assistenten „Daten kopieren“ auszuführen.
 
     ![](../media/lab-04/image041.png)
 
-18.	Lassen Sie die Pipelineausführung weiter laufen und nach etwa einer Minute sollte die Datenverschiebung abgeschlossen sein. Sobald Sie sehen, dass alle Aktivitäten innerhalb der Pipeline **Erfolgreich** waren, haben Sie die Daten übertragen.
+18. Lassen Sie die Pipelineausführung weiter laufen und nach etwa einer Minute sollte die Datenverschiebung abgeschlossen sein. Sobald Sie sehen, dass alle Aktivitäten innerhalb der Pipeline **Erfolgreich** waren, haben Sie die Daten übertragen.
 
     ![](../media/lab-04/image044.png)
  
-19.	Lassen Sie uns eine unserer Tabellen überprüfen und die Daten verifizieren. Navigieren Sie zu dem von uns verwendeten KQL-Abfragesatz **Tabellen erstellen** zurück, stellen Sie sicher, dass Sie sich auf der Registerkarte **Bronze Layer** befinden, und führen Sie das folgende Skript aus:
+19. Lassen Sie uns eine unserer Tabellen überprüfen und die Daten verifizieren. Navigieren Sie zu dem von uns verwendeten KQL-Abfragesatz **Tabellen erstellen** zurück, stellen Sie sicher, dass Sie sich auf der Registerkarte **Bronze Layer** befinden, und führen Sie das folgende Skript aus:
 
+    ```
     //Query the Bronze layer Customer table 
 
     Customer
 
     | take 100
+    ```
 
     ![](../media/lab-04/image046.png)
 
-20.	Sie sollten einige Daten wie im Bild unten sehen, aber sie sind möglicherweise nicht genau.
+20. Sie sollten einige Daten wie im Bild unten sehen, aber sie sind möglicherweise nicht genau.
 
     ![](../media/lab-04/image048.png)
 
@@ -206,7 +204,6 @@ Zieltabellenanzahl identisch ist.
     .create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
 
     .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
-    
     ```
 
 3. Führen Sie das Skript aus, indem Sie das neue Skript markieren und auf **Ausführen** klicken.
@@ -220,7 +217,6 @@ Zieltabellenanzahl identisch ist.
 5. Nachdem die Tabellen erstellt wurden, müssen Sie Daten in die Tabellen laden. Sie erstellen eine Aktualisierungsrichtlinie, um die Daten zu transformieren und zu verschieben, wenn sie auf der Bronze-Ebene erfasst werden. Kopieren Sie das folgende Skript, fügen Sie es ein und **führen Sie** dann den Code aus.
 
     ```
- 
     // use update policies to transform data during Ingestion
 
     .execute database script <|
@@ -258,9 +254,7 @@ Zieltabellenanzahl identisch ist.
     }
 
     .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-
     ```
-
 
 6. Obwohl Sie Ergebnisse der Abfrageausführung sehen, ist der beste Beweis dafür, dass Ihre Abfrage abgeschlossen wurde, die Anzeige eines neuen erweiterbaren Ordners in Ihrem Datenbankobjektbereich. Klicken Sie auf das **>-Symbol** neben dem **Ordner „Functions“**. Diese Funktionen ermöglichen es, die in die Bronze-Ebene der KQL-Datenbank geladenen Daten anschließend zu spiegeln, zu transformieren und in die Silber-Ebene zu laden.
  
@@ -278,21 +272,23 @@ Zieltabellenanzahl identisch ist.
 
     ![](../media/lab-04/image067.png)
  
-10.	Warten Sie erneut etwa eine Minute, bis die Pipeline ihren Ladevorgang abgeschlossen hat, und fahren Sie mit dem nächsten Schritt fort, wenn alle Elemente in Ihrem Ausgabemenü **Erfolgreich** anzeigen.
+10. Warten Sie erneut etwa eine Minute, bis die Pipeline ihren Ladevorgang abgeschlossen hat, und fahren Sie mit dem nächsten Schritt fort, wenn alle Elemente in Ihrem Ausgabemenü **Erfolgreich** anzeigen.
 
     ![](../media/lab-04/image070.jpg)
 
-11.	Sobald die Datenpipeline abgeschlossen ist, validieren Sie die Ergebnisse in der KQL-Datenbank. Kehren Sie zum KQL-Abfragesatz **Tabellen erstellen** zurück und navigieren Sie zur Registerkarte **Silver Layer**.
+11. Sobald die Datenpipeline abgeschlossen ist, validieren Sie die Ergebnisse in der KQL-Datenbank. Kehren Sie zum KQL-Abfragesatz **Tabellen erstellen** zurück und navigieren Sie zur Registerkarte **Silver Layer**.
  
-12.	Fragen Sie in einer neuen Zeile die SilverAddress-Tabelle ab, indem Sie die folgende Abfrage schreiben und den Code ausführen.
+12. Fragen Sie in einer neuen Zeile die SilverAddress-Tabelle ab, indem Sie die folgende Abfrage schreiben und den Code ausführen.
 
+    ```
     SilverAddress
 
     | take 100
+    ```
 
     ![](../media/lab-04/image073.png)
 
-13.	Beachten Sie in Ihren Ergebnissen, dass Ihre **SilverAddress**-Tabelle die zusätzliche Spalte **IngestionDate** aufweist, die nicht physisch in der Tabelle **Address** vorhanden ist.
+13. Beachten Sie in Ihren Ergebnissen, dass Ihre **SilverAddress**-Tabelle die zusätzliche Spalte **IngestionDate** aufweist, die nicht physisch in der Tabelle **Address** vorhanden ist.
 
     ![](../media/lab-04/image076.jpg)
 
@@ -302,26 +298,24 @@ Jetzt, da Sie Ihre transformierte Ebene an Daten innerhalb der Silber-Ebene habe
 
 1. Falls dies noch nicht geschehen ist, öffnen Sie Ihren KQL-Abfragesatz **Create Tables**, und erstellen Sie eine neue Registerkarte mit dem Namen „Gold Layer“.
 
-
-   ![](../media/lab-04/image078.png)
+    ![](../media/lab-04/image078.png)
 
 2. Fügen Sie zum Erstellen einer materialisierten Ansicht den folgenden Code in den Abfragesatz ein.
 
    ```
-    //GOLD LAYER
+   //GOLD LAYER
 
-    // use materialized views to view the latest changes in the SilverAddress table
+   // use materialized views to view the latest changes in the SilverAddress table
 
-    .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
+   .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
 
-    {
+   {
 
-    SilverAddress
+   SilverAddress
 
-    | summarize arg_max(IngestionDate, *) by AddressID
+   | summarize arg_max(IngestionDate, *) by AddressID
 
-    }
-
+   }
    ```
  
 3. Sobald der Code eingefügt wurde, markieren Sie den Code und führen Sie ihn aus, indem Sie auf die Schaltfläche **Run** klicken.
@@ -338,9 +332,11 @@ Jetzt, da Sie Ihre transformierte Ebene an Daten innerhalb der Silber-Ebene habe
 
 6. Führen Sie in Ihrem Abfragefenster den folgenden Code aus, um die neue materialisierte Sicht abzufragen.
 
+    ```
     GoldAddress
 
     | take 1000
+    ```
 
     ![](../media/lab-04/image089.png)
 
@@ -408,30 +404,27 @@ Jetzt, da Sie Ihre transformierte Ebene an Daten innerhalb der Silber-Ebene habe
     | summarize count() by dateOnly
     
     }
-
     ```
 
 9. Sie sollten jetzt sechs materialisierte Ansichten in Ihrer KQL-Datenbank haben.
 
-   ![](../media/lab-04/image091.png)
+    ![](../media/lab-04/image091.png)
 
-10.	Sie haben jetzt erfolgreich ein Medallion-Framework innerhalb einer KQL-Datenbank erstellt. Obwohl diese Daten problemlos nutzbar sind, gibt es unter Ihnen sicherlich Benutzer, die noch nie mit Kusto gearbeitet haben und daher lieber auf anderem Wege auf die Daten aus diesen Tabellen zugreifen möchten. In der nächsten Aufgabe erstellen Sie ein Lakehouse. Machen Sie dann mithilfe der OneLake-Verfügbarkeitsfunktion, die wir in Übung 01 aktiviert haben, einige der Tabellen in unserer KQL-Datenbank über Lakehouse mithilfe von Verknüpfungen zugänglich.
+10. Sie haben jetzt erfolgreich ein Medallion-Framework innerhalb einer KQL-Datenbank erstellt. Obwohl diese Daten problemlos nutzbar sind, gibt es unter Ihnen sicherlich Benutzer, die noch nie mit Kusto gearbeitet haben und daher lieber auf anderem Wege auf die Daten aus diesen Tabellen zugreifen möchten. In der nächsten Aufgabe erstellen Sie ein Lakehouse. Machen Sie dann mithilfe der OneLake-Verfügbarkeitsfunktion, die wir in Übung 01 aktiviert haben, einige der Tabellen in unserer KQL-Datenbank über Lakehouse mithilfe von Verknüpfungen zugänglich.
  
 # Fabric Lakehouse- und OneLake-Verfügbarkeit
 ## Aufgabe 5: Lakehouse erstellen
 1. Kehren Sie zum Arbeitsbereich **RTI_username** zurück.
 2. Klicken Sie auf die Option **+ Neues Element**, und wählen Sie dann **Lakehouse** aus der Liste der verfügbaren Optionen aus.
 
-   ![](../media/lab-04/image093.jpg)
+    ![](../media/lab-04/image093.jpg)
 
 3. Geben Sie dem Lakehouse den Namen **lh_Fabrikam**, und klicken Sie dann auf **Erstellen**. Aktivieren Sie nicht die Vorschaufunktion des Lakehouse-Schemas.
 
-   ![](../media/lab-04/image095.png)
+    ![](../media/lab-04/image095.png)
 
 ## Aufgabe 6: Mit KQL-Datenbanktabellen verknüpfen
-Innerhalb der Lakehouse-Benutzeroberfläche haben Sie einige Optionen, wie Sie Streaming- Daten in Lakehouse selbst einbringen können. Eine zuvor im Kurs erwähnte Option ist die
-Verwendung eines Eventstreams, um Daten direkt vom Event Hub statt aus der KQL-Datenbank in Lakehouse zu laden. Da Sie bereits entschieden haben, dass KQL-Datenbanken zum Erreichen bestimmter Ziele und Anforderungen verwendet werden sollen, möchten Sie diese Daten nicht erneut kopieren. Verwenden wir stattdessen eine **Verknüpfung**, um die Daten aus der KQL-
-Datenbank zugänglich zu machen, über die wir bereits verfügen. So können Benutzer, die mit dieser Erfahrung vertrauter sind, auf die Daten zugreifen können, die wir in der KQL-Datenbank verwendet haben.
+Innerhalb der Lakehouse-Benutzeroberfläche haben Sie einige Optionen, wie Sie Streaming- Daten in Lakehouse selbst einbringen können. Eine zuvor im Kurs erwähnte Option ist die Verwendung eines Eventstreams, um Daten direkt vom Event Hub statt aus der KQL-Datenbank in Lakehouse zu laden. Da Sie bereits entschieden haben, dass KQL-Datenbanken zum Erreichen bestimmter Ziele und Anforderungen verwendet werden sollen, möchten Sie diese Daten nicht erneut kopieren. Verwenden wir stattdessen eine **Verknüpfung**, um die Daten aus der KQL-Datenbank zugänglich zu machen, über die wir bereits verfügen. So können Benutzer, die mit dieser Erfahrung vertrauter sind, auf die Daten zugreifen können, die wir in der KQL-Datenbank verwendet haben.
 
 1. Wählen Sie im Menü die Option **Neue Verknüpfung** aus.
 
@@ -453,7 +446,7 @@ Datenbank zugänglich zu machen, über die wir bereits verfügen. So können Ben
     - Impressions
     - InternetSales
 
-    ![](../media/lab-04/image104.png)
+      ![](../media/lab-04/image104.png)
 
 6. Diese Tabellen könnten für alle Benutzer sehr nützlich sein, die Notebooks innerhalb von Fabric nutzen. Diese Daten könnten in Datenwissenschaftsexperimenten verwendet werden, um ein Modell zu trainieren, das vorhersagt, an welchen Links Benutzer wahrscheinlich interessiert sein könnten.
 
@@ -467,19 +460,18 @@ Datenbank zugänglich zu machen, über die wir bereits verfügen. So können Ben
 
     ![](../media/lab-04/image108.png)
 
-10.	Klicken Sie auf die Tabelle mit dem Namen **Clicks**.
+10. Klicken Sie auf die Tabelle mit dem Namen **Clicks**.
 
     ![](../media/lab-04/image110.png)
  
 11.	Sie können eine Auswahl der Datensätze aus dieser Tabelle sehen, die in Ihrer Benutzeroberfläche angezeigt wurden.
-Hinweis: Es kann einige Stunden dauern, bis die Daten in OneLake angezeigt werden 
-(https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability).
+
+**Hinweis:** Es kann einige Stunden dauern, bis die Daten in OneLake angezeigt werden (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability).
 
 
 # Zusammenfassung
 
-In dieser Übung haben Benutzer ein Medallion-Framework innerhalb einer Datenbank der Kusto- Abfragesprache (KQL) erstellt. Benutzer haben Rohdaten mithilfe einer Datenpipeline in der Bronze- Ebene der Medallion-Architektur erfasst. Sie haben diese Daten transformiert und zur weiteren
-Verarbeitung und Optimierung in die Silber-Ebene geladen. Abschließend haben Benutzer die Daten mithilfe von materialisierten Ansichten für die Analyse in der Gold-Ebene aggregiert und optimiert.
+In dieser Übung haben Benutzer ein Medallion-Framework innerhalb einer Datenbank der Kusto- Abfragesprache (KQL) erstellt. Benutzer haben Rohdaten mithilfe einer Datenpipeline in der Bronze- Ebene der Medallion-Architektur erfasst. Sie haben diese Daten transformiert und zur weiteren Verarbeitung und Optimierung in die Silber-Ebene geladen. Abschließend haben Benutzer die Daten mithilfe von materialisierten Ansichten für die Analyse in der Gold-Ebene aggregiert und optimiert.
 
 Nach dem Erstellen des Medallion-Frameworks haben die Benutzer Microsoft Fabric- Tastenkombinationen verwendet, um die Daten aus der KQL-Datenbank mit einem Lakehouse zu verknüpfen. Diese Integration ermöglichte einen nahtlosen Zugriff und eine Analyse der Daten in beiden Umgebungen. Zum Abschluss der Übung haben die Benutzer die Datenverknüpfung überprüft und grundlegende Abfragen durchgeführt, um die Funktionalität des Frameworks sicherzustellen.
 
@@ -501,6 +493,7 @@ Nachfolgend finden Sie weitere Angebote zur weiteren Arbeit mit Microsoft Fabric
 - Mitglied der [Fabric-Community](https://aka.ms/fabric-community) werden, um Fragen zu stellen, Feedback zu geben und sich mit anderen auszutauschen
  
 Lesen Sie die detaillierteren Blogs zur Ankündigung der Fabric-Umgebung:
+
 - [Blog zum Data Factory-Funktionsbereich in Fabric](https://aka.ms/Fabric-Data-Factory-Blog)
 - [Blog zum Synapse Data Engineering-Funktionsbereich in Fabric](https://aka.ms/Fabric-DE-Blog)
 - [Blog zum Synapse Data Science-Funktionsbereich in Fabric](https://aka.ms/Fabric-DS-Blog)
@@ -520,8 +513,7 @@ Durch die Verwendung der vorliegenden Demo/Übung stimmen Sie den folgenden Bedi
 Die in dieser Demo/Übung beschriebene Technologie/Funktionalität wird von der Microsoft Corporation bereitgestellt, um Feedback von Ihnen zu erhalten und Ihnen Wissen zu vermitteln. Sie dürfen die Demo/Übung nur verwenden, um derartige Technologiefeatures und Funktionen zu bewerten und Microsoft Feedback zu geben. Es ist Ihnen nicht erlaubt, sie für andere Zwecke zu verwenden. Es ist Ihnen nicht gestattet, diese Demo/Übung oder einen Teil derselben zu ändern, zu kopieren, zu verbreiten, zu übertragen, anzuzeigen, auszuführen, zu vervielfältigen, zu veröffentlichen, zu lizenzieren, zu transferieren oder zu verkaufen oder aus ihr abgeleitete Werke zu erstellen.
 
 DAS KOPIEREN ODER VERVIELFÄLTIGEN DER DEMO/ÜBUNG (ODER EINES TEILS DERSELBEN) AUF EINEN/EINEM ANDEREN SERVER ODER SPEICHERORT FÜR DIE WEITERE VERVIELFÄLTIGUNG ODER VERBREITUNG IST AUSDRÜCKLICH UNTERSAGT.
-DIESE DEMO/ÜBUNG BIETET BESTIMMTE SOFTWARETECHNOLOGIE/PRODUKTFUNKTIONEN UND FUNKTIONALITÄT, EINSCHLIESSLICH MÖGLICHER NEUER FUNKTIONEN UND KONZEPTE, IN EINER SIMULIERTEN UMGEBUNG OHNE KOMPLEXE EINRICHTUNG ODER INSTALLATION FÜR DEN BESCHRIEBENEN ZWECK OBEN. DIE IN DIESER DEMO/ÜBUNG DARGESTELLTEN
-TECHNOLOGIEN/KONZEPTE STELLEN MÖGLICHERWEISE NICHT DIE VOLLSTÄNDIGE FUNKTIONALITÄT DER FUNKTION DAR UND FUNKTIONIEREN MÖGLICHERWEISE NICHT SO, WIE EINE ENDGÜLTIGE VERSION FUNKTIONIEREN KÖNNTE. UNTER UMSTÄNDEN VERÖFFENTLICHEN WIR AUCH KEINE ENDGÜLTIGE VERSION DERARTIGER FEATURES ODER KONZEPTE. IHRE 
+DIESE DEMO/ÜBUNG BIETET BESTIMMTE SOFTWARETECHNOLOGIE/PRODUKTFUNKTIONEN UND FUNKTIONALITÄT, EINSCHLIESSLICH MÖGLICHER NEUER FUNKTIONEN UND KONZEPTE, IN EINER SIMULIERTEN UMGEBUNG OHNE KOMPLEXE EINRICHTUNG ODER INSTALLATION FÜR DEN BESCHRIEBENEN ZWECK OBEN. DIE IN DIESER DEMO/ÜBUNG DARGESTELLTEN TECHNOLOGIEN/KONZEPTE STELLEN MÖGLICHERWEISE NICHT DIE VOLLSTÄNDIGE FUNKTIONALITÄT DER FUNKTION DAR UND FUNKTIONIEREN MÖGLICHERWEISE NICHT SO, WIE EINE ENDGÜLTIGE VERSION FUNKTIONIEREN KÖNNTE. UNTER UMSTÄNDEN VERÖFFENTLICHEN WIR AUCH KEINE ENDGÜLTIGE VERSION DERARTIGER FEATURES ODER KONZEPTE. IHRE 
 ERFAHRUNG BEI DER VERWENDUNG DERARTIGER FEATURES UND FUNKTIONEN IN EINER PHYSISCHEN UMGEBUNG KANN FERNER ABWEICHEND SEIN.
 
 **FEEDBACK.** Wenn Sie Feedback zu den Technologiefeatures, Funktionen und/oder Konzepten geben, die in dieser Demo/Übung beschrieben werden, gewähren Sie Microsoft das Recht, Ihr Feedback in jeglicher Weise und für jeglichen Zweck kostenlos zu verwenden, zu veröffentlichen und gewerblich zu nutzen. Außerdem treten Sie Dritten kostenlos sämtliche Patentrechte ab, die erforderlich sind, damit deren Produkte, Technologien und Dienste bestimmte Teile einer Software oder eines Dienstes von Microsoft, welche/welcher das Feedback enthält, verwenden oder eine Verbindung zu dieser/diesem herstellen können. Sie geben kein Feedback, das einem Lizenzvertrag unterliegt, aufgrund dessen Microsoft Drittparteien eine Lizenz für seine Software oder Dokumentation gewähren muss, weil wir Ihr Feedback in diese aufnehmen. Diese Rechte bestehen nach Ablauf dieser Vereinbarung fort.
