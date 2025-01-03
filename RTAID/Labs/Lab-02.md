@@ -72,18 +72,22 @@ By the end of this lab, you will have learned:
 8. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
    
    - Event Hub namespace :
+
       ```
       rtiadhub<inject key="DeploymentID" enableCopy="false"/>
       ```
    - Event Hub :
+
      ```
      rti-iad-fabrikam
      ```
    - Shared Access Key Name :
+
      ```
      rti-reader
      ``` 
    - Shared Access Key :
+
      ```
      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
      ```
@@ -153,18 +157,22 @@ By the end of this lab, you will have learned:
 6. Modify the remainder of the settings with the following details below.
 
   - Destination name :
+
     ```
     eh-kql-db-fabrikam
     ```
   - Workspace :
+
     ```
     RTI_<inject key="DeploymentID" enableCopy="false"/>
     ```    
   - Eventhouse :
+
     ```
     eh_Fabrikam
     ```
   - KQL Database :
+
     ```
     eh_Fabrikam
     ```
@@ -222,18 +230,20 @@ By the end of this lab, you will have learned:
     iii. Select the InternetSales table and Select the following configurations from the drop-down:
     
      - Workspace :
+
         ```
          RTI_<inject key="DeploymentID" enableCopy="false"/>
          ```
      
      - Eventstream Name :
+
         ```
         es_Fabrikam_InternetSales
         ```
   
      - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
 
-     ![A screenshot of a chat](../media/Lab-02/internet-01.png)
+        ![A screenshot of a chat](../media/Lab-02/internet-01.png)
 
     iv. Now you should be able to see a new destination is created with the Data preview visible in it.
     
@@ -326,6 +336,7 @@ Let's explore!
     ```
 
 2. The comment line "\--" followed by the keyword "explain" will allow you to now create a SQL query and return a result with the KQL query that could be used to achieve a similar query and result. Below input the following query to explain what the KQL query would look like:
+
     ```
      --
      explain
