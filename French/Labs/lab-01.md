@@ -57,32 +57,50 @@ Aujourd’hui, vous allez découvrir diverses fonctionnalités clés de Microsof
 1. Ouvrez le **Microsoft Edge navigateur** sur le bureau et accédez à https://app.fabric.microsoft.com/. Vous êtes alors redirigé vers la page de connexion. 
 
     > **Remarque:** si vous n’utilisez pas l’environnement de labo et que vous disposez d’un compte Power BI existant, vous pouvez utiliser le navigateur en mode privé/incognito.
+
+    ![](../media/Lab-01/image003.png)
  
 2. Saisissez le **Nom d’utilisateur** disponible dans l’onglet **Variables d’environnement** (en regard du Guide de labo) dans le champ **E-mail** et cliquez sur **Envoyer**.
+
+    ![](../media/Lab-01/image005.jpg)
  
 3. Vous êtes alors redirigé vers l’écran **Mot de passe**. Saisissez le **Mot de passe** disponible dans l’onglet **Variables d’environnement** (en regard du Guide de labo) qui vous a été communiqué par le formateur.
  
 4. Cliquez sur **Se connecter** et suivez les invites pour vous connecter à Fabric.
 
+     ![](../media/Lab-01/image008.png)
+
 5. Vous êtes alors redirigé vers la page d’**accueil de Fabric**.
+
+    ![](../media/Lab-01/image010.jpg)
  
 Pour utiliser des éléments Fabric, vous avez besoin d’une licence d’essai et d’un espace de travail doté d’une licence Fabric. En avant pour la configuration.
 
 6. Dans le coin supérieur droit de l’écran, cliquez sur l’**icône utilisateur**.
 
 7. Cliquez sur **Essai gratuit**.
+
+    ![](../media/Lab-01/image012.jpg)
  
-8. La boîte de dialogue de mise à niveau vers un essai gratuit Microsoft Fabric s’ouvre alors. Sélectionnez Activer.
+8. La boîte de dialogue de mise à niveau vers un essai gratuit Microsoft Fabric s’ouvre alors. Sélectionnez **Activer**.
+
+     ![](../media/Lab-01/image014.jpg)
 
 9. La boîte de dialogue Mise à niveau réussie vers Microsoft Fabric s’ouvre alors. Cliquez sur **Page d’accueil Fabric**.
+
+      ![](../media/Lab-01/image017.png)
  
 10.	Vous êtes alors redirigé vers la **page d’accueil Microsoft Fabric**.
+
+       ![](../media/Lab-01/image020.jpg)
 
 # Real-Time Intelligence et hub en temps réel
 
 ## Tâche 2 : éléments d’expérience Real-Time Intelligence
 
 1. Cliquez sur l’expérience Real-Time Intelligence.
+
+      ![](../media/Lab-01/image020.jpg)
 
 2. Vous êtes alors redirigé vers la **page d’accueil Real-Time Intelligence**. Vous verrez alors les catégories **Modèles Flux de tâches, Éléments à créer recommandés** et **En savoir plus sur Real-Time Intelligence**. Dans la catégorie **Recommandés** notez les éléments suivants:
 
@@ -96,11 +114,17 @@ d. **Eventstream:** permet de capturer, de transformer et d’acheminer un flux 
 
 e. **Reflex:** permet d’entreprendre automatiquement des actions lorsque des modèles ou conditions sont détecté(e)s dans des données changeantes.
 
+ ![](../media/Lab-01/image022.jpg)
+
 ## Tâche 3 : hub en temps réel
 
 1. Cliquez sur le bouton **Hub en temps réel** dans le volet de navigation Fabric sur le côté gauche de l’écran.
+   
+   ![](../media/Lab-01/image024.png)
 
 2. La boîte de dialogue **Bienvenue dans le hub en temps réel** s’ouvre. Sélectionnez alors **Visite guidée** ou cliquez sur **Démarrer**.
+
+    ![](../media/Lab-01/image026.jpg)
  
 3. Le hub en temps réel est l’endroit unique pour les données diffusées en continu en mouvement sur l’ensemble de votre organisation. Chaque tenant Microsoft Fabric est automatiquement pourvu de ce hub. Il vous permet de détecter, d’ingérer, de gérer et d’utiliser facilement des données en mouvement à partir d’un large éventail de sources.
 
@@ -114,10 +138,16 @@ services, vous pouvez ingérer facilement des données dans le hub en temps rée
 - **Événements Fabric:** les événements générés au moyen d’artefacts Fabric et de sources externes sont mis à disposition dans Fabric pour prendre en charge des scénarios basés sur des événements tels que l’envoi d’alertes en temps réel et le déclenchement d’actions en aval. Vous pouvez surveiller et réagir à des événements, notamment des événements d’élément d’espace de travail Fabric et des événements Stockage Blob Azure.
 
 - **Événements Azure:** cette liste répertorie les événements système générés dans Azure auxquels vous pouvez accéder. un événement peut être surveillé et des règles peuvent être définies pour envoyer des notifications ou effectuer des actions lorsqu’elles sont activées.
+
+   ![](../media/Lab-01/image028.png)
  
 5. Dans le coin supérieur droit du hub en temps réel, cliquez sur le bouton **+ Connecter la source de données**.
 
+   ![](../media/Lab-01/image030.png)
+
 6. Une fenêtre s’affiche alors et détaille les flux de données actuellement disponibles pour intégration au hub en temps réel, notamment un mélange de sources Azure et de sources cloud externes de diffusion en continu comme Amazon Kinesis, Confluent Cloud Kafka et Google Cloud Pub/Sub. Il existe même des échantillons de données à explorer.
+
+    ![](../media/Lab-01/image032.jpg)
 
 7. **Fermez** la fenêtre Obtenir des événements en cliquant sur le « X » dans le coin supérieur droit.
  
@@ -129,6 +159,8 @@ services, vous pouvez ingérer facilement des données dans le hub en temps rée
 
 2. Cliquez sur **+ Nouvel espace de travail**.
 
+   ![](../media/Lab-01/image034.png)
+
 3. La boîte de dialogue **Créer un espace de travail** s’ouvre alors sur le côté droit du navigateur.
 
 4. Dans le champ **Nom**, saisissez **RTI_username**. Utilisez le nom d’utilisateur qui vous est fourni à partir des détails de l’environnement.
@@ -138,42 +170,70 @@ services, vous pouvez ingérer facilement des données dans le hub en temps rée
 5. Si vous le souhaitez, vous pouvez saisir une **Description** pour l’espace de travail. Il s’agit d’un champ facultatif.
 
 6. Cliquez sur **Options avancées** pour développer la section.
+
+    ![](../media/Lab-01/image037.png)
  
 7. Sous **Modèle de Licence**, assurez-vous que la case **Essai** est cochée. (Elle devrait l’être par défaut.)
 
 8. Cliquez sur **Appliquer** pour créer un espace de travail.
-Remarque : si la boîte de dialogue Présentation des flux de tâches s’ouvre, cliquez sur OK.
 
+    ![](../media/Lab-01/image040.jpg)
+
+>**Remarque** : si la boîte de dialogue Présentation des flux de tâches s’ouvre, cliquez sur OK.
+
+  ![](../media/Lab-01/image042.png)
  
 ## Tâche 5 : créer un Eventhouse
 
 1. Cliquez sur le bouton **+ Nouveau** pour ouvrir un nouveau volet contenant tous les éléments que vous pouvez créer dans cet espace de travail Fabric.
 
+    ![](../media/Lab-01/image044.png)
+
 2. Cliquez sur l’icône **Eventhouse** à partir de la section **Stocker les données** dans le volet. Comme nous l’avons dit, ce système peut être considéré comme un Lakehouse en ce sens qu’il permet de stocker des données, mais cet Eventhouse est axé sur les données en temps réel.
+
+    ![](../media/Lab-01/image046.png)
  
 3. Dans la fenêtre qui s’affiche, nommez votre Eventhouse **eh_Fabrikam**, puis cliquez sur **Créer**.
 
+     ![](../media/Lab-01/image048.png)
+
 4. C’est là que vous allez finaliser des données de flux provenant de diverses sources tout au long de la formation aujourd’hui. Lorsque l’élément est créé, une fenêtre s’affiche pour vous donner quelques détails sur l’Eventhouse. Cliquez sur le bouton **Démarrer**.
+
+      ![](../media/Lab-01/image051.jpg)
  
 5. Découvrez rapidement l’Eventhouse en suivant les info-bulles vertes sur votre écran. Cette première info-bulle montre qu’une base de données KQL (Langage de requête Kusto) vide a été créée avec l’Eventhouse.
+
+     ![](../media/Lab-01/image053.jpg)
 
 6. Suivez le reste des info-bulles autour de l’écran pour afficher où créer des bases de données supplémentaires, vérifier le stockage dans OneLake de l’Eventhouse, vérifier l’utilisation des ressources Fabric en minutes de calcul et enfin voir les actions s’étant produites dans l’Eventhouse.
 
 7. Dans le volet de navigation à gauche de l’Eventhouse, trouvez votre base de données KQL qui a été créée en même temps que l’Eventhouse et cliquez simplement dessus pour afficher les détails de la base de données
 
+   ![](../media/Lab-01/image055.png)
+
 8. Cela nous permettra d’avoir toujours un onglet dans le volet gauche du navigateur pour voir la vue d’ensemble de notre Eventhouse et un nouvel onglet pour se concentrer sur les propriétés de la base de données KQL. L’un des objectifs que nous souhaitons atteindre dans notre scénario est de nous assurer que les données diffusées en continu vers la base de données KQL sont accessibles au moyen de OneLake. En activant cette fonctionnalité, nous rendons les données de cette base de données KQL facilement détectables grâce à des raccourcis et utilisables dans toute lakehouse que nous souhaitons. Recherchez la section **Détails de la base de données** sur la droite et **activez** l’option « Disponibilité ».
 
+   ![](../media/Lab-01/image057.png)
+
 9. Revenez à votre espace de travail **RTI_username** en le sélectionnant dans la partie gauche du navigateur.
+
+   ![](../media/Lab-01/image059.png)
  
 10.	Si vous voyez que l’option **Flux de tâches** occupe la majeure partie de l’espace, cliquez sur la double flèche pointant vers le haut, située à droite, pour la réduire
+
+    ![](../media/Lab-01/image061.jpg)
  
 11.	Vous disposez maintenant des bases de la façon dont vous allez commencer à ingérer les données diffusées en continu dans OneLake. L’étape suivante consiste à créer un flux de données pouvant recevoir les données en mouvement.
+
+    ![](../media/Lab-01/image063.png)
 
 Dans ce labo, nous avons exploré l’interface Real-Time Intelligence, examiné le hub en temps réel, créé un espace de travail Fabric et un Eventhouse fourni avec une base de données KQL. Dans le prochain labo, vous allez commencer à explorer des techniques qui permettent d’ingérer des données provenant de diverses sources de votre parc dans OneLake et d’effectuer une analyse de base avec le Langage de requête Kusto (KQL).
  
 # Références
 
 Fabric Real-Time Intelligence in a Day (RTIIAD) vous présente certaines des fonctions clés de Microsoft Fabric. Dans le menu du service, la section Aide (?) comporte des liens vers d’excellentes ressources.
+
+![](../media/Lab-01/image066.png)
  
 Voici quelques autres ressources qui vous aideront lors de vos prochaines étapes avec Microsoft Fabric :
 
