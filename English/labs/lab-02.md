@@ -107,11 +107,9 @@ page.
 
     ![](../media/lab-02/image13.png)
 
-11. In this overview screen, verify the contents look correct and click
-**Create source**.
+11. In this overview screen, verify the contents look correct and click **Create source**.
 
-    **Note: Your details will differ from what you see in the
-screenshot**
+    **Note: Your details will differ from what you see in the screenshot**
 
     ![](../media/lab-02/image14.png)
 
@@ -141,8 +139,7 @@ your Eventstream on it and you should see a preview of the data.
 the Azure Event Hub. If you slide your bottom horizontal scroll bar
 all the way to the right-side of your preview, you will be able to
 see the time that the data has been received in the Event Hub in two
-columns called, **EventProcessedUtcTime** and
-**EventEnqueuedUtcTime**. This should reflect the current date/time
+columns called, **EventProcessedUtcTime** and **EventEnqueuedUtcTime**. This should reflect the current date/time
 in UTC format.
 
     ![](../media/lab-02/image18.png)
@@ -164,8 +161,7 @@ stream.
 
     ![](../media/lab-02/image21.png)
 
-4. Look below the **Operations** section and you will find the
-**Destinations,** select the option that says **Eventhouse**.
+4. Look below the **Operations** section and you will find the **Destinations,** select the option that says **Eventhouse**.
 
     ![](../media/lab-02/image22.png)
 
@@ -182,15 +178,15 @@ ingestion** option.
 6. Modify the remainder of the settings with the following details
 below.
 
-    - Destination name - **eh-kql-db-fabrikam**
+   - Destination name - **eh-kql-db-fabrikam**
 
-    - Workspace - **RTI_username**
+   - Workspace - **RTI_username**
 
-    - Eventhouse - **eh_Fabrikam**
+   - Eventhouse - **eh_Fabrikam**
 
-    - KQL Database - **eh_Fabrikam**
+   - KQL Database - **eh_Fabrikam**
 
-      ![](../media/lab-02/image24.png)
+     ![](../media/lab-02/image24.png)
 
 7. Click on Save.
 
@@ -222,15 +218,11 @@ checkmark.
 
     ![](../media/lab-02/image30.png)
 
-13. You may need to update your **"Data connection name"** to meet
-requirements. Let us rename it to
-**"eh_Fabrikam_es_InternetSales".** Then we can click on **Next**.
+13. You may need to update your **"Data connection name"** to meet requirements. Let us rename it to **"eh_Fabrikam_es_InternetSales".** Then we can click on **Next**.
 
     ![](../media/lab-02/image31.png)
 
-14. After a few moments of searching for events, the user interface
-should allow you to see that sample data was found. Click on
-**Finish** at the bottom of the screen.
+14. After a few moments of searching for events, the user interface should allow you to see that sample data was found. Click on **Finish** at the bottom of the screen.
 
     ![](../media/lab-02/image32.png)
 
@@ -277,9 +269,7 @@ follow along whatsoever.
 
     ![](../media/lab-02/image38.png)
 
-6. Within the database navigation area on the left-hand side of the
-screen, click on the table within your KQL Database called
-**InternetSales** and you will see an overview of the table
+6. Within the database navigation area on the left-hand side of the screen, click on the table within your KQL Database called **InternetSales** and you will see an overview of the table
 
     ![](../media/lab-02/image39.png)
 
@@ -380,13 +370,7 @@ within the KQL Queryset capabilities including converting SQL queries to
 KQL queries and simply authoring T-SQL queries within the KQL Queryset.
 Let's explore    !
 
-1. You need to create a query that returns each product with the number
-of how many times it has sold. This is something you can quickly do
-with T-SQL. Within the query window, you can translate your SQL
-queries into KQL to better understand how to author KQL queries in
-the future. Start with writing the following command.
-**(Note: Double click the object below in order to be able to copy
-the text)**
+1. You need to create a query that returns each product with the number of how many times it has sold. This is something you can quickly do with T-SQL. Within the query window, you can translate your SQL queries into KQL to better understand how to author KQL queries in the future. Start with writing the following command. **(Note: Double click the object below in order to be able to copy the text)**
 
     ```
     --

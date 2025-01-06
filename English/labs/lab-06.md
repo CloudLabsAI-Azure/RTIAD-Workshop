@@ -50,11 +50,7 @@ select the option to **Set alert**.
 
     ![](../media/lab-06/image6.png)
 
-3. A new flyout will open on the right-side of the screen. You can see
-what you are monitoring from the dashboard including the specific
-visual that the alert will be affiliated with. The condition is
-something you have full control over. Modify the **Condition** to
-**Is less than**.
+3. A new flyout will open on the right-side of the screen. You can see what you are monitoring from the dashboard including the specific visual that the alert will be affiliated with. The condition is something you have full control over. Modify the **Condition** to **Is less than**.
 
     ![](../media/lab-06/image7.png)
 
@@ -63,17 +59,11 @@ be **20**.
 
     ![](../media/lab-06/image8.png)
 
-5. You have three possible actions currently available for what type of
-alert you wish to receive once the Data Activator Reflex item
-recognizes that your condition has been met. Choose the option of
-**Message me in Teams**.
+5. You have three possible actions currently available for what type of alert you wish to receive once the Data Activator Reflex item recognizes that your condition has been met. Choose the option of **Message me in Teams**.
 
     ![](../media/lab-06/image9.png)
 
-6. Finally, you need to decide the location where you will store the
-**Reflex item** that you are creating with this alert. This by
-default should select your current workspace, but you need to
-specifically call out a **New item** under the Item drop-down menu.
+6. Finally, you need to decide the location where you will store the **Reflex item** that you are creating with this alert. This by default should select your current workspace, but you need to specifically call out a **New item** under the Item drop-down menu.
 
     ![](../media/lab-06/image10.png)
 
@@ -107,14 +97,11 @@ two areas to match the image below and hit **Save and update**.
 
     ![](../media/lab-06/image15.png)
 
-3. In the same **Action** section on the right hand side, click on the
-**Send me a test action** button to get a sample message in teams
-from the Reflex.
+3. In the same **Action** section on the right hand side, click on the **Send me a test action** button to get a sample message in teams from the Reflex.
 
     ![](../media/lab-06/image16.png)
 
-4. Open a New tab within your Environment Edge Browser and go to
-**Teams.Microsoft.com**.
+4. Open a New tab within your Environment Edge Browser and go to **Teams.Microsoft.com**.
 
 5. Sign in with your environment credentials if you are asked. A
 message to start a trial may appear and you will want to accept

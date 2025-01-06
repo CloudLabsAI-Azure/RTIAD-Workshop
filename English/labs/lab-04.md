@@ -130,12 +130,7 @@ option.
 
     ![](../media/lab-04/image16.png)
 
-5. To begin, you will need to create a connection to the source
-database from where you wish to extract the data. Click on the
-**Azure SQL database** option under "New sources". If you do not see
-it immediately you can use the search bar at the top to filter
-sources. We will be connecting to the same external Azure SQL
-database from the prior lab but connecting to different tables.
+5. To begin, you will need to create a connection to the source database from where you wish to extract the data. Click on the **Azure SQL database** option under "New sources". If you do not see it immediately you can use the search bar at the top to filter sources. We will be connecting to the same external Azure SQL database from the prior lab but connecting to different tables.
 
     ![](../media/lab-04/image17.png)
 
@@ -203,11 +198,7 @@ number of tables and destination number of tables are the same.
 
 16. Click on **Save + Run**.
 
-17. After a few moments a flyout window will appear that includes a
-**Parameter**. The copy assistant wizard which we just completed,
-created a list of the tables to iterate though and load into the kql
-tables. Simply click on the **OK** button to run the pipeline as it
-is currently configured from the Copy Data Assistant.
+17. After a few moments a flyout window will appear that includes a **Parameter**. The copy assistant wizard which we just completed, created a list of the tables to iterate though and load into the kql tables. Simply click on the **OK** button to run the pipeline as it is currently configured from the Copy Data Assistant.
 
     ![](../media/lab-04/image23.png)
 
@@ -338,9 +329,7 @@ parameters as previously.
 
     ![](../media/lab-04/image36.png)
 
-10. Again, wait approximately one minute for the pipeline to complete
-its load and when all items in your Output menu indicate
-**Succeeded** move on to the next step.
+10. Again, wait approximately one minute for the pipeline to complete its load and when all items in your Output menu indicate **Succeeded** move on to the next step.
 
     ![](../media/lab-04/image37.png)
 
@@ -488,8 +477,7 @@ the list of available options.
 
     ![](../media/lab-04/image50.png)
 
-3. Give the Lakehouse the name, **lh_Fabrikam** and then click on
-**Create**. Do not enable the preview feature of Lakehouse schemas
+3. Give the Lakehouse the name, **lh_Fabrikam** and then click on **Create**. Do not enable the preview feature of Lakehouse schemas
 
     ![](../media/lab-04/image51.png)
 

@@ -275,13 +275,13 @@ By the end of this lab, you will have learned:
 11. When the visual settings appear modify the following settings to
     create a count of Impressions.
 
-- **Tile name** - Impressions
+    - **Tile name** - Impressions
 
-- **Visual type** - Stat
+    - **Visual type** - Stat
 
-- **Value column** - impressions (long)
+    - **Value column** - impressions (long)
 
-    ![](../media/lab-05/image40.png)
+      ![](../media/lab-05/image40.png)
 
 12. Choose **Apply changes** when all settings are configured
     appropriately.
