@@ -32,30 +32,53 @@ Ao final deste laboratório, você terá aprendido a:
 
 1. Abra o **espaço de trabalho do Fabric** para o curso e selecione o Dashboard em Tempo Real que você criou no último laboratório.
 
+    ![](../media/lab-06/image003.jpg)
+
 2. No visual **Click Through Rate**, clique nas reticências (...) e selecione a opção **Set alert**.
+
+    ![](../media/lab-06/image005.png)
 
 3. Um novo submenu será aberto no lado direito da tela. Você pode ver o que está monitorando no dashboard, incluindo o visual específico ao qual o alerta será afiliado. A condição é algo sobre o qual você tem controle total. Modifique a **Condição** para **É menor que**.
 
+    ![](../media/lab-06/image007.png)
+
 4. Um novo campo será exibido para você inserir um **Valor**, modifique-o para **20**.
- 
+    ![](../media/lab-06/image009.png)
+
 5. Você tem três ações possíveis atualmente disponíveis para o tipo de alerta que deseja receber assim que o item Reflex do Data Activator reconhecer que sua condição foi atendida. Escolha
 a opção de **Envie-me uma mensagem no Teams**.
- 
+
+    ![](../media/lab-06/image011.png)
+
 6. Por fim, você precisa decidir o local onde armazenará o **item do Reflex** que você está criando com esse alerta. Por padrão, isso deve selecionar seu espaço de trabalho atual, mas você precisa chamar especificamente **Criar um item** no menu suspenso Item.
 
+    ![](../media/lab-06/image014.png)
+
 7. Renomeie o item para **CTR Reflex** e clique em **Criar**. Isso levará alguns minutos para ser criado.
- 
+
+    ![](../media/lab-06/image016.png)
+
 8. Você receberá uma validação de que o alerta de reflexo foi criado. Clique no botão **Em aberto** para abrir o Reflex.
 
+    ![](../media/lab-06/image018.png)
+
 9. Isso levará você à **experiência do Reflex** formal. A partir daqui, você poderá monitorar o fluxo de dados em tempo real, exibir os Dados que são usados para dar suporte ao Reflex e criar Gatilhos adicionais do mesmo fluxo.
+
+    ![](../media/lab-06/image020.jpg)
  
 ## Tarefa 2: Testar alerta de email de experiência do Reflex
 
 1. Na experiência do Reflex, clique no ícone de lápis ao lado do nome do evento e renomeie- o como **CTR is less than 20**.
 
+    ![](../media/lab-06/image022.png)
+
 2. Vamos também atualizar o **Título** e a **Mensagem**, que podem ser encontrados na seção **Ação** no lado direito. Atualize as duas áreas para corresponder à imagem abaixo e clique em **Salvar e atualizar**.
+
+    ![](../media/lab-06/image024.png)
  
 3. Na mesma seção **Ação**, no lado direito, clique no botão **Enviar uma ação de teste** para obter uma mensagem de exemplo em equipes do Reflex.
+
+    ![](../media/lab-06/image026.png)
 
 4. Abra uma guia Novo no Navegador Edge do Ambiente e vá para **Teams.Microsoft.com**.
 
@@ -63,13 +86,19 @@ a opção de **Envie-me uma mensagem no Teams**.
 
 6. Você deve ter uma mensagem dentro das equipes informando que a CTR é menor que 20.
 
+    ![](../media/lab-06/image028.png)
+
 7. Navegue até a experiência do Reflex e vamos criar outro gatilho.
 
 ## Tarefa 3: Criar um objeto do Reflex do fluxo de dados
 
 1. Selecione o objeto rotulado **KQL Source Event** e selecione **Nova regra**.
 
+    ![](../media/lab-06/image030.png)
+
 2. Clique no ícone de **lápis** e dê a esta regra o nome **Clicks Greater Than 30,000** (você pode escolher um valor aqui que esteja mais de acordo com a quantidade de dados que você transmitiu).
+
+    ![](../media/lab-06/image032.jpg)
  
 3. Para começar, você precisa monitorar uma das colunas do fluxo de dados. Para fazer isso, precisamos configurar as seções Condição e Ação. Clique na guia Definição da regra para definir as condições e a ação.
 
@@ -79,14 +108,22 @@ a opção de **Envie-me uma mensagem no Teams**.
     - **Coluna** = clicks
     - **Valor** = 30000
 
+    ![](../media/lab-06/image034.png)
+
 5. Na **Ação**, selecione as propriedades abaixo:
 
     - **Tipo** = Mensagem do Teams
     - **Destinatário(s)** = {sua id de usuário aqui}
+
+    ![](../media/lab-06/image036.png)
  
 6. Por fim, clique em **Salvar e iniciar** para iniciar esta regra.
 
+    ![](../media/lab-06/image038.png)
+
 7. Agora você tem dois gatilhos que estão monitorando o mesmo fluxo de dados.
+
+    ![](../media/lab-06/image040.png)
 
 
 # Limpar recursos
@@ -94,10 +131,16 @@ a opção de **Envie-me uma mensagem no Teams**.
 ## Tarefa 4: Limpar espaço de trabalho
 
 1. Este é o último laboratório e a última parte do Real-Time Analytics in a Day. Se você concluiu o laboratório e não tem mais perguntas para o instrutor sobre o conteúdo, ajude-nos desalocando o espaço de trabalho. Navegue até o espaço de trabalho **RTI_username**.
+
+    ![](../media/lab-06/image043.jpg)
  
 2. Clique nas **Configurações de workspace** no canto superior direito.
 
+    ![](../media/lab-06/image046.png)
+
 3. Nas configurações gerais do espaço de trabalho **Geral**, role para baixo e clique no botão **Remover este workspace**.
+
+    ![](../media/lab-06/image049.jpg)
 
 4. Laboratório e aula concluídos!
  
@@ -108,6 +151,8 @@ Neste laboratório, nós fizemos o passo a passo usando o Data Activator. Com es
 # Referências
 
 O Fabric Real-Time Intelligence in a Day (RTIIAD) apresenta algumas das principais funções disponíveis no Microsoft Fabric. No menu do serviço, a seção Ajuda (?) tem links para ótimos recursos.
+
+![](../media/lab-06/image052.jpg)
  
 Veja aqui mais alguns recursos que ajudarão você com as próximas etapas do Microsoft Fabric.
 
