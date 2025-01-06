@@ -1,3 +1,7 @@
+
+![](../media/lab-01/main.png)
+
+
 # 目录
 
 - 文档结构	
@@ -58,31 +62,49 @@ Fabrikam 是一家电子商务公司，专门销售各种户外设备和配件�
 
     > **注意：**如果您未使用实验室环境，并且已经有Power BI 帐户，您可能希望在隐私/无痕模式下使用浏览器。
 
+    ![](../media/lab-01/image004.png)
+
 2. 输入**环境变量**选项卡（“实验室指南”旁边）中提供的**用户名**作为电**子邮件**，然后单击提交。
+
+    ![](../media/lab-01/image006.png)
  
 3. 您将导航到**密码**屏幕。输入讲师与您共享的环境变量选项卡（“实验室指南”旁边）中提供的**密码**。
 
 4. 单击**登录**，然后按照提示登录到Fabric。
+
+    ![](../media/lab-01/image009.jpg)
  
 5. 系统会您将导航到 **Fabric 主页** 
+
+    ![](../media/lab-01/image011.png)
 
 若要使用Fabric 项目，您将需要试用许可证和具有Fabric 许可证的工作区。让我们开始设置。
 
 6. 在屏幕右上角，选择**用户图标**。
 
 7. 选择**免费试用**。
+
+    ![](../media/lab-01/image013.png)
  
 8. “升级到Microsoft Fabric 免费试用版”对话框随即打开。选择**激活**。
 
+    ![](../media/lab-01/image015.png)
+
 9. “已成功升级到Microsoft Fabric”对话框随即打开。选择 **Fabric Home Page**。
+
+    ![](../media/lab-01/image018.jpg)
  
 10.	系统会将您导航回 **Microsoft Fabric 主页**。
+
+    ![](../media/lab-01/image020.png)
  
 # Real-Time Intelligence 和实时中心
 
 ## 任务 2：Real-Time Intelligence 体验项目
 
 1. 单击Real-Time Intelligence 体验。
+
+    ![](../media/lab-01/image022.png)
 
 2. 系统会将您导航到 **Real-Time Intelligence 主页**。您将看到**任务流模板**、**要创建的建议项**和**了解有关Real-Time Intelligence 的详细信息**类别。在**建议**类别中，注意以下项目：
 
@@ -97,12 +119,18 @@ Eventhouse 中创建KQL 数据库。
 
     e. **Reflex:** 在更改的数据中检测到模式或条件时自动采取操作。
 
+    ![](../media/lab-01/image024.png)
+
  
 ## 任务 3：实时中心
 
 1. 单击屏幕左侧的Fabric 导航窗格中的**实时中心**。
+
+    ![](../media/lab-01/image026.png)
  
 2. **欢迎使用实时中心**对话框将打开，请自行选择**开始导览**或选择**开始使用**。
+
+    ![](../media/lab-01/image028.png)
  
 3. 实时中心是在整个组织中流式传输动态数据的一个位置。每个Microsoft Fabric 租户都自动预配了此中心。它使您能够轻松地发现、引入、管理和使用各种来源的动态数据。
 
@@ -116,9 +144,15 @@ Eventhouse 中创建KQL 数据库。
 
     - **Azure 事件：**此列表包括在 Azure 中生成的您可以访问的系统事件。可以监视事件并设置激活后将发送通知或执行操作的规则。
 
+    ![](../media/lab-01/image030.png)
+
 5. 在实时中心右上角，单击 + **连接数据源**按钮。
 
+    ![](../media/lab-01/image032.png)
+
 6. 一个窗口随即显示，并将详细列出当前可用的数据流，这些数据流可集成到实时中心中。这包括 Azure 源以及外部云流式处理源（如Amazon Kinesis、Confluent Cloud Kafka 和 Google Cloud Pub/Sub）的混合。甚至还有一些示例数据可供探索
+
+    ![](../media/lab-01/image034.png)
  
 7.	单击右上角的 “X” 以**关闭**获取事件窗口。
  
@@ -130,6 +164,8 @@ Eventhouse 中创建KQL 数据库。
 
 2. 选择 **+ 新建工作区**。
 
+    ![](../media/lab-01/image036.png)
+
 3. 浏览器右侧将打开**创建工作区**对话框。
 
 4. 在**名称**字段中，输入 **RTI_username**。使用环境详细信息中提供给您的用户名。
@@ -139,34 +175,58 @@ Eventhouse 中创建KQL 数据库。
 5. 您可以根据需要输入工作区的**描述**。这是可选字段。
 
 6. 点击**高级**以展开此部分。
+
+    ![](../media/lab-01/image038.png)
  
 7. 在**许可证模式**下，确保选择**试用版**。（这应该已默认选中。）
 
 8. 选择**应用**以创建新工作区。
 
+    ![](../media/lab-01/image041.jpg)
+
     > **注意:** 如果引入任务流对话框打开，请单击知道了。
+
+    ![](../media/lab-01/image043.png)
 
 ## 任务 5：创建Eventhouse
 
 1. 单击 **+ 新建**框以打开新窗格，其中包含您可以在此Fabric 工作区中创建的所有项目。
 
+    ![](../media/lab-01/image045.png)
+
 2. 从窗格中的**存储数据**部分中选择**事件仓库**。正如我们所讨论的，这看起来可能类似于湖屋，因为我们可以存储数据，但此Eventhouse 专注于实时数据。
+
+    ![](../media/lab-01/image047.png)
  
 3. 在显示的窗口中，将您的Eventhouse 命名为 **eh_Fabrikam**，然后单击**创建**。
 
+    ![](../media/lab-01/image049.png)
+
 4. 在这里，您将最终通过今天的剩余培训流式传输来自各种来源的数据。创建项目后，将出现一个窗口，为您提供有关Eventhouse 的一些详细信息。单击**开始**按钮。
+
+    ![](../media/lab-01/image051.png)
  
 5. 按照屏幕上的绿色工具提示，快速浏览Eventhouse。首先显示使用 Eventhouse 创建了一个空的Kusto 查询语言(KQL) 数据库。
+
+    ![](../media/lab-01/image053.png)
 
 6. 按照屏幕上工具提示的其余部分向您显示在何处创建其他数据库，检查Eventhouse 在 OneLake 中的存储，检查计算时间内Fabric 资源的使用情况，最后查看Eventhouse 中发生了哪些操作。
 
 7. 在Eventhouse 左侧的导航窗格中，找到与Eventhouse 一起创建的KQL 数据库，然后单击它即可查看数据库详细信息
+
+    ![](../media/lab-01/image055.png)
  
 8.	这将允许左侧的浏览器窗格中仍有一个选项卡，用于查看整个Eventhous 的概述，还有一个新选项卡，用于重点显示KQL 数据库属性。我们希望在本应用场景中实现的一个目标是确保可通过OneLake 访问流式传输到KQL 数据库的数据。通过启用此功能，我们可以通过快捷方式轻松发现此KQL 数据库中的数据，以便在我们可能需要的任何湖屋中使用。找到右侧的**数据库详细信息**部分，然后将“Availability” 选项切换为**开**。
 
+    ![](../media/lab-01/image057.png)
+
 9. 通过从浏览器左侧选择 **RTI_username** 工作区来返回到该工作区
+
+    ![](../media/lab-01/image059.png)
  
 10.	如果您看到**任务流**选项占用了大部分空间，请选择右侧的双向上箭头以将其最小化
+
+    ![](../media/lab-01/image061.png)
 
 11.	现在，您基本了解了如何开始将流式数据引入到 OneLake 中。下一步是创建可接收动态数据的数据流。
  
@@ -175,6 +235,8 @@ Eventhouse 中创建KQL 数据库。
 # 参考
 
 Fabric Real-time Intelligence in a Day (RTIIAD) 向您介绍了Microsoft Fabric 中提供的一些主要功能。在服务菜单中，“帮助 (?)”部分包含指向一些优质资源的链接。
+
+![](../media/lab-01/image066.jpg)
 
 以下更多参考资源可帮助您进行与 Microsoft Fabric 相关的后续步骤。
 
