@@ -44,18 +44,18 @@ By the end of this lab, you will have learned:
 1.  Open the **Fabric workspace** you created in the last lab. From here
 we can see the Eventhouse we created.
 
-    ![](assets/media/image5.png)
+    ![](../media/lab-02/image5.png)
 
 2.  Navigate to the Real-Time Hub by selecting the **Real-Time** button
 on the left-hand side. Even though we do not see any streams of data
 that will change shortly.
 
-    ![](assets/media/image6.png)
+    ![](../media/lab-02/image6.png)
 
 3.  Select the **+ Connect data source** green button which should be in
 the upper right corner.
 
-    ![](assets/media/image7.png)
+    ![](../media/lab-02/image7.png)
 
 4.  A window will open that will allow you to select a source for our
 stream data. As we discussed before, there are many fantastic
@@ -64,13 +64,13 @@ options to choose from but for this class we will select the option
 select the **Microsoft sources** at the top to filter what options
 you see.
 
-    ![](assets/media/image8.png)
+    ![](../media/lab-02/image8.png)
 
 5.  You are now required to create a connection to the Azure Event Hub.
 Click on the **New connection** text since you do not currently have
 a connection.
 
-    ![](assets/media/image9.png)
+    ![](../media/lab-02/image9.png)
 
 6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
 
@@ -84,7 +84,7 @@ a connection.
 
 7.  Once all properties have been filled out click on **Connect**.
 
-    ![](assets/media/image10.png)
+    ![](../media/lab-02/image10.png)
 
 8.  In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
@@ -92,19 +92,19 @@ that you gain access to a unique access point to the stream of data.
 For this workshop you can leave the "$Default" value as shown
 below
 
-    ![](assets/media/image11.png)
+    ![](../media/lab-02/image11.png)
 
 9.  Before we finalize this data source and Eventstream, let's go ahead
 and rename our Eventstream to something more useful. In the "Stream
 details" section on the right select the pencil icon next to the
 "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales".**
 
-    ![](assets/media/image12.png)
+    ![](../media/lab-02/image12.png)
 
 10. Now we can click on **Next**, which will take us to a final overview
 page.
 
-    ![](assets/media/image13.png)
+    ![](../media/lab-02/image13.png)
 
 11. In this overview screen, verify the contents look correct and click
 **Create source**.
@@ -112,12 +112,12 @@ page.
     **Note: Your details will differ from what you see in the
 screenshot**
 
-    ![](assets/media/image14.png)
+    ![](../media/lab-02/image14.png)
 
 12. Once the Eventstream and Eventstream source are created select the
 option "**Open Eventstream**"
 
-    ![](assets/media/image15.png)
+    ![](../media/lab-02/image15.png)
 
 13. This will take you to the Eventstream user interface. Here is where
 you will see your source stream of data flowing into our eventstream
@@ -130,11 +130,11 @@ your Eventstream on it and you should see a preview of the data.
     **Note: If you receive a "Warning" status around and audit policy,
     that is fine. The stream will still function**
 
-    ![](assets/media/image16.png)
+    ![](../media/lab-02/image16.png)
 
 15. You should now see a sample of the data within the bottom window.
 
-    ![](assets/media/image17.png)
+    ![](../media/lab-02/image17.png)
 
 16. This will show you a preview of the data that is being received from
 the Azure Event Hub. If you slide your bottom horizontal scroll bar
@@ -144,29 +144,29 @@ columns called, **EventProcessedUtcTime** and
 **EventEnqueuedUtcTime**. This should reflect the current date/time
 in UTC format.
 
-    ![](assets/media/image18.png)
+    ![](../media/lab-02/image18.png)
 
 ## Task 2: Setup Eventstream Destination
 
 1.  Click on the tile within the canvas area labeled "Switch to edit
 mode to Transform event of add destination
 
-    ![](assets/media/image19.png)
+    ![](../media/lab-02/image19.png)
 
 2.  Within the Eventstream user interface, click on the **Transform
 events or add destination** option to open the drop-down menu.
 
-    ![](assets/media/image20.png)
+    ![](../media/lab-02/image20.png)
 
 3.  View the list of available operations that can be made to the
 stream.
 
-    ![](assets/media/image21.png)
+    ![](../media/lab-02/image21.png)
 
 4.  Look below the **Operations** section and you will find the
 **Destinations,** select the option that says **Eventhouse**.
 
-    ![](assets/media/image22.png)
+    ![](../media/lab-02/image22.png)
 
 5.  A new menu will open on the right-hand side of the screen. The first
 thing you need to modify for the destination is the **data ingestion
@@ -176,7 +176,7 @@ anything in our Eventstream and directly load this information in a
 KQL database table ensure that you have selected the **Direct
 ingestion** option.
 
-    ![](assets/media/image23.png)
+    ![](../media/lab-02/image23.png)
 
 6.  Modify the remainder of the settings with the following details
 below.
@@ -189,49 +189,49 @@ below.
 
     - KQL Database - **eh_Fabrikam**
 
-      ![](assets/media/image24.png)
+      ![](../media/lab-02/image24.png)
 
 7.  Click on Save.
 
 8.  With the Eventstream configured, click on the **Publish** button to
 save this Eventstream and begin your ingestion.
 
-    ![](assets/media/image25.png)
+    ![](../media/lab-02/image25.png)
 
 9.  If you notice the **AzureEventHub** source has become inactive,
 switch the toggle to the "Active" state and choose the option "Now"
 when the dialog opens
 
-    ![](assets/media/image26.png)    
+    ![](../media/lab-02/image26.png)    
 
-    ![](assets/media/image27.png)
+    ![](../media/lab-02/image27.png)
 
 10. Choose the **Configure** option within the **Destination** to
 correctly map the stream to a table in the KQL Database.
 
-    ![](assets/media/image28.png)
+    ![](../media/lab-02/image28.png)
 
 11. Click on the **+ New table** option underneath the **eh_Fabrikam**
 database.
 
-    ![](assets/media/image29.png)
+    ![](../media/lab-02/image29.png)
 
 12. Give the new table the name, **InternetSales** and then click on the
 checkmark.
 
-    ![](assets/media/image30.png)
+    ![](../media/lab-02/image30.png)
 
 13. You may need to update your **"Data connection name"** to meet
 requirements. Let us rename it to
 **"eh_Fabrikam_es_InternetSales".** Then we can click on **Next**.
 
-    ![](assets/media/image31.png)
+    ![](../media/lab-02/image31.png)
 
 14. After a few moments of searching for events, the user interface
 should allow you to see that sample data was found. Click on
 **Finish** at the bottom of the screen.
 
-    ![](assets/media/image32.png)
+    ![](../media/lab-02/image32.png)
 
 15. After this you will be shown a summary. Once you have all green
 checkmarks, click **close** to move forward.
@@ -240,7 +240,7 @@ checkmarks, click **close** to move forward.
 to the Eventstream to the destination, you have correctly configured
 and started a stream of data into your KQL Database.
 
-    ![](assets/media/image33.png)
+    ![](../media/lab-02/image33.png)
 
 # Kusto Query Language (KQL)
 
@@ -250,22 +250,22 @@ and started a stream of data into your KQL Database.
 see the new Eventstream you just created along side all the
 Evenhouse items.
 
-    ![](assets/media/image34.png)
+    ![](../media/lab-02/image34.png)
 
 2.  Open the **eh_Fabrikam** KQL Database item.
 
-    ![](assets/media/image35.png)
+    ![](../media/lab-02/image35.png)
 
 3.  Within this experience, you can get an overview of the current
 structure, size, and use of the KQL Database. Because the
 Eventstream is sending data to this KQL Database consistently you
 will notice the amount of storage will increase over time.
 
-    ![](assets/media/image36.png)
+    ![](../media/lab-02/image36.png)
 
 4.  Click on the **refresh icon** in the top-right corner of the screen.
 
-    ![](assets/media/image37.png)
+    ![](../media/lab-02/image37.png)
 
 5.  The size of the database should have grown. The value you see may
 not be exact in comparison to the screenshots in the remainder of
@@ -274,13 +274,13 @@ will have received less or more records than other members of the
 class. This is completely fine and will not affect your ability to
 follow along whatsoever.
 
-    ![](assets/media/image38.png)
+    ![](../media/lab-02/image38.png)
 
 6.  Within the database navigation area on the left-hand side of the
 screen, click on the table within your KQL Database called
 **InternetSales** and you will see an overview of the table
 
-    ![](assets/media/image39.png)
+    ![](../media/lab-02/image39.png)
 
 7.  This overview will give you metadata details about the table you
 have created and any actively streaming data with your Eventstream.
@@ -302,12 +302,12 @@ on this menu include:
     OneLake availability, number of rows in the tables and various other
     details
 
-        ![](assets/media/image40.png)
+        ![](../media/lab-02/image40.png)
 
 8.  Return to the database view and click on **Explore your data** in
 the top-right corner.
 
-    ![](assets/media/image41.png)
+    ![](../media/lab-02/image41.png)
 
 9.  This will open the default KQL Queryset that was created alongside
 the Eventhouse. There are a few pre-scripted queries that are
@@ -316,17 +316,17 @@ two links to Microsoft documentation that can be helpful when
 learning KQL or also looking at SQL to KQL conversions which will be
 discussed later throughout this class.
 
-    ![](assets/media/image42.png)
+    ![](../media/lab-02/image42.png)
 
 10. Click on **Line 8** and where the query says, **YOUR_TABLE_HERE**,
 replace that with the table name, **InternetSales**.
 
-    ![](assets/media/image43.png)
+    ![](../media/lab-02/image43.png)
 
 11. Highlight **Line 8 and 9** and click on the **Run** button in the
 top-left corner of the window.
 
-    ![](assets/media/image44.png)
+    ![](../media/lab-02/image44.png)
 
 12. The query uses the **take** operator to bring back a specified
 number of rows. When the query runs it will pull data from the
@@ -336,17 +336,17 @@ like a WHERE clause in SQL. The specific rows returned cannot be
 determined with this operator and the results of your query will
 vary from the result of others.
 
-    ![](assets/media/image45.png)
+    ![](../media/lab-02/image45.png)
 
 13. Click on **Line 12** and where the query says, **YOUR_TABLE_HERE**,
 replace that with the table name, **InternetSales**.
 
-    ![](assets/media/image46.png)
+    ![](../media/lab-02/image46.png)
 
 14. Highlight **Line 12 and 13** and click on the **Run** button in the
 top-left corner of the window.
 
-    ![](assets/media/image47.png)
+    ![](../media/lab-02/image47.png)
 
 15. This query uses the count operator. This query will return an
 aggregated number of records that exist at the time of the query
@@ -354,12 +354,12 @@ execution on the KQL Database table. Feel free to run this query a
 few more times and you should notice that the number of records
 increases after every few seconds.
 
-    ![](assets/media/image48.png)
+    ![](../media/lab-02/image48.png)
 
 16. Repeat the previous steps for the final query that is automatically
 created for you on **Line 16/17** and run the query again.
 
-    ![](assets/media/image49.png)
+    ![](../media/lab-02/image49.png)
 
 17. This query will give you the number of records that have been
 ingested into your table within an hour window. The overall
@@ -387,9 +387,9 @@ the future. Start with writing the following command.
 **(Note: Double click the object below in order to be able to copy
 the text)
 **
-    ![](assets/media/image50.emf)
+    ![](../media/lab-02/image50.emf)
 
-    ![](assets/media/image51.png)
+    ![](../media/lab-02/image51.png)
 
 2.  The comment line "--" followed by the keyword "explain" will allow
 you to now create a SQL query and return a result with the KQL query
@@ -397,9 +397,9 @@ that could be used to achieve a similar query and result. Below
 input the following query to explain what the KQL query would look
 like:
 
-    ![](assets/media/image52.emf)
+    ![](../media/lab-02/image52.emf)
 
-    ![](assets/media/image53.png)
+    ![](../media/lab-02/image53.png)
 
 3.  This is a simple SQL query that will retrieve results from the
 InternetSales table to return two columns, the product key and a
@@ -408,19 +408,19 @@ and a non-aggregated column, you must use a GROUP BY to return
 results for each individual product. Run the entire query beginning
 with the "--" to the end of the T-SQL query.
 
-    ![](assets/media/image54.png)
+    ![](../media/lab-02/image54.png)
 
 4.  The output of the explain query should be a single record with the
 translated KQL query as the result. Click on the **caret icon ()**
 to expand the results and allow for easier translation.
 
-    ![](assets/media/image55.png)
+    ![](../media/lab-02/image55.png)
 
 5.  Click on the query pane highlighted below in orange. This will allow
 you to select translated KQL query and copy it. Paste this query in
 the KQL Queryset we have been using
 
-    ![](assets/media/image56.png)
+    ![](../media/lab-02/image56.png)
 
 6.  With the results in your query pane, highlight and run the query to
 retrieve the results. The **summarize** operator will produce a
@@ -429,26 +429,25 @@ determining how to group each record with the **by Product Key** and
 the **project** operator will select the columns to include, rename,
 or drop while inserting new computed columns.
 
-    ![](assets/media/image57.png)
+    ![](../media/lab-02/image57.png)
 
 7.  Feel free to explore the list of SQL to KQL cheat sheet operations
 at the top of your queryset for additional capabilities and
 conversions.
 
-    ![A close-up of a message](assets/media/image58.png)
+    ![](../media/lab-02/image58.png)
 
 8.  Instead of using KQL, another alternative to querying the results of
 the KQL Database within Fabric is to write and run a T-SQL query.
 Highlight the original SQL statement that was used to translate the
 KQL query and run only that.
 
-    ![
-code](assets/media/image59.png)
+    ![](../media/lab-02/image59.png)
 
 9.  This will also yield perfectly valid results without having to
 convert to KQL beforehand.
 
-    ![](assets/media/image60.png)
+    ![](../media/lab-02/image60.png)
 
 # KQL Queryset
 
@@ -463,22 +462,22 @@ should be noted that this Queryset automatically saves periodically.
 2.  Notice at the top of the Queryset the default name of our first page
 is the same name as our database.
 
-    ![](assets/media/image61.png)
+    ![](../media/lab-02/image61.png)
 
 3.  Let's go ahead and re-name this tab by clicking on the pencil icon,
 let's call it **My** **First KQL Query**.
 
-    ![](assets/media/image62.png)
+    ![](../media/lab-02/image62.png)
 
 4.  In the future if we would like to isolate our code, we can simply
 create additional tabs by clicking the "+" icon.
 
-    ![](assets/media/image63.png)
+    ![](../media/lab-02/image63.png)
 
 5.  Return to your **RTI_username** workspace. You should have the
 following objects present
 
-    ![](assets/media/image64.png)
+    ![](../media/lab-02/image64.png)
 
 # Summary
 
