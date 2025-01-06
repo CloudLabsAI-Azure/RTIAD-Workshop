@@ -1,6 +1,6 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Lab 5
 
-- Contents
+# Contents
 - Document Structure
 - Introduction
 - Real-Time Dashboards

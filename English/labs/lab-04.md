@@ -1,6 +1,6 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Lab 4
 
-- Contents 
+# Contents 
 - Document Structure
 - Introduction
 - Medallion Framework within KQL Databases
