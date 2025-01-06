@@ -47,26 +47,26 @@ By the end of this lab, you will have learned:
 1. Open the **Fabric workspace** for the course and open the KQL
 Queryset you created in the last lab, **Create Tables**.
 
-    ![](images/media/image5.png)
+    ![](../media/lab-04/image5.png)
 
 2. Within this KQL Queryset lets rename the original tab that we have
 here from "eh_Fabrikam" to "Create External Tables" making it easier
 to organize and understand what we have in this Queryset.
 
-    ![](images/media/image6.png)
+    ![](../media/lab-04/image6.png)
 
 3. Now let's create a new tab by selecting the "+" icon and name the
 new tab "Bronze Layer"
 
-    ![](images/media/image7.png)
+    ![](../media/lab-04/image7.png)
 
 4. Within this new tab, paste and highlight the following code and
 select "Run" to create four new tables that will serve as your
 Bronze Layer of the Medallion Framework.
 
-    ![](images/media/image8.emf)
+    ![](../media/lab-04/image8.emf)
 
-    ![](images/media/image9.png)
+    ![](../media/lab-04/image9.png)
 
 5. Once that executes you should immediately see four new tables
 created within your Database Object Explorer.
@@ -79,12 +79,12 @@ created within your Database Object Explorer.
 
     - SalesOrderHeader
 
-      ![](images/media/image10.png)
+      ![](../media/lab-04/image10.png)
 
 6. Expand the **Address table** by clicking on the "**"** icon next
 to the name.
 
-    ![](images/media/image11.png)
+    ![](../media/lab-04/image11.png)
 
 7. This shows you the schema (column names and data types) for the
 table. One thing that will be helpful to add to this table on the
@@ -93,9 +93,9 @@ will be used later in the Medallion architecture. Let's add that
 now. Copy and paste the script below to alter the tables you just
 created by adding an ingestion time column.
 
-    ![](images/media/image12.emf)
+    ![](../media/lab-04/image12.emf)
 
-    ![](images/media/image13.png)
+    ![](../media/lab-04/image13.png)
 
 8. The four new tables are blank tables with their schema defined. Now
 you need a way to properly load these tables. Navigate back to your
@@ -107,18 +107,18 @@ workspace **RTI_username**.
 the selection pane. Then find and select the option called **Data
 pipeline**.
 
-    ![](images/media/image14.png)
+    ![](../media/lab-04/image14.png)
 
 2. Give the new pipeline the name, **Load KQL Database Bronze Layer**.
 
-    ![](images/media/image15.png)
+    ![](../media/lab-04/image15.png)
 
 3. Click on **Create**.
 
 4. When the pipeline menu appears, click on the **Copy data assistant**
 option.
 
-    ![](images/media/image16.png)
+    ![](../media/lab-04/image16.png)
 
 5. To begin, you will need to create a connection to the source
 database from where you wish to extract the data. Click on the
@@ -127,7 +127,7 @@ it immediately you can use the search bar at the top to filter
 sources. We will be connecting to the same external Azure SQL
 database from the prior lab but connecting to different tables.
 
-    ![](images/media/image17.png)
+    ![](../media/lab-04/image17.png)
 
 6. You will need to input the connection details of the database.
 Follow using the information in your environment or as below.
@@ -152,7 +152,7 @@ Follow using the information in your environment or as below.
 
     - SalesLT.SalesOrderHeader
 
-    ![](images/media/image18.png)
+    ![](../media/lab-04/image18.png)
 
 9. Click on **Next**.
 
@@ -160,7 +160,7 @@ Follow using the information in your environment or as below.
 where you want the pipeline to send the data to. Find the **OneLake
 data hub** and then select your KQL database, **eh_Fabrikam**.
 
-    ![](images/media/image19.png)
+    ![](../media/lab-04/image19.png)
 
 11. If you are prompted to sign-in, simply use the credentials provided
 in the environment details page
@@ -169,7 +169,7 @@ in the environment details page
 and then click on the dropdown next to the **Table** option. Click
 on the **Address** table option.
 
-    ![](images/media/image20.png)
+    ![](../media/lab-04/image20.png)
 
 13. You will now see an overview of the **Column mappings**. This will
 allow you to visualize all the fields coming from the source
@@ -177,7 +177,7 @@ database that you are sending to your KQL Database. You have an
 option to remove specific fields if you do not want them to map over
 from the source.
 
-    ![](images/media/image21.png)
+    ![](../media/lab-04/image21.png)
 
 14. Follow the same steps as Step 11-12 for the tables
 **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and
@@ -189,7 +189,7 @@ been appropriately mapped, click on **Next**.
 verify all the settings you've selected. Ensure that your source
 number of tables and destination number of tables are the same.
 
-    ![](images/media/image22.png)
+    ![](../media/lab-04/image22.png)
 
 16. Click on **Save + Run**.
 
@@ -199,56 +199,56 @@ created a list of the tables to iterate though and load into the kql
 tables. Simply click on the **OK** button to run the pipeline as it
 is currently configured from the Copy Data Assistant.
 
-    ![](images/media/image23.png)
+    ![](../media/lab-04/image23.png)
 
 18. Let the pipeline run and after approximately one minute, the data
 movement should be complete. Once you see that all activities within
 the pipeline have **Succeeded**, you will have transferred the
 data.
 
-    ![](images/media/image24.png)
+    ![](../media/lab-04/image24.png)
 
 19. Let's go and check one of our tables and verify the data. Navigate
 back to the KQL Queryset we have been using called **Create Tables**
 and ensure you are in the **Bronze Layer** tab and run the following
 script
 
-    ![](images/media/image25.emf)
+    ![](../media/lab-04/image25.emf)
 
-    ![](images/media/image26.png)
+    ![](../media/lab-04/image26.png)
 
 20. You should see some data like the image below, but it may not be
 exact
 
-    ![](images/media/image27.png)
+    ![](../media/lab-04/image27.png)
 
 ## Task 3: Transform Tables in Silver Layer
 
 1. Now that the Bronze tables are loaded we will create a new tab
 within our KQL Queryset called "Silver Layer".
-![](images/media/image28.png)
+![](../media/lab-04/image28.png)
 
 2. Run the following KQL script within the "Silver Layer" tab to create
 four new tables that will serve as the Silver Layer of the Medallion
 Framework.
 
-    ![](images/media/image29.emf)
+    ![](../media/lab-04/image29.emf)
 
 3. Run that script by highlighting the new script and clicking **Run**.
 
-    ![](images/media/image30.png)
+    ![](../media/lab-04/image30.png)
 
 4. Once that script is executed, you will see four new tables added
 into the KQL Database tables menu.
 
-    ![](images/media/image31.png)
+    ![](../media/lab-04/image31.png)
 
 5. Now that the tables have been created, you need to load data into
 them. You will create an update policy to transform the data and
 move it when it is ingested into the bronze layer. Copy and paste
 the following script and then **Run** the code.
 
-    ![](images/media/image32.emf)
+    ![](../media/lab-04/image32.emf)
 
 6. While you will see results of the query execution, the best evidence
 that your query completed is that you will see a new expandable
@@ -257,31 +257,31 @@ to the **Functions folder**. These functions will allow the data
 loaded into the Bronze layer of the KQL Database to then be
 mirrored, transformed and loaded into the Silver layer.
 
-    ![](images/media/image33.png)
+    ![](../media/lab-04/image33.png)
 
 7. Now let's simulate this process, you will run the pipeline you
 created earlier in this lab again. Navigate back to the **Load KQL
 Database** pipeline now.
 
-    ![](images/media/image34.png)
+    ![](../media/lab-04/image34.png)
 
 8. Simply click the **Run** button within the **Home ribbon** to
 execute the pipeline again and load the data to the Bronze layer
 where it will then be transformed by the functions you created and
 loaded into the Silver tables.
 
-    ![](images/media/image35.png)
+    ![](../media/lab-04/image35.png)
 
 9. Click **OK** on this flyout to run the pipeline with the same
 parameters as previously.
 
-    ![](images/media/image36.png)
+    ![](../media/lab-04/image36.png)
 
 10. Again, wait approximately one minute for the pipeline to complete
 its load and when all items in your Output menu indicate
 **Succeeded** move on to the next step.
 
-    ![](images/media/image37.png)
+    ![](../media/lab-04/image37.png)
 
 11. Once the data pipeline has been completed, go and validate the
 results in the KQL Database. Return to the **Create Tables** KQL
@@ -290,16 +290,15 @@ Queryset and navigate to the **Silver Layer** tab.
 12. On a new line, query the SilverAddress table by writing out the
 following query and executing the code.
 
-    ![](images/media/image38.emf)
+    ![](../media/lab-04/image38.emf)
 
-![A blue rectangle with red and black text Description automatically
-generated](images/media/image39.png)
+    ![](../media/lab-04/image39.png)
 
 13. Notice in your results, your **SilverAddress** table has an
 additional column, **IngestionDate**, that is not physically present
 on the **Address** table.
 
-    ![](images/media/image40.png)
+    ![](../media/lab-04/image40.png)
 
 ## Task 4: Create Gold Layer with Materialized Views
 
@@ -313,35 +312,35 @@ users. Let's see how this is accomplished within a KQL database.
 1. If it is not already, open your **Create Tables** KQL Queryset and
 create a new tab calle "Gold Layer".
 
-    ![](images/media/image41.png)
+    ![](../media/lab-04/image41.png)
 
 2. Paste in the queryset the following code for creating a materialized
 view.
 
-    ![](images/media/image42.emf)
+    ![](../media/lab-04/image42.emf)
 
 3. Once the code has been pasted, highlight the code and execute it by
 clicking on the **Run** button.
 
-    ![](images/media/image43.png)
+    ![](../media/lab-04/image43.png)
 
 4. You will see an output in your query results detailing information
 on how this materialized view was created.
 
-    ![](images/media/image44.png)
+    ![](../media/lab-04/image44.png)
 
 5. You will also see another folder was created in the KQL Database
 object explorer. Expand the **Materialized View** folder and you
 will find your **GoldAddress** view within.
 
-    ![](images/media/image45.png)
+    ![](../media/lab-04/image45.png)
 
 6. In your query window, run the following code to query the new
 materialized view.
 
-    ![](images/media/image46.emf)
+    ![](../media/lab-04/image46.emf)
 
-    ![](images/media/image47.png)
+    ![](../media/lab-04/image47.png)
 
 7. This query will return the row with the latest **IngestionDate** for
 each unique **AddressID** in the **SilverAddress** table.
@@ -349,11 +348,11 @@ each unique **AddressID** in the **SilverAddress** table.
 8. Now paste and run the following queries to build more Gold layer
 materialized views for the other tables.
 
-    ![](images/media/image48.emf)
+    ![](../media/lab-04/image48.emf)
 
 9. You should now have six materialized views within your KQL Database.
 
-    ![](images/media/image49.png)
+    ![](../media/lab-04/image49.png)
 
 10. You have now successfully built a Medallion Framework within a KQL
 Database. While this data is easily consumable, you will have users
@@ -372,12 +371,12 @@ KQL Database accessible through the Lakehouse using shortcuts
 2. Click the **+ New Item** option and then select **Lakehouse** from
 the list of available options.
 
-    ![](images/media/image50.png)
+    ![](../media/lab-04/image50.png)
 
 3. Give the Lakehouse the name, **lh_Fabrikam** and then click on
 **Create**. Do not enable the preview feature of Lakehouse schemas
 
-    ![](images/media/image51.png)
+    ![](../media/lab-04/image51.png)
 
 ## Task 6: Shortcut to KQL Database Tables
 
@@ -394,18 +393,18 @@ KQL Database
 
 1. Choose the option from the menu that says **New shortcut**.
 
-    ![](images/media/image52.png)
+    ![](../media/lab-04/image52.png)
 
 2. Select the option **Microsoft OneLake** under the **Internal
 sources**.
 
-    ![](images/media/image53.png)
+    ![](../media/lab-04/image53.png)
 
 3. Within the menu, select the **eh_Fabrikam** KQL Database to bring
 tables from that storage into the Lakehouse without duplicating or
 copying the data.
 
-    ![](images/media/image54.png)
+    ![](../media/lab-04/image54.png)
 
 4. Click **Next** at the bottom of the menu.
 
@@ -418,7 +417,7 @@ icon** and then select the following tables to bring over.
 
     - InternetSales
 
-      ![](images/media/image55.png)
+      ![](../media/lab-04/image55.png)
 
 6. These tables could be very useful to any users who may be leveraging
 notebooks within Fabric. This data could be used in data science
@@ -431,16 +430,16 @@ likely be interested in.
 your selection, click on the **Create** button at the bottom of the
 screen.
 
-    ![](images/media/image56.png)
+    ![](../media/lab-04/image56.png)
 
 9. You will now see all the tables you selected from the KQL Database
 have appeared within the Lakehouse.
 
-    ![](images/media/image57.png)
+    ![](../media/lab-04/image57.png)
 
 10. Click on the table called **Clicks**.
 
-    ![](images/media/image58.png)
+    ![](../media/lab-04/image58.png)
 
 11. You can see a sample of the records from that table have appeared
 within your user interface.
