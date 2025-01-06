@@ -41,23 +41,23 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Create an Event Stream Source 
 
-1.  Open the **Fabric workspace** you created in the last lab. From here
+1. Open the **Fabric workspace** you created in the last lab. From here
 we can see the Eventhouse we created.
 
     ![](../media/lab-02/image5.png)
 
-2.  Navigate to the Real-Time Hub by selecting the **Real-Time** button
+2. Navigate to the Real-Time Hub by selecting the **Real-Time** button
 on the left-hand side. Even though we do not see any streams of data
 that will change shortly.
 
     ![](../media/lab-02/image6.png)
 
-3.  Select the **+ Connect data source** green button which should be in
+3. Select the **+ Connect data source** green button which should be in
 the upper right corner.
 
     ![](../media/lab-02/image7.png)
 
-4.  A window will open that will allow you to select a source for our
+4. A window will open that will allow you to select a source for our
 stream data. As we discussed before, there are many fantastic
 options to choose from but for this class we will select the option
 "Azure Event Hubs". If you do not see "Azure Event Hubs" easily,
@@ -66,13 +66,13 @@ you see.
 
     ![](../media/lab-02/image8.png)
 
-5.  You are now required to create a connection to the Azure Event Hub.
+5. You are now required to create a connection to the Azure Event Hub.
 Click on the **New connection** text since you do not currently have
 a connection.
 
     ![](../media/lab-02/image9.png)
 
-6.  From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+6. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
 
     - Event Hub namespace: **rtiadhub{userid} - provided by cloudlabs**
 
@@ -82,11 +82,11 @@ a connection.
 
     - Shared Access Key: **Available in Environment Details tab**
 
-7.  Once all properties have been filled out click on **Connect**.
+7. Once all properties have been filled out click on **Connect**.
 
     ![](../media/lab-02/image10.png)
 
-8.  In the configuration of the Azure Event Hub data source, you may
+8. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
 that you gain access to a unique access point to the stream of data.
 For this workshop you can leave the "$Default" value as shown
@@ -94,7 +94,7 @@ below
 
     ![](../media/lab-02/image11.png)
 
-9.  Before we finalize this data source and Eventstream, let's go ahead
+9. Before we finalize this data source and Eventstream, let's go ahead
 and rename our Eventstream to something more useful. In the "Stream
 details" section on the right select the pencil icon next to the
 "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales".**
@@ -148,27 +148,27 @@ in UTC format.
 
 ## Task 2: Setup Eventstream Destination
 
-1.  Click on the tile within the canvas area labeled "Switch to edit
+1. Click on the tile within the canvas area labeled "Switch to edit
 mode to Transform event of add destination
 
     ![](../media/lab-02/image19.png)
 
-2.  Within the Eventstream user interface, click on the **Transform
+2. Within the Eventstream user interface, click on the **Transform
 events or add destination** option to open the drop-down menu.
 
     ![](../media/lab-02/image20.png)
 
-3.  View the list of available operations that can be made to the
+3. View the list of available operations that can be made to the
 stream.
 
     ![](../media/lab-02/image21.png)
 
-4.  Look below the **Operations** section and you will find the
+4. Look below the **Operations** section and you will find the
 **Destinations,** select the option that says **Eventhouse**.
 
     ![](../media/lab-02/image22.png)
 
-5.  A new menu will open on the right-hand side of the screen. The first
+5. A new menu will open on the right-hand side of the screen. The first
 thing you need to modify for the destination is the **data ingestion
 mode**. The two options are **Direct Ingestion** and **Event
 processing before ingestion.** Because we are not going to transform
@@ -178,7 +178,7 @@ ingestion** option.
 
     ![](../media/lab-02/image23.png)
 
-6.  Modify the remainder of the settings with the following details
+6. Modify the remainder of the settings with the following details
 below.
 
     - Destination name - **eh-kql-db-fabrikam**
@@ -191,14 +191,14 @@ below.
 
       ![](../media/lab-02/image24.png)
 
-7.  Click on Save.
+7. Click on Save.
 
-8.  With the Eventstream configured, click on the **Publish** button to
+8. With the Eventstream configured, click on the **Publish** button to
 save this Eventstream and begin your ingestion.
 
     ![](../media/lab-02/image25.png)
 
-9.  If you notice the **AzureEventHub** source has become inactive,
+9. If you notice the **AzureEventHub** source has become inactive,
 switch the toggle to the "Active" state and choose the option "Now"
 when the dialog opens
 
@@ -246,28 +246,28 @@ and started a stream of data into your KQL Database.
 
 ## Task 3: Authoring Kusto Database Queries
 
-1.  Make your way back to your **RTI_username** workspace. You should
+1. Make your way back to your **RTI_username** workspace. You should
 see the new Eventstream you just created along side all the
 Evenhouse items.
 
     ![](../media/lab-02/image34.png)
 
-2.  Open the **eh_Fabrikam** KQL Database item.
+2. Open the **eh_Fabrikam** KQL Database item.
 
     ![](../media/lab-02/image35.png)
 
-3.  Within this experience, you can get an overview of the current
+3. Within this experience, you can get an overview of the current
 structure, size, and use of the KQL Database. Because the
 Eventstream is sending data to this KQL Database consistently you
 will notice the amount of storage will increase over time.
 
     ![](../media/lab-02/image36.png)
 
-4.  Click on the **refresh icon** in the top-right corner of the screen.
+4. Click on the **refresh icon** in the top-right corner of the screen.
 
     ![](../media/lab-02/image37.png)
 
-5.  The size of the database should have grown. The value you see may
+5. The size of the database should have grown. The value you see may
 not be exact in comparison to the screenshots in the remainder of
 the lab. Depending on how long you take to complete the content you
 will have received less or more records than other members of the
@@ -276,13 +276,13 @@ follow along whatsoever.
 
     ![](../media/lab-02/image38.png)
 
-6.  Within the database navigation area on the left-hand side of the
+6. Within the database navigation area on the left-hand side of the
 screen, click on the table within your KQL Database called
 **InternetSales** and you will see an overview of the table
 
     ![](../media/lab-02/image39.png)
 
-7.  This overview will give you metadata details about the table you
+7. This overview will give you metadata details about the table you
 have created and any actively streaming data with your Eventstream.
 Again, the size of the table and the number of rows within the table
 are going to vary from student to student and will not affect your
@@ -304,12 +304,12 @@ on this menu include:
 
         ![](../media/lab-02/image40.png)
 
-8.  Return to the database view and click on **Explore your data** in
+8. Return to the database view and click on **Explore your data** in
 the top-right corner.
 
     ![](../media/lab-02/image41.png)
 
-9.  This will open the default KQL Queryset that was created alongside
+9. This will open the default KQL Queryset that was created alongside
 the Eventhouse. There are a few pre-scripted queries that are
 already authored but need some slight customization. There are also
 two links to Microsoft documentation that can be helpful when
@@ -379,7 +379,7 @@ within the KQL Queryset capabilities including converting SQL queries to
 KQL queries and simply authoring T-SQL queries within the KQL Queryset.
 Let's explore    !
 
-1.  You need to create a query that returns each product with the number
+1. You need to create a query that returns each product with the number
 of how many times it has sold. This is something you can quickly do
 with T-SQL. Within the query window, you can translate your SQL
 queries into KQL to better understand how to author KQL queries in
@@ -391,7 +391,7 @@ the text)
 
     ![](../media/lab-02/image51.png)
 
-2.  The comment line "--" followed by the keyword "explain" will allow
+2. The comment line "--" followed by the keyword "explain" will allow
 you to now create a SQL query and return a result with the KQL query
 that could be used to achieve a similar query and result. Below
 input the following query to explain what the KQL query would look
@@ -401,7 +401,7 @@ like:
 
     ![](../media/lab-02/image53.png)
 
-3.  This is a simple SQL query that will retrieve results from the
+3. This is a simple SQL query that will retrieve results from the
 InternetSales table to return two columns, the product key and a
 count of the number of orders. Because there is an aggregated column
 and a non-aggregated column, you must use a GROUP BY to return
@@ -410,19 +410,19 @@ with the "--" to the end of the T-SQL query.
 
     ![](../media/lab-02/image54.png)
 
-4.  The output of the explain query should be a single record with the
+4. The output of the explain query should be a single record with the
 translated KQL query as the result. Click on the **caret icon ()**
 to expand the results and allow for easier translation.
 
     ![](../media/lab-02/image55.png)
 
-5.  Click on the query pane highlighted below in orange. This will allow
+5. Click on the query pane highlighted below in orange. This will allow
 you to select translated KQL query and copy it. Paste this query in
 the KQL Queryset we have been using
 
     ![](../media/lab-02/image56.png)
 
-6.  With the results in your query pane, highlight and run the query to
+6. With the results in your query pane, highlight and run the query to
 retrieve the results. The **summarize** operator will produce a
 table that aggregates the content of the input table while
 determining how to group each record with the **by Product Key** and
@@ -431,20 +431,20 @@ or drop while inserting new computed columns.
 
     ![](../media/lab-02/image57.png)
 
-7.  Feel free to explore the list of SQL to KQL cheat sheet operations
+7. Feel free to explore the list of SQL to KQL cheat sheet operations
 at the top of your queryset for additional capabilities and
 conversions.
 
     ![](../media/lab-02/image58.png)
 
-8.  Instead of using KQL, another alternative to querying the results of
+8. Instead of using KQL, another alternative to querying the results of
 the KQL Database within Fabric is to write and run a T-SQL query.
 Highlight the original SQL statement that was used to translate the
 KQL query and run only that.
 
     ![](../media/lab-02/image59.png)
 
-9.  This will also yield perfectly valid results without having to
+9. This will also yield perfectly valid results without having to
 convert to KQL beforehand.
 
     ![](../media/lab-02/image60.png)
@@ -453,28 +453,28 @@ convert to KQL beforehand.
 
 ## Task 5: Working with a KQL Queryset
 
-1.  While most of the queries within this window were automatically
+1. While most of the queries within this window were automatically
 created from the user interface, there may be times in the future
 where you wish to create your own KQL queries from scratch. This can
 be managed through the tabs feature located at the top. It also
 should be noted that this Queryset automatically saves periodically.
 
-2.  Notice at the top of the Queryset the default name of our first page
+2. Notice at the top of the Queryset the default name of our first page
 is the same name as our database.
 
     ![](../media/lab-02/image61.png)
 
-3.  Let's go ahead and re-name this tab by clicking on the pencil icon,
+3. Let's go ahead and re-name this tab by clicking on the pencil icon,
 let's call it **My** **First KQL Query**.
 
     ![](../media/lab-02/image62.png)
 
-4.  In the future if we would like to isolate our code, we can simply
+4. In the future if we would like to isolate our code, we can simply
 create additional tabs by clicking the "+" icon.
 
     ![](../media/lab-02/image63.png)
 
-5.  Return to your **RTI_username** workspace. You should have the
+5. Return to your **RTI_username** workspace. You should have the
 following objects present
 
     ![](../media/lab-02/image64.png)
