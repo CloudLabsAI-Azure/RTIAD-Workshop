@@ -108,14 +108,14 @@ a opção de **Envie-me uma mensagem no Teams**.
     - **Coluna** = clicks
     - **Valor** = 30000
 
-    ![](../media/lab-06/image034.png)
+      ![](../media/lab-06/image034.png)
 
 5. Na **Ação**, selecione as propriedades abaixo:
 
     - **Tipo** = Mensagem do Teams
     - **Destinatário(s)** = {sua id de usuário aqui}
 
-    ![](../media/lab-06/image036.png)
+      ![](../media/lab-06/image036.png)
  
 6. Por fim, clique em **Salvar e iniciar** para iniciar esta regra.
 

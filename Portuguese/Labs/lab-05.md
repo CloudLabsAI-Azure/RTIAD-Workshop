@@ -89,85 +89,86 @@ Ao final deste laboratório, você terá aprendido a:
     ![](../media/lab-05/image031.png)
 
 2. Por padrão, você se conectará ao Banco de Dados KQL criado anteriormente como sua fonte. A partir daqui, você pode escrever sua própria consulta KQL para preencher esse visual com dados. Exclua todas as marcações anteriores do KQL que estiverem ali por padrão. Copie e cole a consulta a seguir na janela da consulta.
-```
-//Clicks by hour Clicks
-| where eventDate between (_startTime.._endTime)
-| summarize date_count = count() by bin(eventDate, 1h)
-| render timechart
-| top 30 by date_count
-| sort by eventDate
-```
+
+    ```
+    //Clicks by hour Clicks
+    | where eventDate between (_startTime.._endTime)
+    | summarize date_count = count() by bin(eventDate, 1h)
+    | render timechart
+    | top 30 by date_count
+    | sort by eventDate
+    ```
 
 3. Execute a consulta depois de configurá-la corretamente para ver os resultados.
 
- ![](../media/lab-05/image033.png)
+    ![](../media/lab-05/image033.png)
 
 4. Observe que você pode ter apenas um resultado em sua saída. Isso ocorre devido ao **Período** definido por padrão para este bloco. Você tem um parâmetro com o qual pode alterar o período do qual você está retornando dados. O eventDate between (_startTime.._endTime) é o que permite que você aproveite esse parâmetro. Modifique o parâmetro **Período** para **Últimos 3 horas** e observe como sua saída muda.
 
-![](../media/lab-05/image036.png)
+    ![](../media/lab-05/image036.png)
 
 5. Agora você deve ver na saída da consulta os resultados dos cliques na janela das últimas 3 horas.
 
-![](../media/lab-05/image039.png)
+    ![](../media/lab-05/image039.png)
 
 6. Embora esse parâmetro possa ser modificado, você pode desejar que ele seja padronizado para um intervalo de tempo específico em vez de forçar os usuários a modificá-lo. Acima da opção de intervalo de tempo, clique na opção **@ Parâmetros**.
 
-![](../media/lab-05/image041.png)
+    ![](../media/lab-05/image041.png)
  
 7. Clique no **ícone de lápis** para editar o parâmetro **Período**.
 
-![](../media/lab-05/image043.png)
+    ![](../media/lab-05/image043.png)
 
 8. Altere o **Valor padrão** para **Últimos 24 horas** para sempre mostrar o último dia por padrão. Clique em **Concluído** quando tiver terminado.
 
-![](../media/lab-05/image045.png)
+    ![](../media/lab-05/image045.png)
 
 9. Feche o painel de parâmetros.
 
- 10.	Agora clique no botão **+ Adicionar imagem** acima dos resultados da consulta.
+10. Agora clique no botão **+ Adicionar imagem** acima dos resultados da consulta.
 
-![](../media/lab-05/image048.png)
+    ![](../media/lab-05/image048.png)
 
 11.	Um novo submenu aparecerá no lado direito da tela. Clique na caixa de texto abaixo da opção **Tile name** para dar a esse visual o nome **Clicks by Hour**.
 
-![](../media/lab-05/image051.png)
+    ![](../media/lab-05/image051.png)
 
 12.	Por padrão, o visual que você está usando para exibir os resultados dessa consulta KQL é uma tabela. Essa pode não ser a melhor maneira de alguém consumir e compreender rapidamente o que está acontecendo com os resultados de seus dados. Altere o tipo de elemento visual de uma tabela para um **Area chart**.
 
-![](../media/lab-05/image054.png)
+    ![](../media/lab-05/image054.png)
  
 13.	Com esse visual recém-formatado, você poderá entender melhor os picos e vales de Cliques do seu site de comércio eletrônico usando o fluxo de dados criado anteriormente nesta classe.
 
-![](../media/lab-05/image057.png)
+    ![](../media/lab-05/image057.png)
 
 14.	Para salvar esse visual no Dashboard, clique no botão **as alterações** no canto superior direito da tela.
 
- ![](../media/lab-05/image060.png)
+    ![](../media/lab-05/image060.png)
 
 15.	Depois que esse visual for colocado dentro do Dashboard, pode ser que o visual esteja mostrando apenas a última hora de resultados. Modifique o Dashboard para mostrar o **Período** de **Últimos 24 horas**.
 
-![](../media/lab-05/image062.png)
+    ![](../media/lab-05/image062.png)
  
 16.	Atualize o visual e observe que os resultados serão ligeiramente alterados para refletir os dados que entraram desde a última execução da consulta.
 
-![](../media/lab-05/image065.png)
+    ![](../media/lab-05/image065.png)
 
 ## Tarefa 4: Adicionar mais blocos de dashboard ao Dashboard em Tempo Real
 
 1. Na **faixa de opções Página Inicial**, no Dashboard em Tempo Real, clique no botão **New tile**.
 
-![](../media/lab-05/image068.png)
+    ![](../media/lab-05/image068.png)
 
 2. Insira a consulta KQL a seguir no painel de consulta.
 
-```
-//Impressions by hour Impressions
-| where eventDate between (_startTime.._endTime)
-| summarize date_count = count() by bin(eventDate, 1h)
-| render timechart
-| top 30 by date_count
-| sort by eventDate
-```
+    ```
+    //Impressions by hour Impressions
+    | where eventDate between (_startTime.._endTime)
+    | summarize date_count = count() by bin(eventDate, 1h)
+    | render timechart
+    | top 30 by date_count
+    | sort by eventDate
+    ```
 
 3. **Execute** a consulta.
 
@@ -191,26 +192,26 @@ Ao final deste laboratório, você terá aprendido a:
 
 8. Copie e cole a consulta a seguir no painel da consulta. Observe que esta é uma consulta de várias instruções que usa várias instruções let e uma consulta combinada por pontos-e-vírgulas.
 
-```
-//Clicks, Impressions, CTR
+    ```
+    //Clicks, Impressions, CTR
 
 
-let imp = Impressions
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize imp_count = count() by dateOnly;
+    let imp = Impressions
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize imp_count = count() by dateOnly;
 
 
-let clck = Clicks
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize clck_count = count() by dateOnly;
+    let clck = Clicks
+    | where eventDate between (_startTime.._endTime)
+    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+    | summarize clck_count = count() by dateOnly;
 
 
-imp
-| join clck on $left.dateOnly == $right.dateOnly
-| project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-```
+    imp
+    | join clck on $left.dateOnly == $right.dateOnly
+    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+    ```
 
 9. **Execute** a consulta para exibir os resultados.
 
@@ -220,11 +221,11 @@ imp
 
 11.	Quando as configurações visuais aparecerem, modifique as configurações a seguir para criar uma contagem de impressões.
 
-    ![](../media/lab-05/image087.png)
-
     - **Tile name**- Impressions
     - **Visual type** - Stat
     - **Value column** - impressions (long)
+
+      ![](../media/lab-05/image087.png)
 
 12.	Escolha **Aplicar as alterações** quando todas as configurações tiverem sido definidas adequadamente.
 
@@ -267,17 +268,17 @@ imp
 
 2. Copie e cole a consulta a seguir no painel da consulta. Essa consulta extrai a latitude e a longitude da coluna Endereço IP desse fluxo de dados para gerar um local que você pode plotar em um mapa. Essa consulta pode levar um pouco mais de tempo do que as anteriores.
 
-``` 
-//Impressions by location
+    ``` 
+    //Impressions by location
 
-Impressions
-| where eventDate between (_startTime.._endTime)
-| join external_table('products') on $left.productId == $right.ProductID
-| project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
-| render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-```
+    Impressions
+    | where eventDate between (_startTime.._endTime)
+    | join external_table('products') on $left.productId == $right.ProductID
+    | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
+    | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
+    ```
 
-3. Execute a consulta para validar se ela está configurada corretamente. Clique no botão **+Adicionar imagem**.
+3. Execute a consulta para validar se ela está configurada corretamente. Clique no botão **+ Adicionar imagem**.
 
     ![](../media/lab-05/image114.png)
 
@@ -340,10 +341,11 @@ trabalhar com as tarefas opcionais a seguir. Caso contrário, o laboratório foi
 
 3. Copie e cole o código de marcação a seguir na janela da consulta.
 
-```
-![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
-```
-![](../media/lab-05/image150.png)
+    ```
+    ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+    ```
+
+    ![](../media/lab-05/image150.png)
 
 4. Aplique as alterações.
 
