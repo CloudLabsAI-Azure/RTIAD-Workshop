@@ -1,3 +1,6 @@
+
+![](../media/lab-04/main.png)
+
 # 目录
 
 - 文档结构	
@@ -37,10 +40,16 @@
 ## 任务 1：创建铜牌表
 
 1. 打开课程的 **Fabric 工作区**，然后打开您在上一个实验室中创建的KQL 查询集 **Create Tables**。
+
+    ![](../media/lab-04/image006.png)
  
 2. 在此KQL 查询集中，我们将此处的原始选项卡从“eh_Fabrikam”重命名为“Create External Tables”，以便更轻松地组织和理解此查询集中的内容。
 
+    ![](../media/lab-04/image008.png)
+
 3. 现在，让我们选择“+”图标来创建一个新选项卡，然后将新选项卡命名为“Bronze Layer”
+
+    ![](../media/lab-04/image010.png)
 
 4. 在此新选项卡中，粘贴并突出显示以下代码，然后选择“运行”以创建四个新表，这些表将用作奖牌框架的铜牌图层。
 
@@ -53,6 +62,8 @@
 .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
 .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
 ```
+
+![](../media/lab-04/image014.png)
   
 5. 执行后，您应该立即看到在数据库对象资源管理器中创建的四个新表。
 
@@ -61,7 +72,11 @@
     - SalesOrderDetail
     - SalesOrderHeader
 
+    ![](../media/lab-04/image016.png)
+
 6. 通过单击名称旁边的 > 图标展开 **Address 表**。
+
+    ![](../media/lab-04/image018.png)
 
 7. 这将向您显示表的架构（列名称和数据类型）。向 KQL 数据库的此表中添加一个引入时间隐藏列非常有用，该列稍后将在奖牌体系结构中使用。让我们现在添加该列。复制并粘贴下面的脚本，以通过添加引入时间列来更改您刚创建的表。
 
@@ -74,20 +89,30 @@
 .alter table SalesOrderDetail policy ingestiontime true
 ```
 
+![](../media/lab-04/image021.png)
+
 8. 这四个新表是空白表，其架构均已定义。现在，您需要通过一种方法正确加载这些表。导航回您的工作区 **RTI_username**。
 
 ## 任务 2：使用数据管道加载铜牌表
 
 1. 从工作区中选择 **+ 新建项**选项，以显示选择窗格。然后，找到并选择名为 **Data pipeline** 的选项。
+
+    ![](../media/lab-04/image024.png)
  
 2. 将新管道命名为 **Load KQL Database Bronze Layer**。
+
+    ![](../media/lab-04/image026.png)
  
 3. 单击**创建**。
 
 4. 显示管道菜单后，单击**复制数据助手**选项。
 
+    ![](../media/lab-04/image028.png)
+
 5. 首先，您将需要与要从中提取数据的源数据库建立连接。单击“新建源”下的 **Azure SQL 数据库**选项。如果您没有立即看到它，可以使用顶部的搜索栏来筛选源。我们将连接到与上一个实验室相同的外部 Azure SQL 数据库，但连接到不同的表。
  
+    ![](../media/lab-04/image030.png)
+
 6. 您将需要输入数据库的连接详细信息。使用您的环境中的信息，或如下所示。
 
     - fabrikamdemo.database.windows.net
@@ -103,27 +128,41 @@
     - SalesLT.Customer
     - SalesLT.SalesOrderDetail
     - SalesLT.SalesOrderHeader
+
+    ![](../media/lab-04/image032.png)
   
 9. 单击**下一步**。
 
 10.	您现在需要设置目标，以确定希望管道将数据发送到的位置。查找 **OneLake 数据中心**，然后选择您的KQL 数据库 **eh_Fabrikam**。
 
+    ![](../media/lab-04/image034.png)
+
 11.	如果系统提示您登录，只需使用“环境详细信息”页面中提供的凭据即可
 
 12.	如果尚未选择 **SalesLT.Address** 表，请单击该表，然后单击**表**选项旁边的下拉菜单。单击
 **Address** 表选项。
+
+    ![](../media/lab-04/image036.png)
  
 13.	您现在将看到列**映射的**概述。这将允许您可视化源数据库中您要发送到KQL 数据库的所有字段。如果您不希望特定字段从源映射，可以选择删除这些字段。
+
+    ![](../media/lab-04/image038.png)
 
 14.	对表 **SalesLT.Customer、SaleLT.SalesOrderDetail** 和 **SalesLT.SalesOrderHeader** 执行与步骤 11- 12 相同的步骤。无需执行列映射，因此只需匹配表名称即可。正确映射所有表后，单击**下一步**。
 
 15.	使用“复制数据”助手的最后一页是概述页面，用于验证您选择的所有设置。确保源表数和目标表数相同。
 
+    ![](../media/lab-04/image040.png)
+
 16.	单击**保存+ 运行**。
  
 17.	片刻之后，将显示一个弹出窗口，其中包含**参数**。我们刚刚完成的复制助手向导创建了一个表列表，用于进行迭代并加载到KQL 表中。只需单击**确定**按钮即可运行管道，因为它当前已从“复制数据”助手配置。
 
+    ![](../media/lab-04/image042.png)
+
 18.	让管道运行，大约一分钟后，数据移动应完成。一旦您看到管道中的所有活动**均成功**，即表明您已传输数据。
+
+    ![](../media/lab-04/image044.png)
 
 19.	让我们检查其中一个表并验证数据。导航回我们一直在使用的名为 **Create Tables** 的KQL 查询集，并确保您位于 **Bronze Layer** 选项卡中，然后运行以下脚本
 
@@ -134,11 +173,17 @@ Customer
 | take 100
 ```
 
+![](../media/lab-04/image048.png)
+
 20.	您应该会看到如下图所示的一些数据，但这些数据可能不准确
+
+    ![](../media/lab-04/image050.png)
 
 ## 任务 3：转换银牌图层中的表
 
 1. 现在铜牌表已加载，我们将在KQL 查询集中创建名为“Silver Layer”的新选项卡。
+
+    ![](../media/lab-04/image052.png)
 
 2. 运行 “Silver Layer”选项卡中的以下KQL 脚本，以创建四个新表，这些表将用作奖牌框架的银牌图层。
 
@@ -158,7 +203,11 @@ Customer
 
 3. 通过突出显示新脚本并单击**运行**来运行该脚本。
 
+    ![](../media/lab-04/image056.png)
+
 4. 执行该脚本后，您将看到KQL 数据库表菜单中添加了四个新表。
+
+    ![](../media/lab-04/image058.png)
 
 5. 现在表已创建，您需要将数据加载到表中。您将创建一个更新策略，以在数据引入到铜牌图层时对其进行转换和移动。复制并粘贴以下脚本，然后**运行**代码。
 
@@ -195,13 +244,23 @@ Customer
 
 6. 虽然您将看到查询执行的结果，但查询已完成的最佳证明是，您将在“数据库对象”窗格中看到一个新的可扩展文件夹。单击 **Functions 文件夹**旁边的 > **图标**。这些函数允许将数据加载到KQL 数据库的铜牌图层中，然后进行镜像、转换并加载到银牌图层中。
 
+    ![](../media/lab-04/image062.png)
+
 7. 现在，让我们模拟此流程，您将再次运行之前在本实验室中创建的管道。现在导航回 **Load KQL Database** 管道。
+
+    ![](../media/lab-04/image064.png)
 
 8. 只需单击**主页功能区**中的**运行**按钮，即可再次执行管道，并将数据加载到铜牌图层，然后这些数据将通过您创建的函数进行转换并加载到银牌表中。
 
+    ![](../media/lab-04/image066.png)
+
 9. 在此弹出窗口中单击**确定**以使用与之前相同的参数运行管道。
 
+    ![](../media/lab-04/image068.png)
+
 10.	同样，等待大约一分钟，让管道完成加载，当输出菜单中的所有项目都指示**成功**时，继续执行下一个步骤。
+
+    ![](../media/lab-04/image070.png)
 
 11.	数据管道完成后，继续在KQL 数据库中验证结果。返回到 **Create Tables** KQL 查询集并导航到 **Silver Layer** 选项卡。
 
@@ -211,14 +270,19 @@ Customer
 SilverAddress
 | take 100
 ```
+![](../media/lab-04/image075.png)
 
 13.	请注意，在结果中，您的 **SilverAddress** 表中额外有一列 **IngestionDate**，该列实际上不存在于 **Address** 表中。
+
+    ![](../media/lab-04/image076.png)
 
 ## 任务 4：使用具体化视图创建金牌图层
 
 现在，您已在银牌图层中拥有已转换的数据图层，您可以开始对Power BI 报表、RTI 数据集中可信、经过验证和扩充的数据执行分析，或者只需创作一些KQL 查询。但是，有时您可能认为有必要聚合数据，以便最终用户更易于使用这些数据。让我们看看如何在KQL 数据库中完成此操作。
  
 1. 如果尚未完成，请打开您的 **Create Tables** KQL 查询集，并创建一个名为“Gold Layer”的新选项卡。
+
+    ![](../media/lab-04/image078.png)
 
 2. 在查询集中粘贴以下代码，以创建具体化视图。
 
@@ -234,9 +298,15 @@ SilverAddress
 
 3. 粘贴代码后，突出显示该代码，然后单击 **Run** 按钮以执行代码。
 
+    ![](../media/lab-04/image083.png)
+
 4. 您将在查询结果中看到一个输出，其中详细说明了如何创建该具体化视图。
+
+    ![](../media/lab-04/image084.png)
  
 5. 您还将看到在KQL 数据库对象资源管理器中创建了另一个文件夹。展开 **Materialized View** 文件夹，您将在其中找到您的 **GoldAddress** 视图。
+
+    ![](../media/lab-04/image086.png)
   
 6. 在查询窗口中，运行以下代码以查询新的具体化视图。
 
@@ -244,6 +314,7 @@ SilverAddress
 GoldAddress
 | take 1000
 ```
+![](../media/lab-04/image090.png)
 
 7. 此查询将返回 **SilverAddress** 表中每个唯一 **AddressID** 具有最新 **IngestionDate** 的行。
 
@@ -288,6 +359,8 @@ Impressions
  
 9. 现在，您的KQL 数据库中应该有六个具体化视图。
 
+    ![](../media/lab-04/image094.png)
+
 10. 现在，您已成功在KQL 数据库中生成了奖牌框架。虽然此数据易于使用，但您的一些用户可能从未使用过Kusto 并且更愿意通过其他方式访问这些表中的数据。在下一个任务中，您将创建湖屋。然后，使用我们在实验室 01 中启用的Onelake 可用性功能，使KQL 数据库中的某些表可使用快捷方式通过湖屋访问
 
 # Fabric 湖屋和OneLake 可用性
@@ -297,8 +370,11 @@ Impressions
 1. 返回到 **RTI_username** 工作区。
 
 2. 单击 **+ 新建项目**选项，然后从可用选项列表中选择**湖屋**。
+    ![](../media/lab-04/image096.png)
 
 3. 将湖屋命名为 **lh_Fabrikam**，然后单击**创建**。不要启用湖屋架构的预览功能
+
+    ![](../media/lab-04/image098.png)
 
 ## 任务 6：KQL 数据库表的快捷方式
 
@@ -306,9 +382,15 @@ Impressions
 
 1. 从菜单中选择指示**新建快捷方式**的选项。
 
+    ![](../media/lab-04/image100.png)
+
 2. 在**内部源**下选择 **Microsoft OneLake** 选项。
+
+    ![](../media/lab-04/image102.png)
  
 3. 在菜单中，选择 **eh_Fabrikam** KQL 数据库以将该存储中的表引入到湖屋中，而无需复制数据。
+
+    ![](../media/lab-04/image104.png)
 
 4. 单击菜单底部的**下一步**。
  
@@ -318,15 +400,23 @@ Impressions
     - Impressions
     - InternetSales
 
+![](../media/lab-04/image106.png)
+
 6. 对于可能在Fabric 中利用笔记本的任何用户，这些表都非常有用。在数据科学试验 中，可以使用此数据来训练一个模型，该模型可以预测用户可能对哪些链接感兴趣。
 
 7. 单击**下一步**。
 
 8. 将显示最后一个验证屏幕。一旦您对您的选择感到满意，就可以单击屏幕底部的**创建**按钮。
 
+    ![](../media/lab-04/image108.png)
+
 9. 您现在可以看到，从KQL 数据库中选择的所有表都已显示在湖屋中。
 
+    ![](../media/lab-04/image110.png)
+
 10.	单击名为 **Clicks** 的表。
+
+    ![](../media/lab-04/image112.png)
  
 11.	您可以看到，该表中的记录示例已显示在您的用户界面中。
 
@@ -342,6 +432,8 @@ Impressions
 # 参考
 
 Fabric Real-time Intelligence in a Day (RTIIAD) 向您介绍了Microsoft Fabric 中提供的一些主要功能。在服务菜单中，“帮助 (?)”部分包含指向一些优质资源的链接。
+
+![](../media/lab-04/image115.jpg)
 
 以下更多参考资源可帮助您进行与 Microsoft Fabric 相关的后续步骤。
 
