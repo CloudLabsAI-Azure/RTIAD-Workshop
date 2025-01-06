@@ -184,11 +184,8 @@ from the source.
 
     ![](../media/lab-04/image21.png)
 
-14. Follow the same steps as Step 11-12 for the tables
-**SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and
-**SalesLT.SalesOrderHeader**. No column mappings will need to be
-performed so simply match up the table names. Once all tables have
-been appropriately mapped, click on **Next**.
+14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and
+**SalesLT.SalesOrderHeader**. No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
 
 15. The final page using the Copy Data Assistant is an overview page to
 verify all the settings you've selected. Ensure that your source
@@ -544,11 +541,9 @@ have appeared within the Lakehouse.
 
     ![](../media/lab-04/image58.png)
 
-11. You can see a sample of the records from that table have appeared
-within your user interface.
+11. You can see a sample of the records from that table have appeared within your user interface.
 
-    **Note: It can take up to a few hours for the data to appear in
-OneLake (https://learn.microsoft.com/en-us/fabric real-time-intelligence/event-house-onelake-availability)**
+    **Note: It can take up to a few hours for the data to appear in OneLake (https://learn.microsoft.com/en-us/fabric real-time-intelligence/event-house-onelake-availability)**
 
 # Summary
 
