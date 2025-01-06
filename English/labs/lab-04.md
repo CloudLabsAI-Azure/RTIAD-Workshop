@@ -97,8 +97,7 @@ to the name.
 
     ![](../media/lab-04/image11.png)
 
-7. This shows you the schema (column names and data types) for the
-table. One thing that will be helpful to add to this table on the
+7. This shows you the schema (column names and data types) for the table. One thing that will be helpful to add to this table on the
 KQL Database would be a hidden column for the ingestion time that
 will be used later in the Medallion architecture. Let's add that
 now. Copy and paste the script below to alter the tables you just
@@ -591,7 +590,6 @@ framework's functionality.
 Fabric Real-time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric.
 
 In the menu of the service, the Help (?) section has links to some great resources.
-
 
 Here are a few more resources that will help you with your next steps with Microsoft Fabric.
 
