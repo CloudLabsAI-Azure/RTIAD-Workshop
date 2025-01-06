@@ -80,16 +80,15 @@
 
 7. 这将向您显示表的架构（列名称和数据类型）。向 KQL 数据库的此表中添加一个引入时间隐藏列非常有用，该列稍后将在奖牌体系结构中使用。让我们现在添加该列。复制并粘贴下面的脚本，以通过添加引入时间列来更改您刚创建的表。
 
-``` 
-//adds a hidden field showing ingestion time
-.execute database script <|
-.alter table Address policy ingestiontime true
-.alter table Customer policy ingestiontime true
-.alter table SalesOrderHeader policy ingestiontime true
-.alter table SalesOrderDetail policy ingestiontime true
-```
-
-![](../media/lab-04/image021.png)
+    ``` 
+    //adds a hidden field showing ingestion time
+    .execute database script <|
+    .alter table Address policy ingestiontime true
+    .alter table Customer policy ingestiontime true
+    .alter table SalesOrderHeader policy ingestiontime true
+    .alter table SalesOrderDetail policy ingestiontime true
+    ```
+    ![](../media/lab-04/image022.png)
 
 8. 这四个新表是空白表，其架构均已定义。现在，您需要通过一种方法正确加载这些表。导航回您的工作区 **RTI_username**。
 
@@ -166,14 +165,14 @@
 
 19.	让我们检查其中一个表并验证数据。导航回我们一直在使用的名为 **Create Tables** 的KQL 查询集，并确保您位于 **Bronze Layer** 选项卡中，然后运行以下脚本
 
-```
-//Query the Bronze layer Customer table 
+    ```
+    //Query the Bronze layer Customer table 
 
-Customer
-| take 100
-```
+    Customer
+    | take 100
+    ```
 
-![](../media/lab-04/image048.png)
+    ![](../media/lab-04/image048.png)
 
 20.	您应该会看到如下图所示的一些数据，但这些数据可能不准确
 
@@ -187,19 +186,19 @@ Customer
 
 2. 运行 “Silver Layer”选项卡中的以下KQL 脚本，以创建四个新表，这些表将用作奖牌框架的银牌图层。
 
-```
-//SILVER LAYER
+    ```
+    //SILVER LAYER
 
-.execute database script <|
+    .execute database script <|
 
-.create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
+    .create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
 
-.create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
+    .create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
 
-.create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
+    .create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
 
-.create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
-```
+    .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
+    ```
 
 3. 通过突出显示新脚本并单击**运行**来运行该脚本。
 
@@ -211,36 +210,36 @@ Customer
 
 5. 现在表已创建，您需要将数据加载到表中。您将创建一个更新策略，以在数据引入到铜牌图层时对其进行转换和移动。复制并粘贴以下脚本，然后**运行**代码。
 
-```
-// use update policies to transform data during Ingestion
+    ```
+    // use update policies to transform data during Ingestion
 
-.execute database script <|
+    .execute database script <|
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
-| extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
+    | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-```
+    .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
+    ```
 
 6. 虽然您将看到查询执行的结果，但查询已完成的最佳证明是，您将在“数据库对象”窗格中看到一个新的可扩展文件夹。单击 **Functions 文件夹**旁边的 > **图标**。这些函数允许将数据加载到KQL 数据库的铜牌图层中，然后进行镜像、转换并加载到银牌图层中。
 
@@ -266,11 +265,11 @@ Customer
 
 12.	在新行中，通过编写以下查询并执行代码来查询SilverAddress 表。
 
-```
-SilverAddress
-| take 100
-```
-![](../media/lab-04/image075.png)
+    ```
+    SilverAddress
+    | take 100
+    ```
+    ![](../media/lab-04/image075.png)
 
 13.	请注意，在结果中，您的 **SilverAddress** 表中额外有一列 **IngestionDate**，该列实际上不存在于 **Address** 表中。
 
@@ -286,15 +285,15 @@ SilverAddress
 
 2. 在查询集中粘贴以下代码，以创建具体化视图。
 
-```
-//GOLD LAYER
-// use materialized views to view the latest changes in the SilverAddress table
-.create materialized-view with (backfill=true) GoldAddress on table SilverAddress
-{
-SilverAddress
-| summarize arg_max(IngestionDate, *) by AddressID
-}
-``` 
+    ```
+    //GOLD LAYER
+    // use materialized views to view the latest changes in the SilverAddress table
+    .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
+    {
+    SilverAddress
+    | summarize arg_max(IngestionDate, *) by AddressID
+    }
+    ``` 
 
 3. 粘贴代码后，突出显示该代码，然后单击 **Run** 按钮以执行代码。
 
@@ -310,52 +309,52 @@ SilverAddress
   
 6. 在查询窗口中，运行以下代码以查询新的具体化视图。
 
-```
-GoldAddress
-| take 1000
-```
-![](../media/lab-04/image090.png)
+    ```
+    GoldAddress
+    | take 1000
+    ```
+    ![](../media/lab-04/image090.png)
 
 7. 此查询将返回 **SilverAddress** 表中每个唯一 **AddressID** 具有最新 **IngestionDate** 的行。
 
 8. 现在，粘贴并运行以下查询以为其他表生成更多金牌图层具体化视图。
 
-```
-//Create additional Gold Materialized Views
-.execute database script <|
+    ```
+    //Create additional Gold Materialized Views
+    .execute database script <|
 
-.create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
-{
-SilverCustomer
-| summarize arg_max(IngestionDate, *) by CustomerID
-}
+    .create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
+    {
+    SilverCustomer
+    | summarize arg_max(IngestionDate, *) by CustomerID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
-{
-SilverSalesOrderHeader
-| summarize arg_max(IngestionDate, *) by SalesOrderID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
+    {
+    SilverSalesOrderHeader
+    | summarize arg_max(IngestionDate, *) by SalesOrderID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
-{
-SilverSalesOrderDetail
-| summarize arg_max(IngestionDate, *) by SalesOrderDetailID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
+    {
+    SilverSalesOrderDetail
+    | summarize arg_max(IngestionDate, *) by SalesOrderDetailID
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
-{
-Clicks
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
+    .create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
+    {
+    Clicks
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
-{
-Impressions
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
-```
+    .create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
+    {
+    Impressions
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
+    ```
  
 9. 现在，您的KQL 数据库中应该有六个具体化视图。
 
@@ -400,7 +399,7 @@ Impressions
     - Impressions
     - InternetSales
 
-![](../media/lab-04/image106.png)
+    ![](../media/lab-04/image106.png)
 
 6. 对于可能在Fabric 中利用笔记本的任何用户，这些表都非常有用。在数据科学试验 中，可以使用此数据来训练一个模型，该模型可以预测用户可能对哪些链接感兴趣。
 
