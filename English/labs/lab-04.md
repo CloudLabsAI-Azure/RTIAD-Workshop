@@ -16,19 +16,11 @@
 
 # Document Structure 
 
-The lab includes steps for the user to follow along with associated
-screenshots that provide visual aid. In each screenshot, sections are
-highlighted with orange boxes to indicate the area(s) user should
-focus on.
+The lab includes steps for the user to follow along with associated screenshots that provide visual aid. In each screenshot, sections are highlighted with orange boxes to indicate the area(s) user should focus on.
 
 # Introduction 
 
-In this lab, you will create a Medallion Framework using the Bronze,
-Silver, Gold layer approach to handling data in it's different stages
-of development and use it in analytics. You will then connect the data
-from your KQL Database into a Lakehouse to showcase how quickly you
-can share your real-time data with those in your organization who want
-to use it for Power BI reporting.
+In this lab, you will create a Medallion Framework using the Bronze, Silver, Gold layer approach to handling data in it's different stages of development and use it in analytics. You will then connect the data from your KQL Database into a Lakehouse to showcase how quickly you can share your real-time data with those in your organization who want to use it for Power BI reporting.
 
 By the end of this lab, you will have learned:
 
@@ -44,8 +36,7 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Create Bronze Tables 
 
-1. Open the **Fabric workspace** for the course and open the KQL
-Queryset you created in the last lab, **Create Tables**.
+1. Open the **Fabric workspace** for the course and open the KQL Queryset you created in the last lab, **Create Tables**.
 
     ![](../media/lab-04/image5.png)
 
