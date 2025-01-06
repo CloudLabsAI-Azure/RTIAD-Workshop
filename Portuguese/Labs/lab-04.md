@@ -55,16 +55,17 @@ Ao final deste laboratório, você terá aprendido a:
 
 4. Nessa nova guia, copie e realce o código a seguir e selecione “Executar” para criar quatro novas tabelas que servirão como sua Camada Bronze da Estrutura Medallion.
 
-```
-//BRONZE LAYER
-.execute database script <|
+    ```
+    //BRONZE LAYER
+    .execute database script <|
 
-.create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
-.create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
-.create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
-.create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
-```
-![](../media/lab-04/image012.png)
+    .create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
+    .create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
+    .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
+    .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
+    ```
+
+    ![](../media/lab-04/image012.png)
 
 5. Depois que isso for executado, você deverá ver imediatamente quatro novas tabelas criadas no Pesquisador de Objetos de Banco de Dados.
 
@@ -73,7 +74,7 @@ Ao final deste laboratório, você terá aprendido a:
     - SalesOrderDetail
     - SalesOrderHeader
 
-![](../media/lab-04/image014.png)
+      ![](../media/lab-04/image014.png)
 
 6. Expanda a **tabela Address** clicando no ícone “>” ao lado do nome.
 
@@ -81,16 +82,16 @@ Ao final deste laboratório, você terá aprendido a:
 
 7. Isso mostra o esquema (nomes de coluna e tipos de dados) para a tabela. Uma coisa que será útil adicionar a essa tabela no Banco de Dados KQL seria uma coluna oculta ao tempo de ingestão que será usada posteriormente na arquitetura Medallion. Vamos adicionar isso agora. Copie e cole o script abaixo para alterar as tabelas que você acabou de criar adicionando uma coluna de tempo de ingestão.
 
-```
+    ```
+    //adds a hidden field showing ingestion time
+    .execute database script <|
+    .alter table Address policy ingestiontime true
+    .alter table Customer policy ingestiontime true
+    .alter table SalesOrderHeader policy ingestiontime true
+    .alter table SalesOrderDetail policy ingestiontime true
+    ```
 
-//adds a hidden field showing ingestion time
-.execute database script <|
-.alter table Address policy ingestiontime true
-.alter table Customer policy ingestiontime true
-.alter table SalesOrderHeader policy ingestiontime true
-.alter table SalesOrderDetail policy ingestiontime true
-```
-![](../media/lab-04/image020.png)
+    ![](../media/lab-04/image020.png)
 
 8. As quatro novas tabelas são tabelas em branco com seu esquema definido. Agora você precisa de uma maneira de carregar corretamente essas tabelas. Volte ao seu espaço de trabalho **RTI_username**.
 
@@ -130,52 +131,52 @@ Ao final deste laboratório, você terá aprendido a:
     - SalesLT.SalesOrderDetail
     - SalesLT.SalesOrderHeader
 
-    ![](../media/lab-04/image030.png)
+      ![](../media/lab-04/image030.png)
 
 9. Clique em **Avançar**.
 
-10.	Agora será necessário configurar o destino para determinar para onde você deseja que o pipeline envie os dados. Localize o **Hub de dados do OneLake** e selecione seu Banco de Dados KQL,
-**eh_Fabrikam**.
+10. Agora será necessário configurar o destino para determinar para onde você deseja que o pipeline envie os dados. Localize o **Hub de dados do OneLake** e selecione seu Banco de Dados KQL, **eh_Fabrikam**.
 
     ![](../media/lab-04/image032.png)
 
-11.	Se você for solicitado a entrar, basta usar as credenciais fornecidas na página de detalhes do ambiente.
+11. Se você for solicitado a entrar, basta usar as credenciais fornecidas na página de detalhes do ambiente.
  
-12.	Clique na tabela **SalesLT.Address** se ainda não estiver selecionada e, em seguida, clique na lista suspensa ao lado da opção **Table**. Clique na opção de tabela **Address**.
+12. Clique na tabela **SalesLT.Address** se ainda não estiver selecionada e, em seguida, clique na lista suspensa ao lado da opção **Table**. Clique na opção de tabela **Address**.
 
     ![](../media/lab-04/image034.png)
 
-13.	Agora, você terá uma visão geral dos **Mapeamentos de coluna**. Isso permitirá que você visualize todos os campos provenientes do banco de dados de origem que você está enviando para o seu Banco de Dados KQL. Você tem a opção de remover campos específicos se não quiser que eles sejam mapeados desde a fonte.
+13. Agora, você terá uma visão geral dos **Mapeamentos de coluna**. Isso permitirá que você visualize todos os campos provenientes do banco de dados de origem que você está enviando para o seu Banco de Dados KQL. Você tem a opção de remover campos específicos se não quiser que eles sejam mapeados desde a fonte.
 
     ![](../media/lab-04/image036.png)
 
-14.	Siga as mesmas etapas da Etapa 11-12 para as tabelas **SalesLT.Customer, SaleLT.SalesOrderDetail** e S**alesLT.SalesOrderHeader**. Nenhum mapeamento de coluna precisará ser executado e, portanto, basta fazer a correspondência dos nomes das tabelas. Depois que todas as tabelas estiverem devidamente mapeadas, clique em **Avançar**.
+14. Siga as mesmas etapas da Etapa 11-12 para as tabelas **SalesLT.Customer, SaleLT.SalesOrderDetail** e **SalesLT.SalesOrderHeader**. Nenhum mapeamento de coluna precisará ser executado e, portanto, basta fazer a correspondência dos nomes das tabelas. Depois que todas as tabelas estiverem devidamente mapeadas, clique em **Avançar**.
  
-15.	A página final usando o Assistente de cópia de dados é uma página de visão geral para verificar todas as configurações selecionadas. Certifique-se de que o número de origem de tabelas e o número de destino de tabelas sejam iguais.
+15. A página final usando o Assistente de cópia de dados é uma página de visão geral para verificar todas as configurações selecionadas. Certifique-se de que o número de origem de tabelas e o número de destino de tabelas sejam iguais.
 
     ![](../media/lab-04/image038.png)
 
-16.	Clique em **Salvar + Executar**.
+16. Clique em **Salvar + Executar**.
 
-17.	Depois de alguns instantes, aparecerá uma janela de submenu com um **Parâmetro**. O assistente para cópia que acabamos de concluir criou uma lista das tabelas para iterar e carregar nas tabelas KQL. Basta clicar no botão **OK** para executar o pipeline como ele está configurado atualmente desde o Assistente de cópia de dados.
+17. Depois de alguns instantes, aparecerá uma janela de submenu com um **Parâmetro**. O assistente para cópia que acabamos de concluir criou uma lista das tabelas para iterar e carregar nas tabelas KQL. Basta clicar no botão **OK** para executar o pipeline como ele está configurado atualmente desde o Assistente de cópia de dados.
 
     ![](../media/lab-04/image040.png)
 
-18.	Deixe o pipeline ser executado e, após aproximadamente um minuto, a movimentação de dados deverá ser concluída. Depois de ver que todas as atividades dentro do pipeline foram **Bem-sucedidas**, você terá transferido os dados.
+18. Deixe o pipeline ser executado e, após aproximadamente um minuto, a movimentação de dados deverá ser concluída. Depois de ver que todas as atividades dentro do pipeline foram **Bem-sucedidas**, você terá transferido os dados.
 
     ![](../media/lab-04/image042.png)
  
-19.	Vamos conferir uma de nossas tabelas e verificar os dados. Navegue de volta para o Conjunto de Consultas KQL que temos usado, chamado **Criar Tabelas** e verifique se você está na guia **Camada Bronze** e execute o script a seguir.
+19. Vamos conferir uma de nossas tabelas e verificar os dados. Navegue de volta para o Conjunto de Consultas KQL que temos usado, chamado **Criar Tabelas** e verifique se você está na guia **Camada Bronze** e execute o script a seguir.
 
-```
-//Query the Bronze layer Customer table 
+    ```
+    //Query the Bronze layer Customer table 
 
-Customer
-| take 100
-```
-![](../media/lab-04/image046.png)
+    Customer
+    | take 100
+    ```
 
-20.	Você deve ver alguns dados como a imagem abaixo, mas ela pode não ser exata.
+    ![](../media/lab-04/image046.png)
+
+20. Você deve ver alguns dados como a imagem abaixo, mas ela pode não ser exata.
 
     ![](../media/lab-04/image048.png)
 
@@ -187,19 +188,19 @@ Customer
 
 2. Execute o seguinte script KQL na guia “Silver Layer” para criar quatro tabelas que servirão como a Camada Silver da Estrutura Medallion.
  
-```
-//SILVER LAYER
+    ```
+    //SILVER LAYER
 
-.execute database script <|
+    .execute database script <|
 
-.create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
+    .create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
 
-.create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
+    .create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
 
-.create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
+    .create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
 
-.create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
-```
+    .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
+    ```
 
 3. Execute esse script realçando o novo script e clicando em **Executar**.
 
@@ -211,36 +212,36 @@ Customer
  
 5. Agora que as tabelas foram criadas, você precisa carregar dados nelas. Você criará uma política de atualização para transformar os dados e movê-los quando eles forem ingeridos na camada bronze. Copie e cole o script a seguir e **Execute** o código.
  
-``` 
-// use update policies to transform data during Ingestion
+    ``` 
+    // use update policies to transform data during Ingestion
 
-.execute database script <|
+    .execute database script <|
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
-| extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
+    | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-```
+    .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
+    ```
 
 6. Embora você veja resultados da execução da consulta, a melhor evidência de que sua consulta foi concluída é que você verá uma nova pasta expansível no painel Objetos de banco de dados. Clique no **ícone >** ao lado da pasta **Functions**. Essas funções permitirão que os dados carregados na camada Bronze do Banco de Dados KQL sejam espelhados, transformados e carregados na camada Silver.
 
@@ -258,21 +259,22 @@ Customer
 
     ![](../media/lab-04/image066.png)
 
-10.	Novamente, aguarde aproximadamente um minuto para que o pipeline conclua sua carga e, quando todos os itens no menu Saída indicarem **Êxito**, passe para a próxima etapa.
+10. Novamente, aguarde aproximadamente um minuto para que o pipeline conclua sua carga e, quando todos os itens no menu Saída indicarem **Êxito**, passe para a próxima etapa.
 
     ![](../media/lab-04/image068.png)
  
-11.	Depois que o pipeline de dados tiver sido concluído, valide os resultados no Banco de Dados KQL. Retorne ao Conjunto de Consultas KQL **Criar Tabelas** e navegue até a guia **Camada Silver**.
+11. Depois que o pipeline de dados tiver sido concluído, valide os resultados no Banco de Dados KQL. Retorne ao Conjunto de Consultas KQL **Criar Tabelas** e navegue até a guia **Camada Silver**.
  
-12.	Em uma nova linha, consulte a tabela SilverAddress escrevendo a consulta a seguir e executando o código.
+12. Em uma nova linha, consulte a tabela SilverAddress escrevendo a consulta a seguir e executando o código.
 
-```
-SilverAddress
-| take 100
-```
-![](../media/lab-04/image072.png)
+    ```
+    SilverAddress
+    | take 100
+    ```
 
-13.	Observe nos resultados que a tabela **SilverAddress** tem uma coluna adicional, **IngestionDate**, que não está fisicamente presente na tabela **Endereço**.
+    ![](../media/lab-04/image072.png)
+
+13. Observe nos resultados que a tabela **SilverAddress** tem uma coluna adicional, **IngestionDate**, que não está fisicamente presente na tabela **Endereço**.
 
     ![](../media/lab-04/image074.png)
 
@@ -286,15 +288,15 @@ Agora que tem sua camada de dados transformada dentro da camada Silver, você po
 
 2. Cole no conjunto de consultas o código a seguir para criar uma exibição materializada.
 
-```
-//GOLD LAYER
-// use materialized views to view the latest changes in the SilverAddress table
-.create materialized-view with (backfill=true) GoldAddress on table SilverAddress
-{
-SilverAddress
-| summarize arg_max(IngestionDate, *) by AddressID
-}
-```
+    ```
+    //GOLD LAYER
+    // use materialized views to view the latest changes in the SilverAddress table
+    .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
+    {
+    SilverAddress
+    | summarize arg_max(IngestionDate, *) by AddressID
+    }
+    ```
 
 3. Depois que o código tiver sido colado, realce o código e execute-o clicando no botão **Run**.
 
@@ -310,52 +312,53 @@ SilverAddress
 
 6. Na janela de consulta, execute o código a seguir para consultar a nova exibição materializada.
 
-```
-GoldAddress
-| take 1000
-```
-![](../media/lab-04/image088.png)
+    ```
+    GoldAddress
+    | take 1000
+    ```
+
+    ![](../media/lab-04/image088.png)
 
 7. Essa consulta retornará a linha com a **IngestionDate** mais recente para cada **AddressID** exclusiva na tabela **SilverAddress**.
 
 8. Agora cole e execute as consultas a seguir para criar mais exibições materializadas camada Gold para as outras tabelas.
 
-``` 
-//Create additional Gold Materialized Views
-.execute database script <|
+    ``` 
+    //Create additional Gold Materialized Views
+    .execute database script <|
 
-.create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
-{
-SilverCustomer
-| summarize arg_max(IngestionDate, *) by CustomerID
-}
+    .create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
+    {
+    SilverCustomer
+    | summarize arg_max(IngestionDate, *) by CustomerID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
-{
-SilverSalesOrderHeader
-| summarize arg_max(IngestionDate, *) by SalesOrderID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
+    {
+    SilverSalesOrderHeader
+    | summarize arg_max(IngestionDate, *) by SalesOrderID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
-{
-SilverSalesOrderDetail
-| summarize arg_max(IngestionDate, *) by SalesOrderDetailID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
+    {
+    SilverSalesOrderDetail
+    | summarize arg_max(IngestionDate, *) by SalesOrderDetailID
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
-{
-Clicks
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
+    .create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
+    {
+    Clicks
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
-{
-Impressions
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
-```
+    .create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
+    {
+    Impressions
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
+    ```
 
 9. Agora você deve ter seis exibições materializadas em seu Banco de Dados KQL.
 
@@ -402,7 +405,7 @@ Na interface do usuário do Lakehouse, você tem algumas opções de como você 
     - Impressions
     - InternetSales
 
-    ![](../media/lab-04/image104.png)
+      ![](../media/lab-04/image104.png)
 
 6. Essas tabelas podem ser muito úteis para qualquer usuário que esteja aproveitando os notebooks no Fabric. Esses dados poderão ser usados em experimentos da ciência de dados para treinar um modelo que prevê em quais vínculos os usuários provavelmente podem estar interessados.
 
@@ -416,11 +419,11 @@ Na interface do usuário do Lakehouse, você tem algumas opções de como você 
 
     ![](../media/lab-04/image108.png)
 
-10.	Clique na tabela chamada **Clicks**.
+10. Clique na tabela chamada **Clicks**.
 
     ![](../media/lab-04/image110.png)
  
-11.	Você pode ver uma amostra dos registros dessa tabela que apareceram na interface do usuário.
+11. Você pode ver uma amostra dos registros dessa tabela que apareceram na interface do usuário.
 
     > **Observação: Pode levar algumas horas para os dados serem exibidos no OneLake (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)**
 

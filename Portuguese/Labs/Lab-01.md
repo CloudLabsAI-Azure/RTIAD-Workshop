@@ -88,7 +88,7 @@ Ao final deste laboratório, você terá aprendido a:
 
     ![](../media/lab-01/image007.png)
 
-Para trabalhar com itens do Fabric, você precisará de uma licença de avaliação e de um workspace que tenha a licença do Fabric. Vamos configurar tudo.
+    Para trabalhar com itens do Fabric, você precisará de uma licença de avaliação e de um workspace que tenha a licença do Fabric. Vamos configurar tudo.
 
 6. No canto superior direito da tela, selecione o **ícone de usuário**.
 
@@ -178,7 +178,7 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
 4. No campo **Nome**, insira **RTI_username**. Use o nome de usuário fornecido a você nos detalhes do ambiente.
 
-  > **Observação:** o nome do workspace deve ser exclusivo. Verifique se há uma marca de seleção verde em "**Este nome está disponível**", abaixo do campo Nome.
+   > **Observação:** o nome do workspace deve ser exclusivo. Verifique se há uma marca de seleção verde em "**Este nome está disponível**", abaixo do campo Nome.
 
 5. Se preferir, você pode inserir uma **Descrição** para o workspace. Esse campo é opcional.
 
@@ -192,7 +192,7 @@ Para trabalhar com itens do Fabric, você precisará de uma licença de avaliaç
 
     ![](../media/lab-01/image021.png)
 
-  > **Observação:** se a caixa de diálogo **Introdução aos fluxos de tarefa** for aberta, clique em **Entendi**.
+    > **Observação:** se a caixa de diálogo **Introdução aos fluxos de tarefa** for aberta, clique em **Entendi**.
 
     ![](../media/lab-01/image022.png)
 

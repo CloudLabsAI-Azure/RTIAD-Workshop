@@ -71,13 +71,13 @@ Ao final deste laboratório, você terá aprendido a:
 
 6. Na página de detalhes do ambiente, copie e cole todas as configurações de conexão necessárias nos campos apropriados. Para estes laboratórios, estamos nos conectando a um Hub de Eventos com dados de fluxo sendo enviados de um notebook Python. Esse notebook está criando transações de vendas falsas a uma taxa de cerca de 3.100 transações por hora.
 
-- Namespace do Hub de Eventos: **rtiadhub{userid} -- fornecido por cloudlabs**
+    - Namespace do Hub de Eventos: **rtiadhub{userid} -- fornecido por cloudlabs**
 
-- Hub de Eventos: **rti-iad-fabrikam**
+    - Hub de Eventos: **rti-iad-fabrikam**
 
-- Nome da Chave de Acesso Compartilhada: **rti-reader**
+    - Nome da Chave de Acesso Compartilhada: **rti-reader**
 
-- Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
+    - Chave de Acesso Compartilhada: **Disponível na guia Detalhes do Ambiente**
 
 7. Depois que todas as propriedades forem preenchidas, clique em **Conectar**.
 
@@ -97,9 +97,9 @@ Ao final deste laboratório, você terá aprendido a:
 
 11. Nessa tela de visão geral, verifique se o conteúdo parece correto e clique em **Criar fonte**.
 
-  > **Observação:** Seus detalhes serão diferentes do que você vê na captura de tela.
+    > **Observação:** Seus detalhes serão diferentes do que você vê na captura de tela.
 
-  ![](../media/lab-02/image022.png)
+    ![](../media/lab-02/image022.png)
 
 12. Depois que o Eventstream e a fonte do Eventstream forem criados, selecione a opção "**Abrir Eventstream**"
 
@@ -109,9 +109,9 @@ Ao final deste laboratório, você terá aprendido a:
 
 14. Pode levar alguns instantes para que sua fonte esteja **Ativa**, mas depois de esperar alguns momentos, clique no ícone do meio com o nome do seu Eventstream e você deverá ver uma visualização dos dados.
 
-**Observação:** se você receber um status de "Aviso" e uma política de auditoria, não há problemas. O fluxo ainda funcionará.
+    > **Observação:** se você receber um status de "Aviso" e uma política de auditoria, não há problemas. O fluxo ainda funcionará.
 
-  ![](../media/lab-02/image026.png)
+    ![](../media/lab-02/image026.png)
 
 15. Agora você deve ver uma amostra dos dados na janela inferior.
 
@@ -145,15 +145,15 @@ Ao final deste laboratório, você terá aprendido a:
 
 6. Modifique o restante das configurações com os seguintes detalhes abaixo.
 
- - Nome do destino -- **eh-kql-db-fabrikam**
+    - Nome do destino -- **eh-kql-db-fabrikam**
 
- - Workspace -- **RTI_username**
+    - Workspace -- **RTI_username**
 
- - Eventhouse -- **eh_Fabrikam**
+    - Eventhouse -- **eh_Fabrikam**
 
- - Banco de Dados KQL -- **eh_Fabrikam**
+    - Banco de Dados KQL -- **eh_Fabrikam**
 
-    ![](../media/lab-02/image042.png)
+      ![](../media/lab-02/image042.png)
 
 7. Clique em Salvar.
 
@@ -221,15 +221,15 @@ Ao final deste laboratório, você terá aprendido a:
 
 7. Essa visão geral fornecerá detalhes de metadados sobre a tabela que você criou e quaisquer dados de streaming ativo com seu Eventstream. Novamente, o tamanho da tabela e o número de linhas dentro da tabela variam de aluno para aluno e não afetarão seus resultados finais deste ou de qualquer laboratório. Alguns itens adicionais para chamar a atenção nesse menu incluem:
 
-- **Rastreador de Atividade de Dados** -- mostra o número de linhas ingeridas, a hora em que foi gerado pela última vez e o intervalo de exibição.
+    - **Rastreador de Atividade de Dados** -- mostra o número de linhas ingeridas, a hora em que foi gerado pela última vez e o intervalo de exibição.
 
-- **Versão Preliminar de Dados** -- mostra uma versão preliminar dos resultados da ingestão da tabela.
+    - **Versão Preliminar de Dados** -- mostra uma versão preliminar dos resultados da ingestão da tabela.
 
-- **Insights do Esquema**-- inclui detalhes sobre o nome da coluna e os tipos de dados da coluna que podem ser consultados com o KQL. Também mostra a contagem dos 10 principais para os valores na coluna selecionada.
+    - **Insights do Esquema**-- inclui detalhes sobre o nome da coluna e os tipos de dados da coluna que podem ser consultados com o KQL. Também mostra a contagem dos 10 principais para os valores na coluna selecionada.
 
-- **Detalhes da Tabela** -- mostra o tamanho de tabela Compactado e Original, a disponibilidade do OneLake, o número de linhas nas tabelas e vários outros detalhes.
+    - **Detalhes da Tabela** -- mostra o tamanho de tabela Compactado e Original, a disponibilidade do OneLake, o número de linhas nas tabelas e vários outros detalhes.
 
-    ![](../media/lab-02/image074.png)
+      ![](../media/lab-02/image074.png)
 
 8. Retorne à exibição do banco de dados e clique em **Explorar seus dados** no canto superior direito.
 
@@ -274,27 +274,24 @@ variarão do resultado de outros.
 
 Talvez você esteja trabalhando com a Linguagem de Consulta Kusto pela primeira vez. Embora essa linguagem seja intuitiva e fácil de aprender para consultas simples, convém retornar os resultados de consultas mais complexas do que as que você é capaz de realizar atualmente. Várias ferramentas úteis foram incluídas nos recursos do Conjunto de Consultas KQL, incluindo a conversão de consultas SQL em consultas KQL e a simples criação de consultas T-SQL dentro do Conjunto de Consultas KQL. Vamos explorar!
 
-1. Você precisa criar uma consulta que retorne cada produto com o número de quantas vezes ele foi vendido. Isso é algo que você pode fazer rapidamente com o T-SQL. Na janela de consulta, você pode traduzir suas consultas SQL em KQL para entender melhor como criar consultas KQL no futuro. Comece escrevendo o comando a seguir.
+1. Você precisa criar uma consulta que retorne cada produto com o número de quantas vezes ele foi vendido. Isso é algo que você pode fazer rapidamente com o T-SQL. Na janela de consulta, você pode traduzir suas consultas SQL em KQL para entender melhor como criar consultas KQL no futuro. Comece escrevendo o comando a seguir. **(Observação: clique duas vezes no objeto abaixo para poder copiar o texto)**
 
-**(Observação: clique duas vezes no objeto abaixo para poder copiar o texto)**
+    ```
+    --
+    explain
+    ```
 
- ```
- --
- explain
- ```
-
-  ![](../media/lab-02/image096.png)
+   ![](../media/lab-02/image096.png)
 
 2. A linha de comentário "---" seguida da palavra-chave "explain" permitirá que você crie agora uma consulta SQL e retorne um resultado com a consulta KQL que poderia ser usado para obter uma consulta e resultado semelhantes. Abaixo, insira a seguinte consulta para explicar como seria a consulta KQL:
 
     ```
     --
     explain
-    SELECT COUNT(OrderQuantity) AS CountOfProducts
-    , ProductKey FROM InternetSales GROUP BY ProductKey
+    SELECT COUNT(OrderQuantity) AS CountOfProducts, ProductKey FROM InternetSales GROUP BY ProductKey
     ````
 
-  ![](../media/lab-02/image100.png)
+   ![](../media/lab-02/image100.png)
 
 3. Essa é uma consulta SQL simples que recuperará resultados da tabela InternetSales para retornar duas colunas, a chave do produto (Product Key) e uma contagem do número de ordens. Como há uma coluna agregada e uma coluna não agregada, você deverá usar um GROUP BY para retornar resultados para cada produto individual. Execute toda a consulta começando com o "---" até o final da consulta T-SQL.
 

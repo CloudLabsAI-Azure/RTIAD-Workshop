@@ -1,3 +1,5 @@
+# Microsoft Fabric Real-Time Intelligence in a Day Laboratório 5
+
 # Sumário
 
 - Estrutura do documento	
@@ -65,8 +67,7 @@ Ao final deste laboratório, você terá aprendido a:
 
     ![](../media/lab-05/image019.png)
 
-3. Uma lista de fontes disponíveis em seu OneLake aparecerá, apenas fontes de Bancos de Dados KQL serão listadas, então uma opção estará disponível para você, o Banco de Dados KQL
-**eh_Fabrikam**. Selecione essa opção.
+3. Uma lista de fontes disponíveis em seu OneLake aparecerá, apenas fontes de Bancos de Dados KQL serão listadas, então uma opção estará disponível para você, o Banco de Dados KQL **eh_Fabrikam**. Selecione essa opção.
 
     ![](../media/lab-05/image021.jpg)
 
@@ -129,27 +130,27 @@ Ao final deste laboratório, você terá aprendido a:
 
     ![](../media/lab-05/image048.png)
 
-11.	Um novo submenu aparecerá no lado direito da tela. Clique na caixa de texto abaixo da opção **Tile name** para dar a esse visual o nome **Clicks by Hour**.
+11. Um novo submenu aparecerá no lado direito da tela. Clique na caixa de texto abaixo da opção **Tile name** para dar a esse visual o nome **Clicks by Hour**.
 
     ![](../media/lab-05/image051.png)
 
-12.	Por padrão, o visual que você está usando para exibir os resultados dessa consulta KQL é uma tabela. Essa pode não ser a melhor maneira de alguém consumir e compreender rapidamente o que está acontecendo com os resultados de seus dados. Altere o tipo de elemento visual de uma tabela para um **Area chart**.
+12. Por padrão, o visual que você está usando para exibir os resultados dessa consulta KQL é uma tabela. Essa pode não ser a melhor maneira de alguém consumir e compreender rapidamente o que está acontecendo com os resultados de seus dados. Altere o tipo de elemento visual de uma tabela para um **Area chart**.
 
     ![](../media/lab-05/image054.png)
  
-13.	Com esse visual recém-formatado, você poderá entender melhor os picos e vales de Cliques do seu site de comércio eletrônico usando o fluxo de dados criado anteriormente nesta classe.
+13. Com esse visual recém-formatado, você poderá entender melhor os picos e vales de Cliques do seu site de comércio eletrônico usando o fluxo de dados criado anteriormente nesta classe.
 
     ![](../media/lab-05/image057.png)
 
-14.	Para salvar esse visual no Dashboard, clique no botão **as alterações** no canto superior direito da tela.
+14. Para salvar esse visual no Dashboard, clique no botão **as alterações** no canto superior direito da tela.
 
     ![](../media/lab-05/image060.png)
 
-15.	Depois que esse visual for colocado dentro do Dashboard, pode ser que o visual esteja mostrando apenas a última hora de resultados. Modifique o Dashboard para mostrar o **Período** de **Últimos 24 horas**.
+15. Depois que esse visual for colocado dentro do Dashboard, pode ser que o visual esteja mostrando apenas a última hora de resultados. Modifique o Dashboard para mostrar o **Período** de **Últimos 24 horas**.
 
     ![](../media/lab-05/image062.png)
  
-16.	Atualize o visual e observe que os resultados serão ligeiramente alterados para refletir os dados que entraram desde a última execução da consulta.
+16. Atualize o visual e observe que os resultados serão ligeiramente alterados para refletir os dados que entraram desde a última execução da consulta.
 
     ![](../media/lab-05/image065.png)
 
@@ -192,26 +193,26 @@ Ao final deste laboratório, você terá aprendido a:
 
 8. Copie e cole a consulta a seguir no painel da consulta. Observe que esta é uma consulta de várias instruções que usa várias instruções let e uma consulta combinada por pontos-e-vírgulas.
 
-    ```
-    //Clicks, Impressions, CTR
+   ```
+   //Clicks, Impressions, CTR
 
 
-    let imp = Impressions
-    | where eventDate between (_startTime.._endTime)
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-    | summarize imp_count = count() by dateOnly;
+   let imp = Impressions
+   | where eventDate between (_startTime.._endTime)
+   | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+   | summarize imp_count = count() by dateOnly;
 
 
-    let clck = Clicks
-    | where eventDate between (_startTime.._endTime)
-    | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-    | summarize clck_count = count() by dateOnly;
+   let clck = Clicks
+   | where eventDate between (_startTime.._endTime)
+   | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+   | summarize clck_count = count() by dateOnly;
 
 
-    imp
-    | join clck on $left.dateOnly == $right.dateOnly
-    | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-    ```
+   imp
+   | join clck on $left.dateOnly == $right.dateOnly
+   | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+   ```
 
 9. **Execute** a consulta para exibir os resultados.
 
@@ -219,7 +220,7 @@ Ao final deste laboratório, você terá aprendido a:
  
 10.	Clique no botão **+Adicionar imagem**.
 
-11.	Quando as configurações visuais aparecerem, modifique as configurações a seguir para criar uma contagem de impressões.
+11. Quando as configurações visuais aparecerem, modifique as configurações a seguir para criar uma contagem de impressões.
 
     - **Tile name**- Impressions
     - **Visual type** - Stat
@@ -386,9 +387,7 @@ trabalhar com as tarefas opcionais a seguir. Caso contrário, o laboratório foi
 
 8. Salve suas alterações.
 
-    ![](../media/lab-05/Picture2.png)
-
-    
+    ![](../media/lab-05/Picture2.png)  
 
 # Resumo
 
