@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Lab 6
 
+![](../media/lab-06/main6.png)
+
 # Contents 
 - Document Structure
 - Scenario / Problem Statement
@@ -202,9 +204,9 @@ the future.
 
 # References
 
-Fabric Real-time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric.
+Fabric Real-time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric. In the menu of the service, the Help (?) section has links to some great resources.
 
-In the menu of the service, the Help (?) section has links to some great resources.
+![](../media/lab-01/refrences1.png)
 
 Here are a few more resources that will help you with your next steps with Microsoft Fabric.
 

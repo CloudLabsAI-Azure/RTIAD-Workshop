@@ -1,5 +1,6 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Lab 2
 
+![](../media/lab-02/main2.png)
 
 # Contents 
 - Document Structure
@@ -385,9 +386,12 @@ with T-SQL. Within the query window, you can translate your SQL
 queries into KQL to better understand how to author KQL queries in
 the future. Start with writing the following command.
 **(Note: Double click the object below in order to be able to copy
-the text)
-**
-    ![](../media/lab-02/image50.emf)
+the text)**
+
+    ```
+    --
+    explain
+    ```
 
     ![](../media/lab-02/image51.png)
 
@@ -397,8 +401,15 @@ that could be used to achieve a similar query and result. Below
 input the following query to explain what the KQL query would look
 like:
 
-    ![](../media/lab-02/image52.emf)
-
+    ```
+    --
+    explain
+    SELECT COUNT(OrderQuantity) AS CountOfProducts
+            , ProductKey
+    FROM InternetSales
+    GROUP BY ProductKey
+    ```
+    
     ![](../media/lab-02/image53.png)
 
 3. This is a simple SQL query that will retrieve results from the
@@ -490,10 +501,9 @@ statements.
 
 # References
 
-Fabric Real-time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric.
+Fabric Real-time Intelligence in a Day (RTIIAD) introduces you to some of the key functions available in Microsoft Fabric. In the menu of the service, the Help (?) section has links to some great resources.
 
-In the menu of the service, the Help (?) section has links to some great resources.
-
+![](../media/lab-01/refrences1.png)
 
 Here are a few more resources that will help you with your next steps with Microsoft Fabric.
 
