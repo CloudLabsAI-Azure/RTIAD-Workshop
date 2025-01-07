@@ -1,5 +1,4 @@
 # Microsoft Fabric Real-Time Intelligence in a Day 랩 5
-
 ![](./media/lab-05/title.png)
 
 ## 목차
@@ -141,31 +140,31 @@
 
 10. 이제 쿼리 결과 위에 있는 **+ 시각적 개체 추가 버튼**을 클릭합니다.
 
-   ![](./media/lab-05/image048.png)
+    ![](./media/lab-05/image048.png)
 
 11. 화면 오른쪽에 새 플라이아웃이 나타납니다. **Tile name** 옵션 아래의 텍스트 상자를 클릭하여 이 시각적 개체 이름을 **Clicks by Hour** 으로 지정합니다.
 
-   ![](./media/lab-05/image051.png)
+    ![](./media/lab-05/image051.png)
 
 12. 기본적으로 이 KQL 쿼리 결과를 표시하는 데 사용하는 시각적 개체는 테이블입니다. 누군가에는 이 테이블이 데이터 결과를 빠르게 사용하고 데이터 결과에 어떤 일이 일어나고 있는지 이해하는 가장 좋은 방법이 아닐 수도 있습니다. 시각적 개체 유형을 테이블에서 **Area chart** 로 변경합니다.
 
-   ![](./media/lab-05/image054.png)
+    ![](./media/lab-05/image054.png)
 
 13. 이 새로운 형식의 시각적 개체를 사용하면 이 수업의 앞부분에서 만든 데이터 스트림을 사용하여 전자 상거래 사이트에서 발생한 클릭의 최고점과 최저점을 더 효과적으로 이해할 수 있습니다.
 
-   ![](./media/lab-05/image057.png)
+    ![](./media/lab-05/image057.png)
 
 14. 이 시각적 개체를 대시보드에 저장하려면 화면의 오른쪽 위 모서리에 있는 **변경 내용 적용** 버튼을 클릭합니다.
 
-   ![](./media/lab-05/image060.png)
+    ![](./media/lab-05/image060.png)
 
 15. 이 시각적 개체가 대시보드 내에 배치되면 시각적 개체에는 지난 한 시간 동안의 결과만 표시될 수 있습니다. **마지막 24 시간**의 **시간 범위**를 표시하도록 대시보드를 수정합니다.
 
-   ![](./media/lab-05/image062.png)
+    ![](./media/lab-05/image062.png)
 
 16. 시각적 개체를 새로 고치면 마지막 쿼리 실행 이후 들어온 데이터를 반영하도록 결과가 약간 변경됩니다.
 
-   ![](./media/lab-05/image065.png)
+    ![](./media/lab-05/image065.png)
 
 ## 작업 4: 실시간 대시보드에 더 많은 대시보드 타일 추가
 
@@ -232,45 +231,45 @@
 
 11. 시각적 설정이 나타나면 다음 설정을 수정하여 노출 수를 만듭니다.
 
-  - **Tile name** - Impressions
+    - **Tile name** - Impressions
 
-  - **Visual type** - Stat
+    - **Visual type** - Stat
 
-  - **Value column** - impressions (long)
+    - **Value column** - impressions (long)
 
-   ![](./media/lab-05/image087.png)
+      ![](./media/lab-05/image087.png)
 
 12. 모든 설정이 적절하게 구성되면 **변경 내용 적용**을 선택합니다.
 
-   ![](./media/lab-05/image090.png)
+    ![](./media/lab-05/image090.png)
 
 13. 새 타일에서 줄임표(...)를 클릭하고 **타일 복제** 옵션을 선택합니다.
 
-   ![](./media/lab-05/image093-1.png)
+    ![](./media/lab-05/image093-1.png)
 
 14. 복제된 타일에 표시된 **연필 아이콘**을 클릭하여 구성을 편집합니다.
 
-   ![](./media/lab-05/image096.png)
+    ![](./media/lab-05/image096.png)
 
 15. 이 **Tile name** 을 **Clicks** 으로 바꾸고 **Value column** 을 **clicks (long)**으로 변경합니다.
 
-   ![](./media/lab-05/image099.png)
+    ![](./media/lab-05/image099.png)
 
 16. 이 시각적 개체에 변경 내용을 적용합니다.
 
 17. 새 타일 중 하나를 한 번 더 복제하여 최종 통계 시각적 개체를 하나 만듭니다.
 
-   ![](./media/lab-05/image102.png)
+    ![](./media/lab-05/image102.png)
 
 18. 새 타일을 편집하여 **Tile name** 을 **Click Through Rate** 로 변경하고 **Value column** 을 **CTR (long)** 로 변경합니다.
 
-   ![](./media/lab-05/image105.png)
+    ![](./media/lab-05/image105.png)
 
 19. 변경 내용을 적용합니다.
 
 20. 타일이 분리되어 있거나 타일을 다시 구성하려는 경우 타일 위를 가리켜서 손 모양 아이콘이 나타나면 시각적 개체를 원하는 위치로 끌어서 놓을 수 있습니다.
 
-   ![](./media/lab-05/image108.png)
+    ![](./media/lab-05/image108.png)
 
 ## 작업 5: 위치별 노출에 대한 맵 시각적 개체 추가
 
@@ -336,7 +335,7 @@
 
 6. 시간 여유가 있고 아래와 같이 회사 로고를 검색하거나 시각적 개체에 조건부 서식을 적용하는 데 관심이 있는 경우 아래에 나와 있는 선택적 작업을 자유롭게 수행할 수 있습니다. 그렇지 않은 경우 랩이 완료됩니다.
 
-   ![](./media/lab-05/image143.png)
+   ![](./media/lab-05/image143.jpg)
 
 ## 선택적 작업 7: 회사 로고 추가
 

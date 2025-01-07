@@ -1,4 +1,5 @@
 # Microsoft Fabric Real-Time Intelligence in a Day 랩 2
+
 ![](./media/lab-02/title.png)
 
 # 목차
@@ -6,13 +7,13 @@
 - 문서 구조	
 - 소개	
 - Fabric 실시간 허브	
- - 작업 1: Eventstream 원본 만들기	
- - 작업 2: Eventstream 대상 설정	
+    - 작업 1: Eventstream 원본 만들기	
+    - 작업 2: Eventstream 대상 설정	
 - KQL(Kusto 쿼리 언어)	
- - 작업 3: Kusto 데이터베이스 쿼리 작성	
- - 작업 4: KQL 데이터베이스에 대해 T-SQL 쿼리 사용	
+    - 작업 3: Kusto 데이터베이스 쿼리 작성	
+    - 작업 4: KQL 데이터베이스에 대해 T-SQL 쿼리 사용	
 - KQL 쿼리 집합	
- - 작업 5: KQL 쿼리 집합 작업	
+    - 작업 5: KQL 쿼리 집합 작업	
 - 요약	
 - 참조	
 

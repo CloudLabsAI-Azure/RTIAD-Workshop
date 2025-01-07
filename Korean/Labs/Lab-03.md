@@ -52,15 +52,15 @@
 
 7. 환경 세부 정보 페이지에서 필요한 모든 연결 설정을 복사하여 해당 필드에 붙여 넣습니다. 
 
-Event Hub 네임스페이스: **rtiadhub{username}**
+   - Event Hub 네임스페이스: **rtiadhub{username}**
 
-Event Hub: **rta-iad-clicks**
+   - Event Hub: **rta-iad-clicks**
 
-공유 액세스 키 이름: **rti-reader**
+   - 공유 액세스 키 이름: **rti-reader**
 
-공유 액세스 키: **환경 세부 정보에서 제공**
+   - 공유 액세스 키: **환경 세부 정보에서 제공**
 
-   ![](./media/lab-03/image017.png)
+     ![](./media/lab-03/image017.png)
 
 8. 모든 속성이 채워지면 **연결**을 클릭합니다.
 
@@ -79,8 +79,10 @@ Event Hub: **rta-iad-clicks**
    ![](./media/lab-03/image024.png)
 
 13. 중인 데이터를 검사합니다. 전자 상거래 웹 사이트에서 기록되는 이벤트에는 클릭과 노출의 두 가지 유형이 있습니다.
-- **노출** - 광고 또는 제품 목록이 사용자에게 표시될 때마다 노출 이벤트가 기록됩니다. 노출은 상호 작용 여부와 관계없이 항목(광고 또는 제품)을 조회한 횟수를 측정한 값입니다.
-- **클릭** - 클릭 이벤트는 사용자가 항목을 클릭하여 상호 작용할 때 기록됩니다. 클릭은 일반적으로 노출에 비해 참여 수준이 높다는 것을 나타냅니다.
+
+   - **노출** - 광고 또는 제품 목록이 사용자에게 표시될 때마다 노출 이벤트가 기록됩니다. 노출은 상호 작용 여부와 관계없이 항목(광고 또는 제품)을 조회한 횟수를 측정한 값입니다.
+   
+   - **클릭** - 클릭 이벤트는 사용자가 항목을 클릭하여 상호 작용할 때 기록됩니다. 클릭은 일반적으로 노출에 비해 참여 수준이 높다는 것을 나타냅니다.
 
 기록되는 클릭 및 노출 이벤트 외에도 클릭 또는 노출이 발생한 제품, 웹 페이지가 로드된 장치와 브라우저, 페이지에 액세스한 IP 주소, 페이지를 로드하는 데 걸린 시간에 대한 세부 정보가 있습니다.
 
@@ -130,7 +132,7 @@ Event Hub: **rta-iad-clicks**
 
 10. **형식 변경 토글**을 클릭하여 이 필드의 데이터 형식을 수정합니다. 원래 형식은 문자열이며 **변환된 형식**을 **날짜/시간**으로 수정해야 합니다. 완료되면 **저장**을 클릭합니다.
 
-   ![](./media/lab-03/image049.png)
+    ![](./media/lab-03/image049.png)
 
 ## 작업 3: Eventstream 분할 및 대상 두 개 로드
 
@@ -151,7 +153,7 @@ Event Hub: **rta-iad-clicks**
 	- **필터링할 필드 선택** - eventType
 	- **값이 다음과 같을 때 이벤트 유지** - 같음 – 클릭 **(중요! 이 필드는 대/소문자를 구분하는 필드이므로 이 예시에서는 모두 대문자로 입력해야 합니다.)**
 
-   ![](./media/lab-03/image058.png)
+      ![](./media/lab-03/image058.png)
 
 5. **저장** 옵션을 선택하여 변경 내용을 유지합니다.
 
@@ -176,7 +178,7 @@ Event Hub: **rta-iad-clicks**
 	- **필터링할 필드 선택** - eventType
 	- **값이 다음과 같을 때 이벤트 유지** - 같음 – 노출 **(중요! 이 필드는 대/소문자를 구분하는 필드이므로 이 예시에서는 모두 대문자로 입력해야 합니다.)**
 
-   ![](./media/lab-03/image071.png)
+      ![](./media/lab-03/image071.png)
  
 11. **저장** 옵션을 선택하여 변경 내용을 유지합니다.
 
@@ -184,43 +186,43 @@ Event Hub: **rta-iad-clicks**
 
 13. **클릭** 필터 작업 후 **+ 아이콘**을 클릭합니다.
 
-   ![](./media/lab-03/image074.png)
+    ![](./media/lab-03/image074.png)
 
 14. 드롭다운 메뉴에서 "필드 관리"를 선택합니다.
 
-   ![](./media/lab-03/image076.png)
+    ![](./media/lab-03/image076.png)
 
 15. **연필 아이콘**을 클릭하여 스트림에 추가/제거할 필드를 선택합니다.
 
-   ![](./media/lab-03/image078.png)
+    ![](./media/lab-03/image078.png)
 
 16. 작업 이름을 "Manage_Clicks" 로 바꿉니다. 또한 "모든 필드 추가"를 선택한 후 “eventType” 을 제거합니다. 완료되면 저장을 클릭합니다.
 
-   ![](./media/lab-03/image080.png)
+    ![](./media/lab-03/image080.png)
 
 17. 다음으로, 아래와 같이 "노출" 필터에 연결된 또 다른 "필드 관리" 변환을 추가해 보겠습니다.
 
-   ![](./media/lab-03/image082.png)
+    ![](./media/lab-03/image082.png)
 
 18. **연필 아이콘**을 클릭하여 스트림에 추가/제거할 필드를 선택합니다.
 
-   ![](./media/lab-03/image084.png)
+    ![](./media/lab-03/image084.png)
 
 19. 작업 이름을 "Manage_Impressions"로 바꿉니다. 그런 다음, "모든 필드 추가"를 선택한 후 "eventType"과 "참조 페이지"를 제거합니다. "필드 관리" 변환은 다음과 같아야 합니다.
 
-   ![](./media/lab-03/image086.png)
+    ![](./media/lab-03/image086.png)
 
 20. 이제 각 이벤트 유형에 대한 스트림 데이터를 정리했으므로 각 스트림을 KQL 데이터베이스의 새 테이블에 로드해야 합니다. **Manage_Clicks** 필드 관리 작업 후 **+ 아이콘**을 클릭합니다.
 
-   ![](./media/lab-03/image088.png)
+    ![](./media/lab-03/image088.png)
 
 21. 표시되는 드롭다운 목록에서 **대상**으로 이동하여 **Eventhouse** 를 선택합니다.
 
-   ![](./media/lab-03/image090.png)
+    ![](./media/lab-03/image090.png)
 
 22. Eventhouse 대상을 위해 **연필 아이콘**을 클릭합니다
 
-   ![](./media/lab-03/image092.png)
+    ![](./media/lab-03/image092.png)
 
 23. 이 대상에서 다음 속성을 구성합니다.
 	- **대상 이름** – dbo-Clicks
@@ -229,23 +231,23 @@ Event Hub: **rta-iad-clicks**
 	- **KQL 데이터베이스** - eh_Fabrikam
 	- **Destination Table** - **클릭** 이라는 새 테이블을 만듭니다.
 
-   ![](./media/lab-03/image094.png)
+      ![](./media/lab-03/image094.png)
  
 24. 플라이아웃 아래쪽에서 **저장**을 클릭합니다.
 
 25. 노출 테이블에서도 아래와 같이 구성된 다음 정보를 사용하여 동일한 작업을 수행합니다.
 
-   ![](./media/lab-03/image096.png)
+    ![](./media/lab-03/image096.png)
 
 26. 변경 내용을 저장합니다.
 
 27. 이제 이 Eventstream이 스트리밍을 시작할 준비가 되었습니다. **게시**를 클릭하여 해당 스트림을 시작합니다.
 
-   ![](./media/lab-03/image098.jpg)
+    ![](./media/lab-03/image098.jpg)
 
 28. 이제 Eventstream이 실행 중이면 Eventstream 사용자 인터페이스가 약간 변경되어 Event Hub에서 데이터를 스트리밍하여 해당 데이터 스트림을 변환 및 분할하고 개별 KQL 데이터베이스 테이블 두 개에 로드하고 있음을 나타냅니다.
 
-   ![](./media/lab-03/image100.jpg)
+    ![](./media/lab-03/image100.jpg)
  
 # KQL 데이터베이스에 더 많은 데이터 추가
 ## 작업 4: 이벤트 데이터 테이블 유효성 검사
@@ -324,13 +326,13 @@ Event Hub: **rta-iad-clicks**
 
 8. 이제 데이터베이스에 대한 차원적 품질이 있으므로 질문에 답하고 보고서 소비자에게 더 많은 컨텍스트를 제공할 수 있으며 비즈니스 전반에 걸친 인사이트를 기반으로 테이블을 쿼리합니다. 다음 KQL 쿼리를 실행하여 그중 하나를 확인합니다.
 
-    ```
+   ```
     InternetSales
 	| join kind=inner 
 	(external_table("products")) on ($left.ProductKey == $right.ProductID)
 	| summarize SalesPerProduct=sum(SalesAmount) by Name
 	| project Name, SalesPerProduct
-    ```
+   ```
 
    ![](./media/lab-03/image138.jpg)
 
@@ -340,20 +342,19 @@ Event Hub: **rta-iad-clicks**
 
 10. 쿼리가 강조 표시된 상태에서 도구 모음에 있는 **Power BI 보고서 작성** 버튼을 클릭합니다.
 
-   ![](./media/lab-03/image127.png)
+    ![](./media/lab-03/image127.png)
 
 11. 이렇게 하면 KQL 데이터베이스에 포함된 데이터를 사용하여 Power BI 보고서를 만들 수 있습니다. 잠시 동안 자유롭게 살펴보되 아직은 이 데이터로 보고서를 만들 필요가 없습니다. 계속 진행할 준비가 되면 오른쪽 위 모서리에 있는 **X 버튼**을 클릭합니다.
 
-   ![](./media/lab-03/image130.jpg)
+    ![](./media/lab-03/image130.jpg)
 
 12. **eh_Fabrikam** KQL 데이터베이스로 다시 이동합니다.
 
-   ![](./media/lab-03/image132.png)
+    ![](./media/lab-03/image132.png)
 
 13. **eh_Fabrikam** 탐색 창에서 **Shortcuts** 옵션을 클릭합니다. 그러면 이 KQL 데이터베이스에 대해 만든 바로 가기가 모두 표시됩니다. 이러한 바로 가기는 Azure SQL 외부 테이블 구문을 사용하는 클래식 Azure Data Explorer 외부 테이블로 간주되며 Fabric 내의 KQL 데이터베이스에서도 지원되는 OneLake, ADLS 또는 S3 바로 가기와는 다르게 생성됩니다.
 
-   ![](./media/lab-03/image134.jpg)
- 
+    ![](./media/lab-03/image134.jpg)
 
 # 요약
 이 랩에서는 또 다른 데이터 스트림을 만들었지만, Fabric에서 Eventstream의 사용자 인터페이스를 사용하여 스트림을 변환할 수 있었습니다. 데이터를 개별 테이블 두 개에 로드하여 마케팅, 광고, 분석 목적으로 전자 상거래 시스템에서 발생한 모든 클릭과 노출을 추적할 수 있었습니다. 또한 KQL 쿼리 집합 외부 테이블 기능을 사용하여 외부 Azure SQL Database 바로 가기를 만들었습니다. 이제 KQL 데이터베이스 내에서 판매와 클릭 컨텍스트를 더 잘 이해할 수 있는 몇 가지 차원이 있습니다.

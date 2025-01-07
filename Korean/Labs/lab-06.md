@@ -109,14 +109,14 @@
     - **열** = clicks
     - **값**= 30000
 
-     ![](./media/lab-06/image034.png)
+      ![](./media/lab-06/image034.png)
  
 5. **작업**에서 아래 속성을 선택합니다.
 
     - **Type** = Teams message
     - **Recipient** = {your user id here}
 
-     ![](./media/lab-06/image036.png)
+      ![](./media/lab-06/image036.png)
 
 6. 마지막으로 **저장 및 시작** 을 클릭하여 이 규칙을 시작합니다
 

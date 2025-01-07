@@ -50,25 +50,26 @@
 
 4. 이 새 탭에서 다음 코드를 붙여 넣고 강조 표시한 다음 “실행”을 선택하여 Medallion 프레임워크의 브론즈 레이어 역할을 할 새 테이블 4 개를 만듭니다.
 
-```
-//BRONZE LAYER
-.execute database script <|
+   ```
+   //BRONZE LAYER
+   .execute database script <|
 
-.create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
-.create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
-.create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
-.create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
-``` 
+   .create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
+   .create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
+   .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
+   .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
+   ```
+
    ![](./media/lab-04/image010.png)
  
 5. 해당 코드가 실행되면 데이터베이스 개체 탐색기 내에 생성된 새 테이블 4 개가 즉시 표시됩니다.
 
-    - 주소
-    - Customer
-    - SalesOrderDetail
-    - SalesOrderHeader
+   - 주소
+   - Customer
+   - SalesOrderDetail
+   - SalesOrderHeader
 
-   ![](./media/lab-04/image012.png)
+     ![](./media/lab-04/image012.png)
 
 6. 이름 옆에 있는 “>” 아이콘을 클릭하여 **주소 테이블**을 확장합니다.
 
@@ -76,17 +77,18 @@
 
 7. 그러면 테이블의 스키마(열 이름 및 데이터 형식)가 표시됩니다. KQL 데이터베이스의 이 테이블에 추가하는 데 도움이 되는 한 가지는 나중에 Medallion 아키텍처에서 사용될 수집 시간에 대한 숨겨진 열입니다. 이제 이 열을 추가해 보겠습니다. 아래 스크립트를 복사하여 붙여 넣고 수집 시간 열을 추가하여 방금 만든 테이블을 변경합니다.
 
-```
-//adds a hidden field showing ingestion time
-.execute database script <|
-.alter table Address policy ingestiontime true
-.alter table Customer policy ingestiontime true
-.alter table SalesOrderHeader policy ingestiontime true
-.alter table SalesOrderDetail policy ingestiontime true
-```
+   ```
+   //adds a hidden field showing ingestion time
+   .execute database script <|
+   .alter table Address policy ingestiontime true
+   .alter table Customer policy ingestiontime true
+   .alter table SalesOrderHeader policy ingestiontime true
+   .alter table SalesOrderDetail policy ingestiontime true
+   ```
+
    ![](./media/lab-04/image017.jpg)
 
-8.	새 테이블 4 개는 스키마가 정의된 빈 테이블입니다. 이제 해당 테이블을 올바르게 로드하는 방법이 필요합니다. 작업 영역 **RTI_username** 으로 다시 이동합니다.
+8. 새 테이블 4 개는 스키마가 정의된 빈 테이블입니다. 이제 해당 테이블을 올바르게 로드하는 방법이 필요합니다. 작업 영역 **RTI_username** 으로 다시 이동합니다.
 
 # 작업 2: 데이터 파이프라인을 사용하여 브론즈 테이블 로드
 
@@ -124,54 +126,54 @@
     - SalesLT.SalesOrderDetail
     - SalesLT.SalesOrderHeader
 
-   ![](./media/lab-04/image029.png)
+      ![](./media/lab-04/image029.png)
 
 9. **다음**을 클릭합니다.
 
-10.	이제 파이프라인에서 데이터를 보낼 위치를 결정하기 위해 대상을 설정해야 합니다. **OneLake 데이터 허브**를 찾은 후 KQL 데이터베이스인 **eh_Fabrikam** 을 선택합니다.
+10. 이제 파이프라인에서 데이터를 보낼 위치를 결정하기 위해 대상을 설정해야 합니다. **OneLake 데이터 허브**를 찾은 후 KQL 데이터베이스인 **eh_Fabrikam** 을 선택합니다.
 
-   ![](./media/lab-04/image031.png)
+    ![](./media/lab-04/image031.png)
 
 11. 로그인하라는 메시지가 표시되면 환경 세부 정보 페이지에 제공된 자격 증명을 사용하기만 하면 됩니다.
  
-12.	**SalesLT.Address** 테이블을 아직 선택하지 않은 경우 클릭한 후 **테이블** 옵션 옆에 있는 드롭다운을 클릭합니다. **Address** 테이블 옵션을 클릭합니다.
+12. **SalesLT.Address** 테이블을 아직 선택하지 않은 경우 클릭한 후 **테이블** 옵션 옆에 있는 드롭다운을 클릭합니다. **Address** 테이블 옵션을 클릭합니다.
 
-   ![](./media/lab-04/image033.png)
+    ![](./media/lab-04/image033.png)
 
-13.	이제 **열 매핑**에 대한 개요가 표시됩니다. 이를 통해 KQL 데이터베이스로 보내는 원본 데이터베이스에서 오는 모든 필드를 시각화할 수 있습니다. 특정 필드를 원본에서 매핑하지 않으려는 경우 해당 필드를 제거할 수 있는 옵션이 있습니다.
+13. 이제 **열 매핑**에 대한 개요가 표시됩니다. 이를 통해 KQL 데이터베이스로 보내는 원본 데이터베이스에서 오는 모든 필드를 시각화할 수 있습니다. 특정 필드를 원본에서 매핑하지 않으려는 경우 해당 필드를 제거할 수 있는 옵션이 있습니다.
 
-   ![](./media/lab-04/image036.png)
+    ![](./media/lab-04/image036.png)
 
-14.	**SalesLT.Customer, SaleLT.SalesOrderDetail, SalesLT.SalesOrderHeader** 테이블도 11~12 단계와 동일한 단계를 따릅니다. 열 매핑을 수행할 필요가 없으므로 테이블 이름을 일치시키기만 하면 됩니다. 모든 테이블이 적절하게 매핑되면 다음을 클릭합니다.
+14. **SalesLT.Customer, SaleLT.SalesOrderDetail, SalesLT.SalesOrderHeader** 테이블도 11~12 단계와 동일한 단계를 따릅니다. 열 매핑을 수행할 필요가 없으므로 테이블 이름을 일치시키기만 하면 됩니다. 모든 테이블이 적절하게 매핑되면 다음을 클릭합니다.
 
-15.	데이터 복사 도우미를 사용하는 마지막 페이지는 선택한 모든 설정을 확인할 수 있는 개요 페이지입니다. 원본 테이블 수와 대상 테이블 수가 동일한지 확인합니다.
+15. 데이터 복사 도우미를 사용하는 마지막 페이지는 선택한 모든 설정을 확인할 수 있는 개요 페이지입니다. 원본 테이블 수와 대상 테이블 수가 동일한지 확인합니다.
 
-   ![](./media/lab-04/image038.jpg)
+    ![](./media/lab-04/image038.jpg)
  
-16.	**저장 + 실행**을 클릭합니다.
+16. **저장 + 실행**을 클릭합니다.
 
-17.	잠시 후 **매개 변수**가 포함된 플라이아웃 창이 나타납니다. 방금 완료한 복사 도우미 마법사를 통해 반복하고 KQL 테이블에 로드할 테이블 목록을 만들었습니다. **확인** 버튼을 클릭하기만 하면 데이터 복사 도우미에서 현재 구성된 파이프라인을 실행할 수 있습니다.
+17. 잠시 후 **매개 변수**가 포함된 플라이아웃 창이 나타납니다. 방금 완료한 복사 도우미 마법사를 통해 반복하고 KQL 테이블에 로드할 테이블 목록을 만들었습니다. **확인** 버튼을 클릭하기만 하면 데이터 복사 도우미에서 현재 구성된 파이프라인을 실행할 수 있습니다.
 
-   ![](./media/lab-04/image041.png)
+    ![](./media/lab-04/image041.png)
 
-18.	파이프라인을 실행하고 약 1 분 후에 데이터 이동이 완료됩니다. 파이프라인에 포함된 모든 활동이 **성공**했음을 확인하면 데이터를 전송한 것입니다.
+18. 파이프라인을 실행하고 약 1 분 후에 데이터 이동이 완료됩니다. 파이프라인에 포함된 모든 활동이 **성공**했음을 확인하면 데이터를 전송한 것입니다.
 
-   ![](./media/lab-04/image044.png)
+    ![](./media/lab-04/image044.png)
 
-19.	테이블 중 하나를 확인하고 데이터를 확인해 보겠습니다. 계속 사용 중인 **테이블 만들기**라는 KQL 쿼리 집합으로 다시 이동하여 **브론즈 레이어**탭에 있는지 확인하고 다음 스크립트를 실행합니다
+19. 테이블 중 하나를 확인하고 데이터를 확인해 보겠습니다. 계속 사용 중인 **테이블 만들기**라는 KQL 쿼리 집합으로 다시 이동하여 **브론즈 레이어**탭에 있는지 확인하고 다음 스크립트를 실행합니다
 
-```
-//Query the Bronze layer Customer table 
+    ```
+    //Query the Bronze layer Customer table 
 
-Customer
-| take 100
-```
+    Customer
+    | take 100
+    ```
 
-   ![](./media/lab-04/image046.png)
+    ![](./media/lab-04/image046.png)
 
-20.	아래 이미지와 같은 데이터가 표시되지만 정확하지 않을 수 있습니다.
+20. 아래 이미지와 같은 데이터가 표시되지만 정확하지 않을 수 있습니다.
 
-   ![](./media/lab-04/image048.png)
+    ![](./media/lab-04/image048.png)
 
 ## 작업 3: 실버 레이어의 테이블 변환
 
@@ -181,19 +183,19 @@ Customer
 
 2. 다음을 실행합니다. "실버 레이어" 탭 내에서 다음 KQL 스크립트를 실행하여 Medallion 프레임워크의 실버 레이어 역할을 할 새 테이블 4 개를 만듭니다.
 
-``` 
-//SILVER LAYER
+   ``` 
+   //SILVER LAYER
 
-.execute database script <|
+   .execute database script <|
 
-.create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
+   .create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
 
-.create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
+   .create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
 
-.create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
+   .create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
 
-.create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
-```
+   .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
+   ```
 
 3. 새 스크립트를 강조 표시하고 **실행**을 클릭하여 해당 스크립트를 실행합니다.
 
@@ -205,36 +207,36 @@ Customer
 
 5. 이제 테이블을 만들었으므로 데이터를 해당 테이블에 로드해야 합니다. 데이터가 브론즈 레이어로 수집될 때 데이터를 변환하는 이동하는 업데이트 정책을 만듭니다. 다음 스크립트를 복사하여 붙여 넣은 후 코드를 **실행**합니다.
 
-``` 
-// use update policies to transform data during Ingestion
+   ``` 
+   // use update policies to transform data during Ingestion
 
-.execute database script <|
+   .execute database script <|
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
-| extend IngestionDate = ingestion_time()
-}
+   .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
+   | extend IngestionDate = ingestion_time()
+   }
 
-.alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
+   .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
-| extend IngestionDate = ingestion_time()
-}
+   .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
+   | extend IngestionDate = ingestion_time()
+   }
 
-.alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
+   .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
-| extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
-| extend IngestionDate = ingestion_time()
-}
+   .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
+   | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
+   | extend IngestionDate = ingestion_time()
+   }
 
-.alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
+   .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
-| extend IngestionDate = ingestion_time()
-}
+   .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
+   | extend IngestionDate = ingestion_time()
+   }
 
-.alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-```
+   .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
+   ```
 
 6. 쿼리 실행 결과가 표시되지만 쿼리가 완료되었음을 알 수 있는 가장 좋은 증거는 데이터베이스 개체 창에 확장 가능한 새 폴더가 표시되는 것입니다. **함수 폴더** 옆에 있는 **> 아이콘**을 클릭합니다. 이러한 함수를 사용하면 KQL 데이터베이스의 브론즈 레이어에 로드된 데이터를 미러링하고 변환하며 실버 레이어에 로드할 수 있습니다.
 
@@ -252,24 +254,24 @@ Customer
 
    ![](./media/lab-04/image067.png)
 
-10.	파이프라인이 로드를 완료할 때까지 약 1 분 정도 기다렸다가 출력 메뉴의 모든 항목이 **성공**으로 표시되면 다음 단계로 이동합니다.
+10. 파이프라인이 로드를 완료할 때까지 약 1 분 정도 기다렸다가 출력 메뉴의 모든 항목이 **성공**으로 표시되면 다음 단계로 이동합니다.
 
-   ![](./media/lab-04/image070.png)
+    ![](./media/lab-04/image070.png)
 
-11.	데이터 파이프라인이 완료되면 KQL 데이터베이스에서 결과의 유효성을 검사합니다. **테이블 만들기** KQL 쿼리 집합으로 돌아가서 **실버 레이어** 탭으로 이동합니다.
+11. 데이터 파이프라인이 완료되면 KQL 데이터베이스에서 결과의 유효성을 검사합니다. **테이블 만들기** KQL 쿼리 집합으로 돌아가서 **실버 레이어** 탭으로 이동합니다.
 
-12.	새 줄에서 다음 쿼리를 작성하고 코드를 실행하여 SilverAddress 테이블을 쿼리합니다.
+12. 새 줄에서 다음 쿼리를 작성하고 코드를 실행하여 SilverAddress 테이블을 쿼리합니다.
 
-```
-SilverAddress
-| take 100
-```
+    ```
+    SilverAddress
+    | take 100
+    ```
 
-   ![](./media/lab-04/image073.png)
+    ![](./media/lab-04/image073.png)
 
-13.	결과를 보면 **SilverAddress** 테이블에는 **Address** 테이블에 실제로 존재하지 않는 **IngestionDate** 라는 추가 열이 있습니다.
+13. 결과를 보면 **SilverAddress** 테이블에는 **Address** 테이블에 실제로 존재하지 않는 **IngestionDate** 라는 추가 열이 있습니다.
 
-   ![](./media/lab-04/image076.png)
+    ![](./media/lab-04/image076.png)
 
 ## 작업 4: 구체화된 뷰를 사용하여 골드 레이어 만들기
 
@@ -281,15 +283,15 @@ SilverAddress
 
 2. 구체화된 뷰를 만들기 위해 다음 코드를 쿼리 집합에 붙여 넣습니다.
 
-```
-//GOLD LAYER
-// use materialized views to view the latest changes in the SilverAddress table
-.create materialized-view with (backfill=true) GoldAddress on table SilverAddress
-{
-SilverAddress
-| summarize arg_max(IngestionDate, *) by AddressID
-}
-```
+   ```
+   //GOLD LAYER
+   // use materialized views to view the latest changes in the SilverAddress table
+   .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
+   {
+   SilverAddress
+   | summarize arg_max(IngestionDate, *) by AddressID
+   }
+   ```
 
 3. 코드를 붙여 넣은 후 해당 코드를 강조 표시하고 **Run** 버튼을 클릭하여 실행합니다.
 
@@ -305,10 +307,10 @@ SilverAddress
  
 6. 쿼리 창에서 다음 코드를 실행하여 새 구체화된 뷰를 쿼리합니다.
 
-```
-GoldAddress
-| take 1000
-```
+   ```
+   GoldAddress
+   | take 1000
+   ```
 
    ![](./media/lab-04/image089.png)
 
@@ -316,48 +318,48 @@ GoldAddress
 
 8. 이제 다음 쿼리를 붙여 넣고 실행하여 다른 테이블에서 더 많은 골드 레이어 구체화된 뷰를 빌드합니다.
 
-```
-//Create additional Gold Materialized Views
-.execute database script <|
+   ```
+   //Create additional Gold Materialized Views
+   .execute database script <|
 
-.create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
-{
-SilverCustomer
-| summarize arg_max(IngestionDate, *) by CustomerID
-}
+   .create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
+   {
+   SilverCustomer
+   | summarize arg_max(IngestionDate, *) by CustomerID
+   }
 
-.create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
-{
-SilverSalesOrderHeader
-| summarize arg_max(IngestionDate, *) by SalesOrderID
-}
+   .create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
+   {
+   SilverSalesOrderHeader
+   | summarize arg_max(IngestionDate, *) by SalesOrderID
+   }
 
-.create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
-{
-SilverSalesOrderDetail
-| summarize arg_max(IngestionDate, *) by SalesOrderDetailID
-}
+   .create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
+   {
+   SilverSalesOrderDetail
+   | summarize arg_max(IngestionDate, *) by SalesOrderDetailID
+   }
 
-.create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
-{
-Clicks
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
+   .create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
+   {
+   Clicks
+   | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+   | summarize count() by dateOnly
+   }
 
-.create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
-{
-Impressions
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
-```
+   .create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
+   {
+   Impressions
+   | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+   | summarize count() by dateOnly
+   }
+   ```
 
 9. 이제 KQL 데이터베이스 내에 구체화된 뷰 6 개가 있습니다.
 
    ![](./media/lab-04/image091.png) 
 
-10.	이제 KQL 데이터베이스 내에 Medallion 프레임워크를 구축했습니다. 이 데이터는 쉽게 사용할 수 있지만 Kusto 를 사용한 적이 없고 다른 방법으로 해당 테이블의 데이터에 액세스하는 것을 선호하는 사용자가 있습니다. 다음 작업에서는 레이크하우스를 만듭니다. 그런 다음, 랩 01 에서 활성화한 Onelake 가용성 기능을 사용하여 바로 가기를 통해 레이크하우스에서 KQL 데이터베이스에 포함된 일부 테이블에 액세스할 수 있도록 합니다.
+10. 이제 KQL 데이터베이스 내에 Medallion 프레임워크를 구축했습니다. 이 데이터는 쉽게 사용할 수 있지만 Kusto 를 사용한 적이 없고 다른 방법으로 해당 테이블의 데이터에 액세스하는 것을 선호하는 사용자가 있습니다. 다음 작업에서는 레이크하우스를 만듭니다. 그런 다음, 랩 01 에서 활성화한 Onelake 가용성 기능을 사용하여 바로 가기를 통해 레이크하우스에서 KQL 데이터베이스에 포함된 일부 테이블에 액세스할 수 있도록 합니다.
 
 # Fabric 레이크하우스 및 OneLake 가용성
 
@@ -369,7 +371,7 @@ Impressions
 
    ![](./media/lab-04/image093.png)
 
-3.  레이크하우스 이름을 **lh_Fabrikam** 으로 지정한 후 **만들기**를 클릭합니다. 레이크하우스 스키마의 미리 보기 기능 활성화하지 마세요.
+3. 레이크하우스 이름을 **lh_Fabrikam** 으로 지정한 후 **만들기**를 클릭합니다. 레이크하우스 스키마의 미리 보기 기능 활성화하지 마세요.
 
    ![](./media/lab-04/image095.png)
 
@@ -393,11 +395,11 @@ Impressions
  
 5. **아이**콘을 클릭하여 **eh_Fabrikam** 내에 포함된 테이블을 연 다음 가져올 다음 테이블을 선택합니다.
 
-    - 클릭
-    - 광고 노출
-    - InternetSales
+   - 클릭
+   - 광고 노출
+   - InternetSales
 
-   ![](./media/lab-04/image104.png)
+     ![](./media/lab-04/image104.png)
 
 6. 해당 테이블은 Fabric 내에서 Notebooks 를 활용할 수 있는 모든 사용자에게 매우 유용할 수 있습니다. 이 데이터는 데이터 과학 실험에서 사용자가 관심을 가질 만한 링크를 예측하는 모델을 학습시키는 데 사용될 수 있습니다.
 
@@ -411,11 +413,11 @@ Impressions
 
    ![](./media/lab-04/image108.png)
 
-10.	**Clicks** 테이블을 클릭합니다.
+10. **Clicks** 테이블을 클릭합니다.
 
-   ![](./media/lab-04/image110.png)
+    ![](./media/lab-04/image110.png)
  
-11.	해당 테이블의 레코드 샘플이 사용자 인터페이스 내에 표시된 것을 확인할 수 있습니다.
+11. 해당 테이블의 레코드 샘플이 사용자 인터페이스 내에 표시된 것을 확인할 수 있습니다.
 
     > **참고: 데이터가 OneLake(https://learn.microsoft.com/en-us/fabric/real-time- intelligence/event-house-onelake-availability)에 표시되는 데 최대 몇 시간이 걸릴 수 있습니다.**
  
