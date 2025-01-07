@@ -309,7 +309,7 @@
     createifnotexists = true
     )
     ```
-  ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 6.	单击 **Run** 按钮以执行脚本。
 
