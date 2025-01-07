@@ -28,9 +28,9 @@ Dans ce labo, vous allez créer un tableau de bord en temps réel à l’aide de
 lakehouse grâce à des raccourcis pour visualiser et partager vos observations stratégiques à partir des flux de données auxquels vous avez accédé.
 À la fin de ce labo, vous saurez :
 
-  - comment créer un tableau de bord en temps réel dans Fabric ;
-  - comment écrire des requêtes à l’aide de KQL afin de renseigner des visuels dans un tableau de bord ;
-  - comment ajouter une mise en forme conditionnelle à des visuels de tableau de bord.
+- comment créer un tableau de bord en temps réel dans Fabric ;
+- comment écrire des requêtes à l’aide de KQL afin de renseigner des visuels dans un tableau de bord ;
+- comment ajouter une mise en forme conditionnelle à des visuels de tableau de bord.
 
 
 # Tableaux de bord en temps réel
@@ -177,8 +177,7 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
     ![](../media/Lab-05/image073.png)
 
-5. Modifiez le visuel pour redéfinir les champs **Nom de la vignette** sur **Impressions par heure** et
-**Type de visuel** sur **Graphique en aires**.
+5. Modifiez le visuel pour redéfinir les champs **Nom de la vignette** sur **Impressions par heure** et **Type de visuel** sur **Graphique en aires**.
 
     ![](../media/Lab-05/image076.png)
 
@@ -218,18 +217,17 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
 11. Lorsque les paramètres du visuel s’affichent, modifiez les paramètres suivants pour créer un décompte des impressions :
 
-  - **Nom de la vignette** : Impressions
-  - **Type de visuel** : Statistique
-  - **Colonne de valeurs** : impressions (long)
+    - **Nom de la vignette** : Impressions
+    - **Type de visuel** : Statistique
+    - **Colonne de valeurs** : impressions (long)
 
-    ![](../media/Lab-05/image087.png)
+      ![](../media/Lab-05/image087.png)
 
 12. Cliquez sur **Appliquer les changements** après avoir configuré tous les paramètres de manière appropriée.
 
     ![](../media/Lab-05/image090.png)
  
-13. Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option
-**Vignette dupliquée**.
+13. Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option **Vignette dupliquée**.
 
      ![](../media/Lab-05/image093.png)
  
@@ -253,9 +251,7 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
 19. Appliquez les changements.
 
-
-20. Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la
-vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis glisser-déplacer le visuel où vous le souhaitez.
+20. Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis glisser-déplacer le visuel où vous le souhaitez.
 
      ![](../media/Lab-05/image108.png)
 
@@ -275,7 +271,6 @@ vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis 
     | join external_table('products') on $left.productId == $right.ProductID
     | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
     | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-    
     ```
 
 3. Exécutez la requête pour vérifier qu’elle est correctement configurée. Cliquez sur le bouton + Ajouter un visuel.
@@ -340,8 +335,10 @@ temps réel.
     ![](../media/Lab-05/image148.png)
 
 3. Copiez-collez le code Markdown suivant dans la fenêtre de requête :
-![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw
-=true "Fabrikam")
+
+    ```
+    ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw=true "Fabrikam")
+    ```
 
     ![](../media/Lab-05/image150.png)
 

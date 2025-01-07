@@ -114,7 +114,7 @@ Outre les événements de clic et d’impression enregistrés, vous trouverez de
 
 6. Choisissez l’option **Supprimer** ce champ. Pour ce flux de données provenant de l’Event Hub, le partitionnement n’est pas utilisé, donc cette colonne ne nous est pas utile et nous la supprimons.
 
-       ![](../media/Lab-03/image034.png)
+    ![](../media/Lab-03/image034.png)
  
 7. Supprimez tous les champs suivants non nécessaires pour ce flux :
 
@@ -241,7 +241,7 @@ Outre les événements de clic et d’impression enregistrés, vous trouverez de
     - **Base de données KQL** : eh_Fabrikam
     - **Table de destination** : créez une table nommée **Clicks**
 
-     ![](../media/Lab-03/image081.png)
+      ![](../media/Lab-03/image081.png)
  
 24. Cliquez sur **Enregistrer** en bas du menu volant.
 

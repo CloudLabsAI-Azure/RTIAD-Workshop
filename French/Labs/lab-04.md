@@ -1,6 +1,8 @@
-# Sommaire
+# Microsoft Fabric Real-Time Intelligence in a Day Labo 4
 
 ![](../media/Lab-04/lab-04.png)
+
+# Sommaire
 
 - Structure du document	
 - Introduction	
@@ -9,7 +11,7 @@
     - Tâche 2 : charger les tables Bronze à l’aide d’un pipeline de données	
     - Tâche 3 : transformer des tables en couche Argent	
     - Tâche 4 : créer une couche Or avec des vues matérialisées	
-Lakehouse Fabric et Disponibilité OneLake	
+- Lakehouse Fabric et Disponibilité OneLake	
     - Tâche 5 : créer une lakehouse	
     - Tâche 6 : raccourci vers les tables de base de données KQL	
 - Résumé	
@@ -55,17 +57,17 @@ compréhension de ce jeu de requêtes.
 
 4. Dans ce nouvel onglet, collez et mettez en surbrillance le code suivant, puis sélectionnez « Exécuter » pour créer quatre tables qui serviront de couche Bronze de l’infrastructure en médaillon.
 
-```
-//BRONZE LAYER
-.execute database script <|
+    ```
+    //BRONZE LAYER
+    .execute database script <|
 
-.create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
-.create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
-.create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
-.create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
-```
+    .create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
+    .create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
+    .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
+    .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
+    ```
 
-![](../media/Lab-04/image010.png)
+    ![](../media/Lab-04/image010.png)
 
 5. Une fois ce code exécuté, vous devriez immédiatement voir quatre tables créées dans votre Explorateur d’objets de base de données :
 
@@ -82,15 +84,16 @@ compréhension de ce jeu de requêtes.
 
 7. Le schéma (noms de colonne et types de données) de la table s’affiche alors. Un élément qu’il serait utile d’ajouter à cette table sur la base de données KQL serait une colonne masquée pour le temps d’ingestion qui sera utilisée plus tard dans l’architecture en médaillon. Ajoutons-la maintenant.Copiez-collez le script ci-dessous pour modifier les tables que vous venez de créer en ajoutant une colonne de temps d’ingestion :
 
-``` 
-//adds a hidden field showing ingestion time
-.execute database script <|
-.alter table Address policy ingestiontime true
-.alter table Customer policy ingestiontime true
-.alter table SalesOrderHeader policy ingestiontime true
-.alter table SalesOrderDetail policy ingestiontime true
-```
- ![](../media/Lab-04/image017.jpg)
+    ``` 
+    //adds a hidden field showing ingestion time
+    .execute database script <|
+    .alter table Address policy ingestiontime true
+    .alter table Customer policy ingestiontime true
+    .alter table SalesOrderHeader policy ingestiontime true
+    .alter table SalesOrderDetail policy ingestiontime true
+    ```
+
+    ![](../media/Lab-04/image017.jpg)
 
 8. Les quatre nouvelles tables sont des tables vides avec leur schéma défini. À présent, vous avez besoin d’un moyen de charger correctement ces tables. Revenez à votre espace de travail **RTI_username**.
 
@@ -170,14 +173,14 @@ affichent le statut **Opération réussie**, vous avez transféré les données.
 
 19. Vérifions l’une de nos tables et les données. Revenez au jeu de requêtes KQL que nous avons utilisé, appelé **Create Tables** et assurez-vous que vous êtes dans l’onglet **Bronze Layer**, puis exécutez le script suivant
 
-```
-//Query the Bronze layer Customer table 
+    ```
+    //Query the Bronze layer Customer table 
 
-Customer
-| take 100
-```
+    Customer
+    | take 100
+    ```
 
- ![](../media/Lab-04/image046.png)
+    ![](../media/Lab-04/image046.png)
 
 20. Des données similaires à celles de l’image ci-dessous devraient s’afficher, mais elles peuvent ne pas être exactes
 
@@ -191,19 +194,19 @@ Customer
  
 2. Exécutez le script KQL suivant dans l’onglet « Silver Layer » pour créer quatre tables qui serviront de couche Argent de l’infrastructure en médaillon :
 
-```
-//SILVER LAYER
+    ```
+    //SILVER LAYER
 
-.execute database script <|
+    .execute database script <|
 
-.create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
+    .create table [SilverAddress] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime, IngestionDate: datetime)
 
-.create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
+    .create table [SilverCustomer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime, IngestionDate: datetime)
 
-.create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
+    .create table [SilverSalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime, DaysShipped: long, IngestionDate: datetime)
 
-.create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
-```
+    .create table [SilverSalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal, UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime, IngestionDate: datetime)
+    ```
 
 3. Exécutez ce script en mettant en surbrillance le nouveau script et en cliquant sur **Exécuter**.
 
@@ -215,36 +218,36 @@ Customer
 
 5. Maintenant que les tables ont été créées, vous devez y charger des données. Vous allez créer une stratégie de mise à jour pour transformer les données et les déplacer lorsqu’elles sont ingérées dans la couche Bronze. Copiez-collez le script suivant, puis cliquez sur **Exécuter** pour exécuter le code.
 
-```
-// use update policies to transform data during Ingestion
+    ```
+    // use update policies to transform data during Ingestion
 
-.execute database script <|
+    .execute database script <|
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseAddress (){ Address
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverAddress policy update @'[{"Source": "Address", "Query": "ParseAddress", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseCustomer (){ Customer
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverCustomer policy update @'[{"Source": "Customer", "Query": "ParseCustomer", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
-| extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderHeader (){ SalesOrderHeader
+    | extend DaysShipped = datetime_diff('day', ShipDate, OrderDate)
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
+    .alter table SilverSalesOrderHeader policy update @'[{"Source": "SalesOrderHeader", "Query": "ParseSalesOrderHeader", "IsEnabled" : true, "IsTransactional": true }]'
 
-.create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
-| extend IngestionDate = ingestion_time()
-}
+    .create function ifnotexists with (docstring = 'Add ingestion time to raw data') ParseSalesOrderDetail () { SalesOrderDetail
+    | extend IngestionDate = ingestion_time()
+    }
 
-.alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
-```
+    .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
+    ```
 
 6. Bien que vous verrez des résultats de l’exécution de la requête, la meilleure preuve que votre requête est terminée est qu’un nouveau dossier extensible s’affiche dans votre volet Objets de base de données. Cliquez sur l’icône > en regard du **dossier Fonctions**. Ces fonctions permettent aux données chargées dans la couche Bronze de la base de données KQL d’être ensuite mises en miroir, transformées et chargées dans la couche Argent.
 
@@ -325,42 +328,43 @@ Maintenant que vous disposez de votre couche de données transformée dans la co
 
 8. À présent, collez et exécutez les requêtes suivantes pour créer d’autres vues matérialisées de la couche Or pour les autres tables :
 
-``` 
-//Create additional Gold Materialized Views
-.execute database script <|
+    ``` 
+    //Create additional Gold Materialized Views
+    .execute database script <|
 
-.create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
-{
-SilverCustomer
-| summarize arg_max(IngestionDate, *) by CustomerID
-}
+    .create materialized-view with (backfill=true) GoldCustomer on table SilverCustomer
+    {
+    SilverCustomer
+    | summarize arg_max(IngestionDate, *) by CustomerID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
-{
-SilverSalesOrderHeader
-| summarize arg_max(IngestionDate, *) by SalesOrderID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderHeader on table SilverSalesOrderHeader
+    {
+    SilverSalesOrderHeader
+    | summarize arg_max(IngestionDate, *) by SalesOrderID
+    }
 
-.create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
-{
-SilverSalesOrderDetail
-| summarize arg_max(IngestionDate, *) by SalesOrderDetailID
-}
+    .create materialized-view with (backfill=true) GoldSalesOrderDetail on table SilverSalesOrderDetail
+    {
+    SilverSalesOrderDetail
+    | summarize arg_max(IngestionDate, *) by SalesOrderDetailID
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
-{
-Clicks
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
+    .create async materialized-view with (backfill=true) GoldDailyClicks on table Clicks
+    {
+    Clicks
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
 
-.create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
-{
-Impressions
-| extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
-| summarize count() by dateOnly
-}
-```
+    .create async materialized-view with (backfill=true) GoldDailyImpressions on table Impressions
+    {
+    Impressions
+    | extend dateOnly = substring(tostring(todatetime(eventDate)), 0, 10)
+    | summarize count() by dateOnly
+    }
+    ```
+
 9. Vous devriez maintenant disposer de six vues matérialisées dans votre base de données KQL.
 
     ![](../media/Lab-04/image090.png)
@@ -405,7 +409,7 @@ Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’
     - Impressions
     - InternetSales
 
-    ![](../media/Lab-04/image103.png)
+      ![](../media/Lab-04/image103.png)
 
 6. Ces tables peuvent être très utiles à tous les utilisateurs susceptibles d’exploiter des notebooks dans Fabric. Ces données peuvent être utilisées dans le cadre d’expériences de science des données, pour effectuer l’apprentissage d’un modèle qui prédit le lien susceptible d’intéresser les utilisateurs.
 
