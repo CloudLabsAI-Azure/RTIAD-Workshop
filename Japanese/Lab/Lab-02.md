@@ -280,13 +280,23 @@ Kusto 照会言語をお使いになるのは初めてかもしれません。�
  
     **(注: テキストをコピーするには、下のオブジェクトをダブルクリックしてください)**
 
-    ![](../media/Lab-02/imageupdate1.png)
+    ```
+    --
+    explain
+    ```
 
     ![](../media/Lab-02/image102.png)
  
 2. コメント行“—” の後にキーワード“explain” を続けると、ここでSQL クエリを作成し、それと同様のクエリと結果を実現するために使えるKQL クエリの結果を返すことができます。その下に次のクエリを入力して、どのような KQL クエリを生成するかを説明します。
 
-     ![](../media/Lab-02/imageupdate2.png)
+    ```
+    --
+    explain
+    SELECT COUNT(OrderQuantity) AS CountOfProducts
+            , ProductKey
+    FROM InternetSales
+    GROUP BY ProductKey
+    ```
 
     ![](../media/Lab-02/image105.png)
 

@@ -187,9 +187,7 @@
    
     ![](../media/Lab-04/image044.png)
 
-19. 次に、テーブルの 1 つをチェックし、データを確認しましょう。使用してきた
-
-    **Create Tables** というKQL クエリセットに戻って **Bronze Layer** タブが表示されていることを確認し、次のスクリプトを実行します
+19. 次に、テーブルの 1 つをチェックし、データを確認しましょう。使用してきた **Create Tables** というKQL クエリセットに戻って **Bronze Layer** タブが表示されていることを確認し、次のスクリプトを実行します
 
     ```
     //Query the Bronze layer Customer table

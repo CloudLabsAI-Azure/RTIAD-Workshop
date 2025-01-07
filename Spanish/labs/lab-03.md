@@ -1,3 +1,5 @@
+# Microsoft Fabric Real-Time Intelligence in a Day Laboratorio 3
+
 # Contenido 
 - Estructura del documento
 - Introducción
@@ -51,16 +53,15 @@ Al final de este laboratorio, habrá aprendido sobre:
 
 7. Desde la página de detalles de su entorno, copie y pegue toda la configuración de conexión necesaria en los campos correspondientes.
 
-Espacio de nombres del centro de eventos: **rtiadhub{username}**
+    - Espacio de nombres del centro de eventos: **rtiadhub{username}**
 
-Centro de eventos: **rta-iad-clicks**
+    - Centro de eventos: **rta-iad-clicks**
 
-Nombre de la clave de acceso compartido: **rti-reader**
+    - Nombre de la clave de acceso compartido: **rti-reader**
 
-Clave de acceso compartido: **se proporciona en Detalles del entorno**
+    - Clave de acceso compartido: **se proporciona en Detalles del entorno**
 
-
-![](../media/lab-03/image017.png)
+      ![](../media/lab-03/image017.png)
 
 8. Una vez que se hayan completado todas las propiedades, haga clic en **Conectar**.
 
@@ -121,7 +122,6 @@ Además de los clics y los eventos de impresión que se registran, hay detalles 
 
    ![](../media/lab-03/image040.png)
 
-  
 8. Pase el cursor sobre el campo eventDate y, cuando aparezca un botón de puntos suspensivos (...) en el lado derecho de la ventana, haga clic en él.
 
     ![](../media/lab-03/image043.png)
@@ -154,7 +154,7 @@ Además de los clics y los eventos de impresión que se registran, hay detalles 
     - **Seleccione un campo para filtrar por**: eventType
     - **Mantenga los eventos cuando el valor** - es igual a - CLICK **(¡Importante! Este es un campo que distingue entre mayúsculas y minúsculas, así que asegúrese de introducir mayúsculas para este ejemplo)**
  
-    ![](../media/lab-03/image058.png)
+      ![](../media/lab-03/image058.png)
 
 5. Elija la opción **Guardar** para conservar los cambios.
 
@@ -180,7 +180,7 @@ Además de los clics y los eventos de impresión que se registran, hay detalles 
     - **Seleccione un campo para filtrar por**: eventType
     - **Mantenga los eventos cuando el valor** - es igual a - IMPRESSION **(¡Importante! Este es un campo que distingue entre mayúsculas y minúsculas, así que asegúrese de introducir mayúsculas para este ejemplo)**
 
-    ![](../media/lab-03/image071.png)
+      ![](../media/lab-03/image071.png)
 
 12. Elija la opción **Guardar** para conservar los cambios.
 
@@ -234,7 +234,7 @@ Además de los clics y los eventos de impresión que se registran, hay detalles 
     - **Base de datos KQL**: eh_Fabrikam
     - **Tabla de destino**: cree una nueva tabla denominada **Clicks**
 
-    ![](../media/lab-03/image094.png)
+      ![](../media/lab-03/image094.png)
 
 25. Haga clic en **Guardar** en la parte inferior del control flotante.
 
@@ -290,30 +290,31 @@ Hasta este punto, ha estado trabajando con datos de transmisión, pero todavía 
 
 5. En la ventana de la consulta en blanco, introduzca el script KQL. Este script creará una conexión a una base de datos externa de Azure SQL y la pondrá a disposición en nuestra base de datos KQL como un acceso **directo**. Se adjunta un **Acceso directo** en modo de solo lectura, lo que permite ver y ejecutar consultas junto con los datos de transmisión que se ingirieron en la base de datos de KQL.
 
-        ```
-        .execute database script <|
-        //External tables - shortcuts
-        // connect to operational Database with external table Product
-        .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
-        kind=sql
-        table=[SalesLT.Product]
-        ( 
-        h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
-        )
-        with 
-        (
-        createifnotexists = true
-        )  
-        // connect to operational Database with external table ProductCategory
-        .create external table productCategories (ProductCategoryID: int, Name: string) 
-        kind=sql
-        table=[SalesLT.ProductCategory]
-        ( 
-        h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
-        with 
-        (
-        createifnotexists = true
-        )
+    ```
+    .execute database script <|
+    //External tables - shortcuts
+    // connect to operational Database with external table Product
+    .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
+    kind=sql
+    table=[SalesLT.Product]
+    ( 
+    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    )
+    with 
+    (
+    createifnotexists = true
+    )  
+    // connect to operational Database with external table ProductCategory
+    .create external table productCategories (ProductCategoryID: int, Name: string) 
+    kind=sql
+    table=[SalesLT.ProductCategory]
+    ( 
+    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+    with 
+    (
+    createifnotexists = true
+    )
+    ```
 
     ![](../media/lab-03/image118.jpg)
 
