@@ -260,11 +260,11 @@ Customer
  
 9. Cliquez sur **OK** dans ce menu volant pour exécuter le pipeline avec les mêmes réglages que précédemment.
 
-      ![](../media/Lab-04/image069.png)
+      ![](../media/Lab-04/step-9.png)
  
 10.	Encore une fois, attendez environ une minute que le pipeline termine son chargement, puis lorsque tous les éléments de votre menu Sortie indiquent **Opération réussie**, passez à l’étape suivante.
 
-       ![](../media/Lab-04/image072.png)
+       ![](../media/Lab-04/image069.png)
 
 11.	Une fois le pipeline de données terminé, validez les résultats dans la base de données KQL. Revenez au jeu de données KQL **Create Tables** et accédez à l’onglet **Silver Layer**.
 
@@ -275,9 +275,11 @@ Customer
     | take 100
     ```
 
-    ![](../media/Lab-04/image075.png)
+    ![](../media/Lab-04/image072.png)
 
 13.	Notez dans vos résultats que votre table **SilverAddress** comporte une colonne supplémentaire, à savoir **IngestionDate**, qui n’est pas physiquement présente dans la table **Address**.
+
+    ![](../media/Lab-04/image075.png)
 
 ## Tâche 4 : créer une couche Or avec des vues matérialisées
 
