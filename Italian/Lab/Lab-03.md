@@ -33,8 +33,7 @@ In questo lab si apprenderà quanto segue:
 
    ![](../media/Lab-03/image004.png)
 
-2. Ci sono ulteriori dati in streaming che è possibile inserire in relazione al punto vendita di 
-e-commerce. Per questo Eventstream, tuttavia, abbiamo intenzione di trasformare i dati prima di caricarli nell'Eventhouse. Anziché accedere all'**"hub in tempo reale"** possiamo creare un nuovo Eventstream direttamente dall'area di lavoro. Dal menu a discesa **+ Nuovo elemento** creare un nuovo **Eventstream**.
+2. Ci sono ulteriori dati in streaming che è possibile inserire in relazione al punto vendita di e-commerce. Per questo Eventstream, tuttavia, abbiamo intenzione di trasformare i dati prima di caricarli nell'Eventhouse. Anziché accedere all **"hub in tempo reale"** possiamo creare un nuovo Eventstream direttamente dall'area di lavoro. Dal menu a discesa **+ Nuovo elemento** creare un nuovo **Eventstream**.
 
     ![](../media/Lab-03/image006.png)
 

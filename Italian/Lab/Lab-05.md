@@ -359,7 +359,11 @@ In questo lab si apprenderà quanto segue:
 
     ![](../media/Lab-05/image148.jpg)
 
-3. Copiare e incollare il seguente codice markdown nella finestra di query.![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+3. Copiare e incollare il seguente codice markdown nella finestra di query.
+
+    ```
+    ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+    ```
 
     ![](../media/Lab-05/image150.jpg)
 
