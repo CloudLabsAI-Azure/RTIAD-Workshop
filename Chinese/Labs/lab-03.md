@@ -113,9 +113,9 @@
        - EventProcessedUtcTime
        - EventEnqueredUtcTime
 
-   您应如下图所示保留以下字段。
+    您应如下图所示保留以下字段。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
   
 8.	将鼠标悬停在 eventDate 字段上，当窗口右侧显示省略号 (…) 时，单击它。
 
