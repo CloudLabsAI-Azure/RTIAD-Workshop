@@ -33,15 +33,15 @@
  
 3.	将新的 Eventstream 命名为 **es_Fabrikam_ClickEvents**，选中**增强功能**选项，然后单击**创建**。
 
-    ![](../media/lab-03/image005.jpg)
+    ![](../media/lab-03/image007.jpg)
  
 4.	在“主页”功能区下，单击**添加源**下拉菜单，然后选择**外部源**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image010.png)
  
 5.	与上一个实验室类似，我们将连接到 Azure 事件中心，该中心包含从 Python 笔记本流式传输的数据。单击 **Azure 事件中心**磁贴的连接。如果在建议部分中没有看到 **Azure 事件中心**，请选择**查看所有源**以发现它。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image012.jpg)
  
 6.	创建**新建连接**。
 
