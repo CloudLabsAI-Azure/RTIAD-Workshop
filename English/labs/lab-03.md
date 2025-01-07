@@ -325,13 +325,13 @@ generated](../media/new-lab-01/image34.png)
     ![A diagram of a
     diagram](../media/new-lab-01/image38.png)
 
-18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream
-    ![A screen shot of a computer Description automatically
-    generated](../media/new-lab-01/image39.png)
+18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
+
+    ![A screen shot of a computer Description automatically generated](../media/new-lab-01/image39.png)
 
 19. Rename the operation to "Manage_Impressions". Then select "Add all fields" then remove "eventType" and "referrer". Your "Manage fields" transform should look like the following:
-    ![A screenshot of a
-    computer](../media/new-lab-01/image40.png)
+
+    ![A screenshot of a computer](../media/new-lab-01/image40.png)
 
 20. Now that you have cleaned up the data for the streams for each of
     the types of events, you need to load each stream into a new table
@@ -443,11 +443,9 @@ computer](../media/new-lab-01/image51.png)
     ![A screenshot of a computer Description automatically
 generated](../media/new-lab-01/image52.png)
 
-3. The OneLake data hub will open and the only option to select with be
-    the **"eh_Fabrikam"** kql database. Select this database and click
-    **"Connect"**.
-        ![A screenshot of a
-    chat](../media/new-lab-01/image53.png)
+3. The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
+
+    ![A screenshot of a chat](../media/new-lab-01/image53.png)
 
 4. In the new interface click once within the query window and
     highlight all the text by using the keyboard shortcut **Ctrl + A**.
@@ -463,7 +461,27 @@ generated](../media/new-lab-01/image54.png)
     view and run queries alongside the streaming data that was ingested
     into the KQL database.
 
-    ![](../media/new-lab-01/image55.emf)
+   ```powershell
+    .executedatabase script<| //Externaltables - shortcuts
+    //connectto operational Database with external table Product
+    .create externaltable products (ProductID: int. ProductNumber: string. Name: string) kind-sql
+    ta ble-|SalesLT. Product]
+    (
+    h@‘Server- fabrikamdemo.database.windows.net. 1433;Initial Catalog-fabrikamdb;Us ld-demouser;Password-fabrikam<ai23456‘
+    )
+    with
+    <
+    create if notexists - true
+    )
+    //connectto operational Database with external table ProductCategory .create externaltable productCategories (ProductCategorylD: int. Name: string) kind-sql
+    ta ble-|SalesLT. ProductCategory]
+    (
+    h@'Server- fabrikamdemo.database.windows. net.l433;lnitialCatalog-fabrikamdb;U ld-demouser;Password-fabrikam<ai23456‘ )
+    with
+    (
+    create if notexists - true
+
+   ```
 
     ![A screenshot of a
 computer](../media/new-lab-01/image56.png)
@@ -488,7 +506,13 @@ box](../media/new-lab-01/image58.png)
     and queries these tables off insights on across your business. Run
     the following KQL query to see one of them.
 
-    ![](../media/new-lab-01/image59.emf)
+   ```powershell
+    InternetSales
+    | join kind=inner
+    (external_table("products")) on ($left.ProductKey == Sright.ProductID)
+    | summarize SalesPerProduct=sum(SalesAmount) by Name
+    | project Name, SalesPerProduct
+   ```
 
 9. You will now see in your query results values for each individual
     product that your company has sold.
