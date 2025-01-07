@@ -348,7 +348,10 @@
    ![](./media/lab-05/image132.png)
 
 3. 다음 Markdown 코드를 복사하여 쿼리 창에 붙여 넣습니다.
-![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw=true "Fabrikam")
+
+   ```
+   ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw=true "Fabrikam")
+   ```
 
    ![](./media/lab-05/image148.png)
 

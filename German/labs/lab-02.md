@@ -66,7 +66,6 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
    - Gemeinsamer Zugriffsschlüssel: **verfügbar in der Registerkarte "Umgebungsdetails"**
 
-
 7. Sobald alle Eigenschaften ausgefüllt sind, klicken Sie auf **Verbinden**.
 
     ![](../media/lab-02/image013.jpg)
@@ -216,7 +215,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
     
     - **Tabellendetails** – Zeigt die komprimierte und ursprüngliche Größe der Tabelle, die OneLake- Verfügbarkeit, die Anzahl der Zeilen in den Tabellen und verschiedene andere Details an.
 
-    ![](../media/lab-02/image076.jpg)
+      ![](../media/lab-02/image076.jpg)
 
 8. Kehren Sie zur Datenbankansicht zurück und klicken Sie in der oberem rechten Ecke auf **Query with code**.
 

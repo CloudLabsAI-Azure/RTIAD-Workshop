@@ -72,11 +72,11 @@
 
 11. 검토 및 만들기 창에서 모든 항목이 올바르게 구성되었는지 확인하고 **추가**를 클릭합니다.
 
-   ![](./media/lab-03/image021.png)
+    ![](./media/lab-03/image021.png)
 
 12. 트림이 구성되면 Event Hub에서 들어오는 데이터 미리 보기를 볼 수 있습니다.
 
-   ![](./media/lab-03/image024.png)
+    ![](./media/lab-03/image024.png)
 
 13. 중인 데이터를 검사합니다. 전자 상거래 웹 사이트에서 기록되는 이벤트에는 클릭과 노출의 두 가지 유형이 있습니다.
 
@@ -327,13 +327,13 @@
 8. 이제 데이터베이스에 대한 차원적 품질이 있으므로 질문에 답하고 보고서 소비자에게 더 많은 컨텍스트를 제공할 수 있으며 비즈니스 전반에 걸친 인사이트를 기반으로 테이블을 쿼리합니다. 다음 KQL 쿼리를 실행하여 그중 하나를 확인합니다.
 
    ```
-    InternetSales
+   InternetSales
 	| join kind=inner 
 	(external_table("products")) on ($left.ProductKey == $right.ProductID)
 	| summarize SalesPerProduct=sum(SalesAmount) by Name
 	| project Name, SalesPerProduct
    ```
-
+   
    ![](./media/lab-03/image138.jpg)
 
 9. 이제 회사에서 판매한 개별 제품에 대한 값이 쿼리 결과에 표시됩니다.
