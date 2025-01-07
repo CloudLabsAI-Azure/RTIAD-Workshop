@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratório 5
 
+![](../media/lab-05/portuguese-lab5-intro.png)
+
 # Sumário
 
 - Estrutura do documento	

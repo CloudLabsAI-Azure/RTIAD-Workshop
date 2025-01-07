@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day 랩 3
 
+   ![](./media/lab-03/korean-intro.png)
+
 # 목차 
 - 문서 구조
 - 소개

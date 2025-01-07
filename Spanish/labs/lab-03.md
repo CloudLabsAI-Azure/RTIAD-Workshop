@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Laboratorio 3
 
+![](../media/lab-03/spanish-intro.png)
+
 # Contenido 
 - Estructura del documento
 - Introducción

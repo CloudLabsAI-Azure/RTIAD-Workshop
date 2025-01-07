@@ -1,3 +1,7 @@
+# Microsoft Fabric Real-Time Intelligence in a Day Laboratório 3
+
+![](../media/lab-03/portuguese-lab3-intro.png)
+
 # Sumário 
 - Estrutura do documento
 - Introdução

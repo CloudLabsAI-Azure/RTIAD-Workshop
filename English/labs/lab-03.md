@@ -1,3 +1,5 @@
+# Microsoft Fabric Real-Time Intelligence in a Day Lab 3
+
 ![A screenshot of a computer](../media/new-lab-01/intro-img.png)
 
 # Contents
