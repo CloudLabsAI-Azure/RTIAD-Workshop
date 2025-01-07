@@ -33,7 +33,7 @@
  
 3.	将新的 Eventstream 命名为 **es_Fabrikam_ClickEvents**，选中**增强功能**选项，然后单击**创建**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image005.jpg)
  
 4.	在“主页”功能区下，单击**添加源**下拉菜单，然后选择**外部源**。
 
