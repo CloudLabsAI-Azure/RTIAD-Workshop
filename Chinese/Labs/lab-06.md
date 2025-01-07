@@ -117,15 +117,15 @@
     - **类型=** Teams message
     - **收件人=** {your user id here}
 
-   ![](../media/lab-06/image038.png)
+   ![](../media/lab-06/image036.png)
 
 6. 最后，单击**保存并启动**以启动此规则
 
-    ![](../media/lab-06/image040.png)
+    ![](../media/lab-06/image038.png)
 
 7. 现在，有两个触发器在监视同一个数据流。
 
-    ![](../media/lab-06/image043.jpg)
+    ![](../media/lab-06/image040.png)
 
 # 清理资源
 
@@ -133,15 +133,15 @@
 
 1. 这是Real-Time Analytics in a Day 的最后一个实验室，也是最后一部分。如果您已完成该实验室，并且针对该内容没有需要讲师解决的其他问题或需求，请帮助我们解除分配工作区。导航回 **RTI_username** 工作区。
 
-    ![](../media/lab-06/image046.png)
+    ![](../media/lab-06/image043.jpg)
 
 2. 单击右上角的**工作区设置**。
 
-    ![](../media/lab-06/image049.png)
+    ![](../media/lab-06/image046.png)
  
 3. 从**常规**工作区设置中，向下滚动并单击**删除此工作区**按钮。
 
-    ![](../media/lab-06/image052.jpg)
+    ![](../media/lab-06/image049.png)
 
 4. 实验室和课程结束！
  
@@ -153,7 +153,7 @@
 
 Fabric Real-time Intelligence in a Day (RTIIAD) 向您介绍了Microsoft Fabric 中提供的一些主要功能。在服务菜单中，“帮助 (?)”部分包含指向一些优质资源的链接。
 
-  ![](../media/lab-06/image003.png)
+  ![](../media/lab-06/image052.jpg)
 
 以下更多参考资源可帮助您进行与 Microsoft Fabric 相关的后续步骤。
 
