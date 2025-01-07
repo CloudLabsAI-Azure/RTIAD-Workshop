@@ -1,4 +1,8 @@
 # Sommaire 
+
+![](../media/Lab-03/lab-03.png)
+
+
 - Structure du document
 - Introduction
 - Eventstreams Fabric

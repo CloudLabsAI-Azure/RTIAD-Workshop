@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Labo 2
  
+  ![](../media/Lab-02/lab-02.png)
+  
 # Sommaire
 - Structure du document	
 - Introduction	

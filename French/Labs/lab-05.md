@@ -1,5 +1,6 @@
 # Microsoft Fabric Real-Time Intelligence in a Day Labo 5
 
+![](../media/Lab-05/lab-5.png)
  
 # Sommaire
 

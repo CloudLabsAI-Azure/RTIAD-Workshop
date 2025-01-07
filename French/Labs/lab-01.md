@@ -1,5 +1,7 @@
 # Sommaire
 
+![](../media/Lab-01/lab-01.png)
+
 - Structure du document	
 - Scénario/Énoncé du problème	
 - Introduction	
@@ -58,7 +60,7 @@ Aujourd’hui, vous allez découvrir diverses fonctionnalités clés de Microsof
 
     > **Remarque:** si vous n’utilisez pas l’environnement de labo et que vous disposez d’un compte Power BI existant, vous pouvez utiliser le navigateur en mode privé/incognito.
 
-    ![](../media/Lab-05/image003.png)
+    ![](../media/Lab-01/image003.png)
  
 2. Saisissez le **Nom d’utilisateur** disponible dans l’onglet **Variables d’environnement** (en regard du Guide de labo) dans le champ **E-mail** et cliquez sur **Envoyer**.
 

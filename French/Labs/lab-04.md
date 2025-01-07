@@ -1,5 +1,7 @@
 # Sommaire
 
+![](../media/Lab-04/lab-04.png)
+
 - Structure du document	
 - Introduction	
 - Infrastructure en médaillon dans les bases de données KQL	
