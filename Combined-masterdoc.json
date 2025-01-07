@@ -35,7 +35,7 @@
     },
     {
         "Name": "RTIAD - Real-Time Intelligence in a Day Workshop",
-        "Language": "Chinese",
+        "Language": "Simplified Chinese",
         "Files": [
              {
                 "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/main/getting-started-V2.md",
