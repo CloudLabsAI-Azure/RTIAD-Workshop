@@ -59,48 +59,48 @@ crée de fausses transactions de vente à un rythme d’environ 3 100 transactio
     - Nom de la clé d’accès partagé : **rti-reader**
     - Clé d’accès partagé : **Disponible dans l’onglet Détails de l’environnement**
 
-7.	Une fois toutes les propriétés renseignées, cliquez sur **Connecter**.
+7. Une fois toutes les propriétés renseignées, cliquez sur **Connecter**.
 
      ![](../media/Lab-02/image013.png)
 
-8.	Dans la configuration de la source de données Azure Event Hubs, vous aurez peut-être besoin de modifier le **Groupe de consommateurs** du Event Hub pour veiller à avoir accès à un point d’accès unique au flux de données. Pour cet atelier, vous pouvez laisser la valeur « $Default » comme indiqué ci-après
+8. Dans la configuration de la source de données Azure Event Hubs, vous aurez peut-être besoin de modifier le **Groupe de consommateurs** du Event Hub pour veiller à avoir accès à un point d’accès unique au flux de données. Pour cet atelier, vous pouvez laisser la valeur « $Default » comme indiqué ci-après
 
       ![](../media/Lab-02/image015.jpg)
  
-9.	Avant de finaliser cette source de données et cet Eventstream, redéfinissons le nom de notre Eventstream sur quelque chose de plus utile. Dans la section « Détails du flux » à droite, cliquez sur l’icône représentant un crayon en regard du champ « Nom de l’Eventstream » et nommons-le
+9. Avant de finaliser cette source de données et cet Eventstream, redéfinissons le nom de notre Eventstream sur quelque chose de plus utile. Dans la section « Détails du flux » à droite, cliquez sur l’icône représentant un crayon en regard du champ « Nom de l’Eventstream » et nommons-le
 « **es_Fabrikam_InternetSales** ».
 
       ![](../media/Lab-02/image017.png)
 
-10.	Nous pouvons maintenant cliquer sur **Suivant** pour être redirigés vers une dernière page de vue d’ensemble.
+10. Nous pouvons maintenant cliquer sur **Suivant** pour être redirigés vers une dernière page de vue d’ensemble.
 
       ![](../media/Lab-02/image019.png)
 
-11.	Sur cet écran de vue d’ensemble, vérifiez que le contenu semble correct et cliquez sur **Créer la source**.
+11. Sur cet écran de vue d’ensemble, vérifiez que le contenu semble correct et cliquez sur **Créer la source**.
 
     >**Remarque : vos coordonnées seront différentes de celles que vous voyez dans la capture d’écran**
 
     ![](../media/Lab-02/image021.jpg)
  
-12.	Une fois l’Eventstream et sa source créés, cliquez sur le bouton « **Ouvrir EventStream** »
+12. Une fois l’Eventstream et sa source créés, cliquez sur le bouton « **Ouvrir EventStream** »
 
-     ![](../media/Lab-02/image023.jpg)
+    ![](../media/Lab-02/image023.jpg)
 
-13.	Vous êtes alors redirigé vers l’interface utilisateur EventStream. C’est ici que vous verrez votre flux de données source circuler dans notre eventstream et nous pouvons également ajouter des événements de transformation.
+13. Vous êtes alors redirigé vers l’interface utilisateur EventStream. C’est ici que vous verrez votre flux de données source circuler dans notre eventstream et nous pouvons également ajouter des événements de transformation.
 
-14.	L’**Activation** de votre source peut prendre quelques instants. Ensuite, cliquez sur l’icône centrale avec le nom de votre Eventstream, puis sur Actualiser si vous ne voyez pas d’aperçu des données.
+14. L’**Activation** de votre source peut prendre quelques instants. Ensuite, cliquez sur l’icône centrale avec le nom de votre Eventstream, puis sur Actualiser si vous ne voyez pas d’aperçu des données.
 
     >**Remarque : si vous recevez un statut « Avertissement » autour d’une stratégie d’audit, ce n’est pas grave. Le flux fonctionne toujours.**
 
     ![](../media/Lab-02/image025.jpg)
  
-15.	Vous devriez maintenant voir un échantillon des données dans la fenêtre inférieure.
+15. Vous devriez maintenant voir un échantillon des données dans la fenêtre inférieure.
 
-     ![](../media/Lab-02/image027.png)
+    ![](../media/Lab-02/image027.png)
  
-16.	Il s’agit d’un aperçu des données reçues du Azure Event Hub. Si vous faites glisser votre barre de défilement horizontale inférieure complètement à droite de votre aperçu, vous pouvez voir l’heure de réception des données dans l’Event Hub dans deux colonnes nommées **EventProcessedUtcTime** et **EventEnqueuedUtcTime**. Elles devraient refléter la date/l’heure actuelles au format UTC.
+16. Il s’agit d’un aperçu des données reçues du Azure Event Hub. Si vous faites glisser votre barre de défilement horizontale inférieure complètement à droite de votre aperçu, vous pouvez voir l’heure de réception des données dans l’Event Hub dans deux colonnes nommées **EventProcessedUtcTime** et **EventEnqueuedUtcTime**. Elles devraient refléter la date/l’heure actuelles au format UTC.
 
-     ![](../media/Lab-02/image030.png)
+    ![](../media/Lab-02/image030.png)
 
 ## Tâche 2 : configurer la destination EventStream
 
@@ -134,41 +134,40 @@ le**mode d’ingestion des données** pour la destination. Les deux options sont
 
       ![](../media/Lab-02/image044.png)
  
-7.	Cliquez sur Enregistrer.
+7. Cliquez sur Enregistrer.
 
 8. Une fois l’Eventstream configuré, cliquez sur le bouton **Publier** pour enregistrer cet Eventstream et commencer votre ingestion.
 
     ![](../media/Lab-02/image046.jpg)
 
-9.	Si vous remarquez que la source **AzureEventHub** est devenue inactive, définissez le bouton bascule sur l’état « Actif » et choisissez l’option « Maintenant » lorsque la boîte de dialogue s’ouvre
+9. Si vous remarquez que la source **AzureEventHub** est devenue inactive, définissez le bouton bascule sur l’état « Actif » et choisissez l’option « Maintenant » lorsque la boîte de dialogue s’ouvre
 
     ![](../media/Lab-02/image048.png) ![](../media/Lab-02/image049.png)
  
-10.	Cliquez sur le bouton **Configurer** dans la section **Destination** pour mapper correctement le flux à une table dans la base de données KQL.
+10. Cliquez sur le bouton **Configurer** dans la section **Destination** pour mapper correctement le flux à une table dans la base de données KQL.
 
     ![](../media/Lab-02/image051.jpg) 
  
-11.	Cliquez sur le bouton **+ Nouvelle table** sous la base de données **eh_Fabrikam**.
+11. Cliquez sur le bouton **+ Nouvelle table** sous la base de données **eh_Fabrikam**.
 
     ![](../media/Lab-02/image053.png)
 
-12.	Nommez la nouvelle table **InternetSales**, puis cliquez sur la coche.
+12. Nommez la nouvelle table **InternetSales**, puis cliquez sur la coche.
 
     ![](../media/Lab-02/image055.png)
 
-13.	Vous devrez peut-être mettre à jour le **« Nom de connexion de données »** pour répondre aux
+13. Vous devrez peut-être mettre à jour le **« Nom de connexion de données »** pour répondre aux
 exigences. Redéfinissons son nom sur **« eh_Fabrikam_es_InternetSales »**. Ensuite, nous pouvons cliquer sur Suivant.
 
     ![](../media/Lab-02/image057.png)
  
-14.	Après quelques instants de recherche d’événements, l’interface utilisateur devrait vous permettre de voir que des exemples de données ont été trouvés. Cliquez sur **Terminer** en bas de l’écran.
+14. Après quelques instants de recherche d’événements, l’interface utilisateur devrait vous permettre de voir que des exemples de données ont été trouvés. Cliquez sur **Terminer** en bas de l’écran.
 
     ![](../media/Lab-02/image059.png)
  
-15.	Ensuite, un résumé s’affiche. Une fois que vous avez toutes les coches vertes, cliquez sur
-**Fermer** pour avancer.
+15. Ensuite, un résumé s’affiche. Une fois que vous avez toutes les coches vertes, cliquez sur **Fermer** pour avancer.
 
-16.	Une fois que l’interface utilisateur affiche les mappages de la source à l’Eventstream et à la destination, vous avez correctement configuré et démarré un flux de données dans votre base de données KQL.
+16. Une fois que l’interface utilisateur affiche les mappages de la source à l’Eventstream et à la destination, vous avez correctement configuré et démarré un flux de données dans votre base de données KQL.
 
      ![](../media/Lab-02/image061.jpg)
   
@@ -216,45 +215,42 @@ exigences. Redéfinissons son nom sur **« eh_Fabrikam_es_InternetSales »**. En
 
     ![](../media/Lab-02/image079.jpg)
  
-10.	Cliquez sur la **Ligne 8** et, là où la requête indique **YOUR_TABLE_HERE**, remplacez ce texte par le nom de la table, à savoir **InternetSales**.
+10. Cliquez sur la **Ligne 8** et, là où la requête indique **YOUR_TABLE_HERE**, remplacez ce texte par le nom de la table, à savoir **InternetSales**.
 
     ![](../media/Lab-02/image081.png)
 
-11.	Mettez en surbrillance les **Lignes 8 et 9**, puis cliquez sur le bouton **Exécuter** dans le coin supérieur gauche de la fenêtre.
+11. Mettez en surbrillance les **Lignes 8 et 9**, puis cliquez sur le bouton **Exécuter** dans le coin supérieur gauche de la fenêtre.
 
     ![](../media/Lab-02/image083.png)
  
-12.	La requête renvoie un nombre spécifié de lignes à l’aide de l’opérateur **take**. Lorsque la requête s’exécute, elle extrait les données de la table InternetSales et renvoie le nombre de lignes que vous avez connecté à la requête. Dans cet exemple, 100 lignes ne seront retournées que, comme une clause WHERE en SQL. Les lignes spécifiques renvoyées ne peuvent pas être déterminées avec cet opérateur et les résultats de votre requête différeront des résultats des autres.
+12. La requête renvoie un nombre spécifié de lignes à l’aide de l’opérateur **take**. Lorsque la requête s’exécute, elle extrait les données de la table InternetSales et renvoie le nombre de lignes que vous avez connecté à la requête. Dans cet exemple, 100 lignes ne seront retournées que, comme une clause WHERE en SQL. Les lignes spécifiques renvoyées ne peuvent pas être déterminées avec cet opérateur et les résultats de votre requête différeront des résultats des autres.
 
     ![](../media/Lab-02/image086.png)
 
-13.	Cliquez sur la **Ligne 12** et, là où la requête indique **YOUR_TABLE_HERE**, remplacez ce texte par le nom de la table, à savoir **InternetSales**.
+13. Cliquez sur la **Ligne 12** et, là où la requête indique **YOUR_TABLE_HERE**, remplacez ce texte par le nom de la table, à savoir **InternetSales**.
 
      ![](../media/Lab-02/image088.png)
 
-14.	Mettez en surbrillance les **Lignes 12 et 13**, puis cliquez sur le bouton **Exécuter** dans le coin supérieur gauche de la fenêtre.
+14. Mettez en surbrillance les **Lignes 12 et 13**, puis cliquez sur le bouton **Exécuter** dans le coin supérieur gauche de la fenêtre.
 
       ![](../media/Lab-02/image090.png)
 
-15.	Cette requête utilise l’opérateur count. Cette requête renvoie un nombre agrégé d’enregistrements qui existent au moment de l’exécution de la requête sur la table de base de données KQL. N’hésitez pas à exécuter cette requête plusieurs fois et vous devriez remarquer que le nombre d’enregistrements augmente toutes les quelques secondes.
+15. Cette requête utilise l’opérateur count. Cette requête renvoie un nombre agrégé d’enregistrements qui existent au moment de l’exécution de la requête sur la table de base de données KQL. N’hésitez pas à exécuter cette requête plusieurs fois et vous devriez remarquer que le nombre d’enregistrements augmente toutes les quelques secondes.
 
       ![](../media/Lab-02/image093.png)
 
-16.	Répétez les étapes précédentes pour la dernière requête créée automatiquement pour vous sur la **Ligne 16/17** et réexécutez la requête.
+16. Répétez les étapes précédentes pour la dernière requête créée automatiquement pour vous sur la **Ligne 16/17** et réexécutez la requête.
 
        ![](../media/Lab-02/image095.png)
 
-17.	Cette requête vous indique le nombre d’enregistrements ingérés dans votre table dans un
-intervalle d’une heure. La distribution globale de ces enregistrements pour les données que vous êtes en train d’ingérer est d’environ 4 100 par heure. Il y aura cependant de légères variations dans ce nombre de transactions par heure et cette requête détaillera si moins ou plus
-d’enregistrements ont été ingérés dans chaque intervalle.
+17. Cette requête vous indique le nombre d’enregistrements ingérés dans votre table dans un intervalle d’une heure. La distribution globale de ces enregistrements pour les données que vous êtes en train d’ingérer est d’environ 4 100 par heure. Il y aura cependant de légères variations dans ce nombre de transactions par heure et cette requête détaillera si moins ou plus d’enregistrements ont été ingérés dans chaque intervalle.
 
 ## Tâche 4 : utiliser des requêtes T-SQL sur une base de données KQL
 
 Vous utilisez peut-être le Langage de requête Kusto pour la première fois. Bien que ce langage soit intuitif et facile à apprendre pour les requêtes simples, vous souhaiterez peut-être renvoyer les
 résultats d’une requête plus complexe que celles que vous êtes actuellement capable de créer. Plusieurs outils utiles ont été inclus dans les fonctionnalités de jeu de requêtes KQL, notamment la conversion de requêtes SQL en requêtes KQL et la création simple de requêtes T-SQL dans le jeu de requêtes KQL. Explorons.
 
-1. Vous devez créer une requête qui renvoie chaque produit avec le nombre de fois qu’il a été vendu. Vous pouvez y parvenir rapidement avec T-SQL. Dans la fenêtre de requête, vous pouvez convertir vos requêtes SQL en requêtes KQL pour mieux comprendre comment créer des requêtes KQL à l’avenir. Commencez par écrire la commande suivante :
-**(Remarque : double-cliquez sur l’objet ci-dessous afin de pouvoir copier le texte.)**
+1. Vous devez créer une requête qui renvoie chaque produit avec le nombre de fois qu’il a été vendu. Vous pouvez y parvenir rapidement avec T-SQL. Dans la fenêtre de requête, vous pouvez convertir vos requêtes SQL en requêtes KQL pour mieux comprendre comment créer des requêtes KQL à l’avenir. Commencez par écrire la commande suivante : **(Remarque : double-cliquez sur l’objet ci-dessous afin de pouvoir copier le texte.)**
 
     ```
     --
@@ -276,8 +272,7 @@ résultats d’une requête plus complexe que celles que vous êtes actuellement
 
     ![](../media/Lab-02/image102.png)
  
-3. Il s’agit d’une requête SQL simple qui récupère les résultats de la table InternetSales pour renvoyer deux colonnes : la clé de produit et un décompte du nombre de commandes. Comme il existe une colonne agrégée et une colonne non agrégée, vous devez renvoyer des résultats pour chaque produit individuel à l’aide d’une requête GROUP BY. Exécutez toute la requête en
-commençant par la ligne de commentaire « -- » jusqu’à la fin de la requête T-SQL.
+3. Il s’agit d’une requête SQL simple qui récupère les résultats de la table InternetSales pour renvoyer deux colonnes : la clé de produit et un décompte du nombre de commandes. Comme il existe une colonne agrégée et une colonne non agrégée, vous devez renvoyer des résultats pour chaque produit individuel à l’aide d’une requête GROUP BY. Exécutez toute la requête en commençant par la ligne de commentaire « -- » jusqu’à la fin de la requête T-SQL.
 
     ![](../media/Lab-02/image104.png)
 
@@ -315,8 +310,7 @@ l’écran. Il convient également de noter que ce jeu de requêtes effectue aut
 
    ![](../media/Lab-02/image119.png)
  
-3. Nous allons renommer cet onglet en cliquant sur l’icône en forme de crayon, appelons-le
-**« Ma première requête KQL »**.
+3. Nous allons renommer cet onglet en cliquant sur l’icône en forme de crayon, appelons-le **« Ma première requête KQL »**.
 
    ![](../media/Lab-02/image121.png)
  

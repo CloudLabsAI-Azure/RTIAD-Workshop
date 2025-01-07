@@ -124,31 +124,31 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
  
 9. Fermez le volet Modifier le paramètre.
 
-10.	Cliquez maintenant sur le bouton **+ Ajouter un visuel** au-dessus des résultats de la requête.
+10. Cliquez maintenant sur le bouton **+ Ajouter un visuel** au-dessus des résultats de la requête.
 
       ![](../media/Lab-05/image048.png)
  
-11.	Un nouveau menu volant s’affiche alors sur le côté droit de l’écran. Cliquez dans la zone de texte sous l’option **Nom de la vignette** pour nommer ce visuel **Clicks by Hour**.
+11. Un nouveau menu volant s’affiche alors sur le côté droit de l’écran. Cliquez dans la zone de texte sous l’option **Nom de la vignette** pour nommer ce visuel **Clicks by Hour**.
 
       ![](../media/Lab-05/image051.png)
 
-12.	Par défaut, le visuel vous permettant d’afficher les résultats de cette requête KQL est une table. Ce n’est peut-être pas le meilleur moyen pour quelqu’un de consommer et comprendre rapidement ce qui se passe avec les résultats de vos données. Redéfinissez le champ Type de visuel en remplaçant Table par **Graphique en aires**.
+12. Par défaut, le visuel vous permettant d’afficher les résultats de cette requête KQL est une table. Ce n’est peut-être pas le meilleur moyen pour quelqu’un de consommer et comprendre rapidement ce qui se passe avec les résultats de vos données. Redéfinissez le champ Type de visuel en remplaçant Table par **Graphique en aires**.
 
       ![](../media/Lab-05/image054.png)
 
-13.	Avec ce visuel nouvellement mis en forme, vous pouvez mieux comprendre les pics et les creux du nombre de clics sur votre site d’e-commerce à l’aide du flux de données que vous avez créé précédemment dans ce cours.
+13. Avec ce visuel nouvellement mis en forme, vous pouvez mieux comprendre les pics et les creux du nombre de clics sur votre site d’e-commerce à l’aide du flux de données que vous avez créé précédemment dans ce cours.
 
        ![](../media/Lab-05/image057.png)
   
-14.	Pour enregistrer ce visuel dans le tableau de bord, cliquez sur le bouton **Appliquer les changements** dans le coin supérieur droit de l’écran.
+14. Pour enregistrer ce visuel dans le tableau de bord, cliquez sur le bouton **Appliquer les changements** dans le coin supérieur droit de l’écran.
 
        ![](../media/Lab-05/image060.png)
 
-15.	Une fois ce visuel placé dans le tableau de bord, il est possible que le visuel n’affiche que la dernière heure de résultats. Modifiez le tableau de bord pour afficher l’**Intervalle de temps 24 dernières heures**.
+15. Une fois ce visuel placé dans le tableau de bord, il est possible que le visuel n’affiche que la dernière heure de résultats. Modifiez le tableau de bord pour afficher l’**Intervalle de temps 24 dernières heures**.
 
       ![](../media/Lab-05/image062.png)
  
-16.	Actualisez le visuel et notez que les résultats changent légèrement pour refléter les données reçues depuis la dernière exécution de la requête.
+16. Actualisez le visuel et notez que les résultats changent légèrement pour refléter les données reçues depuis la dernière exécution de la requête.
 
       ![](../media/Lab-05/image065.png)
 
@@ -214,9 +214,9 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
    ![](../media/Lab-05/image084.png)
 
-10.	Cliquez sur le bouton **+ Ajouter un visuel**.
+10. Cliquez sur le bouton **+ Ajouter un visuel**.
 
-11.	Lorsque les paramètres du visuel s’affichent, modifiez les paramètres suivants pour créer un décompte des impressions :
+11. Lorsque les paramètres du visuel s’affichent, modifiez les paramètres suivants pour créer un décompte des impressions :
 
   - **Nom de la vignette** : Impressions
   - **Type de visuel** : Statistique
@@ -224,37 +224,37 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
     ![](../media/Lab-05/image087.png)
 
-12.	Cliquez sur **Appliquer les changements** après avoir configuré tous les paramètres de manière appropriée.
+12. Cliquez sur **Appliquer les changements** après avoir configuré tous les paramètres de manière appropriée.
 
     ![](../media/Lab-05/image090.png)
  
-13.	Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option
+13. Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option
 **Vignette dupliquée**.
 
      ![](../media/Lab-05/image093.png)
  
-14.	Cliquez sur l’**icône représentant un crayon** de la vignette dupliquée pour modifier les paramètres.
+14. Cliquez sur l’**icône représentant un crayon** de la vignette dupliquée pour modifier les paramètres.
 
      ![](../media/Lab-05/image096.png)
 
-15.	Redéfinissez les champs **Nom de la vignette** sur **Clicks** et **Colonne de valeurs** sur **clicks (long)**.
+15. Redéfinissez les champs **Nom de la vignette** sur **Clicks** et **Colonne de valeurs** sur **clicks (long)**.
 
      ![](../media/Lab-05/image099.png)
 
-16.	Appliquez les changements à ce visuel.
+16. Appliquez les changements à ce visuel.
 
-17.	Dupliquez l’une ou l’autre des nouvelles vignettes une fois de plus pour créer un dernier visuel statistique.
+17. Dupliquez l’une ou l’autre des nouvelles vignettes une fois de plus pour créer un dernier visuel statistique.
 
      ![](../media/Lab-05/image102.png)
  
-18.	Modifiez la nouvelle vignette pour redéfinir les champs **Nom de la vignette** sur **Click Through Rate** et **Colonne de valeurs** sur **CTR (long)**.
+18. Modifiez la nouvelle vignette pour redéfinir les champs **Nom de la vignette** sur **Click Through Rate** et **Colonne de valeurs** sur **CTR (long)**.
 
      ![](../media/Lab-05/image105.png)
 
-19.	Appliquez les changements.
+19. Appliquez les changements.
 
 
-20.	Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la
+20. Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la
 vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis glisser-déplacer le visuel où vous le souhaitez.
 
      ![](../media/Lab-05/image108.png)

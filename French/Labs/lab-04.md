@@ -136,39 +136,39 @@ compréhension de ce jeu de requêtes.
 
 9. Cliquez sur **Suivant**.
 
-10.	Vous devez maintenant configurer votre destination pour déterminer l’endroit où vous souhaitez que le pipeline envoie les données. Recherchez le **Hub de données OneLake**, puis sélectionner votre base de données KQL **eh_Fabrikam**.
+10. Vous devez maintenant configurer votre destination pour déterminer l’endroit où vous souhaitez que le pipeline envoie les données. Recherchez le **Hub de données OneLake**, puis sélectionner votre base de données KQL **eh_Fabrikam**.
 
     ![](../media/Lab-04/image031.png)
 
-11.	Si vous êtes invité à vous connecter, utilisez simplement les informations d’identification qui sont fournies sur la page Détails de l’environnement.
+11. Si vous êtes invité à vous connecter, utilisez simplement les informations d’identification qui sont fournies sur la page Détails de l’environnement.
 
-12.	Cliquez sur la table **SalesLT.Address** si elle n’est pas encore sélectionnée, puis sur la liste déroulante en regard de l’option **Table**. Sélectionnez l’option de table **Address**.
+12. Cliquez sur la table **SalesLT.Address** si elle n’est pas encore sélectionnée, puis sur la liste déroulante en regard de l’option **Table**. Sélectionnez l’option de table **Address**.
 
      ![](../media/Lab-04/image033.jpg)
  
-13.	Une vue d’ensemble des **Mappages de colonnes** s’affiche alors. Ainsi, vous pouvez visualiser tous les champs provenant de la base de données source que vous envoyez à votre base de données KQL. Vous pouvez supprimer des champs spécifiques si vous ne souhaitez pas qu’ils soient mappés à partir de la source.
+13. Une vue d’ensemble des **Mappages de colonnes** s’affiche alors. Ainsi, vous pouvez visualiser tous les champs provenant de la base de données source que vous envoyez à votre base de données KQL. Vous pouvez supprimer des champs spécifiques si vous ne souhaitez pas qu’ils soient mappés à partir de la source.
 
      ![](../media/Lab-04/image036.png)
 
-14.	Procédez de même qu’aux étapes 11 et 12 pour les tables **SalesLT.Customer, SaleLT.SalesOrderDetail et SalesLT.SalesOrderHeader**. Aucun mappage de colonnes ne doit être effectué, donc il suffit de mettre en correspondance les noms de table. Après avoir correctement mappé toutes les tables, cliquez sur Suivant.
+14. Procédez de même qu’aux étapes 11 et 12 pour les tables **SalesLT.Customer, SaleLT.SalesOrderDetail et SalesLT.SalesOrderHeader**. Aucun mappage de colonnes ne doit être effectué, donc il suffit de mettre en correspondance les noms de table. Après avoir correctement mappé toutes les tables, cliquez sur Suivant.
 
-15.	La dernière page utilisant l’Assistant Copier des données est une page de vue d’ensemble
+15. La dernière page utilisant l’Assistant Copier des données est une page de vue d’ensemble
 permettant de vérifier tous les paramètres que vous avez sélectionnés. Assurez-vous que vos nombres de tables source et de destination sont identiques.
 
     ![](../media/Lab-04/image038.jpg)
 
-16.	Cliquez sur **Enregistrer + Exécuter**.
+16. Cliquez sur **Enregistrer + Exécuter**.
 
-17.	Quelques instants après, une fenêtre volante comprenant un **réglage** s’affiche. L’Assistant Copier des données que nous venons de terminer a créé une liste des tables à itérer et à charger dans les tables KQL. Cliquez simplement sur le bouton **OK** pour exécuter le pipeline tel qu’il est actuellement configuré à partir de l’Assistant Copier des données.
+17. Quelques instants après, une fenêtre volante comprenant un **réglage** s’affiche. L’Assistant Copier des données que nous venons de terminer a créé une liste des tables à itérer et à charger dans les tables KQL. Cliquez simplement sur le bouton **OK** pour exécuter le pipeline tel qu’il est actuellement configuré à partir de l’Assistant Copier des données.
 
      ![](../media/Lab-04/image041.png)
  
-18.	Laissez le pipeline s’exécuter et au bout d’environ une minute, le déplacement des données devrait être terminé. Une fois que vous avez constaté que toutes les activités du pipeline
+18. Laissez le pipeline s’exécuter et au bout d’environ une minute, le déplacement des données devrait être terminé. Une fois que vous avez constaté que toutes les activités du pipeline
 affichent le statut **Opération réussie**, vous avez transféré les données.
 
       ![](../media/Lab-04/image044.png)
 
-19.	Vérifions l’une de nos tables et les données. Revenez au jeu de requêtes KQL que nous avons utilisé, appelé **Create Tables** et assurez-vous que vous êtes dans l’onglet **Bronze Layer**, puis exécutez le script suivant
+19. Vérifions l’une de nos tables et les données. Revenez au jeu de requêtes KQL que nous avons utilisé, appelé **Create Tables** et assurez-vous que vous êtes dans l’onglet **Bronze Layer**, puis exécutez le script suivant
 
 ```
 //Query the Bronze layer Customer table 
@@ -179,7 +179,7 @@ Customer
 
  ![](../media/Lab-04/image046.png)
 
-20.	Des données similaires à celles de l’image ci-dessous devraient s’afficher, mais elles peuvent ne pas être exactes
+20. Des données similaires à celles de l’image ci-dessous devraient s’afficher, mais elles peuvent ne pas être exactes
 
     ![](../media/Lab-04/image048.png)
  
@@ -262,13 +262,13 @@ Customer
 
       ![](../media/Lab-04/step-9.png)
  
-10.	Encore une fois, attendez environ une minute que le pipeline termine son chargement, puis lorsque tous les éléments de votre menu Sortie indiquent **Opération réussie**, passez à l’étape suivante.
+10. Encore une fois, attendez environ une minute que le pipeline termine son chargement, puis lorsque tous les éléments de votre menu Sortie indiquent **Opération réussie**, passez à l’étape suivante.
 
        ![](../media/Lab-04/image069.png)
 
-11.	Une fois le pipeline de données terminé, validez les résultats dans la base de données KQL. Revenez au jeu de données KQL **Create Tables** et accédez à l’onglet **Silver Layer**.
+11. Une fois le pipeline de données terminé, validez les résultats dans la base de données KQL. Revenez au jeu de données KQL **Create Tables** et accédez à l’onglet **Silver Layer**.
 
-12.	Sur une nouvelle ligne, interrogez la table SilverAddress en écrivant la requête suivante et en exécutant le code :
+12. Sur une nouvelle ligne, interrogez la table SilverAddress en écrivant la requête suivante et en exécutant le code :
 
     ```
     SilverAddress
@@ -277,7 +277,7 @@ Customer
 
     ![](../media/Lab-04/image072.png)
 
-13.	Notez dans vos résultats que votre table **SilverAddress** comporte une colonne supplémentaire, à savoir **IngestionDate**, qui n’est pas physiquement présente dans la table **Address**.
+13. Notez dans vos résultats que votre table **SilverAddress** comporte une colonne supplémentaire, à savoir **IngestionDate**, qui n’est pas physiquement présente dans la table **Address**.
 
     ![](../media/Lab-04/image075.png)
 
@@ -365,7 +365,7 @@ Impressions
 
     ![](../media/Lab-04/image090.png)
 
-10.	Vous venez de créer avec succès une infrastructure en médaillon dans une base de données KQL. Bien que ces données soient facilement utilisables, vous aurez des utilisateurs qui n’ont jamais utilisé Kusto et qui préféreront accéder aux données de ces tables par un autre moyen. Dans la tâche suivante, vous allez créer une lakehouse. Ensuite, à l’aide de la fonctionnalité Disponibilité de OneLake, que nous avons activée dans le labo 01, rendez certaines tables de notre base de données KQL accessibles au moyen de la lakehouse grâce à des raccourcis
+10. Vous venez de créer avec succès une infrastructure en médaillon dans une base de données KQL. Bien que ces données soient facilement utilisables, vous aurez des utilisateurs qui n’ont jamais utilisé Kusto et qui préféreront accéder aux données de ces tables par un autre moyen. Dans la tâche suivante, vous allez créer une lakehouse. Ensuite, à l’aide de la fonctionnalité Disponibilité de OneLake, que nous avons activée dans le labo 01, rendez certaines tables de notre base de données KQL accessibles au moyen de la lakehouse grâce à des raccourcis
  
 # Lakehouse Fabric et Disponibilité OneLake
 
@@ -423,7 +423,7 @@ Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’
 
     ![](../media/Lab-04/image109.png)
  
-11.	Vous pouvez voir qu’un échantillon des enregistrements de cette table s’affiche dans votre interface utilisateur.
+11. Vous pouvez voir qu’un échantillon des enregistrements de cette table s’affiche dans votre interface utilisateur.
 
     > **Remarque** : l’affichage des données dans OneLake peut prendre quelques heures (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)
 

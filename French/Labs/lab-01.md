@@ -1,6 +1,8 @@
-# Sommaire
+# Microsoft Fabric Real-Time Intelligence in a Day Labo 1
 
 ![](../media/Lab-01/lab-01.png)
+
+# Sommaire
 
 - Structure du document	
 - Scénario/Énoncé du problème	
@@ -76,7 +78,7 @@ Aujourd’hui, vous allez découvrir diverses fonctionnalités clés de Microsof
 
     ![](../media/Lab-01/image010.jpg)
  
-Pour utiliser des éléments Fabric, vous avez besoin d’une licence d’essai et d’un espace de travail doté d’une licence Fabric. En avant pour la configuration.
+    Pour utiliser des éléments Fabric, vous avez besoin d’une licence d’essai et d’un espace de travail doté d’une licence Fabric. En avant pour la configuration.
 
 6. Dans le coin supérieur droit de l’écran, cliquez sur l’**icône utilisateur**.
 
@@ -106,17 +108,17 @@ Pour utiliser des éléments Fabric, vous avez besoin d’une licence d’essai 
 
 2. Vous êtes alors redirigé vers la **page d’accueil Real-Time Intelligence**. Vous verrez alors les catégories **Modèles Flux de tâches, Éléments à créer recommandés** et **En savoir plus sur Real-Time Intelligence**. Dans la catégorie **Recommandés** notez les éléments suivants:
 
-a. **Eventhouse:** permet de créer un espace de travail d’une ou plusieurs bases de données KQL, qui peuvent être partagées entre les projets. Crée également une base de données KQL dans l’Eventhouse.
+    a. **Eventhouse:** permet de créer un espace de travail d’une ou plusieurs bases de données KQL, qui peuvent être partagées entre les projets. Crée également une base de données KQL dans l’Eventhouse.
 
-b. **Jeu de requêtes KQL:** permet d’exécuter des requêtes sur les données afin de produire des tables et visuels qui peuvent être partagés.
+    b. **Jeu de requêtes KQL:** permet d’exécuter des requêtes sur les données afin de produire des tables et visuels qui peuvent être partagés.
 
-c. **Tableau de bord en temps réel:** collection de vignettes, éventuellement organisées en pages, où chaque vignette est associée à une requête sous-jacente et à une représentation visuelle.
- 
-d. **Eventstream:** permet de capturer, de transformer et d’acheminer un flux d’événements en temps réel.
+    c. **Tableau de bord en temps réel:** collection de vignettes, éventuellement organisées en pages, où chaque vignette est associée à une requête sous-jacente et à une représentation visuelle.
+    
+    d. **Eventstream:** permet de capturer, de transformer et d’acheminer un flux d’événements en temps réel.
 
-e. **Reflex:** permet d’entreprendre automatiquement des actions lorsque des modèles ou conditions sont détecté(e)s dans des données changeantes.
+    e. **Reflex:** permet d’entreprendre automatiquement des actions lorsque des modèles ou conditions sont détecté(e)s dans des données changeantes.
 
- ![](../media/Lab-01/image022.jpg)
+    ![](../media/Lab-01/image022.jpg)
 
 ## Tâche 3 : hub en temps réel
 
@@ -132,16 +134,16 @@ e. **Reflex:** permet d’entreprendre automatiquement des actions lorsque des m
 
 4. Dans le hub en temps réel, vous avez accès à trois types différents d’intégrations de données:
 
-- **Tous les flux de données:** pour vos Eventstreams et bases de données KQL en cours d’exécution, toutes les sorties de flux d’Eventstreams et les tables des bases de données KQL s’affichent automatiquement dans le hub en temps réel.
+    - **Tous les flux de données:** pour vos Eventstreams et bases de données KQL en cours d’exécution, toutes les sorties de flux d’Eventstreams et les tables des bases de données KQL s’affichent automatiquement dans le hub en temps réel.
 
-- **Sources de diffusion de contenu:** répertorie toutes les ressources de diffusion en continu des services Microsoft. Qu’il s’agisse d’Azure Event Hubs, d’Azure IoT Hub ou d’autres
-services, vous pouvez ingérer facilement des données dans le hub en temps réel.
+    - **Sources de diffusion de contenu:** répertorie toutes les ressources de diffusion en continu des services Microsoft. Qu’il s’agisse d’Azure Event Hubs, d’Azure IoT Hub ou d’autres
+    services, vous pouvez ingérer facilement des données dans le hub en temps réel.
 
-- **Événements Fabric:** les événements générés au moyen d’artefacts Fabric et de sources externes sont mis à disposition dans Fabric pour prendre en charge des scénarios basés sur des événements tels que l’envoi d’alertes en temps réel et le déclenchement d’actions en aval. Vous pouvez surveiller et réagir à des événements, notamment des événements d’élément d’espace de travail Fabric et des événements Stockage Blob Azure.
+    - **Événements Fabric:** les événements générés au moyen d’artefacts Fabric et de sources externes sont mis à disposition dans Fabric pour prendre en charge des scénarios basés sur des événements tels que l’envoi d’alertes en temps réel et le déclenchement d’actions en aval. Vous pouvez surveiller et réagir à des événements, notamment des événements d’élément d’espace de travail Fabric et des événements Stockage Blob Azure.
 
-- **Événements Azure:** cette liste répertorie les événements système générés dans Azure auxquels vous pouvez accéder. un événement peut être surveillé et des règles peuvent être définies pour envoyer des notifications ou effectuer des actions lorsqu’elles sont activées.
+    - **Événements Azure:** cette liste répertorie les événements système générés dans Azure auxquels vous pouvez accéder. un événement peut être surveillé et des règles peuvent être définies pour envoyer des notifications ou effectuer des actions lorsqu’elles sont activées.
 
-   ![](../media/Lab-01/image028.png)
+      ![](../media/Lab-01/image028.png)
  
 5. Dans le coin supérieur droit du hub en temps réel, cliquez sur le bouton **+ Connecter la source de données**.
 
@@ -181,9 +183,9 @@ services, vous pouvez ingérer facilement des données dans le hub en temps rée
 
     ![](../media/Lab-01/image040.jpg)
 
->**Remarque** : si la boîte de dialogue Présentation des flux de tâches s’ouvre, cliquez sur OK.
+    >**Remarque** : si la boîte de dialogue Présentation des flux de tâches s’ouvre, cliquez sur OK.
 
-  ![](../media/Lab-01/image042.png)
+   ![](../media/Lab-01/image042.png)
  
 ## Tâche 5 : créer un Eventhouse
 
@@ -221,11 +223,11 @@ services, vous pouvez ingérer facilement des données dans le hub en temps rée
 
    ![](../media/Lab-01/image059.png)
  
-10.	Si vous voyez que l’option **Flux de tâches** occupe la majeure partie de l’espace, cliquez sur la double flèche pointant vers le haut, située à droite, pour la réduire
+10. Si vous voyez que l’option **Flux de tâches** occupe la majeure partie de l’espace, cliquez sur la double flèche pointant vers le haut, située à droite, pour la réduire
 
     ![](../media/Lab-01/image061.jpg)
  
-11.	Vous disposez maintenant des bases de la façon dont vous allez commencer à ingérer les données diffusées en continu dans OneLake. L’étape suivante consiste à créer un flux de données pouvant recevoir les données en mouvement.
+11. Vous disposez maintenant des bases de la façon dont vous allez commencer à ingérer les données diffusées en continu dans OneLake. L’étape suivante consiste à créer un flux de données pouvant recevoir les données en mouvement.
 
     ![](../media/Lab-01/image063.png)
 
