@@ -389,11 +389,11 @@ Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’
  
 2. Sélectionnez l’option **Microsoft OneLake** sous **Sources internes**.
 
-    ![](../media/Lab-04/image099.png)
+    ![](../media/Lab-04/image099-1.png)
 
 3. Dans le menu, sélectionnez la base de données KQL **eh_Fabrikam** pour importer les tables de cet espace de stockage dans la lakehouse sans dupliquer ni copier les données.
 
-     ![](../media/Lab-04/image101.png)
+     ![](../media/Lab-04/image101-1.png)
  
 4. Cliquez sur **Suivant** en bas du menu.
 
@@ -411,11 +411,11 @@ Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’
  
 8. Un dernier écran de validation s’affiche. Une fois satisfait de votre sélection, cliquez sur le bouton **Créer** en bas de l’écran.
 
-   ![](../media/Lab-04/image105.jpg)
+   ![](../media/Lab-04/image105-1.jpg)
  
 9. Vous voyez alors que toutes les tables que vous avez sélectionnées dans la base de données KQL s’affichent dans la lakehouse.
 
-    ![](../media/Lab-04/image107.png)
+    ![](../media/Lab-04/image107-1.png)
 
 10. Cliquez sur la table **Clicks**.
 
