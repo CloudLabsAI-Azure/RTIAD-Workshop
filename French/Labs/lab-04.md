@@ -40,10 +40,16 @@ d’utilisation dans l’analyse. Vous allez ensuite connecter les données de v
 
 1. Ouvrez l’**espace de travail Fabric** pour le cours, puis le jeu de requêtes KQL que vous avez créé dans le dernier labo, à savoir **Create tables**.
 
+    ![](../media/Lab-04/image003.png)
+
 2. Dans ce jeu de requêtes KQL, renommons l’onglet d’origine « eh_Fabrikam » que nous avons ici pour le remplacer par « Create External Tables », car cela facilitera l’organisation et la
 compréhension de ce jeu de requêtes.
+
+    ![](../media/Lab-04/image005.png)
  
 3. Créons maintenant un onglet en cliquant sur l’icône « + » et nommons-le « Bronze Layer ».
+
+    ![](../media/Lab-04/image007.png)
 
 4. Dans ce nouvel onglet, collez et mettez en surbrillance le code suivant, puis sélectionnez « Exécuter » pour créer quatre tables qui serviront de couche Bronze de l’infrastructure en médaillon.
 
@@ -57,6 +63,8 @@ compréhension de ce jeu de requêtes.
 .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
 ```
 
+![](../media/Lab-04/image010.png)
+
 5. Une fois ce code exécuté, vous devriez immédiatement voir quatre tables créées dans votre Explorateur d’objets de base de données :
 
     - Address
@@ -64,7 +72,11 @@ compréhension de ce jeu de requêtes.
     - SalesOrderDetail
     - SalesOrderHeader
 
+        ![](../media/Lab-04/image012.png)
+
 6. Développez la **table Address** en cliquant sur l’icône « > » en regard du nom.
+
+     ![](../media/Lab-04/image014.png)
 
 7. Le schéma (noms de colonne et types de données) de la table s’affiche alors. Un élément qu’il serait utile d’ajouter à cette table sur la base de données KQL serait une colonne masquée pour le temps d’ingestion qui sera utilisée plus tard dans l’architecture en médaillon. Ajoutons-la maintenant.Copiez-collez le script ci-dessous pour modifier les tables que vous venez de créer en ajoutant une colonne de temps d’ingestion :
 
@@ -76,6 +88,7 @@ compréhension de ce jeu de requêtes.
 .alter table SalesOrderHeader policy ingestiontime true
 .alter table SalesOrderDetail policy ingestiontime true
 ```
+ ![](../media/Lab-04/image017.jpg)
 
 8. Les quatre nouvelles tables sont des tables vides avec leur schéma défini. À présent, vous avez besoin d’un moyen de charger correctement ces tables. Revenez à votre espace de travail **RTI_username**.
 
@@ -83,14 +96,22 @@ compréhension de ce jeu de requêtes.
 
 1. Depuis l’espace de travail, sélectionnez l’option **« + Nouvel élément »** pour afficher le volet de sélection. Ensuite, recherchez et sélectionnez l’option nommée **Pipeline de données**.
 
+   ![](../media/Lab-04/image019.jpg)
+
 2. Nommez le nouveau pipeline **Load KQL Database Bronze Layer**.
+
+    ![](../media/Lab-04/image021.png)
 
 3. Sélectionnez **Créer**.
 
 4. Lorsque le menu du pipeline s’affiche, cliquez sur la vignette **Assistant Copier des données**.
 
+    ![](../media/Lab-04/image024.jpg)
+
 5. Pour commencer, vous devez créer une connexion à la base de données source à partir de laquelle vous souhaitez extraire les données. Cliquez sur le bouton **Base de données Azure SQL** sous
 « Nouvelles sources ». Si vous ne le voyez pas immédiatement, vous pouvez filtrer les sources à l’aide de la barre de recherche en haut. Nous allons nous connecter à la même base de données Azure SQL externe que celle du labo précédent, mais à des tables différentes.
+
+     ![](../media/Lab-04/image026.jpg)
  
 6. Vous devez saisir les détails de connexion de la base de données. Continuez à l’aide des informations dans votre environnement ou comme ci-dessous.
 
@@ -107,29 +128,43 @@ compréhension de ce jeu de requêtes.
     - SalesLT.Customer
     - SalesLT.SalesOrderDetail
     - SalesLT.SalesOrderHeader
+
+        ![](../media/Lab-04/image029.png)
  
 
 9. Cliquez sur **Suivant**.
 
 10.	Vous devez maintenant configurer votre destination pour déterminer l’endroit où vous souhaitez que le pipeline envoie les données. Recherchez le **Hub de données OneLake**, puis sélectionner votre base de données KQL **eh_Fabrikam**.
 
+    ![](../media/Lab-04/image031.png)
+
 11.	Si vous êtes invité à vous connecter, utilisez simplement les informations d’identification qui sont fournies sur la page Détails de l’environnement.
 
 12.	Cliquez sur la table **SalesLT.Address** si elle n’est pas encore sélectionnée, puis sur la liste déroulante en regard de l’option **Table**. Sélectionnez l’option de table **Address**.
+
+     ![](../media/Lab-04/image033.jpg)
  
 13.	Une vue d’ensemble des **Mappages de colonnes** s’affiche alors. Ainsi, vous pouvez visualiser tous les champs provenant de la base de données source que vous envoyez à votre base de données KQL. Vous pouvez supprimer des champs spécifiques si vous ne souhaitez pas qu’ils soient mappés à partir de la source.
+
+     ![](../media/Lab-04/image036.png)
 
 14.	Procédez de même qu’aux étapes 11 et 12 pour les tables **SalesLT.Customer, SaleLT.SalesOrderDetail et SalesLT.SalesOrderHeader**. Aucun mappage de colonnes ne doit être effectué, donc il suffit de mettre en correspondance les noms de table. Après avoir correctement mappé toutes les tables, cliquez sur Suivant.
 
 15.	La dernière page utilisant l’Assistant Copier des données est une page de vue d’ensemble
 permettant de vérifier tous les paramètres que vous avez sélectionnés. Assurez-vous que vos nombres de tables source et de destination sont identiques.
 
+    ![](../media/Lab-04/image038.jpg)
+
 16.	Cliquez sur **Enregistrer + Exécuter**.
 
 17.	Quelques instants après, une fenêtre volante comprenant un **réglage** s’affiche. L’Assistant Copier des données que nous venons de terminer a créé une liste des tables à itérer et à charger dans les tables KQL. Cliquez simplement sur le bouton **OK** pour exécuter le pipeline tel qu’il est actuellement configuré à partir de l’Assistant Copier des données.
+
+     ![](../media/Lab-04/image041.png)
  
 18.	Laissez le pipeline s’exécuter et au bout d’environ une minute, le déplacement des données devrait être terminé. Une fois que vous avez constaté que toutes les activités du pipeline
 affichent le statut **Opération réussie**, vous avez transféré les données.
+
+      ![](../media/Lab-04/image044.png)
 
 19.	Vérifions l’une de nos tables et les données. Revenez au jeu de requêtes KQL que nous avons utilisé, appelé **Create Tables** et assurez-vous que vous êtes dans l’onglet **Bronze Layer**, puis exécutez le script suivant
 
@@ -140,11 +175,17 @@ Customer
 | take 100
 ```
 
+ ![](../media/Lab-04/image046.png)
+
 20.	Des données similaires à celles de l’image ci-dessous devraient s’afficher, mais elles peuvent ne pas être exactes
+
+    ![](../media/Lab-04/image048.png)
  
 ## Tâche 3 : transformer des tables en couche Argent
 
 1. Maintenant que les tables Bronze sont chargées, nous allons créer un onglet dans notre jeu de requêtes KQL appelé « Silver Layer ».
+
+    ![](../media/Lab-04/image050.png)
  
 2. Exécutez le script KQL suivant dans l’onglet « Silver Layer » pour créer quatre tables qui serviront de couche Argent de l’infrastructure en médaillon :
 
@@ -163,8 +204,12 @@ Customer
 ```
 
 3. Exécutez ce script en mettant en surbrillance le nouveau script et en cliquant sur **Exécuter**.
+
+   ![](../media/Lab-04/image053.png)
  
 4. Une fois ce script exécuté, quatre nouvelles tables sont ajoutées au menu Tables de base de données KQL.
+
+    ![](../media/Lab-04/image056.png)
 
 5. Maintenant que les tables ont été créées, vous devez y charger des données. Vous allez créer une stratégie de mise à jour pour transformer les données et les déplacer lorsqu’elles sont ingérées dans la couche Bronze. Copiez-collez le script suivant, puis cliquez sur **Exécuter** pour exécuter le code.
 
@@ -200,23 +245,35 @@ Customer
 ```
 
 6. Bien que vous verrez des résultats de l’exécution de la requête, la meilleure preuve que votre requête est terminée est qu’un nouveau dossier extensible s’affiche dans votre volet Objets de base de données. Cliquez sur l’icône > en regard du **dossier Fonctions**. Ces fonctions permettent aux données chargées dans la couche Bronze de la base de données KQL d’être ensuite mises en miroir, transformées et chargées dans la couche Argent.
+
+    ![](../media/Lab-04/image058.png)
  
 7. Simulons maintenant ce processus : vous allez réexécuter le pipeline que vous avez créé précédemment dans ce labo. Revenez maintenant au pipeline **Load KQL Database**.
 
+    ![](../media/Lab-04/image061.png)
+
 8. Cliquez simplement sur le bouton **Exécuter** dans le **ruban Accueil** pour réexécuter le pipeline et charger les données dans la couche Bronze où elles sont ensuite transformées par les fonctions que vous avez créées et chargées dans les tables Argent.
+
+     ![](../media/Lab-04/image064.png)
  
 9. Cliquez sur **OK** dans ce menu volant pour exécuter le pipeline avec les mêmes réglages que précédemment.
+
+      ![](../media/Lab-04/image069.png)
  
 10.	Encore une fois, attendez environ une minute que le pipeline termine son chargement, puis lorsque tous les éléments de votre menu Sortie indiquent **Opération réussie**, passez à l’étape suivante.
+
+       ![](../media/Lab-04/image072.png)
 
 11.	Une fois le pipeline de données terminé, validez les résultats dans la base de données KQL. Revenez au jeu de données KQL **Create Tables** et accédez à l’onglet **Silver Layer**.
 
 12.	Sur une nouvelle ligne, interrogez la table SilverAddress en écrivant la requête suivante et en exécutant le code :
 
-```
-SilverAddress
-| take 100
-```
+    ```
+    SilverAddress
+    | take 100
+    ```
+
+    ![](../media/Lab-04/image075.png)
 
 13.	Notez dans vos résultats que votre table **SilverAddress** comporte une colonne supplémentaire, à savoir **IngestionDate**, qui n’est pas physiquement présente dans la table **Address**.
 
@@ -226,30 +283,39 @@ Maintenant que vous disposez de votre couche de données transformée dans la co
 
 1. Si ce n’est pas déjà fait, ouvrez votre jeu de requêtes KQL **Create Tables** et créez un onglet appelé « Gold Layer ».
 
+    ![](../media/Lab-04/image077.jpg)
+
 2. Collez le code suivant dans le jeu de requêtes pour créer une vue matérialisée :
 
-```
-//GOLD LAYER
-// use materialized views to view the latest changes in the SilverAddress table
-.create materialized-view with (backfill=true) GoldAddress on table SilverAddress
-{
-SilverAddress
-| summarize arg_max(IngestionDate, *) by AddressID
-}
-```
+    ```
+    //GOLD LAYER
+    // use materialized views to view the latest changes in the SilverAddress table
+    .create materialized-view with (backfill=true) GoldAddress on table SilverAddress
+    {
+    SilverAddress
+    | summarize arg_max(IngestionDate, *) by AddressID
+    }
+    ```
 
 3. Une fois le code collé, mettez le code en surbrillance et exécutez-le en cliquant sur le bouton **Exécuter**.
 
+   ![](../media/Lab-04/image080.jpg)
+
 4. Vous voyez alors une sortie dans les résultats de votre requête détaillant des informations sur la création de cette vue matérialisée.
+
+    ![](../media/Lab-04/image083.jpg)
  
 5. Vous allez également voir qu’un autre dossier a été créé dans l’Explorateur d’objets de la base de données KQL. Développez le dossier **Materialized View** où se trouve votre vue **GoldAddress**.
+
+    ![](../media/Lab-04/image085.png)
  
 6. Dans votre fenêtre de requête, exécutez le code suivant pour interroger la nouvelle vue matérialisée :
 
-```
-GoldAddress
-| take 1000
-```
+    ```
+    GoldAddress
+    | take 1000
+    ```
+    ![](../media/Lab-04/image088.png)
 
 7. Cette requête renvoie la ligne avec la dernière valeur **IngestionDate** pour chaque valeur **AddressID** unique dans la table SilverAddress.
 
@@ -293,6 +359,8 @@ Impressions
 ```
 9. Vous devriez maintenant disposer de six vues matérialisées dans votre base de données KQL.
 
+    ![](../media/Lab-04/image090.png)
+
 10.	Vous venez de créer avec succès une infrastructure en médaillon dans une base de données KQL. Bien que ces données soient facilement utilisables, vous aurez des utilisateurs qui n’ont jamais utilisé Kusto et qui préféreront accéder aux données de ces tables par un autre moyen. Dans la tâche suivante, vous allez créer une lakehouse. Ensuite, à l’aide de la fonctionnalité Disponibilité de OneLake, que nous avons activée dans le labo 01, rendez certaines tables de notre base de données KQL accessibles au moyen de la lakehouse grâce à des raccourcis
  
 # Lakehouse Fabric et Disponibilité OneLake
@@ -303,17 +371,27 @@ Impressions
 
 2. Cliquez sur l’option **+ Nouvel élément** et sélectionnez **Lakehouse** dans la liste des options disponibles.
 
+    ![](../media/Lab-04/image092.jpg)
+
 3. Nommez la lakehouse **lh_Fabrikam**, puis cliquez sur **Créer**. N’activez pas la fonctionnalité d’évaluation des schémas Lakehouse
+
+     ![](../media/Lab-04/image094.png)
 
 ## Tâche 6 : raccourci vers les tables de base de données KQL
 
 Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’importer des données diffusées en continu dans la lakehouse elle-même. Une option susmentionnée dans le cours consiste à charger des données directement dans la lakehouse à partir de l’Event Hub au lieu de la base de données KQL à l’aide d’un Eventstream. Comme vous avez déjà décidé que les bases de données KQL permettaient de répondre à des objectifs et besoins spécifiques, vous ne souhaitez pas copier à nouveau ces données. Importons plutôt les données de la base de données KQL dont nous disposons déjà à l’aide d’un **raccourci**, afin que les utilisateurs plus familiarisés avec cette expérience puissent avoir accès aux données que nous utilisons dans la base de données KQL
 
 1. Dans le menu, cliquez sur la vignette **Nouveau raccourci**.
+
+   ![](../media/Lab-04/image096.jpg)
  
 2. Sélectionnez l’option **Microsoft OneLake** sous **Sources internes**.
 
+    ![](../media/Lab-04/image099.png)
+
 3. Dans le menu, sélectionnez la base de données KQL **eh_Fabrikam** pour importer les tables de cet espace de stockage dans la lakehouse sans dupliquer ni copier les données.
+
+     ![](../media/Lab-04/image101.png)
  
 4. Cliquez sur **Suivant** en bas du menu.
 
@@ -323,15 +401,23 @@ Dans l’interface utilisateur Lakehouse, plusieurs options vous permettent d’
     - Impressions
     - InternetSales
 
+    ![](../media/Lab-04/image103.png)
+
 6. Ces tables peuvent être très utiles à tous les utilisateurs susceptibles d’exploiter des notebooks dans Fabric. Ces données peuvent être utilisées dans le cadre d’expériences de science des données, pour effectuer l’apprentissage d’un modèle qui prédit le lien susceptible d’intéresser les utilisateurs.
 
 7. Cliquez sur **Suivant**.
  
 8. Un dernier écran de validation s’affiche. Une fois satisfait de votre sélection, cliquez sur le bouton **Créer** en bas de l’écran.
+
+   ![](../media/Lab-04/image105.jpg)
  
 9. Vous voyez alors que toutes les tables que vous avez sélectionnées dans la base de données KQL s’affichent dans la lakehouse.
 
+    ![](../media/Lab-04/image107.png)
+
 10. Cliquez sur la table **Clicks**.
+
+    ![](../media/Lab-04/image109.png)
  
 11.	Vous pouvez voir qu’un échantillon des enregistrements de cette table s’affiche dans votre interface utilisateur.
 
@@ -346,6 +432,9 @@ Après avoir créé l’infrastructure en médaillon, les utilisateurs ont lié 
 # Références
 
 Fabric Real-Time Intelligence in a Day (RTIIAD) vous présente certaines des fonctions clés de Microsoft Fabric. Dans le menu du service, la section Aide (?) comporte des liens vers d’excellentes ressources.
+
+
+![](../media/Lab-04/image112.png)
  
 Voici quelques autres ressources qui vous aideront lors de vos prochaines étapes avec Microsoft Fabric :
 
