@@ -45,6 +45,7 @@ Ao final deste laboratório, você terá aprendido a:
     ![](../media/lab-06/image007.png)
 
 4. Um novo campo será exibido para você inserir um **Valor**, modifique-o para **20**.
+
     ![](../media/lab-06/image009.png)
 
 5. Você tem três ações possíveis atualmente disponíveis para o tipo de alerta que deseja receber assim que o item Reflex do Data Activator reconhecer que sua condição foi atendida. Escolha

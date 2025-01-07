@@ -51,15 +51,15 @@ Ao final deste laboratório, você terá aprendido a:
 
 7. Na página de detalhes do ambiente, copie e cole todas as configurações de conexão necessárias nos campos apropriados.
 
-    Nome de usuário: **rtiadhub{username}**
+   - Nome de usuário: **rtiadhub{username}**
 
-    Hub de Eventos: **rta-iad-clicks**
+   - Hub de Eventos: **rta-iad-clicks**
 
-    Nome da Chave de Acesso Compartilhada: **rti-reader**
+   - Nome da Chave de Acesso Compartilhada: **rti-reader**
 
-    Senha: **Fornecido por Detalhes do Ambiente**
+   - Senha: **Fornecido por Detalhes do Ambiente**
 
-    ![](../media/lab-03/image017.png)
+     ![](../media/lab-03/image017.png)
  
 8. Depois que todas as propriedades forem preenchidas, clique em **Conectar**.
 
@@ -150,7 +150,7 @@ Além dos eventos de impressão e clique que são registrados, há detalhes sobr
     - **Selecionar um campo para filtrar** - eventType
     - **Manter eventos quando o valor** for igual a CLICK **(Importante! Esse é um campo que diferencia maiúsculas de minúsculas, garanta a entrada em letras maiúsculas para este exemplo)**
 
-    ![](../media/lab-03/image058.png)
+      ![](../media/lab-03/image058.png)
  
 5. Escolha a opção **Salvar** para manter as alterações.
 
@@ -175,7 +175,7 @@ Além dos eventos de impressão e clique que são registrados, há detalhes sobr
     - **Selecionar um campo para filtrar** - eventType
     - **Manter eventos quando o valor** for igual a IMPRESSION **(Importante! Esse é um campo que diferencia maiúsculas de minúsculas, garanta a entrada em letras maiúsculas para este exemplo)**
  
-    ![](../media/lab-03/image071.png)
+      ![](../media/lab-03/image071.png)
 
 11. Escolha a opção **Salvar** para manter as alterações.
 
@@ -228,7 +228,7 @@ Além dos eventos de impressão e clique que são registrados, há detalhes sobr
     - **Banco de Dados KQL** - eh_Fabrikam
     - **KQL Destination table** - crie uma tabela chamada **Clicks**
  
-    ![](../media/lab-03/image094.png)
+      ![](../media/lab-03/image094.png)
 
 24. Clique em **Salvar** na parte inferior do submenu.
 
