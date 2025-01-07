@@ -25,6 +25,8 @@
 ## 任务 1：创建 Eventstream
 1. 打开今天在本课程中一直使用的 **Fabric 工作区**。
 
+   ![](../../media/1.png)
+
 2.	还有与我们的电子商务商店相关的其他流式数据可供我们引入。但是，对于本 Eventstream，我们希望在将数据加载到 Eventhouse 之前对其进行转换。无需转到实时中心，我们可以直接从工作区中创建新的 Eventstream。从 + **新建项目**菜单中，创建新的 **Eventstream**。
  
 3.	将新的 Eventstream 命名为 **es_Fabrikam_ClickEvents**，选中**增强功能**选项，然后单击**创建**。
