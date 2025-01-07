@@ -252,15 +252,15 @@
 1.	返回到 **RTI_username** 工作区。
 2.	打开 **eh_Fabrikam** KQL 数据库。
 
-    ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image003.png)
 
 3.	随着 Eventstream 的运行，您现在应该在“KQL 数据库概述”页面上看到两个新表。在让 Eventstream 运行一段时间后，您将看到 KQL 数据库中的**前几个表**显示在“概述”页面上，并显示表中存储了多少数据。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 4.	单击 **Impressions** 表。此表每 24 小时接收约 150 万条记录。展现量比点击数多得多，因此就本课程而言，这将是您最大的表。 
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 ## 任务 5：为维度表创建 KQL 数据库快捷方式
 
@@ -268,19 +268,19 @@
 
 1.	在 **eh_Fabrikam** 数据库中，单击名为**新建相关项**的下拉菜单。然后，选择指示 KQL 查询集的选项。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 2.	将 KQL 查询集命名为 **Create Tables**，然后单击**创建**按钮。
 
-    ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image003.png)
 
 3.	OneLake 数据中心将打开，唯一可供选择的选项是 **eh_Fabrikam** KQL 数据库。选择此数据库，然后单击**连接**。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 4.	在新界面中，在查询窗口中单击一次，然后使用键盘快捷方式 **Ctrl + A** 突出显示所有文本。突出显示所有内容后，删除所有内容。
 
-   ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image003.png) 
 
 5.	在空白查询窗口中，输入以下 KQL 脚本。此脚本将创建与外部 Azure SQL 数据库的连接，并使其作为**快捷方式**在我们的 KQL 数据库中可用。快捷方式****在只读模式下附加，可以查看和运行查询以及引入到 KQL 数据库中的流式数据。
 
@@ -313,11 +313,11 @@
 
 6.	单击 **Run** 按钮以执行脚本。
 
-    ![](../media/lab-03/image003.png) 
+     ![](../media/lab-03/image003.png) 
 
 7.	在“数据库资源管理器”窗口中，您现在将看到一个名为 **Shortcuts** 的新文件夹，在该文件夹中，您应看到另外两个链接到此 KQL 数据库的表。这些表存在于 Azure SQL 数据库中，但通过您执行的脚本，您现在已将它们链接到此 KQL 数据库，以便与您的 InternetSales 和事件表联接。
 
-   ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image003.png) 
 
 8.	现在，您的数据库已具有维度质量，您可以回答问题，并为报表的使用者提供更多上下文，并在整个组织中根据这些表的见解为报表和查询的使用者提供更多上下文。运行以下 KQL 查询以查看其中一个值。
 
@@ -331,23 +331,23 @@
 
 9.	您现在将在查询结果中看到公司售出的每个单独产品的值。
 
-    ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image003.png)
 
 10.	突出显示您的查询后，单击工具栏中的按钮 **Create Power BI report**。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 11.	这使您有机会使用 KQL 数据库中的数据创建 Power BI 报表。等待片刻后，您可以随意探索此内容，但您现在还不需要根据此数据创建报表。当您准备好继续时，单击右上角的 **X 按钮**。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 12.	导航回 **eh_Fabrikam** KQL 数据库。
 
-    ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image003.png)
 
 13.	单击 **eh_Fabrikam** 导航窗格中的**快捷方式**选项。这将向您显示为此 KQL 数据库创建的所有快捷方式。需要注意的是，这些快捷方式被视为使用 Azure SQL 外部表语法的经典 Azure 数据资源管理器外部表，并且与 OneLake、ADLS 或 S3 快捷方式的构建方式不同，后者在 Fabric 中的 KQL 数据库中也受支持。
 
-   ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image003.png)
 
 # 总结
 在本实验室中，您创建了另一个数据流，但能够使用 Fabric 中 Eventstream 的用户界面转换该流。通过将数据加载到两个单独的表中，您可以跟踪电子商务系统中的所有点击数和展现量，以用于市场营销、广告和分析目的。您还使用 KQL 查询集外部表功能创建了外部 Azure SQL 数据库的快捷方式。现在，您有几个维度，可以更好地了解 KQL 数据库中的销售和点击数的背景信息。
