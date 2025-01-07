@@ -83,15 +83,15 @@ computer](../media/new-lab-01/image10.png)
 7. From your environment details page, copy and paste all the necessary
     connection settings into the appropriate fields.
 
-    Event Hub namespace: **rtiadhub{username}**
+    - Event Hub namespace: **rtiadhub{username}**
 
-    Event Hub: **rta-iad-clicks**
+    - Event Hub: **rta-iad-clicks**
 
-    Shared Access Key Name: **rti-reader**
+    - Shared Access Key Name: **rti-reader**
 
-    Shared Access Key: **Provided by Environment Details**
+    - Shared Access Key: **Provided by Environment Details**
 
-    ![A screenshot of a computer Description automatically
+        ![A screenshot of a computer Description automatically
 generated](../media/new-lab-01/image11.png)
 
 8. Once all the properties have been filled out click on **Connect**.
