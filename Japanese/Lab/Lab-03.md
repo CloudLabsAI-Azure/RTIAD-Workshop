@@ -1,3 +1,7 @@
+# Microsoft Fabric Real-time intelligence in a day 3
+
+![](../media/Lab-03/lab-3-1.png)
+
 # 目次 
 - ドキュメントの構造
 - 概要
@@ -31,7 +35,7 @@
 
 2. eコマース店舗に関連して、取り込むべき追加のストリーミング データがあります。ただし、この Eventstream については、データを Eventhouse に読み込む前に変換します。**リアルタイム ハブ**に移動しなくても、ワークスペースから新しい Eventstream を直接作成することができます。**+ 新しい項目**メニューから、新しい **Eventstream** を作成します。
  
-    <need to add>
+    ![](../media/Lab-03/lab-03-1.png)
 
 3. 新しい Eventstream に **es_Fabrikam_ClickEvents** という名前を付け、**強化された機能**オプションをオンにして、**作成**をクリックします。
 
