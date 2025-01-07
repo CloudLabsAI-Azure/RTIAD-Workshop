@@ -82,8 +82,10 @@ In questo lab si apprenderà quanto segue:
       ![](../media/Lab-03/image022.png)
  
 13. Esaminare i dati ricevuti. Esistono due tipi di eventi registrati dal sito Web di e-commerce: clic e impressioni.
-- **IMPRESSION**: un evento impressione viene registrato ogni volta che un annuncio pubblicitario o un'inserzione di prodotti viene visualizzata da un utente. Le impressioni misurano il numero di volte in cui un elemento (annuncio o prodotto) viene visualizzato, indipendentemente dal fatto che vi sia o meno un'interazione.
-- **CLICK**: un evento clic viene registrato quando un utente interagisce con un elemento facendo clic su di esso. Di solito ciò indica un livello di engagement più elevato rispetto a un'impressione.
+
+     - **IMPRESSION**: un evento impressione viene registrato ogni volta che un annuncio pubblicitario o un'inserzione di prodotti viene visualizzata da un utente. Le impressioni misurano il numero di volte in cui un elemento (annuncio o prodotto) viene visualizzato, indipendentemente dal fatto che vi sia o meno un'interazione.
+
+     - **CLICK**: un evento clic viene registrato quando un utente interagisce con un elemento facendo clic su di esso. Di solito ciò indica un livello di engagement più elevato rispetto a un'impressione.
 
 Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto oggetto del clic o dell'impressione, da quale dispositivo e browser è stata caricata la pagina Web, quale indirizzo IP ha effettuato l'accesso alla pagina e quanto tempo ha impiegato la pagina a caricarsi.
 
@@ -92,8 +94,6 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 1. A questo punto si trasformerà questo flusso di dati prima di inserirlo nel database KQL in un modo che possa essere facilmente compreso dagli analisti che desiderano ricavare informazioni da questi dati. All'interno del canvas dell'Eventstream, fare clic sul menu a discesa dell'oggetto **Trasforma eventi**.
  
      ![](../media/Lab-03/image024.png)
-
-
 
 2. Dall'elenco delle operazioni disponibili, selezionare l'opzione **Gestisci campi**.
 
@@ -142,15 +142,12 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
 1. Benché sia possibile caricare questo flusso di dati in un database KQL per l'analisi, potrebbe essere necessario un altro modo per consumare questi dati per differenziare gli eventi CLICK dagli eventi IMPRESSION. Aggiungere un'altra attività di trasformazione all'interfaccia utente passando il mouse sulla fine della trasformazione **ManageFields**
 
-
-    ![](../media/Lab-03/image044.png)
-     
+     ![](../media/Lab-03/image044.png)
 
 2. Scegliere la trasformazione **Filtro** dall'elenco delle operazioni disponibili.
 
      ![](../media/Lab-03/image046.png)
      
-
 3. Fare clic sull'**icona della matita** sulla nuova trasformazione, **Filter**.
 
      ![](../media/Lab-03/image048.png)
@@ -201,9 +198,7 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
 15. Fare clic sull'**icona della matita** per selezionare i campi da aggiungere/rimuovere nel flusso
 
-
      ![](../media/Lab-03/image066.png)
-     
 
 16. Rinominare l'operazione in "Manage_Clicks". Selezionare "Aggiungi tutti i campi", quindi rimuovere "eventType". Al termine, fare clic su **Salva**.
 
