@@ -45,7 +45,7 @@
  
 6.	创建**新建连接**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image014.jpg)
  
 7.	从环境详细信息页面中，复制所有必要的连接设置并将其粘贴到相应的字段中。
 
@@ -57,23 +57,23 @@
             
     共享访问密钥：**由环境详细信息提供**
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image017.png)
  
 8.	填写完所有属性后，单击**连接**。
 
 9.	在 Azure 事件中心数据源的配置中，您可能需要修改事件中心的**使用者组**，以确保获得对指向数据流的唯一访问点的访问权限。对于本研讨会，您可以保留“$Default”值，如下所示
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image019.jpg)
 
 10.	单击**下一步**。
 
 11.	在“查看和创建”窗口中，验证所有内容是否均已正确配置，然后单击添**加**。 
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image021.jpg)
 
 12.	配置流后，您将能够查看来自事件中心的数据的预览。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image024.png)
  
 13.	检查收到的数据。从电子商务网站记录两种类型的事件，即点击数和展现量。
 - **展现量** - 每次向用户显示广告或产品列表时，都会记录展现量事件。展现量是商品（广告或产品）查看次数的度量值，无论它是否进行交互。
@@ -85,23 +85,23 @@
 
 1.	现在，您将获取此数据流并在将其引入您的 KQL 数据库之前进行转换，以便希望从这些数据中获得见解的分析师能够轻松理解。在 Eventstream 画布中，单击**转换事件**对象的下拉菜单。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image026.jpg)
  
 2.	从可用操作的列表中，选择**管理字段**选项。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image029.png)
  
 3.	在显示的名为 **ManageFields** 的新图标上，单击**铅笔图标**以选择要从源添加到流的字段。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image031.png)
  
 4.	在显示的弹出窗格中，单击**添加所有字段**选项按钮。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image033.png)
 
 5.	从字段列表中，选择名为 **PartitionId** 的字段，然后单击将鼠标悬停在该字段上时显示的省略号 (…)
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image035.png)
 
 6.	选择**移除**该字段的选项。对于来自事件中心的此数据流，未使用分区，因此本列对我们没有帮助，我们要将其删除。
 
@@ -115,33 +115,33 @@
 
     您应如下图所示保留以下字段。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image038.png)
   
 8.	将鼠标悬停在 eventDate 字段上，当窗口右侧显示省略号 (…) 时，单击它。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image040.png)
  
 9.	选择**编辑**选项。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image043.png)
  
 10.	单击**更改类型**切换开关以修改此字段的数据类型。原始类型是 “String”，您需要将**转换的类型**修改为**DateTime**。完成后，单击**保存**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image046.png)
 
 ## 任务 3：拆分 Eventstream 并加载两个目标
 
 1.	虽然您可以将此数据流加载到 KQL 数据库以供分析，但您可能希望有另一种方法来使用此数据区分 CLICK 事件和 IMPRESSION 事件。通过将鼠标悬停在 **ManageFields** 转换的末尾，向用户界面添加另一个转换活动
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image049.png)
  
 2.	从可用操作列表中选择**筛选器**转换。 
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image051.jpg)
 
 3.	在新转换 **Filter** 上单击**铅笔图标**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image053.png)
 
 4.	在屏幕右侧显示的弹出窗口中，自定义筛选条件以反映使用以下设置仅返回 CLICK 值的方法。请务必注意，筛选器转换区分大小写
    
@@ -150,32 +150,32 @@
    - **保留事件(当值** - 等于 - CLICK（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
 
  
-      ![](../media/lab-03/image003.png)
+      ![](../media/lab-03/image055.png)
  
 5.	选择**保存**选项以保留您的更改。
 
 6.	再次单击**刷新**按钮以验证是否已从数据中筛选出 CLICK eventTypes。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image058.png)
  
 7.	这些可能是您唯一想发送到表的行，但另一种选择是改为创建两个单独的流，以将不同的信息传递到两个或多个表。从 Eventstream 的**主页**功能区中，单击**转换事件**下拉菜单，然后选择**筛选器**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image061.jpg)
  
 8.	您的画布上将显示名为 **Filter（名称可能不同**）的新对象。您需要将 **ManageFields** 流连接到新的筛选器转换。将一行从一个转换上的绿点拖动到另一个转换以建立该连接。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image064.png) 
 
 9.	单击 **Filter** 的**铅笔图标**以编辑其设置。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image066.jpg)
 
 10.	在屏幕右侧显示的弹出窗口中，自定义筛选条件以反映使用以下值仅返回 IMPRESSION 值的方法。请记住，筛选器转换区分大小写
        - **操作名称** - Impressions
        - **选择要筛选的字段** - eventType
        - **保留事件(当值** - 等于 - IMPRESSION（**重要提示！此字段区分大小写，在本示例中，全部输入大写字母**）
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image068.png)
  
 11.	选择**保存**选项以保留您的更改。
 
@@ -183,43 +183,43 @@
 
 13.	单击Clicks筛选器操作后面的 **+ 图标**。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image071.png)
 
 14.	在下拉菜单中，选择“管理字段”
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image074.png)
 
 15.	单击**铅笔图标**以选择要在流中添加/删除的字段
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image076.png)
 
 16.	将操作重命名为“Manage_Clicks”。还选择“添加所有字段”，然后删除“eventType”。完成后，单击**保存**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image078.png)
 
 17.	接下来，让我们添加另一个连接到“Impressions”筛选器的“管理字段”转换，如下所示
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image080.png)
 
 18.	单击**铅笔图标**以选择要在流中添加/删除的字段
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image082.jpg)
 
 19.	将操作重命名为“Manage_Impressions”。然后，选择“添加所有字段”，然后删除“eventType”和“referrer”。您的“管理字段”转换应如下所示：
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image084.png)
 
 20.	现在，您已清理每种类型事件的流的数据，需要将每个流加载到 KQL 数据库的新表中。单击 **Manage_Clicks** 管理字段操作后面的 **+ 图标**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image086.png)
  
 21.	在显示的下拉列表中，转到**目标**，然后选择 **Eventhouse**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image088.jpg)
  
 22.	针对 Eventhouse 目标单击**铅笔图标**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image090.png)
  
 23.	针对此目标，配置以下属性。
        - **目标名称** - dbo-Clicks
@@ -228,23 +228,23 @@
        - **KQL 数据库** - eh_Fabrikam
        - **目标表** - 创建名为 **Clicks** 的新表
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image092.png)
  
 24.	单击弹出窗口底部的**保存**。
 
 25.	对“Impressions”表执行相同操作，按如下所示配置以下信息。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image094.png) 
 
 26.	保存更改。
 
 27.	此 Eventstream 现在已准备好开始流式传输。单击**发布**以开始该流。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image096.png) 
 
 28.	随着 Eventstream 正在运行，您应看到 Eventstream 用户界面略有变化，这表示您正在从事件中心流式传输数据，从而转换和拆分该数据流，并将其加载到两个单独的 KQL 数据库表中。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image098.jpg) 
 
 # 向 KQL 数据库添加更多数据
 ## 任务 4：验证事件数据表
@@ -252,15 +252,15 @@
 1.	返回到 **RTI_username** 工作区。
 2.	打开 **eh_Fabrikam** KQL 数据库。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image100.jpg)
 
 3.	随着 Eventstream 的运行，您现在应该在“KQL 数据库概述”页面上看到两个新表。在让 Eventstream 运行一段时间后，您将看到 KQL 数据库中的**前几个表**显示在“概述”页面上，并显示表中存储了多少数据。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image102.png)
 
 4.	单击 **Impressions** 表。此表每 24 小时接收约 150 万条记录。展现量比点击数多得多，因此就本课程而言，这将是您最大的表。 
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image104.jpg)
 
 ## 任务 5：为维度表创建 KQL 数据库快捷方式
 
@@ -268,19 +268,19 @@
 
 1.	在 **eh_Fabrikam** 数据库中，单击名为**新建相关项**的下拉菜单。然后，选择指示 KQL 查询集的选项。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image106.jpg)
 
 2.	将 KQL 查询集命名为 **Create Tables**，然后单击**创建**按钮。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image108.jpg)
 
 3.	OneLake 数据中心将打开，唯一可供选择的选项是 **eh_Fabrikam** KQL 数据库。选择此数据库，然后单击**连接**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image111.png)
 
 4.	在新界面中，在查询窗口中单击一次，然后使用键盘快捷方式 **Ctrl + A** 突出显示所有文本。突出显示所有内容后，删除所有内容。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image113.jpg) 
 
 5.	在空白查询窗口中，输入以下 KQL 脚本。此脚本将创建与外部 Azure SQL 数据库的连接，并使其作为**快捷方式**在我们的 KQL 数据库中可用。快捷方式****在只读模式下附加，可以查看和运行查询以及引入到 KQL 数据库中的流式数据。
 
@@ -309,15 +309,15 @@
     createifnotexists = true
     )
     ```
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image116.jpg)
 
 6.	单击 **Run** 按钮以执行脚本。
 
-     ![](../media/lab-03/image003.png) 
+     ![](../media/lab-03/image118.jpg) 
 
 7.	在“数据库资源管理器”窗口中，您现在将看到一个名为 **Shortcuts** 的新文件夹，在该文件夹中，您应看到另外两个链接到此 KQL 数据库的表。这些表存在于 Azure SQL 数据库中，但通过您执行的脚本，您现在已将它们链接到此 KQL 数据库，以便与您的 InternetSales 和事件表联接。
 
-    ![](../media/lab-03/image003.png) 
+    ![](../media/lab-03/image121.png) 
 
 8.	现在，您的数据库已具有维度质量，您可以回答问题，并为报表的使用者提供更多上下文，并在整个组织中根据这些表的见解为报表和查询的使用者提供更多上下文。运行以下 KQL 查询以查看其中一个值。
 
@@ -331,23 +331,23 @@
 
 9.	您现在将在查询结果中看到公司售出的每个单独产品的值。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image123.png)
 
 10.	突出显示您的查询后，单击工具栏中的按钮 **Create Power BI report**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image125.jpg)
 
 11.	这使您有机会使用 KQL 数据库中的数据创建 Power BI 报表。等待片刻后，您可以随意探索此内容，但您现在还不需要根据此数据创建报表。当您准备好继续时，单击右上角的 **X 按钮**。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image127.jpg)
 
 12.	导航回 **eh_Fabrikam** KQL 数据库。
 
-     ![](../media/lab-03/image003.png)
+     ![](../media/lab-03/image130.jpg)
 
 13.	单击 **eh_Fabrikam** 导航窗格中的**快捷方式**选项。这将向您显示为此 KQL 数据库创建的所有快捷方式。需要注意的是，这些快捷方式被视为使用 Azure SQL 外部表语法的经典 Azure 数据资源管理器外部表，并且与 OneLake、ADLS 或 S3 快捷方式的构建方式不同，后者在 Fabric 中的 KQL 数据库中也受支持。
 
-    ![](../media/lab-03/image003.png)
+    ![](../media/lab-03/image132.jpg)
 
 # 总结
 在本实验室中，您创建了另一个数据流，但能够使用 Fabric 中 Eventstream 的用户界面转换该流。通过将数据加载到两个单独的表中，您可以跟踪电子商务系统中的所有点击数和展现量，以用于市场营销、广告和分析目的。您还使用 KQL 查询集外部表功能创建了外部 Azure SQL 数据库的快捷方式。现在，您有几个维度，可以更好地了解 KQL 数据库中的销售和点击数的背景信息。
@@ -356,7 +356,7 @@
 Fabric Real-Time Intelligence in a Day (RTIIAD) 向您介绍了 Microsoft Fabric 中提供的一些主要功能。
 在服务菜单中，“帮助 (?)”部分包含指向一些优质资源的链接。
 
-![](../media/lab-03/image003.png)
+![](../media/lab-03/image134.jpg)
  
 以下更多参考资源可帮助您进行与 Microsoft Fabric 相关的后续步骤。
 
