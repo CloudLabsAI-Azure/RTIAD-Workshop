@@ -307,39 +307,30 @@ generated](../media/new-lab-01/image32.png)
     ![A white board with writing on it Description automatically
 generated](../media/new-lab-01/image34.png)
 
-14. In the dropdown menu select "Manage fields"\
-    \
-        ![](../media/new-lab-01/image35.png)
+14. In the dropdown menu select "Manage fields".
 
-15. Click on the **pencil icon** to select what fields you wish to
-    add/remove to your stream\
-    \
-        ![A white box with black text Description automatically
+    ![](../media/new-lab-01/image35.png)
+
+15. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
+
+    ![A white box with black text Description automatically
     generated](../media/new-lab-01/image36.png)
 
-16. Rename the operation to "Manage_Clicks". As well select "Add all
-    fields" then remove "eventType". Once done click **Save**.\
-    \
-        ![A screenshot of a
+16. Rename the operation to "Manage_Clicks". As well select "Add all fields" then remove "eventType". Once done click **Save**.
+
+    ![A screenshot of a
     computer](../media/new-lab-01/image37.png)
 
-17. Next, let's add another "Manage fields" transform connected to the
-    "Impressions" filter as seen below\
-    \
-        ![A diagram of a
+17. Next, let's add another "Manage fields" transform connected to the "Impressions" filter as seen below.
+    ![A diagram of a
     diagram](../media/new-lab-01/image38.png)
 
-18. Click on the **pencil icon** to select what fields you wish to
-    add/remove to your stream\
-    \
-        ![A screen shot of a computer Description automatically
+18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream
+    ![A screen shot of a computer Description automatically
     generated](../media/new-lab-01/image39.png)
 
-19. Rename the operation to "Manage_Impressions". Then select "Add all
-    fields" then remove "eventType" and "referrer". Your "Manage fields"
-    transform should look like the following:\
-    \
-        ![A screenshot of a
+19. Rename the operation to "Manage_Impressions". Then select "Add all fields" then remove "eventType" and "referrer". Your "Manage fields" transform should look like the following:
+    ![A screenshot of a
     computer](../media/new-lab-01/image40.png)
 
 20. Now that you have cleaned up the data for the streams for each of
@@ -454,7 +445,7 @@ generated](../media/new-lab-01/image52.png)
 
 3. The OneLake data hub will open and the only option to select with be
     the **"eh_Fabrikam"** kql database. Select this database and click
-    **"Connect"**.\
+    **"Connect"**.
         ![A screenshot of a
     chat](../media/new-lab-01/image53.png)
 
@@ -558,62 +549,62 @@ great resources.
 Here are a few more resources that will help you with your next steps
 with Microsoft Fabric.
 
--   See blog post to read the full [[Microsoft Fabric GA]{.underline}
+- See blog post to read the full [[Microsoft Fabric GA]{.underline}
     [announcement]{.underline}](https://aka.ms/Fabric-Hero-Blog-Ignite23)
 
--   Explore Fabric through the [[Guided
+- Explore Fabric through the [[Guided
     Tour]{.underline}](https://aka.ms/Fabric-GuidedTour)
 
--   Sign up for the [[Microsoft Fabric free
+- Sign up for the [[Microsoft Fabric free
     trial]{.underline}](https://aka.ms/try-fabric)
 
--   Visit the [[Microsoft Fabric
+- Visit the [[Microsoft Fabric
     website]{.underline}](https://aka.ms/microsoft-fabric)
 
--   Learn new skills by exploring the [[Fabric Learning
+- Learn new skills by exploring the [[Fabric Learning
     modules]{.underline}](https://aka.ms/learn-fabric)
 
--   Explore the [[Fabric technical
+- Explore the [[Fabric technical
     documentation]{.underline}](https://aka.ms/fabric-docs)
 
--   Read the [[free e-book on getting started with
+- Read the [[free e-book on getting started with
     Fabric]{.underline}](https://aka.ms/fabric-get-started-ebook)
 
--   Join the [[Fabric
+- Join the [[Fabric
     community]{.underline}](https://aka.ms/fabric-community) to post
     your questions, share your feedback, and learn from others
 
 Read the more in-depth Fabric experience announcement blogs:
 
--   [[Data Factory experience in Fabric
+- [[Data Factory experience in Fabric
     blog]{.underline}](https://aka.ms/Fabric-Data-Factory-Blog)
 
--   [[Synapse Data Engineering experience in Fabric
+- [[Synapse Data Engineering experience in Fabric
     blog]{.underline}](https://aka.ms/Fabric-DE-Blog)
 
--   [[Synapse Data Science experience in Fabric
+- [[Synapse Data Science experience in Fabric
     blog]{.underline}](https://aka.ms/Fabric-DS-Blog)
 
--   [[Synapse Data Warehousing experience in Fabric
+- [[Synapse Data Warehousing experience in Fabric
     blog]{.underline}](https://aka.ms/Fabric-DW-Blog)
 
--   [[Real-](https://aka.ms/Fabric-RTA-Blog)[Time Intelligence
+- [[Real-](https://aka.ms/Fabric-RTA-Blog)[Time Intelligence
     experience in Fabric
     blog](https://blog.fabric.microsoft.com/en-us/blog/category/real-time-intelligence)]{.underline}
 
--   [[Power BI announcement
+- [[Power BI announcement
     blog]{.underline}](https://aka.ms/Fabric-PBI-Blog)
 
--   [[Data Activator experience in Fabric
+- [[Data Activator experience in Fabric
     blog]{.underline}](https://aka.ms/Fabric-DA-Blog)
 
--   [[Administration and governance in Fabric
+- [[Administration and governance in Fabric
     blog]{.underline}](https://aka.ms/Fabric-Admin-Gov-Blog)
 
--   [[OneLake]{.underline} [in Fabric
+- [[OneLake]{.underline} [in Fabric
     blog]{.underline}](https://aka.ms/Fabric-OneLake-Blog)
 
--   [[Dataverse and Microsoft Fabric integration
+- [[Dataverse and Microsoft Fabric integration
     blog]{.underline}](https://aka.ms/Dataverse-Fabric-Blog)
 
 © 2024 Microsoft Corporation. All rights reserved.
