@@ -221,49 +221,48 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
   - **Type de visuel** : Statistique
   - **Colonne de valeurs** : impressions (long)
 
-    ![](../media/Lab-05/image090.png)
+    ![](../media/Lab-05/image087.png)
 
 12.	Cliquez sur **Appliquer les changements** après avoir configuré tous les paramètres de manière appropriée.
 
-    ![](../media/Lab-05/image093.png)
+    ![](../media/Lab-05/image090.png)
  
 13.	Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option
 **Vignette dupliquée**.
 
-     ![](../media/Lab-05/image096.png)
+     ![](../media/Lab-05/image093.png)
  
 14.	Cliquez sur l’**icône représentant un crayon** de la vignette dupliquée pour modifier les paramètres.
 
-     ![](../media/Lab-05/image099.png)
+     ![](../media/Lab-05/image096.png)
 
 15.	Redéfinissez les champs **Nom de la vignette** sur **Clicks** et **Colonne de valeurs** sur **clicks (long)**.
 
-     ![](../media/Lab-05/image102.png)
+     ![](../media/Lab-05/image099.png)
 
 16.	Appliquez les changements à ce visuel.
 
 17.	Dupliquez l’une ou l’autre des nouvelles vignettes une fois de plus pour créer un dernier visuel statistique.
 
-     ![](../media/Lab-05/image108.png)
+     ![](../media/Lab-05/image102.png)
  
 18.	Modifiez la nouvelle vignette pour redéfinir les champs **Nom de la vignette** sur **Click Through Rate** et **Colonne de valeurs** sur **CTR (long)**.
 
-     ![](../media/Lab-05/image111.png)
+     ![](../media/Lab-05/image105.png)
 
 19.	Appliquez les changements.
 
-     ![](../media/Lab-05/image114.png)
 
 20.	Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la
 vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis glisser-déplacer le visuel où vous le souhaitez.
 
-     ![](../media/Lab-05/image117.png)
+     ![](../media/Lab-05/image108.png)
 
 ## Tâche 5 : ajouter un visuel de carte pour les impressions par emplacement
 
 1. Cliquez sur **New tile** pour ajouter une vignette au tableau de bord en temps réel.
 
-    ![](../media/Lab-05/image120.png)
+    ![](../media/Lab-05/image111.png)
 
 2. Copiez-collez la requête suivante dans le volet de requête. Cette requête extrait la latitude et la longitude de la colonne Adresse IP de ce flux de données pour générer un emplacement que vous pouvez placer sur une carte. Cette requête peut prendre un peu plus de temps que les précédentes.
 
@@ -280,78 +279,112 @@ vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis 
 
 3. Exécutez la requête pour vérifier qu’elle est correctement configurée. Cliquez sur le bouton + Ajouter un visuel.
 
-    ![](../media/Lab-05/image123.jpg)
+    ![](../media/Lab-05/image114.png)
 
 4. Redéfinissez les champs **Nom de la vignette** sur **Impressions par emplacement** et **Type de visuel** sur **Carte**.
 
-    ![](../media/Lab-05/image126.jpg)
+    ![](../media/Lab-05/image117.png)
  
 5. Sous la zone **Type de visuel**, assurez-vous que la latitude et la longitude sont sélectionnées de manière appropriée en redéfinissant le champ **Définir l’emplacement par** sur **Latitude et longitude** et vérifiez que les champs restants correspondent à l’image ci-dessous.
 
-    ![](../media/Lab-05/image129.png)
+    ![](../media/Lab-05/image120.png)
 
 6. Appliquez les modifications.
 
 7. Saisissez le point d’ancrage en bas du visuel de carte à gauche dans le tableau de bord pour agrandir le visuel.
 
-     ![](../media/Lab-05/image132.png)
+     ![](../media/Lab-05/image123.jpg)
  
 8. Tous les visuels sont redimensionnables et mobiles. N’hésitez pas à réorganiser les vôtres comme vous le souhaitez.
 
-     ![](../media/Lab-05/image135.png)
+     ![](../media/Lab-05/image126.jpg)
 
 9. Enregistrez vos modifications.
 
-     ![](../media/Lab-05/image138.png)
+     ![](../media/Lab-05/image129.png)
 
 ## Tâche 6 : configurer l’actualisation automatique sur le tableau de bord en temps réel
 
 1. Cliquez sur le bouton **Gérer** dans le ruban, puis sur le bouton **Actualisation automatique**.
 
+     ![](../media/Lab-05/image132.png)
+
 2. Activez le bouton bascule sous **Actualisation automatique**.
 
+     ![](../media/Lab-05/image135.png)
+
 3. Redéfinissez les champs **Intervalle de temps minimal** sur 30 secondes et **Fréquence de rafraîchissement par défaut** sur 1 minute.
+
+     ![](../media/Lab-05/image138.png)
 
 4. Cliquez sur **Appliquer** en bas de la fenêtre.
 
 5. Dans le coin supérieur droit de votre menu, cliquez sur le bouton **Modification** et redéfinissez-le sur **Consultation** pour voir l’expérience de vos utilisateurs finaux avec ce tableau de bord en
 temps réel.
 
+     ![](../media/Lab-05/image141.png)
+
 6. Si le temps le permet et que vous souhaitez récupérer le logo d’une société ou appliquer une mise en forme conditionnelle à vos visuels comme illustré ci-dessous, n’hésitez pas à effectuer les tâches facultatives ci-dessous. Sinon, le labo est terminé.
+
+    ![](../media/Lab-05/image143.jpg)
 
 ## Tâche facultative 7 : ajouter le logo d’une société
 
 1. Tout comme nous l’avons fait précédemment, passez du mode **Consultation** du tableau de bord au mode **Modification**.
 
+   ![](../media/Lab-05/image145.png)
+
 2. Cliquez sur le bouton **New text tile** dans le ruban Accueil.
+
+    ![](../media/Lab-05/image148.png)
 
 3. Copiez-collez le code Markdown suivant dans la fenêtre de requête :
 ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam.png?raw
 =true "Fabrikam")
 
+    ![](../media/Lab-05/image150.png)
+
 4. Appliquez les modifications.
 
 5. Redimensionnez et déplacez la vignette pour l’adapter à votre tableau de bord en temps réel.
+
+    ![](../media/Lab-05/image152.jpg)
  
 6. Enregistrez vos modifications.
+
+    ![](../media/Lab-05/image129.png)
 
 ## Tâche facultative 8 : appliquer une mise en forme conditionnelle au visuel
 
 1. Cliquez sur l’**icône représentant un crayon** sur le visuel **Click Through Rate**.
 
+    ![](../media/Lab-05/image156.png)
+
 2. En bas du volet de mise en forme du visuel, cliquez sur le bouton **+ Add rule** sous **Mise en forme conditionnelle**.
+
+     ![](../media/Lab-05/image159.png)
  
 3. Cliquez sur l’**icône représentant un crayon** pour modifier la règle de mise en forme conditionnelle.
+
+      ![](../media/Lab-05/image162.png)
  
 4. Sous Conditions, redéfinissez les champs **Column** sur **CTR (long)**, et Opérateur et Valeur sur >10.
 
+      ![](../media/Lab-05/image165.png)
+
 5. N’hésitez pas à modifier la mise en forme comme vous le souhaitez. Tant que la valeur de la colonne CTR est supérieure à 10, elle s’affiche sur ce visuel.
 
+    ![](../media/Lab-05/image168.png)
+
 6. Cliquez sur le bouton **Enregistrer** dans le volet Mise en forme conditionnelle.
+
+    ![](../media/Lab-05/image170.png)
  
 7. Appliquez les modifications.
 
 8. Enregistrez vos modifications.
+
+     ![](../media/Lab-05/image129.png)
 
 
 # Résumé
@@ -361,6 +394,8 @@ Dans ce labo, les utilisateurs ont créé un tableau de bord en temps réel et l
 
 Fabric Real-Time Intelligence in a Day (RTIIAD) vous présente certaines des fonctions clés de Microsoft Fabric.
 Dans le menu du service, la section Aide (?) comporte des liens vers d’excellentes ressources.
+
+![](../media/Lab-05/image175.png)
 
 Voici quelques autres ressources qui vous aideront lors de vos prochaines étapes avec Microsoft Fabric :
 
