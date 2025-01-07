@@ -33,28 +33,28 @@ In questo lab si apprenderà quanto segue:
 
    ![](../media/Lab-03/image004.png)
 
-2.	Ci sono ulteriori dati in streaming che è possibile inserire in relazione al punto vendita di 
+2. Ci sono ulteriori dati in streaming che è possibile inserire in relazione al punto vendita di 
 e-commerce. Per questo Eventstream, tuttavia, abbiamo intenzione di trasformare i dati prima di caricarli nell'Eventhouse. Anziché accedere all'**"hub in tempo reale"** possiamo creare un nuovo Eventstream direttamente dall'area di lavoro. Dal menu a discesa **+ Nuovo elemento** creare un nuovo **Eventstream**.
 
     ![](../media/Lab-03/image006.png)
 
-3.	Assegnare al nuovo Eventstream il nome **es_Fabrikam_ClickEvents**, selezionare l'opzione **"Funzionalità avanzate"**, quindi fare clic su **Crea**.
+3. Assegnare al nuovo Eventstream il nome **es_Fabrikam_ClickEvents**, selezionare l'opzione **"Funzionalità avanzate"**, quindi fare clic su **Crea**.
 
      ![](../media/Lab-03/image008.png)
  
-4.	Nella barra multifunzione Home fare clic sul menu a discesa **Aggiungi origine**, quindi selezionare **Origini esterne**.
+4. Nella barra multifunzione Home fare clic sul menu a discesa **Aggiungi origine**, quindi selezionare **Origini esterne**.
 
      ![](../media/Lab-03/image010.png)
  
-5.	Analogamente al lab precedente, ci collegheremo a un Hub eventi di Azure in cui i dati vengono trasmessi in streaming da un notebook Python. Fare clic su **"Connetti"** per il riquadro **"Hub eventi di Azure"**. Se **"Hub eventi di Azure"** non è visibile nella sezione consigliata, selezionare **"Visualizzare tutte le origini"** per individuarlo.
+5. Analogamente al lab precedente, ci collegheremo a un Hub eventi di Azure in cui i dati vengono trasmessi in streaming da un notebook Python. Fare clic su **"Connetti"** per il riquadro **"Hub eventi di Azure"**. Se **"Hub eventi di Azure"** non è visibile nella sezione consigliata, selezionare **"Visualizzare tutte le origini"** per individuarlo.
 
      ![](../media/Lab-03/image012.png)
 
-6.	Creare una **Nuova connessione**.
+6. Creare una **Nuova connessione**.
 
      ![](../media/Lab-03/image014.png)
  
-7.	Dalla pagina dei dettagli dell'ambiente copiare e incollare tutte le impostazioni di connessione necessarie nei campi appropriati.
+7. Dalla pagina dei dettagli dell'ambiente copiare e incollare tutte le impostazioni di connessione necessarie nei campi appropriati.
 
      - Spazio dei nomi hub eventi: **rtiadhub{username}**
 
@@ -66,23 +66,23 @@ e-commerce. Per questo Eventstream, tuttavia, abbiamo intenzione di trasformare 
 
         ![](../media/Lab-03/image016.png)
  
-8.	Una volta compilate tutte le proprietà, fare clic su **Connetti**.
+8. Una volta compilate tutte le proprietà, fare clic su **Connetti**.
 
-9.	Nella configurazione dell'origine dati Hub eventi di Azure potrebbe essere necessario modificare il **Gruppo di consumer** dell'hub eventi per essere certi di ottenere l'accesso a un punto di accesso univoco al flusso di dati. Per questo workshop è possibile lasciare il valore "$Default", come mostrato di seguito
+9. Nella configurazione dell'origine dati Hub eventi di Azure potrebbe essere necessario modificare il **Gruppo di consumer** dell'hub eventi per essere certi di ottenere l'accesso a un punto di accesso univoco al flusso di dati. Per questo workshop è possibile lasciare il valore "$Default", come mostrato di seguito
 
      ![](../media/Lab-03/image018.png)
  
-10.	Fare clic su **Avanti**.
+10. Fare clic su **Avanti**.
 
-11.	Nella finestra di revisione e connessione, verificare che tutto sia configurato correttamente e fare clic su **Aggiungi**.
+11. Nella finestra di revisione e connessione, verificare che tutto sia configurato correttamente e fare clic su **Aggiungi**.
 
       ![](../media/Lab-03/image020.png)
  
-12.	Una volta configurato il flusso, sarà possibile visualizzare un'anteprima dei dati provenienti dall'hub eventi.
+12. Una volta configurato il flusso, sarà possibile visualizzare un'anteprima dei dati provenienti dall'hub eventi.
 
       ![](../media/Lab-03/image022.png)
  
-13.	Esaminare i dati ricevuti. Esistono due tipi di eventi registrati dal sito Web di e-commerce: clic e impressioni.
+13. Esaminare i dati ricevuti. Esistono due tipi di eventi registrati dal sito Web di e-commerce: clic e impressioni.
 - **IMPRESSION**: un evento impressione viene registrato ogni volta che un annuncio pubblicitario o un'inserzione di prodotti viene visualizzata da un utente. Le impressioni misurano il numero di volte in cui un elemento (annuncio o prodotto) viene visualizzato, indipendentemente dal fatto che vi sia o meno un'interazione.
 - **CLICK**: un evento clic viene registrato quando un utente interagisce con un elemento facendo clic su di esso. Di solito ciò indica un livello di engagement più elevato rispetto a un'impressione.
 
@@ -90,7 +90,7 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
 ## Attività 2. Trasformazione dell'Eventstream
 
-1.	A questo punto si trasformerà questo flusso di dati prima di inserirlo nel database KQL in un modo che possa essere facilmente compreso dagli analisti che desiderano ricavare informazioni da questi dati. All'interno del canvas dell'Eventstream, fare clic sul menu a discesa dell'oggetto **Trasforma eventi**.
+1. A questo punto si trasformerà questo flusso di dati prima di inserirlo nel database KQL in un modo che possa essere facilmente compreso dagli analisti che desiderano ricavare informazioni da questi dati. All'interno del canvas dell'Eventstream, fare clic sul menu a discesa dell'oggetto **Trasforma eventi**.
  
      ![](../media/Lab-03/image024.png)
 
@@ -100,24 +100,24 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
      ![](../media/Lab-03/image026.png)
    
-3.	Sulla nuova icona visualizzata, denominata **ManageFields**, fare clic sull**'icona della matita** per selezionare i campi da aggiungere al flusso dall'origine.
+3. Sulla nuova icona visualizzata, denominata **ManageFields**, fare clic sull**'icona della matita** per selezionare i campi da aggiungere al flusso dall'origine.
 
      ![](../media/Lab-03/image028.png)
  
-4.	Nel riquadro a comparsa visualizzato fare clic sul pulsante **Aggiungi tutti i campi**.
+4. Nel riquadro a comparsa visualizzato fare clic sul pulsante **Aggiungi tutti i campi**.
 
      ![](../media/Lab-03/image030.png)
 
-5.	Dall'elenco dei campi selezionare quello denominato **PartitionId** e fare clic sui puntini di sospensione (…) che compaiono quando si passa il mouse sopra il campo
+5. Dall'elenco dei campi selezionare quello denominato **PartitionId** e fare clic sui puntini di sospensione (…) che compaiono quando si passa il mouse sopra il campo
 
      ![](../media/Lab-03/image032.png)
 
 
-6.	Scegliere l'opzione **Rimuovi** per rimuovere il campo. Per questo flusso di dati proveniente dall'hub eventi, il partizionamento non viene usato; questa colonna non presenta quindi alcuna utilità e per questo viene rimossa.
+6. Scegliere l'opzione **Rimuovi** per rimuovere il campo. Per questo flusso di dati proveniente dall'hub eventi, il partizionamento non viene usato; questa colonna non presenta quindi alcuna utilità e per questo viene rimossa.
 
      ![](../media/Lab-03/image034.png)
  
-7.	Rimuovere tutti i seguenti campi che non sono necessari per questo flusso.
+7. Rimuovere tutti i seguenti campi che non sono necessari per questo flusso.
     - userAgent
     - page_loading_seconds
     - EventProcessedUtcTime
@@ -127,15 +127,15 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
     ![](../media/Lab-03/image036.png)
   
-8.	Passare il mouse sul campo eventDate e, quando sul lato destro della finestra appaiono dei puntini di sospensione (…), fare clic su di essi.
+8. Passare il mouse sul campo eventDate e, quando sul lato destro della finestra appaiono dei puntini di sospensione (…), fare clic su di essi.
 
      ![](../media/Lab-03/image038.png)
  
-9.	Scegliere l'opzione **Modifica**.
+9. Scegliere l'opzione **Modifica**.
 
      ![](../media/Lab-03/image040.png)
  
-10.	Fare clic sull**'interruttore Modifica tipo** per modificare il tipo di dati di questo campo. Il tipo originale è String, è necessario modificare il **Tipo convertito** in **DateTime**. Fare clic su **Salva** al termine dell'operazione.
+10. Fare clic sull**'interruttore Modifica tipo** per modificare il tipo di dati di questo campo. Il tipo originale è String, è necessario modificare il **Tipo convertito** in **DateTime**. Fare clic su **Salva** al termine dell'operazione.
 
       ![](../media/Lab-03/image042.png)
 
@@ -156,20 +156,20 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
      ![](../media/Lab-03/image048.png)
 
-4.	Nel riquadro a comparsa visualizzato sul lato destro della schermata personalizzare le condizioni del filtro per riflettere un modo per restituire solo valori CLICK usando le impostazioni sottostanti. È importante notare che la trasformazione Filter rileva la distinzione tra maiuscole e minuscole
+4. Nel riquadro a comparsa visualizzato sul lato destro della schermata personalizzare le condizioni del filtro per riflettere un modo per restituire solo valori CLICK usando le impostazioni sottostanti. È importante notare che la trasformazione Filter rileva la distinzione tra maiuscole e minuscole
     - **Nome dell'operazione**: Clicks
     - **Selezionare un campo in base al quale filtrare**: eventType
     - **Mantieni eventi quando il valore** uguale a CLICK **(Importante! Questo è un campo che supporta la distinzione tra maiuscole e minuscole, quindi assicurarsi di inserire solo lettere maiuscole per questo esempio)**
 
         ![](../media/Lab-03/image050.png)
  
-5.	Scegliere l'opzione **Salva** per mantenere le modifiche.
+5. Scegliere l'opzione **Salva** per mantenere le modifiche.
 
-6.	Fare nuovamente clic sul **pulsante Aggiorna** per verificare che i dati siano stati filtrati per eventType CLICK.
+6. Fare nuovamente clic sul **pulsante Aggiorna** per verificare che i dati siano stati filtrati per eventType CLICK.
 
      ![](../media/Lab-03/image052.png)
  
-7.	Queste potrebbero essere le uniche righe che si desidera inviare a una tabella, ma un'altra opzione è quella di creare due flussi separati per instradare informazioni diverse a due o più tabelle. Dalla barra multifunzione **Home** dell'Eventstream fare clic sul menu a discesa **Trasforma eventi**, quindi selezionare **Filtro**.
+7. Queste potrebbero essere le uniche righe che si desidera inviare a una tabella, ma un'altra opzione è quella di creare due flussi separati per instradare informazioni diverse a due o più tabelle. Dalla barra multifunzione **Home** dell'Eventstream fare clic sul menu a discesa **Trasforma eventi**, quindi selezionare **Filtro**.
 
       ![](../media/Lab-03/image054.png)
  
@@ -177,64 +177,64 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
       ![](../media/Lab-03/image056.png)
 
-9.	Fare clic sull'**icona della matita** per **Filter** per modificarne le impostazioni.
+9. Fare clic sull'**icona della matita** per **Filter** per modificarne le impostazioni.
 
      ![](../media/Lab-03/image058.png)
 
-10.	Nel riquadro a comparsa visualizzato sul lato destro della schermata personalizzare le condizioni del filtro per riflettere un modo per restituire solo valori IMPRESSION usando i valori sottostanti. Ricordare che la trasformazione Filter rileva la distinzione tra maiuscole e minuscole
+10. Nel riquadro a comparsa visualizzato sul lato destro della schermata personalizzare le condizioni del filtro per riflettere un modo per restituire solo valori IMPRESSION usando i valori sottostanti. Ricordare che la trasformazione Filter rileva la distinzione tra maiuscole e minuscole
     - **Nome dell'operazione**: Impressions
     - **Selezionare un campo in base al quale filtrare**: eventType
     - **Mantieni eventi quando il valore** uguale a IMPRESSION (Importante! Questo è un campo che supporta la distinzione tra maiuscole e minuscole, quindi assicurarsi di inserire solo lettere maiuscole per questo esempio)
 
         ![](../media/Lab-03/image060.png)
  
-11.	Scegliere l'opzione **Salva** per mantenere le modifiche.
+11. Scegliere l'opzione **Salva** per mantenere le modifiche.
 
-12.	Prima di caricare i dati nelle nuove tabelle all'interno del database KQL, possiamo rimuovere le colonne aggiuntive che non sono necessarie. In questo caso, per il flusso di dati filtrato per i record "CLICK" non abbiamo più bisogno della colonna "eventType" poiché ogni riga contiene lo stesso valore. Per il flusso di dati "IMPRESSION" possiamo rimuovere la colonna "eventType" per gli stessi motivi sopra menzionati, come pure la colonna "referrer" poiché è vuota per ogni riga in questa tabella.
+12. Prima di caricare i dati nelle nuove tabelle all'interno del database KQL, possiamo rimuovere le colonne aggiuntive che non sono necessarie. In questo caso, per il flusso di dati filtrato per i record "CLICK" non abbiamo più bisogno della colonna "eventType" poiché ogni riga contiene lo stesso valore. Per il flusso di dati "IMPRESSION" possiamo rimuovere la colonna "eventType" per gli stessi motivi sopra menzionati, come pure la colonna "referrer" poiché è vuota per ogni riga in questa tabella.
 
-13.	Fare clic sull'icona + dopo l'operazione di filtro **Clicks**.
+13. Fare clic sull'icona + dopo l'operazione di filtro **Clicks**.
 
     ![](../media/Lab-03/image062.png)
  
-14.	Nel menu a discesa selezionare "Gestisci campi"
+14. Nel menu a discesa selezionare "Gestisci campi"
 
      ![](../media/Lab-03/image064.png)
 
-15.	Fare clic sull'**icona della matita** per selezionare i campi da aggiungere/rimuovere nel flusso
+15. Fare clic sull'**icona della matita** per selezionare i campi da aggiungere/rimuovere nel flusso
 
 
      ![](../media/Lab-03/image066.png)
      
 
-16.	Rinominare l'operazione in "Manage_Clicks". Selezionare "Aggiungi tutti i campi", quindi rimuovere "eventType". Al termine, fare clic su **Salva**.
+16. Rinominare l'operazione in "Manage_Clicks". Selezionare "Aggiungi tutti i campi", quindi rimuovere "eventType". Al termine, fare clic su **Salva**.
 
       ![](../media/Lab-03/image068.png)
 
-17.	Ora procederemo ad aggiungere un'altra trasformazione "Gestisci campi" connessa al filtro "Impressions" come mostrato di seguito
+17. Ora procederemo ad aggiungere un'altra trasformazione "Gestisci campi" connessa al filtro "Impressions" come mostrato di seguito
 
        ![](../media/Lab-03/image070.png)
 
-18.	Fare clic sull'**icona della matita** per selezionare i campi da aggiungere/rimuovere nel flusso
+18. Fare clic sull'**icona della matita** per selezionare i campi da aggiungere/rimuovere nel flusso
 
        ![](../media/Lab-03/image072.png)
 
-19.	Rinominare l'operazione in "Manage_Impressions". Selezionare quindi "Aggiungi tutti i campi" e rimuovere "eventType" e "referrer". La trasformazione "Gestisci campi" dovrebbe essere simile a quella illustrata nell'immagine seguente:
+19. Rinominare l'operazione in "Manage_Impressions". Selezionare quindi "Aggiungi tutti i campi" e rimuovere "eventType" e "referrer". La trasformazione "Gestisci campi" dovrebbe essere simile a quella illustrata nell'immagine seguente:
 
     ![](../media/Lab-03/image074.png)
 
-20.	Una volta ripuliti i dati per i flussi per ciascun tipo di evento, occorre caricare ogni flusso in una nuova tabella nel database KQL. Fare clic sull'icona + dopo l'operazione di gestione dei campi **Manage_Clicks**.
+20. Una volta ripuliti i dati per i flussi per ciascun tipo di evento, occorre caricare ogni flusso in una nuova tabella nel database KQL. Fare clic sull'icona + dopo l'operazione di gestione dei campi **Manage_Clicks**.
 
     ![](../media/Lab-03/image076.png)
 
-21.	Nell'elenco a discesa visualizzato, andare a **Destinazioni** e selezionare **Eventhouse**.
+21. Nell'elenco a discesa visualizzato, andare a **Destinazioni** e selezionare **Eventhouse**.
 
      ![](../media/Lab-03/image078.png)
 
-22.	Fare clic sull'**icona della matita** per la destinazione Eventhouse.
+22. Fare clic sull'**icona della matita** per la destinazione Eventhouse.
 
      ![](../media/Lab-03/image080.png)
 
-23.	Per questa destinazione configurare le seguenti proprietà.
+23. Per questa destinazione configurare le seguenti proprietà.
     - **Nome destinazione**: dbo-Clicks
     - **Area di lavoro**: RTI_username
     - **Eventhouse**: eh_Fabrikam
@@ -243,19 +243,19 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
         ![](../media/Lab-03/image082.png)
 
-24.	Fare clic su **Salva** nella parte inferiore del riquadro a comparsa.
+24. Fare clic su **Salva** nella parte inferiore del riquadro a comparsa.
 
-25.	Eseguire la stessa operazione per la tabella Impressions con le informazioni configurate come di seguito.
+25. Eseguire la stessa operazione per la tabella Impressions con le informazioni configurate come di seguito.
 
      ![](../media/Lab-03/image084.png)
 
-26.	Salvare le modifiche.
+26. Salvare le modifiche.
 
-27.	Questo Eventstream è ora pronto per iniziare lo streaming. Fare clic su **Pubblica** per avviare il flusso.
+27. Questo Eventstream è ora pronto per iniziare lo streaming. Fare clic su **Pubblica** per avviare il flusso.
 
       ![](../media/Lab-03/image086.png)
 
-28.	Ora che l'Eventstream è in esecuzione, l'interfaccia utente dell'Eventstream dovrebbe cambiare leggermente, a indicare che si stanno trasmettendo i dati dall'hub eventi, che si sta trasformando e suddividendo tale flusso di dati e lo si sta caricando in due tabelle separate del database KQL.
+28. Ora che l'Eventstream è in esecuzione, l'interfaccia utente dell'Eventstream dovrebbe cambiare leggermente, a indicare che si stanno trasmettendo i dati dall'hub eventi, che si sta trasformando e suddividendo tale flusso di dati e lo si sta caricando in due tabelle separate del database KQL.
 
       ![](../media/Lab-03/image088.png)
 
@@ -268,11 +268,11 @@ Oltre agli eventi clic e impressione registrati, vi sono dettagli sul prodotto o
 
     ![](../media/Lab-03/image090.png)
 
-3.	Con l'Eventstream in esecuzione dovrebbero apparire due nuove tabelle nella pagina Panoramica del database KQL. Dopo aver lasciato in esecuzione l'Eventstream per qualche istante, le **Tabelle principali** nel database KQL verranno visualizzate nella pagina Panoramica e mostreranno quanti dati vi sono archiviati.
+3. Con l'Eventstream in esecuzione dovrebbero apparire due nuove tabelle nella pagina Panoramica del database KQL. Dopo aver lasciato in esecuzione l'Eventstream per qualche istante, le **Tabelle principali** nel database KQL verranno visualizzate nella pagina Panoramica e mostreranno quanti dati vi sono archiviati.
 
       ![](../media/Lab-03/image092.png)
 
-4.	Fare clic sulla tabella **Impressions**. Questa tabella riceve circa 1,5 milioni di record ogni 24 ore. Poiché le impressioni sono molte più dei clic, questa sarà la tabella più grande ai fini di questa lezione.
+4. Fare clic sulla tabella **Impressions**. Questa tabella riceve circa 1,5 milioni di record ogni 24 ore. Poiché le impressioni sono molte più dei clic, questa sarà la tabella più grande ai fini di questa lezione.
 
      ![](../media/Lab-03/image094.png)
 
@@ -284,19 +284,19 @@ Fino a questo punto si è lavorato con i dati in streaming, ma mancano ancora al
      ![](../media/Lab-03/image096.png)
     
 
-2.	Assegnare al set di query KQL il nome **Create Tables**, quindi fare clic sul pulsante Crea.
+2. Assegnare al set di query KQL il nome **Create Tables**, quindi fare clic sul pulsante Crea.
 
      ![](../media/Lab-03/image098.png)
 
-3.	Si aprirà l'hub dei dati OneLake e l'unica opzione disponibile per la selezione sarà il database KQL "**eh_Fabrikam**". Selezionare questo database e fare clic su "**Connetti**".
+3. Si aprirà l'hub dei dati OneLake e l'unica opzione disponibile per la selezione sarà il database KQL "**eh_Fabrikam**". Selezionare questo database e fare clic su "**Connetti**".
 
      ![](../media/Lab-03/image100.png)
 
-4.	Nella nuova interfaccia fare clic una volta all'interno della finestra di query ed evidenziare tutto il testo usando la combinazione di tasti **CTRL+A**. Una volta evidenziato tutto il testo, eliminarlo.
+4. Nella nuova interfaccia fare clic una volta all'interno della finestra di query ed evidenziare tutto il testo usando la combinazione di tasti **CTRL+A**. Una volta evidenziato tutto il testo, eliminarlo.
 
      ![](../media/Lab-03/image102.png)
  
-5.	Nella finestra di query vuota immettere il seguente script KQL. Questo script creerà una connessione a un database SQL di Azure esterno e lo renderà disponibile nel database KQL come **collegamento**. Un **collegamento** è associato in modalità di sola lettura, rendendo possibile la visualizzazione e l'esecuzione di query insieme ai dati in streaming inseriti nel database KQL.
+5. Nella finestra di query vuota immettere il seguente script KQL. Questo script creerà una connessione a un database SQL di Azure esterno e lo renderà disponibile nel database KQL come **collegamento**. Un **collegamento** è associato in modalità di sola lettura, rendendo possibile la visualizzazione e l'esecuzione di query insieme ai dati in streaming inseriti nel database KQL.
 
     ```
     .execute database script <|
@@ -326,15 +326,15 @@ Fino a questo punto si è lavorato con i dati in streaming, ma mancano ancora al
 
     ![](../media/Lab-03/image106.png)
 
-6.	Fare clic sul pulsante **Run** per eseguire lo script.
+6. Fare clic sul pulsante **Run** per eseguire lo script.
 
     ![](../media/Lab-03/image108.png)
 
-7.	Nella finestra Esplora database sarà ora visibile una nuova cartella denominata **Shortcuts**, all'interno della quale sono presenti due tabelle aggiuntive collegate a questo database KQL. Queste tabelle esistono all'interno di un database SQL di Azure, ma tramite lo script eseguito, ora sono collegate a questo database KQL per essere unite alle tabelle InternetSales e degli eventi.
+7. Nella finestra Esplora database sarà ora visibile una nuova cartella denominata **Shortcuts**, all'interno della quale sono presenti due tabelle aggiuntive collegate a questo database KQL. Queste tabelle esistono all'interno di un database SQL di Azure, ma tramite lo script eseguito, ora sono collegate a questo database KQL per essere unite alle tabelle InternetSales e degli eventi.
 
     ![](../media/Lab-03/image110.png)
 
-8.	Una volta aggiunte qualità dimensionali al database, è possibile rispondere alle domande e fornire maggiore contesto ai consumer dei report nonché eseguire query su queste tabelle per ottenere informazioni dettagliate su tutta l'attività. Eseguire la seguente query KQL per visualizzare alcune delle informazioni richieste.
+8. Una volta aggiunte qualità dimensionali al database, è possibile rispondere alle domande e fornire maggiore contesto ai consumer dei report nonché eseguire query su queste tabelle per ottenere informazioni dettagliate su tutta l'attività. Eseguire la seguente query KQL per visualizzare alcune delle informazioni richieste.
 
     ```
     InternetSales
@@ -344,23 +344,23 @@ Fino a questo punto si è lavorato con i dati in streaming, ma mancano ancora al
     | project Name, SalesPerProduct
     ```
 
-9.	Ora nei risultati della query saranno visibili i valori di ogni singolo prodotto venduto dalla società.
+9. Ora nei risultati della query saranno visibili i valori di ogni singolo prodotto venduto dalla società.
 
      ![](../media/Lab-03/image114.png)
 
-10.	Con la query evidenziata fare clic sul pulsante **Power BI** nella barra degli strumenti.
+10. Con la query evidenziata fare clic sul pulsante **Power BI** nella barra degli strumenti.
 
      ![](../media/Lab-03/image116.png)
 
-11.	In questo modo si ha l'opportunità di creare un report Power BI usando i dati presenti nel database KQL. È possibile soffermarsi brevemente sull'argomento, ma non è ancora necessario creare un report da questi dati. Fare clic sul **pulsante X** nell'angolo in alto a destra quando si è pronti per procedere.
+11. In questo modo si ha l'opportunità di creare un report Power BI usando i dati presenti nel database KQL. È possibile soffermarsi brevemente sull'argomento, ma non è ancora necessario creare un report da questi dati. Fare clic sul **pulsante X** nell'angolo in alto a destra quando si è pronti per procedere.
 
       ![](../media/Lab-03/image118.png)
 
-12.	Tornare al database KQL **eh_Fabrikam**.
+12. Tornare al database KQL **eh_Fabrikam**.
 
       ![](../media/Lab-03/image120.png)
 
-13.	Fare clic sull'opzione **Shortcuts** nel riquadro di spostamento **eh_Fabrikam**. Verranno mostrati tutti i collegamenti creati per questo database KQL. È opportuno notare che questi collegamenti sono considerati tabelle esterne classiche di Esplora dati di Azure che usano la sintassi delle tabelle esterne di Azure SQL e sono strutturati in modo diverso rispetto ai collegamenti OneLake, ADLS o S3 che sono anche supportati nel database KQL all'interno di Fabric.
+13. Fare clic sull'opzione **Shortcuts** nel riquadro di spostamento **eh_Fabrikam**. Verranno mostrati tutti i collegamenti creati per questo database KQL. È opportuno notare che questi collegamenti sono considerati tabelle esterne classiche di Esplora dati di Azure che usano la sintassi delle tabelle esterne di Azure SQL e sono strutturati in modo diverso rispetto ai collegamenti OneLake, ADLS o S3 che sono anche supportati nel database KQL all'interno di Fabric.
 
     ![](../media/Lab-03/image122.png)
 

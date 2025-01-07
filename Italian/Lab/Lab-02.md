@@ -164,6 +164,7 @@ In questo lab si apprenderà quanto segue:
 9. Se si nota che l'origine **AzureEventHub** è diventata inattiva, impostare l'interruttore sullo stato "Attiva" e scegliere l'opzione "Ora" quando si apre la finestra di dialogo
 
     ![](../media/Lab-02/image048.png)
+
     ![](../media/Lab-02/image049.png)
 
 10. Scegliere l'opzione **Configura** all'interno della **Destinazione** per eseguire correttamente il mapping del flusso in una tabella nel database KQL.
@@ -278,20 +279,28 @@ orarie e questa query indicherà in dettaglio se sono stati inseriti più o meno
 Potrebbe essere la prima volta che si usa il Linguaggio di query Kusto. Sebbene questo linguaggio sia intuitivo e facile da apprendere per query semplici, potrebbe accadere di dover restituire risultati di query di complessità maggiore rispetto a quanto si è attualmente in grado di fare. Nelle funzionalità del set di query KQL sono stati inclusi diversi strumenti utili, tra cui la conversione di query SQL in query KQL e la semplice creazione di query T-SQL all'interno del set di query KQL. Procediamo a
 esaminarle.
 
-1. È necessario creare una query che restituisca ogni prodotto con il numero di volte in cui è stato venduto. È possibile eseguire rapidamente questa operazione con T-SQL. All'interno della finestra di query, è possibile convertire le query SQL in KQL per comprendere meglio come creare le
-query KQL in futuro. Iniziare scrivendo il seguente comando.
+1. È necessario creare una query che restituisca ogni prodotto con il numero di volte in cui è stato venduto. È possibile eseguire rapidamente questa operazione con T-SQL. All'interno della finestra di query, è possibile convertire le query SQL in KQL per comprendere meglio come creare le query KQL in futuro. Iniziare scrivendo il seguente comando.
 
     **Nota: fare doppio clic sull'oggetto sottostante per poter copiare il testo**
 
-    ![](../media/Lab-02/imageup1.png)
+    ```
+    --
+    explain
+    ```
 
     ![](../media/Lab-02/image098.png)
-
 
 2. La riga di commento "—" seguita dalla parola chiave "explain" permetterà ora di creare una query SQL e di restituire un risultato con la query KQL che potrebbe essere usata per ottenere una query
 e un risultato simili. Immettere di seguito la seguente query per spiegare come apparirà la query KQL:
  
-    ![](../media/Lab-02/imageup2.png)
+    ```
+    --
+    explain
+    SELECT COUNT(OrderQuantity) AS CountOfProducts
+            , ProductKey
+    FROM InternetSales
+    GROUP BY ProductKey
+    ```
 
     ![](../media/Lab-02/image102.png)
  
