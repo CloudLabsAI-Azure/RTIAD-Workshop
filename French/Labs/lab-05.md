@@ -38,30 +38,53 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 1. Ouvrez l’espace de travail **Fabric** pour le cours.
    
 2. Cliquez sur le bouton **+ Nouvel élément** pour créer un élément.
+
+     ![](../media/Lab-05/image005.png)
  
 3. Vous verrez une catégorie pour **Visualiser les données**. Cliquez sur l’élément **Tableau de bord en temps réel**.
 
+     ![](../media/Lab-05/image007.jpg)
+
 4. Nommez votre tableau de bord en temps réel **RTI Dashboard**, puis cliquez sur **Créer**.
 
+     ![](../media/Lab-05/image010.png)
+
 5. Vous devriez être immédiatement redirigé vers une instance vide d’un tableau de bord en temps réel.
+       
+      ![](../media/Lab-05/image013.png)
  
 ## Tâche 2 : connecter une source de données à un tableau de bord en temps réel
 
 1. Dans le ruban Accueil, recherchez et cliquez sur le bouton **New data source**.
 
+      ![](../media/Lab-05/image016.png)
+
 2. Dans le volet volant qui s’affiche sur le côté droit de l’écran, cliquez sur **Ajouter +**, puis choisissez **OneLake data hub**.
+
+      ![](../media/Lab-05/image019.png)
 
 3. Une liste des sources disponibles dans OneLake s’affiche alors. Seules les sources des bases de données KQL sont répertoriées, donc une seule option est à votre disposition, à savoir la base de données KQL **eh_Fabrikam**. Sélectionnez cette option.
 
+      ![](../media/Lab-05/image021.png)
+
 4. En bas de l’écran, cliquez sur **Connect**.
+
+      ![](../media/Lab-05/image024.png)
 
 5. Vous allez maintenant pouvoir créer la source de données. Cliquez sur le bouton **Add** en bas du volet volant.
 
+      ![](../media/Lab-05/image026.png)
+
 6. Une source de données est alors ajoutée au tableau de bord en temps réel. Ensuite, vous pouvez ajouter des bases de données KQL supplémentaires si nécessaire. Pour l’instant, cliquez sur **Fermer** en bas de la fenêtre.
  
+
+      ![](../media/Lab-05/image028.jpg)
+
 ## Tâche 3 : créer une vignette de tableau de bord en temps réel avec KQL
 
 1. Cliquez sur la vignette vide dans le tableau de bord pour renseigner la vignette avec un visuel.
+
+     ![](../media/Lab-05/image031.png)
 
 2. Par défaut, vous vous connectez à la base de données KQL que vous avez créée précédemment comme source. Ensuite, vous pouvez écrire votre propre requête KQL pour renseigner ce visuel avec des données. Supprimez tout le balisage Markdown KQL précédent présent par défaut. Copiez-collez la requête suivante dans la fenêtre de requête :
 
@@ -75,36 +98,64 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
     ```
 
 3. Exécutez la requête après l’avoir correctement configurée pour afficher les résultats.
+
+    ![](../media/Lab-05/image033.png)
  
 4. Notez que vous ne pouvez avoir qu’un seul résultat dans votre sortie. en raison de l’**Intervalle de temps** défini par défaut pour cette vignette. Vous disposez d’un paramètre qui vous permet de modifier l’intervalle de temps à partir duquel vous renvoyez des données. Le code eventDate between (_startTime.._endTime) vous permet de tirer parti de ce paramètre. Redéfinissez le paramètre **Intervalle de temps** sur **3 dernières heures** et observez l’évolution de votre sortie.
 
+    ![](../media/Lab-05/image036.png)
+
 5. Les résultats des clics au cours des 3 dernières heures devraient maintenant s’afficher dans la sortie de votre requête.
+
+    ![](../media/Lab-05/image039.png)
  
 6. Bien que ce paramètre puisse être modifié, vous souhaiterez peut-être qu’il soit défini par défaut sur un intervalle de temps spécifique au lieu de forcer les utilisateurs à le modifier. Au-dessus de l’option Intervalle de temps, cliquez sur le bouton **@ Paramètres**.
+
+      ![](../media/Lab-05/image041.png)
  
 7. Cliquez sur l’**icône représentant un crayon** pour modifier le paramètre **Intervalle de temps**.
+
+      ![](../media/Lab-05/image043.png)
  
 8. Redéfinissez le champ **Valeur par défaut** sur **24 dernières heures** pour toujours afficher le dernier jour par défaut. Ensuite, cliquez sur **Terminé**.
+
+      ![](../media/Lab-05/image045.png)
  
 9. Fermez le volet Modifier le paramètre.
 
 10.	Cliquez maintenant sur le bouton **+ Ajouter un visuel** au-dessus des résultats de la requête.
+
+      ![](../media/Lab-05/image048.png)
  
 11.	Un nouveau menu volant s’affiche alors sur le côté droit de l’écran. Cliquez dans la zone de texte sous l’option **Nom de la vignette** pour nommer ce visuel **Clicks by Hour**.
 
+      ![](../media/Lab-05/image051.png)
+
 12.	Par défaut, le visuel vous permettant d’afficher les résultats de cette requête KQL est une table. Ce n’est peut-être pas le meilleur moyen pour quelqu’un de consommer et comprendre rapidement ce qui se passe avec les résultats de vos données. Redéfinissez le champ Type de visuel en remplaçant Table par **Graphique en aires**.
 
+      ![](../media/Lab-05/image054.png)
+
 13.	Avec ce visuel nouvellement mis en forme, vous pouvez mieux comprendre les pics et les creux du nombre de clics sur votre site d’e-commerce à l’aide du flux de données que vous avez créé précédemment dans ce cours.
+
+       ![](../media/Lab-05/image057.png)
   
 14.	Pour enregistrer ce visuel dans le tableau de bord, cliquez sur le bouton **Appliquer les changements** dans le coin supérieur droit de l’écran.
 
+       ![](../media/Lab-05/image060.png)
+
 15.	Une fois ce visuel placé dans le tableau de bord, il est possible que le visuel n’affiche que la dernière heure de résultats. Modifiez le tableau de bord pour afficher l’**Intervalle de temps 24 dernières heures**.
+
+      ![](../media/Lab-05/image062.png)
  
 16.	Actualisez le visuel et notez que les résultats changent légèrement pour refléter les données reçues depuis la dernière exécution de la requête.
+
+      ![](../media/Lab-05/image065.png)
 
 ## Tâche 4 : ajouter d’autres vignettes de tableau de bord au tableau de bord en temps réel
 
 1. Dans le **ruban Accueil** du tableau de bord en temps réel, cliquez sur le bouton **New tile**.
+
+    ![](../media/Lab-05/image068.jpg)
  
 2. Saisissez la requête KQL suivante dans le volet de requête :
 
@@ -119,14 +170,24 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
 3. Cliquez sur **Exécuter** pour exécuter la requête.
 
+    ![](../media/Lab-05/image070.png)
+
 4. Cliquez sur le bouton **+ Ajouter un visuel**.
+
+    ![](../media/Lab-05/image073.png)
 
 5. Modifiez le visuel pour redéfinir les champs **Nom de la vignette** sur **Impressions par heure** et
 **Type de visuel** sur **Graphique en aires**.
 
+    ![](../media/Lab-05/image076.png)
+
 6. Appliquez les changements au visuel.
 
+    ![](../media/Lab-05/image079.png)
+
 7. Cliquez sur **New tile** pour ajouter une autre vignette.
+
+     ![](../media/Lab-05/image082.jpg)
 
 8. Copiez-collez la requête suivante dans le volet de requête. Notez qu’il s’agit d’une requête multi- instructions qui utilise plusieurs instructions let et une requête combinée par des points-virgules.
  
@@ -150,6 +211,8 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
 
 9. Cliquez sur **Exécuter** pour exécuter la requête afin d’afficher les résultats.
 
+   ![](../media/Lab-05/image084.png)
+
 10.	Cliquez sur le bouton **+ Ajouter un visuel**.
 
 11.	Lorsque les paramètres du visuel s’affichent, modifiez les paramètres suivants pour créer un décompte des impressions :
@@ -158,29 +221,49 @@ lakehouse grâce à des raccourcis pour visualiser et partager vos observations 
   - **Type de visuel** : Statistique
   - **Colonne de valeurs** : impressions (long)
 
+    ![](../media/Lab-05/image090.png)
+
 12.	Cliquez sur **Appliquer les changements** après avoir configuré tous les paramètres de manière appropriée.
+
+    ![](../media/Lab-05/image093.png)
  
 13.	Sur la nouvelle vignette, cliquez sur les points de suspension (…) et sélectionnez l’option
 **Vignette dupliquée**.
+
+     ![](../media/Lab-05/image096.png)
  
 14.	Cliquez sur l’**icône représentant un crayon** de la vignette dupliquée pour modifier les paramètres.
 
+     ![](../media/Lab-05/image099.png)
+
 15.	Redéfinissez les champs **Nom de la vignette** sur **Clicks** et **Colonne de valeurs** sur **clicks (long)**.
+
+     ![](../media/Lab-05/image102.png)
 
 16.	Appliquez les changements à ce visuel.
 
 17.	Dupliquez l’une ou l’autre des nouvelles vignettes une fois de plus pour créer un dernier visuel statistique.
+
+     ![](../media/Lab-05/image108.png)
  
 18.	Modifiez la nouvelle vignette pour redéfinir les champs **Nom de la vignette** sur **Click Through Rate** et **Colonne de valeurs** sur **CTR (long)**.
 
+     ![](../media/Lab-05/image111.png)
+
 19.	Appliquez les changements.
+
+     ![](../media/Lab-05/image114.png)
 
 20.	Si les vignettes sont séparées ou si vous souhaitez les réorganiser, vous pouvez survoler la
 vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis glisser-déplacer le visuel où vous le souhaitez.
 
+     ![](../media/Lab-05/image117.png)
+
 ## Tâche 5 : ajouter un visuel de carte pour les impressions par emplacement
 
 1. Cliquez sur **New tile** pour ajouter une vignette au tableau de bord en temps réel.
+
+    ![](../media/Lab-05/image120.png)
 
 2. Copiez-collez la requête suivante dans le volet de requête. Cette requête extrait la latitude et la longitude de la colonne Adresse IP de ce flux de données pour générer un emplacement que vous pouvez placer sur une carte. Cette requête peut prendre un peu plus de temps que les précédentes.
 
@@ -197,17 +280,29 @@ vignette jusqu’à ce qu’une icône représentant une main s’affiche, puis 
 
 3. Exécutez la requête pour vérifier qu’elle est correctement configurée. Cliquez sur le bouton + Ajouter un visuel.
 
+    ![](../media/Lab-05/image123.jpg)
+
 4. Redéfinissez les champs **Nom de la vignette** sur **Impressions par emplacement** et **Type de visuel** sur **Carte**.
+
+    ![](../media/Lab-05/image126.jpg)
  
 5. Sous la zone **Type de visuel**, assurez-vous que la latitude et la longitude sont sélectionnées de manière appropriée en redéfinissant le champ **Définir l’emplacement par** sur **Latitude et longitude** et vérifiez que les champs restants correspondent à l’image ci-dessous.
+
+    ![](../media/Lab-05/image129.png)
 
 6. Appliquez les modifications.
 
 7. Saisissez le point d’ancrage en bas du visuel de carte à gauche dans le tableau de bord pour agrandir le visuel.
+
+     ![](../media/Lab-05/image132.png)
  
 8. Tous les visuels sont redimensionnables et mobiles. N’hésitez pas à réorganiser les vôtres comme vous le souhaitez.
 
+     ![](../media/Lab-05/image135.png)
+
 9. Enregistrez vos modifications.
+
+     ![](../media/Lab-05/image138.png)
 
 ## Tâche 6 : configurer l’actualisation automatique sur le tableau de bord en temps réel
 
