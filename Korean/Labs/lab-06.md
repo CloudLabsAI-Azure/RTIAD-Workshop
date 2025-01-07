@@ -1,5 +1,5 @@
-
-   ![](./media/lab-06/title.png)
+# Microsoft Fabric Real-Time Intelligence in a Day 랩 6
+![](./media/lab-06/title.png)
 
 # 목차
 

@@ -1,5 +1,6 @@
+# Microsoft Fabric Real-Time Intelligence in a Day 랩 4
 
-   ![](./media/lab-04/title.png)
+![](./media/lab-04/title.png)
 
 # 목차
 
