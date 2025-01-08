@@ -6,7 +6,7 @@
 
 準備ができたら、Web ブラウザー内で仮想マシンとラボ ガイドにすぐにアクセスできます。
 
-![](./media/labguide-1.png)
+![](../media/getting-started-jap1.png)
 
 ### 仮想マシンとラボ ガイド
 
@@ -16,37 +16,37 @@
 
 ラボ リソースと認証情報について詳しく理解するには、[**環境**] タブに移動します。
 
-![ラボ リソースの探索](./media/env-1.png)
+![ラボ リソースの探索](../media/getting-started-jap2.png)
 
 ## 分割ウィンドウ機能の利用
 
 便宜上、右上隅の [**分割ウィンドウ**] ボタンを選択すると、ラボ ガイドを別のウィンドウで開くことができます。
 
-![分割ウィンドウ機能の使用](./media/spl.png)
+![分割ウィンドウ機能の使用](../media/getting-started-jap3.png)
 
 ## 仮想マシンの管理
 
 必要に応じて、[**リソース**] タブから仮想マシンを起動、停止、または再起動してください。体験はあなた次第です!
 
-![仮想マシンの管理](./media/res.png)
+![仮想マシンの管理](../media/getting-started-jap4.png)
 
 ## Azure Portal を使い始めましょう
 
 1. 仮想マシンで、次に示すように Azure Portal アイコンをクリックします。
 
-![Azure Portal を起動](./media/sc900-image(1).png)
+![Azure Portal を起動](../media/select-azureportal.png)
 
 1. [**Microsoft Azure にサインイン**] タブが表示されます。ここで、資格情報を入力します:
 
 - **メール/ユーザー名:** <inject key="AzureAdUserEmail"></inject>
 
-![ユーザー名を入力](./media/sc900-image-1.png)
+![ユーザー名を入力](../media/portal-login1.png)
 
 1. 次に、パスワードを入力します:
 
 - **パスワード:** <inject key="AzureAdUserPassword"></inject>
 
-![パスワードを入力](./media/sc900-image-2.png)
+![パスワードを入力](../media/portal-login2.png)
 
 1. サインインしたままにするよう求められたら、[いいえ] をクリックします。
 
@@ -54,6 +54,6 @@
 
 1. 右下隅の [次へ] をクリックして、ラボの旅に乗り出します!
 
-![Azure Portal を起動](./media/sc900-image(3).png)
+![Azure Portal を起動](../media/getting-started-jap5.png)
 
 これで、テクノロジの強力な世界を探索する準備が整いました。途中でご質問がありましたら、お気軽にお問い合わせください。ワークショップをお楽しみください!
