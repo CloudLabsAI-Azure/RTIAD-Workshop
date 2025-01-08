@@ -34,19 +34,19 @@ Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressou
 
 1. Klicken Sie auf Ihrer virtuellen Maschine auf das Azure Portal-Symbol, wie unten gezeigt:
 
-![Azure Portal starten](./media/sc900-image(1).png)
+![Azure Portal starten](../media/select-azureportal.png)
 
 1. Sie sehen die Registerkarte **Bei Microsoft Azure anmelden**. Geben Sie hier Ihre Anmeldeinformationen ein:
 
 - **E-Mail/Benutzername:** <inject key="AzureAdUserEmail"></inject>
 
-![Geben Sie Ihren Benutzernamen ein](./media/sc900-image-1.png)
+![Geben Sie Ihren Benutzernamen ein](../media/portal-login1.png)
 
 1. Geben Sie als Nächstes Ihr Passwort ein:
 
 - **Passwort:** <inject key="AzureAdUserPassword"></inject>
 
-![Geben Sie Ihr Passwort ein](./media/sc900-image-2.png)
+![Geben Sie Ihr Passwort ein](../media/portal-login2.png)
 
 1. Wenn Sie aufgefordert werden, angemeldet zu bleiben, können Sie auf „Nein“ klicken.
 
