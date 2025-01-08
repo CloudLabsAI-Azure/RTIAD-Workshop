@@ -34,19 +34,19 @@ Sinta-se à vontade para iniciar, parar ou reiniciar sua máquina virtual confor
 
 1. Na sua máquina virtual, clique no ícone do Portal do Azure, conforme mostrado abaixo:
 
-![Abra o Portal do Azure](../media/select-azureportal.png)
+    ![Abra o Portal do Azure](../media/select-azureportal.png)
 
 1. Você verá a guia **Entrar no Microsoft Azure**. Aqui, insira suas credenciais:
 
-- **E-mail/Nome de usuário:** <inject key="AzureAdUserEmail"></inject>
+    - **E-mail/Nome de usuário:** <inject key="AzureAdUserEmail"></inject>
 
-![Digite seu nome de usuário](../media/portal-login1.png)
+      ![Digite seu nome de usuário](../media/portal-login1.png)
 
 1. Em seguida, forneça sua senha:
 
-- **Senha:** <inject key="AzureAdUserPassword"></inject>
+    - **Senha:** <inject key="AzureAdUserPassword"></inject>
 
-![Digite sua senha](../media/portal-login2.png)
+      ![Digite sua senha](../media/portal-login2.png)
 
 1. Se solicitado a permanecer conectado, você pode clicar em "Não".
 
@@ -54,6 +54,6 @@ Sinta-se à vontade para iniciar, parar ou reiniciar sua máquina virtual confor
 
 1. Clique em "Próximo" no canto inferior direito para embarcar em sua jornada no Lab!
 
-![Abrir o Portal do Azure](../media/getting-started-por5.png)
+    ![Abrir o Portal do Azure](../media/getting-started-por5.png)
 
 Agora você está pronto para explorar o poderoso mundo da tecnologia. Sinta-se à vontade para entrar em contato conosco caso tenha alguma dúvida ao longo do caminho. Aproveite seu workshop!
