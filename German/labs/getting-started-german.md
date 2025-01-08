@@ -6,7 +6,7 @@ Willkommen zu Ihrem Workshop zu Echtzeitanalysen! Heute werden Sie sich mit der 
 
 Sobald Sie bereit sind, loszulegen, stehen Ihnen Ihre virtuelle Maschine und Ihr Laborhandbuch in Ihrem Webbrowser direkt zur Verfügung.
 
-![](./media/labguide-1.png)
+![Explore Lab Resources](../media/new-lab-01/env-2.png)
 
 ### Virtuelle Maschine und Laborhandbuch
 
@@ -16,37 +16,37 @@ Ihre virtuelle Maschine ist während des gesamten Workshops Ihr Arbeitspferd. Da
 
 Um Ihre Laborressourcen und -nachweise besser zu verstehen, navigieren Sie zur Registerkarte **Umgebung**.
 
-![Laborressourcen erkunden](./media/env-1.png)
+![Explore Lab Resources](../media/new-lab-01/env-1.png)
 
 ## Die Funktion „Geteiltes Fenster“ nutzen
 
 Der Einfachheit halber können Sie den Laborleitfaden in einem separaten Fenster öffnen, indem Sie die Schaltfläche **Geteiltes Fenster** in der oberen rechten Ecke auswählen.
 
-![Die Funktion „Geteiltes Fenster“ nutzen](./media/spl.png)
+ ![Explore Lab Resources](../media/new-lab-01/spilt.png)
 
 ## Ihre virtuelle Maschine verwalten
 
 Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressourcen** starten, stoppen oder neu starten. Ihre Erfahrung liegt in Ihren Händen!
 
-![Ihre virtuelle Maschine verwalten](./media/res.png)
+![Explore Lab Resources](../media/new-lab-01/vm-op.png)
 
 ## Erste Schritte mit Azure Portal
 
 1. Klicken Sie auf Ihrer virtuellen Maschine auf das Azure Portal-Symbol, wie unten gezeigt:
 
-    ![Azure Portal starten](../media/select-azureportal.png)
+    ![Explore Lab Resources](../media/new-lab-01/azure-portal.png)
 
 1. Sie sehen die Registerkarte **Bei Microsoft Azure anmelden**. Geben Sie hier Ihre Anmeldeinformationen ein:
 
     - **E-Mail/Benutzername:** <inject key="AzureAdUserEmail"></inject>
 
-      ![Geben Sie Ihren Benutzernamen ein](../media/portal-login1.png)
+      ![Explore Lab Resources](../media/new-lab-01/sc900-image-1.png)
 
 1. Geben Sie als Nächstes Ihr Passwort ein:
 
     - **Passwort:** <inject key="AzureAdUserPassword"></inject>
 
-      ![Geben Sie Ihr Passwort ein](../media/portal-login2.png)
+      ![Enter Your Password](../media/new-lab-01/sc900-image-2.png)
 
 1. Wenn Sie aufgefordert werden, angemeldet zu bleiben, können Sie auf „Nein“ klicken.
 
@@ -54,6 +54,6 @@ Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressou
 
 1. Klicken Sie unten rechts auf „Weiter“, um Ihre Lab-Reise zu beginnen!
 
-    ![Azure-Portal starten](./media/sc900-image(3).png)
+    ![Explore Lab Resources](../media/new-lab-01/next.png)
 
 Jetzt sind Sie bereit, die leistungsstarke Welt der Technologie zu erkunden. Wenn Sie unterwegs Fragen haben, können Sie sich jederzeit an uns wenden. Viel Spaß bei Ihrem Workshop!
