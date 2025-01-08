@@ -61,8 +61,7 @@ check the **"Enhanced Capabilities"** option, and then click on **Create**.
 
     ![](../media/new-lab-01/image7.png)
 
-4. Under the Home ribbon, click on the **Add source** dropdown and then
-select **External sources**.
+4. Under the Home ribbon, click on the **Add source** dropdown and then select **External sources**.
 
     ![](../media/new-lab-01/image8.png)
 
@@ -232,8 +231,7 @@ filtered to CLICK eventTypes.
 
     ![](../media/new-lab-01/image29.png)
 
-7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the
-**Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
+7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
 
     ![](../media/new-lab-01/image30.png)
 
@@ -316,17 +314,17 @@ this table.
 
 23. For this destination, configure the following properties.
 
-- **Destination name** -- dbo-Clicks
+    - **Destination name** -- dbo-Clicks
 
-- **Workspace** - RTI_username
+    - **Workspace** - RTI_username
 
-- **Eventhouse** -- eh_Fabrikam
+    - **Eventhouse** -- eh_Fabrikam
 
-- **KQL Database** - eh_Fabrikam
+    - **KQL Database** - eh_Fabrikam
 
-- **Destination Table** - Create a new table called **Clicks**
+    - **Destination Table** - Create a new table called **Clicks**
 
-    ![](../media/new-lab-01/image44.png)
+      ![](../media/new-lab-01/image44.png)
 
 24. Click on **Save** at the bottom of the flyout.
 
@@ -404,8 +402,7 @@ Once everything has been highlighted, delete everything.
 
     ![](../media/new-lab-01/image54.png)
 
-5. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A
-**Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
+5. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A **Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
 
     ```powershell
     .executedatabase script<| //Externaltables - shortcuts
