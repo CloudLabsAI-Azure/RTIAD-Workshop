@@ -34,19 +34,19 @@
 
 1. 가상 머신에서 아래와 같이 Azure Portal 아이콘을 클릭합니다.
 
-![Azure Portal 시작](./media/select-azureportal.png)
+    ![Azure Portal 시작](./media/select-azureportal.png)
 
 1. **Microsoft Azure에 로그인** 탭이 표시됩니다. 여기에 자격 증명을 입력하세요.
 
-- **이메일/사용자 이름:** <inject key="AzureAdUserEmail"></inject>
+    - **이메일/사용자 이름:** <inject key="AzureAdUserEmail"></inject>
 
-![사용자 이름 입력](./media/portal-login1.png)
+      ![사용자 이름 입력](./media/portal-login1.png)
 
 1. 다음으로 비밀번호를 입력하세요.
 
-- **비밀번호:** <inject key="AzureAdUserPassword"></inject>
+    - **비밀번호:** <inject key="AzureAdUserPassword"></inject>
 
-![비밀번호 입력](./media/portal-login2.png)
+      ![비밀번호 입력](./media/portal-login2.png)
 
 1. 로그인 상태를 유지하라는 메시지가 표시되면 "아니요"를 클릭하세요.
 
@@ -54,6 +54,6 @@
 
 1. 오른쪽 하단 모서리에서 "다음"을 클릭하여 랩 여정을 시작하세요!
 
-![Azure Portal 시작](./media/getting-started-kor5.png)
+    ![Azure Portal 시작](./media/getting-started-kor5.png)
 
 이제 강력한 기술 세계를 탐험할 준비가 되었습니다. 도중에 질문이 있으면 언제든지 연락하세요. 워크숍을 즐기세요!
