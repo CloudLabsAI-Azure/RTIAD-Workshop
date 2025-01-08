@@ -6,7 +6,7 @@
 
 시작할 준비가 되면 가상 머신과 랩 가이드가 웹 브라우저에서 바로 제공됩니다.
 
-![](./media/labguide-1.png)
+![](./media/getting-started-kor1.png)
 
 ### 가상 머신 및 랩 가이드
 
@@ -16,37 +16,37 @@
 
 랩 리소스와 자격 증명을 더 잘 이해하려면 **환경** 탭으로 이동하세요.
 
-![랩 리소스 탐색](./media/env-1.png)
+![랩 리소스 탐색](./media/getting-started-kor2.png)
 
 ## 분할 창 기능 활용
 
 편의를 위해 오른쪽 상단 모서리에서 **분할 창** 버튼을 선택하여 랩 가이드를 별도의 창에서 열 수 있습니다.
 
-![분할 창 기능 사용](./media/spl.png)
+![분할 창 기능 사용](./media/getting-started-kor3.png)
 
 ## 가상 머신 관리
 
 필요에 따라 **리소스** 탭에서 가상 머신을 시작, 중지 또는 다시 시작할 수 있습니다. 귀하의 경험은 귀하의 손에 달려 있습니다!
 
-![가상 머신 관리](./media/res.png)
+![가상 머신 관리](./media/getting-started-kor4.png)
 
 ## Azure Portal 시작하기
 
 1. 가상 머신에서 아래와 같이 Azure Portal 아이콘을 클릭합니다.
 
-![Azure Portal 시작](./media/sc900-image(1).png)
+![Azure Portal 시작](./media/select-azureportal.png)
 
 1. **Microsoft Azure에 로그인** 탭이 표시됩니다. 여기에 자격 증명을 입력하세요.
 
 - **이메일/사용자 이름:** <inject key="AzureAdUserEmail"></inject>
 
-![사용자 이름 입력](./media/sc900-image-1.png)
+![사용자 이름 입력](./media/portal-login1.png)
 
 1. 다음으로 비밀번호를 입력하세요.
 
 - **비밀번호:** <inject key="AzureAdUserPassword"></inject>
 
-![비밀번호 입력](./media/sc900-image-2.png)
+![비밀번호 입력](./media/portal-login2.png)
 
 1. 로그인 상태를 유지하라는 메시지가 표시되면 "아니요"를 클릭하세요.
 
@@ -54,6 +54,6 @@
 
 1. 오른쪽 하단 모서리에서 "다음"을 클릭하여 랩 여정을 시작하세요!
 
-![Azure Portal 시작](./media/sc900-image(3).png)
+![Azure Portal 시작](./media/getting-started-kor5.png)
 
 이제 강력한 기술 세계를 탐험할 준비가 되었습니다. 도중에 질문이 있으면 언제든지 연락하세요. 워크숍을 즐기세요!
