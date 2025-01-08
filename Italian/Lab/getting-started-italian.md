@@ -34,19 +34,19 @@ Sentiti libero di avviare, arrestare o riavviare la macchina virtuale in base al
 
 1. Sulla macchina virtuale, fai clic sull'icona del portale di Azure come mostrato di seguito:
 
-![Avvia il portale di Azure](./media/sc900-image(1).png)
+![Avvia il portale di Azure](../media/select-azureportal.png)
 
 1. Visualizzerai la scheda **Accedi a Microsoft Azure**. Qui, inserisci le tue credenziali:
 
 - **Email/Nome utente:** <inject key="AzureAdUserEmail"></inject>
 
-![Inserisci il tuo nome utente](./media/sc900-image-1.png)
+![Inserisci il tuo nome utente](../media/portal-login1.png)
 
 1. Quindi, fornisci la tua password:
 
 - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-![Inserisci la tua password](./media/sc900-image-2.png)
+![Inserisci la tua password](../media/portal-login2.png)
 
 1. Se ti viene chiesto di rimanere connesso, puoi fare clic su "No".
 
