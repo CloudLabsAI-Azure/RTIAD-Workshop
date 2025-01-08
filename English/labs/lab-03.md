@@ -57,8 +57,7 @@ create a new **Eventstream**.
     ![](../media/new-lab-01/image6.png)
 
 3. Give the new Eventstream the name, **es_Fabrikam_ClickEvents**,
-check the **"Enhanced Capabilities"** option, and then click on
-**Create**.
+check the **"Enhanced Capabilities"** option, and then click on **Create**.
 
     ![](../media/new-lab-01/image7.png)
 
@@ -135,8 +134,7 @@ accessed the page and how long the page took to load.
 1. You will now take this stream of data and transform it prior to
 being ingested into your KQL Database in a way that can be easily
 understood for analysts looking to derive insights from this data.
-Within the Eventstream canvas, click on the dropdown for the
-**Transform events** object.
+Within the Eventstream canvas, click on the dropdown for the **Transform events** object.
 
     ![](../media/new-lab-01/image15.png)
 
@@ -145,14 +143,11 @@ option.
 
     ![](../media/new-lab-01/image16.png)
 
-3. On the new icon that appears called **ManageFields** click on the
-**pencil icon** to select what fields you wish to add to your stream
-from the source.
+3. On the new icon that appears called **ManageFields** click on the **pencil icon** to select what fields you wish to add to your stream from the source.
 
     ![](../media/new-lab-01/image17.png)
 
-4. In the flyout pane that appears, click on the button the option to
-**Add all fields**.
+4. In the flyout pane that appears, click on the button the option to **Add all fields**.
 
     ![](../media/new-lab-01/image18.png)
 
@@ -192,10 +187,7 @@ the right-hand side of the window, click it.
 
     ![](../media/new-lab-01/image23.png)
 
-10. Click on the **Change type toggle** to modify the data type of this
-field. The original type is a String, you need to modify the
-**Converted Type** to **DateTime**. After you have finished click on
-**Save**.
+10. Click on the **Change type toggle** to modify the data type of this field. The original type is a String, you need to modify the **Converted Type** to **DateTime**. After you have finished click on **Save**.
 
     ![](../media/new-lab-01/image24.png)
 
@@ -240,11 +232,8 @@ filtered to CLICK eventTypes.
 
     ![](../media/new-lab-01/image29.png)
 
-7. These may be the only rows that you're interested in sending to a
-table but another option is to instead create two separate streams
-to route different information to two or more tables. From the
-**Home** ribbon of the Eventstream click on the **Transform events**
-dropdown and then select **Filter**.
+7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the
+**Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
 
     ![](../media/new-lab-01/image30.png)
 
@@ -313,21 +302,17 @@ this table.
 
     ![](../media/new-lab-01/image40.png)
 
-20. Now that you have cleaned up the data for the streams for each of
-the types of events, you need to load each stream into a new table
-on the KQL Database. Click on the **+ icon** after the
-**Manage_Clicks** manage fields operation.
+20. Now that you have cleaned up the data for the streams for each of the types of events, you need to load each stream into a new table on the KQL Database. Click on the **+ icon** after the **Manage_Clicks** manage fields operation.
 
     ![](../media/new-lab-01/image41.png)
 
-21. In the dropdown list that appears, go to **Destinations** and select
-**Eventhouse**.
+21. In the dropdown list that appears, go to **Destinations** and select **Eventhouse**.
 
     ![](../media/new-lab-01/image42.png)
 
 22. Click on the **pencil icon** for the Eventhouse destination.
 
-![A white sign with black text](../media/new-lab-01/image43.png)
+    ![](../media/new-lab-01/image43.png)
 
 23. For this destination, configure the following properties.
 
@@ -352,8 +337,7 @@ information configured as below.
 
 26. Save your changes.
 
-27. This Eventstream is now ready to begin streaming. Click on
-**Publish** to begin that stream.
+27. This Eventstream is now ready to begin streaming. Click on **Publish** to begin that stream.
 
     ![](../media/new-lab-01/image46.png)
 
@@ -402,13 +386,11 @@ some sort of Product name to be able to display. The data we need to
 support this is currently in an external Azure SQL Database, let's see
 how easy it is to make connections to some of these dimension tables.
 
-1. In the **eh_Fabrikam** database, click on the drop-down menu called
-**New related item**. Then choose the option that says KQL Queryset.
+1. In the **eh_Fabrikam** database, click on the drop-down menu called **New related item**. Then choose the option that says KQL Queryset.
 
     ![](../media/new-lab-01/image51.png)
 
-2. Give the KQL Queryset the name **Create Tables** and then click the
-**Create** button.
+2. Give the KQL Queryset the name **Create Tables** and then click the **Create** button.
 
     ![](../media/new-lab-01/image52.png)
 
@@ -422,33 +404,29 @@ Once everything has been highlighted, delete everything.
 
     ![](../media/new-lab-01/image54.png)
 
-5. In the blank query window enter the following KQL script. This
-script will create a connection to an external Azure SQL Database
-and make it available within our KQL database as a **Shortcut**. A
-**Shortcut** is attached in a read-only mode, making it possible to
-view and run queries alongside the streaming data that was ingested
-into the KQL database.
+5. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A
+**Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
 
-```powershell
-.executedatabase script<| //Externaltables - shortcuts
-//connectto operational Database with external table Product
-.create externaltable products (ProductID: int. ProductNumber: string. Name: string) kind-sql
-ta ble-|SalesLT. Product]
-(
-h@‘Server- fabrikamdemo.database.windows.net. 1433;Initial Catalog-fabrikamdb;Us ld-demouser;Password-fabrikam<ai23456‘
-)
-with
-<
-create if notexists - true
-)
-//connectto operational Database with external table ProductCategory .create externaltable productCategories (ProductCategorylD: int. Name: string) kind-sql
-ta ble-|SalesLT. ProductCategory]
-(
-h@'Server- fabrikamdemo.database.windows. net.l433;lnitialCatalog-fabrikamdb;U ld-demouser;Password-fabrikam<ai23456‘ )
-with
-(
-create if notexists - true
-```
+    ```powershell
+    .executedatabase script<| //Externaltables - shortcuts
+    //connectto operational Database with external table Product
+    .create externaltable products (ProductID: int. ProductNumber: string. Name: string) kind-sql
+    ta ble-|SalesLT. Product]
+    (
+    h@‘Server- fabrikamdemo.database.windows.net. 1433;Initial Catalog-fabrikamdb;Us ld-demouser;Password-fabrikam<ai23456‘
+    )
+    with
+    <
+    create if notexists - true
+    )
+    //connectto operational Database with external table ProductCategory .create externaltable productCategories (ProductCategorylD: int. Name: string) kind-sql
+    ta ble-|SalesLT. ProductCategory]
+    (
+    h@'Server- fabrikamdemo.database.windows. net.l433;lnitialCatalog-fabrikamdb;U ld-demouser;Password-fabrikam<ai23456‘ )
+    with
+    (
+    create if notexists - true
+    ```
 
     ![](../media/new-lab-01/image56.png)
 
@@ -470,21 +448,20 @@ answer questions and give more context to consumers of the reports
 and queries these tables off insights on across your business. Run
 the following KQL query to see one of them.
 
-```powershell
-InternetSales
-| join kind=inner
-(external_table("products")) on ($left.ProductKey == Sright.ProductID)
-| summarize SalesPerProduct=sum(SalesAmount) by Name
-| project Name, SalesPerProduct
-```
+    ```powershell
+    InternetSales
+    | join kind=inner
+    (external_table("products")) on ($left.ProductKey == Sright.ProductID)
+    | summarize SalesPerProduct=sum(SalesAmount) by Name
+    | project Name, SalesPerProduct
+    ```
 
 9. You will now see in your query results values for each individual
 product that your company has sold.
 
     ![](../media/new-lab-01/image60.png)
 
-10. With your query highlighted click on the button in your toolbar,
-**Build Power BI report**.
+10. With your query highlighted click on the button in your toolbar, **Build Power BI report**.
 
     ![](../media/new-lab-01/image61.png)
 
