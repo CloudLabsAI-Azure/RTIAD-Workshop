@@ -1,4 +1,4 @@
-
+# Microsoft Fabric Real-Time Intelligence in a Day 实验室 5
 ![](../media/lab-05/main.png)
 
 # 目录
@@ -89,14 +89,15 @@
 
 2. 默认情况下，您将连接到之前创建的KQL 数据库作为源。您可以从此处编写自己的KQL 查询，以使用数据填充此视觉对象。删除默认存在的所有先前Markdown KQL。复制以下查询并将其粘贴到查询窗口中。
 
-``` 
-//Clicks by hour Clicks
-| where eventDate between (_startTime.._endTime)
-| summarize date_count = count() by bin(eventDate, 1h)
-| render timechart
-| top 30 by date_count
-| sort by eventDate
-```
+     ``` 
+     //Clicks by hour Clicks
+     | where eventDate between (_startTime.._endTime)
+     | summarize date_count = count() by bin(eventDate, 1h)
+     | render timechart
+     | top 30 by date_count
+     | sort by eventDate
+     ```
+
 3. 正确配置查询后，运行查询以查看结果。
 
      ![](../media/lab-05/image030.png)
@@ -123,31 +124,31 @@
 
 9. 关闭参数窗格。
 
-10.	现在，单击查询结果上方的 **+ 添加视觉对象按钮**。
+10. 现在，单击查询结果上方的 **+ 添加视觉对象按钮**。
 
      ![](../media/lab-05/image042.png)
 
-11.	屏幕右侧将显示一个新的弹出窗口。单击 **Tile name** 选项下方的文本框，以将此视觉对象命名为 **Clicks by Hour**。
+11. 屏幕右侧将显示一个新的弹出窗口。单击 **Tile name** 选项下方的文本框，以将此视觉对象命名为 **Clicks by Hour**。
 
      ![](../media/lab-05/image044.png)
  
-12.	默认情况下，用于显示此KQL 查询结果的视觉对象是表。这可能不是让用户快速使用和理解数据结果所发生情况的最佳方式。将视觉对象类型从表更改为 **Area chart**。
+12. 默认情况下，用于显示此KQL 查询结果的视觉对象是表。这可能不是让用户快速使用和理解数据结果所发生情况的最佳方式。将视觉对象类型从表更改为 **Area chart**。
 
      ![](../media/lab-05/image046.png)
 
-13.	设置视觉对象的新格式后，您可以使用之前在本课程中创建的数据流更好地了解电子商务站点中点击数的高峰和低谷。
+13. 设置视觉对象的新格式后，您可以使用之前在本课程中创建的数据流更好地了解电子商务站点中点击数的高峰和低谷。
 
      ![](../media/lab-05/image048.png)
  
-14.	若要将此视觉对象保存到仪表板，请单击屏幕右上角的**应用更改**按钮。
+14. 若要将此视觉对象保存到仪表板，请单击屏幕右上角的**应用更改**按钮。
 
      ![](../media/lab-05/image050.png)
 
-15.	将此视觉对象放入仪表板后，该视觉对象可能仅显示最后一个小时的结果。修改仪表板以 显示**最后 24 小时**的**时间范围**。
+15. 将此视觉对象放入仪表板后，该视觉对象可能仅显示最后一个小时的结果。修改仪表板以 显示**最后 24 小时**的**时间范围**。
 
      ![](../media/lab-05/image052.png)
 
-16.	刷新视觉对象，可以看到结果将略有变化，以反映自上次执行查询以来传入的数据。
+16. 刷新视觉对象，可以看到结果将略有变化，以反映自上次执行查询以来传入的数据。
 
      ![](../media/lab-05/image054.png)
 
@@ -159,14 +160,14 @@
 
 2. 将以下KQL 查询输入到查询窗格中。
 
-```
-//Impressions by hour Impressions
-| where eventDate between (_startTime.._endTime)
-| summarize date_count = count() by bin(eventDate, 1h)
-| render timechart
-| top 30 by date_count
-| sort by eventDate
-```
+     ```
+     //Impressions by hour Impressions
+     | where eventDate between (_startTime.._endTime)
+     | summarize date_count = count() by bin(eventDate, 1h)
+     | render timechart
+     | top 30 by date_count
+     | sort by eventDate
+     ```
 
 3. **运行**查询。
 
@@ -190,69 +191,69 @@
  
 8. 复制以下查询并将其粘贴到查询窗格中。请注意，这是一个多语句查询，它使用多个let 语句和一个由分号组合的查询。
 
-```
-//Clicks, Impressions, CTR
+     ```
+     //Clicks, Impressions, CTR
 
-let imp = Impressions
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize imp_count = count() by dateOnly;
-
-
-let clck = Clicks
-| where eventDate between (_startTime.._endTime)
-| extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
-| summarize clck_count = count() by dateOnly;
+     let imp = Impressions
+     | where eventDate between (_startTime.._endTime)
+     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+     | summarize imp_count = count() by dateOnly;
 
 
-imp
-| join clck on $left.dateOnly == $right.dateOnly
-| project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
-```
+     let clck = Clicks
+     | where eventDate between (_startTime.._endTime)
+     | extend dateOnly = substring(todatetime(eventDate).tostring(), 0, 10)
+     | summarize clck_count = count() by dateOnly;
+
+
+     imp
+     | join clck on $left.dateOnly == $right.dateOnly
+     | project selected_date = dateOnly , impressions = imp_count , clicks = clck_count, CTR = clck_count * 100 / imp_count
+     ```
 
 9. **运行**查询以查看结果。
 
      ![](../media/lab-05/image072.png)
  
-10.	单击 **+ 添加视觉对象**按钮。
+10. 单击 **+ 添加视觉对象**按钮。
 
-11.	显示视觉对象设置时，修改以下设置以创建展现量计数。
+11. 显示视觉对象设置时，修改以下设置以创建展现量计数。
 
     - **Tile name-** Impressions
     - **Visual type-** Stat
     - **Value column-** impressions (long)
 
-     ![](../media/lab-05/image074.png)
+      ![](../media/lab-05/image074.png)
   
-12.	当所有设置均已正确配置时，选择**应用更改**。
+12. 当所有设置均已正确配置时，选择**应用更改**。
 
      ![](../media/lab-05/image076.png)
  
-13.	在新磁贴上，单击省略号 (…)，然后选择**复制磁贴**选项。
+13. 在新磁贴上，单击省略号 (…)，然后选择**复制磁贴**选项。
 
      ![](../media/lab-05/image078.png)
 
-14.	针对复制的磁贴单击**铅笔图标**以编辑配置。
+14. 针对复制的磁贴单击**铅笔图标**以编辑配置。
 
      ![](../media/lab-05/image080.png)
  
-15.	将此 **Tile name** 重命名为 **Clicks**，将 **Value column** 更改为 **clicks (long)**。
+15. 将此 **Tile name** 重命名为 **Clicks**，将 **Value column** 更改为 **clicks (long)**。
 
      ![](../media/lab-05/image082.png)
 
-16.	将更改应用到此视觉对象。
+16. 将更改应用到此视觉对象。
 
-17.	再次复制其中任一新磁贴，创建一个最终统计信息视觉对象。
+17. 再次复制其中任一新磁贴，创建一个最终统计信息视觉对象。
 
      ![](../media/lab-05/image084.png)
  
-18.	编辑新磁贴，以将 **Tile name** 更改为 **Click Through Rate**，将 **Value column** 更改为 **CTR (long)**。
+18. 编辑新磁贴，以将 **Tile name** 更改为 **Click Through Rate**，将 **Value column** 更改为 **CTR (long)**。
 
      ![](../media/lab-05/image086.png)
 
-19.	应用更改。
+19. 应用更改。
 
-20.	如果磁贴已分离，或者您要重新组织它们，可以将鼠标悬停在磁贴上，直到显示手形图标，然后将视觉对象拖放到所需位置。
+20. 如果磁贴已分离，或者您要重新组织它们，可以将鼠标悬停在磁贴上，直到显示手形图标，然后将视觉对象拖放到所需位置。
 
      ![](../media/lab-05/image088.png)
 
@@ -264,13 +265,13 @@ imp
 
 2. 复制以下查询并将其粘贴到查询窗格中。此查询从此数据流的IP 地址列中提取纬度和经度，以生成可在地图上绘制的位置。此查询可能比之前的查询花费更多时间。
 
-```
-//Impressions by location Impressions
-| where eventDate between (_startTime.._endTime)
-| join external_table('products') on $left.productId == $right.ProductID
-| project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
-| render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
-```
+     ```
+     //Impressions by location Impressions
+     | where eventDate between (_startTime.._endTime)
+     | join external_table('products') on $left.productId == $right.ProductID
+     | project lon = toreal(geo_info_from_ip_address(ip_address).longitude), lat = toreal(geo_info_from_ip_address(ip_address).latitude), Name
+     | render scatterchart with (kind = map) //, xcolumn=lon, ycolumns=lat)
+     ```
 
 3. 执行查询以验证其配置是否正确。单击 **+ 添加视觉对象**按钮。
 
@@ -334,7 +335,9 @@ imp
  
 3. 复制以下Markdown 代码并将其粘贴到查询窗口中。
 
-    > ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+     ```
+     ![Fabrikam](https://github.com/PragmaticWorksTraining/DIAD/blob/main/Logos/Fabrikam. png?raw=true "Fabrikam")
+     ```
 
      ![](../media/lab-05/image122.png)
 

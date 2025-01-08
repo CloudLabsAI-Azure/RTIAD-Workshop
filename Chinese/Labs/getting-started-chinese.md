@@ -34,19 +34,19 @@
 
 1. 在您的虚拟机上，单击 Azure 门户图标，如下所示：
 
-![启动 Azure 门户](../media/select-azureportal.png)
+    ![启动 Azure 门户](../media/select-azureportal.png)
 
 1. 您将看到 **登录 Microsoft Azure** 选项卡。在这里，输入您的凭据：
 
-- **电子邮件/用户名**：<inject key="AzureAdUserEmail"></inject>
+   - **电子邮件/用户名**：<inject key="AzureAdUserEmail"></inject>
 
-![输入您的用户名](../media/portal-login1.png)
+     ![输入您的用户名](../media/portal-login1.png)
 
 1. 接下来，提供您的密码：
 
-- **密码**：<inject key="AzureAdUserPassword"></inject>
+    - **密码**：<inject key="AzureAdUserPassword"></inject>
 
-![输入您的密码](../media/portal-login2.png)
+      ![输入您的密码](../media/portal-login2.png)
 
 1. 如果系统提示您保持登录状态，您可以单击“否”。
 
@@ -54,6 +54,6 @@
 
 1. 单击右下角的“下一个”开始您的实验室之旅！
 
-![启动 Azure 门户](../media/getting-started-chinese5.png)
+    ![启动 Azure 门户](../media/getting-started-chinese5.png)
 
 现在，您已准备好探索强大的技术世界。如果您在过程中有任何问题，请随时联系我们。祝您研讨会愉快！

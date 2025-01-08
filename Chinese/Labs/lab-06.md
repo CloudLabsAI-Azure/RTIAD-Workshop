@@ -1,3 +1,5 @@
+# Microsoft Fabric Real-Time Intelligence in a Day 实验室 6
+
 # 目录
 
 - 文档结构	
@@ -61,12 +63,9 @@
 
     ![](../media/lab-06/image018.png)
  
-9. 系统会将您转到正式的 **Reflex 体验**。从此处，您可以实时监视数据流，查看用于支持
-
-    Reflex 的数据，以及从同一流创建其他触发器。
+9. 系统会将您转到正式的 **Reflex 体验**。从此处，您可以实时监视数据流，查看用于支持 Reflex 的数据，以及从同一流创建其他触发器。
 
     ![](../media/lab-06/image020.jpg)
-
 
 ## 任务 2：从Reflex 体验测试电子邮件警报
 
@@ -110,14 +109,14 @@
     - **列=** clicks
     - **值=** 30000
 
-   ![](../media/lab-06/image034.png)
+      ![](../media/lab-06/image034.png)
 
 5. 在**操作**中，选择下面的属性：
     
     - **类型=** Teams message
     - **收件人=** {your user id here}
 
-   ![](../media/lab-06/image036.png)
+      ![](../media/lab-06/image036.png)
 
 6. 最后，单击**保存并启动**以启动此规则
 

@@ -1,4 +1,4 @@
-
+# Microsoft Fabric Real-Time Intelligence in a Day 实验室 4
 ![](../media/lab-04/main.png)
 
 # 目录
@@ -53,17 +53,17 @@
 
 4. 在此新选项卡中，粘贴并突出显示以下代码，然后选择“运行”以创建四个新表，这些表将用作奖牌框架的铜牌图层。
 
-```
-//BRONZE LAYER
-.execute database script <|
+    ```
+    //BRONZE LAYER
+    .execute database script <|
 
-.create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
-.create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
-.create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
-.create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
-```
+    .create table [Address] (AddressID:int,AddressLine1:string,AddressLine2:string,City: string, StateProvince:string, CountryRegion:string, PostalCode: string, rowguid: guid, ModifiedDate:datetime)
+    .create table [Customer](CustomerID:int, NameStyle: string, Title: string, FirstName: string, MiddleName: string, LastName: string,Suffix:string, CompanyName: string, SalesPerson: string, EmailAddress: string, Phone: string, ModifiedDate: datetime)
+    .create table [SalesOrderHeader](SalesOrderID: int, OrderDate: datetime, DueDate: datetime, ShipDate: datetime, ShipToAddressID: int, BillToAddressID: int, SubTotal: decimal, TaxAmt: decimal, Freight: decimal, TotalDue: decimal, ModifiedDate: datetime)
+    .create table [SalesOrderDetail](SalesOrderID: int, SalesOrderDetailID: int, OrderQty: int, ProductID: int, UnitPrice: decimal , UnitPriceDiscount: decimal,LineTotal: decimal, ModifiedDate: datetime)
+    ```
 
-![](../media/lab-04/image014.png)
+    ![](../media/lab-04/image014.png)
   
 5. 执行后，您应该立即看到在数据库对象资源管理器中创建的四个新表。
 
@@ -72,7 +72,7 @@
     - SalesOrderDetail
     - SalesOrderHeader
 
-    ![](../media/lab-04/image016.png)
+      ![](../media/lab-04/image016.png)
 
 6. 通过单击名称旁边的 > 图标展开 **Address 表**。
 
@@ -88,6 +88,7 @@
     .alter table SalesOrderHeader policy ingestiontime true
     .alter table SalesOrderDetail policy ingestiontime true
     ```
+
     ![](../media/lab-04/image022.png)
 
 8. 这四个新表是空白表，其架构均已定义。现在，您需要通过一种方法正确加载这些表。导航回您的工作区 **RTI_username**。
@@ -128,42 +129,41 @@
     - SalesLT.SalesOrderDetail
     - SalesLT.SalesOrderHeader
 
-    ![](../media/lab-04/image032.png)
+      ![](../media/lab-04/image032.png)
   
 9. 单击**下一步**。
 
-10.	您现在需要设置目标，以确定希望管道将数据发送到的位置。查找 **OneLake 数据中心**，然后选择您的KQL 数据库 **eh_Fabrikam**。
+10. 您现在需要设置目标，以确定希望管道将数据发送到的位置。查找 **OneLake 数据中心**，然后选择您的KQL 数据库 **eh_Fabrikam**。
 
     ![](../media/lab-04/image034.png)
 
-11.	如果系统提示您登录，只需使用“环境详细信息”页面中提供的凭据即可
+11. 如果系统提示您登录，只需使用“环境详细信息”页面中提供的凭据即可
 
-12.	如果尚未选择 **SalesLT.Address** 表，请单击该表，然后单击**表**选项旁边的下拉菜单。单击
-**Address** 表选项。
+12.	如果尚未选择 **SalesLT.Address** 表，请单击该表，然后单击**表**选项旁边的下拉菜单。单击 **Address** 表选项。
 
     ![](../media/lab-04/image036.png)
  
-13.	您现在将看到列**映射的**概述。这将允许您可视化源数据库中您要发送到KQL 数据库的所有字段。如果您不希望特定字段从源映射，可以选择删除这些字段。
+13. 您现在将看到列**映射的**概述。这将允许您可视化源数据库中您要发送到KQL 数据库的所有字段。如果您不希望特定字段从源映射，可以选择删除这些字段。
 
     ![](../media/lab-04/image038.png)
 
-14.	对表 **SalesLT.Customer、SaleLT.SalesOrderDetail** 和 **SalesLT.SalesOrderHeader** 执行与步骤 11- 12 相同的步骤。无需执行列映射，因此只需匹配表名称即可。正确映射所有表后，单击**下一步**。
+14. 对表 **SalesLT.Customer、SaleLT.SalesOrderDetail** 和 **SalesLT.SalesOrderHeader** 执行与步骤 11- 12 相同的步骤。无需执行列映射，因此只需匹配表名称即可。正确映射所有表后，单击**下一步**。
 
-15.	使用“复制数据”助手的最后一页是概述页面，用于验证您选择的所有设置。确保源表数和目标表数相同。
+15. 使用“复制数据”助手的最后一页是概述页面，用于验证您选择的所有设置。确保源表数和目标表数相同。
 
     ![](../media/lab-04/image040.png)
 
-16.	单击**保存+ 运行**。
+16. 单击**保存+ 运行**。
  
-17.	片刻之后，将显示一个弹出窗口，其中包含**参数**。我们刚刚完成的复制助手向导创建了一个表列表，用于进行迭代并加载到KQL 表中。只需单击**确定**按钮即可运行管道，因为它当前已从“复制数据”助手配置。
+17. 片刻之后，将显示一个弹出窗口，其中包含**参数**。我们刚刚完成的复制助手向导创建了一个表列表，用于进行迭代并加载到KQL 表中。只需单击**确定**按钮即可运行管道，因为它当前已从“复制数据”助手配置。
 
     ![](../media/lab-04/image042.png)
 
-18.	让管道运行，大约一分钟后，数据移动应完成。一旦您看到管道中的所有活动**均成功**，即表明您已传输数据。
+18. 让管道运行，大约一分钟后，数据移动应完成。一旦您看到管道中的所有活动**均成功**，即表明您已传输数据。
 
     ![](../media/lab-04/image044.png)
 
-19.	让我们检查其中一个表并验证数据。导航回我们一直在使用的名为 **Create Tables** 的KQL 查询集，并确保您位于 **Bronze Layer** 选项卡中，然后运行以下脚本
+19. 让我们检查其中一个表并验证数据。导航回我们一直在使用的名为 **Create Tables** 的KQL 查询集，并确保您位于 **Bronze Layer** 选项卡中，然后运行以下脚本
 
     ```
     //Query the Bronze layer Customer table 
@@ -174,7 +174,7 @@
 
     ![](../media/lab-04/image048.png)
 
-20.	您应该会看到如下图所示的一些数据，但这些数据可能不准确
+20. 您应该会看到如下图所示的一些数据，但这些数据可能不准确
 
     ![](../media/lab-04/image050.png)
 
@@ -257,13 +257,13 @@
 
     ![](../media/lab-04/image068.png)
 
-10.	同样，等待大约一分钟，让管道完成加载，当输出菜单中的所有项目都指示**成功**时，继续执行下一个步骤。
+10. 同样，等待大约一分钟，让管道完成加载，当输出菜单中的所有项目都指示**成功**时，继续执行下一个步骤。
 
     ![](../media/lab-04/image070.png)
 
-11.	数据管道完成后，继续在KQL 数据库中验证结果。返回到 **Create Tables** KQL 查询集并导航到 **Silver Layer** 选项卡。
+11. 数据管道完成后，继续在KQL 数据库中验证结果。返回到 **Create Tables** KQL 查询集并导航到 **Silver Layer** 选项卡。
 
-12.	在新行中，通过编写以下查询并执行代码来查询SilverAddress 表。
+12. 在新行中，通过编写以下查询并执行代码来查询SilverAddress 表。
 
     ```
     SilverAddress
@@ -271,7 +271,7 @@
     ```
     ![](../media/lab-04/image075.png)
 
-13.	请注意，在结果中，您的 **SilverAddress** 表中额外有一列 **IngestionDate**，该列实际上不存在于 **Address** 表中。
+13. 请注意，在结果中，您的 **SilverAddress** 表中额外有一列 **IngestionDate**，该列实际上不存在于 **Address** 表中。
 
     ![](../media/lab-04/image076.png)
 
@@ -369,6 +369,7 @@
 1. 返回到 **RTI_username** 工作区。
 
 2. 单击 **+ 新建项目**选项，然后从可用选项列表中选择**湖屋**。
+
     ![](../media/lab-04/image096.png)
 
 3. 将湖屋命名为 **lh_Fabrikam**，然后单击**创建**。不要启用湖屋架构的预览功能
@@ -399,7 +400,7 @@
     - Impressions
     - InternetSales
 
-    ![](../media/lab-04/image106.png)
+      ![](../media/lab-04/image106.png)
 
 6. 对于可能在Fabric 中利用笔记本的任何用户，这些表都非常有用。在数据科学试验 中，可以使用此数据来训练一个模型，该模型可以预测用户可能对哪些链接感兴趣。
 
@@ -413,11 +414,11 @@
 
     ![](../media/lab-04/image110.png)
 
-10.	单击名为 **Clicks** 的表。
+10. 单击名为 **Clicks** 的表。
 
     ![](../media/lab-04/image112.png)
  
-11.	您可以看到，该表中的记录示例已显示在您的用户界面中。
+11. 您可以看到，该表中的记录示例已显示在您的用户界面中。
 
     > **注意：该数据最多可能需要几个小时才能显示在OneLake 中
 (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake- availability)**
