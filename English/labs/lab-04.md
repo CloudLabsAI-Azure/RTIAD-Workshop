@@ -157,7 +157,7 @@ Follow using the information in your environment or as below.
 
     - SalesLT.SalesOrderHeader
 
-    ![](../media/lab-04/image18.png)
+      ![](../media/lab-04/image18.png)
 
 9. Click on **Next**.
 
@@ -184,8 +184,7 @@ from the source.
 
     ![](../media/lab-04/image21.png)
 
-14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and
-**SalesLT.SalesOrderHeader**. No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
+14. Follow the same steps as Step 11-12 for the tables **SalesLT.Customer**, **SaleLT.SalesOrderDetail**, and **SalesLT.SalesOrderHeader**. No column mappings will need to be performed so simply match up the table names. Once all tables have been appropriately mapped, click on **Next**.
 
 15. The final page using the Copy Data Assistant is an overview page to
 verify all the settings you've selected. Ensure that your source
@@ -398,8 +397,7 @@ materialized view.
 
     ```
     GoldAddress
-    | take 1000 
-
+    | take 1000
     ```
 
     ![](../media/lab-04/image47.png)
