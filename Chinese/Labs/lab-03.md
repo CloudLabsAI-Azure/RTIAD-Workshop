@@ -1,5 +1,7 @@
 # Microsoft Fabric Real-Time Intelligence in a Day 实验室 3
 
+![](../media/lab-03/c1.png)
+
 # 目录 
 - 文档结构
 - 简介
