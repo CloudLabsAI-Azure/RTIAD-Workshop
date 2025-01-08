@@ -34,19 +34,19 @@ Puede iniciar, detener o reiniciar su máquina virtual según sea necesario desd
 
 1. En su máquina virtual, haga clic en el ícono de Azure Portal como se muestra a continuación:
 
-![Iniciar Azure Portal](../media/select-azureportal.png)
+    ![Iniciar Azure Portal](../media/select-azureportal.png)
 
 1. Verá la pestaña **Iniciar sesión en Microsoft Azure**. Aquí, ingrese sus credenciales:
 
-- **Correo electrónico/Nombre de usuario:** <inject key="AzureAdUserEmail"></inject>
+    - **Correo electrónico/Nombre de usuario:** <inject key="AzureAdUserEmail"></inject>
 
-![Ingrese su nombre de usuario](../media/portal-login1.png)
+      ![Ingrese su nombre de usuario](../media/portal-login1.png)
 
 1. A continuación, proporcione su contraseña:
 
-- **Contraseña:** <inject key="AzureAdUserPassword"></inject>
+    - **Contraseña:** <inject key="AzureAdUserPassword"></inject>
 
-![Ingrese su contraseña](../media/portal-login2.png)
+      ![Ingrese su contraseña](../media/portal-login2.png)
 
 1. Si se le solicita que permanezca conectado, puede hacer clic en "No".
 
@@ -54,6 +54,6 @@ Puede iniciar, detener o reiniciar su máquina virtual según sea necesario desd
 
 1. Haga clic en "Siguiente" en la esquina inferior derecha para embarcarse en su viaje al laboratorio.
 
-![Iniciar el portal de Azure](../media/getting-started-spanish5.png)
+    ![Iniciar el portal de Azure](../media/getting-started-spanish5.png)
 
 Ahora ya está todo listo para explorar el poderoso mundo de la tecnología. No dude en comunicarse con nosotros si tiene alguna pregunta durante el proceso. ¡Disfrute del taller!
