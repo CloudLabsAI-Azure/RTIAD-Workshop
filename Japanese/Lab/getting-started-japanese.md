@@ -34,19 +34,19 @@
 
 1. 仮想マシンで、次に示すように Azure Portal アイコンをクリックします。
 
-![Azure Portal を起動](../media/select-azureportal.png)
+    ![Azure Portal を起動](../media/select-azureportal.png)
 
 1. [**Microsoft Azure にサインイン**] タブが表示されます。ここで、資格情報を入力します:
 
-- **メール/ユーザー名:** <inject key="AzureAdUserEmail"></inject>
+    - **メール/ユーザー名:** <inject key="AzureAdUserEmail"></inject>
 
-![ユーザー名を入力](../media/portal-login1.png)
+      ![ユーザー名を入力](../media/portal-login1.png)
 
 1. 次に、パスワードを入力します:
 
-- **パスワード:** <inject key="AzureAdUserPassword"></inject>
+    - **パスワード:** <inject key="AzureAdUserPassword"></inject>
 
-![パスワードを入力](../media/portal-login2.png)
+      ![パスワードを入力](../media/portal-login2.png)
 
 1. サインインしたままにするよう求められたら、[いいえ] をクリックします。
 
@@ -54,6 +54,6 @@
 
 1. 右下隅の [次へ] をクリックして、ラボの旅に乗り出します!
 
-![Azure Portal を起動](../media/getting-started-jap5.png)
+    ![Azure Portal を起動](../media/getting-started-jap5.png)
 
 これで、テクノロジの強力な世界を探索する準備が整いました。途中でご質問がありましたら、お気軽にお問い合わせください。ワークショップをお楽しみください!
