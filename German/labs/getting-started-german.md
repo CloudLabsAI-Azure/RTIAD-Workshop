@@ -34,19 +34,19 @@ Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressou
 
 1. Klicken Sie auf Ihrer virtuellen Maschine auf das Azure Portal-Symbol, wie unten gezeigt:
 
-![Azure Portal starten](../media/select-azureportal.png)
+    ![Azure Portal starten](../media/select-azureportal.png)
 
 1. Sie sehen die Registerkarte **Bei Microsoft Azure anmelden**. Geben Sie hier Ihre Anmeldeinformationen ein:
 
-- **E-Mail/Benutzername:** <inject key="AzureAdUserEmail"></inject>
+    - **E-Mail/Benutzername:** <inject key="AzureAdUserEmail"></inject>
 
-![Geben Sie Ihren Benutzernamen ein](../media/portal-login1.png)
+      ![Geben Sie Ihren Benutzernamen ein](../media/portal-login1.png)
 
 1. Geben Sie als Nächstes Ihr Passwort ein:
 
-- **Passwort:** <inject key="AzureAdUserPassword"></inject>
+    - **Passwort:** <inject key="AzureAdUserPassword"></inject>
 
-![Geben Sie Ihr Passwort ein](../media/portal-login2.png)
+      ![Geben Sie Ihr Passwort ein](../media/portal-login2.png)
 
 1. Wenn Sie aufgefordert werden, angemeldet zu bleiben, können Sie auf „Nein“ klicken.
 
@@ -54,6 +54,6 @@ Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressou
 
 1. Klicken Sie unten rechts auf „Weiter“, um Ihre Lab-Reise zu beginnen!
 
-![Azure-Portal starten](./media/sc900-image(3).png)
+    ![Azure-Portal starten](./media/sc900-image(3).png)
 
 Jetzt sind Sie bereit, die leistungsstarke Welt der Technologie zu erkunden. Wenn Sie unterwegs Fragen haben, können Sie sich jederzeit an uns wenden. Viel Spaß bei Ihrem Workshop!

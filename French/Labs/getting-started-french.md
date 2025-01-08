@@ -34,19 +34,19 @@ N'hésitez pas à démarrer, arrêter ou redémarrer votre machine virtuelle sel
 
 1. Sur votre machine virtuelle, cliquez sur l'icône du portail Azure comme indiqué ci-dessous :
 
-![Lancer le portail Azure](../media/select-azureportal.png)
+    ![Lancer le portail Azure](../media/select-azureportal.png)
 
 1. Vous verrez l'onglet **Se connecter à Microsoft Azure**. Ici, saisissez vos identifiants :
 
-- **E-mail/Nom d'utilisateur :** <inject key="AzureAdUserEmail"></inject>
+    - **E-mail/Nom d'utilisateur :** <inject key="AzureAdUserEmail"></inject>
 
-![Entrez votre nom d'utilisateur](../media/portal-login1.png)
+      ![Entrez votre nom d'utilisateur](../media/portal-login1.png)
 
 1. Ensuite, indiquez votre mot de passe :
 
-- **Mot de passe :** <inject key="AzureAdUserPassword"></inject>
+    - **Mot de passe :** <inject key="AzureAdUserPassword"></inject>
 
-![Entrez votre mot de passe](../media/portal-login2.png)
+      ![Entrez votre mot de passe](../media/portal-login2.png)
 
 1. Si vous êtes invité à rester connecté, vous pouvez cliquer sur « Non ».
 
@@ -54,6 +54,6 @@ N'hésitez pas à démarrer, arrêter ou redémarrer votre machine virtuelle sel
 
 1. Cliquez sur « Suivant » dans le coin inférieur droit pour vous lancer dans votre aventure Lab !
 
-![Lancez le portail Azure](../media/getting-started-french5.png)
+    ![Lancez le portail Azure](../media/getting-started-french5.png)
 
 Vous êtes désormais prêt à explorer le monde puissant de la technologie. N'hésitez pas à nous contacter si vous avez des questions. Profitez de votre atelier !
