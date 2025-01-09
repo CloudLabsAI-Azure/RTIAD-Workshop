@@ -133,13 +133,28 @@
 
 6. データベースの接続の詳細を入力する必要があります。環境の情報を使用するか、以下のように入力します。
 
-    - fabrikamdemo.database.windows.net
+    - Server:
 
-    - fabrikamdb
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
 
-    - demouser
+      ```
+      fabrikamdb
+      ```
 
-    - fabrikam@123456
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
 
 7. すべて入力したら、**次へ**をクリックします。
 
