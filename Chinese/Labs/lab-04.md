@@ -115,28 +115,22 @@
 
 6. 您将需要输入数据库的连接详细信息。使用您的环境中的信息，或如下所示。
 
-    - Server:
-
+ - Server:
       ```
       fabrikamserverdb.database.windows.net
-      ```
-   - Database :
-
+      ``` 
+  -  Database :
       ```
       fabrikamdb
       ```
-
-   - Username :
-
+  -  Username :
       ```
       demouser
       ```
-      
-   - Password :
-       
-      ``` 
-      fabrikam@1234567
-      ```
+  -  Password :
+       ```
+       fabrikam@1234567
+       ```
 
 7. 填写完所有内容后，单击**下一步**。
 
