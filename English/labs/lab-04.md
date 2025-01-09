@@ -137,13 +137,28 @@ option.
 6. You will need to input the connection details of the database.
 Follow using the information in your environment or as below.
 
-    - fabrikamdemo.database.windows.net
+    - Server:
 
-    - fabrikamdb
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
 
-    - demouser
+      ```
+      fabrikamdb
+      ```
 
-    - fabrikam@123456
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
 
 7. Click **Next** when everything has been filled out.
 
