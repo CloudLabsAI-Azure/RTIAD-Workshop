@@ -289,14 +289,14 @@
 5. 在空白查询窗口中，输入以下 KQL 脚本。此脚本将创建与外部 Azure SQL 数据库的连接，并使其作为**快捷方式**在我们的 KQL 数据库中可用。快捷方式****在只读模式下附加，可以查看和运行查询以及引入到 KQL 数据库中的流式数据。
 
     ```
-    .execute database script <|
+   .execute database script <|
     //External tables - shortcuts
     // connect to operational Database with external table Product
     .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
     kind=sql
     table=[SalesLT.Product]
     ( 
-    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
     with 
     (
@@ -307,12 +307,15 @@
     kind=sql
     table=[SalesLT.ProductCategory]
     ( 
-     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
     with 
     (
     createifnotexists = true
     )
+    
     ```
+
     ![](../media/lab-03/image118.jpg)
 
 6. 单击 **Run** 按钮以执行脚本。
