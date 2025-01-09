@@ -6,7 +6,7 @@ Benvenuti al workshop Real-Time Analytics! Oggi, ti immergerai nella configurazi
 
 Quando sarai pronto a immergerti, la tua macchina virtuale e la guida di laboratorio saranno a portata di mano nel tuo browser web.
 
-![Explore Lab Resources](../media/new-lab-01/env-2.png)
+![Explore Lab Resources](../media/new-lab-01/env-011.png)
 
 ### Macchina virtuale e guida di laboratorio
 
@@ -16,13 +16,13 @@ La tua macchina virtuale è il tuo cavallo di battaglia durante tutto il worksho
 
 Per comprendere meglio le risorse e le credenziali del tuo laboratorio, vai alla scheda **Ambiente**.
 
-![Explore Lab Resources](../media/new-lab-01/env-1.png)
+![Explore Lab Resources](../media/new-lab-01/env-details-1.png)
 
 ## Utilizzo della funzionalità Finestra divisa
 
 Per comodità, puoi aprire la guida del laboratorio in una finestra separata selezionando il pulsante **Finestra divisa** nell'angolo in alto a destra.
 
-![Explore Lab Resources](../media/new-lab-01/spilt.png)
+![Explore Lab Resources](../media/new-lab-01/spilt-italian.png)
 
 ## Gestione della macchina virtuale
 
@@ -54,6 +54,6 @@ Sentiti libero di avviare, arrestare o riavviare la macchina virtuale in base al
 
 1. Fai clic su "Avanti" nell'angolo in basso a destra per iniziare il tuo viaggio in Lab!
 
-    ![Explore Lab Resources](../media/new-lab-01/next.png)
+    ![Explore Lab Resources](../media/new-lab-01/next-italian.png)
 
 Ora sei pronto per esplorare il potente mondo della tecnologia. Sentiti libero di contattarci se hai domande lungo il percorso. Goditi il ​​tuo workshop!
