@@ -428,8 +428,7 @@ Once everything has been highlighted, delete everything.
     with 
     (
     createifnotexists = true
-    )
-    
+    )  
     ```
 
   ![](../media/new-lab-01/image56.png)
@@ -458,7 +457,6 @@ the following KQL query to see one of them.
     (external_table("products")) on ($left.ProductKey == $right.ProductID)
     | summarize SalesPerProduct=sum(SalesAmount) by Name
     | project Name, SalesPerProduct
-
     ```
 
 9. You will now see in your query results values for each individual
