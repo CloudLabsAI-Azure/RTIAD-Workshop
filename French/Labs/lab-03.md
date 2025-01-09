@@ -299,14 +299,14 @@ Jusqu’à présent, vous avez utilisé des données diffusées en continu, mais
 5. Dans la fenêtre de requête vide, saisissez le script KQL suivant. Ce script entraîne la création d’une connexion à une base de données Azure SQL externe et la met à disposition dans notre base de données KQL en tant que **raccourci**. Un **raccourci** est associé en mode Lecture seule, ce qui permet d’afficher et d’exécuter des requêtes en même temps que les données diffusées en continu ingérées dans la base de données KQL.
 
     ```
-    .execute database script <|
+     .execute database script <|
     //External tables - shortcuts
     // connect to operational Database with external table Product
     .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
     kind=sql
     table=[SalesLT.Product]
     ( 
-    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
     with 
     (
@@ -317,11 +317,13 @@ Jusqu’à présent, vous avez utilisé des données diffusées en continu, mais
     kind=sql
     table=[SalesLT.ProductCategory]
     ( 
-     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'    )
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
     with 
     (
     createifnotexists = true
     )
+    
     ```
 
     ![](../media/Lab-03/image105.png)
