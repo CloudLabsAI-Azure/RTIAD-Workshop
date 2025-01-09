@@ -120,11 +120,29 @@ compréhension de ce jeu de requêtes.
  
 6. Vous devez saisir les détails de connexion de la base de données. Continuez à l’aide des informations dans votre environnement ou comme ci-dessous.
 
-    - fabrikamdemo.database.windows.net
-    - fabrikamdb
-    - demouser
-    - fabrikam@123456
+    - Server:
 
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
+
+      ```
+      fabrikamdb
+      ```
+
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
+      
 7. Cliquez sur **Suivant** après avoir tout renseigné.
 
 8. Dans la liste des tables disponibles, sélectionnez les suivantes:
