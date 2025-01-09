@@ -121,14 +121,33 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
    ![](../media/lab-04/image026.jpg)
 
 6. Sie müssen die Verbindungsdetails der Datenbank eingeben. Befolgen Sie die Anweisungen in Ihrer Umgebung oder wie unten beschrieben.
-    - fabrikamserverdb.database.windows.net
-    - fabrikamdb
-    - demouser
-    - fabrikam@1234567
- 
-7. Klicken Sie auf **Weiter**, wenn alles ausgefüllt ist.
 
-8. Wählen Sie aus der Liste der verfügbaren Tabellen Folgende aus:
+   - Server:
+
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
+
+      ```
+      fabrikamdb
+      ```
+
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
+ 
+8. Klicken Sie auf **Weiter**, wenn alles ausgefüllt ist.
+
+9. Wählen Sie aus der Liste der verfügbaren Tabellen Folgende aus:
     - SalesLT.Address
     - SalesLT.Customer
     - SalesLT.SalesOrderDetail
@@ -136,39 +155,39 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
         ![](../media/lab-04/image029.png)
 
-9. Klicken Sie auf **Weiter**.
+10. Klicken Sie auf **Weiter**.
 
-10. Sie müssen jetzt Ihr Ziel einrichten, um festzulegen, wohin die Pipeline die Daten senden soll. Suchen Sie den **OneLake-Datenhub**, und wählen Sie dann Ihre KQL-Datenbank **eh_Fabrikam** aus.
+11. Sie müssen jetzt Ihr Ziel einrichten, um festzulegen, wohin die Pipeline die Daten senden soll. Suchen Sie den **OneLake-Datenhub**, und wählen Sie dann Ihre KQL-Datenbank **eh_Fabrikam** aus.
 
     ![](../media/lab-04/image031.png)
 
-11. Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie einfach die Anmeldeinformationen, die auf der Seite mit den Umgebungsdetails angegeben sind.
+12. Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie einfach die Anmeldeinformationen, die auf der Seite mit den Umgebungsdetails angegeben sind.
 
-12. Klicken Sie auf die Tabelle **SalesLT.Address**, falls sie nicht bereits ausgewählt ist, und klicken Sie dann auf das Dropdownmenü neben der Option **Tabelle**. Klicken Sie auf die Tabellenoption **Address**.
+13. Klicken Sie auf die Tabelle **SalesLT.Address**, falls sie nicht bereits ausgewählt ist, und klicken Sie dann auf das Dropdownmenü neben der Option **Tabelle**. Klicken Sie auf die Tabellenoption **Address**.
 
     ![](../media/lab-04/image033.png)
 
-13. Sie sehen nun eine Übersicht über die **Spaltenzuordnungen**. Auf diese Weise können Sie alle Felder aus der Quelldatenbank visualisieren, die Sie an Ihre KQL-Datenbank senden. Sie haben die Möglichkeit, bestimmte Felder zu entfernen, wenn Sie nicht möchten, dass sie aus der Quelle übernommen werden.
+14. Sie sehen nun eine Übersicht über die **Spaltenzuordnungen**. Auf diese Weise können Sie alle Felder aus der Quelldatenbank visualisieren, die Sie an Ihre KQL-Datenbank senden. Sie haben die Möglichkeit, bestimmte Felder zu entfernen, wenn Sie nicht möchten, dass sie aus der Quelle übernommen werden.
 
     ![](../media/lab-04/image036.png)
 
-14. Befolgen Sie dieselben Schritte wie in Schritt 11–12 für die Tabellen **SalesLT.Customer**, **SaleLT.SalesOrderDetail** und **SalesLT.SalesOrderHeader**. Es müssen keine Spaltenzuordnungen durchgeführt werden, ordnen Sie einfach die Tabellennamen zu. Wenn alle Tabellen entsprechend zugeordnet wurden, klicken Sie auf **Weiter**.
+15. Befolgen Sie dieselben Schritte wie in Schritt 11–12 für die Tabellen **SalesLT.Customer**, **SaleLT.SalesOrderDetail** und **SalesLT.SalesOrderHeader**. Es müssen keine Spaltenzuordnungen durchgeführt werden, ordnen Sie einfach die Tabellennamen zu. Wenn alle Tabellen entsprechend zugeordnet wurden, klicken Sie auf **Weiter**.
 
-15. Die letzte Seite mit dem Assistenten „Daten kopieren“ ist eine Übersichtsseite zum Überprüfen aller von Ihnen ausgewählten Einstellungen. Stellen Sie sicher, dass die Quell- und Zieltabellenanzahl identisch ist.
+16. Die letzte Seite mit dem Assistenten „Daten kopieren“ ist eine Übersichtsseite zum Überprüfen aller von Ihnen ausgewählten Einstellungen. Stellen Sie sicher, dass die Quell- und Zieltabellenanzahl identisch ist.
 
     ![](../media/lab-04/image038.jpg)
  
-16. Klicken Sie auf **Speichern und ausführen**.
+17. Klicken Sie auf **Speichern und ausführen**.
 
-17. Nach einigen Momenten wird ein Flyout-Fenster angezeigt, das einen **Parameter** enthält. Der soeben abgeschlossene Assistent „Daten kopieren“ hat eine Liste der Tabellen erstellt, die durchlaufen und in die KQL-Tabellen geladen werden sollen. Klicken Sie einfach auf die Schaltfläche **OK**, um die Pipeline in ihrer aktuellen Konfiguration aus dem Assistenten „Daten kopieren“ auszuführen.
+18. Nach einigen Momenten wird ein Flyout-Fenster angezeigt, das einen **Parameter** enthält. Der soeben abgeschlossene Assistent „Daten kopieren“ hat eine Liste der Tabellen erstellt, die durchlaufen und in die KQL-Tabellen geladen werden sollen. Klicken Sie einfach auf die Schaltfläche **OK**, um die Pipeline in ihrer aktuellen Konfiguration aus dem Assistenten „Daten kopieren“ auszuführen.
 
     ![](../media/lab-04/image041.png)
 
-18. Lassen Sie die Pipelineausführung weiter laufen und nach etwa einer Minute sollte die Datenverschiebung abgeschlossen sein. Sobald Sie sehen, dass alle Aktivitäten innerhalb der Pipeline **Erfolgreich** waren, haben Sie die Daten übertragen.
+19. Lassen Sie die Pipelineausführung weiter laufen und nach etwa einer Minute sollte die Datenverschiebung abgeschlossen sein. Sobald Sie sehen, dass alle Aktivitäten innerhalb der Pipeline **Erfolgreich** waren, haben Sie die Daten übertragen.
 
     ![](../media/lab-04/image044.png)
  
-19. Lassen Sie uns eine unserer Tabellen überprüfen und die Daten verifizieren. Navigieren Sie zu dem von uns verwendeten KQL-Abfragesatz **Tabellen erstellen** zurück, stellen Sie sicher, dass Sie sich auf der Registerkarte **Bronze Layer** befinden, und führen Sie das folgende Skript aus:
+20. Lassen Sie uns eine unserer Tabellen überprüfen und die Daten verifizieren. Navigieren Sie zu dem von uns verwendeten KQL-Abfragesatz **Tabellen erstellen** zurück, stellen Sie sicher, dass Sie sich auf der Registerkarte **Bronze Layer** befinden, und führen Sie das folgende Skript aus:
 
     ```
     //Query the Bronze layer Customer table 
@@ -180,7 +199,7 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
 
     ![](../media/lab-04/image046.png)
 
-20. Sie sollten einige Daten wie im Bild unten sehen, aber sie sind möglicherweise nicht genau.
+21. Sie sollten einige Daten wie im Bild unten sehen, aber sie sind möglicherweise nicht genau.
 
     ![](../media/lab-04/image048.png)
 
