@@ -302,28 +302,30 @@ Bis zu diesem Punkt haben Sie mit Streaming-Daten gearbeitet, aber es fehlen noc
 
     ```
     .execute database script <|
-     //External tables - shortcuts
-     // connect to operational Database with external table Product
-     .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
-     kind=sql
-     table=[SalesLT.Product]
-     ( 
-     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
-     )
-     with 
-     (
-     createifnotexists = true
-     )  
-     // connect to operational Database with external table ProductCategory
-     .create external table productCategories (ProductCategoryID: int, Name: string) 
-     kind=sql
-     table=[SalesLT.ProductCategory]
-     ( 
-      h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'        )
-     with 
-     (
-     createifnotexists = true
-     )
+    //External tables - shortcuts
+    // connect to operational Database with external table Product
+    .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
+    kind=sql
+    table=[SalesLT.Product]
+    ( 
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
+    with 
+    (
+    createifnotexists = true
+    )  
+    // connect to operational Database with external table ProductCategory
+    .create external table productCategories (ProductCategoryID: int, Name: string) 
+    kind=sql
+    table=[SalesLT.ProductCategory]
+    ( 
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
+    with 
+    (
+    createifnotexists = true
+    )
+    
     ```
 
     ![](../media/lab-03/image118.jpg)
