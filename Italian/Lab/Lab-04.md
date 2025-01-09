@@ -137,13 +137,28 @@ Medallion.
 
 6. Sarà necessario immettere i dettagli di connessione del database. Usare le informazioni presenti nel proprio ambiente o quelle riportate di seguito.
 
-    - fabrikamdemo.database.windows.net
-    
-    - fabrikamdb
-    
-    - demouser
-    
-    - fabrikam@123456
+    - Server:
+
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
+
+      ```
+      fabrikamdb
+      ```
+
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
  
 7. Fare clic su **Avanti** una volta compilati tutti i campi.
 
