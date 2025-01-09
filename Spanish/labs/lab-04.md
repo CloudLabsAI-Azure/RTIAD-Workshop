@@ -123,13 +123,28 @@ Al final de este laboratorio, habrá aprendido:
 
 6. Deberá introducir los datos de conexión de la base de datos. Siga usando la información de su entorno o como se indica a continuación.
 
-    - fabrikamdemo.database.windows.net
-    
-    - fabrikamdb
-    
-    - demouser
-    
-    - fabrikam@123456
+    - Server:
+
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
+
+      ```
+      fabrikamdb
+      ```
+
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
  
 7. Haga clic en **Siguiente** cuando se haya completado todo.
 
