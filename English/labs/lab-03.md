@@ -404,28 +404,35 @@ Once everything has been highlighted, delete everything.
 
 5. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A **Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
 
-    ```powershell
-    .executedatabase script<| //Externaltables - shortcuts
-    //connectto operational Database with external table Product
-    .create externaltable products (ProductID: int. ProductNumber: string. Name: string) kind-sql
-    ta ble-|SalesLT. Product]
-    (
-    h@‘Server- fabrikamdemo.database.windows.net. 1433;Initial Catalog-fabrikamdb;Us ld-demouser;Password-fabrikam<ai23456‘
+    ```
+    .execute database script <|
+    //External tables - shortcuts
+    // connect to operational Database with external table Product
+    .create external table products (ProductID: int, ProductNumber: string,  Name: string) 
+    kind=sql
+    table=[SalesLT.Product]
+    ( 
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
-    with
-    <
-    create if notexists - true
+    with 
+    (
+    createifnotexists = true
+    )  
+    // connect to operational Database with external table ProductCategory
+    .create external table productCategories (ProductCategoryID: int, Name: string) 
+    kind=sql
+    table=[SalesLT.ProductCategory]
+    ( 
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
-    //connectto operational Database with external table ProductCategory .create externaltable productCategories (ProductCategorylD: int. Name: string) kind-sql
-    ta ble-|SalesLT. ProductCategory]
+    with 
     (
-    h@'Server- fabrikamdemo.database.windows. net.l433;lnitialCatalog-fabrikamdb;U ld-demouser;Password-fabrikam<ai23456‘ )
-    with
-    (
-    create if notexists - true
+    createifnotexists = true
+    )
+    
     ```
 
-    ![](../media/new-lab-01/image56.png)
+  ![](../media/new-lab-01/image56.png)
 
 6. Click the **Run** button to execute the script.
 
@@ -445,12 +452,13 @@ answer questions and give more context to consumers of the reports
 and queries these tables off insights on across your business. Run
 the following KQL query to see one of them.
 
-    ```powershell
+    ```
     InternetSales
-    | join kind=inner
-    (external_table("products")) on ($left.ProductKey == Sright.ProductID)
+    | join kind=inner 
+    (external_table("products")) on ($left.ProductKey == $right.ProductID)
     | summarize SalesPerProduct=sum(SalesAmount) by Name
     | project Name, SalesPerProduct
+
     ```
 
 9. You will now see in your query results values for each individual
