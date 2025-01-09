@@ -112,10 +112,28 @@
  
 6. 데이터베이스의 연결 세부 정보를 입력해야 합니다. 사용자 환경 또는 아래 정보를 사용합니다.
 
-    - fabrikamdemo.database.windows.net
-    - fabrikamdb
-    - demouser
-    - fabrikam@123456
+   - Server:
+
+      ```
+      fabrikamserverdb.database.windows.net
+      ```
+   - Database :
+
+      ```
+      fabrikamdb
+      ```
+
+   - Username :
+
+      ```
+      demouser
+      ```
+      
+   - Password :
+       
+      ``` 
+      fabrikam@1234567
+      ```
 
 7. 모든 항목이 채워지면 **다음**을 클릭합니다.
 
