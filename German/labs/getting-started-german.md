@@ -6,7 +6,7 @@ Willkommen zu Ihrem Workshop zu Echtzeitanalysen! Heute werden Sie sich mit der 
 
 Sobald Sie bereit sind, loszulegen, stehen Ihnen Ihre virtuelle Maschine und Ihr Laborhandbuch in Ihrem Webbrowser direkt zur Verfügung.
 
-![Explore Lab Resources](../media/new-lab-01/env-2.png)
+![Explore Lab Resources](../media/new-lab-01/env-01.png)
 
 ### Virtuelle Maschine und Laborhandbuch
 
@@ -16,19 +16,19 @@ Ihre virtuelle Maschine ist während des gesamten Workshops Ihr Arbeitspferd. Da
 
 Um Ihre Laborressourcen und -nachweise besser zu verstehen, navigieren Sie zur Registerkarte **Umgebung**.
 
-![Explore Lab Resources](../media/new-lab-01/env-1.png)
+![Explore Lab Resources](../media/new-lab-01/env-german-1.png)
 
 ## Die Funktion „Geteiltes Fenster“ nutzen
 
 Der Einfachheit halber können Sie den Laborleitfaden in einem separaten Fenster öffnen, indem Sie die Schaltfläche **Geteiltes Fenster** in der oberen rechten Ecke auswählen.
 
- ![Explore Lab Resources](../media/new-lab-01/spilt.png)
+ ![Explore Lab Resources](../media/new-lab-01/spilt-1-german.png)
 
 ## Ihre virtuelle Maschine verwalten
 
 Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressourcen** starten, stoppen oder neu starten. Ihre Erfahrung liegt in Ihren Händen!
 
-![Explore Lab Resources](../media/new-lab-01/vm-op.png)
+![Explore Lab Resources](../media/new-lab-01/vm-resources-german.png)
 
 ## Erste Schritte mit Azure Portal
 
@@ -54,6 +54,6 @@ Sie können Ihre virtuelle Maschine nach Bedarf über die Registerkarte **Ressou
 
 1. Klicken Sie unten rechts auf „Weiter“, um Ihre Lab-Reise zu beginnen!
 
-    ![Explore Lab Resources](../media/new-lab-01/next.png)
+    ![Explore Lab Resources](../media/new-lab-01/next-german.png)
 
 Jetzt sind Sie bereit, die leistungsstarke Welt der Technologie zu erkunden. Wenn Sie unterwegs Fragen haben, können Sie sich jederzeit an uns wenden. Viel Spaß bei Ihrem Workshop!
