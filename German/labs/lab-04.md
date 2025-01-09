@@ -121,10 +121,10 @@ Am Ende dieser Übung haben Sie Folgendes gelernt:
    ![](../media/lab-04/image026.jpg)
 
 6. Sie müssen die Verbindungsdetails der Datenbank eingeben. Befolgen Sie die Anweisungen in Ihrer Umgebung oder wie unten beschrieben.
-    - fabrikamdemo.database.windows.net
+    - fabrikamserverdb.database.windows.net
     - fabrikamdb
     - demouser
-    - fabrikam@123456
+    - fabrikam@1234567
  
 7. Klicken Sie auf **Weiter**, wenn alles ausgefüllt ist.
 
