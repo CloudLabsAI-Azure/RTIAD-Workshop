@@ -298,7 +298,7 @@
     kind=sql
     table=[SalesLT.Product]
     ( 
-    h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
     )
     with 
     (
@@ -309,11 +309,12 @@
     kind=sql
     table=[SalesLT.ProductCategory]
     ( 
-     h@'Server= fabrikamdemo.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@123456'       )
+    h@'Server= fabrikamserverdb.database.windows.net,1433;Initial Catalog=fabrikamdb;User Id=demouser;Password=fabrikam@1234567'
+    )
     with 
     (
     createifnotexists = true
-    )
+    )  
     ```
 
    ![](./media/lab-03/image118.png)
