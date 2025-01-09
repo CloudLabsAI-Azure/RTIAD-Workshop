@@ -34,7 +34,7 @@ Sentiti libero di avviare, arrestare o riavviare la macchina virtuale in base al
 
 1. Sulla macchina virtuale, fai clic sull'icona del portale di Azure come mostrato di seguito:
 
-![Explore Lab Resources](../media/new-lab-01/azure-portal.png)
+    ![Explore Lab Resources](../media/new-lab-01/azure-portal.png)
 
 1. Visualizzerai la scheda **Accedi a Microsoft Azure**. Qui, inserisci le tue credenziali:
 
