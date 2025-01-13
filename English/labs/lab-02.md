@@ -98,6 +98,7 @@ a connection.
 
 7. Once all properties have been filled out click on **Connect**.
 
+    ![](../media/new-lab-01/rtiad-ad.png)
 
 8. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
