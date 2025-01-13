@@ -211,16 +211,16 @@ end of the **ManageFields** transform
 
     ![](../media/new-lab-01/image25.png)
 
-2. Choose the **Filter** transform from the available list of
+1. Choose the **Filter** transform from the available list of
 operations.
 
     ![](../media/new-lab-01/image26.png)
 
-3. Click on the **pencil icon** on the new transformation, **Filter**.
+1. Click on the **pencil icon** on the new transformation, **Filter**.
 
     ![](../media/new-lab-01/image27.png)
 
-4. In the flyout that appears on the right-hand side of the screen,
+1. In the flyout that appears on the right-hand side of the screen,
 customize the filter conditions to reflect a way to only return
 CLICK values by using the settings below. It is important to note
 that the Filter transform is case sensitive
@@ -235,29 +235,29 @@ that the Filter transform is case sensitive
 
      ![](../media/new-lab-01/image28.png)
 
-5. Choose the **Save** option to keep your changes.
+1. Choose the **Save** option to keep your changes.
 
-6. Click on the **Refresh button** again to verify the data has been
+1. Click on the **Refresh button** again to verify the data has been
 filtered to CLICK eventTypes.
 
     ![](../media/new-lab-01/image29.png)
 
-7. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
+1. These may be the only rows that you're interested in sending to a table but another option is to instead create two separate streams to route different information to two or more tables. From the **Home** ribbon of the Eventstream click on the **Transform events** dropdown and then select **Filter**.
 
-    ![](../media/new-lab-01/image30.png)
+    ![](../media/lab-03/transformevents.png)
 
-8. A new object called **Filter (Name may differ)** will appear on your
+1. A new object called **Filter (Name may differ)** will appear on your
 canvas. You will need to connect the **ManageFields** stream to the
 new filter transformation. Drag a line from the green dot on one
 transform to another to make that connection.
 
     ![](../media/new-lab-01/image31.png)
 
-9. Click on the **pencil icon** for **Filter** to edit its settings.
+1. Click on the **pencil icon** for **Filter** to edit its settings.
 
     ![](../media/new-lab-01/image32.png)
 
-10. In the flyout that appears on the right-hand side of the screen,
+1. In the flyout that appears on the right-hand side of the screen,
 customize the filter conditions to reflect a way to only return
 IMPRESSION values by using the values below. Remember that the
 Filter transform is case sensitive
@@ -272,9 +272,9 @@ Filter transform is case sensitive
 
       ![](../media/new-lab-01/image33.png)
 
-11. Choose the **Save** option to keep your changes.
+1. Choose the **Save** option to keep your changes.
 
-12. Before we load the data into new tables within our KQL Database we
+1. Before we load the data into new tables within our KQL Database we
 can remove additional columns which are not needed. In this case for
 the stream of data which is filtered for our "CLICK" records we no
 longer need the "eventType" column since every row holds the same
@@ -283,74 +283,91 @@ value. For our "IMPRESSION" stream of data we can remove the
 also remove the "referrer" column as it is empty for every row in
 this table.
 
-13. Click on the **+ icon** after the **Clicks** filter operation.
+1. Click on the **+ icon** after the **Clicks** filter operation.
 
     ![](../media/new-lab-01/image34.png)
 
-14. In the dropdown menu select "Manage fields".
+1. In the dropdown menu select "Manage fields".
 
     ![](../media/new-lab-01/image35.png)
 
-15. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
+1. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
 
     ![](../media/new-lab-01/image36.png)
 
-16. Rename the operation to "Manage_Clicks". As well select "Add all fields" then remove "eventType". Once done click **Save**.
+1. Rename the operation to "Manage_Clicks". As well select "Add all fields" then remove "eventType". Once done click **Save**.
 
     ![](../media/new-lab-01/image37.png)
 
-17. Next, let's add another "Manage fields" transform connected to the "Impressions" filter as seen below.
+1. Next, let's add another "Manage fields" transform connected to the "Impressions" filter as seen below.
 
     ![](../media/new-lab-01/image38.png)
 
-18. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
+1. Click on the **pencil icon** to select what fields you wish to add/remove to your stream.
 
     ![](../media/new-lab-01/image39.png)
 
-19. Rename the operation to "Manage_Impressions". Then select "Add all fields" then remove "eventType" and "referrer". Your "Manage fields" transform should look like the following:
+1. Rename the operation to "Manage_Impressions". Then select "Add all fields" then remove "eventType" and "referrer". Your "Manage fields" transform should look like the following:
 
     ![](../media/new-lab-01/image40.png)
 
-20. Now that you have cleaned up the data for the streams for each of the types of events, you need to load each stream into a new table on the KQL Database. Click on the **+ icon** after the **Manage_Clicks** manage fields operation.
+1. Now that you have cleaned up the data for the streams for each of the types of events, you need to load each stream into a new table on the KQL Database. Click on the **+ icon** after the **Manage_Clicks** manage fields operation.
 
     ![](../media/new-lab-01/image41.png)
 
-21. In the dropdown list that appears, go to **Destinations** and select **Eventhouse**.
+1. In the dropdown list that appears, go to **Destinations** and select **Eventhouse**.
 
     ![](../media/new-lab-01/image42.png)
 
-22. Click on the **pencil icon** for the Eventhouse destination.
+1. Click on the **pencil icon** for the Eventhouse destination.
 
     ![](../media/new-lab-01/image43.png)
 
-23. For this destination, configure the following properties.
+1. For this destination, configure the following properties.
 
     - **Destination name** -- dbo-Clicks
 
-    - **Workspace** - RTI_username
+    - **Workspace** - RTI_<inject key="DeploymentID" enableCopy="false"/>
 
     - **Eventhouse** -- eh_Fabrikam
 
     - **KQL Database** - eh_Fabrikam
 
-    - **Destination Table** - Create a new table called **Clicks**
+    - **KQL Destination Table** - Create a new table called **Clicks**
 
-      ![](../media/new-lab-01/image44.png)
+      ![](../media/lab-03/eventhouse.png)
 
-24. Click on **Save** at the bottom of the flyout.
+1. Click on **Save** at the bottom of the flyout.
 
-25. Do the same thing for the Impressions table with the following
-information configured as below.
+1. Configure the following properties for this destination and select the details from the dropdown.
 
-    ![](../media/new-lab-01/image45.png)
+    - **Destination name** :
+       ```
+       dbo-Impressions
+       ```
+    - **Workspace** :
+        ```
+        RTI_<inject key="DeploymentID" enableCopy="false"/>
+        ```
+    - **Eventhouse** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Database** :
+         ```
+         eh_Fabrikam
+         ```
+    - **KQL Destination Table** - Create a new table called **Impressions**
 
-26. Save your changes.
+        ![A screenshot of a computer](../media/lab-03/dbo-impressions.png)
 
-27. This Eventstream is now ready to begin streaming. Click on **Publish** to begin that stream.
+1. Save your changes.
+
+1. This Eventstream is now ready to begin streaming. Click on **Publish** to begin that stream.
 
     ![](../media/new-lab-01/image46.png)
 
-28. With the Eventstream now running, you should see the Eventstream
+1. With the Eventstream now running, you should see the Eventstream
 user interface slightly change to signify that you are streaming the
 data from Event Hub transforming and splitting that data stream and
 loading it into two separate KQL Database tables.
@@ -361,7 +378,7 @@ loading it into two separate KQL Database tables.
 
 ## Task 4: Validate Event Data Tables
 
-1. Return to your **RTI_username** workspace.
+1. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
 2. Open the **eh_Fabrikam** KQL Database.
 
@@ -397,7 +414,7 @@ how easy it is to make connections to some of these dimension tables.
 
 1. In the **eh_Fabrikam** database, click on the drop-down menu called **New related item**. Then choose the option that says KQL Queryset.
 
-    ![](../media/new-lab-01/image51.png)
+    ![](../media/lab-03/kqlqueryset.png)
 
 2. Give the KQL Queryset the name **Create Tables** and then click the **Create** button.
 
@@ -442,7 +459,7 @@ Once everything has been highlighted, delete everything.
     )  
     ```
 
-  ![](../media/new-lab-01/image56.png)
+    ![](../media/lab-03/P4T5S55.png)
 
 6. Click the **Run** button to execute the script.
 
@@ -475,9 +492,9 @@ product that your company has sold.
 
     ![](../media/new-lab-01/image60.png)
 
-10. With your query highlighted click on the button in your toolbar, **Build Power BI report**.
+10. With your query highlighted click on the button in your toolbar, **Create Power BI report**.
 
-    ![](../media/new-lab-01/image61.png)
+    ![](../media/lab-03/createpowerbireport.png)
 
 11. This gives you the opportunity to create a Power BI report using the
 data within your KQL Database. Feel free to explore this for a few
