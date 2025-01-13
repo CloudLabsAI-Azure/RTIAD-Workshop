@@ -209,7 +209,7 @@ By the end of this lab, you will have learned:
 
    ![](../media/lab-01/P1L1T5S9.png)
 
-1. Return to your **RTI_RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
+1. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
 
     ![](../media/lab-01/image37.png)
 
