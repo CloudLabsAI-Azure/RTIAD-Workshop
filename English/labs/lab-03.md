@@ -80,14 +80,23 @@ select **"View all source"** to discover it.
 7. From your environment details page, copy and paste all the necessary
 connection settings into the appropriate fields.
 
-   - Event Hub namespace: **rtiadhub{username}**
-
-   - Event Hub: **rta-iad-clicks**
-
-   - Shared Access Key Name: **rti-reader**
-
-   - Shared Access Key: **Provided by Environment Details**
-
+ - Event Hub namespace :
+     ```
+     rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+     ```
+ - Event Hub :
+     ```
+     rti-iad-clicks
+     ```
+ - Shared Access Key Name :
+     ```
+     rti-reader
+     ```
+ - Shared Access Key :
+     ```
+    <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
+     ```
+     
      ![](../media/new-lab-01/image11.png)
 
 8. Once all the properties have been filled out click on **Connect**.
