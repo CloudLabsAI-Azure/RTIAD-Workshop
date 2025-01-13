@@ -97,7 +97,7 @@ connection settings into the appropriate fields.
     <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
      ```
      
-     ![](../media/new-lab-01/image11.png)
+     ![](../media/new-lab-01/clicks.png)
 
 8. Once all the properties have been filled out click on **Connect**.
 
