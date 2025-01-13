@@ -61,9 +61,9 @@ check the **"Enhanced Capabilities"** option, and then click on **Create**.
 
     ![](../media/new-lab-01/image7.png)
 
-4. Under the Home ribbon, click on the **Add source** dropdown and then select **External sources**.
+4. Under the Home ribbon, click on the **Add source (1)** dropdown and then select **External sources (2)**.
 
-    ![](../media/new-lab-01/image8.png)
+    ![](../media/lab-03/addsource.png)
 
 5. Similarly to the previous lab we will be connecting to an Azure
 Event Hub which has data being streamed to from a python notebook.
@@ -100,6 +100,8 @@ connection settings into the appropriate fields.
      ![](../media/new-lab-01/clicks-1.png)
 
 8. Once all the properties have been filled out click on **Connect**.
+
+    >**Note:** Connecting may take some time.
 
 9. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure

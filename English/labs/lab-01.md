@@ -168,6 +168,8 @@ By the end of this lab, you will have learned:
 
 1. Select **Apply** to create a new workspace.
 
+    ![](../media/lab-01/imag017-1.png)
+
     >**Note:** If the **Introducing task flows** dialog opens, click on **Got it**.
 
     ![](../media/lab-01/image28.png)
@@ -209,9 +211,9 @@ By the end of this lab, you will have learned:
 
    ![](../media/lab-01/P1L1T5S9.png)
 
-1. Return to your **RTI_RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
+1. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
 
-    ![](../media/lab-01/image37.png)
+    ![](../media/lab-01/rti-2.png)
 
 1. If you see the **Task Flows** option taking up most of the space, select the double up arrow on the right-hand side to minimize it
 
@@ -219,7 +221,7 @@ By the end of this lab, you will have learned:
 
 1. You now have the basis for how you will begin to ingest the streaming data into your OneLake. The next step is to create a stream of data that can receive the data in motion.
 
-    ![](../media/lab-01/image39.png)
+    ![](../media/lab-01/lab-final.png)
 
 # Summary
 In this lab, we explored the Real-Time Intelligence interface, examined the Real-Time hub, created a Fabric workspace, and an Eventhouse that came with a KQL Database. In the next lab, you will begin to explore techniques that ingest data from various sources across your data estate to OneLake and do some basic analysis with the Kusto Query Language (KQL).
