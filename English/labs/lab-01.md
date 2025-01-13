@@ -166,6 +166,8 @@ By the end of this lab, you will have learned:
 
 1. Under **License mode**, make sure **Trial** is selected. (It should be selected by default.)
 
+    ![](../media/lab-01/imag017-1.png)
+
 1. Select **Apply** to create a new workspace.
 
     >**Note:** If the **Introducing task flows** dialog opens, click on **Got it**.
