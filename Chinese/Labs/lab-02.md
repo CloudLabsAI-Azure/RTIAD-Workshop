@@ -57,13 +57,29 @@
 
 6. 从环境详细信息页面中，复制所有必要的连接设置并将其粘贴到相应的字段中。对于这些实验室，我们将连接到事件中心，其中包含从Python 笔记本发送的流式数据。此笔记本正在以每小时约 3,100 笔交易的速度创建虚假的销售交易。
 
-    - 事件中心命名空间：**rtiadhub{userid} - 由cloudlabs 提供**
-
-    - 事件中心：**rti-iad-fabrikam**
-
-    - 共享访问密钥名称：**rti-reader**
-
-    - 共享访问密钥：**在“环境详细信息”选项卡中可用**
+  - 事件中心命名空间：
+    
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+      ```
+    
+   - 事件中心：
+    
+     ```
+     rti-iad-fabrikam
+     ```
+    
+   - 共享访问密钥名称：
+    
+     ```
+     rti-reader
+     ``` 
+    
+   - 共享访问密钥：
+    
+      ```
+     <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
+      ```
  
 7. 填写完所有属性后，单击**连接**。
 
