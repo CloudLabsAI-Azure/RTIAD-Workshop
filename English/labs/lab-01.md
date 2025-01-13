@@ -59,7 +59,8 @@ By the end of this lab, you will have learned:
     ![](../media/lab-01/image6.png)
 
 1. You will be navigated to the **Password** screen. Enter the **Password** available in the **Environment Variables** tab (next to the Lab Guide) shared with you by the instructor.
-2. Click **Sign in** and follow the prompts to sign into Fabric.
+
+1. Click **Sign in** and follow the prompts to sign into Fabric.
 
 1. You will be navigated to the **Fabric Home**.
 
@@ -68,7 +69,8 @@ By the end of this lab, you will have learned:
     To work with Fabric items, you will need a trial license and a workspace that has Fabric license. Let’s set this up.
 
 1. On the top right corner of the screen, select the **user** **icon**.
-2. Select **Free Trial**.
+
+1. Select **Free Trial**.
 
     ![](../media/lab-01/image11.png)
 
@@ -76,7 +78,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-01/image12.png)
 
-1. Successfully upgraded to Microsoft Fabric dialog opens. Select **Fabric Home Page**.
+1. The "Successfully Upgraded to Microsoft Fabric" dialog will appear. Click on **Fabric Home Page**..  
+
+   ![c](../media/lab-01/fabrichome_1.png)
 
 1. You will be navigated back to the **Microsoft** **Fabric Home page**.
 
@@ -143,24 +147,28 @@ By the end of this lab, you will have learned:
 ## Task 4: Create a Fabric Workspace
 
 1. Now let’s create a workspace with Fabric license. Select **Workspaces** from the navigation bar on the left.
-2. Select + **New workspace**.
+
+1. Select + **New workspace**.
 
     ![](../media/lab-01/image24.png)
 
 1. The **Create a workspace** dialog opens on the right side of the browser.
-2. In the **Name** field enter **RTI_username**. Use the username provided to you from the environment details.
 
-    **Note:** The workspace name must be unique. Make sure a green check mark with “**This name is available**” is displayed below the Name field.
+1. In the **Name** field enter **RTI_<inject key="DeploymentID" enableCopy="false"></inject>**. 
+
+   >**Note**: The user ID will be unique for each user, and the workspace name must also be unique. Ensure that a green check mark with **"This name is available"** appears below the Name field.
 
 1. If you would like, you can enter a **Description** for the workspace. This is an optional field.
-2. Click on **Advanced** to expand the section.
 
-    ![](../media/lab-01/image25.png)
+1. Click on **Advanced** to expand the section.
+
+    ![](../media/lab-01/RTI_username.png)
 
 1. Under **License mode**, make sure **Trial** is selected. (It should be selected by default.)
-2. Select **Apply** to create a new workspace.
 
-    **Note:** If the **Introducing task flows** dialog opens, click on **Got it**.
+1. Select **Apply** to create a new workspace.
+
+    >**Note:** If the **Introducing task flows** dialog opens, click on **Got it**.
 
     ![](../media/lab-01/image28.png)
 
@@ -168,11 +176,11 @@ By the end of this lab, you will have learned:
 
 1. Click the **\+ New item** box to open a new pane that has all the items you can create in this Fabric workspace.
 
-    ![](../media/lab-01/image29.png)
+    ![](../media/lab-01/new_item.png)
 
-1. Select the **Eventhouse** from the **Store data** section within the pane. As we have talked about this can be viewed similarly to a Lakehouse in that we can store data, but this Eventhouse is focused around real time data.
+1. Search for **Eventhouse(1)** and Select the **Eventhouse(2)** option from store data . As we have talked about this can be viewed  similarly to a Lakehouse in that we can store data but this Eventhouse is focused around real time data.
 
-    ![](../media/lab-01/image31.png)
+    ![](../media/lab-01/eventhouse-1.png)
 
 1. In the window that appears, give your Eventhouse the name, **eh_Fabrikam** and click on **Create**.
 
@@ -182,9 +190,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-01/image33.png)
 
-1. Take a quick tour of the Eventhouse by following the green tooltips on your screen. This first one shows that an empty Kusto Query Language (KQL) Database was created with the Eventhouse.
+1. Take a quick tour of the Eventhouse by following the green tooltips on your screen.  This first one shows that an empty Kusto Query Language (KQL) Database was created with the Eventhouse.
 
-    ![](../media/lab-01/image34.png)
+    ![](../media/lab-01/imag021.png)
 
 1. Follow the remainder of the tooltips around the screen to show you where to create additional databases, check the storage in OneLake of the Eventhouse, check the usage of Fabric resources in compute minutes, and finally see what actions have occurred in the Eventhouse.  
 
@@ -193,18 +201,23 @@ By the end of this lab, you will have learned:
     ![](../media/lab-01/image35.png)
 
 1. This will allow us to still have one tab in the left browser pane to see the overview of our entire Eventhouse and a new tab to focus on the KQL Database properties. One goal that we wish to accomplish in our scenario is to ensure that the data streamed to the KQL database is accessible via OneLake. By enabling this feature, we make the data in this KQL Database easily discoverable through shortcuts to be used in any Lakehouse we may want. Locate the **Database details** section on the right and toggle **On** the “Availability” option.
+   
 
-    ![](../media/lab-01/image36.png)
+   >**Note**: You will be popped up with a dialogue box, leave all the settings as default and click on **Turn on**.
 
-1. Return to your **RTI_username** workspace by selecting it from the left side of the browser.
+   ![](../media/lab-01/turn-on-1.png)
+
+   ![](../media/lab-01/P1L1T5S9.png)
+
+1. Return to your **RTI_RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
 
     ![](../media/lab-01/image37.png)
 
-2. If you see the **Task Flows** option taking up most of the space, select the double up arrow on the right-hand side to minimize it. 
+1. If you see the **Task Flows** option taking up most of the space, select the double up arrow on the right-hand side to minimize it
 
-    ![](../media/lab-01/image38.png)
+    ![](../media/lab-01/rti_1.png)
 
-3. You now have the basis for how you will begin to ingest the streaming data into your OneLake. The next step is to create a stream of data that can receive the data in motion.
+1. You now have the basis for how you will begin to ingest the streaming data into your OneLake. The next step is to create a stream of data that can receive the data in motion.
 
     ![](../media/lab-01/image39.png)
 
