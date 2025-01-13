@@ -50,7 +50,7 @@ By the end of this lab, you will have learned:
 
 2. Click on the **+ New** **Item** button to create a new item.
 
-    ![](../media/lab-05/image6.png)
+    ![](../media/lab-05/new_item-1.png)
 
 3. You will see a category for **Visualize Data**. Click on the item
     called **Real-Time Dashboard**.
@@ -147,7 +147,7 @@ By the end of this lab, you will have learned:
 
 6. While this parameter can be modified, you may wish for it to default
     to a specific time range instead of forcing users to modify it.
-    Above the time range option, click on the **@ Parameters** option.
+    Above the time range option, click on the **[@] Parameters** option.
 
     ![](../media/lab-05/image21.png)
 
@@ -454,7 +454,7 @@ Dashboard.
     ![](../media/lab-05/image68.png)
 
 4. Modify the conditions of the rule to point to the **Column** called
-    **CTR (long)** and make the rule **10** for the operator and
+    **CTR (long)** and make the rule **> 10** for the operator and
     value.
 
     ![](../media/lab-05/image69.png)
