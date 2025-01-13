@@ -247,7 +247,7 @@ By the end of this lab, you will have learned:
 
     ```
 
-6. While you will see results of the query execution, the best evidence that your query completed is that you will see a new expandable folder in your Database objects pane. Click on the **\> icon** next to the **Functions folder**. These functions will allow the data loaded into the Bronze layer of the KQL Database to then be mirrored, transformed and loaded into the Silver layer.
+6. While you will see results of the query execution, the best evidence that your query completed is that you will see a new expandable folder in your Database objects pane. Click on the **>** icon next to the **Functions folder**. These functions will allow the data loaded into the Bronze layer of the KQL Database to then be mirrored, transformed and loaded into the Silver layer.
    
 
     ![A screenshot of a computer](../media/Lab-04/functions.png)
@@ -286,7 +286,7 @@ By the end of this lab, you will have learned:
 
 Now that you have your transformed layer of data within the Silver Layer you can start to perform analytics with trusted, validated, and enriched data within a Power BI report, RTI Dataset, or just by simply authoring some KQL queries. However, there may be times when you think it necessary to aggregate your data to make it more consumable by end users. Let's see how this is accomplished within a KQL database.
 
-1. If it is not already, open your **Create Tables** KQL Queryset and create a new tab calle "**Gold Layer**".
+1. If it is not already, open your **Create Tables** KQL Queryset and create a new tab called "**Gold Layer**".
 
     ![A screenshot of a computer Description automatically generated](../media/Lab-04/image42.png)
 
