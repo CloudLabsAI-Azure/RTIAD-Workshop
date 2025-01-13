@@ -42,38 +42,31 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Create an Event Stream Source 
 
-1. Open the **Fabric workspace** you created in the last lab. From here
-we can see the Eventhouse we created.
+1. Open the **Fabric workspace** you created in the last lab. From here we can see the Eventhouse we created.
 
-    ![](../media/lab-02/image5.png)
+    ![](../media/lab-02/lab-final.png)
 
-2. Navigate to the Real-Time Hub by selecting the **Real-Time** button
-on the left-hand side. Even though we do not see any streams of data
-that will change shortly.
+1. Navigate to the Real-Time Hub by selecting the **Real-Time** button on the left-hand side. Even though we do not see any streams of data that will change shortly.
 
-    ![](../media/lab-02/image6.png)
+    ![](../media/lab-02/real-time-1.png)
 
-3. Select the **+ Connect data source** green button which should be in
-the upper right corner.
+1. The **Welcome to Real-Time Hub** dialog will appear. Check the box for **Don't show again** and then click **Get Started**.
 
-    ![](../media/lab-02/image7.png)
+   ![](../media/lab-02/get-started-1.png)
 
-4. A window will open that will allow you to select a source for our
-stream data. As we discussed before, there are many fantastic
-options to choose from but for this class we will select the option
-"Azure Event Hubs". If you do not see "Azure Event Hubs" easily,
-select the **Microsoft sources** at the top to filter what options
-you see.
+1. Select the **+ Connect data source** green button which should be in the upper right corner.
 
-    ![](../media/lab-02/image8.png)
+    ![A green and white sign Description automatically generated](../media/lab-02/connect_datasource.png)
 
-5. You are now required to create a connection to the Azure Event Hub.
-Click on the **New connection** text since you do not currently have
-a connection.
+4. A window will open that will allow you to select a source for our stream data. As we discussed before, there are many fantastic options to choose from but for this class we will Search for **Azure event hubs (1)** select it and click on **connect (2)**
+    
+    ![](../media/lab-02/azure_event-hubs.png)
 
-    ![](../media/lab-02/image9.png)
+1. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
-6. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+   ![](../media/lab-02/select-workspace.png)
+
+1. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
 
     - Event Hub namespace :
 
@@ -96,11 +89,11 @@ a connection.
      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
      ```
 
-7. Once all properties have been filled out click on **Connect**.
+1. Once all properties have been filled out click on **Connect**.
 
     ![](../media/new-lab-01/rtiad-ad.png)
 
-8. In the configuration of the Azure Event Hub data source, you may
+1. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
 that you gain access to a unique access point to the stream of data.
 For this workshop you can leave the "$Default" value as shown
@@ -108,28 +101,26 @@ below
 
     ![](../media/lab-02/image11.png)
 
-9. Before we finalize this data source and Eventstream, let's go ahead
+1. Before we finalize this data source and Eventstream, let's go ahead
 and rename our Eventstream to something more useful. In the "Stream
 details" section on the right select the pencil icon next to the
 "Eventstream name" and let's call our Eventstream "**es_Fabrikam_InternetSales".**
 
-    ![](../media/lab-02/image12.png)
+    ![](../media/lab-02/eventstream-01.png)
 
-10. Now we can click on **Next**, which will take us to a final overview
+1. Now we can click on **Next**, which will take us to a final overview
 page.
 
-    ![](../media/lab-02/image13.png)
+1. In this overview screen, verify the contents look correct and click **Connect**.
+    
+    >**Note:** Your details will differ from what you see in the screenshot
+    
+    ![A screenshot of a computer Description automatically generated](../media/lab-02/email-01.png)
 
-11. In this overview screen, verify the contents look correct and click **Create source**.
-
-    **Note: Your details will differ from what you see in the screenshot**
-
-    ![](../media/lab-02/image14.png)
-
-12. Once the Eventstream and Eventstream source are created select the
+1. Once the Eventstream and Eventstream source are created select the
 option "**Open Eventstream**"
 
-    ![](../media/lab-02/image15.png)
+    ![](../media/lab-02/image15-1.png)
 
 13. This will take you to the Eventstream user interface. Here is where
 you will see your source stream of data flowing into our eventstream
@@ -176,7 +167,7 @@ stream.
 
 4. Look below the **Operations** section and you will find the **Destinations,** select the option that says **Eventhouse**.
 
-    ![](../media/lab-02/image22.png)
+    ![](../media/lab-02/image22-1.png)
 
 5. A new menu will open on the right-hand side of the screen. The first
 thing you need to modify for the destination is the **data ingestion
@@ -193,33 +184,31 @@ below.
 
    - Destination name - **eh-kql-db-fabrikam**
 
-   - Workspace - **RTI_username**
+   - Workspace - **RTI_<inject key="DeploymentID" enableCopy="false"/>**
 
    - Eventhouse - **eh_Fabrikam**
 
    - KQL Database - **eh_Fabrikam**
 
-     ![](../media/lab-02/image24.png)
-
 7. Click on Save.
+
+    ![](../media/lab-02/direct-ingestion.png)
 
 8. With the Eventstream configured, click on the **Publish** button to
 save this Eventstream and begin your ingestion.
 
     ![](../media/lab-02/image25.png)
 
-9. If you notice the **AzureEventHub** source has become inactive,
-switch the toggle to the "Active" state and choose the option "Now"
-when the dialog opens
+9. If you notice the **eh_Fabrikam_es_InternetSales** (AzureEventHub) source has become inactive, switch the toggle to the **Active** state and choose the option **Now** when the dialog opens
 
-    ![](../media/lab-02/image26.png)    
+      ![A screenshot of a chat](../media/lab-02/active-01(1).png)
 
-    ![](../media/lab-02/image27.png)
+      ![A screenshot of a chat](../media/lab-02/active-1.png)
 
 10. Choose the **Configure** option within the **Destination** to
 correctly map the stream to a table in the KQL Database.
 
-    ![](../media/lab-02/image28.png)
+    ![](../media/lab-02/fabrikam.png)
 
 11. Click on the **+ New table** option underneath the **eh_Fabrikam**
 database.
@@ -242,17 +231,45 @@ checkmark.
 15. After this you will be shown a summary. Once you have all green
 checkmarks, click **close** to move forward.
 
-16. Once you see the user interface showing the mappings from the source
-to the Eventstream to the destination, you have correctly configured
-and started a stream of data into your KQL Database.
+16. Once you see the user interface showing the mappings from the source to the Eventstream to the destination, you have correctly configured and started a stream of data into your KQL Database.
 
-    ![](../media/lab-02/image33.png)
+    ![](../media/lab-02/fabrikam2.png)
+
+    >**Note:** Incase if you do not see any data in the Data preview of your KQL Database destination, follow the below steps-
+
+    i. Go to your destination KQL database
+
+    ![A screenshot of a chat](../media/lab-02/blur.png)
+
+    ii. Click on **Get data (1)** and go to **Eventstream (2)** and select **Existing Eventstream (3)**.
+
+    ![A screenshot of a chat](../media/lab-02/KQL-database-workaround2.png)
+
+    iii. Select the InternetSales table and Select the following configurations from the drop-down:
+    
+     - Workspace :
+
+        ```
+         RTI_<inject key="DeploymentID" enableCopy="false"/>
+         ```
+     
+     - Eventstream Name :
+
+        ```
+        es_Fabrikam_InternetSales
+        ```
+  
+     - Data connectioin name - **give any name** , Then click on **Next**, **Finish** and **Close** in the next tabs.
+
+        ![A screenshot of a chat](../media/lab-02/internet-01.png)
+
+    iv. Now you should be able to see a new destination is created with the Data preview visible in it.
 
 # Kusto Query Language (KQL)
 
 ## Task 3: Authoring Kusto Database Queries
 
-1. Make your way back to your **RTI_username** workspace. You should
+1. Make your way back to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should
 see the new Eventstream you just created along side all the
 Evenhouse items.
 
@@ -308,10 +325,9 @@ on this menu include:
 
         ![](../media/lab-02/image40.png)
 
-8. Return to the database view and click on **Explore your data** in
-the top-right corner.
+8. Click on **Query with code** in the top-right corner.
 
-    ![](../media/lab-02/image41.png)
+    ![A white background with black text Description automatically generated](../media/lab-02/query.png)
 
 9. This will open the default KQL Queryset that was created alongside
 the Eventhouse. There are a few pre-scripted queries that are
@@ -342,6 +358,8 @@ vary from the result of others.
 
     ![](../media/lab-02/image45.png)
 
+    >**Note:** The output may differ and will not necessarily be the same in your case.
+
 13. Click on **Line 12** and where the query says, **YOUR_TABLE_HERE**,
 replace that with the table name, **InternetSales**.
 
@@ -360,10 +378,14 @@ increases after every few seconds.
 
     ![](../media/lab-02/image48.png)
 
+    >**Note:** The output may differ and will not necessarily be the same in your case.
+
 16. Repeat the previous steps for the final query that is automatically
 created for you on **Line 16/17** and run the query again.
 
     ![](../media/lab-02/image49.png)
+
+    >**Note:** The output may differ and will not necessarily be the same in your case.
 
 17. This query will give you the number of records that have been
 ingested into your table within an hour window. The overall
@@ -482,10 +504,10 @@ create additional tabs by clicking the "+" icon.
 
     ![](../media/lab-02/image63.png)
 
-5. Return to your **RTI_username** workspace. You should have the
+5. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace. You should have the
 following objects present
 
-    ![](../media/lab-02/image64.png)
+    ![](../media/lab-02/es-is.png)
 
 # Summary
 

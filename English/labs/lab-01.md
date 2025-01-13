@@ -170,6 +170,8 @@ By the end of this lab, you will have learned:
 
 1. Select **Apply** to create a new workspace.
 
+    ![](../media/lab-01/imag017-1.png)
+
     >**Note:** If the **Introducing task flows** dialog opens, click on **Got it**.
 
     ![](../media/lab-01/image28.png)
