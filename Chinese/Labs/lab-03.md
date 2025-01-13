@@ -53,13 +53,29 @@
  
 7. 从环境详细信息页面中，复制所有必要的连接设置并将其粘贴到相应的字段中。
 
-    - 事件中心命名空间：**rtiadhub{username}**
+    - 事件中心命名空间：
+    
+      ```
+      rtiadhub<inject key="DeploymentID" enableCopy="false"/>
+      ```
             
-    - 事件中心：**rta-iad-clicks**
+    - 事件中心：
+    
+         ```
+         rti-iad-clicks
+         ```
             
-    - 共享访问密钥名称：**rti-reader**
+    - 共享访问密钥名称：
+       
+       ```
+       rti-reader
+       ```
             
-    - 共享访问密钥：**由环境详细信息提供**
+    - 共享访问密钥：
+    
+         ```
+        <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
+         ```
 
       ![](../media/lab-03/image017.png)
  
