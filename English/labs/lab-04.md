@@ -43,18 +43,18 @@ By the end of this lab, you will have learned:
     ![](../media/lab-04/image5.png)
 
 2. Within this KQL Queryset lets rename the original tab that we have
-here from "eh_Fabrikam" to "Create External Tables" making it easier
+here from "**eh_Fabrikam**" to "**Create External Tables**" making it easier
 to organize and understand what we have in this Queryset.
 
     ![](../media/lab-04/image6.png)
 
-3. Now let's create a new tab by selecting the "+" icon and name the
-new tab "Bronze Layer"
+3. Now let's create a new tab by selecting the "**+**" icon and name the
+new tab "**Bronze Layer**".
 
     ![](../media/lab-04/image7.png)
 
 4. Within this new tab, paste and highlight the following code and
-select "Run" to create four new tables that will serve as your
+select "**Run**" to create four new tables that will serve as your
 Bronze Layer of the Medallion Framework.
 
     ```
@@ -85,7 +85,7 @@ created within your Database Object Explorer.
 
       ![](../media/lab-04/image10.png)
 
-6. Expand the **Address table** by clicking on the "**"** icon next
+6. Expand the **Address table** by clicking on the **>** icon next
 to the name.
 
     ![](../media/lab-04/image11.png)
@@ -109,7 +109,7 @@ created by adding an ingestion time column.
 
 8. The four new tables are blank tables with their schema defined. Now
 you need a way to properly load these tables. Navigate back to your
-workspace **RTI_username**.
+workspace **RTI_<inject key="DeploymentID" enableCopy="false"/>**.
 
 ## Task 2: Load Broze Tables using a Data Pipeline
 
@@ -159,6 +159,7 @@ Follow using the information in your environment or as below.
       ``` 
       fabrikam@1234567
       ```
+    ![](../media/lab-04/creds-db.png)
 
 7. Click **Next** when everything has been filled out.
 
@@ -223,7 +224,7 @@ data.
 19. Let's go and check one of our tables and verify the data. Navigate
 back to the KQL Queryset we have been using called **Create Tables**
 and ensure you are in the **Bronze Layer** tab and run the following
-script
+script.
 
     ```
     //Query the Bronze layer Customer table
@@ -235,18 +236,18 @@ script
     ![](../media/lab-04/image26.png)
 
 20. You should see some data like the image below, but it may not be
-exact
+exact.
 
     ![](../media/lab-04/image27.png)
 
 ## Task 3: Transform Tables in Silver Layer
 
 1. Now that the Bronze tables are loaded we will create a new tab
-within our KQL Queryset called "Silver Layer".
+within our KQL Queryset called "**Silver Layer**".
 
     ![](../media/lab-04/image28.png)
 
-2. Run the following KQL script within the "Silver Layer" tab to create
+2. Run the following KQL script within the "**Silver Layer**" tab to create
 four new tables that will serve as the Silver Layer of the Medallion
 Framework.
 
@@ -313,9 +314,11 @@ the following script and then **Run** the code.
     .alter table SilverSalesOrderDetail policy update @'[{"Source": "SalesOrderDetail", "Query": "ParseSalesOrderDetail", "IsEnabled" : true, "IsTransactional": true }]'
     ```
 
+    > **Note:** If the query throws an error, re-run the query from Step 2 and then execute this query again.
+
 6. While you will see results of the query execution, the best evidence
 that your query completed is that you will see a new expandable
-folder in your Database objects pane. Click on the **icon** next
+folder in your Database objects pane. Click on the **>** icon next
 to the **Functions folder**. These functions will allow the data
 loaded into the Bronze layer of the KQL Database to then be
 mirrored, transformed and loaded into the Silver layer.
@@ -374,7 +377,7 @@ necessary to aggregate your data to make it more consumable by end
 users. Let's see how this is accomplished within a KQL database.
 
 1. If it is not already, open your **Create Tables** KQL Queryset and
-create a new tab calle "Gold Layer".
+create a new tab called "**Gold Layer**".
 
     ![](../media/lab-04/image41.png)
 
@@ -480,7 +483,7 @@ KQL Database accessible through the Lakehouse using shortcuts
 
 ## Task 5: Create Lakehouse
 
-1. Return to the **RTI_username** workspace.
+1. Return to the **RTI_<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
 2. Click the **+ New Item** option and then select **Lakehouse** from
 the list of available options.
@@ -521,8 +524,7 @@ copying the data.
 
 4. Click **Next** at the bottom of the menu.
 
-5. Open the tables within the **eh_Fabrikam** by clicking on the **
-icon** and then select the following tables to bring over.
+5. Open the tables within the **eh_Fabrikam** by clicking on the **>** icon and then select the following tables to bring over.
 
     - Clicks
 
@@ -556,7 +558,7 @@ have appeared within the Lakehouse.
 
 11. You can see a sample of the records from that table have appeared within your user interface.
 
-    **Note: It can take up to a few hours for the data to appear in OneLake (https://learn.microsoft.com/en-us/fabric real-time-intelligence/event-house-onelake-availability)**
+    **Note: It can take up to a few hours for the data to appear in OneLake (https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-house-onelake-availability)**
 
 # Summary
 
