@@ -43,7 +43,7 @@ By the end of this lab, you will have learned:
 1. Open the **Fabric workspace** for the course and select the
 Real-Time Dashboard you created in the last lab.
 
-    ![](../media/lab-06/image5.png)
+    ![](../media/lab-06/L6T1S1.1-1211.png)
 
 2. On the **Click Through Rate** visual click on the ellipses (...) and
 select the option to **Set alert**.
@@ -101,24 +101,29 @@ two areas to match the image below and hit **Save and update**.
 
     ![](../media/lab-06/image16.png)
 
-4. Open a New tab within your Environment Edge Browser and go to **Teams.Microsoft.com**.
+4. Open a New tab within your Environment Edge Browser and go to **[Teams](https://teams.microsoft.com/v2/)**.
 
-5. Sign in with your environment credentials if you are asked. A
-message to start a trial may appear and you will want to accept
+5. Sign in with your environment credentials.
+   
+     - **Username/Email**:<inject key="AzureAdUserEmail"></inject>
+
+     - **Password**:<inject key="AzureAdUserPassword"></inject>
+   
+6.  If you are asked, a message to start a trial may appear and you will want to accept
 this.
 
-6. You should have a message within teams letting you know that the CTR
+7. You should have a message within teams letting you know that the CTR
 is less than 20.
 
     ![](../media/lab-06/image17.png)
 
-7. Navigate back to the Reflex experience and let's create another
+8. Navigate back to the Reflex experience and let's create another
 trigger.
 
 ## Task 3: Create A New Reflex Object from Data Stream
 
 1. Select the object labeled **KQL Source Event** and then select **New
-Rule.**
+Rule** from this data stream.
 
     ![](../media/lab-06/image18.png)
 
@@ -136,15 +141,15 @@ conditions and action.
 4. In the Definition page that opens, in **Condition** select the
 following properties:
 
-    - **Operation** = Is great than
-    - **Column** = clicks
-    - **Value** = 30000
+    - **Operation** - Is great than
+    - **Column** - clicks
+    - **Value** - 30000
 
       ![](../media/lab-06/image20.png)
 
 5. In the **Action**, select the below properties:
 - **Type** = Teams message
-- **Recipient** = {your user id here}
+- **Recipient** = ODL_User_<inject key="DeploymentID" enableCopy="false"/>
 
     ![](../media/lab-06/image21.png)
 
