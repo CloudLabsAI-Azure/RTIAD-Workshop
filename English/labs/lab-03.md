@@ -101,7 +101,7 @@ connection settings into the appropriate fields.
 
 8. Once all the properties have been filled out click on **Connect**.
 
-    >**Note:** Connecting may take some time.
+    >**Note:** Connecting might take a while. If an error appears, refresh the page and repeat the steps outlined above.
 
 9. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
