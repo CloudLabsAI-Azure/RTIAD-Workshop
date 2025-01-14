@@ -89,6 +89,20 @@ By the end of this lab, you will have learned:
      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
      ```
 
+>**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
+
+i. Go to the azure portal search for the event hub select the **rtiadhub<inject key="DeploymentID" enableCopy="false"/>** and under enities select event hubs 
+    
+![](../media/lab-02/eventhubs-1.png) 
+
+ ii. Select the **rti-iad-fabrikam**
+
+![](../media/lab-02/eventhubs-1.png) 
+
+ iii. Under the settings from the left hand side Shared access policies and click on rti-reader and copy the Secondary key
+
+![](../media/lab-02/rtiad-fabrikam-2nd.png) 
+
 1. Once all properties have been filled out click on **Connect**.
 
     ![](../media/new-lab-01/rtiad-ad.png)
