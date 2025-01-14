@@ -98,10 +98,18 @@ select **"View all source"** to discover it.
      
      ![](../media/new-lab-01/clicks-1.png)
 
+>**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
+
+    i. Go to the azure portal search for the event hub select the **rtiadhub<inject key="DeploymentID" enableCopy="false"/>** and under enities select event hubs
+
+    ii. Select the **rti-iad-clicks**
+
+    iii. Under the settings from the left hand side Shared access policies and click on rti-reader and copy the Secondary key
+
 8. Once all the properties have been filled out click on **Connect**.
 
     >**Note:** Connecting might take a while. If an error appears, refresh the page and repeat the steps outlined above.
-
+   
 9. In the configuration of the Azure Event Hub data source, you may
 need to modify the **Consumer group** of the Event Hub to ensure
 that you gain access to a unique access point to the stream of data.
