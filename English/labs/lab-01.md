@@ -63,6 +63,7 @@ By the end of this lab, you will have learned:
 
      - **Password**:<inject key="AzureAdUserPassword"></inject> 
 
+
 1. Click **Sign in** and follow the prompts to sign into Fabric.
 
 1. You will be navigated to the **Fabric Home**.
