@@ -66,7 +66,7 @@ By the end of this lab, you will have learned:
 
    ![](../media/lab-02/select-workspace.png)
 
-1. From your environment details page, copy and paste all the necessary connection settings into the appropriate fields. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
+1. Please copy and paste all the required connection settings into the corresponding fields using the details provided below. For these labs we are connecting to an Event Hub which has streaming data being sent from a python notebook. This notebook is creating fake sales transactions at rate of around 3,100 transactions per hour.
 
     - Event Hub namespace :
 
