@@ -59,7 +59,8 @@ By the end of this lab, you will have learned:
 
      - **Username/Email**:<inject key="AzureAdUserEmail"></inject>
 
-    ![](../media/lab-01/image6.png)
+      ![](../media/lab-01/image6.png)
+
 
      - **Password**:<inject key="AzureAdUserPassword"></inject> 
 
