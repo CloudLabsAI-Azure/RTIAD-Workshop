@@ -50,7 +50,7 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Enable a Microsoft Fabric trial license
 
-1. Open the **Microsoft Edge browser** on your desktop and visit `https://app.fabric.microsoft.com/` in Incognito mode.. You will be navigated to the login page.
+1. Open the **Microsoft Edge browser** on your desktop and visit `https://app.fabric.microsoft.com/` in Incognito mode. You will be navigated to the login page.
 
     ![](../media/lab-01/image5.png)
 
