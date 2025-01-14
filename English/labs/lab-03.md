@@ -77,8 +77,7 @@ select **"View all source"** to discover it.
 
     ![](../media/new-lab-01/image10.png)
 
-7. From your environment details page, copy and paste all the necessary
-connection settings into the appropriate fields.
+7. Please copy and paste all the required connection settings into the corresponding fields using the details provided below.
 
  - Event Hub namespace :
      ```
