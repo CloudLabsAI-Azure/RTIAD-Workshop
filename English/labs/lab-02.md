@@ -325,9 +325,9 @@ on this menu include:
 
         ![](../media/lab-02/image40.png)
 
-8. Click on **Query with code** in the top-right corner.
+8. Click on **eh_fabrikam_queryset(1)** from the left side and select **database (2)** from the top and Select **query with code (3)** 
 
-    ![A white background with black text Description automatically generated](../media/lab-02/query.png)
+    ![A white background with black text Description automatically generated](../media/lab-02/Query-code-1-1-1.png)
 
 9. This will open the default KQL Queryset that was created alongside
 the Eventhouse. There are a few pre-scripted queries that are
