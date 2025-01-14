@@ -50,7 +50,7 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Enable a Microsoft Fabric trial license
 
-1. Open the **Microsoft Edge** **browser** on the desktop and navigate to <https://app.fabric.microsoft.com/[>.](<https://app.powerbi.com/>) You will be navigated to the login page. **Note:** If you are not using the lab environment and have an existing Power BI account, you may want to use the browser in private / incognito mode.
+1. Open the **Microsoft Edge** **browser** on the desktop and navigate to `https://app.fabric.microsoft.com/` You will be navigated to the login page. **Note:** If you are not using the lab environment and have an existing Power BI account, you may want to use the browser in private / incognito mode.
 
     ![](../media/lab-01/image5.png)
 
