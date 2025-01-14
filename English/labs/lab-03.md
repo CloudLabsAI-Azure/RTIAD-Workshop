@@ -98,7 +98,7 @@ select **"View all source"** to discover it.
      
      ![](../media/new-lab-01/clicks-1.png)
 
->**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
+    >**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
 
     i. Go to the azure portal search for the event hub select the **rtiadhub<inject key="DeploymentID" enableCopy="false"/>** and under enities select event hubs
 
