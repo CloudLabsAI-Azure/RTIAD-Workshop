@@ -62,7 +62,7 @@ By the end of this lab, you will have learned:
       ![](../media/lab-01/image6.png)
 
 
-      - **Password**: <inject key="AzureAdUserPassword"></inject> 
+    - **Password**: <inject key="AzureAdUserPassword"></inject> 
 
 
 1. Click **Sign in** and follow the prompts to sign into Fabric.
@@ -85,7 +85,7 @@ By the end of this lab, you will have learned:
 
 1. The "Successfully Upgraded to Microsoft Fabric" dialog will appear. Click on **Fabric Home Page**..  
 
-   ![c](../media/lab-01/fabrichome_1.png)
+   ![](../media/lab-01/fabrichome_1.png)
 
 1. You will be navigated back to the **Microsoft** **Fabric Home page**.
 
