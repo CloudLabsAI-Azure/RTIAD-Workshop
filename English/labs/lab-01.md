@@ -57,12 +57,12 @@ By the end of this lab, you will have learned:
 
 1. Enter the following email/username, and then click on **Submit**.  
 
-     - **Username/Email**:<inject key="AzureAdUserEmail"></inject>
+    - **Username/Email**:<inject key="AzureAdUserEmail"></inject>
 
       ![](../media/lab-01/image6.png)
 
 
-     - **Password**:<inject key="AzureAdUserPassword"></inject> 
+    - **Password**:<inject key="AzureAdUserPassword"></inject> 
 
 
 1. Click **Sign in** and follow the prompts to sign into Fabric.
