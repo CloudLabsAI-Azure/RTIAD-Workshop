@@ -62,7 +62,8 @@ By the end of this lab, you will have learned:
       ![](../media/lab-01/image6.png)
 
 
-    - **Password**: <inject key="AzureAdUserPassword"></inject> 
+
+    - **Password**:<inject key="AzureAdUserPassword"></inject> 
 
 
 1. Click **Sign in** and follow the prompts to sign into Fabric.
