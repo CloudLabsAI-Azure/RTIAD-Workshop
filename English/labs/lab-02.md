@@ -48,9 +48,9 @@ By the end of this lab, you will have learned:
 
 1. Navigate to the Real-Time Hub by selecting the **Real-Time** button on the left-hand side. Even though we do not see any streams of data that will change shortly.
 
-    ![](../media/lab-02/real-time-1.png)
+    ![](../media/lab-02/image19upd.png)
 
-1. The **Welcome to Real-Time Hub** dialog will appear. Check the box for **Don't show again** and then click **Get Started**.
+1. If the **Welcome to Real-Time Hub** dialog appears, check the box for **'Don't show again'** and then click **'Get Started'**.
 
    ![](../media/lab-02/get-started-1.png)
 
@@ -62,7 +62,7 @@ By the end of this lab, you will have learned:
     
     ![](../media/lab-02/azure_event-hubs.png)
 
-1. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**.
+1. Click on **Workspace (1)** under Stream Details, and from the dropdown, select the workspace **RTI_<inject key="DeploymentID" enableCopy="false"/> (2)**. Now, click on **New connection**.
 
    ![](../media/lab-02/select-workspace.png)
 

@@ -61,9 +61,9 @@ check the **"Enhanced Capabilities"** option, and then click on **Create**.
 
     ![](../media/new-lab-01/image7.png)
 
-4. Under the Home ribbon, click on the **Add source (1)** dropdown and then select **External sources (2)**.
+4. In the newly created eventstream, click on **Use external source**.
 
-    ![](../media/lab-03/addsource.png)
+    ![](../media/lab-03/addsourceupd.png)
 
 5. Similarly to the previous lab we will be connecting to an Azure
 Event Hub which has data being streamed to from a python notebook.
