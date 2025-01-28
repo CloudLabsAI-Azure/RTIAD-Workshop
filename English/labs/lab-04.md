@@ -174,10 +174,9 @@ Follow using the information in your environment or as below.
 9. Click on **Next**.
 
 10. You will now be required to set up your destination to determine
-where you want the pipeline to send the data to. Find the **OneLake
-data hub** and then select your KQL database, **eh_Fabrikam**.
+where you want the pipeline to send the data to. Find the **OneLake** and then select your KQL database, **eh_Fabrikam**.
 
-    ![](../media/lab-04/image19.png)
+    ![](../media/lab-04/image19upd.png)
 
 11. If you are prompted to sign-in, simply use the credentials provided
 in the environment details page
