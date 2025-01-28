@@ -67,7 +67,7 @@ By the end of this lab, you will have learned:
 
 1. You will be navigated to the **Fabric Home**.
 
-    ![](../media/lab-01/image10.png)
+    ![](../media/lab-01/image10upd.png)
 
     To work with Fabric items, you will need a trial license and a workspace that has Fabric license. Let’s set this up.
 
@@ -75,11 +75,11 @@ By the end of this lab, you will have learned:
 
 1. Select **Free Trial**.
 
-    ![](../media/lab-01/image11.png)
+    ![](../media/lab-01/image11upd.png)
 
 1. Upgrade to a free Microsoft Fabric trial dialog opens. Select **Activate**.
 
-    ![](../media/lab-01/image12.png)
+    ![](../media/lab-01/image12upd.png)
 
 1. The "Successfully Upgraded to Microsoft Fabric" dialog will appear. Click on **Fabric Home Page**..  
 
@@ -93,11 +93,15 @@ By the end of this lab, you will have learned:
 
 ## Task 2: Real-Time Intelligence Experience Items
 
-1. Click on the Real-Time Intelligence Experience.
+1. Select **Workloads** icon on the left of your screen. A dialog with the list of Fabric experiences will open. The list of experiences includes Power BI, Data Factory, Industry Solutions, Real-Time Intelligence, Data Engineering, Data Science and Data Warehouse. Let’s explore.
 
-    ![](../media/lab-01/image17.png)
+    ![](../media/lab-01/workload.png)
 
-1. You will be navigated to **Real-Time Intelligence Home page**. You will see **Task flow templates**, **Recommended items to create**, and **Learn more about Real-Time Intelligence** categories. With the **Recommended** category notice the items:
+1. Click on the **Real-Time Intelligence** Experience.
+
+    ![](../media/lab-01/image17upd.png)
+
+1. You will be navigated to **Real-Time Intelligence Home page**. You will see **Item types** under **About**, and **Get started** categories. With the **Item type** category notice the items:
 
     a. **Eventhouse:** Used to create a workspace of one or multiple KQL database(s), which can be shared across projects. Also creates a KQL Database within the Eventhouse.
     
@@ -109,13 +113,13 @@ By the end of this lab, you will have learned:
     
     e. **Reflex:** For automatically taking actions when patterns or conditions are detected in changing data.
 
-    ![](../media/lab-01/image18.png)
+    ![](../media/lab-01/image18upd.png)
 
 ## Task 3: Real-Time Hub
 
 1. Click on the **Real-Time hub** within the Fabric navigation pane on the left side of the screen.
 
-    ![](../media/lab-01/image19.png)
+    ![](../media/lab-01/image19upd.png)
 
 1. The **Welcome to Real-Time hub** dialogue will open and feel free to select **Take a tour** or select **Get Started**.  
 
@@ -133,7 +137,7 @@ By the end of this lab, you will have learned:
     
     - **Azure events:** This list includes system events generated in Azure that you can access. An event can be monitored and rules set that will send notifications or perform actions when activated.  
 
-      ![](../media/lab-01/image21.png)
+      ![](../media/lab-01/image21upd.png)
 
 1. In the top-right corner of the Real-Time hub, click on the **\+ Connect data source** button.  
 
@@ -153,7 +157,7 @@ By the end of this lab, you will have learned:
 
 1. Select + **New workspace**.
 
-    ![](../media/lab-01/image24.png)
+    ![](../media/lab-01/workspace.png)
 
 1. The **Create a workspace** dialog opens on the right side of the browser.
 
@@ -212,13 +216,15 @@ By the end of this lab, you will have learned:
 
    >**Note**: You will be popped up with a dialogue box, leave all the settings as default and click on **Turn on**.
 
+   ![](../media/lab-01/P1L1T5S9.png)
+
    ![](../media/lab-01/turn-on-1.png)
 
-   ![](../media/lab-01/P1L1T5S9.png)
+
 
 1. Return to your **RTI_<inject key="DeploymentID" enableCopy="false"></inject>** workspace by selecting it from the left side of the browser.
 
-    ![](../media/lab-01/rti-2.png)
+    ![](../media/lab-01/rti-2upd.png)
 
 1. If you see the **Task Flows** option taking up most of the space, select the double up arrow on the right-hand side to minimize it
 
