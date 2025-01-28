@@ -87,7 +87,7 @@ By the end of this lab, you will have learned:
 
 1. You will be navigated back to the **Microsoft** **Fabric Home page**.
 
-    ![](../media/lab-01/image15.png)
+    ![](../media/lab-01/image10upd.png)
 
 # Real-Time Intelligence and Real-Time Hub
 
