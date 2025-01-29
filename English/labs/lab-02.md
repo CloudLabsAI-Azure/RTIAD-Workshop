@@ -89,7 +89,7 @@ By the end of this lab, you will have learned:
      <inject key="rti-iad-fabrikam Primary Key" enableCopy="false"/>
      ```
 
-    >**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
+    >**Note**: **If the primary SAS key , shows any error as invalid creds Follow the below steps** : 
 
     i. Go to the azure portal search for the event hub select the **rtiadhub<inject key="DeploymentID" enableCopy="false"/>** and under enities select event hubs 
     

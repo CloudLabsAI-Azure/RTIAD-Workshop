@@ -97,7 +97,7 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-01/workload1.png)
 
-1. Click on the **Real-Time Intelligence** Experience.
+1. Click on the **Real-Time Intelligence** experience under **Workloads**.
 
     ![](../media/lab-01/image17upd1.png)
 
@@ -171,11 +171,7 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-01/RTI_username.png)
 
-1. Under **License mode**, make sure **Trial** is selected. (It should be selected by default.)
-
-    ![](../media/lab-01/imag017-1.png)
-
-1. Select **Apply** to create a new workspace.
+1. Under **License mode**, ensure that **Trial** is selected (it should be the default option), then click **Apply** to create a new workspace.
 
     ![](../media/lab-01/imag017-1.png)
 
