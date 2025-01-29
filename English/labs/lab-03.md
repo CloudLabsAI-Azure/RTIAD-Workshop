@@ -96,7 +96,7 @@ select **"View all source"** to discover it.
     <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
      ```
      
-     ![](../media/new-lab-01/clicks-1.png)
+     ![](../media/new-lab-01/clicks-1upd.png)
 
     >**Note**: If the primary SAS key , shows any error as invalid creds Follow the below steps : 
 
@@ -240,7 +240,7 @@ that the Filter transform is case sensitive
     is a case sensitive field, ensure to input in all capitals for this
     example)**
 
-     ![](../media/new-lab-01/image28.png)
+     ![](../media/new-lab-01/image28upd.png)
 
 1. Choose the **Save** option to keep your changes.
 
@@ -277,7 +277,7 @@ Filter transform is case sensitive
     This is a case sensitive field, ensure to input in all capitals for
     this example)**
 
-      ![](../media/new-lab-01/image33.png)
+      ![](../media/new-lab-01/image33upd.png)
 
 1. Choose the **Save** option to keep your changes.
 
@@ -342,7 +342,7 @@ this table.
 
     - **KQL Destination Table** - Create a new table called **Clicks**
 
-      ![](../media/lab-03/eventhouse.png)
+      ![](../media/lab-03/eventhouseupd.png)
 
 1. Click on **Save** at the bottom of the flyout.
 
