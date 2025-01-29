@@ -93,7 +93,7 @@ By the end of this lab, you will have learned:
 5. You will now be able to create the data source. Click on the **Add**
     button at the bottom of the flyout pane.
 
-    ![](../media/lab-05/image14.png)
+    ![](../media/lab-05/L5T2S5-2901.png)
 
 6. You will now see that one data source has been added to the
     Real-Time Dashboard. From here you could add additional KQL
@@ -332,7 +332,7 @@ By the end of this lab, you will have learned:
 2. Copy and paste the following query into the query pane. This query
     extracts the latitude and longitude from the Ip address column from
     this data stream to generate a location that you can plot on a map.
-    This query can take a little bit more time than the previous ones.
+    **Run** the query. This query can take a little bit more time than the previous ones.
 
     ```
     //Impressions by location
@@ -406,7 +406,7 @@ By the end of this lab, you will have learned:
     feel free to work through the optional tasks below. Otherwise, the
     lab is complete!
 
-    ![](../media/lab-05/image60.png)
+    ![](../media/lab-05/L5T6S6-2901.png)
 
 ## Optional Task 7: Add Company Logo
 
