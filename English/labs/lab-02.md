@@ -93,11 +93,11 @@ By the end of this lab, you will have learned:
 
     i. Go to the azure portal search for the event hub select the **rtiadhub<inject key="DeploymentID" enableCopy="false"/>** and under enities select event hubs 
     
-    ![](../media/lab-02/eventhubs-1.png) 
+    ![](../media/lab-02/eventhubs-1upd.png) 
 
     ii. Select the **rti-iad-fabrikam**
 
-    ![](../media/lab-02/eventhubs-1.png) 
+    ![](../media/lab-02/eventhubs-1upd.png) 
 
     iii. Under the settings from the left hand side Shared access policies and click on rti-reader and copy the Secondary key
 
