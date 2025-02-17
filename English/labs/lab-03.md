@@ -56,10 +56,9 @@ create a new **Eventstream**.
 
     ![](../media/new-lab-01/image6.png)
 
-3. Give the new Eventstream the name, **es_Fabrikam_ClickEvents**,
-check the **"Enhanced Capabilities"** option, and then click on **Create**.
+3. Give the new Eventstream the name, **es_Fabrikam_ClickEvents**, and then click on **Create**.
 
-    ![](../media/new-lab-01/image7.png)
+    ![](../media/new-lab-01/image7-1.png)
 
 4. In the newly created eventstream, click on **Use external source**.
 
@@ -227,10 +226,7 @@ operations.
 
     ![](../media/new-lab-01/image27.png)
 
-1. In the flyout that appears on the right-hand side of the screen,
-customize the filter conditions to reflect a way to only return
-CLICK values by using the settings below. It is important to note
-that the Filter transform is case sensitive
+1. In the flyout that appears on the right-hand side of the screen,customize the filter conditions to reflect a way to only return CLICK values by using the settings below. It is important to note that the Filter transform is case sensitive
 
    - **Operation name** - Clicks
 
@@ -419,25 +415,25 @@ some sort of Product name to be able to display. The data we need to
 support this is currently in an external Azure SQL Database, let's see
 how easy it is to make connections to some of these dimension tables.
 
-1. In the **eh_Fabrikam** database, click on the drop-down menu called **New related item**. Then choose the option that says KQL Queryset.
+1. In the **eh_Fabrikam** database, click on the drop-down menu called **New related item**. Then choose the option that says Queryset.
 
-    ![](../media/lab-03/kqlqueryset.png)
+    ![](../media/lab-03/kqlqueryset-1.png)
 
 2. Give the KQL Queryset the name **Create Tables** and then click the **Create** button.
 
     ![](../media/new-lab-01/image52.png)
 
-3. The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
+<!-- 3. The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
 
-    ![](../media/new-lab-01/image53.png)
+    ![](../media/new-lab-01/image53.png) -->
 
-4. In the new interface click once within the query window and
+3. In the new interface click once within the query window and
 highlight all the text by using the keyboard shortcut **Ctrl + A**.
 Once everything has been highlighted, delete everything.
 
     ![](../media/new-lab-01/image54.png)
 
-5. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A **Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
+4. In the blank query window enter the following KQL script. Thisscript will create a connection to an external Azure SQL Database and make it available within our KQL database as a **Shortcut**. A **Shortcut** is attached in a read-only mode, making it possible to view and run queries alongside the streaming data that was ingested into the KQL database.
 
     ```
     .execute database script <|
@@ -468,11 +464,11 @@ Once everything has been highlighted, delete everything.
 
     ![](../media/lab-03/P4T5S55.png)
 
-6. Click the **Run** button to execute the script.
+5. Click the **Run** button to execute the script.
 
     ![](../media/new-lab-01/image57.png)
 
-7. In your Database Explorer window, you will now see a new folder
+6. In your Database Explorer window, you will now see a new folder
 called **Shortcuts** and within the folder you should see two
 additional tables that are linked to this KQL Database. These tables
 exist within an Azure SQL Database, but through the script you
@@ -481,7 +477,7 @@ with your InternetSales and event tables.
 
     ![](../media/new-lab-01/image58.png)
 
-8. Now that you have dimensional qualities to your database, you can
+7. Now that you have dimensional qualities to your database, you can
 answer questions and give more context to consumers of the reports
 and queries these tables off insights on across your business. Run
 the following KQL query to see one of them.
@@ -494,16 +490,16 @@ the following KQL query to see one of them.
     | project Name, SalesPerProduct
     ```
 
-9. You will now see in your query results values for each individual
+8. You will now see in your query results values for each individual
 product that your company has sold.
 
     ![](../media/new-lab-01/image60.png)
 
-10. With your query highlighted click on the button in your toolbar, **Create Power BI report**.
+9. With your query highlighted click on the button in your toolbar, **Create Power BI report**.
 
     ![](../media/lab-03/createpowerbireport.png)
 
-11. This gives you the opportunity to create a Power BI report using the
+10. This gives you the opportunity to create a Power BI report using the
 data within your KQL Database. Feel free to explore this for a few
 moments, but you will not need to create a report from this data
 just yet. Click the **X button** in the top-right corner when you
@@ -511,11 +507,11 @@ are ready to move forward.
 
     ![](../media/new-lab-01/image62.png)
 
-12. Navigate back to the **eh_Fabrikam** KQL Database.
+11. Navigate back to the **eh_Fabrikam** KQL Database.
 
     ![](../media/new-lab-01/image63.png)
 
-13. Click on the **Shortcuts** option within the **eh_Fabrikam**
+12. Click on the **Shortcuts** option within the **eh_Fabrikam**
 navigation pane. This will show you all the shortcuts you have
 created to this KQL Database. It should be noted that these
 Shortcuts are considered classical Azure Data Explorer external
