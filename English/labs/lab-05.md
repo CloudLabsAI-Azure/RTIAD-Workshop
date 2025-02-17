@@ -75,9 +75,9 @@ By the end of this lab, you will have learned:
     ![](../media/lab-05/image10.png)
 
 2. In the flyout pane that appears on the right-hand side of the
-    screen, click on **Add +** and then choose **OneLake data hub**.
+    screen, click on **Add +** and then choose **Evenethouse/KQL Database**.
 
-    ![](../media/lab-05/image11.png)
+    ![](../media/lab-05/image11-1.png)
 
 3. A list of available sources in your OneLake will appear, only
     sources from KQL Databases will be listed so one option will be
