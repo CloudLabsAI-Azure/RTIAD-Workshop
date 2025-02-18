@@ -69,38 +69,31 @@ By the end of this lab, you will have learned:
 
 ## Task 2: Connect a Data Source to Real-Time Dashboard
 
-1. Under the Home ribbon find the option called **New data source** and
-    click it.
+1. Under the Home ribbon click on the option called **New data source (1)** and select **Eventhouse/KQL Database (2)** from the dropdown list.
 
-    ![](../media/lab-05/image10.png)
+    ![](../media/lab-05/L5T2S1-1802.png)
+
 
 2. In the flyout pane that appears on the right-hand side of the
     screen, click on **Add +** and then choose **Evenethouse/KQL Database**.
 
     ![](../media/lab-05/image11-1.png)
 
-3. A list of available sources in your OneLake will appear, only
+2. A list of available sources in your OneLake will appear, on
     sources from KQL Databases will be listed so one option will be
     available for you, the **eh_Fabrikam** KQL Database. Select that
     option.
 
     ![](../media/lab-05/image12.png)
 
-4. At the bottom of the screen click **Connect**.
+3. At the bottom of the screen click **Connect**.
 
     ![](../media/lab-05/image13.png)
 
-5. You will now be able to create the data source. Click on the **Add**
+4. You will now be able to create the data source. Click on the **Add**
     button at the bottom of the flyout pane.
 
     ![](../media/lab-05/L5T2S5-2901.png)
-
-6. You will now see that one data source has been added to the
-    Real-Time Dashboard. From here you could add additional KQL
-    Databases should the need arise. For now, click on **Close** at the
-    bottom of the window.
-
-    ![](../media/lab-05/image15.png)
 
 ## Task 3: Create a Real-Time Dashboard Tile with KQL
 
@@ -128,7 +121,7 @@ By the end of this lab, you will have learned:
 3. Run the query once you have it configured correctly to see the
     results.
 
-    ![](../media/lab-05/image18.png)
+    ![](../media/lab-05/L5T3S3-1802.png)
 
 4. Notice that you may only have one result in your output. This is
     because of the **Time range** that is set by default for this tile.
@@ -155,10 +148,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-05/image22.png)
 
-8. Change the **Default value** to **Last 24 hours** to always show the
-    last day by default. Click **Done** when finished.
+8. Change the **Default value** to **Last 24 hours (1)** to always show the last day by default. Click **Done (2)** when finished.
 
-    ![](../media/lab-05/image23.png)
+    ![](../media/lab-05/L5T3S8-1802.png)
 
 9. Close the parameter pane.
 
@@ -225,7 +217,7 @@ By the end of this lab, you will have learned:
 
 3. **Run** the query.
 
-    ![](../media/lab-05/image33.png)
+    ![](../media/lab-05/L5T4S3-1802.png)
 
 4. Click the **+ Add** visual button.
 
@@ -268,7 +260,7 @@ By the end of this lab, you will have learned:
 
 9. **Run** the query to view the results.
 
-    ![](../media/lab-05/image39.png)
+    ![](../media/lab-05/L5T4S9-1802.png)
 
 10. Click the **+ Add visual** button.
 
@@ -288,10 +280,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-05/image41.png)
 
-13. On the new tile, click on the ellipses (...) and select the option
-    to **Duplicate tile**.
+13. On the new tile, click on the ellipses **(...) (1)**, click on **Tile options (2)**, and select the option to **Duplicate (3)**.
 
-    ![](../media/lab-05/image42.png)
+    ![](../media/lab-05/L5T4S13-1802.png)
 
 14. Click on the **pencil icon** for the duplicated tile to edit the
     configurations.
@@ -305,10 +296,9 @@ By the end of this lab, you will have learned:
 
 16. Apply the changes to this visual.
 
-17. Duplicate either one of the new tiles one more time to create one
-    final stat visual.
+17. Duplicate either one of the new tiles one more time to create one final stat visual.
 
-    ![](../media/lab-05/image45.png)
+    ![](../media/lab-05/L5T4S17-1802.png)
 
 18. Edit the new tile to change the **Tile name** to **Click Through
     Rate** and the **Value column** to **CTR (long)**.
