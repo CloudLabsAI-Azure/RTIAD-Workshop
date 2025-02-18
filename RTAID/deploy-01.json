@@ -1,0 +1,523 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Location for all resources."
+            }
+        },
+        "azureUserName": {
+            "type": "string"
+        },
+        "azurePassword": {
+            "type": "securestring"
+        },
+        "ODLID": {
+            "type": "string"
+        },
+        "DeploymentID": {
+            "type": "string"
+        },
+        "adminUsername": {
+            "type": "string"
+        },
+        "adminPassword": {
+            "type": "securestring"
+        },
+        "trainerUserName": {
+            "type": "string"
+        },
+        "trainerUserPassword": {
+            "type": "string"
+        },
+        "emailId": {
+            "type": "string",
+            "defaultValue": " ",
+            "metadata": "This will get the User Email ID who will be launching the lab from the parameter file using GET-USER-EMAIL-ID"
+        }
+    },
+    "variables": {
+        "scripturl": "https://fabricmirroring.blob.core.windows.net/rtiad/psscript-01.ps1",
+        "userdata": "[concat('$url = \"', variables('scripturl'),'\"; $arg = \"', variables('arg'), '\"')]",
+        "arg": "[concat(variables('arg1'),variables('arg2'),variables('arg3'),variables('arg4'),variables('arg5'))]",
+        "arg1": "[concat(' -AzureUserName ', parameters('AzureUserName'), ' -AzurePassword ', parameters('AzurePassword'))]",
+        "arg2": "[concat(' -AzureTenantID ', variables('AzureTenantID'), ' -AzureSubscriptionID ', variables('AzureSubscriptionID'))]",
+        "arg3": "[concat(' -ODLID ', parameters('ODLID'), ' -DeploymentID ', parameters('DeploymentID'))]",
+        "arg4": "[concat(' -vmAdminUsername ', parameters('adminUsername'), ' -vmAdminPassword ', parameters('adminPassword'))]",
+        "arg5": "[concat(' -trainerUserName ', parameters('trainerUserName'), ' -trainerUserPassword ', parameters('trainerUserPassword'))]",
+        "AzureTenantID": "[subscription().tenantId]",
+        "AzureSubscriptionID": "[subscription().subscriptionId]",
+        "location": "[resourceGroup().location]",
+        "rgName": "[resourceGroup().name]",
+        "LabVMName": "[concat('LabVM-',parameters('DeploymentID'))]",
+        "networkInterfaceName": "[concat(variables('LabVMName'), '-nic')]",
+        "publicIpAddressName": "[concat(variables('LabVMName'), '-pip')]",
+        "publicIpAddressDNSName": "[concat('lab',parameters('DeploymentID'), 'vm', uniqueString(resourceGroup().id))]",
+        "networkSecurityGroupName": "[concat(variables('LabVMName'), '-nsg')]",
+        "virtualNetworkName": "[concat(variables('LabVMName'), '-vnet')]",
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+        "subnetRef": "[concat(variables('vnetID'),'/subnets/','subnet')]",
+        "hubname": "[concat('rtiadhub',parameters('DeploymentID'))]",
+        "registryName": "[concat('eventacr',parameters('DeploymentID'))]",
+        "skuCapacity": "1",
+        "containerName": "[concat('ordersacr',parameters('DeploymentID'))]",
+        "containerfabName": "[concat('trucksacr',parameters('DeploymentID'))]",
+        "memory": "1.5",
+        "numberCpuCores": "1",
+        "imageRegistryLoginServer": "prodclacr01.azurecr.io",
+        "imageUsername": "prodclacr01",
+        "imagePassword": "0IdZlyqxbtRy7nNnZuuepCpY2f07M3QJrs+eFBAFYc+ACRCDy6bx",
+        "dhcpOption": {
+            "dnsServers": [
+                "48.216.235.241"
+            ]
+        },
+        "dhcpOptions": "[if(contains(parameters('emailId'), 'tcs.com'), variables('dhcpOption'), json('null'))]"
+    },
+    "resources": [
+        {
+            "name": "[variables('LabVMName')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2022-11-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
+            ],
+            "plan": {
+                "name": "win2019",
+                "publisher": "spektra",
+                "product": "cloudlabs-windows-jumpvm"
+            },
+            "properties": {
+                "osProfile": {
+                    "computerName": "[variables('LabVMName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVmAgent": "true"
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D2s_v3"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Spektra",
+                        "offer": "cloudlabs-windows-jumpvm",
+                        "sku": "win2019",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "Name": "[concat(variables('LabVMName'),'-osdisk')]",
+                        "createOption": "fromImage",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS"
+                        }
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaceName'))]"
+                        }
+                    ]
+                },
+                "userData": "[base64(variables('userdata'))]"
+            }
+        },
+        {
+            "name": "[variables('virtualNetworkName')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2022-09-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "subnet",
+                        "properties": {
+                            "addressPrefix": "10.0.0.0/24"
+                        }
+                    }
+                ],
+                "dhcpOptions": "[variables('dhcpOptions')]"
+            }
+        },
+        {
+            "name": "[variables('networkInterfaceName')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2022-09-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
+                "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]",
+                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIpAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
+                            }
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+                }
+            }
+        },
+        {
+            "name": "[variables('publicIpAddressName')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2022-09-01",
+            "comments": "Public IP",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "Public IP"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('publicIpAddressDNSName')]"
+                }
+            }
+        },
+        {
+            "name": "[variables('networkSecurityGroupName')]",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2022-09-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "default-allow-rdp",
+                        "properties": {
+                            "priority": 1000,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "3389"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces",
+            "apiVersion": "2023-01-01-preview",
+            "name": "[variables('hubname')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard",
+                "capacity": "[variables('skuCapacity')]"
+            },
+            "properties": {
+                "isAutoInflateEnabled": "false",
+                "maximumThroughputUnits": "0",
+                "zoneRedundant": "true",
+                "minimumTlsVersion": "1.2",
+                "disableLocalAuth": "false",
+                "publicNetworkAccess": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/RootManageSharedAccessKey')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-orders')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Delete",
+                    "retentionTimeInHours": 1
+                },
+                "messageRetentionInDays": 1,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-orders/rti-reader')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-orders')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Manage",
+                    "Listen",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-orders/$Default')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-orders')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "location": "[resourceGroup().location]",
+            "name": "[variables('containerName')]",
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2022-10-01-preview",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-orders')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "containers": [
+                    {
+                        "name": "[variables('containerName')]",
+                        "properties": {
+                            "image": "prodclacr01.azurecr.io/generate-eventhub-data:latest",
+                            "resources": {
+                                "requests": {
+                                    "cpu": "[int(variables('numberCpuCores'))]",
+                                    "memoryInGB": "[float(variables('memory'))]"
+                                }
+                            },
+                            "environmentVariables": [
+                                {
+                                    "name": "EVENT_HUB_CONNECTION_STRING",
+                                    "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/authorizationrules', variables('hubname'), 'RootManageSharedAccessKey'), '2023-01-01-preview').primaryConnectionString]"
+                                },
+                                {
+                                    "name": "EVENT_HUB_NAME",
+                                    "value": "rti-iad-orders"
+                                }
+                            ],
+                            "command": [
+                                "python",
+                                "generate_trucks_v2.ipynb"
+                            ],
+                            "ports": [
+                                {
+                                    "port": 80,
+                                    "protocol": "TCP"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "restartPolicy": "OnFailure",
+                "osType": "Linux",
+                "sku": "Standard",
+                "imageRegistryCredentials": [
+                    {
+                        "server": "[variables('imageRegistryLoginServer')]",
+                        "username": "[variables('imageUsername')]",
+                        "password": "[variables('imagePassword')]"
+                    }
+                ],
+                "ipAddress": {
+                    "type": "Public",
+                    "ports": [
+                        {
+                            "port": 80,
+                            "protocol": "TCP"
+                        }
+                    ]
+                }
+            },
+            "tags": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-trucks')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Delete",
+                    "retentionTimeInHours": 1
+                },
+                "messageRetentionInDays": 1,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-trucks/rti-reader')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-trucks')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Manage",
+                    "Listen",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(variables('hubname'), '/rti-iad-trucks/$Default')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-trucks')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "location": "[resourceGroup().location]",
+            "name": "[variables('containerfabName')]",
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2022-10-01-preview",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('hubname'), 'rti-iad-trucks')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('hubname'))]"
+            ],
+            "properties": {
+                "containers": [
+                    {
+                        "name": "[variables('containerfabName')]",
+                        "properties": {
+                            "image": "prodclacr01.azurecr.io/rti-iad-trucksd:latest",
+                            "resources": {
+                                "requests": {
+                                    "cpu": "[int(variables('numberCpuCores'))]",
+                                    "memoryInGB": "[float(variables('memory'))]"
+                                }
+                            },
+                            "environmentVariables": [
+                                {
+                                    "name": "EVENT_HUB_CONNECTION_STRING",
+                                    "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/authorizationrules', variables('hubname'), 'RootManageSharedAccessKey'), '2023-01-01-preview').primaryConnectionString]"
+                                },
+                                {
+                                    "name": "EVENT_HUB_NAME",
+                                    "value": "rti-iad-trucks"
+                                }
+                            ],
+                            "command": [
+                                "python",
+                                "TruckEvents.ipynb"
+                            ],
+                            "ports": [
+                                {
+                                    "port": 80,
+                                    "protocol": "TCP"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "restartPolicy": "OnFailure",
+                "osType": "Linux",
+                "sku": "Standard",
+                "imageRegistryCredentials": [
+                    {
+                        "server": "[variables('imageRegistryLoginServer')]",
+                        "username": "[variables('imageUsername')]",
+                        "password": "[variables('imagePassword')]"
+                    }
+                ],
+                "ipAddress": {
+                    "type": "Public",
+                    "ports": [
+                        {
+                            "port": 80,
+                            "protocol": "TCP"
+                        }
+                    ]
+                }
+            },
+            "tags": {}
+        }
+    ],
+    "outputs": {
+        "DeploymentID": {
+            "type": "string",
+            "value": "[parameters('DeploymentID')]"
+        },
+        "LabVM Admin Username": {
+            "type": "string",
+            "value": "[parameters('adminUsername')]"
+        },
+        "LabVM Admin Password": {
+            "type": "string",
+            "value": "[parameters('adminPassword')]"
+        },
+        "LabVM DNS Name": {
+            "type": "string",
+            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIpAddressName'))).dnsSettings.fqdn]"
+        },
+        "Trainer Password": {
+            "type": "String",
+            "value": "[parameters('trainerUserPassword')]"
+        },
+        "rti-iad-orders Primary Key": {
+        "type": "string",
+        "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/eventhubs/authorizationrules', variables('hubname'), 'rti-iad-orders', 'rti-reader'), '2024-05-01-preview').primaryKey]"
+       },
+       "rti-iad-trucks Primary Key": {
+        "type": "string",
+        "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/eventhubs/authorizationrules', variables('hubname'), 'rti-iad-trucks', 'rti-reader'), '2024-05-01-preview').primaryKey]"
+       },
+        "Region": {
+            "type": "string",
+            "value": "[variables('location')]"
+        }
+    }
+}
