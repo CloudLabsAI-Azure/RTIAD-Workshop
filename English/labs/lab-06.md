@@ -48,7 +48,7 @@ Real-Time Dashboard you created in the last lab.
 2. On the **Click Through Rate** visual click on the ellipses (...) and
 select the option to **Set alert**.
 
-    ![](../media/lab-06/image6.png)
+    ![](../media/lab-06/L6T1S2-1802.png)
 
 3. A new flyout will open on the right-side of the screen. You can see what you are monitoring from the dashboard including the specific visual that the alert will be affiliated with. The condition is something you have full control over. Modify the **Condition** to **Is less than**.
 
@@ -75,7 +75,7 @@ will take a few moments to create.
 8. You will receive a validation that the reflex alert was created.
 Click on the **Open** button to open the Reflex.
 
-    ![](../media/lab-06/image12.png)
+    ![](../media/lab-06/L6T1S8-1802.png)
 
 9. This will take you to the formal **Reflex experience**. From here
 you can monitor the stream of data in real-time, view the Data that
@@ -109,29 +109,28 @@ two areas to match the image below and hit **Save and update**.
 
      - **Password**:<inject key="AzureAdUserPassword"></inject>
    
-6.  If you are asked, a message to start a trial may appear and you will want to accept
-this.
+6.  If a message appears, click on Start Trial
 
 7. You should have a message within teams letting you know that the CTR
 is less than 20.
 
-    ![](../media/lab-06/image17.png)
+    ![](../media/lab-06/L6T2S7-1802.png)
 
 8. Navigate back to the Reflex experience and let's create another
 trigger.
 
 ## Task 3: Create A New Reflex Object from Data Stream
 
-1. Select the object labeled **KQL Source Event** and then select **New
+1. Select the object labeled **eh_Fabrikam event** and then select **New
 Rule** from this data stream.
 
-    ![](../media/lab-06/image18.png)
+    ![](../media/lab-06/L6T3S1-1802.png)
 
 2. Click on the **pencil** icon and give this Rule the name, **Clicks
 Greater Than 30,000** (you can choose a value here that falls more
 in line with however much data you have streamed in).
 
-    ![](../media/lab-06/image19.png)
+    ![](../media/lab-06/L6T3S2-1802.png)
 
 3. To begin, you need to monitor one of the columns from the data
 stream, to accomplish this we need to configure the Condition and
@@ -159,7 +158,7 @@ following properties:
 
 7. You now have two triggers that are monitoring the same data stream.
 
-    ![](../media/lab-06/image23.png)
+    ![](../media/lab-06/L6T3S7-1802.png)
 
 # Clean Up Resources
 
