@@ -81,9 +81,9 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-01/image12upd1.png)
 
-1. The "Successfully Upgraded to Microsoft Fabric" dialog will appear. Click on **Fabric Home Page**..  
+1. The "Successfully Upgraded to Microsoft Fabric" dialog will appear. Click on **Got it**..  
 
-   ![](../media/lab-01/fabrichome_1.png)
+   ![](../media/lab-01/fabrichome_1-1.png)
 
 1. You will be navigated back to the **Microsoft** **Fabric Home page**.
 

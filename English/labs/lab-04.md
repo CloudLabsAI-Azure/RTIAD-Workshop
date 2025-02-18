@@ -38,9 +38,9 @@ By the end of this lab, you will have learned:
 
 ## Task 1: Create Bronze Tables 
 
-1. Open the **Fabric workspace** for the course and open the KQL Queryset you created in the last lab, **Create Tables**.
+1. Open the **Fabric workspace** for the course and open the KQL Queryset you created in the last lab, **Create**.
 
-    ![](../media/lab-04/image5.png)
+    ![](../media/lab-04/image5-1.png)
 
 2. Within this KQL Queryset lets rename the original tab that we have
 here from "**eh_Fabrikam**" to "**Create External Tables**" making it easier

@@ -73,7 +73,13 @@ By the end of this lab, you will have learned:
 
     ![](../media/lab-05/L5T2S1-1802.png)
 
-2. A list of available sources in your OneLake will appear, only
+
+2. In the flyout pane that appears on the right-hand side of the
+    screen, click on **Add +** and then choose **Evenethouse/KQL Database**.
+
+    ![](../media/lab-05/image11-1.png)
+
+2. A list of available sources in your OneLake will appear, on
     sources from KQL Databases will be listed so one option will be
     available for you, the **eh_Fabrikam** KQL Database. Select that
     option.
