@@ -337,7 +337,7 @@
                             ],
                             "command": [
                                 "python",
-                                "generate_trucks_v2.ipynb"
+                                "Generate-Fabrikam_v2.py"
                             ],
                             "ports": [
                                 {
@@ -452,7 +452,7 @@
                             ],
                             "command": [
                                 "python",
-                                "TruckEvents.ipynb"
+                                "Generate_TruckEvents.py"
                             ],
                             "ports": [
                                 {
