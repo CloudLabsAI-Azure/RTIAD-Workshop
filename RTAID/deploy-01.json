@@ -433,7 +433,7 @@
                     {
                         "name": "[variables('containerfabName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/acrrtiad:latest",
+                            "image": "acrrtiad.azurecr.io/generate-trucks-data:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
