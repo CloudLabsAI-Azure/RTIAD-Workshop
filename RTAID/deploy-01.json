@@ -67,9 +67,9 @@
         "containerfabName": "[concat('trucksacr',parameters('DeploymentID'))]",
         "memory": "1.5",
         "numberCpuCores": "1",
-        "imageRegistryLoginServer": "prodclacr01.azurecr.io",
-        "imageUsername": "prodclacr01",
-        "imagePassword": "0IdZlyqxbtRy7nNnZuuepCpY2f07M3QJrs+eFBAFYc+ACRCDy6bx",
+        "imageRegistryLoginServer": "acrrtiad.azurecr.io",
+        "imageUsername": "acrrtiad",
+        "imagePassword": "yuGNpZzzx6id8KthTr0bNttWLc81tIXT4iCqJKT0Z5+ACRB08tPl",
         "dhcpOption": {
             "dnsServers": [
                 "48.216.235.241"
