@@ -1,0 +1,12 @@
+[
+    {
+        "Name": "RTIAD - Real-Time Intelligence in a Day Workshop",
+        "Language": "English",
+        "Files": [
+             {
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/RTIAD-Workshop/main/getting-started-V2.md",
+                "Order": 1
+            }
+        ]
+    }
+]
