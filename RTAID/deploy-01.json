@@ -318,7 +318,7 @@
                     {
                         "name": "[variables('containerName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/generate-eventhub-data:latest",
+                            "image": "acrrtiad.azurecr.io/acrrtiad:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
@@ -433,7 +433,7 @@
                     {
                         "name": "[variables('containerfabName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/rti-iad-trucksd:latest",
+                            "image": "acrrtiad.azurecr.io/acrrtiad:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
