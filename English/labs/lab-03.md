@@ -91,9 +91,10 @@ select **"View all source"** to discover it.
      rti-reader
      ```
  - Shared Access Key :
-     ```
+
+    ```
     <inject key="rti-iad-clicks Primary Key" enableCopy="false"/>
-     ```
+    ```
      
      ![](../media/new-lab-01/clicks-1upd.png)
 
