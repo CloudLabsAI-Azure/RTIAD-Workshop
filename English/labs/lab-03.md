@@ -424,9 +424,9 @@ how easy it is to make connections to some of these dimension tables.
 
     ![](../media/new-lab-01/image52.png)
 
-<!-- 3. The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
+3. The OneLake data hub will open and the only option to select with be the **"eh_Fabrikam"** kql database. Select this database and click **"Connect"**.
 
-    ![](../media/new-lab-01/image53.png) -->
+    ![](../media/new-lab-01/image53.png) 
 
 3. In the new interface click once within the query window and
 highlight all the text by using the keyboard shortcut **Ctrl + A**.
