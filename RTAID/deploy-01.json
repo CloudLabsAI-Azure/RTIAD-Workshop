@@ -318,7 +318,7 @@
                     {
                         "name": "[variables('containerName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/generate-eventhub-data:latest",
+                            "image": "acrrtiad.azurecr.io/fabrikam-data-final:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
@@ -433,7 +433,7 @@
                     {
                         "name": "[variables('containerfabName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/generate-trucks-data:latest",
+                            "image": "acrrtiad.azurecr.io/generate-trucks-data-final:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
@@ -452,7 +452,7 @@
                             ],
                             "command": [
                                 "python",
-                                "Generate_TruckEvents.py"
+                                "TruckEvents.py"
                             ],
                             "ports": [
                                 {
