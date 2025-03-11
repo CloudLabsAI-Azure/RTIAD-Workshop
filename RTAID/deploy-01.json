@@ -318,7 +318,7 @@
                     {
                         "name": "[variables('containerName')]",
                         "properties": {
-                            "image": "acrrtiad.azurecr.io/fabrikam-data-final:latest",
+                            "image": "acrrtiad.azurecr.io/fabrikam-data-final-v2:latest",
                             "resources": {
                                 "requests": {
                                     "cpu": "[int(variables('numberCpuCores'))]",
@@ -337,7 +337,7 @@
                             ],
                             "command": [
                                 "python",
-                                "Generate-Fabrikam_v2.py"
+                                "Generate-Fabrikam-final.py"
                             ],
                             "ports": [
                                 {
