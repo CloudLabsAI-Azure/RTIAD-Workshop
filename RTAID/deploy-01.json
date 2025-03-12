@@ -511,11 +511,11 @@
         "type": "string",
         "value": "[variables('hubname')]"
        },
-        "EVENT_HUB_NAME-trucks": {
+        "event_hub_name-trucks": {
         "type": "string",
         "value": "rti-iad-trucks"
        },
-       "EVENT_HUB_NAME-orders": {
+       "event_hub_name-orders": {
         "type": "string",
         "value": "rti-iad-orders"
        },
