@@ -507,6 +507,18 @@
             "type": "String",
             "value": "[parameters('trainerUserPassword')]"
         },
+        "EventHubNameSpace": {
+        "type": "string",
+        "value": "[variables('hubname')]"
+       },
+        "EVENT_HUB_NAME-trucks": {
+        "type": "string",
+        "value": "rti-iad-trucks"
+       },
+       "EVENT_HUB_NAME-orders": {
+        "type": "string",
+        "value": "rti-iad-orders"
+       },
         "rti-iad-orders Primary Key": {
         "type": "string",
         "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/eventhubs/authorizationrules', variables('hubname'), 'rti-iad-orders', 'rti-reader'), '2024-05-01-preview').primaryKey]"
